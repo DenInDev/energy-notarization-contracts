@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.24;
 
 import {FHE, euint64, externalEuint64} from "@fhevm/solidity/lib/FHE.sol";
@@ -49,6 +50,9 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
         emit AddedMeasure(msg.sender, uint64(block.timestamp));
     }
 
+    // Operazione 1:
+    // totale cifrato += dato cifrato
+
     function addLastEntryToEncryptedTotal() external onlyAuthorized returns (euint64) {
         require(hasLastEntry[msg.sender], "No entry");
         euint64 value = lastEntry[msg.sender].value;
@@ -68,6 +72,8 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
         return FHE.add(encryptedTotal[msg.sender], lastEntry[msg.sender].value);
     }
 
+    // Operazione 2:
+    // dato cifrato * costante pubblica
     function multiplyLastEntryByConstant(uint64 constantValue) external onlyAuthorized returns (euint64) {
         require(hasLastEntry[msg.sender], "No entry");
 
@@ -96,6 +102,8 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
         return result;
     }
 
+    // Operazione 3:
+    // ultimo dato cifrato * accumulatore cifrato
     function multiplyLastEntryByEncryptedTotal() external onlyAuthorized returns (euint64) {
         require(hasLastEntry[msg.sender], "No entry");
 
@@ -125,6 +133,8 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
         return result;
     }
 
+    // Operazione 4:
+    // media tra ultimo dato cifrato e accumulatore cifrato
     function meanLastEntryAndEncryptedTotal() external onlyAuthorized returns (euint64) {
         require(hasLastEntry[msg.sender], "No entry");
 
@@ -162,6 +172,8 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
         return result;
     }
 
+    // Operazione 5:
+    // massimo tra ultimo dato cifrato e accumulatore cifrato
     function maxLastEntryAndEncryptedTotal() external onlyAuthorized returns (euint64) {
         require(hasLastEntry[msg.sender], "No entry");
 
