@@ -48,6 +48,7 @@ export function summarize(values: number[]) {
   if (values.length === 0) return { n: 0, mean: null, stddev: null, min: null, max: null, median: null };
   const sorted = [...values].sort((a, b) => a - b);
   const mean = values.reduce((a, b) => a + b, 0) / values.length;
+  
   return {
     n: values.length,
     mean,

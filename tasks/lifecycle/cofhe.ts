@@ -22,14 +22,17 @@ export async function createCofheAdapter(
   const client: CofheClient = createCofheClient(
     createCofheConfig({ supportedChains: [getChainById(11155111)] }),
   );
+
   await trace.span("setup.sdk_connection", async () => {
     const { publicClient, walletClient } = "privateKey" in signer
       ? await Ethers6Adapter(signer.provider, signer) : await HardhatSignerAdapter(signer);
+
     await client.connect(publicClient, walletClient);
   });
   await trace.span("setup.authenticated_acp", () =>
     client.acp.getOrCreateSelfACP(),
   );
+
   return {
     // Prepares a 16-bit encrypted input for the target contract.
     // Records SDK stages and returns the handle and proof for submission.
@@ -42,8 +45,11 @@ export async function createCofheAdapter(
             .setConsumingContract(address)
             .onStep((step, context) => {
               const at = timing.now();
+
               if (context?.isStart) stepStarts.set(step, at);
+
               const start = stepStarts.get(step);
+
               if (context?.isEnd && start !== undefined) {
                 timing.stages.push({
                   stage: `encrypt.sdk_observed.${step}`,
@@ -53,6 +59,7 @@ export async function createCofheAdapter(
                   detail: { sdkDurationMs: context.duration },
                 });
               }
+
               timing.event(`encrypt.sdk_stage.${step}`, {
                 isStart: context?.isStart,
                 isEnd: context?.isEnd,
@@ -65,6 +72,7 @@ export async function createCofheAdapter(
             .execute(),
         ),
       );
+
       return [...encrypted];
     },
     // Retrieves an authorized plaintext from a CoFHE ciphertext handle.

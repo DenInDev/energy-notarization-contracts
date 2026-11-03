@@ -1,4 +1,5 @@
 """Exercise the wallet's actual PVAC C ABI. Local timings exclude blockchain work."""
+
 import argparse
 import base64
 import ctypes as c
@@ -34,7 +35,9 @@ def main():
     for name, (result, arguments) in signatures.items():
         fn = getattr(lib, name)
         fn.restype, fn.argtypes = result, arguments
-    account = json.loads((ROOT / ".benchmark-accounts/octra-devnet.secret.json").read_text())
+    account = json.loads(
+        (ROOT / ".benchmark-accounts/octra-devnet.secret.json").read_text()
+    )
     seed = c.create_string_buffer(base64.b64decode(account["privateKeyBase64"]))
     params, pk, sk = lib.pvac_default_params(), ptr(), ptr()
     started = time.perf_counter_ns()
@@ -59,13 +62,17 @@ def main():
         return lo.value + (hi.value << 64)
 
     def encrypt(value):
-        handle = lib.pvac_enc_value_seeded(pk, sk, value, c.create_string_buffer(os.urandom(32)))
+        handle = lib.pvac_enc_value_seeded(
+            pk, sk, value, c.create_string_buffer(os.urandom(32))
+        )
         if not handle:
             raise RuntimeError("PVAC encryption failed")
         return handle
 
     if args.decrypt:
-        raw = base64.b64decode(json.loads(args.decrypt.read_text())["ciphertext"], validate=True)
+        raw = base64.b64decode(
+            json.loads(args.decrypt.read_text())["ciphertext"], validate=True
+        )
         handle = lib.pvac_deserialize_cipher(c.create_string_buffer(raw), len(raw))
         if not handle:
             raise RuntimeError("Invalid result ciphertext")
@@ -74,24 +81,52 @@ def main():
         finally:
             lib.pvac_free_cipher(handle)
     else:
-        report = {"scope": "local-wallet-library", "networkExecution": False,
-                  "keygenMs": keygen_ms, "cases": [], "address": account["address"]}
-        fixtures = {"address": account["address"], "publicKeyBase64":
-                    base64.b64encode(serialize(lib.pvac_serialize_pubkey, pk)).decode()}
+        report = {
+            "scope": "local-wallet-library",
+            "networkExecution": False,
+            "keygenMs": keygen_ms,
+            "cases": [],
+            "address": account["address"],
+        }
+        fixtures = {
+            "address": account["address"],
+            "publicKeyBase64": base64.b64encode(
+                serialize(lib.pvac_serialize_pubkey, pk)
+            ).decode(),
+        }
         kat = c.create_string_buffer(16)
         lib.pvac_aes_kat(kat)
         fixtures["aesKatHex"] = kat.raw.hex()
-        for a, b, factor in [(42, 17, 3), (0, 1, 0), (1, 0, 1), (255, 1024, 7), (4294967295, 17, 2)]:
+        for a, b, factor in [
+            (42, 17, 3),
+            (0, 1, 0),
+            (1, 0, 1),
+            (255, 1024, 7),
+            (4294967295, 17, 2),
+        ]:
             ca, cb = encrypt(a), encrypt(b)
             if a == 42:
-                fixtures.update({"left": base64.b64encode(serialize(lib.pvac_serialize_cipher_public, ca)).decode(),
-                                 "right": base64.b64encode(serialize(lib.pvac_serialize_cipher_public, cb)).decode(),
-                                 "inputs": [a, b], "scalar": factor})
+                fixtures.update(
+                    {
+                        "left": base64.b64encode(
+                            serialize(lib.pvac_serialize_cipher_public, ca)
+                        ).decode(),
+                        "right": base64.b64encode(
+                            serialize(lib.pvac_serialize_cipher_public, cb)
+                        ).decode(),
+                        "inputs": [a, b],
+                        "scalar": factor,
+                    }
+                )
             raw = serialize(lib.pvac_serialize_cipher_public, ca)
-            restored = lib.pvac_deserialize_cipher(c.create_string_buffer(raw), len(raw))
-            operations = [("store_roundtrip", lambda: restored, a),
-                          ("add", lambda: lib.pvac_ct_add(pk, ca, cb), a + b),
-                          ("scale", lambda: lib.pvac_ct_scale(pk, ca, factor), a * factor)]
+            restored = lib.pvac_deserialize_cipher(
+                c.create_string_buffer(raw), len(raw)
+            )
+            operations = [
+                ("store_roundtrip", lambda: restored, a),
+                ("add", lambda: lib.pvac_ct_add(pk, ca, cb), a + b),
+                ("scale", lambda: lib.pvac_ct_scale(pk, ca, factor), a * factor),
+            ]
             for name, operation, expected in operations:
                 start = time.perf_counter_ns()
                 result = operation()
@@ -99,17 +134,30 @@ def main():
                 if not result:
                     raise RuntimeError("PVAC operation returned no ciphertext")
                 value = decrypt(result)
-                case = {"operation": name, "inputs": [a, b], "scalar": factor,
-                        "expected": str(expected), "actual": str(value), "correct": value == expected,
-                        "computeMs": compute_ms}
+                case = {
+                    "operation": name,
+                    "inputs": [a, b],
+                    "scalar": factor,
+                    "expected": str(expected),
+                    "actual": str(value),
+                    "correct": value == expected,
+                    "computeMs": compute_ms,
+                }
                 report["cases"].append(case)
                 lib.pvac_free_cipher(result)
             lib.pvac_free_cipher(ca)
             lib.pvac_free_cipher(cb)
         (OUT / "local-probe.json").write_text(json.dumps(report, indent=2) + "\n")
         (OUT / "fixtures.json").write_text(json.dumps(fixtures, indent=2) + "\n")
-        print(json.dumps({"passed": sum(x["correct"] for x in report["cases"]),
-                          "total": len(report["cases"]), "keygenMs": keygen_ms}))
+        print(
+            json.dumps(
+                {
+                    "passed": sum(x["correct"] for x in report["cases"]),
+                    "total": len(report["cases"]),
+                    "keygenMs": keygen_ms,
+                }
+            )
+        )
         if not all(x["correct"] for x in report["cases"]):
             raise RuntimeError("Local ciphertext correctness check failed")
     lib.pvac_free_pubkey(pk)

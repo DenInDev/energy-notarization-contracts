@@ -3,8 +3,6 @@ import fs from "node:fs";
 let sequence = 0;
 const pause = new Int32Array(new SharedArrayBuffer(4));
 
-// Windows readers/virus scanners can briefly deny replacement of an open file.
-// Retry only the filesystem rename, never a transaction or network mutation.
 export function writeLifecycleJson(file: string, value: unknown,
   rename = fs.renameSync, sleep = (ms: number) => { Atomics.wait(pause, 0, 0, ms); }) {
   const temporary = `${file}.${process.pid}.${++sequence}.tmp`;

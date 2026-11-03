@@ -1,0 +1,39 @@
+OCTRA DEVNET QUICK START
+
+Open PowerShell and start from the repository root:
+
+  Set-Location 'C:\Users\danie\Desktop\Dottorato\energy-notarization-contracts'
+
+1. Show the devnet account
+
+  node scripts/octra/account.cjs
+
+This loads the local account, or creates one if the account file is
+missing. The terminal output shows the public address and endpoint.
+Requires the repository's installed Node dependencies.
+
+2. Check devnet access, balance, fee quotes, and contract compilation
+
+  node scripts/octra/preflight.cjs
+
+This makes unsigned RPC requests and compiles EnergyPilot.aml through
+the devnet RPC. The report is written to logs/octra-pilot/online-preflight.json.
+It expects the existing webcli, amlc, and pvac clones in logs/octra-pilot/vendor.
+
+3. Run the local PVAC cryptographic checks
+
+  wsl -d Ubuntu-22.04 -- python3 scripts/octra/local-probe.py
+
+Requires the built library at
+logs/octra-pilot/vendor/webcli/pvac/build/libpvac.so.
+The script writes local-probe.json and fixtures.json under logs/octra-pilot.
+
+4. Regenerate the analysis of the recorded lifecycle trial
+
+  .\.venv\Scripts\python.exe scripts/octra/analyze-lifecycle-record.py
+
+This reads the existing trial reports and writes the consolidated results
+under logs/octra-lifecycle-once-2026-11-02-results.
+
+The preflight, local probe, and analysis commands refresh their generated
+output files in place. The commands in this guide submit no transactions.

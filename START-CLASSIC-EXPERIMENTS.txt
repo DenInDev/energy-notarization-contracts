@@ -1,0 +1,55 @@
+
+-
+
+
+  Set-Location 'C:\Users\danie\Desktop\Dottorato\energy-notarization-contracts'
+  node --version
+  npm run compile
+  npm run typecheck
+  npm test
+
+The project requires Node.js 22 or newer. On a fresh checkout, run
+npm ci first to install the locked dependencies and apply the SDK
+polling patch. The test command uses the local Hardhat network.
+
+
+-
+
+
+  $paperRun = 'logs/energy-isolated-50-2026-10-24-continuation1'
+  Get-Content (Join-Path $paperRun 'segmented-analysis.md')
+  Get-Content (Join-Path $paperRun 'publication-tables/paired-inference-methods.md')
+  Get-Content (Join-Path $paperRun 'publication-tables/paired-inference-formulas.txt')
+
+This campaign contains a retained receipt timeout and a continuation.
+Use its segmented results for the paper. The strict lifecycle analyzer
+requires every primary observation to have succeeded.
+
+
+-
+
+
+The live command deploys contracts and spends Sepolia ETH. Use three
+funded, dedicated signers with settled transaction nonces. The example
+uses the isolated-validation account file. Keep that file private.
+Configure SEPOLIA_RPC_URL locally if using a dedicated endpoint.
+
+  $accountsFile = '.benchmark-accounts/isolated-validation/accounts.secret.json'
+  $runDir = 'logs/energy-classic-pilot-' + (Get-Date -Format 'yyyyMMdd-HHmmss')
+  node scripts/run-energy-campaign.cjs 1 $runDir $accountsFile
+  Get-Content (Join-Path $runDir 'summary.md')
+
+
+-
+
+
+  $runDir = 'logs/energy-classic-50-' + (Get-Date -Format 'yyyyMMdd-HHmmss')
+  node scripts/run-energy-campaign.cjs 50 $runDir $accountsFile
+
+
+
+-
+
+  $report = Join-Path $runDir 'report.json'
+  node scripts/analysis/energy-block-inclusion.cjs $report
+  .\.venv\Scripts\python.exe scripts/analysis/analyze-lifecycle.py $report

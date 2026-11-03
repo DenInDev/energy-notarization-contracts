@@ -18,12 +18,14 @@ export function buildLifecycleSchedule(
   if (!platforms.length || new Set(platforms).size !== platforms.length) throw new Error("Invalid platforms");
   if (!operations.length || new Set(operations).size !== operations.length) throw new Error("Invalid operations");
   let state = createHash("sha256").update(seed).digest().readUInt32LE(0);
+
   function random() {
     state = (state + 0x6d2b79f5) >>> 0;
     let value = Math.imul(state ^ (state >>> 15), state | 1);
     value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
     return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
   }
+
   function shuffle<T>(values: T[]): T[] {
     const result = [...values];
     for (let i = result.length - 1; i > 0; i--) {
@@ -32,6 +34,7 @@ export function buildLifecycleSchedule(
     }
     return result;
   }
+  
   const orders = new Map<LifecycleOperation, LifecyclePlatform[][]>();
   for (const operation of operations) {
     const rounds: LifecyclePlatform[][] = [];

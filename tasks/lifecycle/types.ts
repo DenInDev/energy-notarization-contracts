@@ -4,8 +4,12 @@ import type {
   LifecyclePlatform,
   LifecycleOperation,
 } from "../lib/lifecycleSchedule";
+
+
 export type Platform = LifecyclePlatform;
+
 export type Operation = LifecycleOperation;
+
 export const operations: Operation[] = [
   "notarize",
   "add",
@@ -13,11 +17,13 @@ export const operations: Operation[] = [
   "mean",
   "max",
 ];
+
 export const contracts = {
   baseline: "EnergyNotarizationPlainTest",
   zama: "EnergyNotarizationFHETest",
   fhenix: "EnergyLifecycleCoFHE",
 };
+
 export type Sample = {
   platform: Platform;
   operation: Operation;
@@ -72,6 +78,7 @@ export type Sample = {
   preparedMaxFeePerGasWei?: string;
   preparedMaxPriorityFeePerGasWei?: string;
 };
+
 export type Adapter = {
   encrypt(value: bigint, trace: TimingTrace, timeoutMs?: number): Promise<unknown[]>;
   decrypt(
@@ -82,12 +89,14 @@ export type Adapter = {
     width?: 16 | 64,
   ): Promise<unknown>;
 };
+
 export type PlatformContext = {
   contract: Contract;
   adapter: Adapter;
   last: bigint;
   total: bigint;
 };
+
 export type BenchmarkArgs = {
   runs: number;
   platform: string;

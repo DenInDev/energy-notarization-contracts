@@ -58,6 +58,7 @@ export async function createZamaAdapter(
           onProgress: progress(timing, "encrypt"),
         }),
       );
+
       return [encrypted.handles[0], encrypted.inputProof];
     },
 
@@ -86,6 +87,7 @@ export async function createZamaAdapter(
             },
             eip712.message,
           );
+
           return { ...keys, start, signature };
         },
       );
@@ -116,6 +118,7 @@ export async function createZamaAdapter(
           true,
         ),
       );
+
       return result[handleHex];
     },
   };

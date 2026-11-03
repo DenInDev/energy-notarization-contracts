@@ -5,7 +5,7 @@ const { createHash } = require('node:crypto');
 // Serialized into the pinned SDK bundles by scripts/patch-decryption-polling.cjs.
 // Keep this function self-contained; never shorten a server Retry-After.
 function decryptionPollDelay(response, now = Date.now()) {
-  const baseMs = 100;
+  const baseMs = 10;
   const header = response?.headers?.get('Retry-After')?.trim();
   if (!header) return baseMs;
   const delayMs = /^\d+(?:\.\d+)?$/.test(header)
@@ -21,7 +21,7 @@ const targets = {
 const marker = 'benchmark-decryption-polling-v1';
 function pollingProvenance() {
   const root = path.resolve(__dirname, '../..');
-  return {requestedIntervalMs: 100, serverRetryAfter: 'respected; can lengthen the effective interval',
+  return {requestedIntervalMs: 10, serverRetryAfter: 'respected; can lengthen the effective interval',
     patch: marker, bundles: Object.fromEntries(Object.entries(targets).map(([name, file]) => {
       const bytes = fs.readFileSync(path.join(root, file));
       if (!bytes.includes(Buffer.from(marker))) throw new Error(`Run npm run sdk:patch-polling before using ${name}`);

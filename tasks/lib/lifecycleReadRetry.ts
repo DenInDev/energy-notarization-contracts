@@ -30,6 +30,7 @@ export async function retryLifecycleRead<T>(
       return await trace.span(`${phase}.read_attempt`, () => read(Math.max(1, Math.floor(end - performance.now()))));
     } catch (error) {
       const delay = backoffMs * 2 ** Math.min(attempt - 1, 3);
+      
       // Zama's SDK checks ACL permissions against latest RPC state, which can
       // lag the mined receipt. Retry only its specific user-decrypt ACL denial.
       const aclFailure = retryZamaAclCheck && isZamaAclCheckFailure(error);
@@ -88,7 +89,7 @@ export function isZamaGatewayNotReady(error: unknown): boolean {
 
 export function isZamaAclCheckFailure(error: unknown): boolean {
   if (!(error instanceof Error)) return false;
-  
+
   return /^\s*(?:dapp contract|User address|User) 0x[0-9a-f]{40} is not authorized to user decrypt handle 0x[0-9a-f]{64}!\s*$/i.test(
     error.message,
   );

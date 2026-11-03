@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.join(__dirname, '..', 'contracts', 'experiments');
 const widths = [8, 16, 32, 64, 128];
+
 function contract(platform, width) {
   const plain = platform === 'Plain';
   const zama = platform === 'Zama';
@@ -101,6 +102,7 @@ function contract(platform, width) {
 }
 `;
 }
+
 fs.mkdirSync(root, {recursive:true});
 for (const platform of ['Plain', 'Zama', 'CoFHE']) {
   const imports = platform === 'Plain' ? '' :

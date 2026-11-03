@@ -14,6 +14,7 @@ import {
   type Platform,
   type Sample,
 } from "./types";
+
 const metrics = [
   "inputPreparationMs",
   "gasUsed",
@@ -55,6 +56,7 @@ type ReportResults = {
 };
 
 export type LifecycleReport = ReturnType<typeof createLifecycleReport>;
+
 const reproducibilityFiles = [
   "hardhat.config.ts",
   "package-lock.json",
@@ -214,6 +216,7 @@ export function createLifecycleReport(
     setup,
     samples,
   };
+
   return report as typeof report & ReportResults;
 }
 
@@ -234,6 +237,7 @@ export function saveLifecycleReport(report: LifecycleReport, output: string) {
     runs: number;
     scheduleSeed: string;
   };
+
   report.summary = selected.flatMap((platform) =>
     operations.map((operation) => {
       const measured = samples.filter(
@@ -248,6 +252,7 @@ export function saveLifecycleReport(report: LifecycleReport, output: string) {
         failed: measured.filter((s) => s.status === "error").length,
         readyDecryptFailed: measured.filter((s) => s.readyDecryptError).length,
       } as Summary;
+
       for (const metric of metrics) {
         // Confirmed gas/inclusion samples remain usable even if decrypt times out.
         stats[metric] = summarize(
@@ -256,6 +261,7 @@ export function saveLifecycleReport(report: LifecycleReport, output: string) {
           ),
         );
       }
+
       return stats;
     }),
   );
@@ -276,6 +282,7 @@ export function saveLifecycleReport(report: LifecycleReport, output: string) {
       )
       .join("\n") + "\n",
   );
+
   // Formats the statistics for display in the report summary.
   // Uses the same representation for each displayed metric.
   const fmt = (stats: Statistics) =>
@@ -294,10 +301,12 @@ export function saveLifecycleReport(report: LifecycleReport, output: string) {
     "| Platform | Operation | Validated / attempted | Gas | Input preparation | Receipt | Tx to validated plaintext | Receipt to validated plaintext | Already-ready decrypt |",
     "|---|---|---:|---:|---:|---:|---:|---:|---:|",
   ];
+
   for (const row of report.summary)
     lines.push(
       `| ${row.platform} | ${row.operation} | ${row.validated}/${row.attempted} | ${fmt(row.gasUsed)} | ${fmt(row.inputPreparationMs)} | ${fmt(row.confirmationMs)} | ${fmt(row.transactionToValidatedPlaintextMs)} | ${fmt(row.postReceiptToValidatedPlaintextMs)} | ${fmt(row.alreadyReadyDecryptMs)} |`,
     );
+
   lines.push(
     "",
     "## SDK stages",
@@ -309,6 +318,7 @@ export function saveLifecycleReport(report: LifecycleReport, output: string) {
     "|---|---|---|---:|---:|",
   );
   report.stageSummary = [];
+
   for (const platform of selected) {
     for (const operation of operations) {
       const spans = samples
@@ -318,10 +328,12 @@ export function saveLifecycleReport(report: LifecycleReport, output: string) {
         )
         .flatMap((s) => s.stages)
         .filter((s) => s.status === "ok" && !s.stage.endsWith("http_headers"));
+
       for (const stage of [...new Set(spans.map((s) => s.stage))]) {
         const stats = summarize(
           spans.filter((s) => s.stage === stage).map((s) => s.durationMs),
         );
+
         report.stageSummary.push({ platform, operation, stage, ...stats });
         lines.push(
           `| ${platform} | ${operation} | ${stage} | ${stats.n} | ${fmt(stats)} |`,
@@ -329,6 +341,7 @@ export function saveLifecycleReport(report: LifecycleReport, output: string) {
       }
     }
   }
+
   lines.push(
     "",
     "Already-ready decrypt is a separate second request and may benefit from service caching. Null/unavailable durations are not zero.",
