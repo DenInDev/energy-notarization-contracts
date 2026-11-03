@@ -18,6 +18,8 @@ import { contracts, type Platform, type PlatformContext } from "./types";
 
 type Args = { report: string; outputDir: string; accountsFile: string };
 
+// Resumes a saved lifecycle campaign using its recorded execution mode.
+// Holds the account lock while the continuation runs.
 export async function continueLifecycleCampaign(args: Args, hre: HardhatRuntimeEnvironment) {
   const release = acquireAccountLock(args.accountsFile);
   try {
@@ -27,6 +29,8 @@ export async function continueLifecycleCampaign(args: Args, hre: HardhatRuntimeE
   } finally { release(); }
 }
 
+// Validates saved state before resuming the legacy campaign.
+// Executes the remaining schedule and appends observations to a new report.
 async function continueCampaign(args: Args, hre: HardhatRuntimeEnvironment) {
   const sourcePath = path.resolve(args.report), output = path.resolve(args.outputDir);
   if (fs.existsSync(output)) throw new Error("Continuation output must be a new directory");
@@ -63,6 +67,8 @@ async function continueCampaign(args: Args, hre: HardhatRuntimeEnvironment) {
   report.executionComplete = false;
   fs.mkdirSync(output, { recursive: false });
   fs.writeFileSync(path.join(output, "schedule.json"), JSON.stringify({ seed: source.scheduleSeed, schedule: source.schedule }, null, 2));
+  // Checks the original report before saving continuation progress.
+  // Persists the current segment in the continuation output.
   const save = () => {
     if (!raw.equals(fs.readFileSync(sourcePath))) throw new Error("Source report changed during continuation");
     saveLifecycleReport(report, output);
@@ -71,8 +77,12 @@ async function continueCampaign(args: Args, hre: HardhatRuntimeEnvironment) {
   console.log(`Continuation: ${output}\nRemaining comparisons: ${plan.remaining.length}; original failures retained`);
   const contexts = new Map<Platform, PlatformContext>();
   const nonces = new Map<Platform, ReturnType<typeof createNonceAllocator>>();
+  // Calls the chain provider with the supplied RPC method and parameters.
+  // Applies the continuation observation deadline.
   const rpc = (method: string, params: any[]) => deadline(() => hre.ethers.provider.send(method, params),
     30000, "continuation RPC verification");
+  // Checks the platform account's latest and pending nonces.
+  // Requires both to match the nonce expected from the settled prefix.
   async function verifyNonce(p: Platform) {
     const address = signers.get(p)!.address;
     const latest = BigInt(await rpc("eth_getTransactionCount", [address, "latest"]));

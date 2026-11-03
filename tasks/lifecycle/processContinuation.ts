@@ -13,6 +13,8 @@ import type { Platform, Sample } from "./types";
 // Called under the same account lock as the legacy continuation. No mutations
 // occur here: each child verifies/rebuilds its persistent SDK/state, and only
 // the existing isolated coordinator can release the remaining schedule.
+// Verifies the settled prefix of an isolated campaign before resuming it.
+// Collects supplementary receipt evidence and passes the remaining schedule to the runner.
 export async function continueProcessLifecycleCampaign(args: { report: string; outputDir: string; accountsFile: string },
   hre: HardhatRuntimeEnvironment) {
   const sourcePath = path.resolve(args.report), output = path.resolve(args.outputDir);
@@ -50,12 +52,16 @@ export async function continueProcessLifecycleCampaign(args: { report: string; o
     segment.sourceSha256[file] = createHash("sha256").update(fs.readFileSync(file)).digest("hex");
   report.continuations = [...(report.continuations ?? []), segment]; report.executionComplete = false;
   fs.mkdirSync(output);
+  // Persists the current continuation report in its output directory.
+  // Checks the original report before writing continuation progress.
   const save = () => {
     if (!raw.equals(fs.readFileSync(sourcePath)) || JSON.stringify(report.samples.slice(0, source.samples.length)) !==
         JSON.stringify(source.samples)) throw new Error("Source report/prefix changed");
     saveLifecycleReport(report, output);
   };
   save();
+  // Issues a provider RPC call during continuation preflight.
+  // Bounds the time spent waiting for the response.
   const rpc = (method: string, params: any[]) => deadline(() => hre.ethers.provider.send(method, params),
     30000, "continuation canonical RPC");
   try {

@@ -38,6 +38,8 @@ type MeasurementEnvironment = {
   onUpdate?: (sample: Sample) => void;
 };
 
+// Binds a measurement function to the campaign's platform contexts.
+// Supplies the shared timing, submission and sample update behavior.
 export function createMeasurementRunner({
   hre,
   signer,
@@ -49,6 +51,8 @@ export function createMeasurementRunner({
   beforeSubmit,
   onUpdate,
 }: MeasurementEnvironment) {
+  // Executes one operation and validates its observed plaintext result.
+  // Records preparation, receipt and completion stages in the sample.
   async function measure({
     platform,
     operation,
@@ -189,6 +193,8 @@ export function createMeasurementRunner({
   }
   return measure;
 }
+// Looks up block information for a recorded receipt.
+// Adds inclusion metadata to the sample for later comparisons.
 export async function collectBlockMetadata(
   hre: HardhatRuntimeEnvironment,
   sample: Sample,

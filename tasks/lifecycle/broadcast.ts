@@ -8,6 +8,8 @@ export type FeeQuote = { maxFeePerGas: string; maxPriorityFeePerGas: string; quo
 type Rpc = (method: string, params: any[]) => Promise<any>;
 
 // Bypass Hardhat's generic HTTP-429 retry wrapper for this mutation RPC.
+// Submits a signed transaction through the RPC endpoint once.
+// Returns the transaction hash acknowledged by the endpoint.
 export async function sendRawTransactionOnce(url: string, raw: string, timeoutMs: number,
   extraHeaders: Record<string, string> = {}): Promise<string> {
   const endpoint = new URL(url);
@@ -28,24 +30,33 @@ export async function sendRawTransactionOnce(url: string, raw: string, timeoutMs
   return result.result;
 }
 
+// Builds and estimates the transaction for the requested operation.
+// Signs it with the assigned nonce and shared fee quote before the barrier.
 export async function prepareSignedOperation(contract: any, signer: any, operation: Operation,
   input: unknown[], value: bigint, nonce: number, fees: FeeQuote) {
   const names = { notarize: "addEnergyEntry", add: "addLastEntryToEncryptedTotal",
     mul_scalar: "multiplyLastEntryByConstant", mean: "meanLastEntryAndEncryptedTotal",
     max: "maxLastEntryAndEncryptedTotal" };
+
   const args = operation === "notarize" ? input : operation === "mul_scalar" ? [value] : [];
+
   const request = await contract.getFunction(names[operation]).populateTransaction(...args);
+
   const tx = await signer.populateTransaction({ ...request, nonce, chainId: 11155111n, type: 2,
     maxFeePerGas: BigInt(fees.maxFeePerGas), maxPriorityFeePerGas: BigInt(fees.maxPriorityFeePerGas) });
   const raw = await signer.signTransaction(tx);
   const decoded = Transaction.from(raw);
+
   if (decoded.chainId !== 11155111n || decoded.nonce !== nonce ||
       decoded.from?.toLowerCase() !== signer.address.toLowerCase()) throw new Error("Signed transaction identity mismatch");
+
   return { raw, hash: keccak256(raw), nonce, gasLimit: String(decoded.gasLimit),
     maxFeePerGas: String(decoded.maxFeePerGas), maxPriorityFeePerGas: String(decoded.maxPriorityFeePerGas) };
 }
 
 // Exactly one mutation RPC. A lost response is ambiguous, not permission to retry.
+// Broadcasts a prepared transaction and waits for its receipt.
+// Records acknowledgment and receipt timings in the sample.
 export async function broadcastSignedOperation(raw: string, rpc: Rpc, sample: Sample,
   trace: TimingTrace, timeoutMs: number, update: () => void): Promise<ContractTransactionResponse> {
   const decoded = Transaction.from(raw), hash = keccak256(raw);
@@ -66,6 +77,7 @@ export async function broadcastSignedOperation(raw: string, rpc: Rpc, sample: Sa
   } catch (error) {
     sample.broadcastState = "uncertain"; update(); throw error;
   }
+  
   return { hash, nonce: decoded.nonce, wait: async () => {
     const end = performance.now() + timeoutMs;
     while (performance.now() < end) {

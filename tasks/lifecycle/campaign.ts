@@ -26,6 +26,8 @@ import {
   type Sample,
   type PlatformContext,
 } from "./types";
+// Starts the selected lifecycle campaign mode.
+// Locks the account file for the duration of the run when one is supplied.
 export async function runLifecycleCampaign(
   args: BenchmarkArgs,
   hre: HardhatRuntimeEnvironment,
@@ -36,6 +38,10 @@ export async function runLifecycleCampaign(
     return args.execution !== "async" ? await runProcessLifecycleCampaign(args, hre) : await runCampaign(args, hre);
   } finally { release(); }
 }
+
+
+// Sets up the platforms and runs the legacy asynchronous workload.
+// Records warmup and measured comparisons in the campaign report.
 async function runCampaign(
   args: BenchmarkArgs,
   hre: HardhatRuntimeEnvironment,
@@ -94,6 +100,8 @@ async function runCampaign(
     setup,
     samples,
   );
+  // Persists the current campaign report.
+  // Writes it to the configured output directory.
   const save = () => saveLifecycleReport(report, output);
   report.platformOwners = Object.fromEntries([...platformSigners].map(([p,s])=>[p,s.address]));
   report.signerMode = localSigners ? "independent_platform_accounts" : "shared_account";
@@ -133,6 +141,8 @@ async function runCampaign(
     contexts,
     platformSigners,
   });
+  // Runs one platform operation through the measurement runner.
+  // Returns the sample for the current comparison.
   async function measure(request: MeasurementRequest) {
     const sample = await measureOperation(request);
     console.log(

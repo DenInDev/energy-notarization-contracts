@@ -11,18 +11,24 @@ import { prepareSignedOperation, broadcastSignedOperation, sendRawTransactionOnc
 import { safeError } from "./errors";
 import { contracts, type Platform, type PlatformContext, type Sample } from "./types";
 
+// Creates a promise with separate resolve and reject functions.
+// Lets worker commands settle a pending preparation or barrier later.
 function deferred<T>() {
   let resolve!: (value: T) => void, reject!: (error: Error) => void;
   const promise = new Promise<T>((yes, no) => { resolve = yes; reject = no; });
   return { promise, resolve, reject };
 }
 
+// Starts the platform worker's command loop over process IPC.
+// Keeps setup and measurement state available across comparisons.
 export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
   broadcastRpc?: (method: string, params: any[]) => Promise<any>) {
   let platform: Platform, signer: HardhatEthersSigner, context: PlatformContext;
   let cursor: ReturnType<typeof createNonceAllocator>, timeoutMs: number, setupTimeoutMs: number;
   let resumeArgs: any;
   let pending: { key: string; release: ReturnType<typeof deferred<number>>; result: Promise<Sample> } | undefined;
+  // Sends a typed lifecycle event to the parent process.
+  // Includes the data associated with the event.
   const emit = (type: string, data: object) => {
     // Losing the coordinator must not crash a worker before its active read/
     // receipt observation settles. In particular, handle async IPC EPIPE.
@@ -30,9 +36,15 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
       try { process.send?.({ type, ...data }, () => {}); } catch { /* disconnected */ }
     }
   };
+  // Publishes the latest snapshot of a measurement sample.
+  // Lets the campaign persist worker progress as it arrives.
   const update = (sample: Sample) => emit("sample", { sample });
+  // Calls the worker's chain provider with an RPC method and arguments.
+  // Applies a deadline to the provider response.
   const rpc = (method: string, params: any[]) => deadline(() => hre.ethers.provider.send(method, params),
     30000, "continuation verification RPC");
+  // Rechecks the chain state required to resume the platform workload.
+  // Checks the expected nonces and canonical receipt before submission.
   async function verifyResume() {
     if (!resumeArgs) throw new Error("Worker has no continuation state");
     const args = resumeArgs, last = args.lastSample;
@@ -49,6 +61,8 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
         tx.to?.toLowerCase() !== args.setup.address.toLowerCase()) throw new Error("Continuation canonical receipt mismatch");
     return { verifiedAt: new Date().toISOString(), latestNonce: Number(latest), blockHash: receipt.blockHash };
   }
+  // Sets up the worker for its assigned platform and signer.
+  // Deploys a fresh benchmark contract or validates the contract and state being resumed.
   async function initialize(args: any) {
     if (context) throw new Error("Worker already initialized");
     platform = args.platform; timeoutMs = args.timeoutMs; setupTimeoutMs = args.setupTimeoutMs;
@@ -57,6 +71,8 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
     const index = { baseline: 0, zama: 1, fhenix: 2 }[platform];
     signer = loadAccounts(args.accountsFile, hre.ethers.provider)[index] as unknown as HardhatEthersSigner;
     if (!signer || signer.address !== args.ownerAddress) throw new Error("Saved platform signer mismatch");
+    // Reads the assigned signer's transaction count at the requested block tag.
+    // Supports checking latest and pending nonce values separately.
     const readNonce = (tag: string) => hre.ethers.provider.send("eth_getTransactionCount", [signer.address, tag]);
     const latest = BigInt(await readNonce("latest")), waiting = BigInt(await readNonce("pending"));
     if (latest !== waiting || await hre.ethers.provider.getBalance(signer.address) === 0n)
@@ -121,6 +137,8 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
       entry.status = "error"; entry.error = safeError(error); emit("setup", { entry }); throw error;
     }
   }
+  // Prepares the comparison's signed transaction and waits at the barrier.
+  // Returns preparation details once the transaction is ready for release.
   async function prepare(args: { request: Omit<MeasurementRequest, "value" | "nonce"> & { value: string }; fees: FeeQuote }) {
     if (!context || pending) throw new Error("Worker is not idle and initialized");
     const request: MeasurementRequest = { ...args.request, value: BigInt(args.request.value), nonce: cursor.reserve() };
@@ -162,6 +180,8 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
       error => ready.reject(new Error(safeError(error))));
     return ready.promise;
   }
+  // Releases the matching prepared operation at the specified time.
+  // Waits for its sample and attaches block metadata before publishing it.
   async function execute(args: { key: string; releaseAt: number }) {
     const active = pending;
     if (!active || active.key !== args.key || !Number.isFinite(args.releaseAt)) throw new Error("Barrier command mismatch");
@@ -169,6 +189,8 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
     const result = await active.result;
     await collectBlockMetadata(hre, result); update(result); pending = undefined; return result;
   }
+  // Rejects an operation still waiting at the submission barrier.
+  // Waits for the pending measurement to settle and clears it.
   async function cancel() {
     if (pending) {
       pending.release.reject(new Error("Submission barrier cancelled before broadcast"));

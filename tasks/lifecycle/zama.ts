@@ -6,6 +6,8 @@ import { retryLifecycleRead } from "../lib/lifecycleReadRetry";
 import type { Adapter } from "./types";
 
 
+// Creates a callback for Zama SDK progress updates.
+// Records each update under the supplied timing phase.
 function progress(trace: TimingTrace, phase: string) {
   return (event: any) =>
     trace.event(`${phase}.sdk_progress`, {
@@ -20,6 +22,8 @@ function progress(trace: TimingTrace, phase: string) {
     });
 }
 
+// Initializes the Zama Relayer SDK for the signer and benchmark contract.
+// Returns the input preparation and authorized decryption methods.
 export async function createZamaAdapter(
   hre: HardhatRuntimeEnvironment,
   signer: HardhatEthersSigner,
@@ -35,6 +39,8 @@ export async function createZamaAdapter(
   );
 
   return {
+    // Encrypts a 16-bit reading and generates its proof locally.
+    // Requests remote approval and returns the input handle and proof for submission.
     async encrypt(value, timing, observationTimeout = timeoutMs) {
       const zkProof = await timing.span(
         "encrypt.local_ciphertext_and_zkproof",
@@ -55,6 +61,8 @@ export async function createZamaAdapter(
       return [encrypted.handles[0], encrypted.inputProof];
     },
 
+    // Signs an authorization request and calls the SDK to decrypt the handle.
+    // Records progress and returns the authorized plaintext.
     async decrypt(handle, timing, phase, observationTimeout = timeoutMs) {
       const handleHex = hre.ethers.toBeHex(handle, 32) as `0x${string}`;
       const auth = await timing.span(

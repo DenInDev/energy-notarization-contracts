@@ -7,6 +7,8 @@ import { safeError } from "./errors";
 
 type DiagnosticArgs = { report: string; timeout: number };
 
+// Summarizes a failed diagnostic from its error and timing stages.
+// Includes the most recent progress observation when available.
 export function diagnosticFailure(error: unknown, stages: TimingStage[]) {
   const lastProgress = [...stages].reverse().find(stage =>
     stage.stage === "completion.sdk_progress" &&
@@ -22,6 +24,8 @@ export function diagnosticFailure(error: unknown, stages: TimingStage[]) {
 }
 
 // Recheck a persisted ciphertext without changing contracts or campaign results.
+// Reads a saved Zama ciphertext handle and attempts authorized decryption.
+// Records diagnostic timing and plaintext validation separately from the campaign.
 export async function diagnoseZamaCiphertext(args: DiagnosticArgs, hre: HardhatRuntimeEnvironment) {
   if (!Number.isInteger(args.timeout) || args.timeout < 1) throw new Error("Invalid timeout");
   if ((await hre.ethers.provider.getNetwork()).chainId !== 11155111n)

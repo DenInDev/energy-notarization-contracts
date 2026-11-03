@@ -12,6 +12,8 @@ import { operations, type BenchmarkArgs, type Platform, type Sample } from "./ty
 export type ProcessContinuation = { report: LifecycleReport; segment: any; sourcePath: string;
   sourceBytes: Buffer; remaining: ScheduledComparison[]; resume: Record<Platform, any> };
 
+// Runs matched comparisons using one persistent process per platform.
+// Coordinates preparation and barrier release and records each worker's results.
 export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: HardhatRuntimeEnvironment,
   continuation?: ProcessContinuation) {
   if (!args.accountsFile) throw new Error("Process isolation requires saved independent platform accounts");
@@ -49,6 +51,8 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
   if (continuation) continuation.segment.previousWorkers = runtime.workers;
   runtime.workers = {}; runtime.barriers ??= [];
   let persistenceError: string | undefined;
+  // Persists the current isolated campaign report and its continuation state.
+  // Writes progress to the selected output directory.
   const save = () => {
     try {
       if (continuation && (!continuation.sourceBytes.equals(fs.readFileSync(continuation.sourcePath)) ||
@@ -59,6 +63,8 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
     }
     catch (error) { persistenceError = safeError(error); throw error; }
   };
+  // Checks that the saved continuation prefix still matches the source.
+  // Guards report persistence against changes to historical observations.
   const verifyPersistence = () => {
     if (persistenceError) throw new Error(`Report persistence failed; no further comparisons permitted: ${persistenceError}`);
   };
@@ -67,6 +73,8 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
   const workers = new Map<Platform, LifecycleWorkerClient>();
   const timeoutMs = args.timeout * 1000, setupTimeoutMs = (args.setupTimeout ?? args.timeout) * 1000;
   const commandBudget = 5 * Math.max(timeoutMs, setupTimeoutMs) + 60000;
+  // Identifies a sample by platform, round, operation and warmup status.
+  // Replaces its earlier snapshot or appends it when first observed.
   const upsertSample = (sample: Sample) => {
     const i = samples.findIndex(s => s.platform === sample.platform && s.run === sample.run && s.operation === sample.operation && s.warmup === sample.warmup);
     if (i < 0) samples.push(sample); else samples[i] = sample;

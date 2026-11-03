@@ -36,6 +36,7 @@ export async function retryLifecycleRead<T>(
       const readinessFailure = retryZamaGatewayReadiness && isZamaGatewayNotReady(error);
       const serviceUnavailable = retryZamaGatewayReadiness && isZamaUserDecryptUnavailable(error);
       const missingBlock = retryMissingReceiptBlock && isMissingReceiptBlock(error);
+
       // The service can finish a polling job with "not ready" before the
       // caller's deadline. Allow a fresh read job to use the remaining budget.
       // Receipt propagation can lag on an RPC backend after another backend
@@ -44,11 +45,13 @@ export async function retryLifecycleRead<T>(
       const attemptsExhausted = attempt >= 5 && !readinessFailure && !missingBlock;
       if (attemptsExhausted || (!isTransportFailure(error) && !aclFailure && !readinessFailure && !serviceUnavailable && !missingBlock) || performance.now() + delay >= end)
         throw error;
+
       const reason = missingBlock ? "receipt_block_retry" : readinessFailure ? "gateway_readiness_retry" : serviceUnavailable ? "service_unavailable_retry" : aclFailure ? "acl_check_retry" : "transport_retry";
       trace.event(`${phase}.${reason}`, {
         failedAttempt: attempt,
         backoffMs: delay,
       });
+
       await trace.span(`${phase}.retry_backoff`, () => new Promise((resolve) => setTimeout(resolve, delay)));
       if (performance.now() >= end) throw error;
     }
@@ -60,6 +63,7 @@ export async function retryLifecycleRead<T>(
 export function isZamaUserDecryptUnavailable(error: unknown): boolean {
   if (!(error instanceof Error)) return false;
   const response = error as Error & { status?: number; operation?: string };
+
   return (response.status === 503 || /(?:^|\n)status: 503(?:\n|$)/.test(error.message)) &&
     (response.operation === "USER_DECRYPT" || /(?:^|\n)operation: USER_DECRYPT(?:\n|$)/.test(error.message));
 }
@@ -67,6 +71,7 @@ export function isZamaUserDecryptUnavailable(error: unknown): boolean {
 export function isMissingReceiptBlock(error: unknown): boolean {
   const candidate = error as { message?: string; info?: { error?: { message?: string } }; error?: { message?: string } } | null;
   if (!candidate) return false;
+
   return [candidate.message, candidate.info?.error?.message, candidate.error?.message].some(
     (message) => typeof message === "string" && /^block not found(?::|$)/i.test(message),
   );
@@ -75,6 +80,7 @@ export function isMissingReceiptBlock(error: unknown): boolean {
 export function isZamaGatewayNotReady(error: unknown): boolean {
   if (!(error instanceof Error)) return false;
   const response = error as Error & { status?: number; operation?: string };
+
   return error.message.startsWith("Ciphertext not ready for decryption on the gateway chain") &&
     (response.status === 503 || /(?:^|\n)status: 503(?:\n|$)/.test(error.message)) &&
     (response.operation === "USER_DECRYPT" || /(?:^|\n)operation: USER_DECRYPT(?:\n|$)/.test(error.message));
@@ -82,6 +88,7 @@ export function isZamaGatewayNotReady(error: unknown): boolean {
 
 export function isZamaAclCheckFailure(error: unknown): boolean {
   if (!(error instanceof Error)) return false;
+  
   return /^\s*(?:dapp contract|User address|User) 0x[0-9a-f]{40} is not authorized to user decrypt handle 0x[0-9a-f]{64}!\s*$/i.test(
     error.message,
   );

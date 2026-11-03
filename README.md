@@ -2,11 +2,11 @@
 
 Reproducible public-Sepolia benchmark comparing three implementations of the same energy-notarization lifecycle:
 
-- plaintext EVM baseline;
+- Plaintext EVM baseline;
 - Zama fhEVM;
 - Fhenix CoFHE.
 
-The campaign measures gas, input preparation, transaction-to-receipt latency, transaction-to-validated-plaintext completion, the post-receipt completion tail, and decryption of an already-ready result. Each operation runs concurrently across platforms using asynchronous workers, including warmup. A seeded, position-balanced schedule assigns launch positions and unique nonces from the existing funded account. One nonce allocator covers deployment through the final round. Transactions still execute in sender nonce order. All workers finish before the next operation starts; deployments are sequential. Use a dedicated account with no other transaction producer during the campaign.
+The campaign measures gas, input preparation, transaction to receipt latency, transaction-to validated plaintext completion and decryption of an already-ready result. Each operation runs concurrently across platforms using asynchronous workers, including warmup. A seeded, position balanced schedule assigns launch positions and unique nonces from the existing funded account. One nonce allocator covers deployment through the final round. Transactions still execute in sender nonce order. All workers finish before the next operation starts; deployments are sequential. Use a dedicated account with no other transaction producer during the campaign.
 
 ## Quick start
 
@@ -51,11 +51,10 @@ npm run analyze -- logs/<campaign>/report.json
 
 On PowerShell, activate the environment with `.venv\Scripts\Activate.ps1`.
 
-The complete setup, measurement semantics, output schema, and reproducibility procedure are in [docs/BENCHMARK_GUIDE.md](docs/BENCHMARK_GUIDE.md).
 
 ## Expanded experimental suites
 
-Width, input-count, circuit-depth, transaction-chain, growing-state, and independent-account concurrency sweeps are available through `npm run benchmark:expanded`. See [the expanded experiment guide](docs/EXPANDED_EXPERIMENTS.md) for the matrix, funding accounts, pilot commands, timing definitions, and partial-report analysis.
+Width, input-count, circuit-depth, transaction-chain, growing-state, and independent-account concurrency sweeps are available through `npm run benchmark:expanded`.
 
 ```powershell
 npm run benchmark:accounts
@@ -74,4 +73,4 @@ The matrix preview sends no transactions. Eight generated Sepolia worker account
 - `scripts/analysis/`: validation and statistical analysis.
 - `test/`: deterministic unit tests for benchmark infrastructure.
 
-No wallet secret is version-controlled. Dedicated worker keys are stored locally in the ignored `.benchmark-accounts/` directory. Never commit that directory, `.env`, or generated logs.
+Dedicated worker keys are stored locally in the ignored `.benchmark-accounts/` directory. Never commit that directory, `.env`, or generated logs.

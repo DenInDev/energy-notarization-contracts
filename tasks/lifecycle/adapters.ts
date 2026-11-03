@@ -4,6 +4,9 @@ import type { TimingTrace } from "../lib/lifecycleTiming";
 import type { Adapter, Platform } from "./types";
 import { createZamaAdapter } from "./zama";
 import { createCofheAdapter } from "./cofhe";
+
+// Selects the encryption and decryption adapter for the requested platform.
+// The plaintext baseline passes values through the same interface.
 export function makeAdapter(
   platform: Platform,
   hre: HardhatRuntimeEnvironment,

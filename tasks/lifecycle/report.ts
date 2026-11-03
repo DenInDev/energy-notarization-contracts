@@ -93,12 +93,16 @@ const reproducibilityFiles = [
   "tasks/experiments/accounts.ts",
 ];
 
+// Reads the supplied file and computes its SHA-256 digest.
+// Records source and dependency provenance for the benchmark.
 function sha256File(file: string): string {
   return createHash("sha256")
     .update(fs.readFileSync(path.resolve(file)))
     .digest("hex");
 }
 
+// Builds the initial report for the campaign configuration.
+// Records the schedule, implementation provenance and measurement settings.
 export function createLifecycleReport(
   args: BenchmarkArgs,
   hre: HardhatRuntimeEnvironment,
@@ -213,7 +217,11 @@ export function createLifecycleReport(
   return report as typeof report & ReportResults;
 }
 
+// Persists the report and builds its available summary outputs.
+// Uses the recorded samples to summarize the measured workload.
 export function saveLifecycleReport(report: LifecycleReport, output: string) {
+  // Writes the current report object as JSON.
+  // Stores it at report.json inside the output directory.
   const writeReport = () => writeLifecycleJson(path.join(output, "report.json"), report);
   const {
     selectedPlatforms: selected,
@@ -268,6 +276,8 @@ export function saveLifecycleReport(report: LifecycleReport, output: string) {
       )
       .join("\n") + "\n",
   );
+  // Formats the statistics for display in the report summary.
+  // Uses the same representation for each displayed metric.
   const fmt = (stats: Statistics) =>
     stats.mean === null
       ? "n/a"

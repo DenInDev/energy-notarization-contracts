@@ -4,6 +4,10 @@ import { getChainById } from "@cofhe/sdk-current/chains";
 import { TimingTrace, observeHttp } from "../lib/lifecycleTiming";
 import { retryLifecycleRead } from "../lib/lifecycleReadRetry";
 import type { Adapter } from "./types";
+
+
+// Initializes the CoFHE SDK for the signer and target contract.
+// Returns the encryption and decryption methods used by the runner.
 export async function createCofheAdapter(
   signer: HardhatEthersSigner,
   address: string,
@@ -27,6 +31,8 @@ export async function createCofheAdapter(
     client.acp.getOrCreateSelfACP(),
   );
   return {
+    // Prepares a 16-bit encrypted input for the target contract.
+    // Records SDK stages and returns the handle and proof for submission.
     async encrypt(value, timing) {
       const stepStarts = new Map<string, number>();
       const encrypted = await timing.span("encrypt.sdk_total", () =>
@@ -61,6 +67,8 @@ export async function createCofheAdapter(
       );
       return [...encrypted];
     },
+    // Retrieves an authorized plaintext from a CoFHE ciphertext handle.
+    // Uses the requested encrypted width and records SDK polling activity.
     async decrypt(handle, timing, phase, observationTimeout = timeoutMs, width = 64) {
       return timing.span(`${phase}.sdk_sealoutput_and_unseal`, () =>
         retryLifecycleRead(timing, phase, observationTimeout, () =>

@@ -36,6 +36,8 @@ export function planIsolatedLifecycleContinuation(report: LifecycleReport, recei
   return planConfirmedPrefix(copy);
 }
 
+// Validates that the recorded samples form a settled schedule prefix.
+// Reconstructs platform state and nonces and returns the remaining comparisons.
 function planConfirmedPrefix(report: LifecycleReport) {
   const selected: Platform[] = ["baseline", "zama", "fhenix"];
   if (report.chainId !== "11155111" || report.complete !== false ||
