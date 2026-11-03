@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.24;
 
-import {FHE, euint64, externalEuint64} from "@fhevm/solidity/lib/FHE.sol";
+import {FHE, euint16, euint64, externalEuint16} from "@fhevm/solidity/lib/FHE.sol";
 
 import {ZamaEthereumConfig} from "@fhevm/solidity/config/ZamaConfig.sol";
 
@@ -9,7 +9,7 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
     mapping(address => bool) private authorized;
 
     struct LastEnergyEntry {
-        euint64 value;
+        euint16 value;
         uint64 ts;
     }
 
@@ -38,8 +38,8 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
         authorized[toAdd] = true;
     }
 
-    function addEnergyEntry(externalEuint64 encryptedEnergy, bytes calldata inputProof) external onlyAuthorized {
-        euint64 energy = FHE.fromExternal(encryptedEnergy, inputProof);
+    function addEnergyEntry(externalEuint16 encryptedEnergy, bytes calldata inputProof) external onlyAuthorized {
+        euint16 energy = FHE.fromExternal(encryptedEnergy, inputProof);
 
         FHE.allowThis(energy);
         FHE.allow(energy, msg.sender);
@@ -55,7 +55,7 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
 
     function addLastEntryToEncryptedTotal() external onlyAuthorized returns (euint64) {
         require(hasLastEntry[msg.sender], "No entry");
-        euint64 value = lastEntry[msg.sender].value;
+        euint64 value = FHE.asEuint64(lastEntry[msg.sender].value);
 
         encryptedTotal[msg.sender] = FHE.add(encryptedTotal[msg.sender], value);
 
@@ -69,7 +69,7 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
 
     function previewAddLastEntryToEncryptedTotal() external onlyAuthorized returns (euint64) {
         require(hasLastEntry[msg.sender], "No entry");
-        return FHE.add(encryptedTotal[msg.sender], lastEntry[msg.sender].value);
+        return FHE.add(encryptedTotal[msg.sender], FHE.asEuint64(lastEntry[msg.sender].value));
     }
 
     // Operazione 2:
@@ -77,7 +77,7 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
     function multiplyLastEntryByConstant(uint64 constantValue) external onlyAuthorized returns (euint64) {
         require(hasLastEntry[msg.sender], "No entry");
 
-        euint64 result = FHE.mul(lastEntry[msg.sender].value, constantValue);
+        euint64 result = FHE.mul(FHE.asEuint64(lastEntry[msg.sender].value), constantValue);
 
         FHE.allowThis(result);
         FHE.allow(result, msg.sender);
@@ -91,7 +91,7 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
     function multiplyEntryByConstant(uint256 index, uint64 constantValue) external onlyAuthorized returns (euint64) {
         require(index == 0, "Invalid index");
         require(hasLastEntry[msg.sender], "No entry");
-        euint64 result = FHE.mul(lastEntry[msg.sender].value, constantValue);
+        euint64 result = FHE.mul(FHE.asEuint64(lastEntry[msg.sender].value), constantValue);
 
         FHE.allowThis(result);
         FHE.allow(result, msg.sender);
@@ -107,7 +107,7 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
     function multiplyLastEntryByEncryptedTotal() external onlyAuthorized returns (euint64) {
         require(hasLastEntry[msg.sender], "No entry");
 
-        euint64 result = FHE.mul(lastEntry[msg.sender].value, encryptedTotal[msg.sender]);
+        euint64 result = FHE.mul(FHE.asEuint64(lastEntry[msg.sender].value), encryptedTotal[msg.sender]);
 
         FHE.allowThis(result);
         FHE.allow(result, msg.sender);
@@ -122,7 +122,7 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
         require(indexA == 0, "Invalid indexA");
         require(indexB == 0, "Invalid indexB");
         require(hasLastEntry[msg.sender], "No entry");
-        euint64 result = FHE.mul(lastEntry[msg.sender].value, encryptedTotal[msg.sender]);
+        euint64 result = FHE.mul(FHE.asEuint64(lastEntry[msg.sender].value), encryptedTotal[msg.sender]);
 
         FHE.allowThis(result);
         FHE.allow(result, msg.sender);
@@ -138,7 +138,7 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
     function meanLastEntryAndEncryptedTotal() external onlyAuthorized returns (euint64) {
         require(hasLastEntry[msg.sender], "No entry");
 
-        euint64 sum = FHE.add(lastEntry[msg.sender].value, encryptedTotal[msg.sender]);
+        euint64 sum = FHE.add(FHE.asEuint64(lastEntry[msg.sender].value), encryptedTotal[msg.sender]);
         euint64 result = FHE.div(sum, 2);
 
         FHE.allowThis(result);
@@ -152,7 +152,7 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
 
     function previewMeanLastEntryAndEncryptedTotal() external onlyAuthorized returns (euint64) {
         require(hasLastEntry[msg.sender], "No entry");
-        euint64 sum = FHE.add(lastEntry[msg.sender].value, encryptedTotal[msg.sender]);
+        euint64 sum = FHE.add(FHE.asEuint64(lastEntry[msg.sender].value), encryptedTotal[msg.sender]);
         return FHE.div(sum, 2);
     }
 
@@ -160,7 +160,7 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
         require(indexA == 0, "Invalid indexA");
         require(indexB == 0, "Invalid indexB");
         require(hasLastEntry[msg.sender], "No entry");
-        euint64 sum = FHE.add(lastEntry[msg.sender].value, encryptedTotal[msg.sender]);
+        euint64 sum = FHE.add(FHE.asEuint64(lastEntry[msg.sender].value), encryptedTotal[msg.sender]);
         euint64 result = FHE.div(sum, 2);
 
         FHE.allowThis(result);
@@ -177,7 +177,7 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
     function maxLastEntryAndEncryptedTotal() external onlyAuthorized returns (euint64) {
         require(hasLastEntry[msg.sender], "No entry");
 
-        euint64 result = FHE.max(lastEntry[msg.sender].value, encryptedTotal[msg.sender]);
+        euint64 result = FHE.max(FHE.asEuint64(lastEntry[msg.sender].value), encryptedTotal[msg.sender]);
 
         FHE.allowThis(result);
         FHE.allow(result, msg.sender);
@@ -190,14 +190,14 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
 
     function previewMaxLastEntryAndEncryptedTotal() external onlyAuthorized returns (euint64) {
         require(hasLastEntry[msg.sender], "No entry");
-        return FHE.max(lastEntry[msg.sender].value, encryptedTotal[msg.sender]);
+        return FHE.max(FHE.asEuint64(lastEntry[msg.sender].value), encryptedTotal[msg.sender]);
     }
 
     function maxEntries(uint256 indexA, uint256 indexB) external onlyAuthorized returns (euint64) {
         require(indexA == 0, "Invalid indexA");
         require(indexB == 0, "Invalid indexB");
         require(hasLastEntry[msg.sender], "No entry");
-        euint64 result = FHE.max(lastEntry[msg.sender].value, encryptedTotal[msg.sender]);
+        euint64 result = FHE.max(FHE.asEuint64(lastEntry[msg.sender].value), encryptedTotal[msg.sender]);
 
         FHE.allowThis(result);
         FHE.allow(result, msg.sender);
@@ -221,13 +221,13 @@ contract EnergyNotarizationFHETest is ZamaEthereumConfig {
         return hasLastEntry[msg.sender] ? 1 : 0;
     }
 
-    function getEntryValue(uint256 index) external view onlyAuthorized returns (euint64) {
+    function getEntryValue(uint256 index) external view onlyAuthorized returns (euint16) {
         require(index == 0, "Invalid index");
         require(hasLastEntry[msg.sender], "No entry");
         return lastEntry[msg.sender].value;
     }
 
-    function getLastEntryValue() external view onlyAuthorized returns (euint64) {
+    function getLastEntryValue() external view onlyAuthorized returns (euint16) {
         require(hasLastEntry[msg.sender], "No entry");
         return lastEntry[msg.sender].value;
     }

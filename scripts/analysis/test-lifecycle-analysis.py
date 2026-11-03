@@ -16,6 +16,31 @@ spec.loader.exec_module(analysis)
 
 
 class LifecycleAnalysisTests(unittest.TestCase):
+    def test_isolated_analysis_checks_worker_identity_and_readiness(self):
+        stamp = "2026-10-23T18:00:00.000Z"
+        report = {"executionMode": "isolated_processes_prepared_submission_barrier",
+                  "workers": {name: {"pid": i + 1} for i, name in enumerate(analysis.PLATFORMS)},
+                  "barriers": [{"run": 1, "operation": "add", "warmup": False, "releaseAt": stamp,
+                                "prepared": {name: {"at": stamp} for name in analysis.PLATFORMS}}]}
+        row = {"platform": "baseline", "workerPid": 1, "run": 1, "operation": "add", "warmup": False,
+               "transactionHash": "hash", "preparedTransactionHash": "hash", "broadcastState": "acknowledged",
+               "broadcastStartedAt": stamp, "preparationMs": 100, "transactionPreparationMs": 80,
+               "barrierWaitMs": 1000, "broadcastAckMs": 20, "broadcastToReceiptMs": 500}
+        analysis.validate_isolated_rows(report, [row])
+        row["workerPid"] = 2
+        with self.assertRaisesRegex(ValueError, "PID"):
+            analysis.validate_isolated_rows(report, [row])
+        row["workerPid"] = 1
+        row["broadcastStartedAt"] = "2026-10-23T17:59:59.000Z"
+        with self.assertRaisesRegex(ValueError, "preceded"):
+            analysis.validate_isolated_rows(report, [row])
+
+    def test_isolated_lifecycle_includes_signing_and_excludes_barrier_wait(self):
+        self.assertEqual(analysis.client_lifecycle_ms({"preparationMs": 800, "inputPreparationMs": 700,
+            "barrierWaitMs": 12000, "transactionToValidatedPlaintextMs": 500}), 1300)
+        self.assertEqual(analysis.client_lifecycle_ms({"inputPreparationMs": 700,
+            "transactionToValidatedPlaintextMs": 500}), 1200)
+
     def test_complete_analysis_and_rejection_of_incomplete_campaign(self):
         report = {"complete": True, "selectedPlatforms": list(analysis.PLATFORMS), "runs": 50,
                   "startedAt": "unit-test-start", "completedAt": "unit-test-end", "scheduleSeed": "unit-test-only",
@@ -41,6 +66,7 @@ class LifecycleAnalysisTests(unittest.TestCase):
         failed_repeat = next(row for row in report["samples"] if row["platform"] == "zama" and row["operation"] == "notarize" and row["run"] == 1)
         del failed_repeat["alreadyReadyDecryptMs"]
         failed_repeat["readyDecryptError"] = "unit-test-only TLS failure"
+        failed_repeat["stages"] = [{"stage": "completion.acl_check_retry", "status": "event", "durationMs": 0}]
         with tempfile.TemporaryDirectory(prefix="lifecycle-analysis-unit-test-") as folder:
             source = Path(folder) / "report.json"
             source.write_text(json.dumps(report), encoding="utf-8")
@@ -55,6 +81,8 @@ class LifecycleAnalysisTests(unittest.TestCase):
             zama_notarize = next(row for row in result["summary"] if row["platform"] == "zama" and row["operation"] == "notarize")
             self.assertEqual(zama_notarize["alreadyReadyDecryptMs"]["n"], 49)
             self.assertEqual(zama_notarize["readyDecryptFailures"], 1)
+            zama_provenance = next(row for row in result["provenance"] if row["platform"] == "zama")
+            self.assertEqual(zama_provenance["observedRetrievalAclCheckRetries"], 1)
             self.assertTrue(source.with_name("operational-performance.tex").exists())
             latex = source.with_name("operational-performance.tex").read_text(encoding="utf-8")
             self.assertEqual(latex.count(r"\begin{tabular}"), latex.count(r"\end{tabular}"))

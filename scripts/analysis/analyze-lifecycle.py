@@ -6,6 +6,7 @@ import itertools
 import json
 import math
 import platform
+from datetime import datetime
 from pathlib import Path
 
 import numpy as np
@@ -60,7 +61,9 @@ def block_bootstrap_geometric_ratio(log_ratios, seed, block_length=3, resamples=
 
 
 def client_lifecycle_ms(row):
-    return float(row.get("inputPreparationMs", 0.0)) + float(row["transactionToValidatedPlaintextMs"])
+    # Isolated workers prepare/sign before a common barrier. Include that work,
+    # but never count intentional waiting at the barrier as platform compute.
+    return float(row.get("preparationMs", row.get("inputPreparationMs", 0.0))) + float(row["transactionToValidatedPlaintextMs"])
 
 
 def lag_one(values):
@@ -68,6 +71,32 @@ def lag_one(values):
     if len(array) < 3 or np.std(array[:-1]) == 0 or np.std(array[1:]) == 0:
         return None
     return float(np.corrcoef(array[:-1], array[1:])[0, 1])
+
+
+def validate_isolated_rows(report, rows):
+    if report.get("executionMode") != "isolated_processes_prepared_submission_barrier":
+        return
+    workers = report.get("workers", {})
+    pids = [workers.get(name, {}).get("pid") for name in PLATFORMS]
+    if any(not isinstance(pid, int) for pid in pids) or len(set(pids)) != 3:
+        raise ValueError("Isolated campaign requires three distinct worker PIDs")
+    barriers = {(b["run"], b["operation"], b["warmup"]): b for b in report.get("barriers", [])}
+    epoch = lambda value: datetime.fromisoformat(value.replace("Z", "+00:00")).timestamp()
+    for row in rows:
+        barrier = barriers.get((row["run"], row["operation"], row["warmup"]))
+        if not barrier or set(barrier.get("prepared", {})) != set(PLATFORMS):
+            raise ValueError("Missing complete submission barrier")
+        if row.get("workerPid") != workers[row["platform"]]["pid"]:
+            raise ValueError("Sample worker PID differs from its platform process")
+        if row.get("preparedTransactionHash") != row["transactionHash"] or row.get("broadcastState") != "acknowledged":
+            raise ValueError("Missing matching prepared/acknowledged transaction")
+        for metric in ("preparationMs", "transactionPreparationMs", "barrierWaitMs", "broadcastAckMs", "broadcastToReceiptMs"):
+            if not isinstance(row.get(metric), (int, float)) or not math.isfinite(row[metric]) or row[metric] < 0:
+                raise ValueError(f"Missing or invalid isolated timing: {metric}")
+        ready = max(epoch(value["at"]) for value in barrier["prepared"].values())
+        broadcast = epoch(row["broadcastStartedAt"])
+        if broadcast + 0.002 < max(ready, epoch(barrier["releaseAt"])):
+            raise ValueError("Broadcast preceded submission barrier")
 
 
 def main():
@@ -80,6 +109,7 @@ def main():
         raise ValueError("Analysis requires a complete all-three-platform interleaved campaign")
     runs = report["runs"]
     measured = [row for row in report["samples"] if not row["warmup"]]
+    validate_isolated_rows(report, measured)
     index = {}
     for row in measured:
         key = (row["platform"], row["operation"], row["run"])
@@ -100,7 +130,7 @@ def main():
         for position, name in enumerate(comparison["order"], 1):
             key = (name, comparison["operation"], comparison["run"])
             if index[key]["orderPosition"] != position:
-                raise ValueError(f"Recorded submission order differs from plan: {key}")
+                raise ValueError(f"Recorded launch/assignment position differs from plan: {key}")
     for operation in OPERATIONS:
         planned = [row for row in report["schedule"] if row["operation"] == operation]
         if len(planned) != runs or {row["run"] for row in planned} != set(range(1, runs + 1)):
@@ -121,6 +151,8 @@ def main():
             "lastMeasuredBlock": max(row["blockNumber"] for row in rows),
             "measuredApplicationTransactions": len(rows),
             "observedRetrievalTransportRetries": sum(entry["stage"].endswith(".transport_retry") for row in rows for entry in row["stages"]),
+            "observedRetrievalAclCheckRetries": sum(entry["stage"].endswith(".acl_check_retry") for row in rows for entry in row["stages"]),
+            "observedRetrievalGatewayReadinessRetries": sum(entry["stage"].endswith(".gateway_readiness_retry") for row in rows for entry in row["stages"]),
             "failedReadyDecryptRepeats": sum(bool(row.get("readyDecryptError")) for row in rows),
             "measuredGasCostWei": str(sum(int(row["gasCostWei"]) for row in rows)),
             "blockGasTargetUtilization": descriptive([row["blockTargetUtilization"] for row in rows]),
@@ -133,7 +165,8 @@ def main():
                 "readyDecryptFailures": sum(bool(row.get("readyDecryptError")) for row in rows),
                 **{metric: descriptive([row[metric] for row in rows if metric in row]) for metric in (
                     "gasUsed", "inputPreparationMs", "confirmationMs", "transactionToValidatedPlaintextMs",
-                    "postReceiptToValidatedPlaintextMs", "alreadyReadyDecryptMs",
+                    "postReceiptToValidatedPlaintextMs", "alreadyReadyDecryptMs", "preparationMs",
+                    "transactionPreparationMs", "barrierWaitMs", "broadcastAckMs", "broadcastToReceiptMs",
                 )},
                 "clientLifecycleMs": descriptive([client_lifecycle_ms(row) for row in rows]),
             })
@@ -229,13 +262,15 @@ def main():
         },
         "analysisVersions": {"python": platform.python_version(), "numpy": np.__version__, "scipy": scipy.__version__},
         "methodology": {
+            "executionMode": report.get("executionMode", "sequential_interleaved"),
+            "sequencing": report.get("methodology", {}).get("sequencing"),
             "pairing": "same operation and round; nearby observations, not identical network conditions",
             "tests": "two-sided paired t-tests of round-matched mean differences; approximate inference assumes independent round differences",
             "multiplicity": "Holm adjustment across all 30 operation/configuration/receipt-and-completion comparisons",
             "uncertainty": "sample SD; pointwise paired-t 95% CIs are not simultaneous; circular paired-difference block bootstrap is a sensitivity analysis (length 3, 20000 resamples)",
             "scope": "observable deployment-level performance, not pure TFHE compute; serial correlation/heavy tails can limit paired-t inference",
             "readyDecrypt": "reported separately by operation; primary classic ready-decrypt comparison uses notarize only, not pooled across operations",
-            "clientLifecycle": "input preparation plus transaction-to-validated-plaintext; geometric FHE/baseline ratios use round-matched log ratios and Holm correction over ten tests",
+            "clientLifecycle": "preparationMs when present (input work plus estimation/signing), otherwise legacy inputPreparationMs, plus transaction-to-validated-plaintext; intentional barrier wait excluded; geometric FHE/baseline ratios use round-matched log ratios and Holm correction over ten tests",
         },
         "provenance": provenance,
         "summary": summary,
@@ -277,7 +312,7 @@ def main():
         lines.append(f"| {metric} | {row['operation']} | {row['left']} - {row['right']} | {row['differenceMs']['mean']:.1f} | [{low:.1f}, {high:.1f}] | {row['pHolmAll30Comparisons']:.6g} |")
     lines.extend([
         "", "## Full client lifecycle relative to baseline", "",
-        "Client lifecycle is input preparation plus transaction-to-validated-plaintext. Ready-repeat decryption is excluded.",
+        "Client lifecycle is preparation plus transaction-to-validated-plaintext. For isolated workers, preparation includes transaction estimation/signing and excludes intentional barrier waiting. Legacy reports include input preparation only. Ready-repeat decryption is excluded.",
         "Ratios are geometric means of round-matched FHE/baseline ratios; confidence intervals use the circular block bootstrap.", "",
         "| Operation | Configuration | Baseline (ms) | Configuration (ms) | Lifecycle ratio | Overhead | 95% ratio CI | Baseline gas | Configuration gas | Gas ratio | Holm p |",
         "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|",

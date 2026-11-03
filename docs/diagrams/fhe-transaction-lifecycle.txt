@@ -1,0 +1,29 @@
+title FHE transaction lifecycle
+
+participant "Client / SDK" as C
+participant "On-chain FHE contract" as S
+participant "Off-chain FHE services\n(coprocessor / relayer / decryption)" as E
+
+C->>(1)S:Submit FHE transaction
+activate S
+S->S:Store output handle h
+S->>(2)E:Computation event
+S-->(1)C:Receipt: transaction included
+deactivate S
+
+activate E
+E->E:Register job and begin FHE execution
+
+C->S:view: read result handle
+S-->C:Handle h, not plaintext
+
+C->>(2)E:Request authorized decryption of h
+note over E:Asynchronous computation and decryption\nmay continue after the receipt and view response.
+space 3
+E->E:Finish computation and prepare result
+E->>(2)C:Protected result response
+deactivate E
+C->C:Unseal and validate plaintext
+
+note over C,S:Receipt inclusion and handle availability\ndo not guarantee plaintext readiness.
+note over C,E:Oblique arrows represent asynchronous communication.\nOff-chain roles are grouped; time is not to scale.

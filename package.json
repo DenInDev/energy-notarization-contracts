@@ -4,21 +4,31 @@
   "private": true,
   "description": "Reproducible Sepolia benchmarks for plaintext, Zama fhEVM, and Fhenix CoFHE energy notarization contracts.",
   "scripts": {
+    "postinstall": "node scripts/patch-decryption-polling.cjs",
+    "sdk:patch-polling": "node scripts/patch-decryption-polling.cjs",
     "clean": "rimraf artifacts cache types dist",
     "compile": "hardhat compile",
     "typecheck": "tsc --noEmit",
-    "test": "mocha --require ts-node/register \"test/**/*.test.ts\"",
-    "verify": "npm run compile && npm run typecheck && npm test",
+    "contracts:generate": "node scripts/generate-experiment-contracts.cjs",
+    "contracts:check": "node scripts/generate-experiment-contracts.cjs --check",
+    "test": "hardhat test --network hardhat",
+    "verify": "npm run contracts:check && npm run compile && npm run typecheck && npm test",
+    "benchmark:accounts": "hardhat benchmark:accounts",
+    "benchmark:accounts:balances": "hardhat benchmark:accounts:balances --network sepolia",
+    "benchmark:matrix": "hardhat benchmark:experiments --dry-run",
+    "benchmark:expanded": "hardhat benchmark:experiments --network sepolia",
     "benchmark:pilot": "hardhat benchmark:energy:lifecycle --network sepolia --runs 3 --platform all --seed pilot",
     "benchmark:sepolia": "hardhat benchmark:energy:lifecycle --network sepolia --runs 50 --platform all --seed reviewer-revision-20260917",
     "analysis:test": "python scripts/analysis/test-lifecycle-analysis.py",
-    "analyze": "python scripts/analysis/analyze-lifecycle.py"
+    "analysis:availability:test": "python scripts/analysis/test-availability.py",
+    "analyze": "python scripts/analysis/analyze-lifecycle.py",
+    "analyze:availability": "python scripts/analysis/analyze-availability.py"
   },
   "engines": {
     "node": ">=22"
   },
   "dependencies": {
-    "@cofhe/sdk-current": "npm:@cofhe/sdk@0.7.1",
+    "@cofhe/sdk-current": "npm:@cofhe/sdk@1.0.1",
     "@fhenixprotocol/cofhe-contracts-current": "npm:@fhenixprotocol/cofhe-contracts@0.2.0",
     "@fhevm/solidity": "0.11.1",
     "@zama-fhe/relayer-sdk": "0.4.1"

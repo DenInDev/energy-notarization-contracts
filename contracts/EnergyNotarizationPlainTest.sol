@@ -5,7 +5,7 @@ contract EnergyNotarizationPlainTest {
     mapping(address => bool) private authorized;
 
     struct LastEnergyEntry {
-        uint64 value;
+        uint16 value;
         uint64 ts;
     }
 
@@ -14,7 +14,7 @@ contract EnergyNotarizationPlainTest {
     mapping(address => uint64) private total;
     mapping(address => uint64) private lastResult;
 
-    event AddedMeasure(address indexed from, uint64 value, uint64 timestamp);
+    event AddedMeasure(address indexed from, uint16 value, uint64 timestamp);
     event AddedToTotal(address indexed from);
     event MultipliedByConstant(address indexed from, uint64 constantValue);
     event MeanComputed(address indexed from);
@@ -33,7 +33,7 @@ contract EnergyNotarizationPlainTest {
         authorized[toAdd] = true;
     }
 
-    function addEnergyEntry(uint64 energy) external onlyAuthorized {
+    function addEnergyEntry(uint16 energy) external onlyAuthorized {
         lastEntry[msg.sender] = LastEnergyEntry({value: energy, ts: uint64(block.timestamp)});
         hasLastEntry[msg.sender] = true;
 
@@ -43,7 +43,7 @@ contract EnergyNotarizationPlainTest {
     function addLastEntryToTotal() public onlyAuthorized returns (uint64) {
         require(hasLastEntry[msg.sender], "No entry");
 
-        total[msg.sender] += lastEntry[msg.sender].value;
+        total[msg.sender] += uint64(lastEntry[msg.sender].value);
 
         emit AddedToTotal(msg.sender);
 
@@ -56,7 +56,7 @@ contract EnergyNotarizationPlainTest {
 
     function previewAddLastEntryToTotal() public view onlyAuthorized returns (uint64) {
         require(hasLastEntry[msg.sender], "No entry");
-        return total[msg.sender] + lastEntry[msg.sender].value;
+        return total[msg.sender] + uint64(lastEntry[msg.sender].value);
     }
 
     function previewAddLastEntryToEncryptedTotal() external view onlyAuthorized returns (uint64) {
@@ -66,7 +66,7 @@ contract EnergyNotarizationPlainTest {
     function multiplyLastEntryByConstant(uint64 constantValue) external onlyAuthorized returns (uint64) {
         require(hasLastEntry[msg.sender], "No entry");
 
-        uint64 result = lastEntry[msg.sender].value * constantValue;
+        uint64 result = uint64(lastEntry[msg.sender].value) * constantValue;
         lastResult[msg.sender] = result;
 
         emit MultipliedByConstant(msg.sender, constantValue);
@@ -77,7 +77,7 @@ contract EnergyNotarizationPlainTest {
     function meanLastEntryAndTotal() public onlyAuthorized returns (uint64) {
         require(hasLastEntry[msg.sender], "No entry");
 
-        uint64 result = (lastEntry[msg.sender].value + total[msg.sender]) / 2;
+        uint64 result = (uint64(lastEntry[msg.sender].value) + total[msg.sender]) / 2;
         lastResult[msg.sender] = result;
 
         emit MeanComputed(msg.sender);
@@ -91,7 +91,7 @@ contract EnergyNotarizationPlainTest {
 
     function previewMeanLastEntryAndTotal() public view onlyAuthorized returns (uint64) {
         require(hasLastEntry[msg.sender], "No entry");
-        return (lastEntry[msg.sender].value + total[msg.sender]) / 2;
+        return (uint64(lastEntry[msg.sender].value) + total[msg.sender]) / 2;
     }
 
     function previewMeanLastEntryAndEncryptedTotal() external view onlyAuthorized returns (uint64) {
@@ -128,7 +128,7 @@ contract EnergyNotarizationPlainTest {
         return hasLastEntry[msg.sender] ? 1 : 0;
     }
 
-    function getLastEntryValue() external view onlyAuthorized returns (uint64) {
+    function getLastEntryValue() external view onlyAuthorized returns (uint16) {
         require(hasLastEntry[msg.sender], "No entry");
         return lastEntry[msg.sender].value;
     }

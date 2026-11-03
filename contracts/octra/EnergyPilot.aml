@@ -1,0 +1,45 @@
+// In this contract, a single owner stores and operates on its own ciphertexts.
+contract EnergyPilot {
+  state {
+    owner: address
+    left: string
+    right: string
+    result: string
+  }
+
+  constructor() {
+    self.owner = origin
+    self.left = ""
+    self.right = ""
+    self.result = ""
+  }
+
+  fn store(a: string, b: string): bool {
+    require(caller == self.owner, "owner only")
+    self.left = fhe_ser(fhe_deser(a))
+    self.right = fhe_ser(fhe_deser(b))
+    self.result = self.left
+    return true
+  }
+
+  fn add(): bool {
+    require(caller == self.owner, "owner only")
+    let pk = fhe_load_pk(caller)
+    let a = fhe_deser(self.left)
+    let b = fhe_deser(self.right)
+    self.result = fhe_ser(fhe_add(pk, a, b))
+    return true
+  }
+
+  fn scale(factor: int): bool {
+    require(caller == self.owner, "owner only")
+    let pk = fhe_load_pk(caller)
+    let a = fhe_deser(self.left)
+    self.result = fhe_ser(fhe_scale(pk, a, factor))
+    return true
+  }
+
+  view fn get_result(): string {
+    return self.result
+  }
+}

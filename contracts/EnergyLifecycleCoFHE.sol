@@ -1,12 +1,11 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.27;
 
-import {FHE, euint64, externalEuint64} from "@fhenixprotocol/cofhe-contracts-current/FHE.sol";
+import {FHE, euint16, euint64, externalEuint16} from "@fhenixprotocol/cofhe-contracts-current/FHE.sol";
 
-// Version-isolated CoFHE 0.2 contract; the historical 0.1 benchmark is unchanged.
 contract EnergyLifecycleCoFHE {
     struct LastEnergyEntry {
-        euint64 value;
+        euint16 value;
         uint64 timestamp;
     }
     mapping(address => LastEnergyEntry) private lastEntry;
@@ -35,8 +34,8 @@ contract EnergyLifecycleCoFHE {
         _;
     }
 
-    function addEnergyEntry(externalEuint64 input, bytes calldata proof) external onlyAuthorized {
-        euint64 value = FHE.asEuint64(input, proof);
+    function addEnergyEntry(externalEuint16 input, bytes calldata proof) external onlyAuthorized {
+        euint16 value = FHE.asEuint16(input, proof);
         grant(value);
         lastEntry[msg.sender] = LastEnergyEntry(value, uint64(block.timestamp));
         initialized[msg.sender] = true;
@@ -44,7 +43,7 @@ contract EnergyLifecycleCoFHE {
     }
 
     function addLastEntryToEncryptedTotal() external onlyAuthorized hasEntry returns (euint64) {
-        euint64 value = FHE.add(total[msg.sender], lastEntry[msg.sender].value);
+        euint64 value = FHE.add(total[msg.sender], FHE.asEuint64(lastEntry[msg.sender].value));
         grant(value);
         total[msg.sender] = value;
         emit AddedToEncryptedTotal(msg.sender);
@@ -54,7 +53,7 @@ contract EnergyLifecycleCoFHE {
     function multiplyLastEntryByConstant(uint64 scalar) external onlyAuthorized hasEntry returns (euint64) {
         euint64 constantValue = FHE.asEuint64(uint256(scalar));
         FHE.allowThis(constantValue);
-        euint64 value = storeResult(FHE.mul(lastEntry[msg.sender].value, constantValue));
+        euint64 value = storeResult(FHE.mul(FHE.asEuint64(lastEntry[msg.sender].value), constantValue));
         emit MultipliedByConstant(msg.sender, scalar);
         return value;
     }
@@ -62,18 +61,18 @@ contract EnergyLifecycleCoFHE {
     function meanLastEntryAndEncryptedTotal() external onlyAuthorized hasEntry returns (euint64) {
         euint64 divisor = FHE.asEuint64(uint256(2));
         FHE.allowThis(divisor);
-        euint64 value = storeResult(FHE.div(FHE.add(lastEntry[msg.sender].value, total[msg.sender]), divisor));
+        euint64 value = storeResult(FHE.div(FHE.add(FHE.asEuint64(lastEntry[msg.sender].value), total[msg.sender]), divisor));
         emit MeanComputed(msg.sender);
         return value;
     }
 
     function maxLastEntryAndEncryptedTotal() external onlyAuthorized hasEntry returns (euint64) {
-        euint64 value = storeResult(FHE.max(lastEntry[msg.sender].value, total[msg.sender]));
+        euint64 value = storeResult(FHE.max(FHE.asEuint64(lastEntry[msg.sender].value), total[msg.sender]));
         emit MaxComputed(msg.sender);
         return value;
     }
 
-    function getLastEntryValue() external view onlyAuthorized hasEntry returns (euint64) {
+    function getLastEntryValue() external view onlyAuthorized hasEntry returns (euint16) {
         return lastEntry[msg.sender].value;
     }
     function getEncryptedTotalHandle() external view onlyAuthorized returns (euint64) {
@@ -87,6 +86,11 @@ contract EnergyLifecycleCoFHE {
         grant(value);
         result[msg.sender] = value;
         return value;
+    }
+
+    function grant(euint16 value) private {
+        FHE.allowThis(value);
+        FHE.allowSender(value);
     }
 
     function grant(euint64 value) private {

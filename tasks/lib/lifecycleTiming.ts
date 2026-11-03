@@ -1,4 +1,5 @@
 import { performance } from "node:perf_hooks";
+import { AsyncLocalStorage } from "node:async_hooks";
 
 export type TimingStage = {
   stage: string;
@@ -58,6 +59,13 @@ export function summarize(values: number[]) {
   };
 }
 
+export class ObservationDeadlineError extends Error {
+  constructor(readonly label: string, readonly timeoutMs: number) {
+    super(`${label} deadline exceeded (${timeoutMs} ms)`);
+    this.name = "ObservationDeadlineError";
+  }
+}
+
 // A deadline observes SDK failure; it cannot cancel APIs that expose no AbortSignal.
 export async function deadline<T>(fn: () => Promise<T>, timeoutMs: number, label: string): Promise<T> {
   let timer: NodeJS.Timeout | undefined;
@@ -65,7 +73,7 @@ export async function deadline<T>(fn: () => Promise<T>, timeoutMs: number, label
     return await Promise.race([
       fn(),
       new Promise<never>((_, reject) => {
-        timer = setTimeout(() => reject(new Error(`${label} deadline exceeded (${timeoutMs} ms)`)), timeoutMs);
+        timer = setTimeout(() => reject(new ObservationDeadlineError(label, timeoutMs)), timeoutMs);
       }),
     ]);
   } finally {
@@ -73,41 +81,51 @@ export async function deadline<T>(fn: () => Promise<T>, timeoutMs: number, label
   }
 }
 
+const httpScope = new AsyncLocalStorage<{ trace: TimingTrace; phase: string }>();
+let httpObservers = 0;
+let originalFetch: typeof fetch;
+
 export async function observeHttp<T>(trace: TimingTrace, phase: string, fn: () => Promise<T>): Promise<T> {
-  const original = globalThis.fetch;
-  globalThis.fetch = async (input, init) => {
-    const url = new URL(typeof input === "string" ? input : input instanceof URL ? input.href : input.url);
-    const startMs = trace.now();
-    try {
-      const response = await original(input, init);
-      trace.stages.push({
-        stage: `${phase}.http_headers`,
-        startMs,
-        durationMs: trace.now() - startMs,
-        status: response.ok ? "ok" : "error",
-        detail: {
-          host: url.hostname,
-          path: url.pathname,
-          method: init?.method ?? "GET",
-          httpStatus: response.status,
-          serverDate: response.headers.get("date"),
-        },
-      });
-      return response;
-    } catch (error) {
-      trace.stages.push({
-        stage: `${phase}.http_headers`,
-        startMs,
-        durationMs: trace.now() - startMs,
-        status: "error",
-        detail: { host: url.hostname, path: url.pathname },
-      });
-      throw error;
-    }
-  };
+  if (httpObservers++ === 0) {
+    originalFetch = globalThis.fetch;
+    const original = originalFetch;
+    globalThis.fetch = async (input, init) => {
+      const scope = httpScope.getStore();
+      if (!scope) return original(input, init);
+      const { trace, phase } = scope;
+      const url = new URL(typeof input === "string" ? input : input instanceof URL ? input.href : input.url);
+      const startMs = trace.now();
+      try {
+        const response = await original(input, init);
+        trace.stages.push({
+          stage: `${phase}.http_headers`,
+          startMs,
+          durationMs: trace.now() - startMs,
+          status: response.ok ? "ok" : "error",
+          detail: {
+            host: url.hostname,
+            path: url.pathname,
+            method: init?.method ?? "GET",
+            httpStatus: response.status,
+            serverDate: response.headers.get("date"),
+          },
+        });
+        return response;
+      } catch (error) {
+        trace.stages.push({
+          stage: `${phase}.http_headers`,
+          startMs,
+          durationMs: trace.now() - startMs,
+          status: "error",
+          detail: { host: url.hostname, path: url.pathname },
+        });
+        throw error;
+      }
+    };
+  }
   try {
-    return await fn();
+    return await httpScope.run({ trace, phase }, fn);
   } finally {
-    globalThis.fetch = original;
+    if (--httpObservers === 0) globalThis.fetch = originalFetch;
   }
 }

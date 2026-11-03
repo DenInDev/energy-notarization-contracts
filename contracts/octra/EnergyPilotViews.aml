@@ -1,0 +1,15 @@
+// Isolate encrypted computation from persistence and transaction effort limits.
+contract EnergyPilotViews {
+  view fn add(a: string, b: string): string {
+    let pk = fhe_load_pk(caller)
+    let left = fhe_deser(a)
+    let right = fhe_deser(b)
+    return fhe_ser(fhe_add(pk, left, right))
+  }
+
+  view fn scale(a: string, factor: int): string {
+    let pk = fhe_load_pk(caller)
+    let left = fhe_deser(a)
+    return fhe_ser(fhe_scale(pk, left, factor))
+  }
+}

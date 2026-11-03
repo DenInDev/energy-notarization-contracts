@@ -3,6 +3,7 @@ import "@nomicfoundation/hardhat-ethers";
 import { HardhatUserConfig, vars } from "hardhat/config";
 
 import "./tasks/benchmarkEnergyLifecycle";
+import "./tasks/benchmarkExperiments";
 
 const mnemonic = process.env.SEPOLIA_MNEMONIC ?? vars.get("SEPOLIA_MNEMONIC", "");
 const rpcUrl =
