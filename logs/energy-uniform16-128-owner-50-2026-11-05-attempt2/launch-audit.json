@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-05T22:37:58.4675935Z",
+  "pid": 12828,
+  "processCreationTimeUtc": "2026-11-05T22:37:43.0258100Z",
+  "command": "node scripts/run-uniform-energy.cjs logs/energy-uniform16-128-owner-50-2026-11-05-attempt2 .benchmark-accounts/isolated-validation/accounts.secret.json 50",
+  "previousPilotAudit": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05\\terminal-pilot-audit.json",
+  "sdkInputPreparationAudit": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05\\address-sdk-preparation-audit.json",
+  "perWidthCounts": {
+    "primaryMeasured": 900,
+    "ownerMeasured": 150,
+    "energyMeasured": 750,
+    "primaryWarmup": 18,
+    "viewsMeasured": 150,
+    "viewsWarmup": 3,
+    "deployments": 3,
+    "pairedComparisons": 300
+  },
+  "verification": [
+    "Solidity compilation and typecheck passed",
+    "44 targeted local tests passed",
+    "6 analysis integrity checks passed",
+    "Actual Zama SDK checksummed eaddress proof preparation passed without any transaction broadcast"
+  ],
+  "monitor": "Current chat; no recurring automation"
+}

@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-22T17:03:17.973Z",
+  "blockHash": "0x2149e48936b2766bc183848e5aa177183aaa9e6331caf3e073fbb8aedce380f5",
+  "blockNowAvailable": true,
+  "receipts": [
+    {
+      "platform": "fhenix",
+      "transactionHash": "0x102e8f87bf78046625247f49a9f33840dbb96523d9e1a2eece6f686523c48803",
+      "status": "0x1",
+      "blockHash": "0x2149e48936b2766bc183848e5aa177183aaa9e6331caf3e073fbb8aedce380f5",
+      "blockNumber": "0xb6a955"
+    },
+    {
+      "platform": "baseline",
+      "transactionHash": "0xe4778c9ede7a4d78077e8897ab2ec90bfd315e5753f3556a6521a12b6d4f0463",
+      "status": "0x1",
+      "blockHash": "0x2149e48936b2766bc183848e5aa177183aaa9e6331caf3e073fbb8aedce380f5",
+      "blockNumber": "0xb6a955"
+    }
+  ]
+}

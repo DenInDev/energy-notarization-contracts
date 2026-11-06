@@ -1,0 +1,20 @@
+{
+  "rawReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-isolated-50-2026-10-24-continuation1\\report.json",
+  "rawSha256": "1d2461641eb45460379ee8e7aeea1ce58c8f5700419b7659ded945e42b59b63d",
+  "sourceReportSha256": "846aa7bca53ea2aea36398d878f6ae14a52a0a1908a4083db9e09ebdc18064aa",
+  "patches": [
+    {
+      "transactionHash": "0x23d91d05bfa2ad397204793769e8f3a1a51ae563dc2d56d950f81a5382750b32",
+      "run": 7,
+      "operation": "add",
+      "platform": "zama",
+      "fields": [
+        "blockHash",
+        "blockNumber"
+      ],
+      "evidence": "continuations[-1].supplementaryReceipts",
+      "receiptObservedSeparatelyAt": "2026-10-24T09:44:30.029Z"
+    }
+  ],
+  "purpose": "Block inclusion only; original complete=false, failure and absent timing retained"
+}

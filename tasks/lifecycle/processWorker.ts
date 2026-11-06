@@ -2,14 +2,15 @@ import type {} from "@nomicfoundation/hardhat-ethers";
 import type { HardhatRuntimeEnvironment } from "hardhat/types";
 import type { HardhatEthersSigner } from "@nomicfoundation/hardhat-ethers/signers";
 import { loadAccounts } from "../experiments/accounts";
-import { createNonceAllocator } from "../lib/lifecycleNonce";
+import { createNonceAllocator, readSettledNonce } from "../lib/lifecycleNonce";
+import { retryLifecycleRead } from "../lib/lifecycleReadRetry";
 import { readDeploymentBytecode, readLifecycleResult } from "../lib/lifecycleResult";
 import { TimingTrace, deadline, validatePlaintext } from "../lib/lifecycleTiming";
 import { makeAdapter } from "./adapters";
-import { createMeasurementRunner, collectBlockMetadata, type MeasurementRequest } from "./measurement";
+import { createMeasurementRunner, collectBlockMetadata, measureViewDecrypt, type MeasurementRequest } from "./measurement";
 import { prepareSignedOperation, broadcastSignedOperation, sendRawTransactionOnce, type FeeQuote } from "./broadcast";
 import { safeError } from "./errors";
-import { contracts, type Platform, type PlatformContext, type Sample } from "./types";
+import { contracts, lifecycleContracts, smartMeterId, type UniformWidth, type Platform, type PlatformContext, type Sample } from "./types";
 
 // Creates a promise with separate resolve and reject functions.
 // Lets worker commands settle a pending preparation or barrier later.
@@ -27,6 +28,9 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
   let platform: Platform, signer: HardhatEthersSigner, context: PlatformContext;
   let cursor: ReturnType<typeof createNonceAllocator>, timeoutMs: number, setupTimeoutMs: number;
   let resumeArgs: any;
+  let width: UniformWidth | undefined;
+  let lastCompleted: Sample | undefined;
+  let activeRetryHash: string | undefined;
   let pending: { key: string; release: ReturnType<typeof deferred<number>>; result: Promise<Sample> } | undefined;
   // Sends a typed lifecycle event to the parent process.
   // Includes the data associated with the event.
@@ -39,7 +43,10 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
   };
   // Publishes the latest snapshot of a measurement sample.
   // Lets the campaign persist worker progress as it arrives.
-  const update = (sample: Sample) => emit("sample", { sample });
+  const update = (sample: Sample) => {
+    if (activeRetryHash) Object.assign(sample, { retryOfTransactionHash: activeRetryHash, attempt: 2 });
+    emit("sample", { sample });
+  };
   // Calls the worker's chain provider with an RPC method and arguments.
   // Applies a deadline to the provider response.
   const rpc = (method: string, params: any[]) => deadline(() => hre.ethers.provider.send(method, params),
@@ -74,6 +81,9 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
     if (context) throw new Error("Worker already initialized");
 
     platform = args.platform; timeoutMs = args.timeoutMs; setupTimeoutMs = args.setupTimeoutMs;
+    if (args.width !== undefined && ![16, 128].includes(args.width)) throw new Error("Invalid uniform width");
+    width = args.width;
+    const names = lifecycleContracts(width);
 
     if (!Object.hasOwn(contracts, platform)) throw new Error("Unknown platform");
     if ((await hre.ethers.provider.getNetwork()).chainId !== 11155111n) throw new Error("Sepolia only");
@@ -84,12 +94,10 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
 
     if (!signer || signer.address !== args.ownerAddress) throw new Error("Saved platform signer mismatch");
 
-    // Reads the assigned signer's transaction count at the requested block tag.
-    // Supports checking latest and pending nonce values separately.
-    const readNonce = (tag: string) => hre.ethers.provider.send("eth_getTransactionCount", [signer.address, tag]);
-    const latest = BigInt(await readNonce("latest")), waiting = BigInt(await readNonce("pending"));
+    const latest = await readSettledNonce(
+      (method, params) => hre.ethers.provider.send(method, params), signer.address);
 
-    if (latest !== waiting || await hre.ethers.provider.getBalance(signer.address) === 0n)
+    if (await hre.ethers.provider.getBalance(signer.address) === 0n)
       throw new Error("Funded signer with no pending transactions required");
 
     cursor = createNonceAllocator(Number(latest));
@@ -107,22 +115,26 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
       if (hre.ethers.keccak256(code) !== resumeArgs.setup.deployedBytecodeKeccak256)
         throw new Error("Continuation contract bytecode changed");
 
-      const contract = await hre.ethers.getContractAt(contracts[platform], resumeArgs.setup.address, signer);
-      const adapter = await deadline(() => makeAdapter(platform, hre, signer, resumeArgs.setup.address, timeoutMs, trace),
+      const contract = await hre.ethers.getContractAt(names[platform], resumeArgs.setup.address, signer);
+      const adapter = await deadline(() => makeAdapter(platform, hre, signer, resumeArgs.setup.address, timeoutMs, trace, width, args.readPolicy),
         setupTimeoutMs, "continuation SDK initialization");
       const model = resumeArgs.model, recoveries: any[] = [];
       const last = resumeArgs.lastSample;
       const recoveredGetter = last.operation === "notarize" ? "getLastEntryValue" :
         last.operation === "add" ? "getEncryptedTotalHandle" : "getLastResult";
 
-      for (const [getter, expected, width] of [
-        ["getLastEntryValue", model.last, 16], ["getEncryptedTotalHandle", model.total, 64],
-        ["getLastResult", model.result, 64],
-      ] as const) {
-        const handle = await readLifecycleResult(rpc, contract.interface, resumeArgs.setup.address,
-          signer.address, getter, head.hash);
+      const reads: [string, string, 16 | 64 | 128 | "address"][] = [
+        ["getLastEntryValue", model.last, width ?? 16], ["getEncryptedTotalHandle", model.total, width ?? 64],
+        ["getLastResult", model.result, width ?? 64],
+      ];
+      if (width !== undefined) reads.push(["getSmartMeterOwner", model.meterOwner, "address"]);
+      for (const [getter, expected, resultType] of reads) {
+        const handle = await deadline(() => retryLifecycleRead(trace, `resume.${getter}`, timeoutMs,
+          () => readLifecycleResult(rpc, contract.interface, resumeArgs.setup.address,
+            signer.address, getter, head.hash, getter === "getSmartMeterOwner" ? [smartMeterId] : []),
+          1000, false, false, true), timeoutMs, "continuation canonical state read");
         const value = platform === "baseline" ? handle : await deadline(() => adapter.decrypt(handle, trace,
-          "completion", timeoutMs, width), timeoutMs, "continuation state decryption");
+          "completion", timeoutMs, resultType), timeoutMs, "continuation state decryption");
 
         validatePlaintext(value, BigInt(expected));
 
@@ -136,16 +148,20 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
         }
       }
 
-      context = { contract, adapter, last: BigInt(model.last), total: BigInt(model.total) };
+      context = { contract, adapter, last: BigInt(model.last), total: BigInt(model.total), width };
+
+      const recoveryView = resumeArgs.recoverMaxView && width !== undefined ?
+        await measureViewDecrypt(context, signer.address, rpc, last, width, timeoutMs) : undefined;
+      if (recoveryView && recoveryView.status !== "ok") throw new Error(`Late recovery view failed: ${recoveryView.error}`);
 
       return { platform, workerPid: process.pid, status: "ok", ...verified,
-        verificationBlockHash: head.hash, stages: trace.stages, recoveries };
+        verificationBlockHash: head.hash, stages: trace.stages, recoveries, recoveryView };
     }
 
     const trace = new TimingTrace(), entry: any = { platform, workerPid: process.pid, stages: trace.stages };
 
     try {
-      const factory = await hre.ethers.getContractFactory(contracts[platform], signer);
+      const factory = await hre.ethers.getContractFactory(names[platform], signer);
 
       entry.transactionNonce = cursor.reserve();
 
@@ -159,16 +175,17 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
 
       Object.assign(entry, { address: await contract.getAddress(), blockNumber: receipt.blockNumber,
         blockHash: receipt.blockHash, gasUsed: String(receipt.gasUsed),
+        effectiveGasPriceWei: String(receipt.gasPrice),
         gasCostWei: String(receipt.gasUsed * receipt.gasPrice) });
 
       entry.deployedBytecodeKeccak256 = hre.ethers.keccak256(await readDeploymentBytecode(
         (method, params) => hre.ethers.provider.send(method, params), entry.address,
         receipt.blockHash, trace, setupTimeoutMs));
 
-      const adapter = await deadline(() => makeAdapter(platform, hre, signer, entry.address, timeoutMs, trace),
+      const adapter = await deadline(() => makeAdapter(platform, hre, signer, entry.address, timeoutMs, trace, width),
         setupTimeoutMs, "worker SDK initialization");
 
-      context = { contract, adapter, last: 0n, total: 0n };
+      context = { contract, adapter, last: 0n, total: 0n, width };
 
       entry.status = "initialized"; emit("setup", { entry }); return entry;
     } catch (error) {
@@ -177,8 +194,10 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
   }
   // Prepares the comparison's signed transaction and waits at the barrier.
   // Returns preparation details once the transaction is ready for release.
-  async function prepare(args: { request: Omit<MeasurementRequest, "value" | "nonce"> & { value: string }; fees: FeeQuote }) {
+  async function prepare(args: { request: Omit<MeasurementRequest, "value" | "nonce"> & {
+    value: string; retryOfTransactionHash?: string }; fees: FeeQuote }) {
     if (!context || pending) throw new Error("Worker is not idle and initialized");
+    activeRetryHash = args.request.retryOfTransactionHash;
 
     const request: MeasurementRequest = { ...args.request, value: BigInt(args.request.value), nonce: cursor.reserve() };
 
@@ -246,7 +265,22 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
     
     const result = await active.result;
 
-    await collectBlockMetadata(hre, result); update(result); pending = undefined; return result;
+    await collectBlockMetadata(hre, result); update(result); pending = undefined;
+    lastCompleted = result;
+    return result;
+  }
+
+  // Read the persisted max result and request a fresh authorized decryption.
+  // This command records one separate observation without consuming a nonce.
+  async function viewDecrypt() {
+    if (pending || width === undefined || lastCompleted?.operation !== "max" || lastCompleted.status !== "ok") {
+      throw new Error("view_decrypt requires an idle uniform-width worker after a successful max");
+    }
+    const sample = await measureViewDecrypt(context, signer.address,
+      (method, params) => hre.ethers.provider.send(method, params), lastCompleted, width,
+      lastCompleted.warmup ? setupTimeoutMs : timeoutMs);
+    emit("view_sample", { sample });
+    return sample;
   }
 
   // Rejects an operation still waiting at the submission barrier.
@@ -266,6 +300,7 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
         message.command === "verify_resume" ? await verifyResume() :
         message.command === "prepare" ? await prepare(message.args) :
         message.command === "execute" ? await execute(message.args) :
+        message.command === "view_decrypt" ? await viewDecrypt() :
         message.command === "shutdown" ? await cancel() : (() => { throw new Error("Unknown worker command"); })();
 
       emit("response", { id: message.id, result });

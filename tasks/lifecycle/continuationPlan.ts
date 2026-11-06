@@ -1,5 +1,6 @@
 import { buildLifecycleSchedule } from "../lib/lifecycleSchedule";
-import { operations, type Platform, type Sample } from "./types";
+import { lifecycleOperations, smartMeterOwner, type Platform, type Sample, type PlatformContext } from "./types";
+import { expectedPlaintext } from "./operations";
 import type { LifecycleReport } from "./report";
 
 // Only a settled, receipt-confirmed prefix can be continued. A failed read
@@ -14,8 +15,9 @@ export function planLifecycleContinuation(report: LifecycleReport) {
 // Receipt recovery is supplementary evidence, never a repair of a failed
 // primary observation. Only the private planning copy receives its metadata.
 export function planIsolatedLifecycleContinuation(report: LifecycleReport, receipts: Record<string, any>) {
-  if (report.schemaVersion !== 12 || report.executionMode !== "isolated_processes_prepared_submission_barrier")
-    throw new Error("An isolated schema-12 source is required");
+  const uniform = report.schemaVersion === 14 && [16, 128].includes(report.uniformWidth!);
+  if ((!uniform && report.schemaVersion !== 12) || report.executionMode !== "isolated_processes_prepared_submission_barrier")
+    throw new Error("An isolated schema-12 or uniform schema-14 source is required");
 
   const copy = JSON.parse(JSON.stringify(report)) as LifecycleReport;
 
@@ -39,7 +41,67 @@ export function planIsolatedLifecycleContinuation(report: LifecycleReport, recei
     }
   }
 
-  return planConfirmedPrefix(copy);
+  return uniform && (copy as any).continuations?.some((s: any) => s.platformOnly === "fhenix") ?
+    planUniformFhenixSegments(copy) : planConfirmedPrefix(copy);
+}
+
+// Validate each platform's prefix after an explicitly single-platform segment.
+// Retry transactions consume nonces but never replace or advance primary slots.
+function planUniformFhenixSegments(report: LifecycleReport) {
+  const selected: Platform[] = ["baseline", "zama", "fhenix"];
+  const operations = lifecycleOperations(report.uniformWidth);
+  const schedule = buildLifecycleSchedule(report.runs, selected, operations, report.scheduleSeed);
+  if (report.complete !== false || JSON.stringify(report.selectedPlatforms) !== JSON.stringify(selected) ||
+      JSON.stringify(report.schedule) !== JSON.stringify(schedule)) throw new Error("Uniform segment schedule changed");
+  const warmup = buildLifecycleSchedule(1, selected, operations, report.scheduleSeed).map(c => ({ ...c, run: 0, warmup: true }));
+  const planned = [...warmup, ...schedule.map(c => ({ ...c, warmup: false }))];
+  const states = new Map(selected.map(p => [p, { last: 0n, total: 0n, result: 0n, meterOwner: 0n }]));
+  const lastSamples = new Map<Platform, Sample>(), nextNonces = new Map<Platform, number>();
+  let fhenixCompleted = 0;
+  for (const platform of selected) {
+    const setup: any = report.setup.find((s: any) => s.platform === platform);
+    if (setup?.status !== "ok" || !Number.isSafeInteger(setup.transactionNonce)) throw new Error("Invalid deployment prefix");
+    const primary = report.samples.filter(s => s.platform === platform);
+    if (primary.length < warmup.length || primary.length > planned.length) throw new Error("Invalid platform prefix length");
+    for (let i = 0; i < primary.length; i++) {
+      const s = primary[i], expected = planned[i];
+      if (s.run !== expected.run || s.operation !== expected.operation || s.warmup !== expected.warmup)
+        throw new Error("Platform samples are not a unique schedule prefix");
+    }
+    const retries: any[] = ((report as any).retrySamples ?? []).filter((s: any) => s.platform === platform);
+    if (platform !== "fhenix" && retries.length) throw new Error("Unexpected other-platform retry");
+    const combined: any[] = [...primary, ...retries].sort((a, b) => a.transactionNonce - b.transactionNonce);
+    let nonce = setup.transactionNonce + 1, primaryIndex = 0;
+    const retriedHashes = new Set<string>();
+    const state = states.get(platform)!;
+    for (const s of combined) {
+      if (s.transactionNonce !== nonce++ || s.transactionHash !== s.preparedTransactionHash ||
+          s.broadcastState !== "acknowledged" || s.receiptStatus !== 1 || !s.blockHash ||
+          !["ok", "error"].includes(s.status) || (s.warmup && s.status !== "ok"))
+        throw new Error("Ambiguous or non-contiguous confirmed transaction history");
+      if (s.retryOfTransactionHash) {
+        const original = primary[primaryIndex - 1];
+        if (!original || original.status !== "error" || s.status !== "ok" || s.operation !== "mean" ||
+            retriedHashes.has(s.retryOfTransactionHash) ||
+            original.transactionHash !== s.retryOfTransactionHash || s.run !== original.run ||
+            original.operation !== s.operation || s.warmup) throw new Error("Invalid historical explicit retry");
+        retriedHashes.add(s.retryOfTransactionHash);
+      } else if (primary[primaryIndex++] !== s) throw new Error("Primary transaction order changed");
+      const value = s.operation === "set_meter_owner" ? BigInt(smartMeterOwner) : BigInt(s.operation === "notarize" ? 42 + s.run : 3 + s.run);
+      const expected = expectedPlaintext(s.operation, { ...state, width: report.uniformWidth } as unknown as PlatformContext, value);
+      if (s.expectedPlaintext !== String(expected) || (s.status === "ok" && s.plaintext !== String(expected)))
+        throw new Error("Segment plaintext model mismatch");
+      if (s.operation === "set_meter_owner") state.meterOwner = expected;
+      else if (s.operation === "notarize") state.last = expected;
+      else if (s.operation === "add") state.total = expected;
+      else state.result = expected;
+    }
+    nextNonces.set(platform, nonce); lastSamples.set(platform, primary.at(-1)!);
+    if (platform === "fhenix") fhenixCompleted = primary.length - warmup.length;
+  }
+  const remaining = schedule.slice(fhenixCompleted);
+  if (!remaining.length) throw new Error("No unattempted Fhenix primary operations remain");
+  return { states, lastSamples, nextNonces, remaining };
 }
 
 // Validates that the recorded samples form a settled schedule prefix.
@@ -52,6 +114,7 @@ function planConfirmedPrefix(report: LifecycleReport) {
       JSON.stringify(report.selectedPlatforms) !== JSON.stringify(selected))
     throw new Error("Continuation requires an incomplete independent-account Sepolia campaign");
 
+  const operations = lifecycleOperations(report.uniformWidth);
   const schedule = buildLifecycleSchedule(report.runs, selected, operations, report.scheduleSeed);
 
   if (JSON.stringify(schedule) !== JSON.stringify(report.schedule)) throw new Error("Schedule changed");
@@ -66,7 +129,7 @@ function planConfirmedPrefix(report: LifecycleReport) {
 
   if (completedRows < warmup.length || completedRows >= rows.length) throw new Error("No remaining settled schedule prefix");
 
-  const states = new Map(selected.map(p => [p, { last: 0n, total: 0n, result: 0n }]));
+  const states = new Map(selected.map(p => [p, { last: 0n, total: 0n, result: 0n, meterOwner: 0n }]));
   const lastSamples = new Map<Platform, Sample>();
   const nextNonces = new Map(selected.map(p => {
     const setup: any = report.setup.find((s: any) => s.platform === p);
@@ -91,14 +154,14 @@ function planConfirmedPrefix(report: LifecycleReport) {
       if (s.warmup && s.status !== "ok") throw new Error("Failed warmup cannot be continued");
 
       const state = states.get(s.platform)!;
-      const value = BigInt(s.operation === "notarize" ? 42 + s.run : 3 + s.run);
-      const expected = s.operation === "notarize" ? value : s.operation === "add" ? state.total + state.last :
-        s.operation === "mul_scalar" ? state.last * value : s.operation === "mean" ?
-          (state.last + state.total) / 2n : state.last > state.total ? state.last : state.total;
+      const value = s.operation === "set_meter_owner" ? BigInt(smartMeterOwner) :
+        BigInt(s.operation === "notarize" ? 42 + s.run : 3 + s.run);
+      const expected = expectedPlaintext(s.operation, { ...state, width: report.uniformWidth } as unknown as PlatformContext, value);
 
       if (s.expectedPlaintext !== String(expected) || (s.status === "ok" && s.plaintext !== String(expected)))
         throw new Error("Recorded plaintext model does not match the schedule");
-      if (s.operation === "notarize") state.last = value;
+      if (s.operation === "set_meter_owner") state.meterOwner = expected;
+      else if (s.operation === "notarize") state.last = value;
       else if (s.operation === "add") state.total = expected;
       else state.result = expected;
 

@@ -42,7 +42,8 @@ export async function retryLifecycleRead<T>(
       // caller's deadline. Allow a fresh read job to use the remaining budget.
       // Receipt propagation can lag on an RPC backend after another backend
       // returned the receipt. Keep retrying the exact canonical hash within
-      // the original deadline, just as for gateway readiness.
+      // the original deadline, just as for gateway readiness. A backend may
+      // temporarily reject requireCanonical while another already sees the block.
       const attemptsExhausted = attempt >= 5 && !readinessFailure && !missingBlock;
       if (attemptsExhausted || (!isTransportFailure(error) && !aclFailure && !readinessFailure && !serviceUnavailable && !missingBlock) || performance.now() + delay >= end)
         throw error;
@@ -74,7 +75,8 @@ export function isMissingReceiptBlock(error: unknown): boolean {
   if (!candidate) return false;
 
   return [candidate.message, candidate.info?.error?.message, candidate.error?.message].some(
-    (message) => typeof message === "string" && /^block not found(?::|$)/i.test(message),
+    (message) => typeof message === "string" &&
+      (/^block not found(?::|$)/i.test(message) || /^hash is not currently canonical$/i.test(message)),
   );
 }
 

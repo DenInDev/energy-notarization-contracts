@@ -1,0 +1,20 @@
+{
+  "startedAt": "2026-10-22T20:34:16.1432820Z",
+  "status": "complete",
+  "pollingBaseMs": 100,
+  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-poll100-2026-10-22/report.json",
+  "serverRetryAfter": "respected",
+  "pid": 35432,
+  "stdout": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-poll100-2026-10-22.stdout.log",
+  "runs": 50,
+  "previousReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-retry1-2026-10-22/report.json",
+  "stderr": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-poll100-2026-10-22.stderr.log",
+  "completedAt": "2026-10-22T21:48:20.173Z",
+  "measuredValidated": 750,
+  "warmupValidated": 15,
+  "sameBlockComparisons": 250,
+  "totalComparisons": 250,
+  "totalGasCostEth": "0.000000013962263659",
+  "analysis": "logs/energy-mixed-50-poll100-2026-10-22/analysis.json",
+  "completionAudit": "logs/energy-mixed-50-poll100-2026-10-22/completion-audit.json"
+}

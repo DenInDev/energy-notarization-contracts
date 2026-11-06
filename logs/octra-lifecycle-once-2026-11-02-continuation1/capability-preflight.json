@@ -1,0 +1,189 @@
+{
+  "checkedAt": "2026-11-02T16:46:38.135Z",
+  "endpoint": "https://devnet.octrascan.io/rpc",
+  "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+  "probes": [
+    {
+      "operation": "mean",
+      "source": "Program Probe { view fn run(a: string): string { let pk = fhe_load_pk(caller) return fhe_ser(fhe_div_const(pk, fhe_deser(a), 2)) } }",
+      "httpStatus": 200,
+      "elapsedMs": 677.8352,
+      "response": {
+        "jsonrpc": "2.0",
+        "result": {
+          "bytecode": "T0NQRwIAAAB6AAAAuAIAAE9DVEIBAAMAFwAAAAILAAAAY29uc3RydWN0b3ICAwAAAHJ1bgABAAAAMhIB5wMLAgAACgMBAhUDZAAAABcWZAAAABIB6AMLAgEABwMBAhUDyAAAABgWyAAAABIB6QMZAjADAgwCAzwDAQsEAgBcBQIDBDsGBQwABhcXeyJzY2hlbWEiOiJhbWxfYnl0ZWNvZGVfY2VydGlmaWNhdGVfdjIiLCJlZmZlY3RzIjpbImZoZSIsIm1lbW9yeV9yZWFkIl0sImZhY3RzX2hhc2giOiI3MDg0M2Q5M2FmY2MwOWE5ODczODdhZDVlNDIyODI0ZDczYjZkMzhhNzQyMmE0MGI1MWM0NzBjNTdmZGIyY2QxIiwiZmFjdHMiOnsicm9vdCI6W10sImVudHJpZXMiOlt7InRhcmdldCI6MTEsIm1lbW9yeSI6W3sic2xvdCI6MTAwMSwia2luZCI6InN0cmluZyJ9XSwiZWZmZWN0cyI6WyJmaGUiLCJtZW1vcnlfcmVhZCJdfV0sImNhbGxzIjpbXSwieGNhbGxzIjpbXX0sImNvbXBpbGVyIjoib2N0cmFfYW1sIiwiY29tcGlsZXJfdmVyc2lvbiI6IjIuMCBBTUwtcHJldmlldyIsImRlY2xhcmF0aW9uIjoicHJvZ3JhbSIsInZlcmlmaWNhdGlvbl9zY2hlbWEiOiJhbWxfc2FmZXR5X3JlcG9ydF92MSIsInNvdXJjZV9tb2RlIjoibXVsdGkiLCJzb3VyY2VfaGFzaCI6IjRhNDc3YzU0NDY2NjNlZmUwYmM2YWJkMDg1MDM0NDZhMDVjYmI3YmI3MjAyYTFkOGExOTAzYmZmMjMwM2ZiMjQiLCJieXRlY29kZV9oYXNoIjoiNTA1M2MxZWM1ZDNhMjA4YzQ4YmI4MzM3NzEwNDg3MjQwZmU1ZjEwMzFiY2Q0MjM0M2IyYWNmYTlhYWZiZjdmMSIsInZlcmlmaWNhdGlvbl9oYXNoIjoiZGNjYjk1N2ZjNzlhNjNlYmEzNGEzNTEzMWFiM2Y3NmVmMzMwMmMzMjc4ZmFkMzdjOThjNTYwYWY4M2IyMzY1NCJ9",
+          "size": 834,
+          "instructions": 23,
+          "abi": "{\"declaration\":\"program\",\"constructor\":null,\"functions\":[{\"name\":\"run\",\"inputs\":[\"string\"],\"input_names\":[\"a\"],\"output\":\"string\",\"view\":true,\"payable\":false}],\"events\":[]}",
+          "version": "2.0 AML-preview",
+          "disasm": "MLOAD r1, 999\nLDI r2, \"constructor\"\nNEQ r3, r1, r2\nJIF r3, 100\nSTOP\nJDEST 100\nMLOAD r1, 1000\nLDI r2, \"run\"\nEQ r3, r1, r2\nJIF r3, 200\nREVERT\nJDEST 200\nMLOAD r1, 1001\nCALLER r2\nFHE_LOAD_PK r3, r2\nMOV r2, r3\nFHE_DESER r3, r1\nLDI r4, 2\nFHE_DIV_CONST r5, r2, r3, r4\nFHE_SER r6, r5\nMOV r0, r6\nSTOP\nSTOP",
+          "program_envelope": "T0NQRwIAAAB6AAAAuAIAAE9DVEIBAAMAFwAAAAILAAAAY29uc3RydWN0b3ICAwAAAHJ1bgABAAAAMhIB5wMLAgAACgMBAhUDZAAAABcWZAAAABIB6AMLAgEABwMBAhUDyAAAABgWyAAAABIB6QMZAjADAgwCAzwDAQsEAgBcBQIDBDsGBQwABhcXeyJzY2hlbWEiOiJhbWxfYnl0ZWNvZGVfY2VydGlmaWNhdGVfdjIiLCJlZmZlY3RzIjpbImZoZSIsIm1lbW9yeV9yZWFkIl0sImZhY3RzX2hhc2giOiI3MDg0M2Q5M2FmY2MwOWE5ODczODdhZDVlNDIyODI0ZDczYjZkMzhhNzQyMmE0MGI1MWM0NzBjNTdmZGIyY2QxIiwiZmFjdHMiOnsicm9vdCI6W10sImVudHJpZXMiOlt7InRhcmdldCI6MTEsIm1lbW9yeSI6W3sic2xvdCI6MTAwMSwia2luZCI6InN0cmluZyJ9XSwiZWZmZWN0cyI6WyJmaGUiLCJtZW1vcnlfcmVhZCJdfV0sImNhbGxzIjpbXSwieGNhbGxzIjpbXX0sImNvbXBpbGVyIjoib2N0cmFfYW1sIiwiY29tcGlsZXJfdmVyc2lvbiI6IjIuMCBBTUwtcHJldmlldyIsImRlY2xhcmF0aW9uIjoicHJvZ3JhbSIsInZlcmlmaWNhdGlvbl9zY2hlbWEiOiJhbWxfc2FmZXR5X3JlcG9ydF92MSIsInNvdXJjZV9tb2RlIjoibXVsdGkiLCJzb3VyY2VfaGFzaCI6IjRhNDc3YzU0NDY2NjNlZmUwYmM2YWJkMDg1MDM0NDZhMDVjYmI3YmI3MjAyYTFkOGExOTAzYmZmMjMwM2ZiMjQiLCJieXRlY29kZV9oYXNoIjoiNTA1M2MxZWM1ZDNhMjA4YzQ4YmI4MzM3NzEwNDg3MjQwZmU1ZjEwMzFiY2Q0MjM0M2IyYWNmYTlhYWZiZjdmMSIsInZlcmlmaWNhdGlvbl9oYXNoIjoiZGNjYjk1N2ZjNzlhNjNlYmEzNGEzNTEzMWFiM2Y3NmVmMzMwMmMzMjc4ZmFkMzdjOThjNTYwYWY4M2IyMzY1NCJ9",
+          "deploy_payload": "T0NQUwEAAQAIAG1haW4uYW1sAQAIAG1haW4uYW1shAAAAFByb2dyYW0gUHJvYmUgeyB2aWV3IGZuIHJ1bihhOiBzdHJpbmcpOiBzdHJpbmcgeyBsZXQgcGsgPSBmaGVfbG9hZF9wayhjYWxsZXIpIHJldHVybiBmaGVfc2VyKGZoZV9kaXZfY29uc3QocGssIGZoZV9kZXNlcihhKSwgMikpIH0gfUIDAABPQ1BHAgAAAHoAAAC4AgAAT0NUQgEAAwAXAAAAAgsAAABjb25zdHJ1Y3RvcgIDAAAAcnVuAAEAAAAyEgHnAwsCAAAKAwECFQNkAAAAFxZkAAAAEgHoAwsCAQAHAwECFQPIAAAAGBbIAAAAEgHpAxkCMAMCDAIDPAMBCwQCAFwFAgMEOwYFDAAGFxd7InNjaGVtYSI6ImFtbF9ieXRlY29kZV9jZXJ0aWZpY2F0ZV92MiIsImVmZmVjdHMiOlsiZmhlIiwibWVtb3J5X3JlYWQiXSwiZmFjdHNfaGFzaCI6IjcwODQzZDkzYWZjYzA5YTk4NzM4N2FkNWU0MjI4MjRkNzNiNmQzOGE3NDIyYTQwYjUxYzQ3MGM1N2ZkYjJjZDEiLCJmYWN0cyI6eyJyb290IjpbXSwiZW50cmllcyI6W3sidGFyZ2V0IjoxMSwibWVtb3J5IjpbeyJzbG90IjoxMDAxLCJraW5kIjoic3RyaW5nIn1dLCJlZmZlY3RzIjpbImZoZSIsIm1lbW9yeV9yZWFkIl19XSwiY2FsbHMiOltdLCJ4Y2FsbHMiOltdfSwiY29tcGlsZXIiOiJvY3RyYV9hbWwiLCJjb21waWxlcl92ZXJzaW9uIjoiMi4wIEFNTC1wcmV2aWV3IiwiZGVjbGFyYXRpb24iOiJwcm9ncmFtIiwidmVyaWZpY2F0aW9uX3NjaGVtYSI6ImFtbF9zYWZldHlfcmVwb3J0X3YxIiwic291cmNlX21vZGUiOiJtdWx0aSIsInNvdXJjZV9oYXNoIjoiNGE0NzdjNTQ0NjY2M2VmZTBiYzZhYmQwODUwMzQ0NmEwNWNiYjdiYjcyMDJhMWQ4YTE5MDNiZmYyMzAzZmIyNCIsImJ5dGVjb2RlX2hhc2giOiI1MDUzYzFlYzVkM2EyMDhjNDhiYjgzMzc3MTA0ODcyNDBmZTVmMTAzMWJjZDQyMzQzYjJhY2ZhOWFhZmJmN2YxIiwidmVyaWZpY2F0aW9uX2hhc2giOiJkY2NiOTU3ZmM3OWE2M2ViYTM0YTM1MTMxYWIzZjc2ZWYzMzAyYzMyNzhmYWQzN2M5OGM1NjBhZjgzYjIzNjU0In0=",
+          "verification": {
+            "schema": "aml_safety_report_v1",
+            "engine": "aml_ast_verifier",
+            "proof_model": "formal/coq/aml_value_safety_model.v",
+            "proof_gate": "scripts/check_aml_formal.sh",
+            "program_name": "Probe",
+            "verified": true,
+            "safety": "safe",
+            "errors": 0,
+            "warnings": 0,
+            "trace": [
+              {
+                "code": "signed_value_storage",
+                "title": "value-like storage must not use signed int",
+                "status": "pass",
+                "severity": "error",
+                "findings": 0
+              },
+              {
+                "code": "signed_value_parameter",
+                "title": "value-moving public parameters must not use signed int",
+                "status": "pass",
+                "severity": "error",
+                "findings": 0
+              },
+              {
+                "code": "signed_value_flow",
+                "title": "signed values must not flow into value-like storage writes",
+                "status": "pass",
+                "severity": "error",
+                "findings": 0
+              },
+              {
+                "code": "unsigned_arithmetic_range_not_proven",
+                "title": "unsigned arithmetic writes must prove range safety",
+                "status": "pass",
+                "severity": "error",
+                "findings": 0
+              },
+              {
+                "code": "supply_invariant_unproven",
+                "title": "balance and total supply writes should preserve conservation",
+                "status": "pass",
+                "severity": "warning",
+                "findings": 0
+              },
+              {
+                "code": "unsigned_parameter_without_positive_guard",
+                "title": "unsigned value parameters should reject zero unless zero is meaningful",
+                "status": "pass",
+                "severity": "warning",
+                "findings": 0
+              },
+              {
+                "code": "unchecked_transfer_result",
+                "title": "native transfer result should be checked",
+                "status": "pass",
+                "severity": "warning",
+                "findings": 0
+              }
+            ],
+            "function_summaries": [
+              {
+                "name": "run",
+                "visibility": "public",
+                "direct_calls": [
+                  "fhe_deser",
+                  "fhe_div_const",
+                  "fhe_load_pk",
+                  "fhe_ser"
+                ],
+                "direct_writes": [],
+                "transitive_writes": [],
+                "value_writes": [],
+                "signed_params": []
+              }
+            ],
+            "invariants": [
+              {
+                "code": "supply_balance_conservation",
+                "kind": "derived",
+                "status": "not_applicable",
+                "expression": null,
+                "message": "program does not expose both balance and supply storage",
+                "fields": [],
+                "functions": []
+              }
+            ],
+            "findings": []
+          },
+          "certificate": {
+            "schema": "aml_bytecode_certificate_v2",
+            "effects": [
+              "fhe",
+              "memory_read"
+            ],
+            "facts_hash": "70843d93afcc09a987387ad5e422824d73b6d38a7422a40b51c470c57fdb2cd1",
+            "facts": {
+              "root": [],
+              "entries": [
+                {
+                  "target": 11,
+                  "memory": [
+                    {
+                      "slot": 1001,
+                      "kind": "string"
+                    }
+                  ],
+                  "effects": [
+                    "fhe",
+                    "memory_read"
+                  ]
+                }
+              ],
+              "calls": [],
+              "xcalls": []
+            },
+            "compiler": "octra_aml",
+            "compiler_version": "2.0 AML-preview",
+            "declaration": "program",
+            "verification_schema": "aml_safety_report_v1",
+            "source_mode": "multi",
+            "source_hash": "4a477c5446663efe0bc6abd08503446a05cbb7bb7202a1d8a1903bff2303fb24",
+            "bytecode_hash": "5053c1ec5d3a208c48bb8337710487240fe5f1031bcd42343b2acfa9aafbf7f1",
+            "verification_hash": "dccb957fc79a63eba34a35131ab3f76ef3302c3278fad37c98c560af83b23654"
+          }
+        },
+        "id": 1
+      }
+    },
+    {
+      "operation": "max_native",
+      "source": "Program Probe { view fn run(a: string, b: string): string { let pk = fhe_load_pk(caller) return fhe_ser(fhe_max(pk, fhe_deser(a), fhe_deser(b))) } }",
+      "httpStatus": 200,
+      "elapsedMs": 248.94899999999996,
+      "response": {
+        "jsonrpc": "2.0",
+        "error": {
+          "code": -32000,
+          "message": "Program compile failed: source = main.aml line 1 column 1: unknown function: fhe_max"
+        },
+        "id": 1
+      }
+    },
+    {
+      "operation": "max_generic",
+      "source": "Program Probe { view fn run(a: string, b: string): string { return fhe_ser(max(fhe_deser(a), fhe_deser(b))) } }",
+      "httpStatus": 200,
+      "elapsedMs": 203.04680000000008,
+      "response": {
+        "jsonrpc": "2.0",
+        "error": {
+          "code": -32000,
+          "message": "Program compile failed: Program admission: Program type flow: expected number in r3 at pc 16, got cipher"
+        },
+        "id": 1
+      }
+    }
+  ],
+  "balance": {
+    "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+    "balance": "2.339492",
+    "balance_raw": "2339492",
+    "nonce": 6,
+    "pending_nonce": 6,
+    "has_public_key": true
+  }
+}

@@ -10,7 +10,8 @@ import { readLifecycleResult } from "../lib/lifecycleResult";
 import { retryLifecycleRead } from "../lib/lifecycleReadRetry";
 import { expectedPlaintext, resultGetter, submitOperation } from "./operations";
 import { safeError } from "./errors";
-import type { Platform, Operation, Sample, PlatformContext } from "./types";
+import type { Platform, Operation, Sample, PlatformContext, UniformWidth, ViewDecryptSample } from "./types";
+import { smartMeterId } from "./types";
 
 export type MeasurementRequest = {
   platform: Platform;
@@ -84,19 +85,25 @@ export function createMeasurementRunner({
 
     samples.push(sample);
 
+    if (context.width !== undefined) sample.smartMeterId = smartMeterId;
+    if (operation === "set_meter_owner") {
+      sample.expectedOwnerAddress = hre.ethers.getAddress(hre.ethers.toBeHex(value, 20));
+    }
+
     try {
       // Notarization supplies a new reading.
       const inputStart = timing.now();
       const input =
-        operation === "notarize"
+        operation === "notarize" || operation === "set_meter_owner"
           ? await deadline(
-              () => context.adapter.encrypt(value, timing, observationTimeout),
+              () => context.adapter.encrypt(value, timing, observationTimeout,
+                operation === "set_meter_owner" ? "address" : "integer"),
               observationTimeout,
               "input preparation",
             )
           : [];
 
-      if (operation === "notarize" && platform !== "baseline") {
+      if ((operation === "notarize" || operation === "set_meter_owner") && platform !== "baseline") {
         sample.inputPreparationMs = timing.now() - inputStart;
       }
 
@@ -176,6 +183,7 @@ export function createMeasurementRunner({
                     activeSigner.address,
                     getter,
                     receipt.blockHash,
+                    operation === "set_meter_owner" ? [smartMeterId] : [],
                   ),
                 100, // Initial backoff in milliseconds.
                 false, // Zama ACL retries are handled by the decryption adapter.
@@ -203,7 +211,7 @@ export function createMeasurementRunner({
                   timing,
                   "completion",
                   observationTimeout,
-                  operation === "notarize" ? 16 : 64,
+                  operation === "set_meter_owner" ? "address" : context.width ?? (operation === "notarize" ? 16 : 64),
                 ),
               observationTimeout,
               "completion decrypt",
@@ -213,6 +221,10 @@ export function createMeasurementRunner({
         "completion.validate_plaintext",
         () => validatePlaintext(plaintext, expected),
       );
+
+      if (operation === "set_meter_owner") {
+        sample.plaintextAddress = hre.ethers.getAddress(hre.ethers.toBeHex(BigInt(sample.plaintext), 20));
+      }
 
       // Stop the primary timer once the recovered value matches the model.
       const validated = timing.now();
@@ -224,7 +236,7 @@ export function createMeasurementRunner({
       onUpdate?.(sample);
 
       // Measure a second decrypt separately, after the primary sample succeeds. This measures the time to get a decrypt value without accounting for polling/waiting.
-      if (!warmup && platform !== "baseline") {
+      if (!warmup && platform !== "baseline" && context.width === undefined) {
         const readyStart = timing.now();
 
         try {
@@ -262,6 +274,48 @@ export function createMeasurementRunner({
   }
 
   return measure;
+}
+
+// Measure a persisted getter plus fresh plaintext retrieval under one deadline.
+// The parent transaction identifies the canonical state for the read.
+export async function measureViewDecrypt(
+  context: PlatformContext,
+  caller: string,
+  rpc: (method: string, params: any[]) => Promise<any>,
+  reference: Sample,
+  width: UniformWidth,
+  timeoutMs: number,
+): Promise<ViewDecryptSample> {
+  const timing = new TimingTrace();
+  const sample: ViewDecryptSample = {
+    platform: reference.platform, operation: "view_decrypt", run: reference.run,
+    warmup: reference.warmup, width, status: "pending", startedAt: new Date().toISOString(),
+    workerPid: process.pid, referenceTransactionHash: reference.transactionHash!,
+    referenceBlockHash: reference.blockHash!, expectedPlaintext: reference.expectedPlaintext,
+    stages: timing.stages,
+  };
+  const remaining = () => Math.max(1, Math.floor(timeoutMs - timing.now()));
+  try {
+    const handle = await deadline(() => retryLifecycleRead(timing, "view_decrypt.handle", remaining(),
+      () => readLifecycleResult(rpc, context.contract.interface, String(context.contract.target),
+        caller, "getLastResult", reference.blockHash!), 1000, false, false, true), remaining(), "view_decrypt getter");
+    sample.viewMs = timing.now();
+    if (reference.platform !== "baseline") sample.outputHandle = String(handle);
+
+    const plaintext = reference.platform === "baseline" ? handle : await deadline(
+      () => context.adapter.decrypt(handle, timing, "already_ready", remaining(), width),
+      remaining(), "view_decrypt decryption");
+    sample.plaintext = await timing.span("view_decrypt.validate_plaintext", () =>
+      validatePlaintext(plaintext, BigInt(reference.expectedPlaintext)));
+    sample.viewToValidatedPlaintextMs = timing.now();
+    sample.decryptAndValidationMs = sample.viewToValidatedPlaintextMs - sample.viewMs;
+    sample.status = "ok";
+  } catch (error) {
+    sample.status = "error";
+    sample.error = safeError(error);
+  }
+  sample.completedAt = new Date().toISOString();
+  return sample;
 }
 
 // Looks up block information for a recorded receipt.

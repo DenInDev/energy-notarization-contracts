@@ -1,0 +1,1857 @@
+{
+  "startedAt": "2026-11-02T16:14:55.765Z",
+  "status": "passed",
+  "endpoint": "https://devnet.octrascan.io/rpc",
+  "network": "devnet",
+  "owner": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+  "upstreamCommit": "52fca461dd2e81652dec588f0ab861662bf38cf6",
+  "compilationSha256": "7069f954ee43b506a4d53bcb7aee019a5aa903722380bfeff225577899ecbb97",
+  "constructorParams": [
+    "MyToken",
+    "MTK",
+    1000000000000,
+    6
+  ],
+  "transactions": [
+    {
+      "label": "deploy",
+      "op_type": "program_deploy",
+      "nonce": 5,
+      "to": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+      "amount": "0",
+      "ou": "218000",
+      "hash": "7615e6f0c3a5dcf36027d08cdf67b7bd4d6be42edef30e844ce588f189931092",
+      "signingJsonSha256": "6361f05d02258e418b18e26e6637b16c3f70b7dd3dea3fa0ce8105f37be194b4",
+      "status": "confirmed",
+      "timestamp": 1793636108.5,
+      "preparedAt": "2026-11-02T16:15:09.657Z",
+      "broadcastAt": "2026-11-02T16:15:09.658Z",
+      "submission": {
+        "tx_hash": "7615e6f0c3a5dcf36027d08cdf67b7bd4d6be42edef30e844ce588f189931092",
+        "status": "accepted",
+        "nonce": 5,
+        "ou_cost": "218000"
+      },
+      "state": {
+        "status": "confirmed",
+        "tx_hash": "7615e6f0c3a5dcf36027d08cdf67b7bd4d6be42edef30e844ce588f189931092",
+        "epoch": 1784743,
+        "from": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+        "to": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "amount": "0",
+        "amount_raw": "0",
+        "nonce": 5,
+        "ou": "218000",
+        "timestamp": 1793636108.5,
+        "op_type": "program_deploy",
+        "message": "[\"MyToken\",\"MTK\",1000000000000,6]"
+      },
+      "confirmedAt": "2026-11-02T16:15:44.942Z",
+      "receipt": {
+        "program": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "contract": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "method": "constructor",
+        "success": true,
+        "effort": 877,
+        "events": [
+          {
+            "program": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+            "contract": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+            "depth": 0,
+            "event": "Transfer",
+            "values": [
+              "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+              "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+              "1000000000000"
+            ]
+          }
+        ],
+        "error": null,
+        "epoch": 1784743,
+        "ts": 1793636130.811159
+      }
+    },
+    {
+      "label": "transfer",
+      "op_type": "call",
+      "nonce": 6,
+      "to": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+      "amount": "0",
+      "ou": "1000",
+      "hash": "292fdff4ca63e643f4698e788180911cb537de33126905644cdddc83aba186d5",
+      "signingJsonSha256": "204f5b46b5249654a87ae6425c3a279c6f2590c7e1eb5408ebede7fe899dd513",
+      "status": "confirmed",
+      "timestamp": 1793636149.5,
+      "preparedAt": "2026-11-02T16:15:50.620Z",
+      "broadcastAt": "2026-11-02T16:15:50.621Z",
+      "submission": {
+        "tx_hash": "292fdff4ca63e643f4698e788180911cb537de33126905644cdddc83aba186d5",
+        "status": "accepted",
+        "nonce": 6,
+        "ou_cost": "1000"
+      },
+      "state": {
+        "status": "confirmed",
+        "tx_hash": "292fdff4ca63e643f4698e788180911cb537de33126905644cdddc83aba186d5",
+        "epoch": 1784745,
+        "from": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+        "to": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "amount": "0",
+        "amount_raw": "0",
+        "nonce": 6,
+        "ou": "1000",
+        "timestamp": 1793636149.5,
+        "op_type": "call",
+        "message": "[\"octFhEHo1rg1GndfTXwMeonpZVzX9Hi4gHg7jzjEzFqDArG\",1000000]"
+      },
+      "confirmedAt": "2026-11-02T16:16:23.136Z",
+      "receipt": {
+        "program": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "contract": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "method": "transfer",
+        "success": true,
+        "effort": 826,
+        "events": [
+          {
+            "program": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+            "contract": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+            "depth": 0,
+            "event": "Transfer",
+            "values": [
+              "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+              "octFhEHo1rg1GndfTXwMeonpZVzX9Hi4gHg7jzjEzFqDArG",
+              "1000000"
+            ]
+          }
+        ],
+        "error": null,
+        "epoch": 1784745,
+        "ts": 1793636169.570103
+      }
+    }
+  ],
+  "checks": [
+    {
+      "label": "owner",
+      "actual": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+      "expected": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+      "ok": true
+    },
+    {
+      "label": "deployed_code_hash",
+      "actual": "a242b3a4e8e28af6aa91657235e8eba55ed3dda5f867829a2509742cc35400ca",
+      "expected": "a242b3a4e8e28af6aa91657235e8eba55ed3dda5f867829a2509742cc35400ca",
+      "ok": true
+    },
+    {
+      "label": "name",
+      "actual": "MyToken",
+      "expected": "MyToken",
+      "ok": true
+    },
+    {
+      "label": "symbol",
+      "actual": "MTK",
+      "expected": "MTK",
+      "ok": true
+    },
+    {
+      "label": "decimals",
+      "actual": "6",
+      "expected": "6",
+      "ok": true
+    },
+    {
+      "label": "total_supply",
+      "actual": "1000000000000",
+      "expected": "1000000000000",
+      "ok": true
+    },
+    {
+      "label": "token_owner",
+      "actual": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+      "expected": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+      "ok": true
+    },
+    {
+      "label": "initial_deployer_token_balance",
+      "actual": "1000000000000",
+      "expected": "1000000000000",
+      "ok": true
+    },
+    {
+      "label": "initial_recipient_token_balance",
+      "actual": "0",
+      "expected": "0",
+      "ok": true
+    },
+    {
+      "label": "recipient_token_balance_after_transfer",
+      "actual": "1000000",
+      "expected": "1000000",
+      "ok": true
+    },
+    {
+      "label": "deployer_token_balance_after_transfer",
+      "actual": "999999000000",
+      "expected": "999999000000",
+      "ok": true
+    },
+    {
+      "label": "total_supply_after_transfer",
+      "actual": "1000000000000",
+      "expected": "1000000000000",
+      "ok": true
+    }
+  ],
+  "reads": [
+    {
+      "at": "2026-11-02T16:14:56.109Z",
+      "method": "node_status",
+      "params": [],
+      "result": {
+        "epoch": 1784741,
+        "current_epoch": 1784741,
+        "validator": "octFc3DDzWTASUVpvyFftXp9KLx1RdiYawGHRRCVz3wcoVZ",
+        "roots": 0,
+        "timestamp": 1793636098.204329,
+        "network_version": "v3.0.0-irmin",
+        "head_epoch": 1784740,
+        "state_root": "ab5e748afacd781a038ebe50be721e76ebc3cc686d637f8c1a7c883657a11563",
+        "txid_hi": "3512388",
+        "irmin_commit": "b5e6a5e1bf920249a2c909681edd0f7b181adebba75dc7100cf0da38ce94cd228504f1bba95c8430aa48f3a0f7d2db4afd9ea3b636b95a82e603ffd94e581d98"
+      }
+    },
+    {
+      "at": "2026-11-02T16:14:56.268Z",
+      "method": "octra_balance",
+      "params": [
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+        "balance": "2.558492",
+        "balance_raw": "2558492",
+        "nonce": 4,
+        "pending_nonce": 4,
+        "has_public_key": true
+      }
+    },
+    {
+      "at": "2026-11-02T16:14:56.400Z",
+      "method": "octra_recommendedFee",
+      "params": [
+        "program_deploy",
+        {
+          "encrypted_data_len": 17556
+        }
+      ],
+      "result": {
+        "minimum": "218000",
+        "base_fee": "218000",
+        "recommended": "218000",
+        "fast": "436000",
+        "staging_size": 14,
+        "staging_ou": "14000",
+        "epoch_capacity": "10000000000",
+        "usage_pct": 0,
+        "stealth_class": false
+      }
+    },
+    {
+      "at": "2026-11-02T16:14:56.680Z",
+      "method": "octra_computeContractAddress",
+      "params": [
+        "T0NQRwIAAAAiFQAADQsAAE9DVEIBADIAYwQAAAJYAAAAAE9DVFJBX1NUQVRFX1YxAEJRQUlBR1JsWTJsdFlXeHpCUVFBYm1GdFpRSUZBRzkzYm1WeUNBWUFjM2x0WW05c0Fnd0FkRzkwWVd4ZmMzVndjR3g1Qmc9PQILAAAAY29uc3RydWN0b3IAAQAAADAAJwAAADM0MDI4MjM2NjkyMDkzODQ2MzQ2MzM3NDYwNzQzMTc2ODIxMTQ1NQAUAAAAMTg0NDY3NDQwNzM3MDk1NTE2MTUCCgAAAG5hbWUgZW1wdHkCBwAAAFJlcXVpcmUAAgAAADMyAQEAAAAxAg0AAABuYW1lIHRvbyBsb25nAgwAAABzeW1ib2wgZW1wdHkAAgAAADEyAg8AAABzeW1ib2wgdG9vIGxvbmcCFwAAAHN1cHBseSBtdXN0IGJlIHBvc2l0aXZlAAIAAAAxOAIRAAAAZGVjaW1hbHMgdG9vIGhpZ2gCBAAAAG5hbWUCBgAAAHN5bWJvbAIMAAAAdG90YWxfc3VwcGx5AggAAABkZWNpbWFscwIFAAAAb3duZXICEgAAAEBhbWwvbWFwL2JhbGFuY2VzLwIAAAAAAgEAAAAjAggAAABUcmFuc2ZlcgIKAAAAYmFsYW5jZV9vZgIJAAAAYWxsb3dhbmNlAggAAABnZXRfbmFtZQIKAAAAZ2V0X3N5bWJvbAIQAAAAZ2V0X3RvdGFsX3N1cHBseQIJAAAAZ2V0X293bmVyAggAAABjYW5fcHVsbAIIAAAAdHJhbnNmZXICBQAAAGdyYW50Ag4AAABpbmNyZWFzZV9ncmFudAIOAAAAZGVjcmVhc2VfZ3JhbnQCDAAAAHJldm9rZV9ncmFudAIEAAAAcHVsbAINAAAAdTEyOCBvdmVyZmxvdwIQAAAAQGFtbC9tYXAvZ3JhbnRzLwIXAAAAYW1vdW50IG11c3QgYmUgcG9zaXRpdmUBAQAAADACFgAAAHNlbGYgdHJhbnNmZXIgZGlzYWJsZWQCFAAAAGluc3VmZmljaWVudCBiYWxhbmNlAhMAAABzZWxmIGdyYW50IGRpc2FibGVkAhEAAAByZXNldCBncmFudCBmaXJzdAIFAAAAR3JhbnQCEwAAAGFsbG93YW5jZSB1bmRlcmZsb3cCEgAAAHNlbGYgcHVsbCBkaXNhYmxlZAIL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ABgWeScAABEJECcYAAMBAgMLCAgADAAIFxd7InNjaGVtYSI6ImFtbF9ieXRlY29kZV9jZXJ0aWZpY2F0ZV92MiIsImVmZmVjdHMiOlsiY2FsbCIsImVtaXQiLCJtZW1vcnlfcmVhZCIsIm1lbW9yeV93cml0ZSIsInN0b3JhZ2VfcmVhZCIsInN0b3JhZ2Vfd3JpdGUiXSwiZmFjdHNfaGFzaCI6ImZhMjVlZGQ1ZjVjNzQ5MDU1M2Q4NDBmZmNmZTQ3NWI1Y2VkNjE3ZjI0NmU1ZTU2MmI2NmU1ZWFhYmViMjY2YmYiLCJmYWN0cyI6eyJzdG9yYWdlIjpbeyJrZXkiOiJuYW1lIiwia2luZCI6InN0cmluZyJ9LHsia2V5Ijoic3ltYm9sIiwia2luZCI6InN0cmluZyJ9LHsia2V5IjoidG90YWxfc3VwcGx5Iiwia2luZCI6InUxMjgifSx7ImtleSI6ImRlY2ltYWxzIiwia2luZCI6InU2NCJ9LHsia2V5Ijoib3duZXIiLCJraW5kIjoiYWRkcmVzcyJ9XSwicm9vdCI6W3sic2xvdCI6MTAwMSwia2luZCI6InN0cmluZyJ9LHsic2xvdCI6MTAwMiwia2luZCI6InN0cmluZyJ9LHsic2xvdCI6MTAwMywia2luZCI6InUxMjgifSx7InNsb3QiOjEwMDQsImtpbmQiOiJ1NjQifV0sImVudHJpZXMiOlt7InRhcmdldCI6MTc1LCJtZW1vcnkiOlt7InNsb3QiOjEwMDEsImtpbmQiOiJ1MTI4In0seyJzbG90IjoxMDAyLCJraW5kIjoidTEyOCJ9XSwiZWZmZWN0cyI6WyJlbWl0IiwibWVtb3J5X3JlYWQiXX0seyJ0YXJnZXQiOjIzMiwibWVtb3J5IjpbXSwiZWZmZWN0cyI6WyJzdG9yYWdlX3JlYWQiXX0seyJ0YXJnZXQiOjIzNywibWVtb3J5IjpbeyJzbG90IjoxMDAxLCJraW5kIjoiYWRkcmVzcyJ9XSwiZWZmZWN0cyI6WyJtZW1vcnlfcmVhZCIsInN0b3JhZ2VfcmVhZCJdfSx7InRhcmdldCI6MjUzLCJtZW1vcnkiOlt7InNsb3QiOjEwMDEsImtpbmQiOiJhZGRyZXNzIn0seyJzbG90IjoxMDAyLCJraW5kIjoiYWRkcmVzcyJ9XSwiZWZmZWN0cyI6WyJtZW1vcnlfcmVhZCIsInN0b3JhZ2VfcmVhZCJdfSx7InRhcmdldCI6Mjc3LCJtZW1vcnkiOltdLCJlZmZlY3RzIjpbInN0b3JhZ2VfcmVhZCJdfSx7InRhcmdldCI6MjgyLCJtZW1vcnkiOltdLCJlZmZlY3RzIjpbInN0b3JhZ2VfcmVhZCJdfSx7InRhcmdldCI6Mjg3LCJtZW1vcnkiOltdLCJlZmZlY3RzIjpbInN0b3JhZ2VfcmVhZCJdfSx7InRhcmdldCI6MjkyLCJtZW1vcnkiOltdLCJlZmZlY3RzIjpbInN0b3JhZ2VfcmVhZCJdfSx7InRhcmdldCI6Mjk3LCJtZW1vcnkiOlt7InNsb3QiOjEwMDEsImtpbmQiOiJhZGRyZXNzIn0seyJzbG90IjoxMDAyLCJraW5kIjoiYWRkcmVzcyJ9LHsic2xvdCI6MTAwMywia2luZCI6InUxMjgifV0sImVmZmVjdHMiOlsiZW1pdCIsIm1lbW9yeV9yZWFkIiwic3RvcmFnZV9yZWFkIl19LHsidGFyZ2V0IjozNjEsIm1lbW9yeSI6W3sic2xvdCI6MTAwMSwia2luZCI6ImFkZHJlc3MifSx7InNsb3QiOjEwMDIsImtpbmQiOiJ1MTI4In1dLCJlZmZlY3RzIjpbImNhbGwiLCJlbWl0IiwibWVtb3J5X3JlYWQiLCJtZW1vcnlfd3JpdGUiLCJzdG9yYWdlX3JlYWQiLCJzdG9yYWdlX3dyaXRlIl19LHsidGFyZ2V0Ijo1MTYsIm1lbW9yeSI6W3sic2xvdCI6MTAwMSwia2luZCI6ImFkZHJlc3MifSx7InNsb3QiOjEwMDIsImtpbmQiOiJ1MTI4In1dLCJlZmZlY3RzIjpbImVtaXQiLCJtZW1vcnlfcmVhZCIsInN0b3JhZ2VfcmVhZCIsInN0b3JhZ2Vfd3JpdGUiXX0seyJ0YXJnZXQiOjYyMCwibWVtb3J5IjpbeyJzbG90IjoxMDAxLCJraW5kIjoiYWRkcmVzcyJ9LHsic2xvdCI6MTAwMiwia2luZCI6InUxMjgifV0sImVmZmVjdHMiOlsiY2FsbCIsImVtaXQiLCJtZW1vcnlfcmVhZCIsIm1lbW9yeV93cml0ZSIsInN0b3JhZ2VfcmVhZCIsInN0b3JhZ2Vfd3JpdGUiXX0seyJ0YXJnZXQiOjcyOSwibWVtb3J5IjpbeyJzbG90IjoxMDAxLCJraW5kIjoiYWRkcmVzcyJ9LHsic2xvdCI6MTAwMiwia2luZCI6InUxMjgifV0sImVmZmVjdHMiOlsiZW1pdCIsIm1lbW9yeV9yZWFkIiwic3RvcmFnZV9yZWFkIiwic3RvcmFnZV93cml0ZSJdfSx7InRhcmdldCI6ODU0LCJtZW1vcnkiOlt7InNsb3QiOjEwMDEsImtpbmQiOiJhZGRyZXNzIn1dLCJlZmZlY3RzIjpbImVtaXQiLCJtZW1vcnlfcmVhZCIsInN0b3JhZ2Vfd3JpdGUiXX0seyJ0YXJnZXQiOjg5MywibWVtb3J5IjpbeyJzbG90IjoxMDAxLCJraW5kIjoiYWRkcmVzcyJ9LHsic2xvdCI6MTAwMiwia2luZCI6ImFkZHJlc3MifSx7InNsb3QiOjEwMDMsImtpbmQiOiJ1MTI4In1dLCJlZmZlY3RzIjpbImNhbGwiLCJlbWl0IiwibWVtb3J5X3JlYWQiLCJtZW1vcnlfd3JpdGUiLCJzdG9yYWdlX3JlYWQiLCJzdG9yYWdlX3dyaXRlIl19XSwiY2FsbHMiOlt7Im93bmVyIjozNjEsInBjIjo0NDksInRhcmdldCI6MTc1LCJraW5kIjoidTEyOCJ9LHsib3duZXIiOjYyMCwicGMiOjY4NSwidGFyZ2V0IjoxNzUsImtpbmQiOiJ1MTI4In0seyJvd25lciI6ODkzLCJwYyI6MTAyMCwidGFyZ2V0IjoxNzUsImtpbmQiOiJ1MTI4In1dLCJ4Y2FsbHMiOltdfSwiY29tcGlsZXIiOiJvY3RyYV9hbWwiLCJjb21waWxlcl92ZXJzaW9uIjoiMi4wIEFNTC1wcmV2aWV3IiwiZGVjbGFyYXRpb24iOiJwcm9ncmFtIiwidmVyaWZpY2F0aW9uX3NjaGVtYSI6ImFtbF9zYWZldHlfcmVwb3J0X3YxIiwic291cmNlX21vZGUiOiJtdWx0aSIsInNvdXJjZV9oYXNoIjoiYjUwOWI2YTY4OGQ5MTQwNmQ3YjY0M2I5ZjAyYzJkMGIxMjA3Y2FkZDA4MjFlM2JlYzIwMTljNTc1ZDUyMTkwZSIsImJ5dGVjb2RlX2hhc2giOiJhMTVmY2NmMzgxNDNhOGQ2MjA0MGVmNDI0YTUzZmZmM2NkNDA2NzU0ODI1ZmE4ZGNiYmNmYTY2OTZmODNhYzJkIiwidmVyaWZpY2F0aW9uX2hhc2giOiJlNWZhMDFjZmUwY2Q3Y2NjM2I5ZjNiYmZiNDYwMzdlYjgyM2FjMTU3NTcxYzUxNWE5ODhlMjdmMGM1ZmJlM2NmIn0=",
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+        5
+      ],
+      "result": {
+        "address": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "deployer": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+        "nonce": 5
+      }
+    },
+    {
+      "at": "2026-11-02T16:15:08.926Z",
+      "method": "node_status",
+      "params": [],
+      "result": {
+        "epoch": 1784741,
+        "current_epoch": 1784741,
+        "validator": "octFc3DDzWTASUVpvyFftXp9KLx1RdiYawGHRRCVz3wcoVZ",
+        "roots": 0,
+        "timestamp": 1793636111.01902,
+        "network_version": "v3.0.0-irmin",
+        "head_epoch": 1784740,
+        "state_root": "ab5e748afacd781a038ebe50be721e76ebc3cc686d637f8c1a7c883657a11563",
+        "txid_hi": "3512388",
+        "irmin_commit": "b5e6a5e1bf920249a2c909681edd0f7b181adebba75dc7100cf0da38ce94cd228504f1bba95c8430aa48f3a0f7d2db4afd9ea3b636b95a82e603ffd94e581d98"
+      }
+    },
+    {
+      "at": "2026-11-02T16:15:09.248Z",
+      "method": "octra_recommendedFee",
+      "params": [
+        "program_deploy",
+        {
+          "encrypted_data_len": 17556
+        }
+      ],
+      "result": {
+        "minimum": "218000",
+        "base_fee": "218000",
+        "recommended": "218000",
+        "fast": "436000",
+        "staging_size": 21,
+        "staging_ou": "21000",
+        "epoch_capacity": "10000000000",
+        "usage_pct": 0,
+        "stealth_class": false
+      }
+    },
+    {
+      "at": "2026-11-02T16:15:09.448Z",
+      "method": "octra_balance",
+      "params": [
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+        "balance": "2.558492",
+        "balance_raw": "2558492",
+        "nonce": 4,
+        "pending_nonce": 4,
+        "has_public_key": true
+      }
+    },
+    {
+      "at": "2026-11-02T16:15:09.656Z",
+      "method": "octra_balance",
+      "params": [
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+        "balance": "2.558492",
+        "balance_raw": "2558492",
+        "nonce": 4,
+        "pending_nonce": 4,
+        "has_public_key": true
+      }
+    },
+    {
+      "at": "2026-11-02T16:15:45.238Z",
+      "method": "vm_contract",
+      "params": [
+        "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY"
+      ],
+      "result": {
+        "address": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "version": "2.0 AML-preview",
+        "code_hash": "a242b3a4e8e28af6aa91657235e8eba55ed3dda5f867829a2509742cc35400ca",
+        "balance": "0",
+        "owner": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      }
+    },
+    {
+      "at": "2026-11-02T16:15:45.411Z",
+      "method": "contract_call",
+      "params": [
+        "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "get_name",
+        [],
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "result": "MyToken"
+      }
+    },
+    {
+      "at": "2026-11-02T16:15:45.727Z",
+      "method": "contract_call",
+      "params": [
+        "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "get_symbol",
+        [],
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "result": "MTK"
+      }
+    },
+    {
+      "at": "2026-11-02T16:15:47.283Z",
+      "method": "contract_call",
+      "params": [
+        "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "decimals",
+        [],
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "result": "6"
+      }
+    },
+    {
+      "at": "2026-11-02T16:15:47.753Z",
+      "method": "contract_call",
+      "params": [
+        "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "get_total_supply",
+        [],
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "result": "1000000000000"
+      }
+    },
+    {
+      "at": "2026-11-02T16:15:48.319Z",
+      "method": "contract_call",
+      "params": [
+        "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "get_owner",
+        [],
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "result": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      }
+    },
+    {
+      "at": "2026-11-02T16:15:49.843Z",
+      "method": "contract_call",
+      "params": [
+        "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "balance_of",
+        [
+          "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+        ],
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "result": "1000000000000"
+      }
+    },
+    {
+      "at": "2026-11-02T16:15:50.241Z",
+      "method": "contract_call",
+      "params": [
+        "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "balance_of",
+        [
+          "octFhEHo1rg1GndfTXwMeonpZVzX9Hi4gHg7jzjEzFqDArG"
+        ],
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "result": "0"
+      }
+    },
+    {
+      "at": "2026-11-02T16:15:50.396Z",
+      "method": "octra_recommendedFee",
+      "params": [
+        "call"
+      ],
+      "result": {
+        "minimum": "1000",
+        "base_fee": "1000",
+        "recommended": "1000",
+        "fast": "2000",
+        "staging_size": 18,
+        "staging_ou": "18000",
+        "epoch_capacity": "10000000000",
+        "usage_pct": 0,
+        "stealth_class": false
+      }
+    },
+    {
+      "at": "2026-11-02T16:15:50.619Z",
+      "method": "octra_balance",
+      "params": [
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+        "balance": "2.340492",
+        "balance_raw": "2340492",
+        "nonce": 5,
+        "pending_nonce": 5,
+        "has_public_key": true
+      }
+    },
+    {
+      "at": "2026-11-02T16:16:23.917Z",
+      "method": "contract_call",
+      "params": [
+        "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "balance_of",
+        [
+          "octFhEHo1rg1GndfTXwMeonpZVzX9Hi4gHg7jzjEzFqDArG"
+        ],
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "result": "1000000"
+      }
+    },
+    {
+      "at": "2026-11-02T16:16:24.202Z",
+      "method": "contract_call",
+      "params": [
+        "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "balance_of",
+        [
+          "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+        ],
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "result": "999999000000"
+      }
+    },
+    {
+      "at": "2026-11-02T16:16:24.410Z",
+      "method": "contract_call",
+      "params": [
+        "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "get_total_supply",
+        [],
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "result": "1000000000000"
+      }
+    },
+    {
+      "at": "2026-11-02T16:16:24.993Z",
+      "method": "contract_verify",
+      "params": [
+        "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+        "import IOCS01 from \"interfaces/IOCS01.aml\"\n\nProgram Token implements IOCS01 {\n  invariant supply_conserved = sum(balances) == total_supply\n\n  const MAX_U128 = 340282366920938463463374607431768211455\n\n  state {\n    name: string\n    symbol: string\n    total_supply: u128\n    decimals: u64\n    owner: address\n    balances: map[address]u128\n    grants: map[address]map[address]u128\n  }\n\n  event Transfer(from: address, to: address, amount: u128)\n  event Grant(owner: address, spender: address, amount: u128)\n\n  constructor(n: string, s: string, supply: u128, dec: u64) {\n    require(len(n) > 0, \"name empty\")\n    require(len(n) <= 32, \"name too long\")\n    require(len(s) > 0, \"symbol empty\")\n    require(len(s) <= 12, \"symbol too long\")\n    require(supply > 0, \"supply must be positive\")\n    require(dec <= 18, \"decimals too high\")\n    self.name = n\n    self.symbol = s\n    self.total_supply = supply\n    self.decimals = dec\n    self.owner = origin\n    self.balances[origin] = supply\n    emit Transfer(origin, origin, supply)\n  }\n\n  private fn safe_add(left: u128, right: u128): u128 {\n    require(right <= MAX_U128 - left, \"u128 overflow\")\n    return left + right\n  }\n\n  view fn decimals(): u64 { return self.decimals }\n  view fn balance_of(addr: address): u128 { return self.balances[addr] }\n\n  view fn allowance(owner: address, spender: address): u128 {\n    return self.grants[owner][spender]\n  }\n\n  view fn get_name(): string { return self.name }\n  view fn get_symbol(): string { return self.symbol }\n  view fn get_total_supply(): u128 { return self.total_supply }\n  view fn get_owner(): address { return self.owner }\n\n  view fn can_pull(from: address, spender: address, amt: u128): bool {\n    require(amt > 0, \"amount must be positive\")\n    if self.grants[from][spender] < amt {\n      return false\n    }\n    return self.balances[from] >= amt\n  }\n\n  fn transfer(to: address, amt: u128): bool {\n    assert_address(to)\n    require(amt > 0, \"amount must be positive\")\n    require(to != caller, \"self transfer disabled\")\n    let bal = self.balances[caller]\n    require(bal >= amt, \"insufficient balance\")\n    let to_bal = self.balances[to]\n    let next_to = safe_add(to_bal, amt)\n    self.balances[caller] = bal - amt\n    self.balances[to] = next_to\n    emit Transfer(caller, to, amt)\n    return true\n  }\n\n  fn grant(spender: address, amt: u128): bool {\n    assert_address(spender)\n    require(spender != caller, \"self grant disabled\")\n    let current = self.grants[caller][spender]\n    require(current == 0 || amt == 0, \"reset grant first\")\n    self.grants[caller][spender] = amt\n    emit Grant(caller, spender, amt)\n    return true\n  }\n\n  fn increase_grant(spender: address, added: u128): bool {\n    assert_address(spender)\n    require(spender != caller, \"self grant disabled\")\n    require(added > 0, \"amount must be positive\")\n    let current = self.grants[caller][spender]\n    let next = safe_add(current, added)\n    self.grants[caller][spender] = next\n    emit Grant(caller, spender, next)\n    return true\n  }\n\n  fn decrease_grant(spender: address, subtracted: u128): bool {\n    assert_address(spender)\n    require(spender != caller, \"self grant disabled\")\n    require(subtracted > 0, \"amount must be positive\")\n    let current = self.grants[caller][spender]\n    require(current >= subtracted, \"allowance underflow\")\n    let next = current - subtracted\n    self.grants[caller][spender] = next\n    emit Grant(caller, spender, next)\n    return true\n  }\n\n  fn revoke_grant(spender: address): bool {\n    assert_address(spender)\n    self.grants[caller][spender] = 0\n    emit Grant(caller, spender, 0)\n    return true\n  }\n\n  fn pull(from: address, to: address, amt: u128): bool {\n    assert_address(from)\n    assert_address(to)\n    require(amt > 0, \"amount must be positive\")\n    require(from != to, \"self pull disabled\")\n    let allowed = self.grants[from][caller]\n    require(allowed >= amt, \"not allowed\")\n    let bal = self.balances[from]\n    require(bal >= amt, \"insufficient balance\")\n    let to_bal = self.balances[to]\n    let next_to = safe_add(to_bal, amt)\n    self.balances[from] = bal - amt\n    self.balances[to] = next_to\n    self.grants[from][caller] = allowed - amt\n    emit Transfer(from, to, amt)\n    return true\n  }\n}",
+        [
+          {
+            "path": "interfaces/IOCS01.aml",
+            "source": "interface IOCS01 {\n  fn transfer(to: address, amount: u128): bool\n  fn grant(spender: address, amount: u128): bool\n  fn increase_grant(spender: address, amount: u128): bool\n  fn decrease_grant(spender: address, amount: u128): bool\n  fn revoke_grant(spender: address): bool\n  fn pull(from: address, to: address, amount: u128): bool\n  fn balance_of(addr: address): u128\n  fn allowance(owner: address, spender: address): u128\n  fn can_pull(from: address, spender: address, amount: u128): bool\n  fn decimals(): u64\n  fn get_name(): string\n  fn get_symbol(): string\n  fn get_total_supply(): u128\n  fn get_owner(): address\n}"
+          }
+        ]
+      ],
+      "result": {
+        "committed": true,
+        "verified": true,
+        "published": true,
+        "code_hash": "a242b3a4e8e28af6aa91657235e8eba55ed3dda5f867829a2509742cc35400ca",
+        "verification": {
+          "schema": "aml_safety_report_v1",
+          "engine": "aml_ast_verifier",
+          "proof_model": "formal/coq/aml_value_safety_model.v",
+          "proof_gate": "scripts/check_aml_formal.sh",
+          "program_name": "Token",
+          "verified": true,
+          "safety": "safe",
+          "errors": 0,
+          "warnings": 0,
+          "trace": [
+            {
+              "code": "signed_value_storage",
+              "title": "value-like storage must not use signed int",
+              "status": "pass",
+              "severity": "error",
+              "findings": 0
+            },
+            {
+              "code": "signed_value_parameter",
+              "title": "value-moving public parameters must not use signed int",
+              "status": "pass",
+              "severity": "error",
+              "findings": 0
+            },
+            {
+              "code": "signed_value_flow",
+              "title": "signed values must not flow into value-like storage writes",
+              "status": "pass",
+              "severity": "error",
+              "findings": 0
+            },
+            {
+              "code": "unsigned_arithmetic_range_not_proven",
+              "title": "unsigned arithmetic writes must prove range safety",
+              "status": "pass",
+              "severity": "error",
+              "findings": 0
+            },
+            {
+              "code": "supply_invariant_unproven",
+              "title": "balance and total supply writes should preserve conservation",
+              "status": "pass",
+              "severity": "warning",
+              "findings": 0
+            },
+            {
+              "code": "unsigned_parameter_without_positive_guard",
+              "title": "unsigned value parameters should reject zero unless zero is meaningful",
+              "status": "pass",
+              "severity": "warning",
+              "findings": 0
+            },
+            {
+              "code": "unchecked_transfer_result",
+              "title": "native transfer result should be checked",
+              "status": "pass",
+              "severity": "warning",
+              "findings": 0
+            }
+          ],
+          "function_summaries": [
+            {
+              "name": "safe_add",
+              "visibility": "private",
+              "direct_calls": [],
+              "direct_writes": [],
+              "transitive_writes": [],
+              "value_writes": [],
+              "signed_params": []
+            },
+            {
+              "name": "decimals",
+              "visibility": "public",
+              "direct_calls": [],
+              "direct_writes": [],
+              "transitive_writes": [],
+              "value_writes": [],
+              "signed_params": []
+            },
+            {
+              "name": "balance_of",
+              "visibility": "public",
+              "direct_calls": [],
+              "direct_writes": [],
+              "transitive_writes": [],
+              "value_writes": [],
+              "signed_params": []
+            },
+            {
+              "name": "allowance",
+              "visibility": "public",
+              "direct_calls": [],
+              "direct_writes": [],
+              "transitive_writes": [],
+              "value_writes": [],
+              "signed_params": []
+            },
+            {
+              "name": "get_name",
+              "visibility": "public",
+              "direct_calls": [],
+              "direct_writes": [],
+              "transitive_writes": [],
+              "value_writes": [],
+              "signed_params": []
+            },
+            {
+              "name": "get_symbol",
+              "visibility": "public",
+              "direct_calls": [],
+              "direct_writes": [],
+              "transitive_writes": [],
+              "value_writes": [],
+              "signed_params": []
+            },
+            {
+              "name": "get_total_supply",
+              "visibility": "public",
+              "direct_calls": [],
+              "direct_writes": [],
+              "transitive_writes": [],
+              "value_writes": [],
+              "signed_params": []
+            },
+            {
+              "name": "get_owner",
+              "visibility": "public",
+              "direct_calls": [],
+              "direct_writes": [],
+              "transitive_writes": [],
+              "value_writes": [],
+              "signed_params": []
+            },
+            {
+              "name": "can_pull",
+              "visibility": "public",
+              "direct_calls": [],
+              "direct_writes": [],
+              "transitive_writes": [],
+              "value_writes": [],
+              "signed_params": []
+            },
+            {
+              "name": "transfer",
+              "visibility": "public",
+              "direct_calls": [
+                "assert_address",
+                "safe_add"
+              ],
+              "direct_writes": [
+                "balances"
+              ],
+              "transitive_writes": [
+                "balances"
+              ],
+              "value_writes": [
+                "balances"
+              ],
+              "signed_params": []
+            },
+            {
+              "name": "grant",
+              "visibility": "public",
+              "direct_calls": [
+                "assert_address"
+              ],
+              "direct_writes": [
+                "grants"
+              ],
+              "transitive_writes": [
+                "grants"
+              ],
+              "value_writes": [
+                "grants"
+              ],
+              "signed_params": []
+            },
+            {
+              "name": "increase_grant",
+              "visibility": "public",
+              "direct_calls": [
+                "assert_address",
+                "safe_add"
+              ],
+              "direct_writes": [
+                "grants"
+              ],
+              "transitive_writes": [
+                "grants"
+              ],
+              "value_writes": [
+                "grants"
+              ],
+              "signed_params": []
+            },
+            {
+              "name": "decrease_grant",
+              "visibility": "public",
+              "direct_calls": [
+                "assert_address"
+              ],
+              "direct_writes": [
+                "grants"
+              ],
+              "transitive_writes": [
+                "grants"
+              ],
+              "value_writes": [
+                "grants"
+              ],
+              "signed_params": []
+            },
+            {
+              "name": "revoke_grant",
+              "visibility": "public",
+              "direct_calls": [
+                "assert_address"
+              ],
+              "direct_writes": [
+                "grants"
+              ],
+              "transitive_writes": [
+                "grants"
+              ],
+              "value_writes": [
+                "grants"
+              ],
+              "signed_params": []
+            },
+            {
+              "name": "pull",
+              "visibility": "public",
+              "direct_calls": [
+                "assert_address",
+                "safe_add"
+              ],
+              "direct_writes": [
+                "balances",
+                "grants"
+              ],
+              "transitive_writes": [
+                "balances",
+                "grants"
+              ],
+              "value_writes": [
+                "balances",
+                "grants"
+              ],
+              "signed_params": []
+            },
+            {
+              "name": "constructor",
+              "visibility": "public",
+              "direct_calls": [
+                "len"
+              ],
+              "direct_writes": [
+                "balances",
+                "decimals",
+                "name",
+                "owner",
+                "symbol",
+                "total_supply"
+              ],
+              "transitive_writes": [
+                "balances",
+                "decimals",
+                "name",
+                "owner",
+                "symbol",
+                "total_supply"
+              ],
+              "value_writes": [
+                "balances",
+                "total_supply"
+              ],
+              "signed_params": []
+            }
+          ],
+          "invariants": [
+            {
+              "code": "supply_balance_conservation",
+              "kind": "derived",
+              "status": "pass",
+              "expression": null,
+              "message": "balance and supply write pattern looks conserved",
+              "fields": [
+                "balances",
+                "total_supply"
+              ],
+              "functions": []
+            },
+            {
+              "code": "declared:supply_conserved",
+              "kind": "declared_supply_balance",
+              "status": "pass",
+              "expression": "sum(balances) == total_supply",
+              "message": "sum(balances) == total_supply",
+              "fields": [
+                "balances",
+                "total_supply"
+              ],
+              "functions": []
+            }
+          ],
+          "findings": []
+        },
+        "certificate": {
+          "schema": "aml_bytecode_certificate_v2",
+          "effects": [
+            "call",
+            "emit",
+            "memory_read",
+            "memory_write",
+            "storage_read",
+            "storage_write"
+          ],
+          "facts_hash": "fa25edd5f5c7490553d840ffcfe475b5ced617f246e5e562b66e5eaabeb266bf",
+          "facts": {
+            "storage": [
+              {
+                "key": "name",
+                "kind": "string"
+              },
+              {
+                "key": "symbol",
+                "kind": "string"
+              },
+              {
+                "key": "total_supply",
+                "kind": "u128"
+              },
+              {
+                "key": "decimals",
+                "kind": "u64"
+              },
+              {
+                "key": "owner",
+                "kind": "address"
+              }
+            ],
+            "root": [
+              {
+                "slot": 1001,
+                "kind": "string"
+              },
+              {
+                "slot": 1002,
+                "kind": "string"
+              },
+              {
+                "slot": 1003,
+                "kind": "u128"
+              },
+              {
+                "slot": 1004,
+                "kind": "u64"
+              }
+            ],
+            "entries": [
+              {
+                "target": 175,
+                "memory": [
+                  {
+                    "slot": 1001,
+                    "kind": "u128"
+                  },
+                  {
+                    "slot": 1002,
+                    "kind": "u128"
+                  }
+                ],
+                "effects": [
+                  "emit",
+                  "memory_read"
+                ]
+              },
+              {
+                "target": 232,
+                "memory": [],
+                "effects": [
+                  "storage_read"
+                ]
+              },
+              {
+                "target": 237,
+                "memory": [
+                  {
+                    "slot": 1001,
+                    "kind": "address"
+                  }
+                ],
+                "effects": [
+                  "memory_read",
+                  "storage_read"
+                ]
+              },
+              {
+                "target": 253,
+                "memory": [
+                  {
+                    "slot": 1001,
+                    "kind": "address"
+                  },
+                  {
+                    "slot": 1002,
+                    "kind": "address"
+                  }
+                ],
+                "effects": [
+                  "memory_read",
+                  "storage_read"
+                ]
+              },
+              {
+                "target": 277,
+                "memory": [],
+                "effects": [
+                  "storage_read"
+                ]
+              },
+              {
+                "target": 282,
+                "memory": [],
+                "effects": [
+                  "storage_read"
+                ]
+              },
+              {
+                "target": 287,
+                "memory": [],
+                "effects": [
+                  "storage_read"
+                ]
+              },
+              {
+                "target": 292,
+                "memory": [],
+                "effects": [
+                  "storage_read"
+                ]
+              },
+              {
+                "target": 297,
+                "memory": [
+                  {
+                    "slot": 1001,
+                    "kind": "address"
+                  },
+                  {
+                    "slot": 1002,
+                    "kind": "address"
+                  },
+                  {
+                    "slot": 1003,
+                    "kind": "u128"
+                  }
+                ],
+                "effects": [
+                  "emit",
+                  "memory_read",
+                  "storage_read"
+                ]
+              },
+              {
+                "target": 361,
+                "memory": [
+                  {
+                    "slot": 1001,
+                    "kind": "address"
+                  },
+                  {
+                    "slot": 1002,
+                    "kind": "u128"
+                  }
+                ],
+                "effects": [
+                  "call",
+                  "emit",
+                  "memory_read",
+                  "memory_write",
+                  "storage_read",
+                  "storage_write"
+                ]
+              },
+              {
+                "target": 516,
+                "memory": [
+                  {
+                    "slot": 1001,
+                    "kind": "address"
+                  },
+                  {
+                    "slot": 1002,
+                    "kind": "u128"
+                  }
+                ],
+                "effects": [
+                  "emit",
+                  "memory_read",
+                  "storage_read",
+                  "storage_write"
+                ]
+              },
+              {
+                "target": 620,
+                "memory": [
+                  {
+                    "slot": 1001,
+                    "kind": "address"
+                  },
+                  {
+                    "slot": 1002,
+                    "kind": "u128"
+                  }
+                ],
+                "effects": [
+                  "call",
+                  "emit",
+                  "memory_read",
+                  "memory_write",
+                  "storage_read",
+                  "storage_write"
+                ]
+              },
+              {
+                "target": 729,
+                "memory": [
+                  {
+                    "slot": 1001,
+                    "kind": "address"
+                  },
+                  {
+                    "slot": 1002,
+                    "kind": "u128"
+                  }
+                ],
+                "effects": [
+                  "emit",
+                  "memory_read",
+                  "storage_read",
+                  "storage_write"
+                ]
+              },
+              {
+                "target": 854,
+                "memory": [
+                  {
+                    "slot": 1001,
+                    "kind": "address"
+                  }
+                ],
+                "effects": [
+                  "emit",
+                  "memory_read",
+                  "storage_write"
+                ]
+              },
+              {
+                "target": 893,
+                "memory": [
+                  {
+                    "slot": 1001,
+                    "kind": "address"
+                  },
+                  {
+                    "slot": 1002,
+                    "kind": "address"
+                  },
+                  {
+                    "slot": 1003,
+                    "kind": "u128"
+                  }
+                ],
+                "effects": [
+                  "call",
+                  "emit",
+                  "memory_read",
+                  "memory_write",
+                  "storage_read",
+                  "storage_write"
+                ]
+              }
+            ],
+            "calls": [
+              {
+                "owner": 361,
+                "pc": 449,
+                "target": 175,
+                "kind": "u128"
+              },
+              {
+                "owner": 620,
+                "pc": 685,
+                "target": 175,
+                "kind": "u128"
+              },
+              {
+                "owner": 893,
+                "pc": 1020,
+                "target": 175,
+                "kind": "u128"
+              }
+            ],
+            "xcalls": []
+          },
+          "compiler": "octra_aml",
+          "compiler_version": "2.0 AML-preview",
+          "declaration": "program",
+          "verification_schema": "aml_safety_report_v1",
+          "source_mode": "multi",
+          "source_hash": "b509b6a688d91406d7b643b9f02c2d0b1207cadd0821e3bec2019c575d52190e",
+          "bytecode_hash": "a15fccf38143a8d62040ef424a53fff3cd406754825fa8dcbbcfa6696f83ac2d",
+          "verification_hash": "e5fa01cfe0cd7ccc3b9f3bbfb46037eb823ac157571c515a988e27f0c5fbe3cf"
+        },
+        "publication": {
+          "requires_rule": "program_records",
+          "op_type": "upgrade",
+          "to": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+          "amount": "0",
+          "ou": "201029",
+          "message": "{\"schema\":\"octra_program_source\",\"expected_code_hash\":\"a242b3a4e8e28af6aa91657235e8eba55ed3dda5f867829a2509742cc35400ca\"}",
+          "encrypted_data": "eyJtYWluIjoibWFpbi5hbWwiLCJmaWxlcyI6W3sicGF0aCI6ImludGVyZmFjZXMvSU9DUzAxLmFtbCIsInNvdXJjZSI6ImludGVyZmFjZSBJT0NTMDEge1xuICBmbiB0cmFuc2Zlcih0bzogYWRkcmVzcywgYW1vdW50OiB1MTI4KTogYm9vbFxuICBmbiBncmFudChzcGVuZGVyOiBhZGRyZXNzLCBhbW91bnQ6IHUxMjgpOiBib29sXG4gIGZuIGluY3JlYXNlX2dyYW50KHNwZW5kZXI6IGFkZHJlc3MsIGFtb3VudDogdTEyOCk6IGJvb2xcbiAgZm4gZGVjcmVhc2VfZ3JhbnQoc3BlbmRlcjogYWRkcmVzcywgYW1vdW50OiB1MTI4KTogYm9vbFxuICBmbiByZXZva2VfZ3JhbnQoc3BlbmRlcjogYWRkcmVzcyk6IGJvb2xcbiAgZm4gcHVsbChmcm9tOiBhZGRyZXNzLCB0bzogYWRkcmVzcywgYW1vdW50OiB1MTI4KTogYm9vbFxuICBmbiBiYWxhbmNlX29mKGFkZHI6IGFkZHJlc3MpOiB1MTI4XG4gIGZuIGFsbG93YW5jZShvd25lcjogYWRkcmVzcywgc3BlbmRlcjogYWRkcmVzcyk6IHUxMjhcbiAgZm4gY2FuX3B1bGwoZnJvbTogYWRkcmVzcywgc3BlbmRlcjogYWRkcmVzcywgYW1vdW50OiB1MTI4KTogYm9vbFxuICBmbiBkZWNpbWFscygpOiB1NjRcbiAgZm4gZ2V0X25hbWUoKTogc3RyaW5nXG4gIGZuIGdldF9zeW1ib2woKTogc3RyaW5nXG4gIGZuIGdldF90b3RhbF9zdXBwbHkoKTogdTEyOFxuICBmbiBnZXRfb3duZXIoKTogYWRkcmVzc1xufSJ9LHsicGF0aCI6Im1haW4uYW1sIiwic291cmNlIjoiaW1wb3J0IElPQ1MwMSBmcm9tIFwiaW50ZXJmYWNlcy9JT0NTMDEuYW1sXCJcblxuUHJvZ3JhbSBUb2tlbiBpbXBsZW1lbnRzIElPQ1MwMSB7XG4gIGludmFyaWFudCBzdXBwbHlfY29uc2VydmVkID0gc3VtKGJhbGFuY2VzKSA9PSB0b3RhbF9zdXBwbHlcblxuICBjb25zdCBNQVhfVTEyOCA9IDM0MDI4MjM2NjkyMDkzODQ2MzQ2MzM3NDYwNzQzMTc2ODIxMTQ1NVxuXG4gIHN0YXRlIHtcbiAgICBuYW1lOiBzdHJpbmdcbiAgICBzeW1ib2w6IHN0cmluZ1xuICAgIHRvdGFsX3N1cHBseTogdTEyOFxuICAgIGRlY2ltYWxzOiB1NjRcbiAgICBvd25lcjogYWRkcmVzc1xuICAgIGJhbGFuY2VzOiBtYXBbYWRkcmVzc111MTI4XG4gICAgZ3JhbnRzOiBtYXBbYWRkcmVzc11tYXBbYWRkcmVzc111MTI4XG4gIH1cblxuICBldmVudCBUcmFuc2Zlcihmcm9tOiBhZGRyZXNzLCB0bzogYWRkcmVzcywgYW1vdW50OiB1MTI4KVxuICBldmVudCBHcmFudChvd25lcjogYWRkcmVzcywgc3BlbmRlcjogYWRkcmVzcywgYW1vdW50OiB1MTI4KVxuXG4gIGNvbnN0cnVjdG9yKG46IHN0cmluZywgczogc3RyaW5nLCBzdXBwbHk6IHUxMjgsIGRlYzogdTY0KSB7XG4gICAgcmVxdWlyZShsZW4obikgPiAwLCBcIm5hbWUgZW1wdHlcIilcbiAgICByZXF1aXJlKGxlbihuKSA8PSAzMiwgXCJuYW1lIHRvbyBsb25nXCIpXG4gICAgcmVxdWlyZShsZW4ocykgPiAwLCBcInN5bWJvbCBlbXB0eVwiKVxuICAgIHJlcXVpcmUobGVuKHMpIDw9IDEyLCBcInN5bWJvbCB0b28gbG9uZ1wiKVxuICAgIHJlcXVpcmUoc3VwcGx5ID4gMCwgXCJzdXBwbHkgbXVzdCBiZSBwb3NpdGl2ZVwiKVxuICAgIHJlcXVpcmUoZGVjIDw9IDE4LCBcImRlY2ltYWxzIHRvbyBoaWdoXCIpXG4gICAgc2VsZi5uYW1lID0gblxuICAgIHNlbGYuc3ltYm9sID0gc1xuICAgIHNlbGYudG90YWxfc3VwcGx5ID0gc3VwcGx5XG4gICAgc2VsZi5kZWNpbWFscyA9IGRlY1xuICAgIHNlbGYub3duZXIgPSBvcmlnaW5cbiAgICBzZWxmLmJhbGFuY2VzW29yaWdpbl0gPSBzdXBwbHlcbiAgICBlbWl0IFRyYW5zZmVyKG9yaWdpbiwgb3JpZ2luLCBzdXBwbHkpXG4gIH1cblxuICBwcml2YXRlIGZuIHNhZmVfYWRkKGxlZnQ6IHUxMjgsIHJpZ2h0OiB1MTI4KTogdTEyOCB7XG4gICAgcmVxdWlyZShyaWdodCA8PSBNQVhfVTEyOCAtIGxlZnQsIFwidTEyOCBvdmVyZmxvd1wiKVxuICAgIHJldHVybiBsZWZ0ICsgcmlnaHRcbiAgfVxuXG4gIHZpZXcgZm4gZGVjaW1hbHMoKTogdTY0IHsgcmV0dXJuIHNlbGYuZGVjaW1hbHMgfVxuICB2aWV3IGZuIGJhbGFuY2Vfb2YoYWRkcjogYWRkcmVzcyk6IHUxMjggeyByZXR1cm4gc2VsZi5iYWxhbmNlc1thZGRyXSB9XG5cbiAgdmlldyBmbiBhbGxvd2FuY2Uob3duZXI6IGFkZHJlc3MsIHNwZW5kZXI6IGFkZHJlc3MpOiB1MTI4IHtcbiAgICByZXR1cm4gc2VsZi5ncmFudHNbb3duZXJdW3NwZW5kZXJdXG4gIH1cblxuICB2aWV3IGZuIGdldF9uYW1lKCk6IHN0cmluZyB7IHJldHVybiBzZWxmLm5hbWUgfVxuICB2aWV3IGZuIGdldF9zeW1ib2woKTogc3RyaW5nIHsgcmV0dXJuIHNlbGYuc3ltYm9sIH1cbiAgdmlldyBmbiBnZXRfdG90YWxfc3VwcGx5KCk6IHUxMjggeyByZXR1cm4gc2VsZi50b3RhbF9zdXBwbHkgfVxuICB2aWV3IGZuIGdldF9vd25lcigpOiBhZGRyZXNzIHsgcmV0dXJuIHNlbGYub3duZXIgfVxuXG4gIHZpZXcgZm4gY2FuX3B1bGwoZnJvbTogYWRkcmVzcywgc3BlbmRlcjogYWRkcmVzcywgYW10OiB1MTI4KTogYm9vbCB7XG4gICAgcmVxdWlyZShhbXQgPiAwLCBcImFtb3VudCBtdXN0IGJlIHBvc2l0aXZlXCIpXG4gICAgaWYgc2VsZi5ncmFudHNbZnJvbV1bc3BlbmRlcl0gPCBhbXQge1xuICAgICAgcmV0dXJuIGZhbHNlXG4gICAgfVxuICAgIHJldHVybiBzZWxmLmJhbGFuY2VzW2Zyb21dID49IGFtdFxuICB9XG5cbiAgZm4gdHJhbnNmZXIodG86IGFkZHJlc3MsIGFtdDogdTEyOCk6IGJvb2wge1xuICAgIGFzc2VydF9hZGRyZXNzKHRvKVxuICAgIHJlcXVpcmUoYW10ID4gMCwgXCJhbW91bnQgbXVzdCBiZSBwb3NpdGl2ZVwiKVxuICAgIHJlcXVpcmUodG8gIT0gY2FsbGVyLCBcInNlbGYgdHJhbnNmZXIgZGlzYWJsZWRcIilcbiAgICBsZXQgYmFsID0gc2VsZi5iYWxhbmNlc1tjYWxsZXJdXG4gICAgcmVxdWlyZShiYWwgPj0gYW10LCBcImluc3VmZmljaWVudCBiYWxhbmNlXCIpXG4gICAgbGV0IHRvX2JhbCA9IHNlbGYuYmFsYW5jZXNbdG9dXG4gICAgbGV0IG5leHRfdG8gPSBzYWZlX2FkZCh0b19iYWwsIGFtdClcbiAgICBzZWxmLmJhbGFuY2VzW2NhbGxlcl0gPSBiYWwgLSBhbXRcbiAgICBzZWxmLmJhbGFuY2VzW3RvXSA9IG5leHRfdG9cbiAgICBlbWl0IFRyYW5zZmVyKGNhbGxlciwgdG8sIGFtdClcbiAgICByZXR1cm4gdHJ1ZVxuICB9XG5cbiAgZm4gZ3JhbnQoc3BlbmRlcjogYWRkcmVzcywgYW10OiB1MTI4KTogYm9vbCB7XG4gICAgYXNzZXJ0X2FkZHJlc3Moc3BlbmRlcilcbiAgICByZXF1aXJlKHNwZW5kZXIgIT0gY2FsbGVyLCBcInNlbGYgZ3JhbnQgZGlzYWJsZWRcIilcbiAgICBsZXQgY3VycmVudCA9IHNlbGYuZ3JhbnRzW2NhbGxlcl1bc3BlbmRlcl1cbiAgICByZXF1aXJlKGN1cnJlbnQgPT0gMCB8fCBhbXQgPT0gMCwgXCJyZXNldCBncmFudCBmaXJzdFwiKVxuICAgIHNlbGYuZ3JhbnRzW2NhbGxlcl1bc3BlbmRlcl0gPSBhbXRcbiAgICBlbWl0IEdyYW50KGNhbGxlciwgc3BlbmRlciwgYW10KVxuICAgIHJldHVybiB0cnVlXG4gIH1cblxuICBmbiBpbmNyZWFzZV9ncmFudChzcGVuZGVyOiBhZGRyZXNzLCBhZGRlZDogdTEyOCk6IGJvb2wge1xuICAgIGFzc2VydF9hZGRyZXNzKHNwZW5kZXIpXG4gICAgcmVxdWlyZShzcGVuZGVyICE9IGNhbGxlciwgXCJzZWxmIGdyYW50IGRpc2FibGVkXCIpXG4gICAgcmVxdWlyZShhZGRlZCA+IDAsIFwiYW1vdW50IG11c3QgYmUgcG9zaXRpdmVcIilcbiAgICBsZXQgY3VycmVudCA9IHNlbGYuZ3JhbnRzW2NhbGxlcl1bc3BlbmRlcl1cbiAgICBsZXQgbmV4dCA9IHNhZmVfYWRkKGN1cnJlbnQsIGFkZGVkKVxuICAgIHNlbGYuZ3JhbnRzW2NhbGxlcl1bc3BlbmRlcl0gPSBuZXh0XG4gICAgZW1pdCBHcmFudChjYWxsZXIsIHNwZW5kZXIsIG5leHQpXG4gICAgcmV0dXJuIHRydWVcbiAgfVxuXG4gIGZuIGRlY3JlYXNlX2dyYW50KHNwZW5kZXI6IGFkZHJlc3MsIHN1YnRyYWN0ZWQ6IHUxMjgpOiBib29sIHtcbiAgICBhc3NlcnRfYWRkcmVzcyhzcGVuZGVyKVxuICAgIHJlcXVpcmUoc3BlbmRlciAhPSBjYWxsZXIsIFwic2VsZiBncmFudCBkaXNhYmxlZFwiKVxuICAgIHJlcXVpcmUoc3VidHJhY3RlZCA+IDAsIFwiYW1vdW50IG11c3QgYmUgcG9zaXRpdmVcIilcbiAgICBsZXQgY3VycmVudCA9IHNlbGYuZ3JhbnRzW2NhbGxlcl1bc3BlbmRlcl1cbiAgICByZXF1aXJlKGN1cnJlbnQgPj0gc3VidHJhY3RlZCwgXCJhbGxvd2FuY2UgdW5kZXJmbG93XCIpXG4gICAgbGV0IG5leHQgPSBjdXJyZW50IC0gc3VidHJhY3RlZFxuICAgIHNlbGYuZ3JhbnRzW2NhbGxlcl1bc3BlbmRlcl0gPSBuZXh0XG4gICAgZW1pdCBHcmFudChjYWxsZXIsIHNwZW5kZXIsIG5leHQpXG4gICAgcmV0dXJuIHRydWVcbiAgfVxuXG4gIGZuIHJldm9rZV9ncmFudChzcGVuZGVyOiBhZGRyZXNzKTogYm9vbCB7XG4gICAgYXNzZXJ0X2FkZHJlc3Moc3BlbmRlcilcbiAgICBzZWxmLmdyYW50c1tjYWxsZXJdW3NwZW5kZXJdID0gMFxuICAgIGVtaXQgR3JhbnQoY2FsbGVyLCBzcGVuZGVyLCAwKVxuICAgIHJldHVybiB0cnVlXG4gIH1cblxuICBmbiBwdWxsKGZyb206IGFkZHJlc3MsIHRvOiBhZGRyZXNzLCBhbXQ6IHUxMjgpOiBib29sIHtcbiAgICBhc3NlcnRfYWRkcmVzcyhmcm9tKVxuICAgIGFzc2VydF9hZGRyZXNzKHRvKVxuICAgIHJlcXVpcmUoYW10ID4gMCwgXCJhbW91bnQgbXVzdCBiZSBwb3NpdGl2ZVwiKVxuICAgIHJlcXVpcmUoZnJvbSAhPSB0bywgXCJzZWxmIHB1bGwgZGlzYWJsZWRcIilcbiAgICBsZXQgYWxsb3dlZCA9IHNlbGYuZ3JhbnRzW2Zyb21dW2NhbGxlcl1cbiAgICByZXF1aXJlKGFsbG93ZWQgPj0gYW10LCBcIm5vdCBhbGxvd2VkXCIpXG4gICAgbGV0IGJhbCA9IHNlbGYuYmFsYW5jZXNbZnJvbV1cbiAgICByZXF1aXJlKGJhbCA+PSBhbXQsIFwiaW5zdWZmaWNpZW50IGJhbGFuY2VcIilcbiAgICBsZXQgdG9fYmFsID0gc2VsZi5iYWxhbmNlc1t0b11cbiAgICBsZXQgbmV4dF90byA9IHNhZmVfYWRkKHRvX2JhbCwgYW10KVxuICAgIHNlbGYuYmFsYW5jZXNbZnJvbV0gPSBiYWwgLSBhbXRcbiAgICBzZWxmLmJhbGFuY2VzW3RvXSA9IG5leHRfdG9cbiAgICBzZWxmLmdyYW50c1tmcm9tXVtjYWxsZXJdID0gYWxsb3dlZCAtIGFtdFxuICAgIGVtaXQgVHJhbnNmZXIoZnJvbSwgdG8sIGFtdClcbiAgICByZXR1cm4gdHJ1ZVxuICB9XG59In1dLCJjb21waWxlciI6InBhY2thZ2VfcHJldmlldyIsImxvb3BzIjpmYWxzZX0="
+        }
+      }
+    },
+    {
+      "at": "2026-11-02T16:16:25.406Z",
+      "method": "octra_balance",
+      "params": [
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "result": {
+        "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+        "balance": "2.339492",
+        "balance_raw": "2339492",
+        "nonce": 6,
+        "pending_nonce": 6,
+        "has_public_key": true
+      }
+    }
+  ],
+  "node": {
+    "epoch": 1784741,
+    "current_epoch": 1784741,
+    "validator": "octFc3DDzWTASUVpvyFftXp9KLx1RdiYawGHRRCVz3wcoVZ",
+    "roots": 0,
+    "timestamp": 1793636111.01902,
+    "network_version": "v3.0.0-irmin",
+    "head_epoch": 1784740,
+    "state_root": "ab5e748afacd781a038ebe50be721e76ebc3cc686d637f8c1a7c883657a11563",
+    "txid_hi": "3512388",
+    "irmin_commit": "b5e6a5e1bf920249a2c909681edd0f7b181adebba75dc7100cf0da38ce94cd228504f1bba95c8430aa48f3a0f7d2db4afd9ea3b636b95a82e603ffd94e581d98"
+  },
+  "balanceBefore": {
+    "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+    "balance": "2.558492",
+    "balance_raw": "2558492",
+    "nonce": 4,
+    "pending_nonce": 4,
+    "has_public_key": true
+  },
+  "deploymentFeeOU": "218000",
+  "contractAddress": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+  "preview": {
+    "address": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+    "deployer": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+    "nonce": 5
+  },
+  "recipient": "octFhEHo1rg1GndfTXwMeonpZVzX9Hi4gHg7jzjEzFqDArG",
+  "sourceVerification": {
+    "committed": true,
+    "verified": true,
+    "published": true,
+    "code_hash": "a242b3a4e8e28af6aa91657235e8eba55ed3dda5f867829a2509742cc35400ca",
+    "verification": {
+      "schema": "aml_safety_report_v1",
+      "engine": "aml_ast_verifier",
+      "proof_model": "formal/coq/aml_value_safety_model.v",
+      "proof_gate": "scripts/check_aml_formal.sh",
+      "program_name": "Token",
+      "verified": true,
+      "safety": "safe",
+      "errors": 0,
+      "warnings": 0,
+      "trace": [
+        {
+          "code": "signed_value_storage",
+          "title": "value-like storage must not use signed int",
+          "status": "pass",
+          "severity": "error",
+          "findings": 0
+        },
+        {
+          "code": "signed_value_parameter",
+          "title": "value-moving public parameters must not use signed int",
+          "status": "pass",
+          "severity": "error",
+          "findings": 0
+        },
+        {
+          "code": "signed_value_flow",
+          "title": "signed values must not flow into value-like storage writes",
+          "status": "pass",
+          "severity": "error",
+          "findings": 0
+        },
+        {
+          "code": "unsigned_arithmetic_range_not_proven",
+          "title": "unsigned arithmetic writes must prove range safety",
+          "status": "pass",
+          "severity": "error",
+          "findings": 0
+        },
+        {
+          "code": "supply_invariant_unproven",
+          "title": "balance and total supply writes should preserve conservation",
+          "status": "pass",
+          "severity": "warning",
+          "findings": 0
+        },
+        {
+          "code": "unsigned_parameter_without_positive_guard",
+          "title": "unsigned value parameters should reject zero unless zero is meaningful",
+          "status": "pass",
+          "severity": "warning",
+          "findings": 0
+        },
+        {
+          "code": "unchecked_transfer_result",
+          "title": "native transfer result should be checked",
+          "status": "pass",
+          "severity": "warning",
+          "findings": 0
+        }
+      ],
+      "function_summaries": [
+        {
+          "name": "safe_add",
+          "visibility": "private",
+          "direct_calls": [],
+          "direct_writes": [],
+          "transitive_writes": [],
+          "value_writes": [],
+          "signed_params": []
+        },
+        {
+          "name": "decimals",
+          "visibility": "public",
+          "direct_calls": [],
+          "direct_writes": [],
+          "transitive_writes": [],
+          "value_writes": [],
+          "signed_params": []
+        },
+        {
+          "name": "balance_of",
+          "visibility": "public",
+          "direct_calls": [],
+          "direct_writes": [],
+          "transitive_writes": [],
+          "value_writes": [],
+          "signed_params": []
+        },
+        {
+          "name": "allowance",
+          "visibility": "public",
+          "direct_calls": [],
+          "direct_writes": [],
+          "transitive_writes": [],
+          "value_writes": [],
+          "signed_params": []
+        },
+        {
+          "name": "get_name",
+          "visibility": "public",
+          "direct_calls": [],
+          "direct_writes": [],
+          "transitive_writes": [],
+          "value_writes": [],
+          "signed_params": []
+        },
+        {
+          "name": "get_symbol",
+          "visibility": "public",
+          "direct_calls": [],
+          "direct_writes": [],
+          "transitive_writes": [],
+          "value_writes": [],
+          "signed_params": []
+        },
+        {
+          "name": "get_total_supply",
+          "visibility": "public",
+          "direct_calls": [],
+          "direct_writes": [],
+          "transitive_writes": [],
+          "value_writes": [],
+          "signed_params": []
+        },
+        {
+          "name": "get_owner",
+          "visibility": "public",
+          "direct_calls": [],
+          "direct_writes": [],
+          "transitive_writes": [],
+          "value_writes": [],
+          "signed_params": []
+        },
+        {
+          "name": "can_pull",
+          "visibility": "public",
+          "direct_calls": [],
+          "direct_writes": [],
+          "transitive_writes": [],
+          "value_writes": [],
+          "signed_params": []
+        },
+        {
+          "name": "transfer",
+          "visibility": "public",
+          "direct_calls": [
+            "assert_address",
+            "safe_add"
+          ],
+          "direct_writes": [
+            "balances"
+          ],
+          "transitive_writes": [
+            "balances"
+          ],
+          "value_writes": [
+            "balances"
+          ],
+          "signed_params": []
+        },
+        {
+          "name": "grant",
+          "visibility": "public",
+          "direct_calls": [
+            "assert_address"
+          ],
+          "direct_writes": [
+            "grants"
+          ],
+          "transitive_writes": [
+            "grants"
+          ],
+          "value_writes": [
+            "grants"
+          ],
+          "signed_params": []
+        },
+        {
+          "name": "increase_grant",
+          "visibility": "public",
+          "direct_calls": [
+            "assert_address",
+            "safe_add"
+          ],
+          "direct_writes": [
+            "grants"
+          ],
+          "transitive_writes": [
+            "grants"
+          ],
+          "value_writes": [
+            "grants"
+          ],
+          "signed_params": []
+        },
+        {
+          "name": "decrease_grant",
+          "visibility": "public",
+          "direct_calls": [
+            "assert_address"
+          ],
+          "direct_writes": [
+            "grants"
+          ],
+          "transitive_writes": [
+            "grants"
+          ],
+          "value_writes": [
+            "grants"
+          ],
+          "signed_params": []
+        },
+        {
+          "name": "revoke_grant",
+          "visibility": "public",
+          "direct_calls": [
+            "assert_address"
+          ],
+          "direct_writes": [
+            "grants"
+          ],
+          "transitive_writes": [
+            "grants"
+          ],
+          "value_writes": [
+            "grants"
+          ],
+          "signed_params": []
+        },
+        {
+          "name": "pull",
+          "visibility": "public",
+          "direct_calls": [
+            "assert_address",
+            "safe_add"
+          ],
+          "direct_writes": [
+            "balances",
+            "grants"
+          ],
+          "transitive_writes": [
+            "balances",
+            "grants"
+          ],
+          "value_writes": [
+            "balances",
+            "grants"
+          ],
+          "signed_params": []
+        },
+        {
+          "name": "constructor",
+          "visibility": "public",
+          "direct_calls": [
+            "len"
+          ],
+          "direct_writes": [
+            "balances",
+            "decimals",
+            "name",
+            "owner",
+            "symbol",
+            "total_supply"
+          ],
+          "transitive_writes": [
+            "balances",
+            "decimals",
+            "name",
+            "owner",
+            "symbol",
+            "total_supply"
+          ],
+          "value_writes": [
+            "balances",
+            "total_supply"
+          ],
+          "signed_params": []
+        }
+      ],
+      "invariants": [
+        {
+          "code": "supply_balance_conservation",
+          "kind": "derived",
+          "status": "pass",
+          "expression": null,
+          "message": "balance and supply write pattern looks conserved",
+          "fields": [
+            "balances",
+            "total_supply"
+          ],
+          "functions": []
+        },
+        {
+          "code": "declared:supply_conserved",
+          "kind": "declared_supply_balance",
+          "status": "pass",
+          "expression": "sum(balances) == total_supply",
+          "message": "sum(balances) == total_supply",
+          "fields": [
+            "balances",
+            "total_supply"
+          ],
+          "functions": []
+        }
+      ],
+      "findings": []
+    },
+    "certificate": {
+      "schema": "aml_bytecode_certificate_v2",
+      "effects": [
+        "call",
+        "emit",
+        "memory_read",
+        "memory_write",
+        "storage_read",
+        "storage_write"
+      ],
+      "facts_hash": "fa25edd5f5c7490553d840ffcfe475b5ced617f246e5e562b66e5eaabeb266bf",
+      "facts": {
+        "storage": [
+          {
+            "key": "name",
+            "kind": "string"
+          },
+          {
+            "key": "symbol",
+            "kind": "string"
+          },
+          {
+            "key": "total_supply",
+            "kind": "u128"
+          },
+          {
+            "key": "decimals",
+            "kind": "u64"
+          },
+          {
+            "key": "owner",
+            "kind": "address"
+          }
+        ],
+        "root": [
+          {
+            "slot": 1001,
+            "kind": "string"
+          },
+          {
+            "slot": 1002,
+            "kind": "string"
+          },
+          {
+            "slot": 1003,
+            "kind": "u128"
+          },
+          {
+            "slot": 1004,
+            "kind": "u64"
+          }
+        ],
+        "entries": [
+          {
+            "target": 175,
+            "memory": [
+              {
+                "slot": 1001,
+                "kind": "u128"
+              },
+              {
+                "slot": 1002,
+                "kind": "u128"
+              }
+            ],
+            "effects": [
+              "emit",
+              "memory_read"
+            ]
+          },
+          {
+            "target": 232,
+            "memory": [],
+            "effects": [
+              "storage_read"
+            ]
+          },
+          {
+            "target": 237,
+            "memory": [
+              {
+                "slot": 1001,
+                "kind": "address"
+              }
+            ],
+            "effects": [
+              "memory_read",
+              "storage_read"
+            ]
+          },
+          {
+            "target": 253,
+            "memory": [
+              {
+                "slot": 1001,
+                "kind": "address"
+              },
+              {
+                "slot": 1002,
+                "kind": "address"
+              }
+            ],
+            "effects": [
+              "memory_read",
+              "storage_read"
+            ]
+          },
+          {
+            "target": 277,
+            "memory": [],
+            "effects": [
+              "storage_read"
+            ]
+          },
+          {
+            "target": 282,
+            "memory": [],
+            "effects": [
+              "storage_read"
+            ]
+          },
+          {
+            "target": 287,
+            "memory": [],
+            "effects": [
+              "storage_read"
+            ]
+          },
+          {
+            "target": 292,
+            "memory": [],
+            "effects": [
+              "storage_read"
+            ]
+          },
+          {
+            "target": 297,
+            "memory": [
+              {
+                "slot": 1001,
+                "kind": "address"
+              },
+              {
+                "slot": 1002,
+                "kind": "address"
+              },
+              {
+                "slot": 1003,
+                "kind": "u128"
+              }
+            ],
+            "effects": [
+              "emit",
+              "memory_read",
+              "storage_read"
+            ]
+          },
+          {
+            "target": 361,
+            "memory": [
+              {
+                "slot": 1001,
+                "kind": "address"
+              },
+              {
+                "slot": 1002,
+                "kind": "u128"
+              }
+            ],
+            "effects": [
+              "call",
+              "emit",
+              "memory_read",
+              "memory_write",
+              "storage_read",
+              "storage_write"
+            ]
+          },
+          {
+            "target": 516,
+            "memory": [
+              {
+                "slot": 1001,
+                "kind": "address"
+              },
+              {
+                "slot": 1002,
+                "kind": "u128"
+              }
+            ],
+            "effects": [
+              "emit",
+              "memory_read",
+              "storage_read",
+              "storage_write"
+            ]
+          },
+          {
+            "target": 620,
+            "memory": [
+              {
+                "slot": 1001,
+                "kind": "address"
+              },
+              {
+                "slot": 1002,
+                "kind": "u128"
+              }
+            ],
+            "effects": [
+              "call",
+              "emit",
+              "memory_read",
+              "memory_write",
+              "storage_read",
+              "storage_write"
+            ]
+          },
+          {
+            "target": 729,
+            "memory": [
+              {
+                "slot": 1001,
+                "kind": "address"
+              },
+              {
+                "slot": 1002,
+                "kind": "u128"
+              }
+            ],
+            "effects": [
+              "emit",
+              "memory_read",
+              "storage_read",
+              "storage_write"
+            ]
+          },
+          {
+            "target": 854,
+            "memory": [
+              {
+                "slot": 1001,
+                "kind": "address"
+              }
+            ],
+            "effects": [
+              "emit",
+              "memory_read",
+              "storage_write"
+            ]
+          },
+          {
+            "target": 893,
+            "memory": [
+              {
+                "slot": 1001,
+                "kind": "address"
+              },
+              {
+                "slot": 1002,
+                "kind": "address"
+              },
+              {
+                "slot": 1003,
+                "kind": "u128"
+              }
+            ],
+            "effects": [
+              "call",
+              "emit",
+              "memory_read",
+              "memory_write",
+              "storage_read",
+              "storage_write"
+            ]
+          }
+        ],
+        "calls": [
+          {
+            "owner": 361,
+            "pc": 449,
+            "target": 175,
+            "kind": "u128"
+          },
+          {
+            "owner": 620,
+            "pc": 685,
+            "target": 175,
+            "kind": "u128"
+          },
+          {
+            "owner": 893,
+            "pc": 1020,
+            "target": 175,
+            "kind": "u128"
+          }
+        ],
+        "xcalls": []
+      },
+      "compiler": "octra_aml",
+      "compiler_version": "2.0 AML-preview",
+      "declaration": "program",
+      "verification_schema": "aml_safety_report_v1",
+      "source_mode": "multi",
+      "source_hash": "b509b6a688d91406d7b643b9f02c2d0b1207cadd0821e3bec2019c575d52190e",
+      "bytecode_hash": "a15fccf38143a8d62040ef424a53fff3cd406754825fa8dcbbcfa6696f83ac2d",
+      "verification_hash": "e5fa01cfe0cd7ccc3b9f3bbfb46037eb823ac157571c515a988e27f0c5fbe3cf"
+    },
+    "publication": {
+      "requires_rule": "program_records",
+      "op_type": "upgrade",
+      "to": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+      "amount": "0",
+      "ou": "201029",
+      "message": "{\"schema\":\"octra_program_source\",\"expected_code_hash\":\"a242b3a4e8e28af6aa91657235e8eba55ed3dda5f867829a2509742cc35400ca\"}",
+      "encrypted_data": "eyJtYWluIjoibWFpbi5hbWwiLCJmaWxlcyI6W3sicGF0aCI6ImludGVyZmFjZXMvSU9DUzAxLmFtbCIsInNvdXJjZSI6ImludGVyZmFjZSBJT0NTMDEge1xuICBmbiB0cmFuc2Zlcih0bzogYWRkcmVzcywgYW1vdW50OiB1MTI4KTogYm9vbFxuICBmbiBncmFudChzcGVuZGVyOiBhZGRyZXNzLCBhbW91bnQ6IHUxMjgpOiBib29sXG4gIGZuIGluY3JlYXNlX2dyYW50KHNwZW5kZXI6IGFkZHJlc3MsIGFtb3VudDogdTEyOCk6IGJvb2xcbiAgZm4gZGVjcmVhc2VfZ3JhbnQoc3BlbmRlcjogYWRkcmVzcywgYW1vdW50OiB1MTI4KTogYm9vbFxuICBmbiByZXZva2VfZ3JhbnQoc3BlbmRlcjogYWRkcmVzcyk6IGJvb2xcbiAgZm4gcHVsbChmcm9tOiBhZGRyZXNzLCB0bzogYWRkcmVzcywgYW1vdW50OiB1MTI4KTogYm9vbFxuICBmbiBiYWxhbmNlX29mKGFkZHI6IGFkZHJlc3MpOiB1MTI4XG4gIGZuIGFsbG93YW5jZShvd25lcjogYWRkcmVzcywgc3BlbmRlcjogYWRkcmVzcyk6IHUxMjhcbiAgZm4gY2FuX3B1bGwoZnJvbTogYWRkcmVzcywgc3BlbmRlcjogYWRkcmVzcywgYW1vdW50OiB1MTI4KTogYm9vbFxuICBmbiBkZWNpbWFscygpOiB1NjRcbiAgZm4gZ2V0X25hbWUoKTogc3RyaW5nXG4gIGZuIGdldF9zeW1ib2woKTogc3RyaW5nXG4gIGZuIGdldF90b3RhbF9zdXBwbHkoKTogdTEyOFxuICBmbiBnZXRfb3duZXIoKTogYWRkcmVzc1xufSJ9LHsicGF0aCI6Im1haW4uYW1sIiwic291cmNlIjoiaW1wb3J0IElPQ1MwMSBmcm9tIFwiaW50ZXJmYWNlcy9JT0NTMDEuYW1sXCJcblxuUHJvZ3JhbSBUb2tlbiBpbXBsZW1lbnRzIElPQ1MwMSB7XG4gIGludmFyaWFudCBzdXBwbHlfY29uc2VydmVkID0gc3VtKGJhbGFuY2VzKSA9PSB0b3RhbF9zdXBwbHlcblxuICBjb25zdCBNQVhfVTEyOCA9IDM0MDI4MjM2NjkyMDkzODQ2MzQ2MzM3NDYwNzQzMTc2ODIxMTQ1NVxuXG4gIHN0YXRlIHtcbiAgICBuYW1lOiBzdHJpbmdcbiAgICBzeW1ib2w6IHN0cmluZ1xuICAgIHRvdGFsX3N1cHBseTogdTEyOFxuICAgIGRlY2ltYWxzOiB1NjRcbiAgICBvd25lcjogYWRkcmVzc1xuICAgIGJhbGFuY2VzOiBtYXBbYWRkcmVzc111MTI4XG4gICAgZ3JhbnRzOiBtYXBbYWRkcmVzc11tYXBbYWRkcmVzc111MTI4XG4gIH1cblxuICBldmVudCBUcmFuc2Zlcihmcm9tOiBhZGRyZXNzLCB0bzogYWRkcmVzcywgYW1vdW50OiB1MTI4KVxuICBldmVudCBHcmFudChvd25lcjogYWRkcmVzcywgc3BlbmRlcjogYWRkcmVzcywgYW1vdW50OiB1MTI4KVxuXG4gIGNvbnN0cnVjdG9yKG46IHN0cmluZywgczogc3RyaW5nLCBzdXBwbHk6IHUxMjgsIGRlYzogdTY0KSB7XG4gICAgcmVxdWlyZShsZW4obikgPiAwLCBcIm5hbWUgZW1wdHlcIilcbiAgICByZXF1aXJlKGxlbihuKSA8PSAzMiwgXCJuYW1lIHRvbyBsb25nXCIpXG4gICAgcmVxdWlyZShsZW4ocykgPiAwLCBcInN5bWJvbCBlbXB0eVwiKVxuICAgIHJlcXVpcmUobGVuKHMpIDw9IDEyLCBcInN5bWJvbCB0b28gbG9uZ1wiKVxuICAgIHJlcXVpcmUoc3VwcGx5ID4gMCwgXCJzdXBwbHkgbXVzdCBiZSBwb3NpdGl2ZVwiKVxuICAgIHJlcXVpcmUoZGVjIDw9IDE4LCBcImRlY2ltYWxzIHRvbyBoaWdoXCIpXG4gICAgc2VsZi5uYW1lID0gblxuICAgIHNlbGYuc3ltYm9sID0gc1xuICAgIHNlbGYudG90YWxfc3VwcGx5ID0gc3VwcGx5XG4gICAgc2VsZi5kZWNpbWFscyA9IGRlY1xuICAgIHNlbGYub3duZXIgPSBvcmlnaW5cbiAgICBzZWxmLmJhbGFuY2VzW29yaWdpbl0gPSBzdXBwbHlcbiAgICBlbWl0IFRyYW5zZmVyKG9yaWdpbiwgb3JpZ2luLCBzdXBwbHkpXG4gIH1cblxuICBwcml2YXRlIGZuIHNhZmVfYWRkKGxlZnQ6IHUxMjgsIHJpZ2h0OiB1MTI4KTogdTEyOCB7XG4gICAgcmVxdWlyZShyaWdodCA8PSBNQVhfVTEyOCAtIGxlZnQsIFwidTEyOCBvdmVyZmxvd1wiKVxuICAgIHJldHVybiBsZWZ0ICsgcmlnaHRcbiAgfVxuXG4gIHZpZXcgZm4gZGVjaW1hbHMoKTogdTY0IHsgcmV0dXJuIHNlbGYuZGVjaW1hbHMgfVxuICB2aWV3IGZuIGJhbGFuY2Vfb2YoYWRkcjogYWRkcmVzcyk6IHUxMjggeyByZXR1cm4gc2VsZi5iYWxhbmNlc1thZGRyXSB9XG5cbiAgdmlldyBmbiBhbGxvd2FuY2Uob3duZXI6IGFkZHJlc3MsIHNwZW5kZXI6IGFkZHJlc3MpOiB1MTI4IHtcbiAgICByZXR1cm4gc2VsZi5ncmFudHNbb3duZXJdW3NwZW5kZXJdXG4gIH1cblxuICB2aWV3IGZuIGdldF9uYW1lKCk6IHN0cmluZyB7IHJldHVybiBzZWxmLm5hbWUgfVxuICB2aWV3IGZuIGdldF9zeW1ib2woKTogc3RyaW5nIHsgcmV0dXJuIHNlbGYuc3ltYm9sIH1cbiAgdmlldyBmbiBnZXRfdG90YWxfc3VwcGx5KCk6IHUxMjggeyByZXR1cm4gc2VsZi50b3RhbF9zdXBwbHkgfVxuICB2aWV3IGZuIGdldF9vd25lcigpOiBhZGRyZXNzIHsgcmV0dXJuIHNlbGYub3duZXIgfVxuXG4gIHZpZXcgZm4gY2FuX3B1bGwoZnJvbTogYWRkcmVzcywgc3BlbmRlcjogYWRkcmVzcywgYW10OiB1MTI4KTogYm9vbCB7XG4gICAgcmVxdWlyZShhbXQgPiAwLCBcImFtb3VudCBtdXN0IGJlIHBvc2l0aXZlXCIpXG4gICAgaWYgc2VsZi5ncmFudHNbZnJvbV1bc3BlbmRlcl0gPCBhbXQge1xuICAgICAgcmV0dXJuIGZhbHNlXG4gICAgfVxuICAgIHJldHVybiBzZWxmLmJhbGFuY2VzW2Zyb21dID49IGFtdFxuICB9XG5cbiAgZm4gdHJhbnNmZXIodG86IGFkZHJlc3MsIGFtdDogdTEyOCk6IGJvb2wge1xuICAgIGFzc2VydF9hZGRyZXNzKHRvKVxuICAgIHJlcXVpcmUoYW10ID4gMCwgXCJhbW91bnQgbXVzdCBiZSBwb3NpdGl2ZVwiKVxuICAgIHJlcXVpcmUodG8gIT0gY2FsbGVyLCBcInNlbGYgdHJhbnNmZXIgZGlzYWJsZWRcIilcbiAgICBsZXQgYmFsID0gc2VsZi5iYWxhbmNlc1tjYWxsZXJdXG4gICAgcmVxdWlyZShiYWwgPj0gYW10LCBcImluc3VmZmljaWVudCBiYWxhbmNlXCIpXG4gICAgbGV0IHRvX2JhbCA9IHNlbGYuYmFsYW5jZXNbdG9dXG4gICAgbGV0IG5leHRfdG8gPSBzYWZlX2FkZCh0b19iYWwsIGFtdClcbiAgICBzZWxmLmJhbGFuY2VzW2NhbGxlcl0gPSBiYWwgLSBhbXRcbiAgICBzZWxmLmJhbGFuY2VzW3RvXSA9IG5leHRfdG9cbiAgICBlbWl0IFRyYW5zZmVyKGNhbGxlciwgdG8sIGFtdClcbiAgICByZXR1cm4gdHJ1ZVxuICB9XG5cbiAgZm4gZ3JhbnQoc3BlbmRlcjogYWRkcmVzcywgYW10OiB1MTI4KTogYm9vbCB7XG4gICAgYXNzZXJ0X2FkZHJlc3Moc3BlbmRlcilcbiAgICByZXF1aXJlKHNwZW5kZXIgIT0gY2FsbGVyLCBcInNlbGYgZ3JhbnQgZGlzYWJsZWRcIilcbiAgICBsZXQgY3VycmVudCA9IHNlbGYuZ3JhbnRzW2NhbGxlcl1bc3BlbmRlcl1cbiAgICByZXF1aXJlKGN1cnJlbnQgPT0gMCB8fCBhbXQgPT0gMCwgXCJyZXNldCBncmFudCBmaXJzdFwiKVxuICAgIHNlbGYuZ3JhbnRzW2NhbGxlcl1bc3BlbmRlcl0gPSBhbXRcbiAgICBlbWl0IEdyYW50KGNhbGxlciwgc3BlbmRlciwgYW10KVxuICAgIHJldHVybiB0cnVlXG4gIH1cblxuICBmbiBpbmNyZWFzZV9ncmFudChzcGVuZGVyOiBhZGRyZXNzLCBhZGRlZDogdTEyOCk6IGJvb2wge1xuICAgIGFzc2VydF9hZGRyZXNzKHNwZW5kZXIpXG4gICAgcmVxdWlyZShzcGVuZGVyICE9IGNhbGxlciwgXCJzZWxmIGdyYW50IGRpc2FibGVkXCIpXG4gICAgcmVxdWlyZShhZGRlZCA+IDAsIFwiYW1vdW50IG11c3QgYmUgcG9zaXRpdmVcIilcbiAgICBsZXQgY3VycmVudCA9IHNlbGYuZ3JhbnRzW2NhbGxlcl1bc3BlbmRlcl1cbiAgICBsZXQgbmV4dCA9IHNhZmVfYWRkKGN1cnJlbnQsIGFkZGVkKVxuICAgIHNlbGYuZ3JhbnRzW2NhbGxlcl1bc3BlbmRlcl0gPSBuZXh0XG4gICAgZW1pdCBHcmFudChjYWxsZXIsIHNwZW5kZXIsIG5leHQpXG4gICAgcmV0dXJuIHRydWVcbiAgfVxuXG4gIGZuIGRlY3JlYXNlX2dyYW50KHNwZW5kZXI6IGFkZHJlc3MsIHN1YnRyYWN0ZWQ6IHUxMjgpOiBib29sIHtcbiAgICBhc3NlcnRfYWRkcmVzcyhzcGVuZGVyKVxuICAgIHJlcXVpcmUoc3BlbmRlciAhPSBjYWxsZXIsIFwic2VsZiBncmFudCBkaXNhYmxlZFwiKVxuICAgIHJlcXVpcmUoc3VidHJhY3RlZCA+IDAsIFwiYW1vdW50IG11c3QgYmUgcG9zaXRpdmVcIilcbiAgICBsZXQgY3VycmVudCA9IHNlbGYuZ3JhbnRzW2NhbGxlcl1bc3BlbmRlcl1cbiAgICByZXF1aXJlKGN1cnJlbnQgPj0gc3VidHJhY3RlZCwgXCJhbGxvd2FuY2UgdW5kZXJmbG93XCIpXG4gICAgbGV0IG5leHQgPSBjdXJyZW50IC0gc3VidHJhY3RlZFxuICAgIHNlbGYuZ3JhbnRzW2NhbGxlcl1bc3BlbmRlcl0gPSBuZXh0XG4gICAgZW1pdCBHcmFudChjYWxsZXIsIHNwZW5kZXIsIG5leHQpXG4gICAgcmV0dXJuIHRydWVcbiAgfVxuXG4gIGZuIHJldm9rZV9ncmFudChzcGVuZGVyOiBhZGRyZXNzKTogYm9vbCB7XG4gICAgYXNzZXJ0X2FkZHJlc3Moc3BlbmRlcilcbiAgICBzZWxmLmdyYW50c1tjYWxsZXJdW3NwZW5kZXJdID0gMFxuICAgIGVtaXQgR3JhbnQoY2FsbGVyLCBzcGVuZGVyLCAwKVxuICAgIHJldHVybiB0cnVlXG4gIH1cblxuICBmbiBwdWxsKGZyb206IGFkZHJlc3MsIHRvOiBhZGRyZXNzLCBhbXQ6IHUxMjgpOiBib29sIHtcbiAgICBhc3NlcnRfYWRkcmVzcyhmcm9tKVxuICAgIGFzc2VydF9hZGRyZXNzKHRvKVxuICAgIHJlcXVpcmUoYW10ID4gMCwgXCJhbW91bnQgbXVzdCBiZSBwb3NpdGl2ZVwiKVxuICAgIHJlcXVpcmUoZnJvbSAhPSB0bywgXCJzZWxmIHB1bGwgZGlzYWJsZWRcIilcbiAgICBsZXQgYWxsb3dlZCA9IHNlbGYuZ3JhbnRzW2Zyb21dW2NhbGxlcl1cbiAgICByZXF1aXJlKGFsbG93ZWQgPj0gYW10LCBcIm5vdCBhbGxvd2VkXCIpXG4gICAgbGV0IGJhbCA9IHNlbGYuYmFsYW5jZXNbZnJvbV1cbiAgICByZXF1aXJlKGJhbCA+PSBhbXQsIFwiaW5zdWZmaWNpZW50IGJhbGFuY2VcIilcbiAgICBsZXQgdG9fYmFsID0gc2VsZi5iYWxhbmNlc1t0b11cbiAgICBsZXQgbmV4dF90byA9IHNhZmVfYWRkKHRvX2JhbCwgYW10KVxuICAgIHNlbGYuYmFsYW5jZXNbZnJvbV0gPSBiYWwgLSBhbXRcbiAgICBzZWxmLmJhbGFuY2VzW3RvXSA9IG5leHRfdG9cbiAgICBzZWxmLmdyYW50c1tmcm9tXVtjYWxsZXJdID0gYWxsb3dlZCAtIGFtdFxuICAgIGVtaXQgVHJhbnNmZXIoZnJvbSwgdG8sIGFtdClcbiAgICByZXR1cm4gdHJ1ZVxuICB9XG59In1dLCJjb21waWxlciI6InBhY2thZ2VfcHJldmlldyIsImxvb3BzIjpmYWxzZX0="
+    }
+  },
+  "balanceAfter": {
+    "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+    "balance": "2.339492",
+    "balance_raw": "2339492",
+    "nonce": 6,
+    "pending_nonce": 6,
+    "has_public_key": true
+  },
+  "completedAt": "2026-11-02T16:16:25.407Z"
+}

@@ -1,0 +1,185 @@
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "bytecode": "T0NUQgEADQB0AAAAAgsAAABjb25zdHJ1Y3RvcgIFAAAAb3duZXICAAAAAAIEAAAAbGVmdAIFAAAAcmlnaHQCBgAAAHJlc3VsdAIFAAAAc3RvcmUCAwAAAGFkZAIFAAAAc2NhbGUCCgAAAGdldF9yZXN1bHQCCgAAAG93bmVyIG9ubHkCBwAAAFJlcXVpcmUBAQAAADESAecDCwIAAAoDAQIVA2QAAAAaAQ4BAAELAQIADgMAAQsBAgAOBAABCwECAA4FAAEXFmQAAAASAegDCwIGAAcDAQIVA8gAAAALAgcABwMBAhUDLAEAAAsCCAAHAwECFQOQAQAACwIJAAcDAQIVA/QBAAAYFsgAAAASAekDEgLqAxkDDQQBAAsGAgAoBgYDCwcCACgHBwQHBQYHFQUQJwAACwYKACcLAAEGGBYQJwAAPAMBOwQDDgMABDwDAjsEAw4EAAQNAwMADgUAAwsDDAAMAAMXFxYsAQAAGQENAgEACwQCACgEBAELBQIAKAUFAgcDBAUVAxEnAAALBAoAJwsAAQQYFhEnAAAZATACAQwBAg0CAwA8AwIMAgMNAwQAPAQDDAMEMQQBAgM7BQQOBQAFCwQMAAwABBcXFpABAAASAekDGQINAwEACwUCACgFBQILBgIAKAYGAwcEBQYVBBInAAALBQoAJwsAAQUYFhInAAAZAjADAgwCAw0DAwA8BAMMAwQzBAIDATsFBA4FAAULBAwADAAEFxcW9AEAAA0BBQAMAAEXFw==",
+    "size": 571,
+    "instructions": 116,
+    "abi": "{\"declaration\":\"contract\",\"constructor\":{\"name\":\"constructor\",\"inputs\":[],\"input_names\":[],\"output\":\"void\",\"view\":false,\"payable\":true},\"functions\":[{\"name\":\"store\",\"inputs\":[\"string\",\"string\"],\"input_names\":[\"a\",\"b\"],\"output\":\"bool\",\"view\":false,\"payable\":false},{\"name\":\"add\",\"inputs\":[],\"input_names\":[],\"output\":\"bool\",\"view\":false,\"payable\":false},{\"name\":\"scale\",\"inputs\":[\"int\"],\"input_names\":[\"factor\"],\"output\":\"bool\",\"view\":false,\"payable\":false},{\"name\":\"get_result\",\"inputs\":[],\"input_names\":[],\"output\":\"string\",\"view\":true,\"payable\":false}],\"events\":[]}",
+    "version": "1.0 Rehovot",
+    "disasm": "MLOAD r1, 999\nLDI r2, \"constructor\"\nNEQ r3, r1, r2\nJIF r3, 100\nORIGIN r1\nSSTORE \"owner\", r1\nLDI r1, \"\"\nSSTORE \"left\", r1\nLDI r1, \"\"\nSSTORE \"right\", r1\nLDI r1, \"\"\nSSTORE \"result\", r1\nSTOP\nJDEST 100\nMLOAD r1, 1000\nLDI r2, \"store\"\nEQ r3, r1, r2\nJIF r3, 200\nLDI r2, \"add\"\nEQ r3, r1, r2\nJIF r3, 300\nLDI r2, \"scale\"\nEQ r3, r1, r2\nJIF r3, 400\nLDI r2, \"get_result\"\nEQ r3, r1, r2\nJIF r3, 500\nREVERT\nJDEST 200\nMLOAD r1, 1001\nMLOAD r2, 1002\nCALLER r3\nSLOAD r4, \"owner\"\nLDI r6, \"\"\nCONCAT r6, r6, r3\nLDI r7, \"\"\nCONCAT r7, r7, r4\nEQ r5, r6, r7\nJIF r5, 10000\nLDI r6, \"owner only\"\nEMIT \"Require\", r6\nREVERT\nJDEST 10000\nFHE_DESER r3, r1\nFHE_SER r4, r3\nSSTORE \"left\", r4\nFHE_DESER r3, r2\nFHE_SER r4, r3\nSSTORE \"right\", r4\nSLOAD r3, \"left\"\nSSTORE \"result\", r3\nLDI r3, true\nMOV r0, r3\nSTOP\nSTOP\nJDEST 300\nCALLER r1\nSLOAD r2, \"owner\"\nLDI r4, \"\"\nCONCAT r4, r4, r1\nLDI r5, \"\"\nCONCAT r5, r5, r2\nEQ r3, r4, r5\nJIF r3, 10001\nLDI r4, \"owner only\"\nEMIT \"Require\", r4\nREVERT\nJDEST 10001\nCALLER r1\nFHE_LOAD_PK r2, r1\nMOV r1, r2\nSLOAD r2, \"left\"\nFHE_DESER r3, r2\nMOV r2, r3\nSLOAD r3, \"right\"\nFHE_DESER r4, r3\nMOV r3, r4\nFHE_ADD r4, r1, r2, r3\nFHE_SER r5, r4\nSSTORE \"result\", r5\nLDI r4, true\nMOV r0, r4\nSTOP\nSTOP\nJDEST 400\nMLOAD r1, 1001\nCALLER r2\nSLOAD r3, \"owner\"\nLDI r5, \"\"\nCONCAT r5, r5, r2\nLDI r6, \"\"\nCONCAT r6, r6, r3\nEQ r4, r5, r6\nJIF r4, 10002\nLDI r5, \"owner only\"\nEMIT \"Require\", r5\nREVERT\nJDEST 10002\nCALLER r2\nFHE_LOAD_PK r3, r2\nMOV r2, r3\nSLOAD r3, \"left\"\nFHE_DESER r4, r3\nMOV r3, r4\nFHE_SCALE r4, r2, r3, r1\nFHE_SER r5, r4\nSSTORE \"result\", r5\nLDI r4, true\nMOV r0, r4\nSTOP\nSTOP\nJDEST 500\nSLOAD r1, \"result\"\nMOV r0, r1\nSTOP\nSTOP",
+    "verification": {
+      "schema": "aml_safety_report_v1",
+      "engine": "aml_ast_verifier",
+      "proof_model": "formal/coq/aml_value_safety_model.v",
+      "proof_gate": "scripts/check_aml_formal.sh",
+      "program_name": "EnergyPilot",
+      "verified": true,
+      "safety": "safe",
+      "errors": 0,
+      "warnings": 0,
+      "trace": [
+        {
+          "code": "signed_value_storage",
+          "title": "value-like storage must not use signed int",
+          "status": "pass",
+          "severity": "error",
+          "findings": 0
+        },
+        {
+          "code": "signed_value_parameter",
+          "title": "value-moving public parameters must not use signed int",
+          "status": "pass",
+          "severity": "error",
+          "findings": 0
+        },
+        {
+          "code": "signed_value_flow",
+          "title": "signed values must not flow into value-like storage writes",
+          "status": "pass",
+          "severity": "error",
+          "findings": 0
+        },
+        {
+          "code": "unsigned_arithmetic_range_not_proven",
+          "title": "unsigned arithmetic writes must prove range safety",
+          "status": "pass",
+          "severity": "error",
+          "findings": 0
+        },
+        {
+          "code": "supply_invariant_unproven",
+          "title": "balance and total supply writes should preserve conservation",
+          "status": "pass",
+          "severity": "warning",
+          "findings": 0
+        },
+        {
+          "code": "unsigned_parameter_without_positive_guard",
+          "title": "unsigned value parameters should reject zero unless zero is meaningful",
+          "status": "pass",
+          "severity": "warning",
+          "findings": 0
+        },
+        {
+          "code": "unchecked_transfer_result",
+          "title": "native transfer result should be checked",
+          "status": "pass",
+          "severity": "warning",
+          "findings": 0
+        }
+      ],
+      "function_summaries": [
+        {
+          "name": "store",
+          "visibility": "public",
+          "direct_calls": [
+            "fhe_deser",
+            "fhe_ser"
+          ],
+          "direct_writes": [
+            "left",
+            "result",
+            "right"
+          ],
+          "transitive_writes": [
+            "left",
+            "result",
+            "right"
+          ],
+          "value_writes": [],
+          "signed_params": []
+        },
+        {
+          "name": "add",
+          "visibility": "public",
+          "direct_calls": [
+            "fhe_add",
+            "fhe_deser",
+            "fhe_load_pk",
+            "fhe_ser"
+          ],
+          "direct_writes": [
+            "result"
+          ],
+          "transitive_writes": [
+            "result"
+          ],
+          "value_writes": [],
+          "signed_params": []
+        },
+        {
+          "name": "scale",
+          "visibility": "public",
+          "direct_calls": [
+            "fhe_deser",
+            "fhe_load_pk",
+            "fhe_scale",
+            "fhe_ser"
+          ],
+          "direct_writes": [
+            "result"
+          ],
+          "transitive_writes": [
+            "result"
+          ],
+          "value_writes": [],
+          "signed_params": [
+            "factor"
+          ]
+        },
+        {
+          "name": "get_result",
+          "visibility": "public",
+          "direct_calls": [],
+          "direct_writes": [],
+          "transitive_writes": [],
+          "value_writes": [],
+          "signed_params": []
+        },
+        {
+          "name": "constructor",
+          "visibility": "public",
+          "direct_calls": [],
+          "direct_writes": [
+            "left",
+            "owner",
+            "result",
+            "right"
+          ],
+          "transitive_writes": [
+            "left",
+            "owner",
+            "result",
+            "right"
+          ],
+          "value_writes": [],
+          "signed_params": []
+        }
+      ],
+      "invariants": [
+        {
+          "code": "supply_balance_conservation",
+          "kind": "derived",
+          "status": "not_applicable",
+          "expression": null,
+          "message": "program does not expose both balance and supply storage",
+          "fields": [],
+          "functions": []
+        }
+      ],
+      "findings": []
+    },
+    "certificate": {
+      "schema": "aml_bytecode_certificate_v1",
+      "compiler": "octra_aml",
+      "compiler_version": "1.0 Rehovot",
+      "declaration": "contract",
+      "verification_schema": "aml_safety_report_v1",
+      "source_mode": "single",
+      "source_hash": "1b085ad76b70ab92c2ad0f25cdb86e166f4a09b9aa58d082e80cd35f6c0b1100",
+      "bytecode_hash": "fce67d47addb7cc81bce4f0262c862f84bf76742a10f17e05278f6c0d04ba612",
+      "verification_hash": "5fcd84a6879e883202b676cbc1308b12f7ab92db20dad85a860f35c3e51d7e66"
+    }
+  },
+  "id": 2
+}

@@ -8,8 +8,11 @@ import type { ScheduledComparison } from "../lib/lifecycleSchedule";
 import { summarize } from "../lib/lifecycleTiming";
 import { writeLifecycleJson } from "../lib/lifecycleReportWrite";
 import {
-  operations,
+  lifecycleOperations,
+  smartMeterId,
+  smartMeterOwner,
   contracts,
+  lifecycleContracts,
   type BenchmarkArgs,
   type Platform,
   type Sample,
@@ -126,6 +129,8 @@ export function createLifecycleReport(
       computation: "Widen reading to 64 bits before arithmetic; conversion is included in transaction cost.",
       dataset: "Synthetic readings; acquisition interval and physical meter validation are outside this benchmark.",
     },
+    uniformWidth: args.width,
+    measuredOperations: lifecycleOperations(args.width),
     observationTimeoutMs: args.timeout * 1000,
     setupObservationTimeoutMs: (args.setupTimeout ?? args.timeout) * 1000,
     executionMode: "concurrent_operation_workers",
@@ -147,7 +152,7 @@ export function createLifecycleReport(
       zama: "@fhevm/solidity 0.11.1",
       fhenix: "@fhenixprotocol/cofhe-contracts 0.2.0",
     },
-    contractNames: contracts,
+    contractNames: lifecycleContracts(args.width),
     compiler: {
       version: "0.8.27",
       optimizer: { enabled: true, runs: 800 },
@@ -155,7 +160,11 @@ export function createLifecycleReport(
       viaIR: false,
     },
     sourceSha256: Object.fromEntries(
-      reproducibilityFiles.map((file) => [file, sha256File(file)]),
+      [...reproducibilityFiles, ...(args.width === undefined ? [] : [
+        "scripts/generate-uniform-lifecycle-contracts.cjs",
+        "scripts/run-uniform-energy.cjs",
+        ...Object.values(lifecycleContracts(args.width)).map(name => `contracts/uniform/${name}.sol`),
+      ])].map((file) => [file, sha256File(file)]),
     ),
     machine: {
       os: os.type(),
@@ -196,7 +205,7 @@ export function createLifecycleReport(
       deploymentBytecodeRead:
         "EIP-1898 eth_getCode pinned to deployment receipt block hash; transport errors retried up to five attempts and block-not-found propagation errors retried within the original setup deadline; every attempt retained; empty code and non-canonical blocks fail",
       retrievalRetry:
-        "up to five read/retrieval attempts on transport errors, Zama SDK user-decrypt ACL check denials or HTTP 503 USER_DECRYPT responses (including SDK schema errors); receipt-block-not-found and the specific 503 gateway ciphertext-not-ready USER_DECRYPT response can retry beyond five attempts within the original observation deadline; receipt reads always use the same canonical block hash, without latest fallback; exponential backoff capped at 8 seconds; Zama attempts receive only the remaining time budget; every attempt and wait included in timing and traces; persistent failures still abort; never retry application mutations, other authorization errors or plaintext mismatches",
+        "up to five read/retrieval attempts on transport errors, Zama SDK user-decrypt ACL check denials or HTTP 503 USER_DECRYPT responses (including SDK schema errors); receipt-block-not-found, temporary hash-is-not-currently-canonical RPC rejection, and the specific 503 gateway ciphertext-not-ready USER_DECRYPT response can retry beyond five attempts within the original observation deadline; receipt reads always use the same canonical block hash, without latest fallback; exponential backoff capped at 8 seconds; Zama attempts receive only the remaining time budget; every attempt and wait included in timing and traces; persistent failures still abort; never retry application mutations, other authorization errors or plaintext mismatches",
       ancillaryFailure:
         "a failed already-ready repeat is retained without replacing it or aborting successful primary completions; report actual successful ready-repeat n and failure counts separately",
       unobservable: {
@@ -217,6 +226,18 @@ export function createLifecycleReport(
     samples,
   };
 
+  if (args.width !== undefined) {
+    Object.assign(report.energyRepresentation, {
+      readingBits: args.width, accumulatorBits: args.width, resultBits: args.width,
+      timestampBits: null, timestampEncrypted: false,
+      readingRange: `0..${(1n << BigInt(args.width)) - 1n} Wh`,
+      computation: `Energy integers use euint${args.width}; integer arithmetic wraps modulo 2^${args.width}. Meter ownership separately uses eaddress (160-bit address).`,
+    });
+    Object.assign(report, { smartMeter: { id: smartMeterId, syntheticOwnerAddress: smartMeterOwner,
+      ownerType: "eaddress on FHE platforms; address on baseline", stateKey: "public smart-meter ID",
+      authorization: "The deployment operator remains the authorized caller and decryptor; encrypted meter ownership is an association, not private caller authentication." } });
+    report.methodology.ancillaryFailure = "Separate view_decrypt observations run after max in each round; failures stop the campaign after workers settle and remain recorded. Legacy already-ready repeats are disabled.";
+  }
   return report as typeof report & ReportResults;
 }
 
@@ -239,7 +260,7 @@ export function saveLifecycleReport(report: LifecycleReport, output: string) {
   };
 
   report.summary = selected.flatMap((platform) =>
-    operations.map((operation) => {
+    lifecycleOperations(report.uniformWidth).map((operation) => {
       const measured = samples.filter(
         (s) =>
           s.platform === platform && s.operation === operation && !s.warmup,
@@ -320,7 +341,7 @@ export function saveLifecycleReport(report: LifecycleReport, output: string) {
   report.stageSummary = [];
 
   for (const platform of selected) {
-    for (const operation of operations) {
+    for (const operation of lifecycleOperations(report.uniformWidth)) {
       const spans = samples
         .filter(
           (s) =>

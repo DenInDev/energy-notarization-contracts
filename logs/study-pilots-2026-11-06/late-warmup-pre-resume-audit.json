@@ -1,0 +1,67 @@
+{
+  "at": "2026-11-06T13:34:08.316Z",
+  "sourceSha256": "927fc5d73594635ae5635841f31d9c268eb92793602d5d70cb4c3ab4938f6127",
+  "confirmedReceipts": 40,
+  "accounts": [
+    {
+      "address": "0x8d597B9C2e568d43840215E887A94cdD5e19E0cF",
+      "latest": 230,
+      "pending": 230,
+      "expectedNext": 230
+    },
+    {
+      "address": "0x5Df7Adc822605Cb15434966BBA810939F21F55a9",
+      "latest": 32,
+      "pending": 32,
+      "expectedNext": 32
+    },
+    {
+      "address": "0x073E31aF380A81D2339C8952052A353E218ebD91",
+      "latest": 0,
+      "pending": 0,
+      "expectedNext": 0
+    }
+  ],
+  "lastWindow": {
+    "platform": "baseline",
+    "scopeId": "0x3e774ad4c16c776d3edf8513347f9a84bb6896c25f7d8afdb4373c0c16f69ecf",
+    "status": "incomplete",
+    "requests": 8,
+    "allReceiptsConfirmed": true,
+    "blocks": [
+      {
+        "number": 12076807,
+        "hash": "0x6ab9b249bdd335eddf5a0dd40592375f7a668a3e05492bd97ebbb9c2b8cfc745"
+      },
+      {
+        "number": 12076808,
+        "hash": "0xf4f1553b78aba5009031fcb8f751e05c63c7e7c226635c8c3cc6f48c89fecd08"
+      },
+      {
+        "number": 12076809,
+        "hash": "0xaef594f064de5d1fa483fc2001a5d4e0e8f253f396cea0b772faa688a8c7d798"
+      },
+      {
+        "number": 12076810,
+        "hash": "0x901e29ee63da51b27b6a8e3d5a1be83e02b2dc0374508ff30896abf7e0a2fb85"
+      },
+      {
+        "number": 12076811,
+        "hash": "0x3d2d94c186ac3ae50ae6d0367a82815341b5cda25614d8410e41d5a1ae19abd2"
+      },
+      {
+        "number": 12076812,
+        "hash": "0x251e7a42e69683f460a45d04bd49805e2cfef67dba179d5e71c2a62002a05340"
+      },
+      {
+        "number": 12076814,
+        "hash": "0x24a7c1819fcb92e2e57b1fd57154c2ae4d6e9b770df8fe3e1d9158f300a5ee29"
+      },
+      {
+        "number": 12076815,
+        "hash": "0xa018269b3109e44dc688bbb523298a7d5e3ae0da07198736b9a9e65b4b9aff13"
+      }
+    ]
+  },
+  "mutationCalls": 0
+}

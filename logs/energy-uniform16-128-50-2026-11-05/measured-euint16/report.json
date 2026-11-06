@@ -1,0 +1,3864 @@
+{
+  "schemaVersion": 13,
+  "platformOwners": {
+    "baseline": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC",
+    "zama": "0x268fcAE6206890E4de082535F12C40Cc5119033d",
+    "fhenix": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd"
+  },
+  "signerMode": "independent_platform_accounts",
+  "decryptionPolling": {
+    "requestedIntervalMs": 10,
+    "serverRetryAfter": "respected; can lengthen the effective interval",
+    "patch": "benchmark-decryption-polling-v1",
+    "bundles": {
+      "zama": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+        "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+      },
+      "zamaEsm": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+        "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+      },
+      "fhenix": {
+        "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+        "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+      }
+    }
+  },
+  "energyRepresentation": {
+    "unit": "Wh",
+    "readingBits": 16,
+    "accumulatorBits": 16,
+    "resultBits": 16,
+    "timestampBits": null,
+    "timestampEncrypted": false,
+    "readingRange": "0..65535 Wh",
+    "computation": "All encrypted values use euint16; integer arithmetic wraps modulo 2^16.",
+    "dataset": "Synthetic readings; acquisition interval and physical meter validation are outside this benchmark."
+  },
+  "uniformWidth": 16,
+  "observationTimeoutMs": 180000,
+  "setupObservationTimeoutMs": 180000,
+  "executionMode": "isolated_processes_prepared_submission_barrier",
+  "studyScope": "observable operational performance of public Sepolia deployments; not isolated TFHE computation",
+  "startedAt": "2026-11-05T19:24:44.147Z",
+  "chainId": "11155111",
+  "owner": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC",
+  "rpcHost": "ethereum-sepolia-rpc.publicnode.com",
+  "runs": 50,
+  "selectedPlatforms": [
+    "baseline",
+    "zama",
+    "fhenix"
+  ],
+  "scheduleSeed": "energy-uniform16-128-paired-v1",
+  "schedule": [
+    {
+      "run": 1,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 2,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 2,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 2,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 2,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 2,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 3,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 3,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 3,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 3,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 3,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 4,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 4,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 4,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 4,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 4,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 5,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 5,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 5,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 5,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 5,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 6,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 6,
+      "operation": "add",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 6,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 6,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 6,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 7,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 7,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 7,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 7,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 7,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 8,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 8,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 8,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 8,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 8,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 9,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 9,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 9,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 9,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 9,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 10,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 10,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 10,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 10,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 10,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 11,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 11,
+      "operation": "add",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 11,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 11,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 11,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 12,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 12,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 12,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 12,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 12,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 13,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 13,
+      "operation": "add",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 13,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 13,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 13,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 14,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 14,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 14,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 14,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 14,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 15,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 15,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 15,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 15,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 15,
+      "operation": "max",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 16,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 16,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 16,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 16,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 16,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 17,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 17,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 17,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 17,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 17,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 18,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 18,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 18,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 18,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 18,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 19,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 19,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 19,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 19,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 19,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 20,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 20,
+      "operation": "add",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 20,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 20,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 20,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 21,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 21,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 21,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 21,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 21,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 22,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 22,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 22,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 22,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 22,
+      "operation": "max",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 23,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 23,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 23,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 23,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 23,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 24,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 24,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 24,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 24,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 24,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 25,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 25,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 25,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 25,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 25,
+      "operation": "max",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 26,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 26,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 26,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 26,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 26,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 27,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 27,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 27,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 27,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 27,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 28,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 28,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 28,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 28,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 28,
+      "operation": "max",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 29,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 29,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 29,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 29,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 29,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 30,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 30,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 30,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 30,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 30,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 31,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 31,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 31,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 31,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 31,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 32,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 32,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 32,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 32,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 32,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 33,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 33,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 33,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 33,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 33,
+      "operation": "max",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 34,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 34,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 34,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 34,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 34,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 35,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 35,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 35,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 35,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 35,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 36,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 36,
+      "operation": "add",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 36,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 36,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 36,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 37,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 37,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 37,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 37,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 37,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 38,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 38,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 38,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 38,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 38,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 39,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 39,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 39,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 39,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 39,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 40,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 40,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 40,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 40,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 40,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 41,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 41,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 41,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 41,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 41,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 42,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 42,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 42,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 42,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 42,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 43,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 43,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 43,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 43,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 43,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 44,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 44,
+      "operation": "add",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 44,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 44,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 44,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 45,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 45,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 45,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 45,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 45,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 46,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 46,
+      "operation": "add",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 46,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 46,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 46,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 47,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 47,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 47,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 47,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 47,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 48,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 48,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 48,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 48,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 48,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 49,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 49,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 49,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 49,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 49,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 50,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 50,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 50,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 50,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 50,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    }
+  ],
+  "sdkVersions": {
+    "zama": "0.4.1",
+    "fhenix": "1.0.1"
+  },
+  "contractLibraries": {
+    "zama": "@fhevm/solidity 0.11.1",
+    "fhenix": "@fhenixprotocol/cofhe-contracts 0.2.0"
+  },
+  "contractNames": {
+    "baseline": "EnergyUniformPlain16",
+    "zama": "EnergyUniformZama16",
+    "fhenix": "EnergyUniformCoFHE16"
+  },
+  "compiler": {
+    "version": "0.8.27",
+    "optimizer": {
+      "enabled": true,
+      "runs": 800
+    },
+    "evmVersion": "cancun",
+    "viaIR": false
+  },
+  "sourceSha256": {
+    "hardhat.config.ts": "f2c7451f127f8f87555025976a0d37c84208f9630b842a769d0c773c50496b3d",
+    "package-lock.json": "4571f420b5ef346a377e26b0d86ed6d3c9c4cfa5e268e184f876936f862fa35e",
+    "contracts/EnergyNotarizationPlainTest.sol": "e62095efce878660a6a2ef0cf465071a289af43dd005b6474031d4b2441f28ca",
+    "contracts/EnergyNotarizationFHETest.sol": "4010cc5450e064032023d43c5c5e984d4b3f3a3ca7357fc8112453a013b098e9",
+    "contracts/EnergyLifecycleCoFHE.sol": "95f57f9101f27cbf4f54786f87a5be949081f2b4d6e2b2799c898e2561a2ebb3",
+    "tasks/benchmarkEnergyLifecycle.ts": "539deed825f8749d9304c101ca3e048e703d1ccb3f285c1f0dac7211ee265759",
+    "tasks/lib/lifecycleTiming.ts": "11ca028648485eca0a34ca4166dcf12662838609b73c5ee7ad3fcfa1e82b9164",
+    "tasks/lib/lifecycleSchedule.ts": "dea53c34b5f27aee07ecf4149e90fdc6f498898f8ecd87ad5edcf783bcf03647",
+    "tasks/lib/lifecycleResult.ts": "2c464da462addf84a75037150ff631eff7b0b0b6d90c89cad92791c542aa2f7f",
+    "tasks/lib/lifecycleReadRetry.ts": "f1a43f8184eca7bac580f5f9c87b8e3e22ff0468e74375f170097df4effe070e",
+    "tasks/lib/lifecycleConcurrent.ts": "040f0640cac5db6721fbc41049cba42df44488a6252ea3d2fc4b3664f114d7a9",
+    "tasks/lib/lifecycleNonce.ts": "617f2bfe15dea12eaf4cbfeefc09b54577093a06eba69e85116847fdd7a9321a",
+    "tasks/lib/lifecycleReportWrite.ts": "024ce556ba300422b0ae8732fa35fff7941b9965095ba4d830b6d11812a328b1",
+    "tasks/lifecycle/types.ts": "f158d6b842012a93e91168186ce3bd1760f7e9e78f1a473bb2d2050b751aa691",
+    "tasks/lifecycle/operations.ts": "f91382aa948938c612c6265a8602b0dbd04d4fd68f4f6764771334b187aa8abe",
+    "tasks/lifecycle/errors.ts": "6871cf491202633327f12a054e1e9cbde2c75aa51df2da01912ef4698c2b7ccd",
+    "tasks/lifecycle/adapters.ts": "4ad6f6c220020d807f826a41a17e1335e4d88243e1c1eb01371fd8be91b681a9",
+    "tasks/lifecycle/zama.ts": "e717a7b6d6699c722539e31191c4e8e9c4ce9d7e1de103c2f68a1a8cbed795f7",
+    "tasks/lifecycle/cofhe.ts": "8e530907a0ffd1f655ca77a6142eec9d3ef901d8c8b4709d227a6dd0e3be7719",
+    "tasks/lifecycle/report.ts": "e30f83671058d2f9275866660913bf2093af4a6fdc867f046a43beb263e042d0",
+    "tasks/lifecycle/measurement.ts": "86d868b29be809da1859e1bc6268b287c8cf4a45cd2ab783c0ec40126643e044",
+    "tasks/lifecycle/campaign.ts": "e53b68400f3ed3ccbe7a3782343698b9e25cf32ff5e94328d05ed44ee112fffe",
+    "tasks/lifecycle/processCampaign.ts": "4ccbdc0376fe3b631f0f40561092efa96b5d4cc262aaf42dff32b4c904cac8fb",
+    "tasks/lifecycle/processWorker.ts": "24dc5dbd1c7e714f46b737251e734904ae4fa57e5077d5f3fb82c279552a2d80",
+    "tasks/lifecycle/processContinuation.ts": "bb2fcebe773ad428c58744fdb7d7c44d768213feef21747ed32e5dd209b240d1",
+    "tasks/lifecycle/continuation.ts": "13d5e32c65867289c9c7e5c279d14ea730437506970392eab00bf959773108db",
+    "tasks/lifecycle/continuationPlan.ts": "b428f511949b4d4a43274354bd96000f7134f01d803c1044e185e5061cdb08c2",
+    "tasks/lifecycle/workerClient.ts": "5653bd58755b74dbff2ef936eba8ed667c7612d52f0817ba2cec4d15a5f1a2df",
+    "tasks/lifecycle/broadcast.ts": "4bb42c1e71a3109ef9199830da25d07b4db7e5e4d996f7f980d8cfe12ef1b50d",
+    "scripts/energy-platform-worker.cjs": "74aae9010ec6e1abc5fb7296d933078b6426d7b63d313d6f010b91d9a0ac8db2",
+    "scripts/run-energy-campaign.cjs": "cb757141039235aa605a6c86f126f2257c69285ea0503920b1962d94d63ca72f",
+    "scripts/continue-energy-campaign.cjs": "17309fd1a70619a9accb385963dd5cb28c95e2a2a90ee34e38b9ba6206feff3e",
+    "tasks/lib/decryptionPolling.cjs": "b436d09f7c9c148f8c39205be554701e4977e95ddd59e2eb0789ade9717cc5e1",
+    "scripts/patch-decryption-polling.cjs": "1859e40236c69faa45cc83d6c1857e7e687a0d38133c95eac28d91415800624a",
+    "tasks/experiments/accounts.ts": "2a930be994cd3ba0808f3f79fd88641b472a86c639a33883f2149f3fe3bca75e",
+    "scripts/generate-uniform-lifecycle-contracts.cjs": "33b4f50762c81985a46cc1b27d9d7566ec677b23d807e0c51a2692536f84cdaa",
+    "scripts/run-uniform-energy.cjs": "535dd10242c05cb05195715d19ec3e0a0d993fec16bec4411aec8155dd1bf132",
+    "contracts/uniform/EnergyUniformPlain16.sol": "7164cc36c4989e72fd660c6105e53f367c29ea0e16635dc835a92bfb87bb4590",
+    "contracts/uniform/EnergyUniformZama16.sol": "7d0688d11039203c8ae8f3db29f404c971f10286a9b7fd33457b5f43e035070b",
+    "contracts/uniform/EnergyUniformCoFHE16.sol": "ebfe729bf03c4d146c7ba1f86e9a3dc93fd6bee068df9f6943efba530cb0afc8"
+  },
+  "machine": {
+    "os": "Windows_NT",
+    "release": "10.0.26200",
+    "architecture": "x64",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core Processor           ",
+    "logicalCpus": 16,
+    "ramBytes": 33397133312,
+    "node": "v24.11.0"
+  },
+  "methodology": {
+    "clock": "performance.now (monotonic client clock); ISO wall time is metadata only",
+    "confirmation": "Before prepared transaction broadcast invocation to observation of its successful receipt (1 inclusion confirmation; not finality); signing and gas estimation precede the barrier",
+    "completion": "Prepared broadcast invocation to equality-validated plaintext; input preparation, transaction preparation and barrier wait excluded and recorded separately",
+    "postReceipt": "receipt observation to validated plaintext, including handle read, authorization and SDK decrypt",
+    "sdkPolling": "SDK retrieval includes service-directed polling and retry waits; Zama progress records retryAfterMs and CoFHE poll events record intervalMs. These are polling hints, not measured sleep durations, and must not be subtracted to infer backend computation time",
+    "alreadyReady": "second authenticated SDK decrypt of the same known-ready handle, measured separately",
+    "caching": "fresh encrypted input each round; ready-repeat service caches cannot be excluded; Zama uses fresh keypairs, CoFHE reuses a setup ACP",
+    "warmup": "all operation paths initialized before measurement; EIP-2929 cold accesses still apply per transaction",
+    "sequencing": "One persistent OS process, signer and nonce cursor per platform; sequential deployment/setup; all encrypted inputs and signed transactions prepared before a shared timed submission barrier; all workers settle before the next operation",
+    "baseline": "same transaction/getter/equality endpoint, with plaintext returned directly; encryption and authenticated decryption are not applicable",
+    "temporalControl": "nearby operation-matched comparisons and balanced order reduce, but cannot eliminate, public-network load and slot-phase confounding",
+    "receiptPolling": "Immediate eth_getTransactionReceipt, then 500 ms waits after pending responses; raw broadcast acknowledgement is separate; only receipt reads can retry",
+    "resultRead": "EIP-1898 eth_call pinned to the receipt block hash with requireCanonical=true; no latest-state fallback",
+    "deploymentBytecodeRead": "EIP-1898 eth_getCode pinned to deployment receipt block hash; transport errors retried up to five attempts and block-not-found propagation errors retried within the original setup deadline; every attempt retained; empty code and non-canonical blocks fail",
+    "retrievalRetry": "up to five read/retrieval attempts on transport errors, Zama SDK user-decrypt ACL check denials or HTTP 503 USER_DECRYPT responses (including SDK schema errors); receipt-block-not-found and the specific 503 gateway ciphertext-not-ready USER_DECRYPT response can retry beyond five attempts within the original observation deadline; receipt reads always use the same canonical block hash, without latest fallback; exponential backoff capped at 8 seconds; Zama attempts receive only the remaining time budget; every attempt and wait included in timing and traces; persistent failures still abort; never retry application mutations, other authorization errors or plaintext mismatches",
+    "ancillaryFailure": "Separate view_decrypt observations run after max in each round; failures stop the campaign after workers settle and remain recorded. Legacy already-ready repeats are disabled.",
+    "unobservable": {
+      "coprocessorQueueMs": null,
+      "pureFheEvaluationMs": null,
+      "kmsOrMpcComputeMs": null,
+      "interServiceTransportMs": null,
+      "serverProofVerificationComputeMs": null
+    },
+    "sdkStages": "client-observed API boundaries, NOT pure internal service compute durations",
+    "previews": "eth_call symbolic simulations only; no persisted coprocessor request and no completion claim",
+    "fhenixWorkload": "mul_scalar encrypts the constant; mean encrypts divisor 2, unlike Zama plaintext scalar operations",
+    "broadcast": "Exactly one eth_sendRawTransaction per signed operation; predetermined hash journaled before barrier release; start and acknowledgement recorded separately; failed acknowledgement is uncertain and never automatically retransmitted",
+    "feeControl": "One recorded EIP-1559 fee quote shared by all platforms per comparison; gas estimated and transaction signed before the barrier",
+    "fullLifecycle": "preparationMs + transactionToValidatedPlaintextMs excludes intentional barrier waiting; worker wall time also includes the barrier and must be labeled separately",
+    "processIsolation": "Separate Node processes isolate SDK main-thread proof generation; OS scheduling and shared CPU/RPC/network contention remain possible",
+    "viewDecrypt": "Once after max in every round including warmup; concurrent persisted getLastResult eth_call at the max receipt block plus fresh SDK authorized decryption and equality validation, one shared observation deadline per worker; all waits retained; no transaction or arithmetic preview."
+  },
+  "setup": [],
+  "samples": [],
+  "workers": {},
+  "barriers": [],
+  "viewDecryptSamples": [],
+  "summary": [
+    {
+      "platform": "baseline",
+      "operation": "notarize",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "add",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "mul_scalar",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "mean",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "max",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "notarize",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "add",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "mul_scalar",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "mean",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "max",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "notarize",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "add",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mul_scalar",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mean",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "max",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    }
+  ],
+  "stageSummary": [],
+  "complete": false,
+  "abortedAt": "2026-11-05T19:24:44.866Z",
+  "error": "Funded signer with no pending transactions required for fhenix"
+}

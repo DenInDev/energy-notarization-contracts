@@ -1,0 +1,50 @@
+{
+  "seed": "energy-mixed16-64-independent-v1",
+  "schedule": [
+    {
+      "run": 1,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-02T16:52:51.100Z",
+  "endpoint": "https://devnet.octrascan.io/rpc",
+  "records": [
+    {
+      "method": "octra_transaction",
+      "httpStatus": 429,
+      "response": {
+        "jsonrpc": "2.0",
+        "id": null,
+        "error": {
+          "code": -32000,
+          "message": "RPC capacity reached; retry shortly"
+        }
+      }
+    },
+    {
+      "method": "octra_balance",
+      "httpStatus": 429,
+      "response": {
+        "jsonrpc": "2.0",
+        "id": null,
+        "error": {
+          "code": -32000,
+          "message": "RPC capacity reached; retry shortly"
+        }
+      }
+    }
+  ]
+}

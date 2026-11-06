@@ -2,7 +2,7 @@ import importlib.util
 from pathlib import Path
 import unittest
 
-spec = importlib.util.spec_from_file_location("availability", Path(__file__).with_name("analyze-availability.py"))
+spec = importlib.util.spec_from_file_location("availability", Path(__file__).resolve().parent.parent / "analyze-availability.py")
 availability = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(availability)
 

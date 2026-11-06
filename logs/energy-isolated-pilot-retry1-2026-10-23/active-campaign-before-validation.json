@@ -1,0 +1,15 @@
+{
+  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-isolated-pilot-retry1-2026-10-23/report.json",
+  "previousReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-isolated-pilot-2026-10-23/report.json",
+  "pid": 45176,
+  "stdout": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-isolated-pilot-retry1-2026-10-23.stdout.log",
+  "pollingBaseMs": 100,
+  "executionMode": "isolated_processes_prepared_submission_barrier",
+  "status": "failed_report_persistence",
+  "startedAt": "2026-10-23T16:30:25.0022680Z",
+  "purpose": "Validation pilot of corrected runner",
+  "runs": 1,
+  "stderr": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-isolated-pilot-retry1-2026-10-23.stderr.log",
+  "error": "EPERM replacing report; three prepared hashes without acknowledgements retained, no resubmission",
+  "failureDiagnostic": "logs/energy-isolated-pilot-retry1-2026-10-23/failure-diagnostic.json"
+}

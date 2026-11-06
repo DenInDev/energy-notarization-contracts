@@ -1,0 +1,1497 @@
+{
+  "schemaVersion": 10,
+  "platformOwners": {
+    "baseline": "0x3552Cc153DCcC007d1c0D88Ff5aDB258d2688121",
+    "zama": "0xbFfa3190d423F15C1E5281a10e5d89B3Dcf26eD0",
+    "fhenix": "0xB85E3C85c39e2FD06308649F466d360B0bE792af"
+  },
+  "signerMode": "independent_platform_accounts",
+  "energyRepresentation": {
+    "unit": "Wh",
+    "readingBits": 16,
+    "accumulatorBits": 64,
+    "resultBits": 64,
+    "timestampBits": 64,
+    "timestampEncrypted": false,
+    "readingRange": "0..65535 Wh per measurement interval",
+    "computation": "Widen reading to 64 bits before arithmetic; conversion is included in transaction cost.",
+    "dataset": "Synthetic readings; acquisition interval and physical meter validation are outside this benchmark."
+  },
+  "observationTimeoutMs": 180000,
+  "setupObservationTimeoutMs": 180000,
+  "executionMode": "concurrent_operation_workers",
+  "studyScope": "observable operational performance of public Sepolia deployments; not isolated TFHE computation",
+  "startedAt": "2026-10-22T16:36:22.022Z",
+  "chainId": "11155111",
+  "owner": "0x3552Cc153DCcC007d1c0D88Ff5aDB258d2688121",
+  "rpcHost": "ethereum-sepolia-rpc.publicnode.com",
+  "runs": 1,
+  "selectedPlatforms": [
+    "baseline",
+    "zama",
+    "fhenix"
+  ],
+  "scheduleSeed": "energy-mixed16-64-independent-v1",
+  "schedule": [
+    {
+      "run": 1,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    }
+  ],
+  "sdkVersions": {
+    "zama": "0.4.1",
+    "fhenix": "0.7.1"
+  },
+  "contractLibraries": {
+    "zama": "@fhevm/solidity 0.11.1",
+    "fhenix": "@fhenixprotocol/cofhe-contracts 0.2.0"
+  },
+  "contractNames": {
+    "baseline": "EnergyNotarizationPlainTest",
+    "zama": "EnergyNotarizationFHETest",
+    "fhenix": "EnergyLifecycleCoFHE"
+  },
+  "compiler": {
+    "version": "0.8.27",
+    "optimizer": {
+      "enabled": true,
+      "runs": 800
+    },
+    "evmVersion": "cancun",
+    "viaIR": false
+  },
+  "sourceSha256": {
+    "hardhat.config.ts": "f2c7451f127f8f87555025976a0d37c84208f9630b842a769d0c773c50496b3d",
+    "package-lock.json": "2c7eb2f4ddd6f0c827dfb4c4dc81e91ecdeeb35baba0cad75e7ad2aa2e24f3b5",
+    "contracts/EnergyNotarizationPlainTest.sol": "e62095efce878660a6a2ef0cf465071a289af43dd005b6474031d4b2441f28ca",
+    "contracts/EnergyNotarizationFHETest.sol": "4010cc5450e064032023d43c5c5e984d4b3f3a3ca7357fc8112453a013b098e9",
+    "contracts/EnergyLifecycleCoFHE.sol": "49561f7379746fad6a9a7cc126ddd27df8d6953affce911d17cb05448460bbfb",
+    "tasks/benchmarkEnergyLifecycle.ts": "9c34a7eb25bfeb78624c99f1427d9c9287287df384dfed2a5ada0cddf1ab6a41",
+    "tasks/lib/lifecycleTiming.ts": "00e7c4c07b08934c2530268b6b38907a3da087df4bbaa57e765103cbd96e4b26",
+    "tasks/lib/lifecycleSchedule.ts": "53f15d45880e39a39b2ce1011af66aa2d967917de5b226bcbaae0841f41b7a36",
+    "tasks/lib/lifecycleResult.ts": "2c464da462addf84a75037150ff631eff7b0b0b6d90c89cad92791c542aa2f7f",
+    "tasks/lib/lifecycleReadRetry.ts": "66ad80deed3c734a1a12f181059c6f8868542f863860ed9b93d7e4a2c022c15a",
+    "tasks/lib/lifecycleConcurrent.ts": "040f0640cac5db6721fbc41049cba42df44488a6252ea3d2fc4b3664f114d7a9",
+    "tasks/lib/lifecycleNonce.ts": "617f2bfe15dea12eaf4cbfeefc09b54577093a06eba69e85116847fdd7a9321a",
+    "tasks/lifecycle/types.ts": "ae372003ef3d0cf6fd00d90d05b5bc2ad10632ad63b86ec14bbc12a5a4fae82b",
+    "tasks/lifecycle/operations.ts": "022592069095029c5c5468cf3c3eac00cf40dbaf3d367dfb3e82f8c826a592b1",
+    "tasks/lifecycle/errors.ts": "4298ba265e69aa3c771cb4ac421944ce34569c8a7b6b9a563181d7509353b34c",
+    "tasks/lifecycle/adapters.ts": "6f11bab42cc31b868511f55f17995eb2d6cd0ea84de5ccac6245d860bde7ee78",
+    "tasks/lifecycle/zama.ts": "6e9928d3454ed0f2ef2c907b649e0ffe5d6cd23afaed92ab0f8c015d0da624a9",
+    "tasks/lifecycle/cofhe.ts": "8a61ad4a6b736e69c0fa3ffd16d488b4316aee73d3ffee3f31ac89a3cae23255",
+    "tasks/lifecycle/report.ts": "575a45adc1fc4913f7f29c8950990946e756a11b2e37253c02812b154eb5c26f",
+    "tasks/lifecycle/measurement.ts": "6ccdd20aa5c1aacb26310d4b05f8413154f9ebd62a173309536a4bd6ae4aaf31",
+    "tasks/lifecycle/campaign.ts": "85f27f0aafe37b5a2b7ce9455247df6f73860dd8cedc23f1cb1ac8682707eb71"
+  },
+  "machine": {
+    "os": "Windows_NT",
+    "release": "10.0.26200",
+    "architecture": "x64",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core Processor           ",
+    "logicalCpus": 16,
+    "ramBytes": 33397133312,
+    "node": "v24.11.0"
+  },
+  "methodology": {
+    "clock": "performance.now (monotonic client clock); ISO wall time is metadata only",
+    "confirmation": "before contract invocation to observation of successful receipt (1 confirmation; not finality)",
+    "completion": "before contract invocation to equality-validated authenticated plaintext; excludes input preparation",
+    "postReceipt": "receipt observation to validated plaintext, including handle read, authorization and SDK decrypt",
+    "sdkPolling": "SDK retrieval includes service-directed polling and retry waits; Zama progress records retryAfterMs and CoFHE poll events record intervalMs. These are polling hints, not measured sleep durations, and must not be subtracted to infer backend computation time",
+    "alreadyReady": "second authenticated SDK decrypt of the same known-ready handle, measured separately",
+    "caching": "fresh encrypted input each round; ready-repeat service caches cannot be excluded; Zama uses fresh keypairs, CoFHE reuses a setup ACP",
+    "warmup": "all operation paths initialized before measurement; EIP-2929 cold accesses still apply per transaction",
+    "sequencing": "Sequential deployments; one distinct funded signer and nonce allocator per platform; concurrent operation workers with seeded balanced launch order; all workers settle before the next operation; stop at first failed comparison. Input preparation precedes each worker submission and is not synchronized across platforms.",
+    "baseline": "same transaction/getter/equality endpoint, with plaintext returned directly; encryption and authenticated decryption are not applicable",
+    "temporalControl": "nearby operation-matched comparisons and balanced order reduce, but cannot eliminate, public-network load and slot-phase confounding",
+    "receiptPolling": "installed hardhat-ethers provider polls every 500 ms plus RPC round-trip time",
+    "resultRead": "EIP-1898 eth_call pinned to the receipt block hash with requireCanonical=true; no latest-state fallback",
+    "deploymentBytecodeRead": "EIP-1898 eth_getCode pinned to deployment receipt block hash; transport and block-not-found errors retried up to five attempts within the setup deadline, with every attempt retained; empty code and non-canonical blocks fail",
+    "retrievalRetry": "up to five read/retrieval attempts on transport errors or Zama SDK user-decrypt ACL check denials; the specific 503 gateway ciphertext-not-ready USER_DECRYPT response can retry beyond five attempts within the original observation deadline; exponential backoff capped at 8 seconds; Zama attempts receive only the remaining time budget; every attempt and wait included in timing and traces; persistent failures still abort; never retry application mutations, other authorization errors or plaintext mismatches",
+    "ancillaryFailure": "a failed already-ready repeat is retained without replacing it or aborting successful primary completions; report actual successful ready-repeat n and failure counts separately",
+    "unobservable": {
+      "coprocessorQueueMs": null,
+      "pureFheEvaluationMs": null,
+      "kmsOrMpcComputeMs": null,
+      "interServiceTransportMs": null,
+      "serverProofVerificationComputeMs": null
+    },
+    "sdkStages": "client-observed API boundaries, NOT pure internal service compute durations",
+    "previews": "eth_call symbolic simulations only; no persisted coprocessor request and no completion claim",
+    "fhenixWorkload": "mul_scalar encrypts the constant; mean encrypts divisor 2, unlike Zama plaintext scalar operations"
+  },
+  "setup": [
+    {
+      "platform": "baseline",
+      "stages": [
+        {
+          "stage": "setup.bytecode.read_attempt",
+          "startMs": 35444.0107,
+          "durationMs": 50.154999999998836,
+          "status": "ok"
+        }
+      ],
+      "transactionNonce": 16,
+      "transactionHash": "0xa6f9aa81f69fb75c952d7ba77d7122d9236b26e7db7593febdd147f232a3d29d",
+      "address": "0x822694587c233a9B5DA62B8784E95e11C3431518",
+      "blockNumber": 11970773,
+      "gasUsed": "7325488",
+      "gasCostWei": "293019520",
+      "deployedBytecodeKeccak256": "0x1924ef009eafd8b6fbebdebff7211164879e6e8a8a920e0f8cd3985ee693f670",
+      "status": "initialized"
+    },
+    {
+      "platform": "zama",
+      "stages": [
+        {
+          "stage": "setup.bytecode.read_attempt",
+          "startMs": 12339.232300000003,
+          "durationMs": 69.244200000001,
+          "status": "ok"
+        },
+        {
+          "stage": "setup.sdk_initialization",
+          "startMs": 12411.103600000002,
+          "durationMs": 2320.944199999998,
+          "status": "ok"
+        }
+      ],
+      "transactionNonce": 0,
+      "transactionHash": "0x45edec02ca5cb5b1dffca54521b71238ce56c6984680f6fdc4f3f4dcd2cafe42",
+      "address": "0x89976de86D09BF5f2Bf29C414525bDAC8cfE5d7C",
+      "blockNumber": 11970774,
+      "gasUsed": "13518032",
+      "gasCostWei": "540721280",
+      "deployedBytecodeKeccak256": "0x33cae53f499572c97359c4e70558176e04e71c42a63dd4fa8e98d2e2c8a3cbe8",
+      "status": "initialized"
+    },
+    {
+      "platform": "fhenix",
+      "stages": [
+        {
+          "stage": "setup.bytecode.read_attempt",
+          "startMs": 9933.224400000006,
+          "durationMs": 52.49549999998999,
+          "status": "ok"
+        },
+        {
+          "stage": "setup.sdk_connection",
+          "startMs": 10118.940799999997,
+          "durationMs": 77.95160000000033,
+          "status": "ok"
+        },
+        {
+          "stage": "setup.authenticated_acp",
+          "startMs": 10196.8949,
+          "durationMs": 425.78919999999925,
+          "status": "ok"
+        }
+      ],
+      "transactionNonce": 0,
+      "transactionHash": "0x807d80a51f4aaa6a472ace480bf48deedd481ea39806e1112b6698f852432495",
+      "address": "0x645376709e1daA11407efd56730d377567F73233",
+      "blockNumber": 11970775,
+      "gasUsed": "7676109",
+      "gasCostWei": "307044360",
+      "deployedBytecodeKeccak256": "0x0e066a8f643825db09a2ef67e7d8b93ecfbf94b4ec93df3a3320215f6e6d1738",
+      "status": "error",
+      "error": "Warmup notarize failed: ZK batch proof verification failed | Caused by: HTTP error! ZK batch proof verification failed - {\"status\":\"error\",\"data\":{\"message\":\"failed to verify and sign batch: Failed to verify ZK proof: could not verify packed list: The zero knowledge proof and the content it is supposed to prove were not valid; the proof metadata must end with contract_address (security_zone || account || chain_id || contract), a proof from an older @cofhe/sdk is built without it: upgrade the SDK\"}}"
+    }
+  ],
+  "samples": [
+    {
+      "platform": "fhenix",
+      "operation": "notarize",
+      "run": 0,
+      "warmup": true,
+      "startedAt": "2026-10-22T16:37:26.618Z",
+      "status": "error",
+      "stages": [
+        {
+          "stage": "encrypt.sdk_stage.initTfhe",
+          "startMs": 0.9350999999878695,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": true,
+            "isEnd": false,
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.sdk_observed.initTfhe",
+          "startMs": 0.9007999999885214,
+          "durationMs": 6220.689900000012,
+          "status": "ok",
+          "detail": {
+            "sdkDurationMs": 6221
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.initTfhe",
+          "startMs": 6221.607299999989,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": false,
+            "isEnd": true,
+            "sdkDurationMs": 6221
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.fetchKeys",
+          "startMs": 6221.615099999995,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": true,
+            "isEnd": false,
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.sdk_observed.fetchKeys",
+          "startMs": 6221.611999999994,
+          "durationMs": 765.942200000005,
+          "status": "ok",
+          "detail": {
+            "sdkDurationMs": 766
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.fetchKeys",
+          "startMs": 6987.567999999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": false,
+            "isEnd": true,
+            "sdkDurationMs": 766,
+            "fheKeyFetchedFromCoFHE": false,
+            "crsFetchedFromCoFHE": false
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.pack",
+          "startMs": 6987.585500000001,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": true,
+            "isEnd": false,
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.sdk_observed.pack",
+          "startMs": 6987.5821,
+          "durationMs": 0.3029999999998836,
+          "status": "ok",
+          "detail": {
+            "sdkDurationMs": 1
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.pack",
+          "startMs": 6987.892399999997,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": false,
+            "isEnd": true,
+            "sdkDurationMs": 1
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.prove",
+          "startMs": 6987.89929999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": true,
+            "isEnd": false,
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.sdk_observed.prove",
+          "startMs": 6987.896599999993,
+          "durationMs": 5863.392699999997,
+          "status": "ok",
+          "detail": {
+            "sdkDurationMs": 5863
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.prove",
+          "startMs": 12851.301699999996,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": false,
+            "isEnd": true,
+            "sdkDurationMs": 5863,
+            "usedWorker": false
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.verify",
+          "startMs": 12851.31349999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": true,
+            "isEnd": false,
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.http_headers",
+          "startMs": 12852.232699999993,
+          "durationMs": 426.7358999999997,
+          "status": "error",
+          "detail": {
+            "host": "testnet-cofhe-vrf.fhenix.zone",
+            "path": "/verifyBatch",
+            "method": "POST",
+            "httpStatus": 400,
+            "serverDate": "Thu, 22 Oct 2026 16:37:33 GMT"
+          }
+        },
+        {
+          "stage": "encrypt.sdk_total",
+          "startMs": 0.15719999998691492,
+          "durationMs": 13279.0956,
+          "status": "error"
+        }
+      ],
+      "expectedPlaintext": "42",
+      "orderPosition": 1,
+      "resultRepresentation": "ciphertext_handle",
+      "error": "ZK batch proof verification failed | Caused by: HTTP error! ZK batch proof verification failed - {\"status\":\"error\",\"data\":{\"message\":\"failed to verify and sign batch: Failed to verify ZK proof: could not verify packed list: The zero knowledge proof and the content it is supposed to prove were not valid; the proof metadata must end with contract_address (security_zone || account || chain_id || contract), a proof from an older @cofhe/sdk is built without it: upgrade the SDK\"}}",
+      "completedAt": "2026-10-22T16:37:39.897Z"
+    },
+    {
+      "platform": "baseline",
+      "operation": "notarize",
+      "run": 0,
+      "warmup": true,
+      "startedAt": "2026-10-22T16:37:26.619Z",
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "transaction.invoke_sign_and_submit",
+          "startMs": 6220.929799999998,
+          "durationMs": 6993.02459999999,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.wait_receipt",
+          "startMs": 13213.962,
+          "durationMs": 9506.01419999999,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.handle.read_attempt",
+          "startMs": 22720.089199999988,
+          "durationMs": 51.68530000001192,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.read_persisted_handle",
+          "startMs": 22719.999899999995,
+          "durationMs": 51.801599999991595,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.validate_plaintext",
+          "startMs": 22771.805399999997,
+          "durationMs": 0.10179999998945277,
+          "status": "ok"
+        }
+      ],
+      "expectedPlaintext": "42",
+      "orderPosition": 2,
+      "resultRepresentation": "plaintext",
+      "transactionStartedAt": "2026-10-22T16:37:32.840Z",
+      "transactionHash": "0xcd5042f21f449409ee337dc594cf08a8d4bc2b7ad6c6aa47716309681b7f3f20",
+      "transactionNonce": 17,
+      "receiptObservedAt": "2026-10-22T16:37:49.339Z",
+      "confirmationMs": 16499.050199999998,
+      "blockNumber": 11970777,
+      "blockHash": "0x98b89daa05ca9f757ce39ede1460746d2263688754693a4a22f2d199c4bcf4d5",
+      "gasUsed": 240025,
+      "effectiveGasPriceWei": "40",
+      "gasCostWei": "9601000",
+      "plaintext": "42",
+      "plaintextValidatedAt": "2026-10-22T16:37:49.391Z",
+      "transactionToValidatedPlaintextMs": 16550.983099999998,
+      "postReceiptToValidatedPlaintextMs": 51.93289999999979,
+      "completedAt": "2026-10-22T16:37:49.391Z",
+      "blockTimestamp": 1792687068,
+      "blockGasUsed": "74033640",
+      "blockGasLimit": "199804689",
+      "blockTargetUtilization": 0.7410600859322175
+    },
+    {
+      "platform": "zama",
+      "operation": "notarize",
+      "run": 0,
+      "warmup": true,
+      "startedAt": "2026-10-22T16:37:26.619Z",
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "encrypt.local_ciphertext_and_zkproof",
+          "startMs": 0.05280000000493601,
+          "durationMs": 6214.261199999994,
+          "status": "ok"
+        },
+        {
+          "stage": "encrypt.sdk_progress",
+          "startMs": 13174.259099999996,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "type": "queued",
+            "operation": "INPUT_PROOF",
+            "step": 0,
+            "retryCount": 0,
+            "retryAfterMs": 2000,
+            "elapsed": 0,
+            "jobId": "f6fb0ee8-cded-4562-8f72-612fb84c2793",
+            "requestId": "f2cd18ce-67cc-4463-a1d6-8c0561c18094"
+          }
+        },
+        {
+          "stage": "encrypt.sdk_progress",
+          "startMs": 15286.955499999996,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "type": "succeeded",
+            "operation": "INPUT_PROOF",
+            "step": 1,
+            "retryCount": 1,
+            "elapsed": 2010,
+            "jobId": "f6fb0ee8-cded-4562-8f72-612fb84c2793",
+            "requestId": "ae888e52-a49d-4ed2-8245-96b667d65f9d"
+          }
+        },
+        {
+          "stage": "encrypt.remote_input_approval",
+          "startMs": 6214.321599999996,
+          "durationMs": 9081.5815,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.invoke_sign_and_submit",
+          "startMs": 15295.933900000004,
+          "durationMs": 404.62889999999607,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.wait_receipt",
+          "startMs": 15700.570600000006,
+          "durationMs": 7337.063599999994,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.handle.read_attempt",
+          "startMs": 23037.682,
+          "durationMs": 58.965400000000955,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.read_persisted_handle",
+          "startMs": 23037.672699999996,
+          "durationMs": 58.98159999999916,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.local_keypair_and_authorization",
+          "startMs": 23097.472999999998,
+          "durationMs": 5.20679999999993,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.sdk_progress",
+          "startMs": 23498.169800000003,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "type": "queued",
+            "operation": "USER_DECRYPT",
+            "step": 0,
+            "retryCount": 0,
+            "retryAfterMs": 2000,
+            "elapsed": 0,
+            "jobId": "d79e6dd8-64f0-42a3-b897-3f7e8400d5fd",
+            "requestId": "37845a48-8813-4ec3-834a-4963ab190a70"
+          }
+        },
+        {
+          "stage": "completion.sdk_progress",
+          "startMs": 25588.3373,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "type": "queued",
+            "operation": "USER_DECRYPT",
+            "step": 0,
+            "retryCount": 1,
+            "retryAfterMs": 2000,
+            "elapsed": 2008,
+            "jobId": "d79e6dd8-64f0-42a3-b897-3f7e8400d5fd",
+            "requestId": "6e0a0d52-9595-4956-bafa-4fa8a041d952"
+          }
+        },
+        {
+          "stage": "completion.sdk_progress",
+          "startMs": 27704.629199999996,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "type": "succeeded",
+            "operation": "USER_DECRYPT",
+            "step": 1,
+            "retryCount": 2,
+            "elapsed": 4093,
+            "jobId": "d79e6dd8-64f0-42a3-b897-3f7e8400d5fd",
+            "requestId": "b8ebd8e6-d5c8-4c44-9183-b7e92c76ea7c"
+          }
+        },
+        {
+          "stage": "completion.read_attempt",
+          "startMs": 23102.700200000007,
+          "durationMs": 4626.636699999988,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.sdk_user_decrypt",
+          "startMs": 23102.681299999997,
+          "durationMs": 4626.65860000001,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.validate_plaintext",
+          "startMs": 27729.355899999995,
+          "durationMs": 0.004600000000209548,
+          "status": "ok"
+        }
+      ],
+      "expectedPlaintext": "42",
+      "orderPosition": 3,
+      "resultRepresentation": "ciphertext_handle",
+      "inputPreparationMs": 15295.907399999996,
+      "transactionStartedAt": "2026-10-22T16:37:41.915Z",
+      "transactionHash": "0x77ce9e1fe99966a51a09cdf66fa0977909564cacabe8d64efee95572a64f2f9f",
+      "transactionNonce": 1,
+      "receiptObservedAt": "2026-10-22T16:37:49.656Z",
+      "confirmationMs": 7741.707999999999,
+      "blockNumber": 11970777,
+      "blockHash": "0x98b89daa05ca9f757ce39ede1460746d2263688754693a4a22f2d199c4bcf4d5",
+      "gasUsed": 789948,
+      "effectiveGasPriceWei": "40",
+      "gasCostWei": "31597920",
+      "outputHandle": "0x1ce3633342c34d09414c36cc952a2803ad6a44bc56000000000000aa36a70300",
+      "plaintext": "42",
+      "plaintextValidatedAt": "2026-10-22T16:37:54.348Z",
+      "transactionToValidatedPlaintextMs": 12433.433999999994,
+      "postReceiptToValidatedPlaintextMs": 4691.725999999995,
+      "completedAt": "2026-10-22T16:37:54.348Z",
+      "blockTimestamp": 1792687068,
+      "blockGasUsed": "74033640",
+      "blockGasLimit": "199804689",
+      "blockTargetUtilization": 0.7410600859322175
+    }
+  ],
+  "summary": [
+    {
+      "platform": "baseline",
+      "operation": "notarize",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "add",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "mul_scalar",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "mean",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "max",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "notarize",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "add",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "mul_scalar",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "mean",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "max",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "notarize",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "add",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mul_scalar",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mean",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "max",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    }
+  ],
+  "stageSummary": [],
+  "initialBalanceWei": "425248567774947000",
+  "initialGasPriceWei": "41",
+  "abortedAt": "2026-10-22T16:37:54.408Z",
+  "complete": false
+}

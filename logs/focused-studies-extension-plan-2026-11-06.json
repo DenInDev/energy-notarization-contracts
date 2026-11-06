@@ -1,0 +1,41 @@
+{
+  "cases": [
+    {
+      "id": "concurrency-w16-c8-shared_sum",
+      "suite": "concurrency",
+      "width": 16,
+      "users": 8,
+      "mode": "shared_sum",
+      "size": 32,
+      "inputCount": 1,
+      "additions": 1,
+      "multiplications": 0,
+      "dependencyDepth": 1
+    },
+    {
+      "id": "concurrency-w16-c8-shared_ordered",
+      "suite": "concurrency",
+      "width": 16,
+      "users": 8,
+      "mode": "shared_ordered",
+      "size": 32,
+      "inputCount": 1,
+      "additions": 1,
+      "multiplications": 1,
+      "dependencyDepth": 2
+    }
+  ],
+  "platforms": [
+    "baseline",
+    "zama",
+    "fhenix"
+  ],
+  "repetitions": 250,
+  "measuredTransactions": 48000,
+  "warmupTransactions": 192,
+  "setupTransactions": 1512,
+  "deployments": 3,
+  "requiredAccounts": 9,
+  "networkAccess": false,
+  "note": "Plan only; counts are upper budgets. --live enables transactions. Exact HCU estimate rejections send no compute transaction; other failures stop the run. No funding automation."
+}

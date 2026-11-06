@@ -31,7 +31,7 @@ describe("lifecycle reporting", () => {
       saveLifecycleReport(report, folder);
       const saved = JSON.parse(fs.readFileSync(path.join(folder, "report.json"), "utf8"));
       assert.equal(saved.schemaVersion,11);
-      assert.equal(saved.decryptionPolling.requestedIntervalMs,100);
+      assert.equal(saved.decryptionPolling.requestedIntervalMs,10);
       assert.ok(saved.decryptionPolling.bundles.zama.sha256);
       assert.ok(saved.decryptionPolling.bundles.fhenix.sha256);
       assert.equal(saved.energyRepresentation.readingBits,16);

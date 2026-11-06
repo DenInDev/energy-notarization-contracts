@@ -1,0 +1,417 @@
+{
+  "schemaVersion": 1,
+  "chainId": 11155111,
+  "status": "failed",
+  "pid": 17992,
+  "startedAt": "2026-11-06T10:57:01.623Z",
+  "authorization": "Explicit user approval: transfer existing Sepolia funds, 0.001 ETH to each of three pilot accounts, total 0.003 ETH.",
+  "source": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+  "sourceNonceBefore": 990,
+  "sourceReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\measured-euint128-fhenix-continuation3\\report.json",
+  "sourceReportSha256": "75d9ae589d8d0d8edef3511ae55d2e1ab301131470d0cb1ba59c124ea04dfe9b",
+  "historicalFinalTransaction": "0x776b95acc7839ffa88555e14afcb8facd424e1549691356d43d14497eb9a657c",
+  "transfers": [
+    {
+      "role": "operator",
+      "to": "0x8d597B9C2e568d43840215E887A94cdD5e19E0cF",
+      "amountWei": "1000000000000000",
+      "transaction": {
+        "id": "fund-pilot-0",
+        "method": "authorized_pilot_funding",
+        "user": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+        "transactionNonce": 990,
+        "preparedTransactionHash": "0x5e936724f7a15d149d474175ada83c0e07a6fde09341f0567536d03bdef1fe70",
+        "gasLimit": "21000",
+        "maxFeePerGasWei": "36",
+        "maxPriorityFeePerGasWei": "2",
+        "broadcastState": "acknowledged",
+        "status": "reverted",
+        "stages": [
+          {
+            "stage": "transaction.raw_broadcast",
+            "startMs": 302.6864000000005,
+            "durationMs": 113.48739999999998,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 416.76910000000044,
+            "durationMs": 73.77509999999984,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 490.6075000000001,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 1004.0219999999999,
+            "durationMs": 65.59230000000025,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 1069.6445000000003,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 1579.6662000000006,
+            "durationMs": 58.771600000000035,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 1638.4549000000006,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 2143.070200000001,
+            "durationMs": 217.86039999999957,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 2360.9448999999995,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 2862.1107,
+            "durationMs": 56.84720000000016,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 2918.9718999999996,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 3425.5255000000006,
+            "durationMs": 56.39539999999943,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 3481.9356,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 3986.6739000000007,
+            "durationMs": 219.24049999999988,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 4205.9289,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 4709.8273,
+            "durationMs": 62.45190000000002,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 4772.2979000000005,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 5272.2327,
+            "durationMs": 57.6783000000014,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 5329.9301000000005,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 5835.6077,
+            "durationMs": 52.330400000000736,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 5887.958100000001,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 6388.1498,
+            "durationMs": 51.526200000000244,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 6439.699600000001,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 6949.6642999999995,
+            "durationMs": 54.39040000000023,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 7004.0734,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 7515.938000000001,
+            "durationMs": 67.05019999999968,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 7582.9978,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 8095.220200000001,
+            "durationMs": 58.06630000000041,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 8153.2972,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 8660.9627,
+            "durationMs": 54.273300000000745,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 8715.246599999999,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 9220.8167,
+            "durationMs": 64.17060000000129,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 9285.000800000002,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 9799.839899999999,
+            "durationMs": 61.50380000000223,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 9861.353900000002,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 10361.479899999998,
+            "durationMs": 62.05740000000151,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 10423.547599999998,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 10927.8858,
+            "durationMs": 59.204099999999016,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 10987.101200000001,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 11491.839899999999,
+            "durationMs": 65.07070000000022,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 11556.920999999998,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 12068.5903,
+            "durationMs": 55.8279999999977,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 12124.428,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 12630.929499999998,
+            "durationMs": 60.35770000000048,
+            "status": "ok"
+          }
+        ],
+        "startedAt": "2026-11-06T10:57:01.992Z",
+        "transactionHash": "0x5e936724f7a15d149d474175ada83c0e07a6fde09341f0567536d03bdef1fe70",
+        "broadcastStartedAt": "2026-11-06T10:57:01.992Z",
+        "broadcastStartedOffsetMs": 302.14990000000034,
+        "rpcSendStartedAt": "2026-11-06T10:57:01.993Z",
+        "rpcSendMonotonicMs": 6466.8088,
+        "broadcastAcknowledgedAt": "2026-11-06T10:57:02.106Z",
+        "broadcastAckMs": 113.54950000000008,
+        "transactionIndex": 1177,
+        "receiptObservedMonotonicMs": 18855.3558,
+        "receiptMs": 12388.547000000002,
+        "receiptOffsetMs": 12691.319899999999,
+        "blockHash": "0x6cc48a583ac6b5860a5243441dbfe3aa65cb862cf1e653553e3c20663e2b9b8e",
+        "blockNumber": 12076116,
+        "receiptStatus": 0,
+        "gasUsed": 21000,
+        "effectiveGasPriceWei": "20",
+        "gasCostWei": "420000",
+        "error": "Study transaction reverted"
+      }
+    },
+    {
+      "role": "writer-1",
+      "to": "0x5Df7Adc822605Cb15434966BBA810939F21F55a9",
+      "amountWei": "1000000000000000",
+      "transaction": {
+        "id": "fund-pilot-1",
+        "method": "authorized_pilot_funding",
+        "user": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+        "transactionNonce": 991,
+        "preparedTransactionHash": "0xb08786901d33f16ba23c6314d04cca9a9f69740709d828ec55c96d7842175e6a",
+        "gasLimit": "21000",
+        "maxFeePerGasWei": "36",
+        "maxPriorityFeePerGasWei": "2",
+        "broadcastState": "prepared",
+        "status": "prepared",
+        "stages": []
+      }
+    },
+    {
+      "role": "writer-2",
+      "to": "0x073E31aF380A81D2339C8952052A353E218ebD91",
+      "amountWei": "1000000000000000",
+      "transaction": {
+        "id": "fund-pilot-2",
+        "method": "authorized_pilot_funding",
+        "user": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+        "transactionNonce": 992,
+        "preparedTransactionHash": "0x64f6771c6064349b7f98b5af05794d44d2b84272c7c443bf3bd9bcddd8f7e99c",
+        "gasLimit": "21000",
+        "maxFeePerGasWei": "36",
+        "maxPriorityFeePerGasWei": "2",
+        "broadcastState": "prepared",
+        "status": "prepared",
+        "stages": []
+      }
+    }
+  ],
+  "error": "Study transaction reverted"
+}

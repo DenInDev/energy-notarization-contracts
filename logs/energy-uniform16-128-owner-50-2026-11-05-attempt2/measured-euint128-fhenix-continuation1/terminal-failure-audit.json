@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-06T01:21:35.977Z",
+  "status": "terminal_read_rate_limit",
+  "reason": "sealOutput request failed: Too Many Requests",
+  "httpStatus": 429,
+  "platform": "fhenix",
+  "run": 16,
+  "operation": "max",
+  "transactionHash": "0xd385b4a4dad9146962238d09a1d674da610f854e7ecae6f904c11ca6eebacd0d",
+  "nonce": 785,
+  "confirmedCanonical": true,
+  "latestNonce": 786,
+  "pendingNonce": 786,
+  "rawSha256": "cb28e7c9a0a9f847300ced4bd85456e2959e481652cdc00203291baade8a2934",
+  "newPrimaryOk": 36,
+  "newPrimaryFailed": 1,
+  "meanRetryOk": true,
+  "nextPlan": "Only 204 unattempted Fhenix operations, nonce786..989; max16 only read-only recovery; client polling floor1000ms and bounded HTTP429 read retry in a new labeled segment"
+}

@@ -1,76 +1,70 @@
 # Energy Notarization Contracts
 
-Reproducible public-Sepolia benchmark comparing three implementations of the same energy-notarization lifecycle:
+Sepolia experiments comparing plaintext EVM, Zama fhEVM and Fhenix CoFHE.
 
-- Plaintext EVM baseline;
-- Zama fhEVM;
-- Fhenix CoFHE.
+The classic lifecycle suite is retained in `tasks/lifecycle/` and the original contracts. Its default `processes` protocol uses three persistent OS workers, independent saved signers, prepared signed transactions and submission barriers. Input preparation, transaction inclusion, validated plaintext and already-ready retrieval are distinct measurements. The legacy `async` protocol remains for interpreting historical reports; do not pool it with the isolated-process protocol.
 
-The campaign measures gas, input preparation, transaction to receipt latency, transaction-to validated plaintext completion and decryption of an already-ready result. Each operation runs concurrently across platforms using asynchronous workers, including warmup. A seeded, position balanced schedule assigns launch positions and unique nonces from the existing funded account. One nonce allocator covers deployment through the final round. Transactions still execute in sender nonce order. All workers finish before the next operation starts; deployments are sequential. Use a dedicated account with no other transaction producer during the campaign.
+Uniform 16/128-bit lifecycle contracts, smart-meter owner registration and the separate persisted-result `view_decrypt` experiment are also retained. See [uniform lifecycle](docs/UNIFORM_LIFECYCLE.md). Existing reports and account files are not reset by the new studies.
 
-## Quick start
+## Local checks
 
-```bash
+```powershell
 npm ci
-npx hardhat vars set SEPOLIA_MNEMONIC
-npx hardhat vars set SEPOLIA_RPC_URL
-npm run compile
-npm run typecheck
-npm test
-npm run benchmark:pilot
+npm run verify
+npm run analysis:test
 ```
 
-`--timeout` controls the observation deadline per receipt or SDK operation, including setup and warmup. Use `--setup-timeout` only to override the setup limit, for example `npm run benchmark:pilot -- --timeout 600 --setup-timeout 120`. Both effective limits are printed at startup. The campaign stops at the first failed setup stage or comparison and retains the failed observations.
+`npm ci` runs the existing SDK polling patch. Do not install, patch or edit dependencies while a campaign is running. Local Hardhat/mock timings are correctness tests, not public-network measurements.
 
-Run the complete campaign only after the pilot succeeds and the benchmark account is sufficiently funded:
+## Classic lifecycle
 
-```bash
-npm run benchmark:sepolia
+Use saved accounts dedicated to the intended campaign. The default root account directory may contain a quarantine lock from historical broadcasts: leave it untouched. To prepare a fresh classic account file explicitly:
+
+```powershell
+npx hardhat benchmark:accounts --file .benchmark-accounts/classic/accounts.secret.json --count 3
+npx hardhat benchmark:accounts:balances --network sepolia --file .benchmark-accounts/classic/accounts.secret.json
 ```
 
-If Zama reports that a ciphertext is not ready on the gateway, recheck the latest persisted handle without deploying or sending transactions:
+Account creation does not fund accounts. Configure `SEPOLIA_RPC_URL` through Hardhat variables or the environment. After funding and reviewing the intended workload, these commands **send Sepolia transactions**:
 
-```bash
+```powershell
+npm run benchmark:pilot -- --accounts-file .benchmark-accounts/classic/accounts.secret.json --output-dir logs/classic-pilot-new
+npm run benchmark:sepolia -- --accounts-file .benchmark-accounts/classic/accounts.secret.json --output-dir logs/classic-50-new
+```
+
+`--timeout` is the per-stage observation deadline in seconds; `--setup-timeout` optionally overrides setup/warmup. Failed observations remain in reports. No uncertain broadcast should be replayed automatically. Diagnose an existing Zama handle with a read-only recovery trace:
+
+```powershell
 npx hardhat benchmark:energy:diagnose --network sepolia --report logs/<campaign>/report.json --timeout 30
 ```
 
-This diagnostic signs a decryption authorization, writes a separate trace, and leaves the original campaign results intact. Success means the old ciphertext is available now; its timing does not replace the failed benchmark observation.
+Late recovery does not reconstruct the original failed latency. Analyze an eligible classic report with `npm run analyze -- logs/<campaign>/report.json`; the strict analyzer intentionally rejects reports that fail its completeness requirements.
 
-An observation deadline is reported as `timed_out`, with the last observed USER_DECRYPT job state and job ID when available. It exits with code 1 and retains the trace, without an unexpected-error stack for this expected outcome. SDK failures remain errors; a previously queued job does not turn a later SDK failure into a timeout.
+## Two additional studies
 
-For recurring gateway-readiness failures, check the saved handle before spending funds on another deployment. The [readiness investigation](docs/ZAMA_READINESS_INVESTIGATION.md) records a standalone control whose gateway material consensus arrived over two hours after Sepolia inclusion and which subsequently decrypted successfully.
+1. **Concurrency and ordering:** independent writers, shared sum and an order-sensitive shared update. Replay canonical chain order and validate immutable per-request snapshots plus final state.
+2. **Circuit growth:** linear versus balanced sums with equal addition counts, and increasingly long multiply/add chains executed within one transaction.
 
-Analyze a completed report:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r scripts/analysis/requirements-lifecycle.txt
-npm run analyze -- logs/<campaign>/report.json
-```
-
-On PowerShell, activate the environment with `.venv\Scripts\Activate.ps1`.
-
-
-## Expanded experimental suites
-
-Width, input-count, circuit-depth, transaction-chain, growing-state, and independent-account concurrency sweeps are available through `npm run benchmark:expanded`.
+Both support separate 16-bit and 128-bit contracts for all three platforms. Commands default to **planning only**, including when a network is selected; `--live` explicitly enables execution.
 
 ```powershell
-npm run benchmark:accounts
-npm run benchmark:matrix
-npm run verify
+npm run study:plan
+npm run study:concurrency -- --widths 16 --users 1,2 --requests 8 --repetitions 3
+npm run study:circuits -- --widths 16 --sizes 2,4,8 --depths 1,2,4 --repetitions 3
+npm run study:test
 ```
 
-The matrix preview sends no transactions. Eight generated Sepolia worker accounts are kept in the ignored `.benchmark-accounts/` directory; the existing owner pays deployment and single-user setup.
+The complete default plan budgets up to 120,000 measured transactions, 2,976 warmup/control transactions and 8,904 setup transactions including deployments. An exact known Zama HCU rejection during gas estimation is recorded without sending the compute transaction; it has no receipt latency or gas measurement. Start with a pilot and review its actual cost and feasible circuit levels before selecting a main matrix. New studies use a separate nine-account file, with an operator and up to eight writers. Nothing is funded automatically.
+
+See [design, robustness and interpretation](docs/CONCURRENCY_AND_CIRCUITS.md) and [starting commands](START-NEW-EXPERIMENTS.txt). Retired expanded/Octra code is listed in [cleanup record](docs/EXPERIMENTS_CLEANUP.md), with a verified recovery archive. Classic code and historical data remain available.
 
 ## Repository layout
 
-- `contracts/`: benchmark contracts for the three configurations.
-- `tasks/benchmarkEnergyLifecycle.ts`: interleaved Sepolia campaign.
-- `tasks/lifecycle/`: campaign orchestration, per-platform SDK adapters, operation dispatch, measurement, and reporting. The Hardhat task only declares CLI options and delegates to the campaign runner.
-- `tasks/lib/`: timing, scheduling, canonical result reads, and retry policy.
-- `scripts/analysis/`: validation and statistical analysis.
-- `test/`: deterministic unit tests for benchmark infrastructure.
+- `contracts/`: classic contracts; `contracts/uniform/`: uniform-width lifecycle; `contracts/studies/`: the two new studies.
+- `tasks/lifecycle/`: classic/uniform orchestration and platform adapters.
+- `tasks/studies/`: planning, canonical replay, adapters, single-send execution and reporting.
+- `tasks/experiments/accounts.ts`: shared saved-account utilities retained for classic compatibility.
+- `scripts/analysis/`: classic/uniform analysis; new studies write their own descriptive summaries.
+- `test/`: deterministic tests and local contract integration.
 
-Dedicated worker keys are stored locally in the ignored `.benchmark-accounts/` directory. Never commit that directory, `.env`, or generated logs.
+Never commit `.benchmark-accounts/`, `.env` or generated logs. Never publish private keys, signed raw transactions or credentialed RPC URLs.

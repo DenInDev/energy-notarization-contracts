@@ -1,0 +1,219 @@
+{
+  "sourceReportSha256": "706da50a8831d2816983a617412aeb43f38816eceeb5b1533c3cebab7fa6cda6",
+  "completedAt": "2026-10-22T21:48:20.173Z",
+  "measuredValid": 750,
+  "warmupValid": 15,
+  "polling": [
+    {
+      "platform": "zama",
+      "primaryQueuedDelayMs": {
+        "2000": 460
+      },
+      "primarySdkPollDelayMs": {},
+      "primaryHttpStatuses": {},
+      "readyQueuedDelayMs": {
+        "2000": 250,
+        "5000": 1
+      },
+      "readySdkPollDelayMs": {},
+      "recorded429": 0
+    },
+    {
+      "platform": "fhenix",
+      "primaryQueuedDelayMs": {},
+      "primarySdkPollDelayMs": {
+        "100": 1409
+      },
+      "primaryHttpStatuses": {
+        "200": 250,
+        "204": 1386,
+        "404": 23
+      },
+      "readyQueuedDelayMs": {},
+      "readySdkPollDelayMs": {},
+      "recorded429": 0
+    }
+  ],
+  "costs": [
+    {
+      "platform": "baseline",
+      "gasCostWei": "918997641",
+      "gasCostEth": "0.000000000918997641",
+      "transactions": 256
+    },
+    {
+      "platform": "zama",
+      "gasCostWei": "6530060872",
+      "gasCostEth": "0.000000006530060872",
+      "transactions": 256
+    },
+    {
+      "platform": "fhenix",
+      "gasCostWei": "6513205146",
+      "gasCostEth": "0.000000006513205146",
+      "transactions": 256
+    }
+  ],
+  "totalGasCostWei": "13962263659",
+  "totalGasCostEth": "0.000000013962263659",
+  "timing": [
+    {
+      "platform": "baseline",
+      "operations": [
+        {
+          "operation": "notarize",
+          "n": 50,
+          "receiptMeanMs": 13226.632194000007,
+          "validatedMeanMs": 13295.210849999989,
+          "postReceiptMeanMs": 68.57865599997865,
+          "observedWorkerWallMeanMs": 16219.52,
+          "inputPreparationMeanMs": 0
+        },
+        {
+          "operation": "add",
+          "n": 50,
+          "receiptMeanMs": 9570.440934000004,
+          "validatedMeanMs": 9632.253966000006,
+          "postReceiptMeanMs": 61.813032000002565,
+          "observedWorkerWallMeanMs": 9632.3,
+          "inputPreparationMeanMs": 0
+        },
+        {
+          "operation": "mul_scalar",
+          "n": 50,
+          "receiptMeanMs": 8617.261944000042,
+          "validatedMeanMs": 8677.254718000042,
+          "postReceiptMeanMs": 59.99277400000196,
+          "observedWorkerWallMeanMs": 8677.28,
+          "inputPreparationMeanMs": 0
+        },
+        {
+          "operation": "mean",
+          "n": 50,
+          "receiptMeanMs": 7368.589155999984,
+          "validatedMeanMs": 7426.430669999984,
+          "postReceiptMeanMs": 57.841514000000316,
+          "observedWorkerWallMeanMs": 7426.56,
+          "inputPreparationMeanMs": 0
+        },
+        {
+          "operation": "max",
+          "n": 50,
+          "receiptMeanMs": 6875.406317999985,
+          "validatedMeanMs": 6939.738145999981,
+          "postReceiptMeanMs": 64.33182799999544,
+          "observedWorkerWallMeanMs": 6939.72,
+          "inputPreparationMeanMs": 0
+        }
+      ]
+    },
+    {
+      "platform": "zama",
+      "operations": [
+        {
+          "operation": "notarize",
+          "n": 50,
+          "receiptMeanMs": 5244.680636000047,
+          "validatedMeanMs": 9290.622894000038,
+          "postReceiptMeanMs": 4045.942257999991,
+          "observedWorkerWallMeanMs": 23152.64,
+          "inputPreparationMeanMs": 13862.060238000031
+        },
+        {
+          "operation": "add",
+          "n": 50,
+          "receiptMeanMs": 9595.199257999993,
+          "validatedMeanMs": 13838.089691999998,
+          "postReceiptMeanMs": 4242.890434000005,
+          "observedWorkerWallMeanMs": 13838.12,
+          "inputPreparationMeanMs": 0
+        },
+        {
+          "operation": "mul_scalar",
+          "n": 50,
+          "receiptMeanMs": 8636.973395999988,
+          "validatedMeanMs": 13126.311559999986,
+          "postReceiptMeanMs": 4489.338163999995,
+          "observedWorkerWallMeanMs": 13126.32,
+          "inputPreparationMeanMs": 0
+        },
+        {
+          "operation": "mean",
+          "n": 50,
+          "receiptMeanMs": 7364.170539999988,
+          "validatedMeanMs": 11827.170448000017,
+          "postReceiptMeanMs": 4462.999908000028,
+          "observedWorkerWallMeanMs": 11827.1,
+          "inputPreparationMeanMs": 0
+        },
+        {
+          "operation": "max",
+          "n": 50,
+          "receiptMeanMs": 6912.518446000005,
+          "validatedMeanMs": 11484.008543999997,
+          "postReceiptMeanMs": 4571.490097999991,
+          "observedWorkerWallMeanMs": 11483.98,
+          "inputPreparationMeanMs": 0
+        }
+      ]
+    },
+    {
+      "platform": "fhenix",
+      "operations": [
+        {
+          "operation": "notarize",
+          "n": 50,
+          "receiptMeanMs": 6656.380809999998,
+          "validatedMeanMs": 6878.916703999986,
+          "postReceiptMeanMs": 222.53589399998774,
+          "observedWorkerWallMeanMs": 16453.28,
+          "inputPreparationMeanMs": 9574.412588000048
+        },
+        {
+          "operation": "add",
+          "n": 50,
+          "receiptMeanMs": 9560.551280000022,
+          "validatedMeanMs": 9899.214772000007,
+          "postReceiptMeanMs": 338.6634919999854,
+          "observedWorkerWallMeanMs": 9899.32,
+          "inputPreparationMeanMs": 0
+        },
+        {
+          "operation": "mul_scalar",
+          "n": 50,
+          "receiptMeanMs": 8647.437829999953,
+          "validatedMeanMs": 9145.334449999982,
+          "postReceiptMeanMs": 497.89662000002807,
+          "observedWorkerWallMeanMs": 9145.34,
+          "inputPreparationMeanMs": 0
+        },
+        {
+          "operation": "mean",
+          "n": 50,
+          "receiptMeanMs": 7373.064592000014,
+          "validatedMeanMs": 12394.66941999997,
+          "postReceiptMeanMs": 5021.604827999956,
+          "observedWorkerWallMeanMs": 12394.62,
+          "inputPreparationMeanMs": 0
+        },
+        {
+          "operation": "max",
+          "n": 50,
+          "receiptMeanMs": 6926.86396199995,
+          "validatedMeanMs": 7284.841493999942,
+          "postReceiptMeanMs": 357.977531999991,
+          "observedWorkerWallMeanMs": 7284.78,
+          "inputPreparationMeanMs": 0
+        }
+      ]
+    }
+  ],
+  "caveats": [
+    "Receipt and validated columns start at transaction invocation; notarization input preparation and earlier worker delays are excluded.",
+    "Worker wall time uses recorded wall-clock timestamps and is approximate.",
+    "Shared Node input preparation can contend with signing/submission; notarization rankings do not isolate computational performance.",
+    "SDK poll delay is time waited after a pending response; HTTP duration adds to the spacing between requests.",
+    "Zama server Retry-After hints remain respected. Already-ready repeats follow a successful primary completion and are separate measurements.",
+    "Public-network comparison to prior campaign is observational, not causal."
+  ]
+}

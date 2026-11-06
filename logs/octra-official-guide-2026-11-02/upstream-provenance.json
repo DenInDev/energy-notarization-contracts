@@ -1,0 +1,54 @@
+{
+  "repository": "https://github.com/octra-labs/webcli",
+  "commit": "52fca461dd2e81652dec588f0ab861662bf38cf6",
+  "files": [
+    {
+      "path": "main.cpp",
+      "url": "https://raw.githubusercontent.com/octra-labs/webcli/52fca461dd2e81652dec588f0ab861662bf38cf6/main.cpp",
+      "sha256": "c140381d8d2f63d97f36bc7f90a080a4575902afba6da52e99b434ba95a7e45e",
+      "bytes": 478784
+    },
+    {
+      "path": "rpc_client.hpp",
+      "url": "https://raw.githubusercontent.com/octra-labs/webcli/52fca461dd2e81652dec588f0ab861662bf38cf6/rpc_client.hpp",
+      "sha256": "13d0f28d41ecafccecb46b04116c58f785c3b66a83fd8099e194108c76481994",
+      "bytes": 35123
+    },
+    {
+      "path": "wallet.hpp",
+      "url": "https://raw.githubusercontent.com/octra-labs/webcli/52fca461dd2e81652dec588f0ab861662bf38cf6/wallet.hpp",
+      "sha256": "087767607acaf2d2f0f5ccaff7a2115f6f30ba36e49c2e62c0acab7cfc33ee43",
+      "bytes": 19903
+    },
+    {
+      "path": "static/wallet.js",
+      "url": "https://raw.githubusercontent.com/octra-labs/webcli/52fca461dd2e81652dec588f0ab861662bf38cf6/static/wallet.js",
+      "sha256": "0fedb57940a2f56078e9ac498bf30abab13852bc916297fb541e9c6d2afdd1b8",
+      "bytes": 196784
+    },
+    {
+      "path": "static/templates/token/main.aml",
+      "url": "https://raw.githubusercontent.com/octra-labs/webcli/52fca461dd2e81652dec588f0ab861662bf38cf6/static/templates/token/main.aml",
+      "sha256": "86dd2a243505800f047cf6f7a543de3c0f9605525dbcb16ae302673ef94dc3e8",
+      "bytes": 4229
+    },
+    {
+      "path": "static/templates/token/interfaces/IOCS01.aml",
+      "url": "https://raw.githubusercontent.com/octra-labs/webcli/52fca461dd2e81652dec588f0ab861662bf38cf6/static/templates/token/interfaces/IOCS01.aml",
+      "sha256": "4fda95179cf8ebde15dc7502e9e948cc6c7301d1468e5a00907867061f575240",
+      "bytes": 618
+    },
+    {
+      "path": "static/templates/index.json",
+      "url": "https://raw.githubusercontent.com/octra-labs/webcli/52fca461dd2e81652dec588f0ab861662bf38cf6/static/templates/index.json",
+      "sha256": "f8999e1df30f32bb0c5513a16964ff244d5f4b2ad1ad6da723be2afb30019a37",
+      "bytes": 374
+    },
+    {
+      "path": "lib/tx_builder.hpp",
+      "url": "https://raw.githubusercontent.com/octra-labs/webcli/52fca461dd2e81652dec588f0ab861662bf38cf6/lib/tx_builder.hpp",
+      "sha256": "45b84c88eaa57907ec16eb9743c78d5bcb8e06292889b3c10e31f05fac1e7d04",
+      "bytes": 7477
+    }
+  ]
+}

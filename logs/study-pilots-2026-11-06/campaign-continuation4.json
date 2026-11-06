@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "createdAt": "2026-11-06T10:55:18.101Z",
+  "chainId": 11155111,
+  "authorization": "User requested continuing the two focused studies; initial reduced pilots only, no full matrix launched.",
+  "accountsFile": ".benchmark-accounts/studies/accounts.secret.json",
+  "stages": [
+    {
+      "suite": "circuits",
+      "width": 16,
+      "measuredTransactions": 81,
+      "warmupTransactions": 27,
+      "setupTransactions": 114,
+      "requiredAccounts": 1,
+      "outputDir": "logs/study-pilots-2026-11-06/circuits-euint16-continuation2",
+      "status": "finished",
+      "planFile": "circuits-euint16-continuation2-plan.json",
+      "continuationFrom": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\circuits-euint16-continuation1\\report.json",
+      "sourceReportSha256": "0805249c1ce0f98cce571b1c3304026cef6ae8915f334efd9d65366d1ebc2db6",
+      "sourceMeasuredOk": 8,
+      "sourceWarmupsOk": 27,
+      "expectedNewComputeSends": 73,
+      "expectedNewInputLoads": 72,
+      "expectedNewDeployments": 0,
+      "startedAt": "2026-11-06T12:00:35.193Z",
+      "finishedAt": "2026-11-06T12:41:42.726Z",
+      "allValid": false,
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\circuits-euint16-continuation2\\report.json",
+      "rawSha256": "bd5f0336dd9d1b808ccf8fc270692b96368a26d647236b95dc37212a6d12c698",
+      "counts": {
+        "measuredTrials": 83,
+        "validatedRequests": 81,
+        "capacityRejections": 0,
+        "retainedPreparationFailures": 2
+      }
+    },
+    {
+      "suite": "concurrency",
+      "width": 16,
+      "measuredTransactions": 432,
+      "warmupTransactions": 216,
+      "setupTransactions": 87,
+      "requiredAccounts": 3,
+      "outputDir": "logs/study-pilots-2026-11-06/concurrency-euint16-continuation2",
+      "status": "failed",
+      "planFile": "concurrency-euint16-continuation2-plan.json",
+      "continuationFrom": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\concurrency-euint16-continuation1\\report.json",
+      "sourceReportSha256": "927fc5d73594635ae5635841f31d9c268eb92793602d5d70cb4c3ab4938f6127",
+      "sourceWarmupRequestsOk": 24,
+      "expectedNewWriterSends": 616,
+      "expectedNewSetupSends": 79,
+      "expectedNewDeployments": 1,
+      "sourceFullyConfirmedLateWarmupRequests": 8,
+      "startedAt": "2026-11-06T13:34:44.461Z",
+      "error": "block range extends beyond current head block"
+    },
+    {
+      "suite": "circuits",
+      "width": 128,
+      "measuredTransactions": 81,
+      "warmupTransactions": 27,
+      "setupTransactions": 114,
+      "requiredAccounts": 1,
+      "outputDir": "logs/study-pilots-2026-11-06/circuits-euint128",
+      "status": "planned"
+    },
+    {
+      "suite": "concurrency",
+      "width": 128,
+      "measuredTransactions": 432,
+      "warmupTransactions": 216,
+      "setupTransactions": 87,
+      "requiredAccounts": 3,
+      "outputDir": "logs/study-pilots-2026-11-06/concurrency-euint128",
+      "status": "planned"
+    }
+  ],
+  "totalPlannedTransactions": 1914,
+  "feeQuote": {
+    "maxFeePerGasWei": "34",
+    "maxPriorityFeePerGasWei": "2"
+  },
+  "sourcePolicy": "No funding, no mined transactions, no deployment, no account reuse while awaiting funding choice.",
+  "funding": {
+    "status": "finished",
+    "report": "logs/study-pilots-2026-11-06/funding-attempt2.json",
+    "retainedFailedAttempt": "logs/study-pilots-2026-11-06/funding.json",
+    "totalTransferredEth": "0.003"
+  },
+  "parentManifest": {
+    "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\campaign-continuation3.json",
+    "sha256": "a2328765e634edd210c754086042541877d42625c9b1d2a971357577cbbee1f4"
+  },
+  "continuationReason": "All baseline reverse warmup transactions confirmed; interrupted log read is retained. Recover correctness through a separate read-only audit, never original timing, then continue only unattempted windows. Exact-range index-head lag reads retry within the original deadline.",
+  "remainingPlannedTransactions": 1652,
+  "startedAt": "2026-11-06T13:34:42.047Z",
+  "pid": 4900,
+  "sourceSnapshot": {
+    "files": {
+      "scripts/run-study-pilots.cjs": "fb3e03d25152a2f9108965ed1ca3ddad023d12801f93d9fda773d39c06d99252",
+      "hardhat.config.ts": "f2c7451f127f8f87555025976a0d37c84208f9630b842a769d0c773c50496b3d",
+      "package-lock.json": "4571f420b5ef346a377e26b0d86ed6d3c9c4cfa5e268e184f876936f862fa35e",
+      "tasks/benchmarkExperiments.ts": "33ad628b72733fc55e0cf9dec1547fae5240567761a3e5ef0d3783024622d253",
+      "tasks/experiments/accounts.ts": "2a930be994cd3ba0808f3f79fd88641b472a86c639a33883f2149f3fe3bca75e",
+      "tasks/lifecycle/broadcast.ts": "b1106a4e490c4d395cba490d12641d40c7e2d5ae2fe3bc0d06c0fbb687a7dfd9",
+      "tasks/lifecycle/errors.ts": "6871cf491202633327f12a054e1e9cbde2c75aa51df2da01912ef4698c2b7ccd",
+      "tasks/lib/lifecycleTiming.ts": "11ca028648485eca0a34ca4166dcf12662838609b73c5ee7ad3fcfa1e82b9164",
+      "tasks/lib/lifecycleReadRetry.ts": "2841400f23a743978c6041996fe37ac75e81253b2817cccd09fcae6401fafa79",
+      "tasks/lib/lifecycleNonce.ts": "9514a35406d16839c932269580fe863c3db1fa05ad351602a6b547f5747eda08",
+      "tasks/lib/lifecycleResult.ts": "d02bdfc151228a0b67210bc079a10f4af90fed3b85fb0c50e47f41aad3b23cfa",
+      "tasks/lib/lifecycleReportWrite.ts": "024ce556ba300422b0ae8732fa35fff7941b9965095ba4d830b6d11812a328b1",
+      "tasks/lib/cofheReadPolicy.ts": "d135b4bcb2d63be4dbe17529ff9de8c23366f9234fcc820fca1f36be67236279",
+      "tasks/lib/decryptionPolling.cjs": "b436d09f7c9c148f8c39205be554701e4977e95ddd59e2eb0789ade9717cc5e1",
+      "tasks/studies/adapters.ts": "32da75d997818aa371a7e339b3873a524fb872f5180c145cd95a6d405cd436f7",
+      "tasks/studies/capacity.ts": "ca5dc996204c668b76d6186e07ce3a9f16624aee4518d0eb9d9a636a3e64100a",
+      "tasks/studies/continuation.ts": "4d88688d2c59d5e6337980669a8c88844efb132e6d1685c73c723495ecc976ef",
+      "tasks/studies/logs.ts": "c7246c69e963faae2694f20bbc723cc6b2c6445de4627e7279d1bb3300d81565",
+      "tasks/studies/oracle.ts": "303b362ad5a67e3bd92d1c827b3c589965d13a027eebec619a9f74afa65657df",
+      "tasks/studies/plan.ts": "1df1033eb7014f4fa9144428c77a1d8622adc741fe3b31e8243f2372666fb0ff",
+      "tasks/studies/preparation.ts": "8fb1fe6fd576ff7e32e76882f56e360fbb62f4a578a79c3e736717d3a2115d17",
+      "tasks/studies/report.ts": "72b99451d7c2d733a0bfdc82f78d385b49114986e58e363138aae603db0c7f27",
+      "tasks/studies/runner.ts": "7b50200056342684219d5bfa40f4eb3c48d0a0268d9be7ac1b39632c2bf15fc2",
+      "tasks/studies/transactions.ts": "d02d5cba30875189ad75717a01fbcf7804a0185d119f793ea7c3535c4a585df0",
+      "tasks/studies/types.ts": "323811adc5d291e11b6bc921836dc372710e1b7fdcbe7466296cd473ba551335",
+      "contracts/studies/StudyCoFHE.sol": "aaa41702bddc7284fdb894483892a44dd3cbba9f0bda49a48e705e1483864ef8",
+      "contracts/studies/StudyPlain.sol": "c547d2da2b8fe7512520f5201aa0703b4e9062564e7e2ae0d730210d16bde92c",
+      "contracts/studies/StudyZama.sol": "763d22515b2e6d5fe2485efb1ea20010b15ff80362a33ae8ef7027373b64cfba"
+    },
+    "polling": {
+      "requestedIntervalMs": 10,
+      "serverRetryAfter": "respected; can lengthen the effective interval",
+      "patch": "benchmark-decryption-polling-v1",
+      "bundles": {
+        "zama": {
+          "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+          "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+        },
+        "zamaEsm": {
+          "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+          "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+        },
+        "fhenix": {
+          "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+          "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+        }
+      }
+    }
+  },
+  "currentStage": "concurrency/euint16",
+  "currentReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\concurrency-euint16-continuation2\\report.json",
+  "error": "block range extends beyond current head block",
+  "finishedAt": "2026-11-06T13:57:15.633Z"
+}

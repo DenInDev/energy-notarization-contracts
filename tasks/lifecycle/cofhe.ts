@@ -3,7 +3,8 @@ import { Encryptable, FheTypes, type CofheClient } from "@cofhe/sdk-current";
 import { getChainById } from "@cofhe/sdk-current/chains";
 import { TimingTrace, observeHttp } from "../lib/lifecycleTiming";
 import { retryLifecycleRead } from "../lib/lifecycleReadRetry";
-import type { Adapter } from "./types";
+import type { Adapter, UniformWidth } from "./types";
+import { withCofheReadPolicy, type CofheReadPolicy } from "../lib/cofheReadPolicy";
 
 
 // Initializes the CoFHE SDK for the signer and target contract.
@@ -13,6 +14,8 @@ export async function createCofheAdapter(
   address: string,
   timeoutMs: number,
   trace: TimingTrace,
+  inputWidth: UniformWidth = 16,
+  readPolicy?: CofheReadPolicy,
 ): Promise<Adapter> {
   const {
     createCofheClient,
@@ -34,14 +37,15 @@ export async function createCofheAdapter(
   );
 
   return {
-    // Prepares a 16-bit encrypted input for the target contract.
+    // Prepares an encrypted input at the campaign's selected width.
     // Records SDK stages and returns the handle and proof for submission.
-    async encrypt(value, timing) {
+    async encrypt(value, timing, _observationTimeout, kind = "integer") {
       const stepStarts = new Map<string, number>();
       const encrypted = await timing.span("encrypt.sdk_total", () =>
         observeHttp(timing, "encrypt", () =>
           client
-            .encryptInputs([Encryptable.uint16(value)])
+            .encryptInputs([kind === "address" ? Encryptable.address(value)
+              : inputWidth === 128 ? Encryptable.uint128(value) : Encryptable.uint16(value)])
             .setConsumingContract(address)
             .onStep((step, context) => {
               const at = timing.now();
@@ -78,11 +82,20 @@ export async function createCofheAdapter(
     // Retrieves an authorized plaintext from a CoFHE ciphertext handle.
     // Uses the requested encrypted width and records SDK polling activity.
     async decrypt(handle, timing, phase, observationTimeout = timeoutMs, width = 64) {
+      const execute = (budget: number) => client
+        .decryptForView(handle, width === "address" ? FheTypes.Uint160
+          : width === 128 ? FheTypes.Uint128 : width === 16 ? FheTypes.Uint16 : FheTypes.Uint64)
+        .onPoll(context => timing.event(`${phase}.sdk_poll`, { ...context }))
+        .set404RetryTimeout(budget).execute();
+      if (readPolicy) return timing.span(`${phase}.sdk_sealoutput_and_unseal`, () =>
+        observeHttp(timing, phase, () => withCofheReadPolicy(timing, phase, observationTimeout, readPolicy,
+          remaining => retryLifecycleRead(timing, phase, remaining, execute))));
       return timing.span(`${phase}.sdk_sealoutput_and_unseal`, () =>
         retryLifecycleRead(timing, phase, observationTimeout, () =>
           observeHttp(timing, phase, () =>
             client
-              .decryptForView(handle, width === 16 ? FheTypes.Uint16 : FheTypes.Uint64)
+              .decryptForView(handle, width === "address" ? FheTypes.Uint160
+                : width === 128 ? FheTypes.Uint128 : width === 16 ? FheTypes.Uint16 : FheTypes.Uint64)
               .onPoll((context) =>
                 timing.event(`${phase}.sdk_poll`, { ...context }),
               )

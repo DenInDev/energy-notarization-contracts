@@ -16,7 +16,9 @@ import { makeAdapter } from "./adapters";
 import { safeError } from "./errors";
 import { contracts, type Platform, type PlatformContext } from "./types";
 
-type Args = { report: string; outputDir: string; accountsFile: string };
+export type ContinuationArgs = { report: string; outputDir: string; accountsFile: string;
+  platformOnly?: "fhenix"; repeatFailedMean?: boolean; resumeMissing?: boolean };
+type Args = ContinuationArgs;
 
 // Resumes a saved lifecycle campaign using its recorded execution mode.
 // Holds the account lock while the continuation runs.

@@ -1,0 +1,22 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "contract_call",
+    "params": [
+      "oct3f1gc6TW8aNh2i1AnQRV9wvSrQuHkYn2F5mPPWncN6Fx",
+      "get_name",
+      []
+    ]
+  },
+  "httpStatus": 200,
+  "elapsedMs": 565.6274999999999,
+  "response": {
+    "jsonrpc": "2.0",
+    "result": {
+      "result": "QUASAR"
+    },
+    "id": 1
+  },
+  "scope": "read-only existing third-party contract; not pilot deployment or encrypted correctness"
+}

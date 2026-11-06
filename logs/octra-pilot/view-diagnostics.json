@@ -1,0 +1,54 @@
+{
+  "testedAt": "2026-10-21T15:06:20.887Z",
+  "endpoint": "https://devnet.octrascan.io/rpc",
+  "contract": "oct4vJkHFXiAjBmgANC7cKDLh2vnu9wNqTbC28MuNWEf4pm",
+  "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+  "scope": "read-only online arithmetic",
+  "cases": [
+    {
+      "method": "scale",
+      "expected": "126",
+      "correct": true,
+      "timeoutMs": 60000,
+      "httpStatus": 200,
+      "elapsedMs": 31093.3502,
+      "actual": "126",
+      "ciphertextSha256": "e985fb7b908072ea74de34dd209bc7ebeeeae6a0da093b6c78e7c339049b8981"
+    },
+    {
+      "method": "add",
+      "expected": "59",
+      "correct": false,
+      "timeoutMs": 60000,
+      "httpStatus": 429,
+      "elapsedMs": 19971.000699999997,
+      "rpcError": {
+        "code": -32000,
+        "message": "RPC capacity reached; retry shortly"
+      }
+    },
+    {
+      "method": "add",
+      "expected": "59",
+      "correct": false,
+      "timeoutMs": 60000,
+      "httpStatus": 200,
+      "elapsedMs": 6856.6615,
+      "rpcError": {
+        "code": -32005,
+        "message": "Program view busy"
+      }
+    },
+    {
+      "method": "add",
+      "expected": "59",
+      "correct": true,
+      "timeoutMs": 60000,
+      "httpStatus": 200,
+      "elapsedMs": 10974.247100000002,
+      "actual": "59",
+      "ciphertextSha256": "10cbe9d269331644bcbca6c6fbc91131a1c5c6237e05d29c9cc1baa8de06f005"
+    }
+  ],
+  "status": "passed"
+}

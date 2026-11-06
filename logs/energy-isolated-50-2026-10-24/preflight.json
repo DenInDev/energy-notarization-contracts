@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-24T09:15:46.219Z",
+  "chainId": 11155111,
+  "sourceMatchesPilot": true,
+  "bundlesMatchPilot": true,
+  "sourceFilesChecked": 31,
+  "accounts": [
+    {
+      "sourceId": "user-4",
+      "address": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC",
+      "balanceEth": "0.09999999988686082",
+      "latest": 11,
+      "pending": 11
+    },
+    {
+      "sourceId": "user-5",
+      "address": "0x268fcAE6206890E4de082535F12C40Cc5119033d",
+      "balanceEth": "0.099999999751241798",
+      "latest": 11,
+      "pending": 11
+    },
+    {
+      "sourceId": "user-6",
+      "address": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+      "balanceEth": "0.099999999830473706",
+      "latest": 11,
+      "pending": 11
+    }
+  ]
+}

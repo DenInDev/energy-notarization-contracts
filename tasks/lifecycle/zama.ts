@@ -3,7 +3,7 @@ import type { HardhatEthersSigner } from "@nomicfoundation/hardhat-ethers/signer
 import { createInstance, SepoliaConfig } from "@zama-fhe/relayer-sdk/node";
 import { TimingTrace } from "../lib/lifecycleTiming";
 import { retryLifecycleRead } from "../lib/lifecycleReadRetry";
-import type { Adapter } from "./types";
+import type { Adapter, UniformWidth } from "./types";
 
 
 // Creates a callback for Zama SDK progress updates.
@@ -30,6 +30,7 @@ export async function createZamaAdapter(
   address: string,
   timeoutMs: number,
   trace: TimingTrace,
+  width: UniformWidth = 16,
 ): Promise<Adapter> {
   const instance = await trace.span("setup.sdk_initialization", () =>
     createInstance({
@@ -39,16 +40,16 @@ export async function createZamaAdapter(
   );
 
   return {
-    // Encrypts a 16-bit reading and generates its proof locally.
+    // Encrypts a reading at the selected width and generates its proof locally.
     // Requests remote approval and returns the input handle and proof for submission.
-    async encrypt(value, timing, observationTimeout = timeoutMs) {
+    async encrypt(value, timing, observationTimeout = timeoutMs, kind = "integer") {
       const zkProof = await timing.span(
         "encrypt.local_ciphertext_and_zkproof",
         () => {
-          return instance
-            .createEncryptedInput(address, signer.address)
-            .add16(value)
-            .generateZKProof();
+          const builder = instance.createEncryptedInput(address, signer.address);
+          const input = kind === "address" ? builder.addAddress(hre.ethers.getAddress(hre.ethers.toBeHex(value, 20)))
+            : width === 128 ? builder.add128(value) : builder.add16(value);
+          return input.generateZKProof();
         },
       );
       const encrypted = await timing.span("encrypt.remote_input_approval", () =>

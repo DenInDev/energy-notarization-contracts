@@ -1,0 +1,7 @@
+{
+  "pid": 4900,
+  "creationTimeUtc": "2026-11-06T13:34:38.8050020Z",
+  "commandLine": "\"C:\\Program Files\\nodejs\\node.exe\" scripts/run-study-pilots.cjs logs/study-pilots-2026-11-06/campaign-continuation4.json",
+  "manifest": "logs/study-pilots-2026-11-06/campaign-continuation4.json",
+  "verifiedAtUtc": "2026-11-06T13:34:56.8843973Z"
+}

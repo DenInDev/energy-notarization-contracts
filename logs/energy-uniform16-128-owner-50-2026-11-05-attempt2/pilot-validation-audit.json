@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-11-05T22:49:41.761Z",
+  "pilots": [
+    {
+      "width": 16,
+      "reportSha256": "fb17a2658fc59a9f3ef4a53024a65ae03ff20a6b6f732f47a5d0e17567333ea2",
+      "complete": true,
+      "measured": 18,
+      "warmups": 18,
+      "allPrimaryOk": true,
+      "ownerMeasured": 3,
+      "viewsMeasured": 3,
+      "sourceMismatches": [],
+      "bundleMismatches": [],
+      "distinctWorkerPids": 3,
+      "barriers": 12,
+      "preparedHashesMatch": true,
+      "timingIdentitiesHold": true
+    },
+    {
+      "width": 128,
+      "reportSha256": "87f20a3b6e4592659c457b6b0f0d10c034d4631ca26839022d7b6cb089ee8686",
+      "complete": true,
+      "measured": 18,
+      "warmups": 18,
+      "allPrimaryOk": true,
+      "ownerMeasured": 3,
+      "viewsMeasured": 3,
+      "sourceMismatches": [],
+      "bundleMismatches": [],
+      "distinctWorkerPids": 3,
+      "barriers": 12,
+      "preparedHashesMatch": true,
+      "timingIdentitiesHold": true
+    }
+  ]
+}

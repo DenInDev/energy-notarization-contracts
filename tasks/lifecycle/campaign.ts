@@ -36,6 +36,9 @@ export async function runLifecycleCampaign(
   const release = args.accountsFile ? acquireAccountLock(args.accountsFile) : () => {};
 
   try {
+    if (args.width !== undefined && (args.execution === "async" || ![16, 128].includes(args.width))) {
+      throw new Error("Uniform width must be 16 or 128 and requires process isolation");
+    }
     if (args.execution && !["processes", "async"].includes(args.execution)) throw new Error("Invalid execution mode");
 
     return args.execution !== "async" ? await runProcessLifecycleCampaign(args, hre) : await runCampaign(args, hre);

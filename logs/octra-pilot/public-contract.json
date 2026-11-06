@@ -1,0 +1,268 @@
+{
+  "address": "oct3f1gc6TW8aNh2i1AnQRV9wvSrQuHkYn2F5mPPWncN6Fx",
+  "vm_contract": {
+    "jsonrpc": "2.0",
+    "result": {
+      "address": "oct3f1gc6TW8aNh2i1AnQRV9wvSrQuHkYn2F5mPPWncN6Fx",
+      "version": "1.0 Rehovot",
+      "code_hash": "73ef9b82707e14bdda85d03dd87debb89273076f5f6a539745163a6f68d3f24b",
+      "balance": "5000000",
+      "owner": "octEwb4krH6vW3Pr23hps9r8pTZ78dKpdpdmiY612FynidH"
+    },
+    "id": 1
+  },
+  "octra_contractAbi": {
+    "jsonrpc": "2.0",
+    "result": {
+      "address": "oct3f1gc6TW8aNh2i1AnQRV9wvSrQuHkYn2F5mPPWncN6Fx",
+      "methods": [
+        {
+          "name": "set_keeper",
+          "view": true
+        },
+        {
+          "name": "set_neuron",
+          "view": true
+        },
+        {
+          "name": "mint_assign",
+          "view": true
+        },
+        {
+          "name": "mint_bond",
+          "view": true
+        },
+        {
+          "name": "hunt",
+          "view": true
+        },
+        {
+          "name": "transfer_biont",
+          "view": true
+        },
+        {
+          "name": "sever",
+          "view": true
+        },
+        {
+          "name": "grant",
+          "view": true
+        },
+        {
+          "name": "pull",
+          "view": true
+        },
+        {
+          "name": "submit_address",
+          "view": true
+        },
+        {
+          "name": "wander",
+          "view": true
+        },
+        {
+          "name": "kill",
+          "view": true
+        },
+        {
+          "name": "evolve",
+          "view": true
+        },
+        {
+          "name": "call_home",
+          "view": true
+        },
+        {
+          "name": "prune",
+          "view": true
+        },
+        {
+          "name": "set_decay_threshold",
+          "view": true
+        },
+        {
+          "name": "commit_reputation",
+          "view": true
+        },
+        {
+          "name": "set_trait",
+          "view": true
+        },
+        {
+          "name": "receive_oct",
+          "view": false
+        },
+        {
+          "name": "token_uri",
+          "view": true
+        },
+        {
+          "name": "get_name",
+          "view": true
+        },
+        {
+          "name": "get_symbol",
+          "view": true
+        },
+        {
+          "name": "get_total_supply",
+          "view": true
+        },
+        {
+          "name": "decimals",
+          "view": true
+        },
+        {
+          "name": "balance_of",
+          "view": true
+        },
+        {
+          "name": "allowance",
+          "view": true
+        },
+        {
+          "name": "current_soul",
+          "view": true
+        },
+        {
+          "name": "biont_home",
+          "view": true
+        },
+        {
+          "name": "biont_owner",
+          "view": true
+        },
+        {
+          "name": "father_address",
+          "view": true
+        },
+        {
+          "name": "keeper_address",
+          "view": true
+        },
+        {
+          "name": "biont_name",
+          "view": true
+        },
+        {
+          "name": "is_severed",
+          "view": true
+        },
+        {
+          "name": "is_alive",
+          "view": true
+        },
+        {
+          "name": "defense_level",
+          "view": true
+        },
+        {
+          "name": "generosity_level",
+          "view": true
+        },
+        {
+          "name": "gift_bps_val",
+          "view": true
+        },
+        {
+          "name": "sever_epoch_val",
+          "view": true
+        },
+        {
+          "name": "total_wanders_count",
+          "view": true
+        },
+        {
+          "name": "last_wander_epoch",
+          "view": true
+        },
+        {
+          "name": "visit_count_of",
+          "view": true
+        },
+        {
+          "name": "destination_count",
+          "view": true
+        },
+        {
+          "name": "get_destination",
+          "view": true
+        },
+        {
+          "name": "biont_balance",
+          "view": true
+        },
+        {
+          "name": "submit_fee_amount",
+          "view": true
+        },
+        {
+          "name": "wander_interval_epochs",
+          "view": true
+        },
+        {
+          "name": "get_birth_seed",
+          "view": true
+        },
+        {
+          "name": "autonoconomy_address",
+          "view": true
+        },
+        {
+          "name": "neuron_address",
+          "view": true
+        },
+        {
+          "name": "is_soul",
+          "view": true
+        },
+        {
+          "name": "is_submitted",
+          "view": true
+        },
+        {
+          "name": "has_dest",
+          "view": true
+        },
+        {
+          "name": "current_archetype",
+          "view": true
+        },
+        {
+          "name": "decay_threshold_val",
+          "view": true
+        },
+        {
+          "name": "dest_last_wandered",
+          "view": true
+        },
+        {
+          "name": "is_blacklisted",
+          "view": true
+        },
+        {
+          "name": "hardening_level",
+          "view": true
+        },
+        {
+          "name": "effective_defense",
+          "view": true
+        },
+        {
+          "name": "reputation_commitment",
+          "view": true
+        },
+        {
+          "name": "reveal_trait",
+          "view": true
+        },
+        {
+          "name": "fhe_pk_of",
+          "view": true
+        }
+      ],
+      "instruction_count": 2820
+    },
+    "id": 1
+  }
+}

@@ -1,0 +1,6 @@
+operation,mode,status,plaintext,nPrimaryLatency,attempts,feeOCT,effort,transactionToReceiptMs,postReceiptToValidatedPlaintextMs,transactionToValidatedPlaintextMs,rpcMs,readOnlyPlaintext,scope
+notarize,state_changing,validated,43,1,,0.001,11606,23978.0973,235.98999999999796,24214.0873,,,
+add,state_changing_late_validation,confirmed,85,0,3,2.57,2560073,,,,,85,Correctness recovered after malformed RPC response; primary latency unavailable
+mul_scalar,state_changing_late_validation,confirmed,129,0,,2.56,2542977,,,,,,Correctness recovered after logging failure; primary latency unavailable
+mean,read_only_field_candidate,validated,64,0,,0,,,,,9922.6976,,Even-sum candidate only; not general floor integer division
+max,compiler_probe,unsupported_by_live_compiler,,0,,,,,,,,,fhe_max unknown; numeric max rejects cipher; no execution claimed

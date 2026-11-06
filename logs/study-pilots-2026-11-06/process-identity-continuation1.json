@@ -1,0 +1,6 @@
+{
+  "pid": 36484,
+  "creationTimeUtc": "2026-11-06T11:44:17.1193310Z",
+  "command": "\"C:\\Program Files\\nodejs\\node.exe\" scripts/run-study-pilots.cjs logs/study-pilots-2026-11-06/campaign-continuation1.json",
+  "manifest": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\campaign-continuation1.json"
+}

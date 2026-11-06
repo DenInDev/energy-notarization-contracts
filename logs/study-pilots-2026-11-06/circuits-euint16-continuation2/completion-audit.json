@@ -1,0 +1,29 @@
+{
+  "rawReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\circuits-euint16-continuation2\\report.json",
+  "rawSha256": "bd5f0336dd9d1b808ccf8fc270692b96368a26d647236b95dc37212a6d12c698",
+  "executionComplete": true,
+  "allOriginalTrialsValid": false,
+  "suite": "circuits",
+  "width": 16,
+  "measuredPlanned": 81,
+  "measuredOriginalValidated": 81,
+  "measuredSeparatelyLateValidated": 0,
+  "measuredUnsentCapacityLimits": 0,
+  "warmupPlanned": 27,
+  "warmupOriginalValidated": 27,
+  "warmupSeparatelyLateValidated": 0,
+  "warmupUnsentCapacityLimits": 0,
+  "confirmedReceipts": 222,
+  "deployments": 3,
+  "canonicalReconciliations": 1,
+  "canonicalGasCostWei": "4463092524",
+  "canonicalGasCostEth": "0.000000004463092524",
+  "gasWeiByPlatform": {
+    "baseline": "659492316",
+    "zama": "1989738673",
+    "fhenix": "1813861535"
+  },
+  "sourceBytesAndPrefixesVerified": true,
+  "independentModularOracleAndFinalCanonicalOrderVerified": true,
+  "noncesAndGasProductsVerified": true
+}

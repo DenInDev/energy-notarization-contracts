@@ -1,0 +1,11 @@
+# Decryption audit of the completed campaign
+
+Primary flow: observe receipt -> canonical block-hash getter -> SDK authorization/decryption -> validate expected plaintext. A separate already-ready repeat follows the primary validation and cannot change the recorded primary completion. No explicit benchmark sleep occurs after successful decryption.
+
+Zama 0.4.1: primary calls recorded 490 queued events with Retry-After 2000ms and one with 5000ms, followed by 250 successes. These are server-directed polling hints, not independent measurements of sleep or cryptographic compute. Every one of the 250 already-ready calls still recorded a 2000ms queued hint. Ready-repeat means are approximately 2.36–2.39s. Seven transient SDK ACL check failures were retried, with approximately 7.057s total observed outer backoff across all primary calls. There were no terminal primary or ready-repeat failures.
+
+CoFHE 1.0.1: primary /v2/sealoutput HTTP traces contain 250 HTTP 200, 283 HTTP 204 and 17 HTTP 404 responses. The 300 non-ready responses correspond to 300 poll events declaring 1000ms intervals. These callback intervals indicate SDK waits; timer/scheduling overhead is not isolated and the actual instant of server readiness between polls is unknown. Every already-ready request returned HTTP 200 without polling. SDK source returns immediately on complete sealed data, and waits only for retryable/non-complete responses.
+
+Interpretation: completion is client-observed validated result availability, including SDK polling and authorization. The polling cadence may delay discovery of readiness; it must not be called pure FHE compute time or corrected by blindly subtracting ready-repeat latency. The additional already-ready call is outside the primary latency but delays the next workload request. Zama HTTP is not instrumented by observeHttp in the adapter; progress callbacks do not fully expose HTTP request durations.
+
+Timeout limitation: the CoFHE SDK has an internal overall timer of five minutes, while the benchmark observes a 180s outer deadline. The wrapper does not guarantee cancellation of SDK work on timeout, and its outer retry currently resets the configured 404 budget. No such terminal timeout occurred in this completed campaign. This requires correction before interpreting timeout/cancellation behavior in future campaigns.

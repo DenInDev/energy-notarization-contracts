@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-10-24T09:35:15.649Z",
+  "sourceReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-isolated-50-2026-10-24/report.json",
+  "sourceReportSha256": "846aa7bca53ea2aea36398d878f6ae14a52a0a1908a4083db9e09ebdc18064aa",
+  "status": "failed",
+  "complete": false,
+  "abortedAt": "2026-10-24T09:33:02.296Z",
+  "error": "Isolated campaign stopped after all current workers settled; observations and prepared transaction hashes retained",
+  "measured": {
+    "attempted": 96,
+    "ok": 95,
+    "error": 1,
+    "planned": 750,
+    "byPlatform": {
+      "baseline": {
+        "ok": 32,
+        "error": 0
+      },
+      "zama": {
+        "ok": 31,
+        "error": 1
+      },
+      "fhenix": {
+        "ok": 32,
+        "error": 0
+      }
+    }
+  },
+  "warmup": {
+    "attempted": 15,
+    "ok": 15
+  },
+  "failure": {
+    "platform": "zama",
+    "operation": "add",
+    "run": 7,
+    "error": "transaction receipt deadline exceeded (180000 ms)",
+    "transactionHash": "0x23d91d05bfa2ad397204793769e8f3a1a51ae563dc2d56d950f81a5382750b32",
+    "nonce": 48,
+    "broadcastState": "acknowledged",
+    "broadcastAckMs": 130.68559999996796
+  },
+  "sourceFilesChanged": [],
+  "readOnlyRpc": {
+    "available": true,
+    "checkedAt": "2026-10-24T09:35:15.633Z",
+    "chainId": 11155111,
+    "receipt": {
+      "blockNumber": 11982943,
+      "blockHash": "0x5e62cc06d728dcb7526f3c246d62fbfb3250c2b8143759d370662784183db999",
+      "status": 1,
+      "gasUsed": "0x53c11",
+      "effectiveGasPrice": "0x26"
+    },
+    "transaction": {
+      "hash": "0x23d91d05bfa2ad397204793769e8f3a1a51ae563dc2d56d950f81a5382750b32",
+      "nonce": 48,
+      "blockNumber": 11982943
+    },
+    "latestNonce": 49,
+    "pendingNonce": 49
+  },
+  "interpretation": "Incomplete benchmark. No receipt within original 180-second deadline. Later inclusion cannot reconstruct successful original latency; no transaction replay or replacement authorized by this monitor."
+}

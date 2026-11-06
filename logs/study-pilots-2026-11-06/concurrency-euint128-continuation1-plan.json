@@ -1,0 +1,105 @@
+{
+  "args": {
+    "suite": "concurrency",
+    "platform": "all",
+    "widths": "128",
+    "users": "1,2",
+    "modes": "independent,shared_sum,shared_ordered",
+    "sizes": "2,4,8",
+    "depths": "1,2,4",
+    "repetitions": 3,
+    "requests": 8,
+    "timeout": 180,
+    "seed": "study-pilot-v1-concurrency-128",
+    "accountsFile": ".benchmark-accounts/studies/accounts.secret.json",
+    "outputDir": "logs/study-pilots-2026-11-06/concurrency-euint128-continuation1",
+    "live": false
+  },
+  "cases": [
+    {
+      "id": "concurrency-w128-c1-independent",
+      "suite": "concurrency",
+      "width": 128,
+      "users": 1,
+      "mode": "independent",
+      "size": 8,
+      "inputCount": 1,
+      "additions": 1,
+      "multiplications": 0,
+      "dependencyDepth": 1
+    },
+    {
+      "id": "concurrency-w128-c1-shared_sum",
+      "suite": "concurrency",
+      "width": 128,
+      "users": 1,
+      "mode": "shared_sum",
+      "size": 8,
+      "inputCount": 1,
+      "additions": 1,
+      "multiplications": 0,
+      "dependencyDepth": 1
+    },
+    {
+      "id": "concurrency-w128-c1-shared_ordered",
+      "suite": "concurrency",
+      "width": 128,
+      "users": 1,
+      "mode": "shared_ordered",
+      "size": 8,
+      "inputCount": 1,
+      "additions": 1,
+      "multiplications": 1,
+      "dependencyDepth": 2
+    },
+    {
+      "id": "concurrency-w128-c2-independent",
+      "suite": "concurrency",
+      "width": 128,
+      "users": 2,
+      "mode": "independent",
+      "size": 8,
+      "inputCount": 1,
+      "additions": 1,
+      "multiplications": 0,
+      "dependencyDepth": 1
+    },
+    {
+      "id": "concurrency-w128-c2-shared_sum",
+      "suite": "concurrency",
+      "width": 128,
+      "users": 2,
+      "mode": "shared_sum",
+      "size": 8,
+      "inputCount": 1,
+      "additions": 1,
+      "multiplications": 0,
+      "dependencyDepth": 1
+    },
+    {
+      "id": "concurrency-w128-c2-shared_ordered",
+      "suite": "concurrency",
+      "width": 128,
+      "users": 2,
+      "mode": "shared_ordered",
+      "size": 8,
+      "inputCount": 1,
+      "additions": 1,
+      "multiplications": 1,
+      "dependencyDepth": 2
+    }
+  ],
+  "platforms": [
+    "baseline",
+    "zama",
+    "fhenix"
+  ],
+  "repetitions": 3,
+  "measuredTransactions": 432,
+  "warmupTransactions": 216,
+  "setupTransactions": 87,
+  "deployments": 3,
+  "requiredAccounts": 3,
+  "networkAccess": false,
+  "note": "Plan only; counts are upper budgets. --live enables transactions. Exact HCU estimate rejections send no compute transaction; other failures stop the run. No funding automation."
+}

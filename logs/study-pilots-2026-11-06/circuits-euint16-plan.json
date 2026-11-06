@@ -1,0 +1,141 @@
+{
+  "args": {
+    "suite": "circuits",
+    "platform": "all",
+    "widths": "16",
+    "users": "1,2",
+    "modes": "independent,shared_sum,shared_ordered",
+    "sizes": "2,4,8",
+    "depths": "1,2,4",
+    "repetitions": 3,
+    "requests": 8,
+    "timeout": 180,
+    "seed": "study-pilot-v1-circuits-16",
+    "accountsFile": ".benchmark-accounts/studies/accounts.secret.json",
+    "outputDir": "logs/study-pilots-2026-11-06/circuits-euint16",
+    "live": false
+  },
+  "cases": [
+    {
+      "id": "circuits-w16-sum_linear-n2",
+      "suite": "circuits",
+      "width": 16,
+      "users": 1,
+      "circuit": "sum_linear",
+      "size": 2,
+      "inputCount": 2,
+      "additions": 1,
+      "multiplications": 0,
+      "dependencyDepth": 1
+    },
+    {
+      "id": "circuits-w16-sum_tree-n2",
+      "suite": "circuits",
+      "width": 16,
+      "users": 1,
+      "circuit": "sum_tree",
+      "size": 2,
+      "inputCount": 2,
+      "additions": 1,
+      "multiplications": 0,
+      "dependencyDepth": 1
+    },
+    {
+      "id": "circuits-w16-sum_linear-n4",
+      "suite": "circuits",
+      "width": 16,
+      "users": 1,
+      "circuit": "sum_linear",
+      "size": 4,
+      "inputCount": 4,
+      "additions": 3,
+      "multiplications": 0,
+      "dependencyDepth": 3
+    },
+    {
+      "id": "circuits-w16-sum_tree-n4",
+      "suite": "circuits",
+      "width": 16,
+      "users": 1,
+      "circuit": "sum_tree",
+      "size": 4,
+      "inputCount": 4,
+      "additions": 3,
+      "multiplications": 0,
+      "dependencyDepth": 2
+    },
+    {
+      "id": "circuits-w16-sum_linear-n8",
+      "suite": "circuits",
+      "width": 16,
+      "users": 1,
+      "circuit": "sum_linear",
+      "size": 8,
+      "inputCount": 8,
+      "additions": 7,
+      "multiplications": 0,
+      "dependencyDepth": 7
+    },
+    {
+      "id": "circuits-w16-sum_tree-n8",
+      "suite": "circuits",
+      "width": 16,
+      "users": 1,
+      "circuit": "sum_tree",
+      "size": 8,
+      "inputCount": 8,
+      "additions": 7,
+      "multiplications": 0,
+      "dependencyDepth": 3
+    },
+    {
+      "id": "circuits-w16-affine_chain-k1",
+      "suite": "circuits",
+      "width": 16,
+      "users": 1,
+      "circuit": "affine_chain",
+      "size": 1,
+      "inputCount": 2,
+      "additions": 1,
+      "multiplications": 1,
+      "dependencyDepth": 2
+    },
+    {
+      "id": "circuits-w16-affine_chain-k2",
+      "suite": "circuits",
+      "width": 16,
+      "users": 1,
+      "circuit": "affine_chain",
+      "size": 2,
+      "inputCount": 2,
+      "additions": 2,
+      "multiplications": 2,
+      "dependencyDepth": 4
+    },
+    {
+      "id": "circuits-w16-affine_chain-k4",
+      "suite": "circuits",
+      "width": 16,
+      "users": 1,
+      "circuit": "affine_chain",
+      "size": 4,
+      "inputCount": 2,
+      "additions": 4,
+      "multiplications": 4,
+      "dependencyDepth": 8
+    }
+  ],
+  "platforms": [
+    "baseline",
+    "zama",
+    "fhenix"
+  ],
+  "repetitions": 3,
+  "measuredTransactions": 81,
+  "warmupTransactions": 27,
+  "setupTransactions": 114,
+  "deployments": 3,
+  "requiredAccounts": 1,
+  "networkAccess": false,
+  "note": "Plan only; counts are upper budgets. --live enables transactions. Exact HCU estimate rejections send no compute transaction; other failures stop the run. No funding automation."
+}

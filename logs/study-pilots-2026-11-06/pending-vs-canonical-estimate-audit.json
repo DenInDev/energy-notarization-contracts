@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-06T11:49:08.261Z",
+  "sourceReport": "circuits-euint16-continuation1/report.json",
+  "computeWasBroadcast": false,
+  "loadNonce": 76,
+  "probes": [
+    {
+      "block": "pending",
+      "inputCount": 2,
+      "gasEstimate": "0xbbd67"
+    },
+    {
+      "block": "latest",
+      "inputCount": 2,
+      "gasEstimate": "0xbbd67"
+    },
+    {
+      "block": "0xb84549",
+      "inputCount": 2,
+      "gasEstimate": "0xbbd67"
+    }
+  ]
+}

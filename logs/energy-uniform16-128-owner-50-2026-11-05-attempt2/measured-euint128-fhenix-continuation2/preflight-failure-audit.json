@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-06T01:24:53.254Z",
+  "reason": "hash is not currently canonical",
+  "rawSha256": "1265139df01e0253cf58179c397894a6c6d70cac78331d443b8db201c525811c",
+  "newPrimary": 0,
+  "newBarriers": 0,
+  "newRetries": 0,
+  "latestNonce": 786,
+  "pendingNonce": 786,
+  "fix": "Bounded retry of the same requireCanonical state read during resume preflight; no latest-state fallback or send replay"
+}

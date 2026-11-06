@@ -1,0 +1,106 @@
+{
+  "checkedAt": "2026-11-02T16:11:39.131Z",
+  "network": "devnet",
+  "endpoint": "https://devnet.octrascan.io/rpc",
+  "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+  "records": [
+    {
+      "method": "node_status",
+      "params": [],
+      "httpStatus": 200,
+      "response": {
+        "jsonrpc": "2.0",
+        "result": {
+          "epoch": 1784731,
+          "current_epoch": 1784731,
+          "validator": "octFc3DDzWTASUVpvyFftXp9KLx1RdiYawGHRRCVz3wcoVZ",
+          "roots": 0,
+          "timestamp": 1793635901.166301,
+          "network_version": "v3.0.0-irmin",
+          "head_epoch": 1784730,
+          "state_root": "338eb00803fba5eedfa53917500aa14486aa5bef45101eac602909866c79b116",
+          "txid_hi": "3512283",
+          "irmin_commit": "efe932f673a6517adb058a66c53b9b9d983dd2f9ec857af8dd981479acdd5e9aba139434bd2b4e0982ce0b332775273ba141421381018956fea750b47d947db5"
+        },
+        "id": 1
+      }
+    },
+    {
+      "method": "node_version",
+      "params": [],
+      "httpStatus": 200,
+      "response": {
+        "jsonrpc": "2.0",
+        "result": {
+          "node": "octra",
+          "version": "3.0.0",
+          "protocol": "json-rpc-2.0"
+        },
+        "id": 1
+      }
+    },
+    {
+      "method": "octra_balance",
+      "params": [
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "httpStatus": 200,
+      "response": {
+        "jsonrpc": "2.0",
+        "result": {
+          "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+          "balance": "2.558492",
+          "balance_raw": "2558492",
+          "nonce": 4,
+          "pending_nonce": 4,
+          "has_public_key": true
+        },
+        "id": 1
+      }
+    },
+    {
+      "method": "octra_recommendedFee",
+      "params": [
+        "deploy"
+      ],
+      "httpStatus": 200,
+      "response": {
+        "jsonrpc": "2.0",
+        "result": {
+          "minimum": "200000",
+          "base_fee": "200000",
+          "recommended": "200000",
+          "fast": "400000",
+          "staging_size": 16,
+          "staging_ou": "16000",
+          "epoch_capacity": "10000000000",
+          "usage_pct": 0,
+          "stealth_class": false
+        },
+        "id": 1
+      }
+    },
+    {
+      "method": "octra_recommendedFee",
+      "params": [
+        "call"
+      ],
+      "httpStatus": 200,
+      "response": {
+        "jsonrpc": "2.0",
+        "result": {
+          "minimum": "1000",
+          "base_fee": "1000",
+          "recommended": "1000",
+          "fast": "2000",
+          "staging_size": 16,
+          "staging_ou": "16000",
+          "epoch_capacity": "10000000000",
+          "usage_pct": 0,
+          "stealth_class": false
+        },
+        "id": 1
+      }
+    }
+  ]
+}

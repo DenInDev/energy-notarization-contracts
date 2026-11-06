@@ -1,0 +1,79 @@
+{
+  "startedAt": "2026-11-02T17:22:00.476Z",
+  "scope": "read-only late reconciliation; primary latency not reconstructed",
+  "hash": "23d2d788700639a44d4e28afd8ee40611cc1fe40cfdfc4915ec0d6400f43631a",
+  "sourceReportSha256": "72cc367dcb83ecf523d45f7c518201e39f39e873153e82b09304074229018a99",
+  "events": [
+    {
+      "method": "octra_transaction",
+      "status": 200,
+      "error": null,
+      "elapsedMs": 298.3579
+    },
+    {
+      "method": "contract_receipt",
+      "status": 200,
+      "error": null,
+      "elapsedMs": 290.9366
+    },
+    {
+      "method": "contract_call",
+      "status": 200,
+      "error": null,
+      "elapsedMs": 309.6576000000001
+    },
+    {
+      "method": "octra_balance",
+      "status": 200,
+      "error": null,
+      "elapsedMs": 129.36509999999998
+    }
+  ],
+  "state": {
+    "status": "confirmed",
+    "tx_hash": "23d2d788700639a44d4e28afd8ee40611cc1fe40cfdfc4915ec0d6400f43631a",
+    "epoch": 1784968,
+    "from": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+    "to": "oct8iWgBRKidrcDK28ARYPxLm4fCcar9PFrCVwPBFjE76ye",
+    "amount": "0",
+    "amount_raw": "0",
+    "nonce": 10,
+    "ou": "2570000",
+    "timestamp": 1793639940.5,
+    "op_type": "call",
+    "message": "[]"
+  },
+  "receipt": {
+    "program": "oct8iWgBRKidrcDK28ARYPxLm4fCcar9PFrCVwPBFjE76ye",
+    "contract": "oct8iWgBRKidrcDK28ARYPxLm4fCcar9PFrCVwPBFjE76ye",
+    "method": "add",
+    "success": true,
+    "effort": 2560073,
+    "events": [
+      {
+        "program": "oct8iWgBRKidrcDK28ARYPxLm4fCcar9PFrCVwPBFjE76ye",
+        "contract": "oct8iWgBRKidrcDK28ARYPxLm4fCcar9PFrCVwPBFjE76ye",
+        "depth": 0,
+        "event": "Updated",
+        "values": [
+          "add"
+        ]
+      }
+    ],
+    "error": null,
+    "epoch": 1784968,
+    "ts": 1793639990.898352
+  },
+  "plaintext": "85",
+  "correct": true,
+  "balanceAfter": {
+    "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+    "balance": "0.001492",
+    "balance_raw": "1492",
+    "nonce": 10,
+    "pending_nonce": 10,
+    "has_public_key": true
+  },
+  "status": "confirmed",
+  "completedAt": "2026-11-02T17:22:06.151Z"
+}

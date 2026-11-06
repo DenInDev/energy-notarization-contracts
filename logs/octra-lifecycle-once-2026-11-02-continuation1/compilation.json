@@ -1,0 +1,383 @@
+{
+  "at": "2026-11-02T16:49:15.789Z",
+  "httpStatus": 200,
+  "response": {
+    "jsonrpc": "2.0",
+    "result": {
+      "bytecode": "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bnRyaWVzIjpbeyJ0YXJnZXQiOjQ0LCJtZW1vcnkiOlt7InNsb3QiOjEwMDEsImtpbmQiOiJzdHJpbmcifV0sImVmZmVjdHMiOlsiZW1pdCIsImZoZSIsIm1lbW9yeV9yZWFkIiwic3RvcmFnZV9yZWFkIiwic3RvcmFnZV93cml0ZSJdfSx7InRhcmdldCI6NjksIm1lbW9yeSI6W10sImVmZmVjdHMiOlsiZW1pdCIsImZoZSIsInN0b3JhZ2VfcmVhZCIsInN0b3JhZ2Vfd3JpdGUiXX0seyJ0YXJnZXQiOjEwNCwibWVtb3J5IjpbeyJzbG90IjoxMDAxLCJraW5kIjoiaW50In1dLCJlZmZlY3RzIjpbImVtaXQiLCJmaGUiLCJtZW1vcnlfcmVhZCIsInN0b3JhZ2VfcmVhZCIsInN0b3JhZ2Vfd3JpdGUiXX0seyJ0YXJnZXQiOjE0NywibWVtb3J5IjpbXSwiZWZmZWN0cyI6WyJlbWl0IiwiZmhlIiwic3RvcmFnZV9yZWFkIiwic3RvcmFnZV93cml0ZSJdfSx7InRhcmdldCI6MTg1LCJtZW1vcnkiOltdLCJlZmZlY3RzIjpbImVtaXQiLCJzdG9yYWdlX3JlYWQiXX0seyJ0YXJnZXQiOjIwMiwibWVtb3J5IjpbXSwiZWZmZWN0cyI6WyJlbWl0Iiwic3RvcmFnZV9yZWFkIl19LHsidGFyZ2V0IjoyMTksIm1lbW9yeSI6W10sImVmZmVjdHMiOlsiZW1pdCIsInN0b3JhZ2VfcmVhZCJdfSx7InRhcmdldCI6MjM2LCJtZW1vcnkiOlt7InNsb3QiOjEwMDEsImtpbmQiOiJzdHJpbmcifSx7InNsb3QiOjEwMDIsImtpbmQiOiJzdHJpbmcifV0sImVmZmVjdHMiOlsiZW1pdCIsImZoZSIsIm1lbW9yeV9yZWFkIiwic3RvcmFnZV9yZWFkIl19XSwiY2FsbHMiOltdLCJ4Y2FsbHMiOltdfSwiY29tcGlsZXIiOiJvY3RyYV9hbWwiLCJjb21waWxlcl92ZXJzaW9uIjoiMi4wIEFNTC1wcmV2aWV3IiwiZGVjbGFyYXRpb24iOiJwcm9ncmFtIiwidmVyaWZpY2F0aW9uX3NjaGVtYSI6ImFtbF9zYWZldHlfcmVwb3J0X3YxIiwic291cmNlX21vZGUiOiJtdWx0aSIsInNvdXJjZV9oYXNoIjoiNDI2OTNmMmZiMzY0YzNjZTRkOWI2NTZkNWQxNTEyZDhiZmUwYWNmZjZlZDE0YzUzOTdjMTBiMmZlOTY0MzcxNSIsImJ5dGVjb2RlX2hhc2giOiI3OGEzNGUxYmE3MzZhZmZmNDRlYTljYWZhMzliODU2OThmYmYwNjUwYzEzZjBkNWI3YWM3NzVlZGY1ZGQ1NDljIiwidmVyaWZpY2F0aW9uX2hhc2giOiJlZTk0ZjUzMTFkNDMyNzdlNDg2ZTJiZGY1OTE5NDViMTNiNDU1Y2VhYTM3MWQ0OTY3YWJhMThlN2ZhZmYwNGM4In0=",
+      "size": 2972,
+      "instructions": 263,
+      "abi": "{\"declaration\":\"program\",\"constructor\":{\"name\":\"constructor\",\"inputs\":[\"string\"],\"input_names\":[\"initial_total\"],\"output\":\"void\",\"view\":false,\"payable\":true},\"functions\":[{\"name\":\"notarize\",\"inputs\":[\"string\"],\"input_names\":[\"input\"],\"output\":\"bool\",\"view\":false,\"payable\":false},{\"name\":\"add\",\"inputs\":[],\"input_names\":[],\"output\":\"bool\",\"view\":false,\"payable\":false},{\"name\":\"mul_scalar\",\"inputs\":[\"int\"],\"input_names\":[\"scalar\"],\"output\":\"bool\",\"view\":false,\"payable\":false},{\"name\":\"mean_field\",\"inputs\":[],\"input_names\":[],\"output\":\"bool\",\"view\":false,\"payable\":false},{\"name\":\"get_last\",\"inputs\":[],\"input_names\":[],\"output\":\"string\",\"view\":true,\"payable\":false},{\"name\":\"get_total\",\"inputs\":[],\"input_names\":[],\"output\":\"string\",\"view\":true,\"payable\":false},{\"name\":\"get_result\",\"inputs\":[],\"input_names\":[],\"output\":\"string\",\"view\":true,\"payable\":false},{\"name\":\"mean_probe\",\"inputs\":[\"string\",\"string\"],\"input_names\":[\"left\",\"right\"],\"output\":\"string\",\"view\":true,\"payable\":false}],\"events\":[{\"name\":\"Updated\",\"fields\":[{\"name\":\"operation\",\"type\":\"string\",\"indexed\":false}]}]}",
+      "version": "2.0 AML-preview",
+      "disasm": "MLOAD r1, 999\nLDI r2, \"constructor\"\nNEQ r3, r1, r2\nJIF r3, 100\nMLOAD r1, 1001\nORIGIN r2\nSSTORE \"owner\", r2\nLDI r2, \"\"\nSSTORE \"last\", r2\nFHE_DESER r2, r1\nFHE_SER r3, r2\nSSTORE \"total\", r3\nLDI r2, \"\"\nSSTORE \"result\", r2\nLDI r2, false\nSSTORE \"initialized\", r2\nSTOP\nJDEST 100\nMLOAD r1, 1000\nLDI r2, \"notarize\"\nEQ r3, r1, r2\nJIF r3, 200\nLDI r2, \"add\"\nEQ r3, r1, r2\nJIF r3, 300\nLDI r2, \"mul_scalar\"\nEQ r3, r1, r2\nJIF r3, 400\nLDI r2, \"mean_field\"\nEQ r3, r1, r2\nJIF r3, 500\nLDI r2, \"get_last\"\nEQ r3, r1, r2\nJIF r3, 600\nLDI r2, \"get_total\"\nEQ r3, r1, r2\nJIF r3, 700\nLDI r2, \"get_result\"\nEQ r3, r1, r2\nJIF r3, 800\nLDI r2, \"mean_probe\"\nEQ r3, r1, r2\nJIF r3, 900\nREVERT\nJDEST 200\nMLOAD r1, 1001\nCALLER r2\nSLOAD r3, \"owner\"\nLDI r5, \"\"\nCONCAT r5, r5, r2\nLDI r6, \"\"\nCONCAT r6, r6, r3\nEQ r4, r5, r6\nJIF r4, 10000\nLDI r5, \"owner only\"\nEMIT \"Require\", r5\nREVERT\nJDEST 10000\nFHE_DESER r2, r1\nFHE_SER r3, r2\nSSTORE \"last\", r3\nLDI r2, true\nSSTORE \"initialized\", r2\nLDI r2, \"notarize\"\nEMIT \"Updated\", r2\nLDI r2, true\nMOV r0, r2\nSTOP\nSTOP\nJDEST 300\nCALLER r1\nSLOAD r2, \"owner\"\nLDI r4, \"\"\nCONCAT r4, r4, r1\nLDI r5, \"\"\nCONCAT r5, r5, r2\nEQ r3, r4, r5\nJIF r3, 10001\nLDI r4, \"owner only\"\nEMIT \"Require\", r4\nREVERT\nJDEST 10001\nSLOAD r1, \"initialized\"\nJIF r1, 10002\nLDI r2, \"no entry\"\nEMIT \"Require\", r2\nREVERT\nJDEST 10002\nCALLER r1\nFHE_LOAD_PK r2, r1\nMOV r1, r2\nSLOAD r2, \"total\"\nFHE_DESER r3, r2\nSLOAD r4, \"last\"\nFHE_DESER r5, r4\nFHE_ADD r6, r1, r3, r5\nFHE_SER r7, r6\nSSTORE \"total\", r7\nLDI r2, \"add\"\nEMIT \"Updated\", r2\nLDI r2, true\nMOV r0, r2\nSTOP\nSTOP\nJDEST 400\nMLOAD r1, 1001\nCALLER r2\nSLOAD r3, \"owner\"\nLDI r5, \"\"\nCONCAT r5, r5, r2\nLDI r6, \"\"\nCONCAT r6, r6, r3\nEQ r4, r5, r6\nJIF r4, 10003\nLDI r5, \"owner only\"\nEMIT \"Require\", r5\nREVERT\nJDEST 10003\nSLOAD r2, \"initialized\"\nJIF r2, 10004\nLDI r3, \"no entry\"\nEMIT \"Require\", r3\nREVERT\nJDEST 10004\nLDI r2, 0\nLT r3, r1, r2\nLDI r4, true\nNEQ r3, r3, r4\nJIF r3, 10005\nLDI r5, \"negative scalar\"\nEMIT \"Require\", r5\nREVERT\nJDEST 10005\nCALLER r2\nFHE_LOAD_PK r3, r2\nMOV r2, r3\nSLOAD r3, \"last\"\nFHE_DESER r4, r3\nFHE_SCALE r5, r2, r4, r1\nFHE_SER r6, r5\nSSTORE \"result\", r6\nLDI r3, \"mul_scalar\"\nEMIT \"Updated\", r3\nLDI r3, true\nMOV r0, r3\nSTOP\nSTOP\nJDEST 500\nCALLER r1\nSLOAD r2, \"owner\"\nLDI r4, \"\"\nCONCAT r4, r4, r1\nLDI r5, \"\"\nCONCAT r5, r5, r2\nEQ r3, r4, r5\nJIF r3, 10006\nLDI r4, \"owner only\"\nEMIT \"Require\", r4\nREVERT\nJDEST 10006\nSLOAD r1, \"initialized\"\nJIF r1, 10007\nLDI r2, \"no entry\"\nEMIT \"Require\", r2\nREVERT\nJDEST 10007\nCALLER r1\nFHE_LOAD_PK r2, r1\nMOV r1, r2\nSLOAD r2, \"last\"\nFHE_DESER r3, r2\nSLOAD r4, \"total\"\nFHE_DESER r5, r4\nFHE_ADD r6, r1, r3, r5\nMOV r2, r6\nLDI r3, 2\nFHE_DIV_CONST r4, r1, r2, r3\nFHE_SER r5, r4\nSSTORE \"result\", r5\nLDI r3, \"mean_field\"\nEMIT \"Updated\", r3\nLDI r3, true\nMOV r0, r3\nSTOP\nSTOP\nJDEST 600\nCALLER r1\nSLOAD r2, \"owner\"\nLDI r4, \"\"\nCONCAT r4, r4, r1\nLDI r5, \"\"\nCONCAT r5, r5, r2\nEQ r3, r4, r5\nJIF r3, 10008\nLDI r4, \"owner only\"\nEMIT \"Require\", r4\nREVERT\nJDEST 10008\nSLOAD r1, \"last\"\nMOV r0, r1\nSTOP\nSTOP\nJDEST 700\nCALLER r1\nSLOAD r2, \"owner\"\nLDI r4, \"\"\nCONCAT r4, r4, r1\nLDI r5, \"\"\nCONCAT r5, r5, r2\nEQ r3, r4, r5\nJIF r3, 10009\nLDI r4, \"owner only\"\nEMIT \"Require\", r4\nREVERT\nJDEST 10009\nSLOAD r1, \"total\"\nMOV r0, r1\nSTOP\nSTOP\nJDEST 800\nCALLER r1\nSLOAD r2, \"owner\"\nLDI r4, \"\"\nCONCAT r4, r4, r1\nLDI r5, \"\"\nCONCAT r5, r5, r2\nEQ r3, r4, r5\nJIF r3, 10010\nLDI r4, \"owner only\"\nEMIT \"Require\", r4\nREVERT\nJDEST 10010\nSLOAD r1, \"result\"\nMOV r0, r1\nSTOP\nSTOP\nJDEST 900\nMLOAD r1, 1001\nMLOAD r2, 1002\nCALLER r3\nSLOAD r4, \"owner\"\nLDI r6, \"\"\nCONCAT r6, r6, r3\nLDI r7, \"\"\nCONCAT r7, r7, r4\nEQ r5, r6, r7\nJIF r5, 10011\nLDI r6, \"owner only\"\nEMIT \"Require\", r6\nREVERT\nJDEST 10011\nCALLER r3\nFHE_LOAD_PK r4, r3\nMOV r3, r4\nFHE_DESER r4, r1\nFHE_DESER r5, r2\nFHE_ADD r6, r3, r4, r5\nLDI r7, 2\nFHE_DIV_CONST r8, r3, r6, r7\nFHE_SER r9, r8\nMOV r0, r9\nSTOP\nSTOP",
+      "program_envelope": "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bnRyaWVzIjpbeyJ0YXJnZXQiOjQ0LCJtZW1vcnkiOlt7InNsb3QiOjEwMDEsImtpbmQiOiJzdHJpbmcifV0sImVmZmVjdHMiOlsiZW1pdCIsImZoZSIsIm1lbW9yeV9yZWFkIiwic3RvcmFnZV9yZWFkIiwic3RvcmFnZV93cml0ZSJdfSx7InRhcmdldCI6NjksIm1lbW9yeSI6W10sImVmZmVjdHMiOlsiZW1pdCIsImZoZSIsInN0b3JhZ2VfcmVhZCIsInN0b3JhZ2Vfd3JpdGUiXX0seyJ0YXJnZXQiOjEwNCwibWVtb3J5IjpbeyJzbG90IjoxMDAxLCJraW5kIjoiaW50In1dLCJlZmZlY3RzIjpbImVtaXQiLCJmaGUiLCJtZW1vcnlfcmVhZCIsInN0b3JhZ2VfcmVhZCIsInN0b3JhZ2Vfd3JpdGUiXX0seyJ0YXJnZXQiOjE0NywibWVtb3J5IjpbXSwiZWZmZWN0cyI6WyJlbWl0IiwiZmhlIiwic3RvcmFnZV9yZWFkIiwic3RvcmFnZV93cml0ZSJdfSx7InRhcmdldCI6MTg1LCJtZW1vcnkiOltdLCJlZmZlY3RzIjpbImVtaXQiLCJzdG9yYWdlX3JlYWQiXX0seyJ0YXJnZXQiOjIwMiwibWVtb3J5IjpbXSwiZWZmZWN0cyI6WyJlbWl0Iiwic3RvcmFnZV9yZWFkIl19LHsidGFyZ2V0IjoyMTksIm1lbW9yeSI6W10sImVmZmVjdHMiOlsiZW1pdCIsInN0b3JhZ2VfcmVhZCJdfSx7InRhcmdldCI6MjM2LCJtZW1vcnkiOlt7InNsb3QiOjEwMDEsImtpbmQiOiJzdHJpbmcifSx7InNsb3QiOjEwMDIsImtpbmQiOiJzdHJpbmcifV0sImVmZmVjdHMiOlsiZW1pdCIsImZoZSIsIm1lbW9yeV9yZWFkIiwic3RvcmFnZV9yZWFkIl19XSwiY2FsbHMiOltdLCJ4Y2FsbHMiOltdfSwiY29tcGlsZXIiOiJvY3RyYV9hbWwiLCJjb21waWxlcl92ZXJzaW9uIjoiMi4wIEFNTC1wcmV2aWV3IiwiZGVjbGFyYXRpb24iOiJwcm9ncmFtIiwidmVyaWZpY2F0aW9uX3NjaGVtYSI6ImFtbF9zYWZldHlfcmVwb3J0X3YxIiwic291cmNlX21vZGUiOiJtdWx0aSIsInNvdXJjZV9oYXNoIjoiNDI2OTNmMmZiMzY0YzNjZTRkOWI2NTZkNWQxNTEyZDhiZmUwYWNmZjZlZDE0YzUzOTdjMTBiMmZlOTY0MzcxNSIsImJ5dGVjb2RlX2hhc2giOiI3OGEzNGUxYmE3MzZhZmZmNDRlYTljYWZhMzliODU2OThmYmYwNjUwYzEzZjBkNWI3YWM3NzVlZGY1ZGQ1NDljIiwidmVyaWZpY2F0aW9uX2hhc2giOiJlZTk0ZjUzMTFkNDMyNzdlNDg2ZTJiZGY1OTE5NDViMTNiNDU1Y2VhYTM3MWQ0OTY3YWJhMThlN2ZhZmYwNGM4In0=",
+      "deploy_payload": "T0NQUwEAAQAIAG1haW4uYW1sAQAIAG1haW4uYW1s6AgAAC8vIFNpbmdsZS1vd25lciBleHBlcmltZW50YWwgd29ya2xvYWQuIENpcGhlcnRleHRzIHVzZSBQVkFDIGZpZWxkIGFyaXRobWV0aWMsCi8vIG5vdCBldWludDE2L2V1aW50NjQgd3JhcHBpbmcgdHlwZXMuIElucHV0IHJhbmdlIHByb29mcyBhcmUgbm90IGltcGxlbWVudGVkLgovLyBtZWFuX2ZpZWxkIGlzIG9ubHkgYSBjYW5kaWRhdGU6IGRpdmlzaW9uIGlzIG5vdCBnZW5lcmFsIGZsb29yIGRpdmlzaW9uLgpQcm9ncmFtIEVuZXJneUxpZmVjeWNsZU9uY2UgewogIHN0YXRlIHsKICAgIG93bmVyOiBhZGRyZXNzCiAgICBsYXN0OiBzdHJpbmcKICAgIHRvdGFsOiBzdHJpbmcKICAgIHJlc3VsdDogc3RyaW5nCiAgICBpbml0aWFsaXplZDogYm9vbAogIH0KCiAgZXZlbnQgVXBkYXRlZChvcGVyYXRpb246IHN0cmluZykKCiAgY29uc3RydWN0b3IoaW5pdGlhbF90b3RhbDogc3RyaW5nKSB7CiAgICBzZWxmLm93bmVyID0gb3JpZ2luCiAgICBzZWxmLmxhc3QgPSAiIgogICAgc2VsZi50b3RhbCA9IGZoZV9zZXIoZmhlX2Rlc2VyKGluaXRpYWxfdG90YWwpKQogICAgc2VsZi5yZXN1bHQgPSAiIgogICAgc2VsZi5pbml0aWFsaXplZCA9IGZhbHNlCiAgfQoKICBmbiBub3Rhcml6ZShpbnB1dDogc3RyaW5nKTogYm9vbCB7CiAgICByZXF1aXJlKGNhbGxlciA9PSBzZWxmLm93bmVyLCAib3duZXIgb25seSIpCiAgICBzZWxmLmxhc3QgPSBmaGVfc2VyKGZoZV9kZXNlcihpbnB1dCkpCiAgICBzZWxmLmluaXRpYWxpemVkID0gdHJ1ZQogICAgZW1pdCBVcGRhdGVkKCJub3Rhcml6ZSIpCiAgICByZXR1cm4gdHJ1ZQogIH0KCiAgZm4gYWRkKCk6IGJvb2wgewogICAgcmVxdWlyZShjYWxsZXIgPT0gc2VsZi5vd25lciwgIm93bmVyIG9ubHkiKQogICAgcmVxdWlyZShzZWxmLmluaXRpYWxpemVkLCAibm8gZW50cnkiKQogICAgbGV0IHBrID0gZmhlX2xvYWRfcGsoY2FsbGVyKQogICAgc2VsZi50b3RhbCA9IGZoZV9zZXIoZmhlX2FkZChwaywgZmhlX2Rlc2VyKHNlbGYudG90YWwpLCBmaGVfZGVzZXIoc2VsZi5sYXN0KSkpCiAgICBlbWl0IFVwZGF0ZWQoImFkZCIpCiAgICByZXR1cm4gdHJ1ZQogIH0KCiAgZm4gbXVsX3NjYWxhcihzY2FsYXI6IGludCk6IGJvb2wgewogICAgcmVxdWlyZShjYWxsZXIgPT0gc2VsZi5vd25lciwgIm93bmVyIG9ubHkiKQogICAgcmVxdWlyZShzZWxmLmluaXRpYWxpemVkLCAibm8gZW50cnkiKQogICAgcmVxdWlyZShzY2FsYXIgPj0gMCwgIm5lZ2F0aXZlIHNjYWxhciIpCiAgICBsZXQgcGsgPSBmaGVfbG9hZF9wayhjYWxsZXIpCiAgICBzZWxmLnJlc3VsdCA9IGZoZV9zZXIoZmhlX3NjYWxlKHBrLCBmaGVfZGVzZXIoc2VsZi5sYXN0KSwgc2NhbGFyKSkKICAgIGVtaXQgVXBkYXRlZCgibXVsX3NjYWxhciIpCiAgICByZXR1cm4gdHJ1ZQogIH0KCiAgZm4gbWVhbl9maWVsZCgpOiBib29sIHsKICAgIHJlcXVpcmUoY2FsbGVyID09IHNlbGYub3duZXIsICJvd25lciBvbmx5IikKICAgIHJlcXVpcmUoc2VsZi5pbml0aWFsaXplZCwgIm5vIGVudHJ5IikKICAgIGxldCBwayA9IGZoZV9sb2FkX3BrKGNhbGxlcikKICAgIGxldCBzdW0gPSBmaGVfYWRkKHBrLCBmaGVfZGVzZXIoc2VsZi5sYXN0KSwgZmhlX2Rlc2VyKHNlbGYudG90YWwpKQogICAgc2VsZi5yZXN1bHQgPSBmaGVfc2VyKGZoZV9kaXZfY29uc3QocGssIHN1bSwgMikpCiAgICBlbWl0IFVwZGF0ZWQoIm1lYW5fZmllbGQiKQogICAgcmV0dXJuIHRydWUKICB9CgogIHZpZXcgZm4gZ2V0X2xhc3QoKTogc3RyaW5nIHsKICAgIHJlcXVpcmUoY2FsbGVyID09IHNlbGYub3duZXIsICJvd25lciBvbmx5IikKICAgIHJldHVybiBzZWxmLmxhc3QKICB9CgogIHZpZXcgZm4gZ2V0X3RvdGFsKCk6IHN0cmluZyB7CiAgICByZXF1aXJlKGNhbGxlciA9PSBzZWxmLm93bmVyLCAib3duZXIgb25seSIpCiAgICByZXR1cm4gc2VsZi50b3RhbAogIH0KCiAgdmlldyBmbiBnZXRfcmVzdWx0KCk6IHN0cmluZyB7CiAgICByZXF1aXJlKGNhbGxlciA9PSBzZWxmLm93bmVyLCAib3duZXIgb25seSIpCiAgICByZXR1cm4gc2VsZi5yZXN1bHQKICB9CgogIHZpZXcgZm4gbWVhbl9wcm9iZShsZWZ0OiBzdHJpbmcsIHJpZ2h0OiBzdHJpbmcpOiBzdHJpbmcgewogICAgcmVxdWlyZShjYWxsZXIgPT0gc2VsZi5vd25lciwgIm93bmVyIG9ubHkiKQogICAgbGV0IHBrID0gZmhlX2xvYWRfcGsoY2FsbGVyKQogICAgcmV0dXJuIGZoZV9zZXIoZmhlX2Rpdl9jb25zdChwaywgZmhlX2FkZChwaywgZmhlX2Rlc2VyKGxlZnQpLCBmaGVfZGVzZXIocmlnaHQpKSwgMikpCiAgfQp9CpwLAABPQ1BHAgAAAFcFAAA1BgAAT0NUQgEAGQAHAQAAAlAAAAAAT0NUUkFfU1RBVEVfVjEAQlFBTEFHbHVhWFJwWVd4cGVtVmtBUVFBYkdGemRBSUZBRzkzYm1WeUNBWUFjbVZ6ZFd4MEFnVUFkRzkwWVd3QwILAAAAY29uc3RydWN0b3ICBQAAAG93bmVyAgAAAAACBAAAAGxhc3QCBQAAAHRvdGFsAgYAAAByZXN1bHQBAQAAADACCwAAAGluaXRpYWxpemVkAggAAABub3Rhcml6ZQIDAAAAYWRkAgoAAABtdWxfc2NhbGFyAgoAAABtZWFuX2ZpZWxkAggAAABnZXRfbGFzdAIJAAAAZ2V0X3RvdGFsAgoAAABnZXRfcmVzdWx0AgoAAABtZWFuX3Byb2JlAgoAAABvd25lciBvbmx5AgcAAABSZXF1aXJlAQEAAAAxAgcAAABVcGRhdGVkAggAAABubyBlbnRyeQABAAAAMAIPAAAAbmVnYXRpdmUgc2NhbGFyAAEAAAAyEgHnAwsCAQAKAwECFQNkAAAAEgHpAxoCDgIAAgsCAwAOBAACPAIBOwMCDgUAAwsCAwAOBgACCwIHAA4IAAIXFmQAAAASAegDCwIJAAcDAQIVA8gAAAALAgoABwMBAhUDLAEAAAsCCwAHAwECFQOQAQAACwIMAAcDAQIVA/QBAAALAg0ABwMBAhUDWAIAAAsCDgAHAwECFQO8AgAACwIPAAcDAQIVAyADAAALAhAABwMBAhUDhAMAABgWyAAAABIB6QMZAg0DAgALBQMAKAUFAgsGAwAoBgYDBwQFBhUEECcAAAsFEQAnEgABBRgWECcAADwCATsDAg4EAAMLAhMADggAAgsCCQAnFAABAgsCEwAMAAIXFxYsAQAAGQENAgIACwQDACgEBAELBQMAKAUFAgcDBAUVAxEnAAALBBEAJxIAAQQYFhEnAAANAQgAFQESJwAACwIVACcSAAECGBYSJwAAGQEwAgEMAQINAgUAPAMCDQQEADwFBDEGAQMFOwcGDgUABwsCCgAnFAABAgsCEwAMAAIXFxaQAQAAEgHpAxkCDQMCAAsFAwAoBQUCCwYDACgGBgMHBAUGFQQTJwAACwURACcSAAEFGBYTJwAADQIIABUCFCcAAAsDFQAnEgABAxgWFCcAAAsCFgAIAwECCwQTAAoDAwQVAxUnAAALBRcAJxIAAQUYFhUnAAAZAjADAgwCAw0DBAA8BAMzBQIEATsGBQ4GAAYLAwsAJxQAAQMLAxMADAADFxcW9AEAABkBDQICAAsEAwAoBAQBCwUDACgFBQIHAwQFFQMWJwAACwQRACcSAAEEGBYWJwAADQEIABUBFycAAAsCFQAnEgABAhgWFycAABkBMAIBDAECDQIEADwDAg0EBQA8BQQxBgEDBQwCBgsDGABcBAECAzsFBA4GAAULAwwAJxQAAQMLAxMADAADFxcWWAIAABkBDQICAAsEAwAoBAQBCwUDACgFBQIHAwQFFQMYJwAACwQRACcSAAEEGBYYJwAADQEEAAwAARcXFrwCAAAZAQ0CAgALBAMAKAQEAQsFAwAoBQUCBwMEBRUDGScAAAsEEQAnEgABBBgWGScAAA0BBQAMAAEXFxYgAwAAGQENAgIACwQDACgEBAELBQMAKAUFAgcDBAUVAxonAAALBBEAJxIAAQQYFhonAAANAQYADAABFxcWhAMAABIB6QMSAuoDGQMNBAIACwYDACgGBgMLBwMAKAcHBAcFBgcVBRsnAAALBhEAJxIAAQYYFhsnAAAZAzAEAwwDBDwEATwFAjEGAwQFCwcYAFwIAwYHOwkIDAAJFxd7InNjaGVtYSI6ImFtbF9ieXRlY29kZV9jZXJ0aWZpY2F0ZV92MiIsImVmZmVjdHMiOlsiZW1pdCIsImZoZSIsIm1lbW9yeV9yZWFkIiwic3RvcmFnZV9yZWFkIiwic3RvcmFnZV93cml0ZSJdLCJmYWN0c19oYXNoIjoiOTk0M2RiZTM1ZTA2ZGNmOTliZTI3MThlZjc4ZGQyOGMzMTRmMmU4Yjk4OGYwYjg0ZmJjMDFkMjc4OWYxYzhkNSIsImZhY3RzIjp7InN0b3JhZ2UiOlt7ImtleSI6Im93bmVyIiwia2luZCI6ImFkZHJlc3MifSx7ImtleSI6Imxhc3QiLCJraW5kIjoic3RyaW5nIn0seyJrZXkiOiJ0b3RhbCIsImtpbmQiOiJzdHJpbmcifSx7ImtleSI6InJlc3VsdCIsImtpbmQiOiJzdHJpbmcifSx7ImtleSI6ImluaXRpYWxpemVkIiwia2luZCI6ImJvb2wifV0sInJvb3QiOlt7InNsb3QiOjEwMDEsImtpbmQiOiJzdHJpbmcifV0sImVudHJpZXMiOlt7InRhcmdldCI6NDQsIm1lbW9yeSI6W3sic2xvdCI6MTAwMSwia2luZCI6InN0cmluZyJ9XSwiZWZmZWN0cyI6WyJlbWl0IiwiZmhlIiwibWVtb3J5X3JlYWQiLCJzdG9yYWdlX3JlYWQiLCJzdG9yYWdlX3dyaXRlIl19LHsidGFyZ2V0Ijo2OSwibWVtb3J5IjpbXSwiZWZmZWN0cyI6WyJlbWl0IiwiZmhlIiwic3RvcmFnZV9yZWFkIiwic3RvcmFnZV93cml0ZSJdfSx7InRhcmdldCI6MTA0LCJtZW1vcnkiOlt7InNsb3QiOjEwMDEsImtpbmQiOiJpbnQifV0sImVmZmVjdHMiOlsiZW1pdCIsImZoZSIsIm1lbW9yeV9yZWFkIiwic3RvcmFnZV9yZWFkIiwic3RvcmFnZV93cml0ZSJdfSx7InRhcmdldCI6MTQ3LCJtZW1vcnkiOltdLCJlZmZlY3RzIjpbImVtaXQiLCJmaGUiLCJzdG9yYWdlX3JlYWQiLCJzdG9yYWdlX3dyaXRlIl19LHsidGFyZ2V0IjoxODUsIm1lbW9yeSI6W10sImVmZmVjdHMiOlsiZW1pdCIsInN0b3JhZ2VfcmVhZCJdfSx7InRhcmdldCI6MjAyLCJtZW1vcnkiOltdLCJlZmZlY3RzIjpbImVtaXQiLCJzdG9yYWdlX3JlYWQiXX0seyJ0YXJnZXQiOjIxOSwibWVtb3J5IjpbXSwiZWZmZWN0cyI6WyJlbWl0Iiwic3RvcmFnZV9yZWFkIl19LHsidGFyZ2V0IjoyMzYsIm1lbW9yeSI6W3sic2xvdCI6MTAwMSwia2luZCI6InN0cmluZyJ9LHsic2xvdCI6MTAwMiwia2luZCI6InN0cmluZyJ9XSwiZWZmZWN0cyI6WyJlbWl0IiwiZmhlIiwibWVtb3J5X3JlYWQiLCJzdG9yYWdlX3JlYWQiXX1dLCJjYWxscyI6W10sInhjYWxscyI6W119LCJjb21waWxlciI6Im9jdHJhX2FtbCIsImNvbXBpbGVyX3ZlcnNpb24iOiIyLjAgQU1MLXByZXZpZXciLCJkZWNsYXJhdGlvbiI6InByb2dyYW0iLCJ2ZXJpZmljYXRpb25fc2NoZW1hIjoiYW1sX3NhZmV0eV9yZXBvcnRfdjEiLCJzb3VyY2VfbW9kZSI6Im11bHRpIiwic291cmNlX2hhc2giOiI0MjY5M2YyZmIzNjRjM2NlNGQ5YjY1NmQ1ZDE1MTJkOGJmZTBhY2ZmNmVkMTRjNTM5N2MxMGIyZmU5NjQzNzE1IiwiYnl0ZWNvZGVfaGFzaCI6Ijc4YTM0ZTFiYTczNmFmZmY0NGVhOWNhZmEzOWI4NTY5OGZiZjA2NTBjMTNmMGQ1YjdhYzc3NWVkZjVkZDU0OWMiLCJ2ZXJpZmljYXRpb25faGFzaCI6ImVlOTRmNTMxMWQ0MzI3N2U0ODZlMmJkZjU5MTk0NWIxM2I0NTVjZWFhMzcxZDQ5NjdhYmExOGU3ZmFmZjA0YzgifQ==",
+      "verification": {
+        "schema": "aml_safety_report_v1",
+        "engine": "aml_ast_verifier",
+        "proof_model": "formal/coq/aml_value_safety_model.v",
+        "proof_gate": "scripts/check_aml_formal.sh",
+        "program_name": "EnergyLifecycleOnce",
+        "verified": true,
+        "safety": "safe",
+        "errors": 0,
+        "warnings": 0,
+        "trace": [
+          {
+            "code": "signed_value_storage",
+            "title": "value-like storage must not use signed int",
+            "status": "pass",
+            "severity": "error",
+            "findings": 0
+          },
+          {
+            "code": "signed_value_parameter",
+            "title": "value-moving public parameters must not use signed int",
+            "status": "pass",
+            "severity": "error",
+            "findings": 0
+          },
+          {
+            "code": "signed_value_flow",
+            "title": "signed values must not flow into value-like storage writes",
+            "status": "pass",
+            "severity": "error",
+            "findings": 0
+          },
+          {
+            "code": "unsigned_arithmetic_range_not_proven",
+            "title": "unsigned arithmetic writes must prove range safety",
+            "status": "pass",
+            "severity": "error",
+            "findings": 0
+          },
+          {
+            "code": "supply_invariant_unproven",
+            "title": "balance and total supply writes should preserve conservation",
+            "status": "pass",
+            "severity": "warning",
+            "findings": 0
+          },
+          {
+            "code": "unsigned_parameter_without_positive_guard",
+            "title": "unsigned value parameters should reject zero unless zero is meaningful",
+            "status": "pass",
+            "severity": "warning",
+            "findings": 0
+          },
+          {
+            "code": "unchecked_transfer_result",
+            "title": "native transfer result should be checked",
+            "status": "pass",
+            "severity": "warning",
+            "findings": 0
+          }
+        ],
+        "function_summaries": [
+          {
+            "name": "notarize",
+            "visibility": "public",
+            "direct_calls": [
+              "fhe_deser",
+              "fhe_ser"
+            ],
+            "direct_writes": [
+              "initialized",
+              "last"
+            ],
+            "transitive_writes": [
+              "initialized",
+              "last"
+            ],
+            "value_writes": [],
+            "signed_params": []
+          },
+          {
+            "name": "add",
+            "visibility": "public",
+            "direct_calls": [
+              "fhe_add",
+              "fhe_deser",
+              "fhe_load_pk",
+              "fhe_ser"
+            ],
+            "direct_writes": [
+              "total"
+            ],
+            "transitive_writes": [
+              "total"
+            ],
+            "value_writes": [],
+            "signed_params": []
+          },
+          {
+            "name": "mul_scalar",
+            "visibility": "public",
+            "direct_calls": [
+              "fhe_deser",
+              "fhe_load_pk",
+              "fhe_scale",
+              "fhe_ser"
+            ],
+            "direct_writes": [
+              "result"
+            ],
+            "transitive_writes": [
+              "result"
+            ],
+            "value_writes": [],
+            "signed_params": [
+              "scalar"
+            ]
+          },
+          {
+            "name": "mean_field",
+            "visibility": "public",
+            "direct_calls": [
+              "fhe_add",
+              "fhe_deser",
+              "fhe_div_const",
+              "fhe_load_pk",
+              "fhe_ser"
+            ],
+            "direct_writes": [
+              "result"
+            ],
+            "transitive_writes": [
+              "result"
+            ],
+            "value_writes": [],
+            "signed_params": []
+          },
+          {
+            "name": "get_last",
+            "visibility": "public",
+            "direct_calls": [],
+            "direct_writes": [],
+            "transitive_writes": [],
+            "value_writes": [],
+            "signed_params": []
+          },
+          {
+            "name": "get_total",
+            "visibility": "public",
+            "direct_calls": [],
+            "direct_writes": [],
+            "transitive_writes": [],
+            "value_writes": [],
+            "signed_params": []
+          },
+          {
+            "name": "get_result",
+            "visibility": "public",
+            "direct_calls": [],
+            "direct_writes": [],
+            "transitive_writes": [],
+            "value_writes": [],
+            "signed_params": []
+          },
+          {
+            "name": "mean_probe",
+            "visibility": "public",
+            "direct_calls": [
+              "fhe_add",
+              "fhe_deser",
+              "fhe_div_const",
+              "fhe_load_pk",
+              "fhe_ser"
+            ],
+            "direct_writes": [],
+            "transitive_writes": [],
+            "value_writes": [],
+            "signed_params": []
+          },
+          {
+            "name": "constructor",
+            "visibility": "public",
+            "direct_calls": [
+              "fhe_deser",
+              "fhe_ser"
+            ],
+            "direct_writes": [
+              "initialized",
+              "last",
+              "owner",
+              "result",
+              "total"
+            ],
+            "transitive_writes": [
+              "initialized",
+              "last",
+              "owner",
+              "result",
+              "total"
+            ],
+            "value_writes": [],
+            "signed_params": []
+          }
+        ],
+        "invariants": [
+          {
+            "code": "supply_balance_conservation",
+            "kind": "derived",
+            "status": "not_applicable",
+            "expression": null,
+            "message": "program does not expose both balance and supply storage",
+            "fields": [],
+            "functions": []
+          }
+        ],
+        "findings": []
+      },
+      "certificate": {
+        "schema": "aml_bytecode_certificate_v2",
+        "effects": [
+          "emit",
+          "fhe",
+          "memory_read",
+          "storage_read",
+          "storage_write"
+        ],
+        "facts_hash": "9943dbe35e06dcf99be2718ef78dd28c314f2e8b988f0b84fbc01d2789f1c8d5",
+        "facts": {
+          "storage": [
+            {
+              "key": "owner",
+              "kind": "address"
+            },
+            {
+              "key": "last",
+              "kind": "string"
+            },
+            {
+              "key": "total",
+              "kind": "string"
+            },
+            {
+              "key": "result",
+              "kind": "string"
+            },
+            {
+              "key": "initialized",
+              "kind": "bool"
+            }
+          ],
+          "root": [
+            {
+              "slot": 1001,
+              "kind": "string"
+            }
+          ],
+          "entries": [
+            {
+              "target": 44,
+              "memory": [
+                {
+                  "slot": 1001,
+                  "kind": "string"
+                }
+              ],
+              "effects": [
+                "emit",
+                "fhe",
+                "memory_read",
+                "storage_read",
+                "storage_write"
+              ]
+            },
+            {
+              "target": 69,
+              "memory": [],
+              "effects": [
+                "emit",
+                "fhe",
+                "storage_read",
+                "storage_write"
+              ]
+            },
+            {
+              "target": 104,
+              "memory": [
+                {
+                  "slot": 1001,
+                  "kind": "int"
+                }
+              ],
+              "effects": [
+                "emit",
+                "fhe",
+                "memory_read",
+                "storage_read",
+                "storage_write"
+              ]
+            },
+            {
+              "target": 147,
+              "memory": [],
+              "effects": [
+                "emit",
+                "fhe",
+                "storage_read",
+                "storage_write"
+              ]
+            },
+            {
+              "target": 185,
+              "memory": [],
+              "effects": [
+                "emit",
+                "storage_read"
+              ]
+            },
+            {
+              "target": 202,
+              "memory": [],
+              "effects": [
+                "emit",
+                "storage_read"
+              ]
+            },
+            {
+              "target": 219,
+              "memory": [],
+              "effects": [
+                "emit",
+                "storage_read"
+              ]
+            },
+            {
+              "target": 236,
+              "memory": [
+                {
+                  "slot": 1001,
+                  "kind": "string"
+                },
+                {
+                  "slot": 1002,
+                  "kind": "string"
+                }
+              ],
+              "effects": [
+                "emit",
+                "fhe",
+                "memory_read",
+                "storage_read"
+              ]
+            }
+          ],
+          "calls": [],
+          "xcalls": []
+        },
+        "compiler": "octra_aml",
+        "compiler_version": "2.0 AML-preview",
+        "declaration": "program",
+        "verification_schema": "aml_safety_report_v1",
+        "source_mode": "multi",
+        "source_hash": "42693f2fb364c3ce4d9b656d5d1512d8bfe0acff6ed14c5397c10b2fe9643715",
+        "bytecode_hash": "78a34e1ba736afff44ea9cafa39b85698fbf0650c13f0d5b7ac775edf5dd549c",
+        "verification_hash": "ee94f5311d43277e486e2bdf591945b13b455ceaa371d4967aba18e7faff04c8"
+      }
+    },
+    "id": 1
+  }
+}

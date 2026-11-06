@@ -1,0 +1,121 @@
+{
+  "chainId": 11155111,
+  "claimHash": "0xa8ebc3d6c0a7beff7637028e7319e093655fdea1cb057b2adfcc0eaaca26449c",
+  "claimedEth": "0.47025",
+  "sender": "0x3552Cc153DCcC007d1c0D88Ff5aDB258d2688121",
+  "targetEth": "0.05",
+  "transfers": [
+    {
+      "to": "0xbFfa3190d423F15C1E5281a10e5d89B3Dcf26eD0",
+      "valueWei": "50000000000000000",
+      "maxFeeWei": "248877466100",
+      "gasLimit": "248870",
+      "nonce": 0,
+      "hash": "0x9f74904f7eaa57942e21e7021522c4e4a8b8b2b178e9ac52c1c9a934da8dbd3e",
+      "status": "confirmed",
+      "blockNumber": 11901456,
+      "actualFeeWei": "204603069000"
+    },
+    {
+      "to": "0xB85E3C85c39e2FD06308649F466d360B0bE792af",
+      "valueWei": "50000000000000000",
+      "maxFeeWei": "248877466100",
+      "gasLimit": "248870",
+      "nonce": 1,
+      "hash": "0xcd82834c1b9579a50828b8c7f4a1757a4ef5b9d487ee4733d8030f3765ef97ae",
+      "status": "confirmed",
+      "blockNumber": 11901457,
+      "actualFeeWei": "204603069000"
+    },
+    {
+      "to": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC",
+      "valueWei": "50000000000000000",
+      "maxFeeWei": "248877466100",
+      "gasLimit": "248870",
+      "nonce": 2,
+      "hash": "0xecc27fe91b5768fb81a1ea79ad4a2563c9ed903f53b3d7084bf8f5b4a08cf76a",
+      "status": "confirmed",
+      "blockNumber": 11901458,
+      "actualFeeWei": "204603069000"
+    },
+    {
+      "to": "0x268fcAE6206890E4de082535F12C40Cc5119033d",
+      "valueWei": "50000000000000000",
+      "maxFeeWei": "248877466100",
+      "gasLimit": "248870",
+      "nonce": 3,
+      "hash": "0x7ce05fc8b644cb9aee759932d48a642b898e7fb09451857d01685e645fbf5d32",
+      "status": "confirmed",
+      "blockNumber": 11901459,
+      "actualFeeWei": "204603069000"
+    },
+    {
+      "to": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+      "valueWei": "50000000000000000",
+      "maxFeeWei": "248877466100",
+      "gasLimit": "248870",
+      "nonce": 4,
+      "hash": "0xc964398be924a3c0e1d7497c72d8a01afc852e218e381a82dd3799d617400813",
+      "status": "confirmed",
+      "blockNumber": 11901460,
+      "actualFeeWei": "204603069000"
+    },
+    {
+      "to": "0xA0B9422C5c0b528a7D50E902836ab15613b281Cf",
+      "valueWei": "50000000000000000",
+      "maxFeeWei": "248877466100",
+      "gasLimit": "248870",
+      "nonce": 5,
+      "hash": "0x45a860940b2a610e245263c3a12fa5e03c14cc6e6d24dd850a5d5461ddcf14a0",
+      "status": "confirmed",
+      "blockNumber": 11901461,
+      "actualFeeWei": "204603069000"
+    },
+    {
+      "to": "0xD1e180A8341601fA6784E9C361268b111949b9b2",
+      "valueWei": "50000000000000000",
+      "maxFeeWei": "248877466100",
+      "gasLimit": "248870",
+      "nonce": 6,
+      "hash": "0x77fb30678be76ce01bc379cb72cb3dda82f9574a957191bc6979ae439071eef4",
+      "status": "confirmed",
+      "blockNumber": 11901462,
+      "actualFeeWei": "204603069000"
+    }
+  ],
+  "balances": [
+    {
+      "address": "0x3552Cc153DCcC007d1c0D88Ff5aDB258d2688121",
+      "eth": "0.170248567778517"
+    },
+    {
+      "address": "0xbFfa3190d423F15C1E5281a10e5d89B3Dcf26eD0",
+      "eth": "0.05"
+    },
+    {
+      "address": "0xB85E3C85c39e2FD06308649F466d360B0bE792af",
+      "eth": "0.05"
+    },
+    {
+      "address": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC",
+      "eth": "0.05"
+    },
+    {
+      "address": "0x268fcAE6206890E4de082535F12C40Cc5119033d",
+      "eth": "0.05"
+    },
+    {
+      "address": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+      "eth": "0.05"
+    },
+    {
+      "address": "0xA0B9422C5c0b528a7D50E902836ab15613b281Cf",
+      "eth": "0.05"
+    },
+    {
+      "address": "0xD1e180A8341601fA6784E9C361268b111949b9b2",
+      "eth": "0.05"
+    }
+  ],
+  "completedAt": "2026-10-12T21:03:51.368Z"
+}

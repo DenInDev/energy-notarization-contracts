@@ -1,0 +1,85 @@
+{
+  "at": "2026-11-02T17:03:40.098Z",
+  "records": [
+    {
+      "method": "octra_balance",
+      "params": [
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "httpStatus": 200,
+      "response": {
+        "jsonrpc": "2.0",
+        "result": {
+          "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+          "balance": "5.131492",
+          "balance_raw": "5131492",
+          "nonce": 8,
+          "pending_nonce": 8,
+          "has_public_key": true
+        },
+        "id": 1
+      }
+    },
+    {
+      "method": "octra_transaction",
+      "params": [
+        "96a8f3fcb1e3844f9127974ed17c8534f3a00b363f7a93d1793bc4896292d643"
+      ],
+      "httpStatus": 200,
+      "response": {
+        "jsonrpc": "2.0",
+        "result": {
+          "status": "confirmed",
+          "tx_hash": "96a8f3fcb1e3844f9127974ed17c8534f3a00b363f7a93d1793bc4896292d643",
+          "epoch": 1784892,
+          "from": "octEsQTP6BSLLiTHrQPcF1SYrJKzGHnjt57T8QhZP3tA7qA",
+          "to": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+          "amount": "1",
+          "amount_raw": "1000000",
+          "nonce": 1737,
+          "ou": "10000",
+          "timestamp": 1793638303.889,
+          "op_type": "standard",
+          "message": "faucet drip"
+        },
+        "id": 1
+      }
+    },
+    {
+      "method": "contract_call",
+      "params": [
+        "oct8iWgBRKidrcDK28ARYPxLm4fCcar9PFrCVwPBFjE76ye",
+        "get_total",
+        [],
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "httpStatus": 200,
+      "response": {
+        "jsonrpc": "2.0",
+        "error": {
+          "code": -32005,
+          "message": "Program view busy"
+        },
+        "id": 1
+      }
+    },
+    {
+      "method": "contract_call",
+      "params": [
+        "oct8iWgBRKidrcDK28ARYPxLm4fCcar9PFrCVwPBFjE76ye",
+        "get_last",
+        [],
+        "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+      ],
+      "httpStatus": 200,
+      "response": {
+        "jsonrpc": "2.0",
+        "error": {
+          "code": -32005,
+          "message": "Program view busy"
+        },
+        "id": 1
+      }
+    }
+  ]
+}

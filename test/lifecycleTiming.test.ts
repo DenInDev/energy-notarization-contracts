@@ -5,8 +5,47 @@ import { Interface } from "ethers";
 import { readLifecycleResult, readDeploymentBytecode } from "../tasks/lib/lifecycleResult";
 import { retryLifecycleRead, isTransportFailure, isZamaGatewayNotReady, isZamaUserDecryptUnavailable, isMissingReceiptBlock } from "../tasks/lib/lifecycleReadRetry";
 import { runConcurrentWorkers } from "../tasks/lib/lifecycleConcurrent";
+import { readSettledNonce } from "../tasks/lib/lifecycleNonce";
 
 describe("lifecycle timing", () => {
+  it("retries a temporary canonical-hash RPC rejection while preserving the exact pinned state", async () => {
+    const error = Object.assign(new Error("could not coalesce error"), {
+      info: { error: { message: "hash is not currently canonical" } },
+    });
+    assert.equal(isMissingReceiptBlock(error), true);
+    const abi = new Interface(["function getLastResult() view returns (uint16)"]);
+    const trace = new TimingTrace();
+    let attempts = 0;
+    assert.equal(await retryLifecycleRead(trace, "completion.handle", 1000, () =>
+      readLifecycleResult(async (method, params) => {
+        assert.equal(method, "eth_call");
+        assert.deepEqual(params[1], { blockHash: "same-receipt-hash", requireCanonical: true });
+        if (++attempts < 3) throw error;
+        return abi.encodeFunctionResult("getLastResult", [42n]);
+      }, abi, "contract", "caller", "getLastResult", "same-receipt-hash"),
+      1, false, false, true), 42n);
+    assert.equal(attempts, 3);
+    assert.equal(trace.stages.filter(stage => stage.stage === "completion.handle.receipt_block_retry").length, 2);
+    await assert.rejects(retryLifecycleRead(trace, "persistent", 20, async () => { throw error; },
+      1, false, false, true), candidate => candidate === error);
+    attempts = 0;
+    await assert.rejects(retryLifecycleRead(trace, "disabled", 1000, async () => {
+      attempts++; throw error;
+    }, 1), candidate => candidate === error);
+    assert.equal(attempts, 1);
+  });
+
+  it("waits for preflight nonce agreement and bounds a persistent mismatch", async () => {
+    let calls = 0;
+    const nonce = await readSettledNonce(async (_method, params) => {
+      const round = Math.floor(calls++ / 2);
+      return params[1] === "latest" && round === 0 ? "0x1" : "0x2";
+    }, "account", 1000, 1);
+    assert.equal(nonce, 2);
+    assert.equal(calls, 4);
+    await assert.rejects(readSettledNonce(async (_method, params) =>
+      params[1] === "latest" ? "0x1" : "0x2", "account", 20, 1), /did not converge/);
+  });
   it("bounds malformed 503 USER_DECRYPT retries without retrying other operations or statuses", async () => {
     const error = new Error("Response body does not match the expected schema\n\nstatus: 503\noperation: USER_DECRYPT");
     assert.equal(isZamaUserDecryptUnavailable(error), true);
@@ -15,7 +54,7 @@ describe("lifecycle timing", () => {
       budgets.push(remaining);
       if (budgets.length === 1) throw error;
       return 42n;
-    }, 1, true, true), 42n);
+    }, 10, true, true), 42n);
     assert.ok(budgets[1] < budgets[0]);
     assert.ok(trace.stages.some(s => s.stage === "completion.service_unavailable_retry"));
     let calls = 0;

@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-06T01:25:36.4685024Z",
+  "pid": 28952,
+  "processCreationTimeUtc": "2026-11-06T01:25:17.0018210Z",
+  "platformOnly": "fhenix",
+  "uniformWidth": 128,
+  "newTransactions": 204,
+  "newOnChainRetries": 0,
+  "firstNonce": 786,
+  "lastNonce": 989,
+  "sourceReportSha256": "cb28e7c9a0a9f847300ced4bd85456e2959e481652cdc00203291baade8a2934",
+  "readPolicy": {
+    "minimumPollingMs": 1000,
+    "maxRateLimitAttempts": 3,
+    "rateLimitBackoffMs": 5000,
+    "honorLargerServerHints": true,
+    "deadlineMs": 180000
+  },
+  "failedPreflightAudit": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\measured-euint128-fhenix-continuation2\\preflight-failure-audit.json",
+  "verification": [
+    "Typecheck passed",
+    "7 integration/read-policy tests passed",
+    "21 timing/read-policy checks passed after canonical preflight read fix"
+  ],
+  "interpretation": "New client read policy is a separate descriptive segment. No new paired comparisons with baseline/Zama. Historical primary failures and mean retry preserved; max16 recovery is read-only and excluded from original primary timings.",
+  "monitor": "Current chat; no recurring automation"
+}

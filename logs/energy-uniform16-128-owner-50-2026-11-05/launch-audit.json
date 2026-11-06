@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-05T22:35:02.8328968Z",
+  "pid": 26792,
+  "processCreationTimeUtc": "2026-11-05T22:34:45.1463690Z",
+  "command": "node scripts/run-uniform-energy.cjs logs/energy-uniform16-128-owner-50-2026-11-05 .benchmark-accounts/isolated-validation/accounts.secret.json 50",
+  "authorization": "User requested stopping and restarting after adding a meter-specific eaddress owner operation repeated 50 times",
+  "previousStopAudit": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05-attempt2\\user-stop-audit.json",
+  "perWidthCounts": {
+    "primaryMeasured": 900,
+    "ownerMeasured": 150,
+    "energyMeasured": 750,
+    "primaryWarmup": 18,
+    "viewsMeasured": 150,
+    "viewsWarmup": 3,
+    "deployments": 3,
+    "pairedComparisons": 300
+  },
+  "checks": [
+    "Solidity compilation passed",
+    "Typecheck passed",
+    "44 targeted local tests passed, including five OS-process integration tests",
+    "6 analysis integrity validation checks passed",
+    "Generated uniform contracts checked"
+  ],
+  "monitor": "Current chat; no recurring automation",
+  "oldReports": "Preserved unchanged"
+}

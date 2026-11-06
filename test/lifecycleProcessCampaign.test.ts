@@ -7,11 +7,12 @@ import { runLifecycleCampaign } from "../tasks/lifecycle/campaign";
 import { generateAccounts } from "../tasks/experiments/accounts";
 
 describe("isolated campaign integration with actual worker processes", () => {
-  for (const failure of ["none", "preparation", "persistence"]) {
+  for (const failure of ["none", "preparation", "persistence", "uniform16", "uniform128"]) {
     const failPreparation = failure === "preparation", failPersistence = failure === "persistence";
+    const width = failure === "uniform16" ? 16 : failure === "uniform128" ? 128 : undefined;
     it(failPreparation ? "cancels every prepared worker without broadcasting when one preparation fails" : failPersistence ?
       "drains released transactions before stopping on an IPC report-write failure" :
-      "journals, prepares, releases, broadcasts and validates all platforms in separate processes", async () => {
+      `journals, prepares, releases, broadcasts and validates all platforms in separate processes${width ? ` at width ${width}` : ""}`, async () => {
       const folder = fs.mkdtempSync(path.join(os.tmpdir(), "energy-process-campaign-"));
       const accountsFile = path.join(folder, "keys.json"), output = path.join(folder, "report");
       generateAccounts(accountsFile, 3);
@@ -32,13 +33,13 @@ describe("isolated campaign integration with actual worker processes", () => {
           getBalance: async () => 1n, getFeeData: async () => ({ maxFeePerGas: 100n, maxPriorityFeePerGas: 2n }) } } };
       try {
         const run = runLifecycleCampaign({ runs: 1, platform: "all", seed: "isolated-integration", timeout: 10,
-          accountsFile, outputDir: output, execution: "processes" }, hre);
+          accountsFile, outputDir: output, execution: "processes", width }, hre);
         if (failPreparation) await assert.rejects(run, /Preparation failed before barrier/);
         else if (failPersistence) await assert.rejects(run, /Report persistence failed/);
         else await run;
         const report = JSON.parse(fs.readFileSync(path.join(output, "report.json"), "utf8"));
         assert.equal(new Set(Object.values(report.workers).map((w: any) => w.pid)).size, 3);
-        assert.equal(report.complete, failure === "none");
+        assert.equal(report.complete, !failPreparation && !failPersistence);
         if (failPreparation) {
           assert.equal(report.barriers.length, 0);
           for (const p of ["baseline", "zama", "fhenix"]) assert(!fs.existsSync(path.join(folder, `sent-${p}.jsonl`)));
@@ -48,7 +49,21 @@ describe("isolated campaign integration with actual worker processes", () => {
           for (const p of ["baseline", "zama", "fhenix"])
             assert.equal(fs.readFileSync(path.join(folder, `sent-${p}.jsonl`), "utf8").trim().split("\n").length, 1);
         } else {
-          assert.equal(report.samples.length, 30); assert.equal(report.barriers.length, 10);
+          const comparisonCount = width ? 12 : 10;
+          assert.equal(report.samples.length, comparisonCount * 3); assert.equal(report.barriers.length, comparisonCount);
+          if (width) {
+            assert.equal(report.schemaVersion, 14);
+            const ownerSamples = report.samples.filter((sample: any) => sample.operation === "set_meter_owner");
+            assert.equal(ownerSamples.length, 6);
+            assert(ownerSamples.every((sample: any) => sample.status === "ok" &&
+              sample.plaintextAddress.toLowerCase() === report.smartMeter.syntheticOwnerAddress));
+            assert.deepEqual(report.measuredOperations, ["set_meter_owner", "notarize", "add", "mul_scalar", "mean", "max"]);
+            assert.equal(report.energyRepresentation.readingBits, width);
+            assert.equal(report.energyRepresentation.accumulatorBits, width);
+            assert.equal(report.viewDecryptSamples.length, 6);
+            assert(report.viewDecryptSamples.every((sample: any) => sample.status === "ok" && sample.width === width));
+            assert(report.samples.every((sample: any) => sample.alreadyReadyDecryptMs === undefined));
+          }
           for (const barrier of report.barriers) {
             const rows = report.samples.filter((s: any) => s.warmup === barrier.warmup && s.run === barrier.run && s.operation === barrier.operation);
             const readyAt = Math.max(...Object.values(barrier.prepared).map((x: any) => Date.parse(x.at)));
@@ -60,7 +75,7 @@ describe("isolated campaign integration with actual worker processes", () => {
           }
           for (const p of ["baseline", "zama", "fhenix"]) {
             const sends = fs.readFileSync(path.join(folder, `sent-${p}.jsonl`), "utf8").trim().split("\n").map(line => JSON.parse(line));
-            assert.deepEqual(sends.map(s => s.nonce), Array.from({ length: 10 }, (_, i) => i + 1));
+            assert.deepEqual(sends.map(s => s.nonce), Array.from({ length: comparisonCount }, (_, i) => i + 1));
           }
           const baseline = report.samples.find((s: any) => s.platform === "baseline" && s.operation === "notarize" && !s.warmup);
           assert(baseline.barrierWaitMs > 150, "Baseline must wait outside its broadcast/completion timer");

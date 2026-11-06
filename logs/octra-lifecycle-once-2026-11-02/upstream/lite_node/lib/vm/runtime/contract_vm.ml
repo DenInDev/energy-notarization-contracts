@@ -1,0 +1,4330 @@
+(* SPDX-License-Identifier: BSD-3-Clause *)
+(* Copyright (c) 2023-2026 Octra Labs <dev@octra.org> *)
+
+type cap = {
+  scope : string;
+  kind : int;
+  id : int;
+  rev : int;
+}
+
+type v =
+  | VInt of Z.t
+  | VBool of bool
+  | VString of string
+  | VBytes of string
+  | VBytes32 of string
+  | VU64 of Z.t
+  | VU128 of Z.t
+  | VU256 of Z.t
+  | VAddr of string
+  | VCap of cap
+  | VCipher of Octra_core.Fhe_image.cipher
+  | VPubKey of Octra_core.Fhe_image.key
+
+type reg = int
+
+type instr =
+  | ADD of reg * reg * reg
+  | SUB of reg * reg * reg
+  | MUL of reg * reg * reg
+  | DIV of reg * reg * reg
+  | MOD of reg * reg * reg
+  | NEG of reg * reg
+  | ABS of reg * reg
+  | EQ of reg * reg * reg
+  | LT of reg * reg * reg
+  | GT of reg * reg * reg
+  | NEQ of reg * reg * reg
+  | LDI of reg * v
+  | MOV of reg * reg
+  | SLOAD of reg * string
+  | SSTORE of string * reg
+  | SDEL of string
+  | SLOADK of reg * reg
+  | SSTOREK of reg * reg
+  | SDELK of reg
+  | CAP_CHECK of Z.t * reg
+  | CAP_CLOSE of Z.t * reg
+  | MLOAD of reg * int
+  | MSTORE of int * reg
+  | JMP of int
+  | JIF of reg * int
+  | JDEST of int
+  | STOP
+  | REVERT
+  | CALLER of reg
+  | ORIGIN of reg
+  | SELF of reg
+  | EPOCH of reg
+  | EPOCH_TIME of reg
+  | VALUE of reg
+  | BALANCE of reg * reg
+  | TREEHASH of reg
+  | NODEID of reg
+  | TXHASH of reg
+  | XCALL of reg * reg * reg * reg * int
+  | SPAWN of reg * reg
+  | SPAWN2 of reg * reg * reg * int
+  | TRANSFER of reg * reg * reg
+  | CHECKPOINT
+  | ROLLBACK
+  | COMMIT
+  | EMIT of string * reg list
+  | CONCAT of reg * reg * reg
+  | STRLEN of reg * reg
+  | ASSERT of reg
+  | EFFORT of reg
+  | NOP
+  | FHE_LOAD_PK of reg * reg
+  | FHE_ADD of reg * reg * reg * reg
+  | FHE_SUB of reg * reg * reg * reg
+  | FHE_MUL of reg * reg * reg * reg
+  | FHE_SCALE of reg * reg * reg * reg
+  | FHE_DIV_CONST of reg * reg * reg * reg
+  | FHE_ADD_CONST of reg * reg * reg * reg
+  | FHE_SUB_CONST of reg * reg * reg * reg
+  | FHE_VERIFY_ZERO of reg * reg * reg * reg
+  | FHE_VERIFY_RANGE of reg * reg * reg * reg
+  | FHE_VERIFY_BOUND of reg * reg * reg * reg * reg
+  | GROTH16_VERIFY_BN254 of reg * reg * reg * reg
+  | FHE_COMMIT of reg * reg * reg
+  | FHE_PEDERSEN of reg * reg * reg
+  | FHE_PEDERSEN_ADD of reg * reg * reg
+  | FHE_PEDERSEN_SUB of reg * reg * reg
+  | FHE_PEDERSEN_IDENTITY of reg
+  | FHE_SER of reg * reg
+  | FHE_DESER of reg * reg
+  | FHE_SER_PK of reg * reg
+  | FHE_DESER_PK of reg * reg
+  | CALL_INT of reg * int
+  | MLOADR of reg * reg
+  | MSTORER of reg * reg
+  | PARSE_INTS of reg * reg * reg
+  | ISADDR of reg * reg
+  | ISHEX of reg * reg
+  | STATE_PATH_KEY of reg * reg
+  | OBJECT_MEMBER_COUNT of reg * reg
+  | OBJECT_HAS_MEMBER of reg * reg * reg
+  | OBJECT_MEMBER_REF_AT of reg * reg * reg
+  | OBJECT_TRANSITION_APPLY of reg * reg * reg * reg * reg * reg * reg * reg * reg * reg * reg
+  | ASSERT_ADDR of reg
+  | SUBSTR of reg * reg * reg * reg
+  | INDEXOF of reg * reg * reg
+  | SHA256 of reg * reg
+  | KECCAK256 of reg * reg
+  | ED25519_OK of reg * reg * reg * reg
+  | BITAND of reg * reg * reg
+  | BITOR of reg * reg * reg
+  | BITXOR of reg * reg * reg
+  | BITSHL of reg * reg * reg
+  | BITSHR of reg * reg * reg
+  | SKEYS of reg * reg * reg
+  | SKEYS_PAGE of reg * reg * reg * reg * reg
+  | SLOADN of reg * reg * reg
+  | SSTOREN of reg * reg * reg
+  | FSTORE of reg * reg
+  | FLOAD of reg * reg
+  | MATMUL of reg * reg * reg * reg * reg * reg
+  | VECDOT of reg * reg * reg * reg
+  | VECDOT_Q16 of reg * reg * reg * reg
+  | EXP_LUT of reg * reg
+  | EXP_Q16 of reg * reg
+  | SOFTMAX_INPLACE of reg * reg
+  | SOFTMAX_Q16_INPLACE of reg * reg
+  | LAYERNORM_INPLACE of reg * reg * reg * reg
+  | LAYERNORM_Q16_INPLACE of reg * reg * reg * reg
+  | RELU_INPLACE of reg * reg
+  | RMSNORM_INPLACE of reg * reg * reg
+  | RMSNORM_Q16_INPLACE of reg * reg * reg
+  | SILU_INPLACE of reg * reg
+  | SILU_Q16_INPLACE of reg * reg
+  | ELEMWISE_MUL_INPLACE of reg * reg * reg
+  | ELEMWISE_MUL_Q16 of reg * reg * reg
+  | LOAD_INT8_BYTES_TO_MEM of reg * reg * reg * reg * reg
+  | RESIDUAL_ADD of reg * reg * reg
+  | RESIDUAL_ADD_Q16 of reg * reg * reg
+  | ROPE_APPLY of reg * reg * reg * reg
+  | ROPE_APPLY_Q16 of reg * reg * reg * reg
+  | LOAD_INT8_B64_TO_MEM of reg * reg * reg * reg * reg
+  | LOAD_INT8_Q16 of reg * reg * reg * reg * reg
+  | APPEND_VEC_Q16 of reg * reg * reg * reg
+  | ARGMAX_Q16 of reg * reg * reg
+  | MATMUL_Q16 of reg * reg * reg * reg * reg * reg
+  | SHIFT_ROUND_INPLACE of reg * reg * reg
+  | MATMUL_FP of reg * reg * reg * reg * reg * reg
+  | RMSNORM_FP of reg * reg * reg
+  | SILU_FP of reg * reg
+  | ELEMWISE_MUL_FP of reg * reg * reg
+  | RESIDUAL_ADD_FP of reg * reg * reg
+  | ROPE_APPLY_FP of reg * reg * reg * reg
+  | LOAD_INT8_FP of reg * reg * reg * reg * reg
+  | VECDOT_FP of reg * reg * reg * reg
+  | ARGMAX_FP of reg * reg * reg
+  | ATTENTION_KV_FP of reg * reg * reg * reg * reg * reg * reg * reg
+  | ATTENTION_KV_Q16 of reg * reg * reg * reg * reg * reg * reg * reg
+  | APPEND_VEC_FP of reg * reg * reg * reg
+
+type mem = { mutable data : (int, v) Hashtbl.t; mutable size : int }
+
+type undo_entry =
+  | UndoMarker of int
+  | UndoWrite of string * string option
+  | UndoClose of cap
+
+type event_record = {
+  contract : string;
+  depth : int;
+  event : string;
+  values : v list;
+}
+
+type subcall_result = {
+  return_value : v;
+  effort_used : int;
+  events : event_record list;
+}
+
+type spawn_result = {
+  spawned_addr : string;
+  effort_used : int;
+  events : event_record list;
+}
+
+type fhe_capability =
+  | Fhe_load_pk_cap
+  | Fhe_encrypt_cap
+  | Fhe_decrypt_cap
+  | Fhe_cipher_arithmetic_cap
+  | Fhe_verify_zero_cap
+  | Fhe_verify_range_cap
+  | Fhe_verify_bound_cap
+  | Fhe_commit_cap
+  | Fhe_pedersen_cap
+  | Fhe_cipher_serde_cap
+  | Fhe_pubkey_serde_cap
+
+type fhe_key = Key_bytes of string | Key_value of Octra_core.Fhe_image.key
+
+type call_scope = {
+  depth : int;
+  limit : int option;
+  memory : Fhe_memory.t option;
+  bytes : Byte_work.t option;
+}
+
+type exec_ctx = {
+  async_exec : bool;
+  call_async : string -> string -> string -> v list -> call_scope -> (subcall_result, string) result Lwt.t;
+  deploy_async : string -> string -> int -> call_scope -> v list -> (spawn_result, string) result Lwt.t;
+  get_balance : string -> Z.t;
+  do_transfer : string -> string -> Z.t -> bool;
+  call_contract : string -> string -> string -> v list -> call_scope -> (subcall_result, string) result;
+  deploy_contract : string -> string -> int -> call_scope -> v list -> (spawn_result, string) result;
+  get_fhe_pubkey : string -> fhe_key option;
+  get_fhe_keypair : string -> (Octra_core.Fhe_image.key * string) option;
+  allow_fhe_capability : fhe_capability -> bool;
+  cap_live : cap -> bool;
+  circle_hfhe_key_id : string option;
+  circle_hfhe_intent_id : string option;
+  circle_hfhe_active_relay_id : string option;
+  point_ops : bool;
+  math : bool;
+  object_cost : bool;
+  object_quorum : Octra_core.Circle_object_apply.quorum;
+  int_work : Int_work.mode;
+  fhe_work : Octra_core.Rule_graph.mode;
+  proof_exec : Octra_core.Rule_graph.mode;
+  proof_key : Octra_core.Rule_graph.mode;
+  wasm_float : Octra_core.Rule_graph.mode;
+  fhe_memory : Fhe_memory.t option;
+  byte_work : Byte_work.t option;
+  current_epoch : int;
+  epoch_time_ms : int64;
+  tree_hash : string;
+  node_id : string;
+  tx_hash : string;
+}
+
+let default_ctx = {
+  async_exec = false;
+  call_async = (fun _ _ _ _ _ -> Lwt.fail (Octra_core.Exec_resource.Unavailable Host));
+  deploy_async = (fun _ _ _ _ _ -> Lwt.fail (Octra_core.Exec_resource.Unavailable Host));
+  tx_hash = String.make 64 '0';
+  get_balance = (fun _ -> Z.zero);
+  do_transfer = (fun _ _ _ -> false);
+  call_contract = (fun _ _ _ _ _ -> Error "not implemented");
+  deploy_contract = (fun _ _ _ _ _ -> Error "not implemented");
+  get_fhe_pubkey = (fun _ -> None);
+  get_fhe_keypair = (fun _ -> None);
+  allow_fhe_capability = (fun _ -> true);
+  cap_live = (fun _ -> false);
+  circle_hfhe_key_id = None;
+  circle_hfhe_intent_id = None;
+  circle_hfhe_active_relay_id = None;
+  point_ops = false;
+  math = false;
+  object_cost = false;
+  object_quorum = Octra_core.Circle_object_apply.Machine;
+  int_work = Int_work.Prior;
+  fhe_work = Octra_core.Rule_graph.Prior;
+  proof_exec = Octra_core.Rule_graph.Prior;
+  proof_key = Octra_core.Rule_graph.Prior;
+  wasm_float = Octra_core.Rule_graph.Prior;
+  fhe_memory = None;
+  byte_work = None;
+  current_epoch = 0;
+  epoch_time_ms = 0L;
+  tree_hash = String.make 64 '0';
+  node_id = "node_001";
+}
+
+type storage_kind =
+  | StorageInt
+  | StorageBool
+  | StorageString
+  | StorageBytes
+  | StorageBytes32
+  | StorageU64
+  | StorageU128
+  | StorageU256
+  | StorageAddr
+
+type byte_result =
+  | String_bytes
+  | Typed_bytes
+
+type progress =
+  | Running
+  | Finished
+  | Refused
+
+type member_index = {
+  keys : string array;
+  refs : (string, string array) Hashtbl.t;
+}
+
+type s = {
+  regs : v array;
+  mutable memory : mem;
+  storage : (string, string) Hashtbl.t;
+  mutable member_index : member_index option;
+  mutable effort_used : int;
+  effort_limit : int;
+  mutable reverted : bool;
+  mutable output_ready : bool;
+  mutable pc : int;
+  caller : string;
+  origin : string;
+  address : string;
+  value : Z.t;
+  logs : event_record list ref;
+  ctx : exec_ctx;
+  fhe_local : Fhe_task.local;
+  int_mode : Int_work.mode;
+  byte_result : byte_result;
+  mutable undo_stack : undo_entry list;
+  mutable undo_id : int;
+  mutable call_depth : int;
+  mutable return_stack : (int * int * v array) list;
+  blobs : (string, string) Hashtbl.t;
+  mutable is_view : bool;
+  strict_values : bool;
+  storage_kinds : (string, storage_kind) Hashtbl.t;
+  decoded_chunk_cache : (string * string, string) Hashtbl.t;
+  mutable closes : cap list;
+}
+
+let call_depth_max = 8
+let register_count = 64
+let input_limit = register_count - 4
+
+let max_storage_value_len = 4_194_304
+
+let is_reserved_key k =
+  String.length k > 0 && Char.code k.[0] = 0
+
+let effort_cost = function
+  | LDI _ | MOV _ | JMP _ | JDEST _ | STOP | REVERT | NOP | EFFORT _ | CALL_INT _ -> 1
+  | EQ _ | LT _ | GT _ | NEQ _ -> 2
+  | CALLER _ | ORIGIN _ | SELF _ | EPOCH _ | EPOCH_TIME _ | VALUE _ -> 2
+  | ADD _ | SUB _ | MUL _ | MLOAD _ | MSTORE _ | MLOADR _ | MSTORER _ | CONCAT _ | STRLEN _ | ISADDR _ | ISHEX _ | STATE_PATH_KEY _ -> 3
+  | DIV _ | MOD _ | NEG _ | ABS _ -> 5
+  | OBJECT_HAS_MEMBER _ -> 30
+  | OBJECT_MEMBER_COUNT _ | OBJECT_MEMBER_REF_AT _ -> 50
+  | JIF _ | ASSERT _ | ASSERT_ADDR _ | TREEHASH _ | NODEID _ | TXHASH _ -> 5
+  | SLOAD _ | SLOADK _ | BALANCE _ -> 20
+  | EMIT _ -> 30
+  | SDEL _ | SDELK _ | CAP_CLOSE _ | TRANSFER _ -> 50
+  | CAP_CHECK _ -> 20
+  | SSTORE _ | SSTOREK _ | XCALL _ | CHECKPOINT -> 100
+  | ROLLBACK -> 200
+  | SPAWN _ | SPAWN2 _ -> 5000
+  | COMMIT -> 10
+  | FHE_SER_PK _ | FHE_DESER_PK _ -> 50
+  | FHE_LOAD_PK _ | FHE_SER _ | FHE_DESER _ -> 100
+  | FHE_COMMIT _ | FHE_PEDERSEN _
+  | FHE_PEDERSEN_ADD _ | FHE_PEDERSEN_SUB _
+  | FHE_PEDERSEN_IDENTITY _ -> 200
+  | FHE_ADD _ | FHE_SUB _ | FHE_ADD_CONST _ | FHE_SUB_CONST _ -> 500
+  | FHE_SCALE _ | FHE_DIV_CONST _ -> 1000
+  | FHE_MUL _ -> 10000
+  | FHE_VERIFY_ZERO _ | FHE_VERIFY_RANGE _ | FHE_VERIFY_BOUND _ -> 5_000_000
+  | PARSE_INTS _ -> 10
+  | SUBSTR _ -> 5
+  | INDEXOF _ -> 10
+  | SHA256 _ | KECCAK256 _ -> 20
+  | ED25519_OK _ -> 2000
+  | BITAND _ | BITOR _ | BITXOR _ | BITSHL _ | BITSHR _ -> 3
+  | SKEYS _ -> 50
+  | SKEYS_PAGE _ -> 50
+  | SLOADN _ -> 50
+  | SSTOREN _ -> 100
+  | FSTORE _ -> 100
+  | FLOAD _ -> 100
+  | GROTH16_VERIFY_BN254 _ -> 50000
+  | OBJECT_TRANSITION_APPLY _ -> 300
+  | MATMUL _ -> 100
+  | VECDOT _ -> 10
+  | VECDOT_Q16 _ -> 10
+  | EXP_LUT _ -> 5
+  | EXP_Q16 _ -> 8
+  | SOFTMAX_INPLACE _ -> 20
+  | SOFTMAX_Q16_INPLACE _ -> 25
+  | LAYERNORM_INPLACE _ -> 30
+  | LAYERNORM_Q16_INPLACE _ -> 30
+  | RELU_INPLACE _ -> 5
+  | RMSNORM_INPLACE _ -> 25
+  | RMSNORM_Q16_INPLACE _ -> 25
+  | SILU_INPLACE _ -> 10
+  | SILU_Q16_INPLACE _ -> 10
+  | ELEMWISE_MUL_INPLACE _ -> 5
+  | ELEMWISE_MUL_Q16 _ -> 5
+  | LOAD_INT8_BYTES_TO_MEM _ -> 10
+  | RESIDUAL_ADD _ -> 5
+  | RESIDUAL_ADD_Q16 _ -> 5
+  | ROPE_APPLY _ -> 50
+  | ROPE_APPLY_Q16 _ -> 50
+  | LOAD_INT8_B64_TO_MEM _ -> 30
+  | LOAD_INT8_Q16 _ -> 30
+  | APPEND_VEC_Q16 _ -> 5
+  | ARGMAX_Q16 _ -> 5
+  | MATMUL_Q16 _ -> 100
+  | SHIFT_ROUND_INPLACE _ -> 5
+  | MATMUL_FP _ -> 200
+  | RMSNORM_FP _ -> 50
+  | SILU_FP _ -> 20
+  | ELEMWISE_MUL_FP _ -> 10
+  | RESIDUAL_ADD_FP _ -> 10
+  | ROPE_APPLY_FP _ -> 100
+  | LOAD_INT8_FP _ -> 30
+  | VECDOT_FP _ -> 20
+  | ARGMAX_FP _ -> 5
+  | ATTENTION_KV_FP _ -> 200
+  | ATTENTION_KV_Q16 _ -> 200
+  | APPEND_VEC_FP _ -> 5
+
+let is_valid_addr s =
+  let len = String.length s in
+  if len <> 47 then false
+  else if not (String.length s >= 3 && String.sub s 0 3 = "oct") then false
+  else
+    let base58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz" in
+    let rec check i =
+      if i >= len then true
+      else if String.contains base58 (String.get s i) then check (i + 1)
+      else false
+    in check 3
+
+let create_state ?(limit = 1_000_000) ?(ctx = default_ctx) ?(depth = 0) ?(is_view = false)
+    ?(strict_values = false) ?(storage_kinds = [])
+    ?(byte_result = String_bytes)
+    ~caller ~origin ~address ~value ~storage () =
+  let ctx =
+    if is_view || ctx.fhe_work = Octra_core.Rule_graph.Active then
+      {ctx with fhe_memory = Some (Option.value ctx.fhe_memory ~default:(Fhe_memory.create ()))}
+    else ctx in
+  {
+    regs = Array.make register_count (VInt Z.zero);
+    memory = { data = Hashtbl.create 1024; size = 0 };
+    storage;
+    member_index = None;
+    effort_used = 0;
+    effort_limit = limit;
+    reverted = false;
+    output_ready = false;
+    pc = 0;
+    caller; origin; address; value;
+    logs = ref [];
+    ctx;
+    fhe_local = Fhe_task.local ();
+    int_mode = ctx.int_work;
+    byte_result;
+    undo_stack = [];
+    undo_id = 0;
+    call_depth = depth;
+    return_stack = [];
+    blobs = Hashtbl.create 16;
+    is_view;
+    strict_values;
+    storage_kinds = Hashtbl.of_seq (List.to_seq storage_kinds);
+    decoded_chunk_cache = Hashtbl.create 512;
+    closes = [];
+  }
+
+let to_z = function
+  | VInt z -> z
+  | VU64 z -> z
+  | VU128 z -> z
+  | VU256 z -> z
+  | VBool b -> if b then Z.one else Z.zero
+  | VString s -> (try Z.of_string s with (Out_of_memory | Stack_overflow) as error -> raise error | _ -> Z.zero)
+  | _ -> Z.zero
+
+let to_bool = function
+  | VBool b -> b
+  | VInt z -> not (Z.equal z Z.zero)
+  | VString s -> s <> ""
+  | _ -> false
+
+let to_string = function
+  | VString s -> s
+  | VInt z -> Z.to_string z
+  | VBool b -> if b then "true" else "false"
+  | VBytes b -> b
+  | VBytes32 b -> b
+  | VU64 z -> Z.to_string z
+  | VU128 z -> Z.to_string z
+  | VU256 z -> Z.to_string z
+  | VAddr a -> a
+  | VCap _ -> "<cap>"
+  | VCipher _ -> "<cipher>"
+  | VPubKey _ -> "<pubkey>"
+
+let storage_work value = String.length (to_string value) / 32
+
+let to_cipher = function VCipher c -> Some c | _ -> None
+let to_pubkey = function VPubKey pk -> Some pk | _ -> None
+
+let max_u64 = Z.of_string "18446744073709551615"
+let max_u128 = Z.sub (Z.shift_left Z.one 128) Z.one
+let max_u256 = Z.sub (Z.shift_left Z.one 256) Z.one
+
+let validate_u64 z =
+  Z.sign z >= 0 && Z.compare z max_u64 <= 0
+
+let validate_u128 z =
+  Z.sign z >= 0 && Z.compare z max_u128 <= 0
+
+let validate_u256 z =
+  Z.sign z >= 0 && Z.compare z max_u256 <= 0
+
+let validate_bytes32 s = String.length s = 32
+
+let numeric_value = function
+  | VInt _ | VU64 _ | VU128 _ | VU256 _ -> true
+  | _ -> false
+
+let storage_value_matches kind value =
+  match kind, value with
+  | StorageInt, (VInt _ | VU64 _ | VU128 _ | VU256 _)
+  | StorageBool, VBool _
+  | StorageString, VString _
+  | StorageBytes, VBytes _
+  | StorageBytes32, VBytes32 _
+  | StorageAddr, VAddr _ -> true
+  | StorageU64, value -> numeric_value value && validate_u64 (to_z value)
+  | StorageU128, value -> numeric_value value && validate_u128 (to_z value)
+  | StorageU256, value -> numeric_value value && validate_u256 (to_z value)
+  | _ -> false
+
+let storage_default = function
+  | StorageInt -> VInt Z.zero
+  | StorageBool -> VBool false
+  | StorageString -> VString ""
+  | StorageBytes -> VBytes ""
+  | StorageBytes32 -> VBytes32 (String.make 32 '\x00')
+  | StorageU64 -> VU64 Z.zero
+  | StorageU128 -> VU128 Z.zero
+  | StorageU256 -> VU256 Z.zero
+  | StorageAddr -> VAddr ""
+
+let storage_decode kind raw =
+  try
+    match kind with
+    | StorageInt -> Some (VInt (Z.of_string raw))
+    | StorageBool ->
+      if String.equal raw "true" then Some (VBool true)
+      else if String.equal raw "false" then Some (VBool false)
+      else None
+    | StorageString -> Some (VString raw)
+    | StorageBytes -> Some (VBytes raw)
+    | StorageBytes32 ->
+      if validate_bytes32 raw then Some (VBytes32 raw) else None
+    | StorageU64 ->
+      let value = Z.of_string raw in
+      if validate_u64 value then Some (VU64 value) else None
+    | StorageU128 ->
+      let value = Z.of_string raw in
+      if validate_u128 value then Some (VU128 value) else None
+    | StorageU256 ->
+      let value = Z.of_string raw in
+      if validate_u256 value then Some (VU256 value) else None
+    | StorageAddr ->
+      if is_valid_addr raw then Some (VAddr raw) else None
+  with (Out_of_memory | Stack_overflow) as error -> raise error | _ ->
+    None
+
+let load_storage_value st key =
+  match Hashtbl.find_opt st.storage_kinds key with
+  | None ->
+    Some
+      (match Hashtbl.find_opt st.storage key with
+       | Some raw -> VString raw
+       | None -> VString "0")
+  | Some kind ->
+    match Hashtbl.find_opt st.storage key with
+    | None -> Some (storage_default kind)
+    | Some raw -> storage_decode kind raw
+
+let round_float_to_int f =
+  if Float.is_nan f || Float.is_integer f then int_of_float f
+  else if f >= 0.0 then int_of_float (f +. 0.5)
+  else -int_of_float (-. f +. 0.5)
+
+let fp64_to_z f =
+  Z.of_int64 (Int64.bits_of_float f)
+
+let z_to_fp64 z =
+  if Z.fits_int64 z then Int64.float_of_bits (Z.to_int64 z) else 0.0
+
+let mem_get_fp64 mem a =
+  match Hashtbl.find_opt mem a with
+  | Some (VInt z) -> z_to_fp64 z
+  | _ -> 0.0
+
+let mem_set_fp64 mem a f =
+  Hashtbl.replace mem a (VInt (fp64_to_z f))
+
+let make_u64 z =
+  if validate_u64 z then Some (VU64 z) else None
+
+let make_u128 z =
+  if validate_u128 z then Some (VU128 z) else None
+
+let make_u256 z =
+  if validate_u256 z then Some (VU256 z) else None
+
+let make_bytes32 s =
+  if validate_bytes32 s then Some (VBytes32 s) else None
+let to_bytes = function VBytes b -> Some b | VBytes32 b -> Some b | VString s -> Some s | _ -> None
+
+let max_fhe_proof_bytes = Octra_core.Pvac_verify_policy.max_proof_raw_bytes
+let max_fhe_cipher_bytes = 1_048_576
+let max_fhe_pubkey_bytes = 18_000_000
+let fhe_decode_bytes_per_effort = 16
+
+let max_zk_public_inputs = 32
+let max_zk_vk_bytes = 2_570
+let max_zk_proof_bytes = 1_024
+let max_zk_inputs_bytes = max_zk_public_inputs * 32
+let groth16_public_input_effort = 20_000
+
+let groth16_public_inputs raw =
+  if String.length raw < 10 || String.sub raw 0 6 <> "OG16V1" then
+    None
+  else if
+    Char.code raw.[6] <> 0
+    || Char.code raw.[7] <> 0
+    || Char.code raw.[8] <> 0
+  then
+    None
+  else
+    Some (Char.code raw.[9])
+
+let groth16_shape_ok vk proof inputs count =
+  count <= max_zk_public_inputs
+  && String.length vk = 10 + 64 + (3 * 128) + ((count + 1) * 64)
+  && String.length proof = 6 + 64 + 128 + 64
+  && String.length inputs = count * 32
+
+type fhe_verification =
+  | Fhe_verified
+  | Fhe_rejected
+  | Fhe_unavailable
+
+type suspension =
+  | Proof_wait of reg * Octra_core.Pvac_verify_protocol.request
+  | Fhe_wait of reg * string option * Fhe_task.request
+  | Call_wait of reg * string * string * v list
+  | Spawn_wait of reg * string * int * v list
+
+exception Suspend of suspension
+
+let fhe_verifier_lane = Mutex.create ()
+
+let with_fhe_verifier_lane f =
+  if not (Mutex.try_lock fhe_verifier_lane) then
+    Fhe_unavailable
+  else
+    Fun.protect
+      ~finally:(fun () -> Mutex.unlock fhe_verifier_lane)
+      f
+
+let fhe_verification_of_worker_result = function
+  | Ok () -> Fhe_verified
+  | Error (Octra_core.Pvac_verify_worker.Proof_rejected _) -> Fhe_rejected
+  | Error Octra_core.Pvac_verify_worker.Worker_busy
+  | Error (Octra_core.Pvac_verify_worker.Worker_unavailable _)
+  | Error Octra_core.Pvac_verify_worker.Worker_timed_out
+  | Error Octra_core.Pvac_verify_worker.Worker_memory_exceeded
+  | Error (Octra_core.Pvac_verify_worker.Worker_failed _) -> Fhe_unavailable
+
+let fhe_verifier_cipher_allowed cipher =
+  try
+    Octra_core.Pvac_verify_policy.shape_allowed
+      (Octra_core.Fhe_image.cipher_shape cipher)
+  with (Out_of_memory | Stack_overflow) as error -> raise error | _ ->
+    false
+
+let proof_raw prefix prefix_len value =
+  if
+    String.length value > prefix_len
+    && String.sub value 0 prefix_len = prefix
+  then
+    let encoded =
+      String.sub value prefix_len (String.length value - prefix_len)
+    in
+    Base64.decode encoded
+  else
+    match Base64.decode value with
+    | Ok raw -> Ok raw
+    | Error _ -> Ok value
+
+let worker_zero_proof value =
+  let module FB = Octra_core.Crypto.FheBalance in
+  match proof_raw FB.zero_proof_prefix FB.zero_proof_prefix_len value with
+  | Error _ -> None
+  | Ok raw ->
+    Some (FB.zero_proof_prefix ^ Base64.encode_exn raw)
+
+let worker_range_proof value =
+  let module FB = Octra_core.Crypto.FheBalance in
+  match proof_raw FB.range_proof_prefix FB.range_proof_prefix_len value with
+  | Error _ -> None
+  | Ok raw ->
+    Some (FB.range_proof_prefix ^ Base64.encode_exn raw)
+
+let worker_commitment value =
+  if String.length value = 32 then
+    Some (Base64.encode_exn value)
+  else if Byte_work.encoded_size 32 <> Some (String.length value) then None
+  else
+    match Base64.decode value with
+    | Ok raw when String.length raw = 32 ->
+      Some (Base64.encode_exn raw)
+    | Ok _
+    | Error _ ->
+      None
+
+let ceil_div value divisor =
+  if value <= 0 then 0 else 1 + ((value - 1) / divisor)
+
+let decode_serialized_text s =
+  match Base64.decode s with
+  | Ok raw -> raw
+  | Error _ -> s
+
+let packed_pubkey_size raw =
+  if String.length raw = 0 || Char.code raw.[0] <> 0xec then
+    Some (String.length raw)
+  else if String.length raw < 5 then
+    None
+  else
+    let byte index = Char.code raw.[index] in
+    let size =
+      (byte 1 lsl 24)
+      lor (byte 2 lsl 16)
+      lor (byte 3 lsl 8)
+      lor byte 4
+    in
+    if size > max_fhe_pubkey_bytes then None else Some size
+
+let fhe_decode_input_cost encoded =
+  ceil_div (String.length encoded) fhe_decode_bytes_per_effort
+
+let fhe_pubkey_output_cost raw =
+  match packed_pubkey_size raw with
+  | None -> None
+  | Some size ->
+    Some (ceil_div size fhe_decode_bytes_per_effort)
+
+let deser_bytes f s =
+  match Base64.decode s with
+  | Ok raw -> (try Some (f (Bytes.of_string raw)) with (Out_of_memory | Stack_overflow) as error -> raise error | _ ->
+    (try Some (f (Bytes.of_string s)) with (Out_of_memory | Stack_overflow) as error -> raise error | _ -> None))
+  | Error _ -> (try Some (f (Bytes.of_string s)) with (Out_of_memory | Stack_overflow) as error -> raise error | _ -> None)
+
+let decode_raw_or_b64_len expected s =
+  if String.length s = expected then Some s
+  else if expected < 0 ||
+    (expected mod 3 <> 0 && Byte_work.encoded_size expected <> Some (String.length s))
+  then None
+  else
+    match Base64.decode s with
+    | Ok raw when String.length raw = expected -> Some raw
+    | _ -> None
+
+let deterministic_seed parts =
+  Bytes.of_string (Digestif.SHA256.(digest_string (String.concat "\000" parts) |> to_raw_string))
+
+let revert st =
+  st.closes <- [];
+  st.reverted <- true;
+  false
+
+let value_work budget ~used ~limit value =
+  let ready = match value with
+    | VInt number | VU64 number | VU128 number | VU256 number ->
+      let size = Z.numbits number / 3 + 2 in
+      if size > Byte_work.event_left budget then None else
+        Byte_work.charge budget ~used ~limit ~base:0 [Byte_work.Allocate size]
+    | _ -> Some used in
+  Option.map (fun used -> used, to_string value) ready
+
+let output_work ctx ~used ~limit value =
+  match ctx.byte_work with
+  | None -> Some used
+  | Some budget ->
+    let left = Byte_work.event_left budget - 16 in
+    Option.bind (value_work budget ~used ~limit value) (fun (used, text) ->
+      Option.bind (Byte_work.text_size ~limit:left text) (fun size ->
+        let size = match value with
+          | VBytes _ | VBytes32 _ ->
+            Option.map (fun encoded -> max size (encoded + 2))
+              (Byte_work.encoded_size (String.length text))
+          | _ -> Some size in
+        Option.bind size (fun size ->
+          Byte_work.output budget ~used ~limit (size + 16))))
+
+let event_work ctx ~used ~limit (record : event_record) =
+  match ctx.byte_work with
+  | None -> Some used
+  | Some budget ->
+    let left = Byte_work.event_left budget in
+    let rec values used output = function
+      | [] -> Some (used, List.rev output)
+      | value :: rest ->
+        Option.bind (value_work budget ~used ~limit value) (fun (used, text) ->
+          values used (text :: output) rest) in
+    Option.bind (values used [] record.values) (fun (used, values) ->
+      Option.bind (Byte_work.event_size ~limit:(left - 1)
+        ~address:record.contract ~depth:record.depth ~name:record.event ~values)
+        (fun size -> Byte_work.emit budget ~used ~limit (size + 1)))
+
+let append_event st event =
+  match event_work st.ctx ~used:st.effort_used ~limit:st.effort_limit event with
+  | None -> false
+  | Some effort ->
+    st.effort_used <- effort;
+    st.logs := event :: !(st.logs);
+    true
+
+let finish_output st =
+  if st.reverted then false
+  else if st.output_ready then true
+  else match output_work st.ctx ~used:st.effort_used ~limit:st.effort_limit st.regs.(0) with
+  | None -> revert st
+  | Some effort ->
+    st.effort_used <- effort;
+    st.output_ready <- true;
+    true
+
+let revert_with_reason st reason =
+  ignore (append_event st { contract = st.address; depth = st.call_depth;
+    event = "Require"; values = [VString reason] });
+  revert st
+
+let view_guard st =
+  if st.is_view then begin
+    ignore (append_event st { contract = st.address; depth = st.call_depth;
+      event = "Require"; values = [VString "write in view context"] });
+    ignore (revert st); false
+  end else true
+
+let getr st r = st.regs.(r)
+let setr st r v = st.regs.(r) <- v
+
+let cap_equal left right =
+  String.equal left.scope right.scope
+  && left.kind = right.kind
+  && left.id = right.id
+  && left.rev = right.rev
+
+let cap_nat value =
+  value >= 0 && value <= 1_000_000
+
+let cap_value kind = function
+  | VCap cap ->
+    String.length cap.scope = 32
+    && Z.sign kind >= 0
+    && Z.leq kind (Z.of_int 1_000_000)
+    && cap_nat cap.kind
+    && cap_nat cap.id
+    && cap_nat cap.rev
+    && Z.to_int kind = cap.kind
+  | _ -> false
+
+let state_proof_enabled st =
+  st.ctx.proof_exec = Octra_core.Rule_graph.Active
+  && st.ctx.fhe_work = Octra_core.Rule_graph.Active
+  && st.ctx.math
+
+let finish_fhe_verification st rd = function
+  | Fhe_verified ->
+    setr st rd (VBool true);
+    true
+  | Fhe_rejected ->
+    setr st rd (VBool false);
+    true
+  | Fhe_unavailable ->
+    if not st.is_view && state_proof_enabled st then
+      raise (Octra_core.Exec_resource.Unavailable Host)
+    else
+      revert_with_reason st "fhe verifier unavailable"
+
+let verify_proof st rd request =
+  if st.ctx.async_exec then raise (Suspend (Proof_wait (rd, request)));
+  Octra_core.Pvac_verify_worker.try_classified_result_sync
+    ~keyed:(st.ctx.proof_key = Octra_core.Rule_graph.Active)
+    ~math:st.ctx.math request
+  |> fhe_verification_of_worker_result
+
+let is_numeric = numeric_value
+
+let is_text = function
+  | VString _ | VBytes _ | VBytes32 _ -> true
+  | _ -> false
+
+let is_address = function
+  | VString _ | VAddr _ -> true
+  | _ -> false
+
+let is_scalar_value value =
+  is_text value
+  || is_address value
+  || is_numeric value
+  || match value with VBool _ -> true | _ -> false
+
+let is_decimal = function
+  | VString value ->
+    (try
+       ignore (Z.of_string value);
+       true
+     with (Out_of_memory | Stack_overflow) as error -> raise error | _ ->
+       false)
+  | _ -> false
+
+let is_add_operand left right =
+  is_numeric left && is_numeric right
+  || is_numeric left && Z.equal (to_z left) Z.zero && is_decimal right
+  || is_decimal left && is_numeric right && Z.equal (to_z right) Z.zero
+
+let comparable left right =
+  match left, right with
+  | VInt _, (VInt _ | VU64 _ | VU128 _ | VU256 _)
+  | VU64 _, (VInt _ | VU64 _ | VU128 _ | VU256 _)
+  | VU128 _, (VInt _ | VU64 _ | VU128 _ | VU256 _)
+  | VU256 _, (VInt _ | VU64 _ | VU128 _ | VU256 _) -> true
+  | VBool _, VBool _
+  | VString _, VString _
+  | VBytes _, VBytes _
+  | VBytes32 _, VBytes32 _
+  | VAddr _, VAddr _
+  | VCipher _, VCipher _
+  | VPubKey _, VPubKey _ -> true
+  | _ -> false
+
+let strict_operands st = function
+  | ADD (_, a, b) ->
+    is_add_operand (getr st a) (getr st b)
+  | SUB (_, a, b) | MUL (_, a, b) | DIV (_, a, b) | MOD (_, a, b)
+  | LT (_, a, b) | GT (_, a, b)
+  | BITAND (_, a, b) | BITOR (_, a, b) | BITXOR (_, a, b)
+  | BITSHL (_, a, b) | BITSHR (_, a, b) ->
+    is_numeric (getr st a) && is_numeric (getr st b)
+  | NEG (_, a) | ABS (_, a) | MLOADR (_, a) ->
+    is_numeric (getr st a)
+  | MSTORE (_, source) ->
+    begin
+      match getr st source with
+      | VCap _ -> false
+      | _ -> true
+    end
+  | MSTORER (index, source) ->
+    is_numeric (getr st index)
+    && begin
+      match getr st source with
+      | VCap _ -> false
+      | _ -> true
+    end
+  | VECDOT_Q16 (_, a, b, n) ->
+    is_numeric (getr st a) && is_numeric (getr st b) && is_numeric (getr st n)
+  | ELEMWISE_MUL_Q16 (a, b, n) | RESIDUAL_ADD_Q16 (a, b, n) ->
+    is_numeric (getr st a) && is_numeric (getr st b) && is_numeric (getr st n)
+  | EXP_Q16 (_, source) ->
+    is_numeric (getr st source)
+  | SOFTMAX_Q16_INPLACE (addr, count) ->
+    is_numeric (getr st addr) && is_numeric (getr st count)
+  | LAYERNORM_Q16_INPLACE (addr, count, gamma, beta) ->
+    is_numeric (getr st addr) && is_numeric (getr st count) &&
+    is_numeric (getr st gamma) && is_numeric (getr st beta)
+  | RMSNORM_Q16_INPLACE (addr, count, gamma) ->
+    is_numeric (getr st addr) && is_numeric (getr st count) &&
+    is_numeric (getr st gamma)
+  | SILU_Q16_INPLACE (addr, count) ->
+    is_numeric (getr st addr) && is_numeric (getr st count)
+  | ROPE_APPLY_Q16 (addr, count, position, base) ->
+    is_numeric (getr st addr) && is_numeric (getr st count) &&
+    is_numeric (getr st position) && is_numeric (getr st base)
+  | ATTENTION_KV_Q16 (query, key, value, context, total, query_heads, key_heads, head_dim) ->
+    List.for_all (fun reg -> is_numeric (getr st reg))
+      [query; key; value; context; total; query_heads; key_heads; head_dim]
+  | EQ (_, a, b) | NEQ (_, a, b) -> comparable (getr st a) (getr st b)
+  | JIF (a, _) | ASSERT a ->
+    (match getr st a with VBool _ -> true | _ -> false)
+  | BALANCE (_, a) | SLOADK (_, a) | SDELK a | ISADDR (_, a)
+  | ISHEX (_, a) | STATE_PATH_KEY (_, a) | ASSERT_ADDR a ->
+    is_address (getr st a)
+  | CAP_CHECK (kind, reg) | CAP_CLOSE (kind, reg) ->
+    cap_value kind (getr st reg)
+  | SSTORE (key, source) ->
+    (match Hashtbl.find_opt st.storage_kinds key with
+     | Some kind -> storage_value_matches kind (getr st source)
+     | None -> is_scalar_value (getr st source))
+  | SSTOREK (key, value) ->
+    is_address (getr st key) && is_scalar_value (getr st value)
+  | PARSE_INTS (_, text, base) ->
+    is_text (getr st text) && is_numeric (getr st base)
+  | OBJECT_MEMBER_COUNT (_, object_ref) -> is_text (getr st object_ref)
+  | OBJECT_HAS_MEMBER (_, object_ref, member_ref) ->
+    is_text (getr st object_ref) && is_text (getr st member_ref)
+  | OBJECT_MEMBER_REF_AT (_, object_ref, index) ->
+    is_text (getr st object_ref) && is_numeric (getr st index)
+  | OBJECT_TRANSITION_APPLY
+      (_, transition_ref, object_ref, previous_ref, next_ref, member_bundle,
+       touched_hash, proof_kind, proof_hash, status, intent_id) ->
+    List.for_all (fun reg -> is_text (getr st reg))
+      [transition_ref; object_ref; previous_ref; next_ref; member_bundle;
+       touched_hash; proof_kind; proof_hash; status; intent_id]
+  | SUBSTR (_, text, start, length) ->
+    is_text (getr st text) && is_numeric (getr st start) && is_numeric (getr st length)
+  | INDEXOF (_, text, needle) ->
+    is_text (getr st text) && is_text (getr st needle)
+  | SHA256 (_, text) | KECCAK256 (_, text) | FSTORE (_, text)
+  | FLOAD (_, text) -> is_text (getr st text)
+  | SKEYS (_, prefix, base) ->
+    is_text (getr st prefix) && is_numeric (getr st base)
+  | SKEYS_PAGE (_, _, prefix, after, base) ->
+    is_text (getr st prefix) && is_text (getr st after) && is_numeric (getr st base)
+  | SLOADN (base_key, base_value, count)
+  | SSTOREN (base_key, base_value, count) ->
+    List.for_all (fun reg -> is_numeric (getr st reg)) [base_key; base_value; count]
+  | CONCAT (_, left, right) ->
+    begin
+      match st.byte_result, getr st left, getr st right with
+      | Typed_bytes, VBytes _, VBytes _ -> true
+      | Typed_bytes, _, _ -> false
+      | String_bytes, left, right ->
+        is_scalar_value left && is_scalar_value right
+    end
+  | STRLEN (_, text) -> is_text (getr st text)
+  | XCALL (_, target, method_name, base, count) ->
+    is_address (getr st target) && is_text (getr st method_name)
+    && base >= 0 && count >= 0 && base <= register_count
+    && count <= register_count - base
+    && List.for_all
+      (fun index -> match getr st (base + index) with VCap _ -> false | _ -> true)
+      (List.init count Fun.id)
+  | SPAWN (_, code) -> is_text (getr st code)
+  | SPAWN2 (_, code, base, count) ->
+    is_text (getr st code) && base >= 0 && count >= 0
+    && base <= register_count && count <= register_count - base
+    && List.for_all
+      (fun index -> match getr st (base + index) with VCap _ -> false | _ -> true)
+      (List.init count Fun.id)
+  | EMIT (_, regs) ->
+    List.for_all
+      (fun reg -> match getr st reg with VCap _ -> false | _ -> true)
+      regs
+  | TRANSFER (_, target, value) ->
+    is_address (getr st target) && is_numeric (getr st value)
+  | FHE_LOAD_PK (_, address) -> is_address (getr st address)
+  | FHE_ADD (_, key, left, right) | FHE_SUB (_, key, left, right)
+  | FHE_MUL (_, key, left, right) ->
+    (match getr st key, getr st left, getr st right with
+     | VPubKey _, VCipher _, VCipher _ -> true
+     | _ -> false)
+  | FHE_SCALE (_, key, cipher, scalar)
+  | FHE_DIV_CONST (_, key, cipher, scalar)
+  | FHE_ADD_CONST (_, key, cipher, scalar)
+  | FHE_SUB_CONST (_, key, cipher, scalar) ->
+    (match getr st key, getr st cipher with
+     | VPubKey _, VCipher _ -> is_numeric (getr st scalar)
+     | _ -> false)
+  | FHE_VERIFY_ZERO (_, key, cipher, proof)
+  | FHE_VERIFY_RANGE (_, key, cipher, proof) ->
+    (match getr st key, getr st cipher with
+     | VPubKey _, VCipher _ -> is_text (getr st proof)
+     | _ -> false)
+  | FHE_VERIFY_BOUND (_, key, cipher, proof, commitment) ->
+    (match getr st key, getr st cipher with
+     | VPubKey _, VCipher _ -> is_text (getr st proof) && is_text (getr st commitment)
+     | _ -> false)
+  | FHE_COMMIT (_, key, cipher) ->
+    (match getr st key, getr st cipher with VPubKey _, VCipher _ -> true | _ -> false)
+  | FHE_PEDERSEN (_, amount, blinding) ->
+    is_numeric (getr st amount) && is_text (getr st blinding)
+  | FHE_PEDERSEN_ADD (_, left, right)
+  | FHE_PEDERSEN_SUB (_, left, right) ->
+    is_text (getr st left) && is_text (getr st right)
+  | FHE_PEDERSEN_IDENTITY _ -> true
+  | FHE_SER (_, cipher) -> (match getr st cipher with VCipher _ -> true | _ -> false)
+  | FHE_DESER (_, bytes) | FHE_DESER_PK (_, bytes) -> is_text (getr st bytes)
+  | FHE_SER_PK (_, key) -> (match getr st key with VPubKey _ -> true | _ -> false)
+  | GROTH16_VERIFY_BN254 (_, key, proof, inputs) ->
+    List.for_all (fun reg -> is_text (getr st reg)) [key; proof; inputs]
+  | ED25519_OK (_, key, message, signature) ->
+    List.for_all (fun reg -> is_text (getr st reg)) [key; message; signature]
+  | LOAD_INT8_BYTES_TO_MEM (dst, source, offset, length, scale)
+  | LOAD_INT8_B64_TO_MEM (dst, source, offset, length, scale) ->
+    is_numeric (getr st dst) && is_text (getr st source)
+    && is_numeric (getr st offset) && is_numeric (getr st length)
+    && is_numeric (getr st scale)
+  | LOAD_INT8_Q16 (dst, source, offset, length, scale) ->
+    is_numeric (getr st dst) && is_text (getr st source)
+    && is_numeric (getr st offset) && is_numeric (getr st length)
+    && is_numeric (getr st scale)
+  | APPEND_VEC_Q16 (dst, pos, source, length) ->
+    List.for_all (fun reg -> is_numeric (getr st reg)) [dst; pos; source; length]
+  | ARGMAX_Q16 (dest, addr, length) ->
+    is_numeric (getr st dest) && is_numeric (getr st addr) && is_numeric (getr st length)
+  | _ -> true
+
+let strict_ok st op = not st.strict_values || strict_operands st op
+
+let read_int st reg =
+  let value = to_z (getr st reg) in
+  if Z.fits_int value then Some (Z.to_int value) else None
+
+let valid_mem_span addr n =
+  addr >= 0 && n > 0 && n <= 131072 && addr <= max_int - n
+
+let checked_product left right =
+  if left < 0 || right < 0 then None
+  else if left = 0 || right = 0 then Some 0
+  else if left > max_int / right then None
+  else Some (left * right)
+
+let memory_span st ?(sized = false) base factors =
+  st.ctx.byte_work = None ||
+    Option.fold ~none:false
+      ~some:(if sized then Mem_span.sized base else Mem_span.valid base)
+      (Cost.product factors)
+
+let memory_offset st base index width =
+  st.ctx.byte_work = None || Mem_span.offset base index width <> None
+
+let read_number st value =
+  begin match st.ctx.byte_work, value with
+  | Some budget, VString input ->
+    let quoted = Option.bind (Byte_work.parsing ~length:(String.length input) ~cells:1)
+      (fun (base, requests) -> Byte_work.charge budget ~used:st.effort_used
+        ~limit:st.effort_limit ~base requests) in
+    begin match quoted with
+    | Some effort -> st.effort_used <- effort
+    | None -> failwith "numeric work limit"
+    end
+  | _ -> ()
+  end;
+  to_z value
+
+let read_q16 st addr n =
+  if not (valid_mem_span addr n) then None
+  else
+    let values = Array.init n (fun i ->
+      match Hashtbl.find_opt st.memory.data (addr + i) with
+      | None -> Some Z.zero
+      | Some value when is_numeric value ->
+        let number = read_number st value in
+        if Fixed_q16.in_range number then Some number else None
+      | Some _ -> None)
+    in
+    if Array.for_all Option.is_some values then
+      Some (Array.map Option.get values)
+    else None
+
+let write_q16 st addr values =
+  Array.iteri (fun i value ->
+    let cell = addr + i in
+    Hashtbl.replace st.memory.data cell (VInt value);
+    if cell >= st.memory.size then st.memory.size <- cell + 1) values
+
+let valid_reg_span base count =
+  count >= 0 && base >= 0 && base <= 63 && count <= 64 - base
+
+let add_dyn_effort st cost =
+  match Cost.charge ~used:st.effort_used ~cost ~limit:st.effort_limit with
+  | None -> false
+  | Some effort -> st.effort_used <- effort; true
+
+let add_z_effort st cost =
+  match Cost.charge_z ~used:st.effort_used ~cost ~limit:st.effort_limit with
+  | None -> false
+  | Some effort -> st.effort_used <- effort; true
+
+let charge_bytes st ~base ~prior requests =
+  match st.ctx.byte_work with
+  | None -> add_dyn_effort st prior
+  | Some budget ->
+    match Byte_work.charge budget ~used:st.effort_used
+      ~limit:st.effort_limit ~base requests with
+    | None -> false
+    | Some effort -> st.effort_used <- effort; true
+
+let reserve_vectors st parts =
+  match st.ctx.byte_work with
+  | None -> true
+  | Some _ ->
+    match Vector_space.bytes parts with
+    | None -> false
+    | Some size -> charge_bytes st ~base:0 ~prior:0 [Byte_work.Allocate size]
+
+let text_input_ok cap = function
+  | VInt value | VU64 value | VU128 value | VU256 value ->
+    Z.leq (Z.of_int (Z.numbits value)) (Z.mul (Z.of_int cap) (Z.of_int 4))
+  | _ -> true
+
+let reserve_text st value =
+  match st.ctx.byte_work, value with
+  | Some budget, (VInt number | VU64 number | VU128 number | VU256 number) ->
+    let bytes = Z.numbits number / 3 + 2 in
+    bytes <= Byte_work.text_limit budget
+    && charge_bytes st ~base:0 ~prior:0 [Byte_work.Allocate bytes]
+  | _ -> true
+
+let reserve_bytes st ~base requests =
+  match st.ctx.byte_work with
+  | None -> true
+  | Some budget ->
+    match Byte_work.plan (Byte_work.rules budget) ~remaining:(Byte_work.remaining budget)
+      ~available:(Byte_work.available budget) ~used:st.effort_used
+      ~limit:st.effort_limit ~base requests with
+    | None -> false
+    | Some _ -> charge_bytes st ~base:0 ~prior:0 requests
+
+let reserve_cells st ~count ~bits ~cost =
+  match st.ctx.byte_work with
+  | None -> true
+  | Some _ ->
+    match Byte_work.cell_bytes ~count ~bits, cost () with
+    | Some size, Some base -> reserve_bytes st ~base [Byte_work.Allocate size]
+    | _ -> false
+
+let reserve_decode st ~input ~count ~bits ~cached ~cost =
+  match st.ctx.byte_work with
+  | None -> true
+  | Some _ ->
+    match Byte_work.decoding ~length:(String.length input) ~cells:count ~bits ~cached with
+    | None -> false
+    | Some plan ->
+      match cost plan.max_bytes with
+      | None -> false
+      | Some base -> reserve_bytes st ~base plan.requests
+
+type number_arg = Numeric of reg * int | Machine of reg * int
+
+let number_inputs ~strict op =
+  let numbers passes regs = List.map (fun reg -> Numeric (reg, passes)) regs in
+  let indices passes regs = List.map (fun reg -> Machine (reg, passes + 1)) regs in
+  match op with
+  | ADD (_, left, right) when strict -> numbers 3 [left; right]
+  | ADD (_, left, right) | SUB (_, left, right) | MUL (_, left, right)
+  | DIV (_, left, right) | MOD (_, left, right) -> numbers 2 [left; right]
+  | NEG (_, source) | ABS (_, source) -> numbers 2 [source]
+  | LT (_, left, right) | GT (_, left, right)
+  | BITAND (_, left, right) | BITOR (_, left, right) | BITXOR (_, left, right) ->
+    numbers 1 [left; right]
+  | BITSHL (_, left, right) | BITSHR (_, left, right) ->
+    numbers 1 [left] @ indices 1 [right]
+  | MLOADR (_, index) | MSTORER (index, _) | PARSE_INTS (_, _, index)
+  | OBJECT_MEMBER_REF_AT (_, _, index) | SKEYS (_, _, index)
+  | SKEYS_PAGE (_, _, _, _, index) -> indices 1 [index]
+  | SUBSTR (_, _, start, length) -> indices 2 [start; length]
+  | SSTOREN (keys, values, count) -> indices 2 [keys; values; count]
+  | SLOADN (keys, values, count) -> indices 1 [keys; values; count]
+  | MATMUL (dst, left, right, rows, inner, columns)
+  | MATMUL_Q16 (dst, left, right, rows, inner, columns)
+  | MATMUL_FP (dst, left, right, rows, inner, columns) ->
+    indices 1 [dst; left; right; rows; inner; columns]
+  | VECDOT (_, left, right, count) | VECDOT_Q16 (_, left, right, count)
+  | VECDOT_FP (_, left, right, count) -> indices 1 [left; right; count]
+  | SOFTMAX_INPLACE (addr, count) | SOFTMAX_Q16_INPLACE (addr, count)
+  | RELU_INPLACE (addr, count) | SILU_INPLACE (addr, count)
+  | SILU_Q16_INPLACE (addr, count) | SILU_FP (addr, count)
+  | ARGMAX_Q16 (_, addr, count) | ARGMAX_FP (_, addr, count) ->
+    indices 1 [addr; count]
+  | LAYERNORM_INPLACE (addr, count, gamma, beta)
+  | LAYERNORM_Q16_INPLACE (addr, count, gamma, beta) ->
+    indices 1 [addr; count; gamma; beta]
+  | RMSNORM_INPLACE (addr, count, gamma) | RMSNORM_Q16_INPLACE (addr, count, gamma)
+  | RMSNORM_FP (addr, count, gamma) -> indices 1 [addr; count; gamma]
+  | ELEMWISE_MUL_INPLACE (dst, source, count) | ELEMWISE_MUL_Q16 (dst, source, count)
+  | ELEMWISE_MUL_FP (dst, source, count) | RESIDUAL_ADD (dst, source, count)
+  | RESIDUAL_ADD_Q16 (dst, source, count) | RESIDUAL_ADD_FP (dst, source, count) ->
+    indices 1 [dst; source; count]
+  | ROPE_APPLY (addr, count, position, base) | ROPE_APPLY_Q16 (addr, count, position, base)
+  | ROPE_APPLY_FP (addr, count, position, base) ->
+    indices 1 [addr; count; position] @ numbers 1 [base]
+  | LOAD_INT8_BYTES_TO_MEM (dst, _, offset, count, scale) ->
+    indices 1 [dst; offset; count] @ numbers 1 [scale]
+  | LOAD_INT8_B64_TO_MEM (dst, _, offset, count, scale)
+  | LOAD_INT8_Q16 (dst, _, offset, count, scale) | LOAD_INT8_FP (dst, _, offset, count, scale) ->
+    indices 2 [dst; offset; count] @ numbers 1 [scale]
+  | APPEND_VEC_Q16 (dst, position, source, count) | APPEND_VEC_FP (dst, position, source, count) ->
+    indices 1 [dst; position; source; count]
+  | ATTENTION_KV_Q16 (query, key, value, context, total, query_heads, key_heads, head_dim)
+  | ATTENTION_KV_FP (query, key, value, context, total, query_heads, key_heads, head_dim) ->
+    indices 1 [query; key; value; context; total; query_heads; key_heads; head_dim]
+  | SHIFT_ROUND_INPLACE (addr, count, bits) -> indices 1 [addr; count; bits]
+  | EXP_LUT (_, value) | EXP_Q16 (_, value) | TRANSFER (_, _, value)
+  | FHE_SCALE (_, _, _, value) | FHE_DIV_CONST (_, _, _, value)
+  | FHE_ADD_CONST (_, _, _, value) | FHE_SUB_CONST (_, _, _, value)
+  | FHE_PEDERSEN (_, value, _) -> numbers 1 [value]
+  | _ -> []
+
+let reserve_numbers st op =
+  match st.ctx.byte_work with
+  | None -> true
+  | Some budget ->
+    let inputs = number_inputs ~strict:st.strict_values op in
+    let rec plan base requests = function
+      | [] -> Some (base, requests)
+      | (Numeric (index, passes) | Machine (index, passes)) :: rest ->
+        match getr st index with
+        | VString input ->
+          Option.bind (Byte_work.parsing ~length:(String.length input) ~cells:1)
+            (fun (cost, parts) ->
+              let copies = List.concat (List.init passes (fun _ -> parts)) in
+              plan (base + passes * cost) (copies @ requests) rest)
+        | _ -> plan base requests rest in
+    let admitted = match plan 0 [] inputs with
+      | None -> false
+      | Some (_, []) -> true
+      | Some (base, requests) ->
+        match Byte_work.plan (Byte_work.rules budget) ~remaining:(Byte_work.remaining budget)
+          ~available:(Byte_work.available budget) ~used:st.effort_used
+          ~limit:st.effort_limit ~base:(base + effort_cost op) requests with
+        | None -> false
+        | Some _ -> charge_bytes st ~base ~prior:0 requests in
+    admitted && List.for_all (function
+      | Numeric _ -> true
+      | Machine (index, _) -> Z.fits_int (to_z (getr st index))) inputs
+
+let parse_integers st input base =
+  let budget = Option.get st.ctx.byte_work in
+  let scan = Byte_work.Scan (String.length input) in
+  let quote ~count ~chars =
+    Option.map (fun (base, requests) -> base, scan :: requests)
+      (Byte_work.parsing ~length:chars ~cells:count) in
+  let fits ~count ~chars =
+    Option.fold ~none:false ~some:(fun (base, requests) ->
+      Byte_work.plan (Byte_work.rules budget) ~remaining:(Byte_work.remaining budget)
+        ~available:(Byte_work.available budget) ~used:st.effort_used
+        ~limit:st.effort_limit ~base requests <> None) (quote ~count ~chars) in
+  if not (charge_bytes st ~base:0 ~prior:0 [scan]) then None
+  else
+    match Int_text.plan ~capacity:(16_777_216 - base + 1) ~fits input with
+    | None -> None
+    | Some plan ->
+      match quote ~count:plan.count ~chars:plan.chars with
+      | Some (base, requests) when charge_bytes st ~base ~prior:0 requests ->
+        Int_text.read ~strict:st.strict_values plan
+      | Some _ | None -> None
+
+let spawn_input st input =
+  if String.length input >= 4 && String.sub input 0 4 = "OCTB" then Some input
+  else if not (reserve_decode st ~input ~count:0 ~bits:0 ~cached:false
+    ~cost:(fun size -> Some (5000 + size / 100))) then None
+  else
+    match Base64.decode input with
+    | Ok raw -> Some raw
+    | Error _ -> if st.ctx.byte_work = None then Some input else None
+
+let decode_span st dst off count =
+  st.ctx.byte_work = None ||
+    (dst >= 0 && dst <= 16_777_216 && count <= 16_777_216 - dst && off >= 0)
+
+let decode_range st off count size =
+  if st.ctx.byte_work = None then off >= 0 && off + count <= size
+  else off >= 0 && off <= size && count <= size - off
+
+let prepare_byte_batch st keys values count =
+  let budget = Option.get st.ctx.byte_work in
+  let rules = Byte_work.rules budget in
+  let text cap index =
+    let value = Option.value (Hashtbl.find_opt st.memory.data index) ~default:(VString "") in
+    if text_input_ok cap value && reserve_text st value
+    then Some (to_string value) else None in
+  let rec collect index used remaining entries =
+    if index = count then Some (List.rev entries)
+    else
+      let before = st.effort_used in
+      let cap = min remaining (Byte_work.text_limit budget) in
+      match text cap (keys + index) with
+      | None -> None
+      | Some key when key = "" || is_reserved_key key || String.length key > remaining -> None
+      | Some key ->
+        match text (min cap (remaining - String.length key)) (values + index) with
+        | None -> None
+        | Some value when String.length value > max_storage_value_len -> None
+        | Some value ->
+          let request = Byte_work.Write (String.length key, String.length value) in
+          match Cost.charge ~used ~cost:(st.effort_used - before) ~limit:st.effort_limit with
+          | None -> None
+          | Some used ->
+            match Byte_work.plan rules ~remaining ~available:(Byte_work.available budget)
+              ~used ~limit:st.effort_limit ~base:80 [request] with
+            | None -> None
+            | Some (used, remaining, _) ->
+              collect (index + 1) used remaining ((key, value) :: entries)
+  in
+  collect 0 st.effort_used (Byte_work.remaining budget) []
+
+let byte_inputs_ok st op =
+  match st.ctx.byte_work with
+  | None -> true
+  | Some budget ->
+    let cap = Byte_work.text_limit budget in
+    let text = text_input_ok cap in
+    let register index = text (getr st index) && reserve_text st (getr st index) in
+    match op with
+    | SSTORE (_, value) | FSTORE (_, value) | SPAWN (_, value)
+    | SPAWN2 (_, value, _, _) -> register value
+    | SSTOREK (key, value) | CONCAT (_, key, value) -> register key && register value
+    | SUBSTR (_, source, start, length) ->
+      register source && read_int st start <> None && read_int st length <> None
+    | STRLEN (_, source) | SHA256 (_, source)
+    | KECCAK256 (_, source) | SDELK source | SKEYS (_, source, _) -> register source
+    | INDEXOF (_, source, pattern) -> register source && register pattern
+    | PARSE_INTS (_, source, _) -> register source
+    | LOAD_INT8_BYTES_TO_MEM (dst, source, off, count, _)
+    | LOAD_INT8_B64_TO_MEM (dst, source, off, count, _)
+    | LOAD_INT8_Q16 (dst, source, off, count, _)
+    | LOAD_INT8_FP (dst, source, off, count, _) ->
+      register source && read_int st dst <> None && read_int st off <> None
+      && read_int st count <> None
+    | SKEYS_PAGE (_, _, prefix, after, _) -> register prefix && register after
+    | SSTOREN (keys, values, count) ->
+      let count = to_z (getr st count) in
+      let keys = to_z (getr st keys) in
+      let values = to_z (getr st values) in
+      let within value cap = Z.sign value >= 0 && Z.leq value (Z.of_int cap) in
+      if not (within count 1000 && within keys 16_777_216 && within values 16_777_216)
+      then false
+      else
+        let count = Z.to_int count in
+        let keys = Z.to_int keys in
+        let values = Z.to_int values in
+        let span base = count <= 16_777_216 - base in
+        let cell index = Option.fold ~none:true ~some:text (Hashtbl.find_opt st.memory.data index) in
+        let rec check index =
+          index = count || (cell (keys + index) && cell (values + index) && check (index + 1)) in
+        span keys && span values && check 0
+    | _ -> true
+
+let copy_key_page st ~prefix ~after ~base =
+  if base < 0 || base >= 16_777_216 then Some (0, "")
+  else
+    let count = min 1000 (16_777_216 - base) in
+    let capacity = min (count + 1) (Hashtbl.length st.storage) in
+    let scratch = capacity * 64 + 64 in
+    let budget = Option.get st.ctx.byte_work in
+    let requests scanned = [Byte_work.Scan scanned; Byte_work.Allocate scratch] in
+    let fits scanned =
+      Byte_work.plan (Byte_work.rules budget) ~remaining:(Byte_work.remaining budget)
+        ~available:(Byte_work.available budget) ~used:st.effort_used
+        ~limit:st.effort_limit ~base:0 (requests scanned) <> None in
+    match Text_work.measure ~fits (Hashtbl.to_seq_keys st.storage) with
+    | None -> None
+    | Some scanned when not (charge_bytes st ~base:0 ~prior:0 (requests scanned)) -> None
+    | Some _ ->
+      let keys = Text_work.page ~prefix ~after ~capacity
+        ~iter:(fun visit -> Hashtbl.iter (fun key _ -> visit key) st.storage) in
+      let more = List.length keys > count in
+      let selected = List.filteri (fun index _ -> index < count) keys in
+      let width = String.length prefix in
+      let requests = List.map (fun key ->
+        Byte_work.Copy (String.length key - width, 0)) selected in
+      if not (charge_bytes st ~base:(List.length selected * 5) ~prior:0 requests)
+      then None
+      else
+        let last = ref "" in
+        List.iteri (fun index key ->
+          let value = String.sub key width (String.length key - width) in
+          last := value;
+          let cell = base + index in
+          Hashtbl.replace st.memory.data cell (VString value);
+          st.memory.size <- max st.memory.size (cell + 1)) selected;
+        Some (List.length selected, if more then !last else "")
+
+let op_effort st op =
+  let mode = if st.ctx.byte_work = None then st.int_mode else Int_work.Active in
+  let binary kind left right =
+    Int_work.cost mode ~base:(effort_cost op) kind
+      (to_z (getr st left)) (to_z (getr st right))
+  in
+  let unary kind source =
+    Int_work.cost mode ~base:(effort_cost op) kind
+      (to_z (getr st source)) Z.zero
+  in
+  match op with
+  | ADD (_, left, right) -> binary Int_work.Add left right
+  | SUB (_, left, right) -> binary Int_work.Sub left right
+  | MUL (_, left, right) -> binary Int_work.Mul left right
+  | DIV (_, left, right) -> binary Int_work.Div left right
+  | MOD (_, left, right) -> binary Int_work.Mod left right
+  | NEG (_, source) -> unary Int_work.Neg source
+  | ABS (_, source) -> unary Int_work.Abs source
+  | _ -> Z.of_int (effort_cost op)
+
+type int_values = Live | Fixed of (Z.t * Z.t) array
+
+let prepare_int_work st op count operands =
+  match st.int_mode with
+  | Int_work.Prior -> Some Live
+  | Int_work.Active ->
+    let left = st.effort_limit - st.effort_used in
+    if count < 0 || count > Int_work.item_cap || left < 0 || count > left then
+      None
+    else if not (reserve_vectors st (Vector_space.arrays 1 count)) then None
+    else
+      let cap = Z.of_int left in
+      let values = Array.make count (Z.zero, Z.zero) in
+      let rec sum index total =
+        if index = count then
+          if add_z_effort st total then Some (Fixed values) else None
+        else
+          let first, second = operands index in
+          values.(index) <- first, second;
+          let total = Z.add total (Int_work.variable op first second) in
+          if Z.gt total cap then None else sum (index + 1) total
+      in
+      sum 0 Z.zero
+
+let int_values st op values index current =
+  match values with
+  | Live ->
+    let first, second = current index in
+    if st.ctx.byte_work <> None
+      && not (add_z_effort st (Int_work.variable op first second)) then
+      failwith "integer work limit";
+    first, second
+  | Fixed saved -> saved.(index)
+
+let same_int_cost st op count first second =
+  match st.int_mode, st.ctx.byte_work with
+  | Int_work.Prior, None -> Some Z.zero
+  | _ ->
+    let left = st.effort_limit - st.effort_used in
+    if count < 0 || count > Int_work.item_cap || left < 0 || count > left then
+      None
+    else
+      let one = Int_work.variable op first second in
+      Some (Z.mul (Z.of_int count) one)
+
+let charge_same_int_work st op count first second =
+  Option.fold ~none:false ~some:(add_z_effort st)
+    (same_int_cost st op count first second)
+
+let load_int_cost st ~base ~count ~scale =
+  Option.bind (same_int_cost st Int_work.Mul count Z.zero scale) (fun work ->
+    let total = Z.add (Z.of_int base) work in
+    if Z.fits_int total then Some (Z.to_int total) else None)
+
+let add_dyn_product st factors divisor =
+  match Cost.scaled_product factors ~divisor with
+  | None -> false
+  | Some cost -> add_dyn_effort st cost
+
+let storage_replace st key value =
+  st.member_index <- None;
+  Hashtbl.replace st.storage key value
+
+let storage_remove st key =
+  st.member_index <- None;
+  Hashtbl.remove st.storage key
+
+let object_members st object_ref =
+  let index =
+    match st.member_index with
+    | Some index -> index
+    | None ->
+      let index = {
+        keys =
+          Octra_core.Circle_object_member_query.member_keys_from_storage_tbl
+            st.storage;
+        refs = Hashtbl.create 8;
+      } in
+      st.member_index <- Some index;
+      index
+  in
+  match Hashtbl.find_opt index.refs object_ref with
+  | Some members -> members
+  | None ->
+    let members =
+      Octra_core.Circle_object_member_query.member_refs_from_keys
+        index.keys
+        object_ref in
+    Hashtbl.replace index.refs object_ref members;
+    members
+
+let add_object_scan_effort st =
+  if st.ctx.object_cost then
+    add_dyn_product st [Hashtbl.length st.storage; 5] 1
+  else
+    true
+
+let fhe_view_shape cipher =
+  let shape = Octra_core.Fhe_image.cipher_shape cipher in
+  Fhe_view_policy.{
+    slots = shape.Pvac_ffi.slots;
+    layers = shape.layers;
+    edges = shape.edges;
+  }
+
+let fhe_slots_match left right =
+  try
+    let left_shape = fhe_view_shape left in
+    let right_shape = fhe_view_shape right in
+    left_shape.slots = right_shape.slots
+  with (Out_of_memory | Stack_overflow) as error -> raise error | _ ->
+    false
+
+let reserve_fhe ctx amount =
+  match ctx.fhe_memory with
+  | None -> true
+  | Some memory -> Fhe_memory.reserve memory amount
+
+let key_allowed ?memory source =
+  let permit amount = match memory with
+    | None -> true
+    | Some budget -> Fhe_memory.reserve budget amount in
+  match source with
+  | Key_value key ->
+    permit (Fhe_memory.key_value key)
+  | Key_bytes raw ->
+    match memory with
+    | None -> true
+    | Some _ -> Option.fold ~none:false ~some:permit (Fhe_memory.key_decode raw)
+
+let load_fhe_key ?memory source =
+  if not (key_allowed ?memory source) then None
+  else match source with
+    | Key_value key -> Some key
+    | Key_bytes raw ->
+      match Fhe_task.eval (Fhe_task.Load_key raw) with
+      | Ok (Fhe_task.Key key) -> Some key
+      | Error (Fhe_task.Resource resource) -> raise (Octra_core.Exec_resource.Unavailable resource)
+      | _ -> None
+
+let finish_fhe st rd reason = function
+  | Ok value ->
+    let value = match value with
+      | Fhe_task.Key key -> VPubKey key
+      | Fhe_task.Cipher cipher -> VCipher cipher
+      | Fhe_task.Text text -> VString text
+      | Fhe_task.Check _ | Fhe_task.Verified _ ->
+        raise (Octra_core.Exec_resource.Unavailable Host) in
+    setr st rd value;
+    true
+  | Error Fhe_task.Invalid ->
+    begin match reason with
+    | Some reason -> revert_with_reason st reason
+    | None -> revert st
+    end
+  | Error (Fhe_task.Resource Memory) -> raise Out_of_memory
+  | Error (Fhe_task.Resource Stack) -> raise Stack_overflow
+  | Error (Fhe_task.Resource Host) -> raise (Octra_core.Exec_resource.Unavailable Host)
+
+let eval_fhe ?reason st rd request =
+  let active = st.ctx.proof_exec = Octra_core.Rule_graph.Active in
+  if (active || st.is_view) && not (Option.fold ~none:false ~some:(add_dyn_effort st)
+      (Fhe_task.key_effort request)) then revert st
+  else if not st.is_view && not active then
+    finish_fhe st rd reason (Fhe_task.direct st.fhe_local request)
+  else if st.ctx.async_exec then raise (Suspend (Fhe_wait (rd, reason, request)))
+  else finish_fhe st rd reason (Fhe_task.eval request)
+
+let pack_proof st rd kind key cipher proof =
+  let task = Fhe_task.Pack (kind, key, cipher, proof) in
+  if st.ctx.async_exec then raise (Suspend (Fhe_wait (rd, None, task)));
+  match Fhe_task.eval task with
+  | Ok (Fhe_task.Check request) -> verify_proof st rd request
+  | Error Fhe_task.Invalid -> failwith "fhe proof encoding rejected"
+  | Error (Fhe_task.Resource Memory) -> raise Out_of_memory
+  | Error (Fhe_task.Resource Stack) -> raise Stack_overflow
+  | Ok _ | Error (Fhe_task.Resource Host) -> Fhe_unavailable
+
+let charge_fhe_key st source =
+  let active = st.is_view || st.ctx.proof_exec = Octra_core.Rule_graph.Active in
+  if not active && st.ctx.fhe_work = Octra_core.Rule_graph.Prior then true
+  else
+    let cost = match source with
+      | Key_value key -> Fhe_memory.key_write_effort ~active key
+      | Key_bytes raw -> Fhe_memory.key_read_effort ~active raw in
+    Option.fold ~none:false ~some:(add_dyn_effort st) cost
+
+let prepare_fhe_work st op =
+  if not st.is_view && st.ctx.fhe_work = Octra_core.Rule_graph.Prior then true
+  else
+    let operands = match op with
+      | FHE_ADD (_, _, left, right) | FHE_SUB (_, _, left, right) ->
+        Some (Fhe_view_policy.Join, left, right, None)
+      | FHE_MUL (_, pk, left, right) -> Some (Fhe_view_policy.Product, left, right, Some pk)
+      | FHE_SCALE (_, _, source, _) | FHE_DIV_CONST (_, _, source, _)
+      | FHE_ADD_CONST (_, _, source, _) | FHE_SUB_CONST (_, _, source, _)
+      | FHE_SER (_, source) | FHE_COMMIT (_, _, source) ->
+        Some (Fhe_view_policy.Copy, source, source, None)
+      | FHE_VERIFY_ZERO (_, pk, source, _) | FHE_VERIFY_RANGE (_, pk, source, _)
+      | FHE_VERIFY_BOUND (_, pk, source, _, _) ->
+        Some (Fhe_view_policy.Copy, source, source, Some pk)
+      | _ -> None
+    in
+    match operands with
+    | None -> true
+    | Some (kind, left, right, pk) ->
+      try
+        let product_words, sample_work = match pk with
+          | None -> 0, 0
+          | Some register ->
+            match to_pubkey (getr st register) with
+            | Some pk ->
+              let shape = pk.Octra_core.Fhe_image.sampling in
+              let samples = Fhe_view_policy.sampling ~rows:shape.rows ~columns:shape.columns
+                ~weight:shape.weight ~noise:shape.noise ~branches:shape.branches in
+              if not (reserve_fhe st.ctx (Fhe_memory.key_value pk)) then -1, -1
+              else Octra_core.Fhe_image.key_words pk, Option.value samples ~default:(-1)
+            | None -> -1, -1 in
+        match to_cipher (getr st left), to_cipher (getr st right) with
+        | Some left, Some right ->
+          begin match Fhe_view_policy.plan kind ~base:(effort_cost op)
+            ~left_words:(Octra_core.Fhe_image.cipher_words left)
+            ~right_words:(Octra_core.Fhe_image.cipher_words right)
+            ~product_words ~sample_work
+            ~left:(fhe_view_shape left) ~right:(fhe_view_shape right) with
+          | Some (effort, memory) ->
+            add_dyn_effort st effort && reserve_fhe st.ctx memory
+          | None -> false
+          end
+        | _ -> false
+      with (Out_of_memory | Stack_overflow) as error -> raise error | _ -> false
+
+let child_scope st = {
+  depth = st.call_depth + 1;
+  limit = if st.is_view || st.ctx.fhe_work = Octra_core.Rule_graph.Active
+    || st.ctx.byte_work <> None
+    then Some (max 0 (st.effort_limit - st.effort_used)) else None;
+  memory = st.ctx.fhe_memory;
+  bytes = st.ctx.byte_work;
+}
+
+let object_apply_dyn_cost writes =
+  List.fold_left
+    (fun acc write ->
+      let cost = match write with
+      | Octra_core.Circle_object_apply.Set (_key, value) ->
+        10 + (String.length value / 32)
+      | Octra_core.Circle_object_apply.Del _ ->
+        5
+      in
+      Option.bind acc (fun total -> Cost.add total cost))
+    (Some 0)
+    writes
+
+let charge_object_writes st writes =
+  match st.ctx.byte_work with
+  | None -> Option.fold ~none:false ~some:(add_dyn_effort st) (object_apply_dyn_cost writes)
+  | Some _ ->
+    let base = List.fold_left (fun total write ->
+      let cost = match write with Octra_core.Circle_object_apply.Set _ -> 10 | Octra_core.Circle_object_apply.Del _ -> 5 in
+      Option.bind total (fun total -> Cost.add total cost)) (Some 0) writes in
+    let requests = List.map (function
+      | Octra_core.Circle_object_apply.Set (key, value) ->
+        Byte_work.Write (String.length key, String.length value)
+      | Octra_core.Circle_object_apply.Del key -> Byte_work.Erase (String.length key)) writes in
+    Option.fold ~none:false
+      ~some:(fun base -> charge_bytes st ~base ~prior:0 requests) base
+
+let apply_object_write st = function
+  | Octra_core.Circle_object_apply.Set (key, value) ->
+    let old_val = Hashtbl.find_opt st.storage key in
+    st.undo_stack <- UndoWrite (key, old_val) :: st.undo_stack;
+    storage_replace st key value;
+    true
+  | Octra_core.Circle_object_apply.Del key ->
+    let old_val = Hashtbl.find_opt st.storage key in
+    st.undo_stack <- UndoWrite (key, old_val) :: st.undo_stack;
+    storage_remove st key;
+    true
+
+let rec apply_object_writes st = function
+  | [] ->
+    true
+  | write :: rest ->
+    if apply_object_write st write then
+      apply_object_writes st rest
+    else
+      false
+
+let exec_one st op =
+  if not (reserve_numbers st op) then revert st
+  else
+  let strict = strict_ok st op in
+  let work = if strict then op_effort st op else Z.of_int (effort_cost op) in
+  if not (add_z_effort st work) then revert st
+  else if not strict then revert st
+  else if not (byte_inputs_ok st op) then revert st
+  else if not (prepare_fhe_work st op) then revert st
+  else match op with
+  | ADD (rd, rs1, rs2) ->
+    setr st rd (VInt (Z.add (to_z (getr st rs1)) (to_z (getr st rs2)))); true
+  | SUB (rd, rs1, rs2) ->
+    setr st rd (VInt (Z.sub (to_z (getr st rs1)) (to_z (getr st rs2)))); true
+  | MUL (rd, rs1, rs2) ->
+    setr st rd (VInt (Z.mul (to_z (getr st rs1)) (to_z (getr st rs2)))); true
+  | DIV (rd, rs1, rs2) ->
+    let d = to_z (getr st rs2) in
+    if Z.equal d Z.zero then revert st
+    else (setr st rd (VInt (Z.div (to_z (getr st rs1)) d)); true)
+  | MOD (rd, rs1, rs2) ->
+    let d = to_z (getr st rs2) in
+    if Z.equal d Z.zero then revert st
+    else (setr st rd (VInt (Z.rem (to_z (getr st rs1)) d)); true)
+  | NEG (rd, rs) ->
+    setr st rd (VInt (Z.neg (to_z (getr st rs)))); true
+  | ABS (rd, rs) ->
+    setr st rd (VInt (Z.abs (to_z (getr st rs)))); true
+  | EQ (rd, rs1, rs2) ->
+    let a = getr st rs1 and b = getr st rs2 in
+    (match a, b with
+
+     | (VCipher _ | VPubKey _), VInt z when Z.equal z Z.zero ->
+       setr st rd (VBool false); true
+     | VInt z, (VCipher _ | VPubKey _) when Z.equal z Z.zero ->
+       setr st rd (VBool false); true
+
+     | VCipher a, VCipher b -> setr st rd (VBool (a == b)); true
+     | VPubKey a, VPubKey b -> setr st rd (VBool (a == b)); true
+
+     | VCipher _, _ | _, VCipher _ | VPubKey _, _ | _, VPubKey _ ->
+       setr st rd (VBool false); true
+     | _ -> setr st rd (VBool (to_string a = to_string b)); true)
+  | LT (rd, rs1, rs2) ->
+    let a = getr st rs1 and b = getr st rs2 in
+    (match a, b with
+     | VCipher _, _ | _, VCipher _ | VPubKey _, _ | _, VPubKey _ ->
+       setr st rd (VBool false); true
+     | _ -> setr st rd (VBool (Z.lt (to_z a) (to_z b))); true)
+  | GT (rd, rs1, rs2) ->
+    let a = getr st rs1 and b = getr st rs2 in
+    (match a, b with
+     | VCipher _, _ | _, VCipher _ | VPubKey _, _ | _, VPubKey _ ->
+       setr st rd (VBool false); true
+     | _ -> setr st rd (VBool (Z.gt (to_z a) (to_z b))); true)
+  | NEQ (rd, rs1, rs2) ->
+    let a = getr st rs1 and b = getr st rs2 in
+    (match a, b with
+     | (VCipher _ | VPubKey _), VInt z when Z.equal z Z.zero ->
+       setr st rd (VBool true); true
+     | VInt z, (VCipher _ | VPubKey _) when Z.equal z Z.zero ->
+       setr st rd (VBool true); true
+     | VCipher a, VCipher b -> setr st rd (VBool (a != b)); true
+     | VPubKey a, VPubKey b -> setr st rd (VBool (a != b)); true
+     | VCipher _, _ | _, VCipher _ | VPubKey _, _ | _, VPubKey _ ->
+       setr st rd (VBool true); true
+     | _ -> setr st rd (VBool (to_string a <> to_string b)); true)
+  | LDI (_, VCap _) -> revert st
+  | LDI (rd, v) ->
+    setr st rd v; true
+  | MOV (rd, rs) ->
+    setr st rd (getr st rs); true
+  | SLOAD (rd, key) ->
+    (match load_storage_value st key with
+     | Some value -> setr st rd value; true
+     | None -> revert st)
+  | SSTORE (key, rs) ->
+    if not (view_guard st) then false
+    else if is_reserved_key key then revert st
+    else
+    (match getr st rs with
+     | VCap _ | VCipher _ | VPubKey _ -> revert st
+     | v ->
+       let s = to_string v in
+       let len = String.length s in
+       if len > max_storage_value_len then revert st
+       else begin
+         if not (charge_bytes st ~base:0 ~prior:(len / 32)
+           [Byte_work.Write (String.length key, len)]) then revert st
+         else begin
+           let old_val = Hashtbl.find_opt st.storage key in
+           st.undo_stack <- UndoWrite (key, old_val) :: st.undo_stack;
+           storage_replace st key s; true
+         end
+       end)
+  | SDEL key ->
+    if not (view_guard st) then false
+    else if is_reserved_key key then revert st
+    else if not (charge_bytes st ~base:0 ~prior:0
+      [Byte_work.Erase (String.length key)]) then revert st
+    else begin
+      let old_val = Hashtbl.find_opt st.storage key in
+      st.undo_stack <- UndoWrite (key, old_val) :: st.undo_stack;
+      storage_remove st key; true
+    end
+  | SDELK rk ->
+    if not (view_guard st) then false
+    else
+      let key = to_string (getr st rk) in
+      if is_reserved_key key then revert st
+      else if not (charge_bytes st ~base:0 ~prior:0
+        [Byte_work.Erase (String.length key)]) then revert st
+      else begin
+        let old_val = Hashtbl.find_opt st.storage key in
+        st.undo_stack <- UndoWrite (key, old_val) :: st.undo_stack;
+        storage_remove st key; true
+      end
+  | CAP_CHECK (kind, reg) ->
+    begin
+      match getr st reg with
+      | VCap cap when cap_value kind (VCap cap) && st.ctx.cap_live cap -> true
+      | _ -> revert st
+    end
+  | CAP_CLOSE (kind, reg) ->
+    if not (view_guard st) then false
+    else
+      begin
+        match getr st reg with
+        | VCap cap
+            when cap_value kind (VCap cap)
+              && st.ctx.cap_live cap
+              && not (List.exists (cap_equal cap) st.closes) ->
+          st.closes <- cap :: st.closes;
+          st.undo_stack <- UndoClose cap :: st.undo_stack;
+          true
+        | _ -> revert st
+      end
+  | SLOADK (rd, rs) ->
+    let key = to_string (getr st rs) in
+    let v = match Hashtbl.find_opt st.storage key with
+      | Some s -> VString s | None -> VString "0" in
+    setr st rd v; true
+  | SSTOREK (rk, rv) ->
+    if not (view_guard st) then false
+    else
+    (match getr st rv with
+     | VCap _ | VCipher _ | VPubKey _ -> revert st
+     | v ->
+       let key = to_string (getr st rk) in
+       if is_reserved_key key then revert st
+       else
+       let s = to_string v in
+       let len = String.length s in
+       if len > max_storage_value_len then revert st
+       else begin
+         if not (charge_bytes st ~base:0 ~prior:(len / 32)
+           [Byte_work.Write (String.length key, len)]) then revert st
+         else begin
+           let old_val = Hashtbl.find_opt st.storage key in
+           st.undo_stack <- UndoWrite (key, old_val) :: st.undo_stack;
+           storage_replace st key s; true
+         end
+       end)
+  | MLOAD (rd, idx) ->
+    if not (memory_span st idx [1]) then revert st
+    else
+    (match Hashtbl.find_opt st.memory.data idx with
+     | Some value -> setr st rd value; true
+     | None when st.strict_values -> revert st
+     | None -> setr st rd (VInt Z.zero); true)
+  | MSTORE (idx, rs) ->
+    if not (memory_span st ~sized:true idx [1]) then revert st
+    else begin
+      Hashtbl.replace st.memory.data idx (getr st rs);
+      if idx >= st.memory.size then st.memory.size <- idx + 1;
+      true
+    end
+  | MLOADR (rd, rs_idx) ->
+    let idx = Z.to_int (to_z (getr st rs_idx)) in
+    if idx < 0 || idx > 16_777_216 then revert st
+    else begin
+      (match Hashtbl.find_opt st.memory.data idx with
+       | Some value -> setr st rd value; true
+       | None when st.strict_values -> revert st
+       | None -> setr st rd (VInt Z.zero); true)
+    end
+  | MSTORER (rs_idx, rs_val) ->
+    let idx = Z.to_int (to_z (getr st rs_idx)) in
+    if idx < 0 || idx > 16_777_216 then revert st
+    else begin
+      Hashtbl.replace st.memory.data idx (getr st rs_val);
+      if idx >= st.memory.size then st.memory.size <- idx + 1;
+      true
+    end
+  | PARSE_INTS (rd_count, rs_string, rs_base) ->
+    let s = to_string (getr st rs_string) in
+    let number = to_z (getr st rs_base) in
+    let base = if st.ctx.byte_work <> None && not (Z.fits_int number)
+      then -1 else Z.to_int number in
+    if base < 0 || base > 16_777_216 then revert st
+    else if st.ctx.byte_work <> None then
+      (match parse_integers st s base with
+       | None -> revert st
+       | Some values ->
+         Array.iteri (fun index value ->
+           Hashtbl.replace st.memory.data (base + index) (VInt value)) values;
+         let count = Array.length values in
+         if count > 0 then st.memory.size <- max st.memory.size (base + count);
+         setr st rd_count (VInt (Z.of_int count));
+         true)
+    else begin
+      let parts = String.split_on_char ',' s in
+      let count = ref 0 in
+      let ok = ref true in
+      List.iter (fun part ->
+        if !ok then begin
+          let trimmed = String.trim part in
+          if trimmed <> "" then begin
+            let idx = base + !count in
+            if idx > 16_777_216 then ok := false
+            else begin
+              (try
+                Hashtbl.replace st.memory.data idx (VInt (Z.of_string trimmed))
+              with (Out_of_memory | Stack_overflow) as error -> raise error | _ ->
+                if st.strict_values then ok := false
+                else Hashtbl.replace st.memory.data idx (VInt Z.zero));
+              if idx >= st.memory.size then st.memory.size <- idx + 1;
+              if not (add_dyn_effort st 2) then ok := false
+              else count := !count + 1
+            end
+          end
+        end
+      ) parts;
+      if not !ok then revert st
+      else begin
+        setr st rd_count (VInt (Z.of_int !count)); true
+      end
+    end
+  | ISADDR (rd, rs) ->
+    setr st rd (VBool (is_valid_addr (to_string (getr st rs)))); true
+  | ISHEX (rd, rs) ->
+    let s = to_string (getr st rs) in
+    let is_hex = String.length s > 0 && try
+      String.iter (fun c -> match c with
+        | '0'..'9' | 'a'..'f' | 'A'..'F' -> ()
+        | _ -> raise Exit
+      ) s; true
+    with Exit -> false in
+    setr st rd (VBool is_hex); true
+  | STATE_PATH_KEY (rd, rs) ->
+    begin
+      match Octra_core.Circles.path_key_of_state_ref (to_string (getr st rs)) with
+      | Ok (_, _, path_key) ->
+        setr st rd (VString path_key);
+        true
+      | Error _ ->
+        revert st
+    end
+  | OBJECT_MEMBER_COUNT (rd, robject_ref) ->
+    let object_ref = to_string (getr st robject_ref) in
+    if not (add_object_scan_effort st) then
+      revert st
+    else begin
+      setr st rd (VInt (Z.of_int (Array.length (object_members st object_ref))));
+      true
+    end
+  | OBJECT_HAS_MEMBER (rd, robject_ref, rmember_ref) ->
+    let object_ref = to_string (getr st robject_ref) in
+    let member_ref = to_string (getr st rmember_ref) in
+    let present =
+      Octra_core.Circle_object_member_query.has_member_in_storage_tbl
+        st.storage
+        object_ref
+        member_ref in
+    setr st rd (VBool present);
+    true
+  | OBJECT_MEMBER_REF_AT (rd, robject_ref, rindex) ->
+    let object_ref = to_string (getr st robject_ref) in
+    let index = Z.to_int (to_z (getr st rindex)) in
+    if not (add_object_scan_effort st) then
+      revert st
+    else begin
+      let members = object_members st object_ref in
+      if index >= 0 && index < Array.length members then
+        setr st rd (VString members.(index))
+      else
+        setr st rd (VString "");
+      true
+    end
+  | OBJECT_TRANSITION_APPLY
+      ( rd,
+        rtransition_ref,
+        robject_ref,
+        rprevious_state_ref,
+        rnext_state_ref,
+        rmember_bundle,
+        rtouched_members_hash,
+        rproof_kind,
+        rproof_receipt_hash,
+        rstatus,
+        rintent_id ) ->
+    if not (view_guard st) then false
+    else
+      let object_ref = to_string (getr st robject_ref) in
+      if not (add_object_scan_effort st) then
+        revert st
+      else
+      begin
+        match
+          Octra_core.Circle_object_apply.apply
+            ~quorum:st.ctx.object_quorum
+            ~member_refs:(fun () -> Array.to_list (object_members st object_ref))
+            ~current_epoch:st.ctx.current_epoch
+            ~storage_tbl:st.storage
+            ~transition_ref:(to_string (getr st rtransition_ref))
+            ~object_ref
+            ~previous_state_ref:(to_string (getr st rprevious_state_ref))
+            ~next_state_ref:(to_string (getr st rnext_state_ref))
+            ~member_bundle:(to_string (getr st rmember_bundle))
+            ~touched_members_hash:(to_string (getr st rtouched_members_hash))
+            ~proof_kind_raw:(to_string (getr st rproof_kind))
+            ~proof_receipt_hash_raw:(to_string (getr st rproof_receipt_hash))
+            ~status:(to_string (getr st rstatus))
+            ~intent_id:(to_string (getr st rintent_id))
+            ()
+        with
+        | Error _ ->
+          revert st
+        | Ok result ->
+          if not (charge_object_writes st result.writes) then
+            revert st
+          else if
+            List.exists
+              (function
+                | Octra_core.Circle_object_apply.Set (_key, value) ->
+                  String.length value > max_storage_value_len
+                | Octra_core.Circle_object_apply.Del _ ->
+                  false)
+              result.writes
+          then
+            revert st
+          else if apply_object_writes st result.writes then begin
+            setr st rd (VInt (Z.of_int64 result.version));
+            true
+          end else
+            revert st
+      end
+  | ASSERT_ADDR rs ->
+    let s = to_string (getr st rs) in
+    if is_valid_addr s then true
+    else begin
+      ignore (append_event st { contract = st.address; depth = st.call_depth;
+        event = "Require"; values = [VString "invalid address"] });
+      revert st
+    end
+  | SUBSTR (rd, rs, rstart, rlen) ->
+    let source = getr st rs in
+    let s = to_string source in
+    let slen = String.length s in
+    if not (add_dyn_effort st (slen / 256)) then revert st
+    else
+    let start = Z.to_int (to_z (getr st rstart)) in
+    let len = Z.to_int (to_z (getr st rlen)) in
+    let output value =
+      match st.byte_result, source with
+      | Typed_bytes, VBytes _ -> VBytes value
+      | Typed_bytes, _ | String_bytes, _ -> VString value
+    in
+    let actual_len =
+      if start < 0 || start > slen || len < 0 then 0
+      else min len (slen - start) in
+    if not (charge_bytes st ~base:0 ~prior:0 [Byte_work.Copy (actual_len, 0)])
+    then revert st
+    else begin
+      let value = if actual_len = 0 then "" else String.sub s start actual_len in
+      setr st rd (output value);
+      true
+    end
+  | INDEXOF (rd, rs, rsearch) ->
+    let s = to_string (getr st rs) in
+    let search = to_string (getr st rsearch) in
+    let slen = String.length s in
+    let plen = String.length search in
+    if not (add_dyn_product st [slen; max plen 1] 1024) then revert st
+    else if plen = 0 then (setr st rd (VInt Z.zero); true)
+    else if plen > slen then (setr st rd (VInt (Z.of_int (-1))); true)
+    else if st.ctx.byte_work <> None then
+      (match checked_product plen 8 with
+       | Some bytes when charge_bytes st ~base:0 ~prior:0 [Byte_work.Allocate bytes] ->
+         setr st rd (VInt (Z.of_int (Text_work.find s search)));
+         true
+       | _ -> revert st)
+    else begin
+      let found = ref (-1) in
+      for i = 0 to slen - plen do
+        if !found = -1 && String.sub s i plen = search then found := i
+      done;
+      setr st rd (VInt (Z.of_int !found)); true
+    end
+  | SHA256 (rd, rs) ->
+    let s = to_string (getr st rs) in
+    let cost = String.length s / 64 in
+    if not (charge_bytes st ~base:cost ~prior:cost [Byte_work.Copy (64, 0)])
+    then revert st
+    else begin
+      let h = Digestif.SHA256.digest_string s in
+      setr st rd (VString (Digestif.SHA256.to_hex h)); true
+    end
+  | KECCAK256 (rd, rs) ->
+    let s = to_string (getr st rs) in
+    let cost = String.length s / 64 in
+    if not (charge_bytes st ~base:cost ~prior:cost [Byte_work.Copy (64, 0)])
+    then revert st
+    else begin
+      let h = Digestif.KECCAK_256.digest_string s in
+      setr st rd (VString (Digestif.KECCAK_256.to_hex h)); true
+    end
+  | ED25519_OK (rd, rpk, rmsg, rsig) ->
+    (match to_bytes (getr st rpk), to_bytes (getr st rmsg), to_bytes (getr st rsig) with
+     | Some pk_in, Some msg, Some sig_in ->
+       if not (add_dyn_effort st ((String.length msg) / 64)) then revert st
+       else
+         let ok =
+           match decode_raw_or_b64_len 32 pk_in, decode_raw_or_b64_len 64 sig_in with
+           | Some pk_raw, Some sig_raw ->
+             let pk_b64 = Base64.encode_exn pk_raw in
+             let sig_b64 = Base64.encode_exn sig_raw in
+             Octra_core.Peer_auth.verify msg sig_b64 pk_b64
+           | _ -> false
+         in
+         setr st rd (VBool ok); true
+     | _ -> revert st)
+  | BITAND (rd, ra, rb) ->
+    let mask64 = Z.sub (Z.shift_left Z.one 64) Z.one in
+    let a = Z.logand (to_z (getr st ra)) mask64 in
+    let b = Z.logand (to_z (getr st rb)) mask64 in
+    setr st rd (VInt (Z.logand a b)); true
+  | BITOR (rd, ra, rb) ->
+    let mask64 = Z.sub (Z.shift_left Z.one 64) Z.one in
+    let a = Z.logand (to_z (getr st ra)) mask64 in
+    let b = Z.logand (to_z (getr st rb)) mask64 in
+    setr st rd (VInt (Z.logor a b)); true
+  | BITXOR (rd, ra, rb) ->
+    let mask64 = Z.sub (Z.shift_left Z.one 64) Z.one in
+    let a = Z.logand (to_z (getr st ra)) mask64 in
+    let b = Z.logand (to_z (getr st rb)) mask64 in
+    setr st rd (VInt (Z.logxor a b)); true
+  | BITSHL (rd, ra, rb) ->
+    let mask64 = Z.sub (Z.shift_left Z.one 64) Z.one in
+    let a = Z.logand (to_z (getr st ra)) mask64 in
+    let n = Z.to_int (to_z (getr st rb)) in
+    if n < 0 || n > 63 then (setr st rd (VInt Z.zero); true)
+    else (setr st rd (VInt (Z.logand (Z.shift_left a n) mask64)); true)
+  | BITSHR (rd, ra, rb) ->
+    let mask64 = Z.sub (Z.shift_left Z.one 64) Z.one in
+    let a = Z.logand (to_z (getr st ra)) mask64 in
+    let n = Z.to_int (to_z (getr st rb)) in
+    if n < 0 || n > 63 then (setr st rd (VInt Z.zero); true)
+    else (setr st rd (VInt (Z.shift_right a n)); true)
+  | SKEYS (rd_count, rs_prefix, rs_base) when st.ctx.byte_work <> None ->
+    (match read_int st rs_base with
+     | None -> revert st
+     | Some base ->
+       match copy_key_page st ~prefix:(to_string (getr st rs_prefix)) ~after:"" ~base with
+       | None -> revert st
+       | Some (count, _) -> setr st rd_count (VInt (Z.of_int count)); true)
+  | SKEYS_PAGE (rd_count, rd_next, rs_prefix, rs_after, rs_base)
+    when st.ctx.byte_work <> None ->
+    (match read_int st rs_base with
+     | None -> revert st
+     | Some base ->
+       match copy_key_page st ~prefix:(to_string (getr st rs_prefix))
+         ~after:(to_string (getr st rs_after)) ~base with
+       | None -> revert st
+       | Some (count, next) ->
+         setr st rd_count (VInt (Z.of_int count));
+         setr st rd_next (VString next);
+         true)
+  | SKEYS (rd_count, rs_prefix, rs_base) ->
+    let prefix = to_string (getr st rs_prefix) in
+    let base = Z.to_int (to_z (getr st rs_base)) in
+    let plen = String.length prefix in
+    let max_keys = 1000 in
+
+    let suffixes = ref [] in
+    Hashtbl.iter (fun k _v ->
+      if not (is_reserved_key k)
+         && String.length k >= plen && String.sub k 0 plen = prefix then
+        suffixes := String.sub k plen (String.length k - plen) :: !suffixes
+    ) st.storage;
+    let sorted = List.sort String.compare !suffixes in
+    let count = ref 0 in
+    let ok = ref true in
+    List.iter (fun suffix ->
+      if !ok && !count < max_keys then begin
+        let idx = base + !count in
+        if idx >= 0 && idx < 16_777_216 then begin
+          if not (add_dyn_effort st 5) then ok := false
+          else begin
+            Hashtbl.replace st.memory.data idx (VString suffix);
+            if idx >= st.memory.size then st.memory.size <- idx + 1;
+            count := !count + 1
+          end
+        end
+      end
+    ) sorted;
+    if not !ok then revert st
+    else (setr st rd_count (VInt (Z.of_int !count)); true)
+  | SKEYS_PAGE (rd_count, rd_next, rs_prefix, rs_after, rs_base) ->
+    let prefix = to_string (getr st rs_prefix) in
+    let after = to_string (getr st rs_after) in
+    let base = Z.to_int (to_z (getr st rs_base)) in
+    let plen = String.length prefix in
+    let max_keys = 1000 in
+
+    let suffixes = ref [] in
+    Hashtbl.iter (fun k _v ->
+      if not (is_reserved_key k)
+         && String.length k >= plen && String.sub k 0 plen = prefix then begin
+        let suffix = String.sub k plen (String.length k - plen) in
+
+        if after = "" || String.compare suffix after > 0 then
+          suffixes := suffix :: !suffixes
+      end
+    ) st.storage;
+
+    let sorted = List.sort String.compare !suffixes in
+
+    let count = ref 0 in
+    let last_suffix = ref "" in
+    let ok = ref true in
+    List.iter (fun suffix ->
+      if !ok && !count < max_keys then begin
+        let idx = base + !count in
+        if idx >= 0 && idx < 16_777_216 then begin
+          if not (add_dyn_effort st 5) then ok := false
+          else begin
+            Hashtbl.replace st.memory.data idx (VString suffix);
+            if idx >= st.memory.size then st.memory.size <- idx + 1;
+            last_suffix := suffix;
+            count := !count + 1
+          end
+        end
+      end
+    ) sorted;
+    if not !ok then revert st
+    else begin
+    setr st rd_count (VInt (Z.of_int !count));
+
+    let has_more = List.length sorted > !count in
+    setr st rd_next (VString (if has_more then !last_suffix else ""));
+    true
+    end
+  | SLOADN (rs_base_key, rs_base_val, rs_count) ->
+    let base_key = Z.to_int (to_z (getr st rs_base_key)) in
+    let base_val = Z.to_int (to_z (getr st rs_base_val)) in
+    let count = Z.to_int (to_z (getr st rs_count)) in
+    let count = min count 1000 in
+    if count > 0 && not (memory_span st base_key [count] &&
+      memory_span st ~sized:true base_val [count]) then revert st
+    else begin
+    let ok = ref true in
+    let i = ref 0 in
+    while !ok && !i < count do
+      let key_idx = base_key + !i in
+      let val_idx = base_val + !i in
+      let key = match Hashtbl.find_opt st.memory.data key_idx with
+        | Some v -> to_string v | None -> "" in
+      let v = match Hashtbl.find_opt st.storage key with
+        | Some s -> VString s | None -> VString "" in
+      Hashtbl.replace st.memory.data val_idx v;
+      if val_idx >= st.memory.size then st.memory.size <- val_idx + 1;
+      if not (add_dyn_effort st 15) then ok := false;
+      incr i
+    done;
+    if not !ok then revert st else true
+    end
+  | SSTOREN (rs_base_key, rs_base_val, rs_count) ->
+    if not (view_guard st) then false
+    else if st.ctx.byte_work <> None then begin
+      let keys = Z.to_int (to_z (getr st rs_base_key)) in
+      let values = Z.to_int (to_z (getr st rs_base_val)) in
+      let count = Z.to_int (to_z (getr st rs_count)) in
+      match prepare_byte_batch st keys values count with
+      | None -> revert st
+      | Some entries ->
+      let requests = List.map (fun (key, value) ->
+        Byte_work.Write (String.length key, String.length value)) entries in
+      if not (charge_bytes st ~base:(80 * count) ~prior:0 requests)
+      then revert st
+      else begin
+        List.iter (fun (key, value) ->
+          let old = Hashtbl.find_opt st.storage key in
+          st.undo_stack <- UndoWrite (key, old) :: st.undo_stack;
+          storage_replace st key value) entries;
+        true
+      end
+    end
+    else begin
+      let base_key = Z.to_int (to_z (getr st rs_base_key)) in
+      let base_val = Z.to_int (to_z (getr st rs_base_val)) in
+      let count = Z.to_int (to_z (getr st rs_count)) in
+      let count = min count 1000 in
+      let ok = ref true in
+      let i = ref 0 in
+      while !ok && !i < count do
+        let key_idx = base_key + !i in
+        let val_idx = base_val + !i in
+        let key = match Hashtbl.find_opt st.memory.data key_idx with
+          | Some v -> to_string v | None -> "" in
+        let value = match Hashtbl.find_opt st.memory.data val_idx with
+          | Some v -> to_string v | None -> "" in
+        if String.length key > 0 && String.length value <= max_storage_value_len
+           && not (is_reserved_key key) then begin
+          let old_val = Hashtbl.find_opt st.storage key in
+          st.undo_stack <- UndoWrite (key, old_val) :: st.undo_stack;
+          storage_replace st key value
+        end;
+        if not (add_dyn_effort st 80) then ok := false;
+        incr i
+      done;
+      if not !ok then revert st else true
+    end
+  | FSTORE (rd_hash, rs_data) ->
+    if not (view_guard st) then false
+    else begin
+      let data = to_string (getr st rs_data) in
+      let max_blob = 10_485_760 in
+      if String.length data > max_blob then (st.reverted <- true; false)
+      else if st.ctx.byte_work <> None && not (charge_bytes st ~base:0 ~prior:0
+        [Byte_work.Write (64, String.length data); Byte_work.Copy (64, 0)]) then revert st
+      else begin
+        let hash = Digestif.SHA256.(to_hex (digest_string data)) in
+        Hashtbl.replace st.blobs hash data;
+        if st.ctx.byte_work = None
+          && not (add_dyn_effort st (String.length data / 1024)) then revert st
+        else (setr st rd_hash (VString hash); true)
+      end
+    end
+  | FLOAD (rd_data, rs_hash) ->
+    let hash = to_string (getr st rs_hash) in
+    (match Hashtbl.find_opt st.blobs hash with
+     | Some data ->
+       if not (add_dyn_effort st (String.length data / 1024)) then revert st
+       else (setr st rd_data (VString data); true)
+     | None -> setr st rd_data (VString ""); true)
+  | MATMUL (rd_addr, rs_lhs, rs_rhs, rs_m, rs_k, rs_n) ->
+    let dst_addr = Z.to_int (to_z (getr st rd_addr)) in
+    let lhs_addr = Z.to_int (to_z (getr st rs_lhs)) in
+    let rhs_addr = Z.to_int (to_z (getr st rs_rhs)) in
+    let m = Z.to_int (to_z (getr st rs_m)) in
+    let k = Z.to_int (to_z (getr st rs_k)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    if m <= 0 || k <= 0 || n <= 0 || m > 32768 || k > 32768 || n > 32768 then revert st
+    else if not (memory_span st ~sized:true dst_addr [m; n] &&
+      memory_span st lhs_addr [m; k] && memory_span st rhs_addr [k; n] &&
+      memory_span st 0 [m; n; k]) then revert st
+    else begin
+      if not (add_dyn_product st [m; n; k] 1024) then revert st
+      else begin
+        let mem_get a =
+          match Hashtbl.find_opt st.memory.data a with
+          | Some v -> read_number st v
+          | None -> Z.zero
+        in
+        let row_size = n * k in
+        let operands index =
+          let row = index / row_size in
+          let offset = index mod row_size in
+          let column = offset / k in
+          let inner = offset mod k in
+          let first = mem_get (lhs_addr + row * k + inner) in
+          let second = mem_get (rhs_addr + inner * n + column) in
+          first, second
+        in
+        match prepare_int_work st Int_work.Mul (m * row_size) operands with
+        | None -> revert st
+        | Some values ->
+          for r = 0 to m - 1 do
+            for c = 0 to n - 1 do
+              let acc = ref Z.zero in
+              for i = 0 to k - 1 do
+                let index = r * row_size + c * k + i in
+                let lv, rv = int_values st Int_work.Mul values index operands in
+                acc := Z.add !acc (Z.mul lv rv)
+              done;
+              let cell = dst_addr + r * n + c in
+              Hashtbl.replace st.memory.data cell (VInt !acc);
+              if cell >= st.memory.size then st.memory.size <- cell + 1
+            done
+          done;
+          true
+      end
+    end
+  | VECDOT (rd, rs_a, rs_b, rs_n) ->
+    let a_addr = Z.to_int (to_z (getr st rs_a)) in
+    let b_addr = Z.to_int (to_z (getr st rs_b)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    if n <= 0 || n > 131072 then revert st
+    else if not (memory_span st a_addr [n] && memory_span st b_addr [n]) then revert st
+    else begin
+      if not (add_dyn_effort st (n / 16)) then revert st
+      else begin
+        let mem_get a =
+          match Hashtbl.find_opt st.memory.data a with
+          | Some v -> read_number st v
+          | None -> Z.zero
+        in
+        let operands index =
+          let first = mem_get (a_addr + index) in
+          let second = mem_get (b_addr + index) in
+          first, second
+        in
+        match prepare_int_work st Int_work.Mul n operands with
+        | None -> revert st
+        | Some values ->
+          let acc = ref Z.zero in
+          for i = 0 to n - 1 do
+            let av, bv = int_values st Int_work.Mul values i operands in
+            acc := Z.add !acc (Z.mul av bv)
+          done;
+          setr st rd (VInt !acc);
+          true
+      end
+    end
+  | VECDOT_Q16 (rd, rs_a, rs_b, rs_n) ->
+    (match read_int st rs_a, read_int st rs_b, read_int st rs_n with
+     | Some a_addr, Some b_addr, Some n
+       when valid_mem_span a_addr n && valid_mem_span b_addr n ->
+       if not (add_dyn_effort st (n / 16)) then revert st
+       else if not (reserve_vectors st (Vector_space.arrays 5 n)) then revert st
+       else
+         (match read_q16 st a_addr n, read_q16 st b_addr n with
+          | Some left, Some right ->
+            let value = Fixed_q16.dot left 0 right 0 n in
+            if Fixed_q16.in_range value then begin
+              setr st rd (VInt value);
+              true
+            end else revert st
+          | _ -> revert st)
+     | _ -> revert st)
+  | EXP_LUT (rd, rs_x) ->
+    let x = to_z (getr st rs_x) in
+    let q_one = 65536 in
+    let lut_range_min = -8 * q_one in
+    let lut_range_max = 8 * q_one in
+    let xi = if Z.fits_int x then Z.to_int x else 0 in
+    let xi = max lut_range_min (min lut_range_max xi) in
+    let f = float_of_int xi /. float_of_int q_one in
+    let e = exp f in
+    let result = round_float_to_int (e *. float_of_int q_one) in
+    setr st rd (VInt (Z.of_int result));
+    true
+  | EXP_Q16 (rd, rs_x) ->
+    let x = to_z (getr st rs_x) in
+    if not (add_dyn_effort st 8) then revert st
+    else begin
+      setr st rd (VInt (Fixed_q16.exp x));
+      true
+    end
+  | SOFTMAX_INPLACE (rs_addr, rs_n) ->
+    let addr = Z.to_int (to_z (getr st rs_addr)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    if n <= 0 || n > 131072 then revert st
+    else if not (memory_span st addr [n]) then revert st
+    else begin
+      if not (add_dyn_product st [n; 8] 1) then revert st
+      else if not (reserve_vectors st (Vector_space.arrays 2 n)) then revert st
+      else begin
+        let q_one = 65536.0 in
+        let mem_get a =
+          match Hashtbl.find_opt st.memory.data a with
+          | Some v ->
+            let z = read_number st v in
+            if Z.fits_int z then Z.to_int z else 0
+          | None -> 0
+        in
+        let arr = Array.init n (fun i -> mem_get (addr + i)) in
+        let max_v = Array.fold_left max arr.(0) arr in
+        let exps = Array.map (fun v ->
+          let f = float_of_int (v - max_v) /. q_one in
+          exp f
+        ) arr in
+        let sum = Array.fold_left (+.) 0.0 exps in
+        if sum <= 0.0 then revert st
+        else begin
+          for i = 0 to n - 1 do
+            let prob = exps.(i) /. sum in
+            let qv = round_float_to_int (prob *. q_one) in
+            Hashtbl.replace st.memory.data (addr + i) (VInt (Z.of_int qv))
+          done;
+          true
+        end
+      end
+    end
+  | SOFTMAX_Q16_INPLACE (rs_addr, rs_n) ->
+    (match read_int st rs_addr, read_int st rs_n with
+     | Some addr, Some n when valid_mem_span addr n ->
+       if not (add_dyn_product st [n; 8] 1) then revert st
+       else if not (reserve_vectors st (Vector_space.arrays 5 n)) then revert st
+       else
+         (match read_q16 st addr n with
+          | None -> revert st
+          | Some values ->
+            let max_value = Array.fold_left Z.max values.(0) values in
+            let exps = Array.map (fun value -> Fixed_q16.exp (Z.sub value max_value)) values in
+            let total = Array.fold_left Z.add Z.zero exps in
+            if Z.sign total <= 0 then revert st
+            else
+              let probs = Array.map (fun value -> Fixed_q16.scale_floor value total) exps in
+              if not (Array.for_all Option.is_some probs) then revert st
+              else
+                let result = Array.map Option.get probs in
+                let max_index = ref 0 in
+                for i = 1 to n - 1 do
+                  if Z.compare exps.(i) exps.(!max_index) > 0 then max_index := i
+                done;
+                let current = Array.fold_left Z.add Z.zero result in
+                result.(!max_index) <-
+                  Z.add result.(!max_index) (Z.sub Fixed_q16.scale current);
+                if not (Array.for_all Fixed_q16.in_range result) then revert st
+                else begin
+                  write_q16 st addr result;
+                  true
+                end)
+     | _ -> revert st)
+  | LAYERNORM_Q16_INPLACE (rs_addr, rs_n, rs_gamma, rs_beta) ->
+    (match read_int st rs_addr, read_int st rs_n,
+           read_int st rs_gamma, read_int st rs_beta with
+     | Some addr, Some n, Some gamma_addr, Some beta_addr
+       when valid_mem_span addr n && valid_mem_span gamma_addr n &&
+            valid_mem_span beta_addr n ->
+       if not (add_dyn_product st [n; 4] 1) then revert st
+       else if not (reserve_vectors st (Vector_space.arrays 7 n)) then revert st
+       else
+         (match read_q16 st addr n, read_q16 st gamma_addr n,
+                read_q16 st beta_addr n with
+          | Some values, Some gamma, Some beta ->
+            (match Fixed_q16.layer ~math:st.ctx.math values gamma beta with
+             | Some result -> write_q16 st addr result; true
+             | None -> revert st)
+          | _ -> revert st)
+     | _ -> revert st)
+  | LAYERNORM_INPLACE (rs_addr, rs_n, rs_gamma, rs_beta) ->
+    let addr = Z.to_int (to_z (getr st rs_addr)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    let gamma_addr = Z.to_int (to_z (getr st rs_gamma)) in
+    let beta_addr = Z.to_int (to_z (getr st rs_beta)) in
+    if n <= 0 || n > 131072 then revert st
+    else if not (memory_span st addr [n] && memory_span st gamma_addr [n] &&
+      memory_span st beta_addr [n]) then revert st
+    else begin
+      if not (add_dyn_product st [n; 4] 1) then revert st
+      else if not (reserve_vectors st (Vector_space.arrays 1 n)) then revert st
+      else begin
+        let q_one = 65536.0 in
+        let mem_get_f a =
+          match Hashtbl.find_opt st.memory.data a with
+          | Some v ->
+            let z = read_number st v in
+            if Z.fits_int z then float_of_int (Z.to_int z) /. q_one else 0.0
+          | None -> 0.0
+        in
+        let arr = Array.init n (fun i -> mem_get_f (addr + i)) in
+        let mean = Array.fold_left (+.) 0.0 arr /. float_of_int n in
+        let var = Array.fold_left (fun acc v -> acc +. (v -. mean) ** 2.0) 0.0 arr /. float_of_int n in
+        let inv_std = 1.0 /. sqrt (var +. 1e-5) in
+        for i = 0 to n - 1 do
+          let g = mem_get_f (gamma_addr + i) in
+          let b = mem_get_f (beta_addr + i) in
+          let normalized = (arr.(i) -. mean) *. inv_std in
+          let result = g *. normalized +. b in
+          let qv = round_float_to_int (result *. q_one) in
+          Hashtbl.replace st.memory.data (addr + i) (VInt (Z.of_int qv))
+        done;
+        true
+      end
+    end
+  | RELU_INPLACE (rs_addr, rs_n) ->
+    let addr = Z.to_int (to_z (getr st rs_addr)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    if n <= 0 || n > 1048576 then revert st
+    else if not (memory_span st addr [n]) then revert st
+    else begin
+      if not (add_dyn_effort st (n / 4)) then revert st
+      else begin
+        for i = 0 to n - 1 do
+          let cell = addr + i in
+          match Hashtbl.find_opt st.memory.data cell with
+          | Some v ->
+            let z = read_number st v in
+            if Z.sign z < 0 then
+              Hashtbl.replace st.memory.data cell (VInt Z.zero)
+          | None -> ()
+        done;
+        true
+      end
+    end
+  | RMSNORM_INPLACE (rs_addr, rs_n, rs_gamma) ->
+    let addr = Z.to_int (to_z (getr st rs_addr)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    let gamma_addr = Z.to_int (to_z (getr st rs_gamma)) in
+    if n <= 0 || n > 131072 then revert st
+    else if not (memory_span st addr [n] && memory_span st gamma_addr [n]) then revert st
+    else begin
+      if not (add_dyn_product st [n; 3] 1) then revert st
+      else if not (reserve_vectors st (Vector_space.arrays 1 n)) then revert st
+      else begin
+        let q_one = 65536.0 in
+        let mem_get_f a =
+          match Hashtbl.find_opt st.memory.data a with
+          | Some v ->
+            let z = read_number st v in
+            if Z.fits_int z then float_of_int (Z.to_int z) /. q_one else 0.0
+          | None -> 0.0
+        in
+        let arr = Array.init n (fun i -> mem_get_f (addr + i)) in
+        let sum_sq = Array.fold_left (fun acc v -> acc +. v *. v) 0.0 arr in
+        let mean_sq = sum_sq /. float_of_int n in
+        let inv_rms = 1.0 /. sqrt (mean_sq +. 1e-6) in
+        for i = 0 to n - 1 do
+          let g = mem_get_f (gamma_addr + i) in
+          let result = g *. arr.(i) *. inv_rms in
+          let qv = round_float_to_int (result *. q_one) in
+          Hashtbl.replace st.memory.data (addr + i) (VInt (Z.of_int qv))
+        done;
+        true
+      end
+    end
+  | RMSNORM_Q16_INPLACE (rs_addr, rs_n, rs_gamma) ->
+    (match read_int st rs_addr, read_int st rs_n, read_int st rs_gamma with
+     | Some addr, Some n, Some gamma_addr
+       when valid_mem_span addr n && valid_mem_span gamma_addr n ->
+       if not (add_dyn_product st [n; 3] 1) then revert st
+       else if not (reserve_vectors st (Vector_space.arrays 5 n)) then revert st
+       else
+         (match read_q16 st addr n, read_q16 st gamma_addr n with
+          | Some values, Some gamma ->
+            (match Fixed_q16.rms ~math:st.ctx.math values gamma with
+             | Some result -> write_q16 st addr result; true
+             | None -> revert st)
+          | _ -> revert st)
+     | _ -> revert st)
+  | SILU_INPLACE (rs_addr, rs_n) ->
+    let addr = Z.to_int (to_z (getr st rs_addr)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    if n <= 0 || n > 131072 then revert st
+    else if not (memory_span st addr [n]) then revert st
+    else begin
+      if not (add_dyn_product st [n; 2] 1) then revert st
+      else begin
+        let q_one = 65536.0 in
+        for i = 0 to n - 1 do
+          let cell = addr + i in
+          match Hashtbl.find_opt st.memory.data cell with
+          | Some v ->
+            let z = read_number st v in
+            if Z.fits_int z then begin
+              let x = float_of_int (Z.to_int z) /. q_one in
+              let sigmoid = 1.0 /. (1.0 +. exp (-. x)) in
+              let result = x *. sigmoid in
+              let qv = round_float_to_int (result *. q_one) in
+              Hashtbl.replace st.memory.data cell (VInt (Z.of_int qv))
+            end
+          | None -> ()
+        done;
+        true
+      end
+    end
+  | SILU_Q16_INPLACE (rs_addr, rs_n) ->
+    (match read_int st rs_addr, read_int st rs_n with
+     | Some addr, Some n when valid_mem_span addr n ->
+       if not (add_dyn_product st [n; 2] 1) then revert st
+       else if not (reserve_vectors st (Vector_space.arrays 4 n)) then revert st
+       else
+         (match read_q16 st addr n with
+          | None -> revert st
+          | Some values ->
+            let result = Array.map Fixed_q16.silu values in
+            if not (Array.for_all Option.is_some result) then revert st
+            else begin
+              write_q16 st addr (Array.map Option.get result);
+              true
+            end)
+     | _ -> revert st)
+  | ELEMWISE_MUL_INPLACE (rs_dst, rs_src, rs_n) ->
+    let dst = Z.to_int (to_z (getr st rs_dst)) in
+    let src = Z.to_int (to_z (getr st rs_src)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    if n <= 0 || n > 1048576 then revert st
+    else if not (memory_span st dst [n] && memory_span st src [n]) then revert st
+    else begin
+      if not (add_dyn_effort st (n / 2)) then revert st
+      else
+        let operands index =
+          let first =
+            match Hashtbl.find_opt st.memory.data (dst + index) with
+            | Some value -> read_number st value
+            | None -> Z.zero
+          in
+          let second =
+            match Hashtbl.find_opt st.memory.data (src + index) with
+            | Some value -> read_number st value
+            | None -> Z.zero
+          in
+          first, second
+        in
+        match prepare_int_work st Int_work.Mul n operands with
+        | None -> revert st
+        | Some values ->
+          for i = 0 to n - 1 do
+            let first, second = int_values st Int_work.Mul values i operands in
+            Hashtbl.replace st.memory.data (dst + i)
+              (VInt (Fixed_q16.trunc_mul first second))
+          done;
+          true
+    end
+  | ELEMWISE_MUL_Q16 (rs_dst, rs_src, rs_n) ->
+    (match read_int st rs_dst, read_int st rs_src, read_int st rs_n with
+     | Some dst, Some src, Some n
+       when valid_mem_span dst n && valid_mem_span src n ->
+       if not (add_dyn_effort st (n / 2)) then revert st
+       else if not (reserve_vectors st (Vector_space.arrays 5 n)) then revert st
+       else
+         (match read_q16 st dst n, read_q16 st src n with
+          | Some left, Some right ->
+            (match Fixed_q16.elementwise_mul left right with
+             | Some result -> write_q16 st dst result; true
+             | None -> revert st)
+          | _ -> revert st)
+     | _ -> revert st)
+  | LOAD_INT8_BYTES_TO_MEM (rs_dst, rs_src, rs_off, rs_n, rs_scale) ->
+    let dst = Z.to_int (to_z (getr st rs_dst)) in
+    let src_str = to_string (getr st rs_src) in
+    let off = Z.to_int (to_z (getr st rs_off)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    let scale_z = to_z (getr st rs_scale) in
+    let slen = String.length src_str in
+    if n <= 0 || n > 1_048_576 then revert st
+    else if not (memory_span st dst [n] && decode_range st off n slen) then revert st
+    else if not (reserve_cells st ~count:n ~bits:(Z.numbits scale_z + 8)
+      ~cost:(fun () -> load_int_cost st ~base:(n / 2) ~count:n ~scale:scale_z))
+    then revert st
+    else begin
+      if not (add_dyn_effort st (n / 2)) then revert st
+      else if not
+          (charge_same_int_work st Int_work.Mul n Z.zero scale_z) then
+        revert st
+      else begin
+        for i = 0 to n - 1 do
+          let b = Char.code src_str.[off + i] in
+          let signed = if b >= 128 then b - 256 else b in
+          let v = Z.mul (Z.of_int signed) scale_z in
+          Hashtbl.replace st.memory.data (dst + i) (VInt v)
+        done;
+        true
+      end
+    end
+  | RESIDUAL_ADD (rs_dst, rs_src, rs_n) ->
+    let dst = Z.to_int (to_z (getr st rs_dst)) in
+    let src = Z.to_int (to_z (getr st rs_src)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    if n <= 0 || n > 1_048_576 then revert st
+    else if not (memory_span st dst [n] && memory_span st src [n]) then revert st
+    else begin
+      if not (add_dyn_effort st (n / 4)) then revert st
+      else
+        let operands index =
+          let first =
+            match Hashtbl.find_opt st.memory.data (dst + index) with
+            | Some value -> read_number st value
+            | None -> Z.zero
+          in
+          let second =
+            match Hashtbl.find_opt st.memory.data (src + index) with
+            | Some value -> read_number st value
+            | None -> Z.zero
+          in
+          first, second
+        in
+        match prepare_int_work st Int_work.Add n operands with
+        | None -> revert st
+        | Some values ->
+          for i = 0 to n - 1 do
+            let first, second = int_values st Int_work.Add values i operands in
+            Hashtbl.replace st.memory.data (dst + i)
+              (VInt (Z.add first second))
+          done;
+          true
+    end
+  | RESIDUAL_ADD_Q16 (rs_dst, rs_src, rs_n) ->
+    (match read_int st rs_dst, read_int st rs_src, read_int st rs_n with
+     | Some dst, Some src, Some n
+       when valid_mem_span dst n && valid_mem_span src n ->
+       if not (add_dyn_effort st (n / 4)) then revert st
+       else if not (reserve_vectors st (Vector_space.arrays 5 n)) then revert st
+       else
+         (match read_q16 st dst n, read_q16 st src n with
+          | Some left, Some right ->
+            (match Fixed_q16.residual_add left right with
+             | Some result -> write_q16 st dst result; true
+             | None -> revert st)
+          | _ -> revert st)
+     | _ -> revert st)
+  | MATMUL_Q16 (rd_addr, rs_lhs, rs_rhs, rs_m, rs_k, rs_n) ->
+    (match read_int st rd_addr, read_int st rs_lhs, read_int st rs_rhs,
+           read_int st rs_m, read_int st rs_k, read_int st rs_n with
+     | Some dst_addr, Some lhs_addr, Some rhs_addr, Some m, Some k, Some n
+       when m > 0 && k > 0 && n > 0 && m <= 32768 && k <= 32768 && n <= 32768 ->
+       (match checked_product m k, checked_product k n, checked_product m n with
+        | Some lhs_n, Some rhs_n, Some dst_n
+          when valid_mem_span lhs_addr lhs_n && valid_mem_span rhs_addr rhs_n &&
+               valid_mem_span dst_addr dst_n ->
+          if not (add_dyn_product st [m; n; k] 1024) then revert st
+          else if not (reserve_vectors st (Vector_space.q16_matmul m k n)) then revert st
+          else
+            (match read_q16 st lhs_addr lhs_n, read_q16 st rhs_addr rhs_n with
+             | Some lhs, Some rhs ->
+               let result = Array.init dst_n (fun cell ->
+                 let row = cell / n in
+                 let col = cell mod n in
+                 let acc = ref Z.zero in
+                 for i = 0 to k - 1 do
+                   let left = lhs.(row * k + i) in
+                   let right = rhs.(i * n + col) in
+                   acc := Z.add !acc (Z.mul left right)
+                 done;
+                 Fixed_q16.round16 !acc) in
+               if not (Array.for_all Fixed_q16.in_range result) then revert st
+               else begin
+                 write_q16 st dst_addr result;
+                 true
+               end
+             | _ -> revert st)
+        | _ -> revert st)
+     | _ -> revert st)
+  | SHIFT_ROUND_INPLACE (rs_addr, rs_n, rs_bits) ->
+    let addr = Z.to_int (to_z (getr st rs_addr)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    let bits = Z.to_int (to_z (getr st rs_bits)) in
+    if n <= 0 || n > 1_048_576 || bits <= 0 || bits > 62 then revert st
+    else if not (memory_span st addr [n]) then revert st
+    else begin
+      if not (add_dyn_effort st (n / 4)) then revert st
+      else begin
+        match Fixed_q16.make_round bits with
+        | None -> revert st
+        | Some round ->
+          for i = 0 to n - 1 do
+            let v = match Hashtbl.find_opt st.memory.data (addr + i) with
+              | Some x -> read_number st x | None -> Z.zero in
+            Hashtbl.replace st.memory.data (addr + i) (VInt (round v))
+          done;
+          true
+      end
+    end
+  | LOAD_INT8_B64_TO_MEM (rs_dst, rs_src, rs_off, rs_n, rs_scale) ->
+    let dst = Z.to_int (to_z (getr st rs_dst)) in
+    let src_b64 = to_string (getr st rs_src) in
+    let off = Z.to_int (to_z (getr st rs_off)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    let scale_z = to_z (getr st rs_scale) in
+    if n <= 0 || n > 1_048_576 then revert st
+    else if not (decode_span st dst off n) then revert st
+    else if not (reserve_decode st ~input:src_b64 ~count:n
+      ~bits:(Z.numbits scale_z + 8) ~cached:false
+      ~cost:(fun size ->
+        load_int_cost st ~base:(n + size / 4) ~count:n ~scale:scale_z)) then revert st
+    else begin
+      match Base64.decode src_b64 with
+      | Error _ -> revert st
+      | Ok decoded ->
+        let dlen = String.length decoded in
+        if not (decode_range st off n dlen) then revert st
+        else begin
+          if not (add_dyn_effort st (n + dlen / 4)) then revert st
+          else if not
+              (charge_same_int_work st Int_work.Mul n Z.zero scale_z) then
+            revert st
+          else begin
+            for i = 0 to n - 1 do
+              let b = Char.code decoded.[off + i] in
+              let signed = if b >= 128 then b - 256 else b in
+              let v = Z.mul (Z.of_int signed) scale_z in
+              Hashtbl.replace st.memory.data (dst + i) (VInt v)
+            done;
+            true
+          end
+        end
+    end
+  | LOAD_INT8_Q16 (rs_dst, rs_src, rs_off, rs_n, rs_scale) ->
+    (match read_int st rs_dst, read_int st rs_off, read_int st rs_n with
+     | Some dst, Some off, Some n
+       when n > 0 && n <= 1_048_576 && valid_mem_span dst n ->
+       let src_b64 = to_string (getr st rs_src) in
+       let scale = to_z (getr st rs_scale) in
+       if not (Fixed_q16.in_range scale) then revert st
+       else if not (decode_span st dst off n) then revert st
+       else if not (reserve_decode st ~input:src_b64 ~count:n ~bits:128 ~cached:false
+         ~cost:(fun size -> Some (n + size / 4))) then revert st
+       else
+         (match Base64.decode src_b64 with
+          | Error _ -> revert st
+          | Ok decoded ->
+            let dlen = String.length decoded in
+            if off < 0 || off > dlen || n > dlen - off then revert st
+            else if not (add_dyn_effort st (n + dlen / 4)) then revert st
+            else
+              let values = Array.init n (fun i ->
+                let byte = Char.code decoded.[off + i] in
+                let signed = if byte >= 128 then byte - 256 else byte in
+                Z.mul (Z.of_int signed) scale) in
+              if Array.for_all Fixed_q16.in_range values then begin
+                write_q16 st dst values;
+                true
+              end else revert st)
+     | _ -> revert st)
+  | APPEND_VEC_Q16 (rs_dst, rs_pos, rs_src, rs_n) ->
+    (match read_int st rs_dst, read_int st rs_pos, read_int st rs_src, read_int st rs_n with
+     | Some dst, Some pos, Some src, Some n
+       when pos >= 0 && pos <= 16_777_216 && valid_mem_span src n ->
+       if pos > max_int / n || not (memory_offset st dst pos n) then revert st
+       else
+         let target = dst + pos * n in
+         if target < dst || not (valid_mem_span target n) then revert st
+         else if not (add_dyn_effort st n) then revert st
+         else if not (reserve_vectors st (Vector_space.arrays 2 n)) then revert st
+         else
+           (match read_q16 st src n with
+            | Some values -> write_q16 st target values; true
+            | None -> revert st)
+     | _ -> revert st)
+  | ARGMAX_Q16 (rd, rs_addr, rs_n) ->
+    (match read_int st rs_addr, read_int st rs_n with
+     | Some addr, Some n when valid_mem_span addr n ->
+       if not (add_dyn_effort st (n / 2)) then revert st
+       else if not (reserve_vectors st (Vector_space.arrays 2 n)) then revert st
+       else
+         (match read_q16 st addr n with
+          | Some values ->
+            let best = ref 0 in
+            for index = 1 to n - 1 do
+              if Z.compare values.(index) values.(!best) > 0 then best := index
+            done;
+            setr st rd (VInt (Z.of_int !best));
+            true
+          | None -> revert st)
+     | _ -> revert st)
+  | ROPE_APPLY (rs_addr, rs_n_dim, rs_pos, rs_base) ->
+    let addr = Z.to_int (to_z (getr st rs_addr)) in
+    let n_dim = Z.to_int (to_z (getr st rs_n_dim)) in
+    let pos = Z.to_int (to_z (getr st rs_pos)) in
+    let base_q = to_z (getr st rs_base) in
+    if n_dim <= 0 || n_dim > 131072 || (n_dim land 1) <> 0 then revert st
+    else if pos < 0 then revert st
+    else if not (memory_span st addr [n_dim]) then revert st
+    else begin
+      if not (add_dyn_product st [n_dim; 4] 1) then revert st
+      else begin
+        let q_one = 65536.0 in
+        let base_f =
+          if Z.fits_int base_q then float_of_int (Z.to_int base_q) /. q_one
+          else 10000.0 in
+        let half = n_dim / 2 in
+        let mem_get_f a =
+          match Hashtbl.find_opt st.memory.data a with
+          | Some v ->
+            let z = read_number st v in
+            if Z.fits_int z then float_of_int (Z.to_int z) /. q_one else 0.0
+          | None -> 0.0
+        in
+        let pf = float_of_int pos in
+        let nf = float_of_int n_dim in
+        for i = 0 to half - 1 do
+          let exp_term = (2.0 *. float_of_int i) /. nf in
+          let inv_freq = 1.0 /. (base_f ** exp_term) in
+          let angle = pf *. inv_freq in
+          let c = cos angle in
+          let s = sin angle in
+          let x_re = mem_get_f (addr + i) in
+          let x_im = mem_get_f (addr + i + half) in
+          let new_re = x_re *. c -. x_im *. s in
+          let new_im = x_re *. s +. x_im *. c in
+          Hashtbl.replace st.memory.data (addr + i)
+            (VInt (Z.of_int (round_float_to_int (new_re *. q_one))));
+          Hashtbl.replace st.memory.data (addr + i + half)
+            (VInt (Z.of_int (round_float_to_int (new_im *. q_one))))
+        done;
+        true
+      end
+    end
+  | ROPE_APPLY_Q16 (rs_addr, rs_n_dim, rs_pos, rs_base) ->
+    (match read_int st rs_addr, read_int st rs_n_dim, read_int st rs_pos with
+     | Some addr, Some n_dim, Some pos
+       when pos >= 0 && n_dim > 0 && n_dim mod 2 = 0 && valid_mem_span addr n_dim ->
+       let base = to_z (getr st rs_base) in
+       if not (add_dyn_product st [n_dim; 4] 1) then revert st
+       else if not (reserve_vectors st (Vector_space.rope n_dim)) then revert st
+       else
+         (match read_q16 st addr n_dim with
+          | Some values ->
+            (match Fixed_q16.rope values base pos with
+             | Some result -> write_q16 st addr result; true
+             | None -> revert st)
+          | None -> revert st)
+     | _ -> revert st)
+  | MATMUL_FP (rd_addr, rs_lhs, rs_rhs, rs_m, rs_k, rs_n) ->
+    let dst = Z.to_int (to_z (getr st rd_addr)) in
+    let lhs = Z.to_int (to_z (getr st rs_lhs)) in
+    let rhs = Z.to_int (to_z (getr st rs_rhs)) in
+    let m = Z.to_int (to_z (getr st rs_m)) in
+    let k = Z.to_int (to_z (getr st rs_k)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    if m <= 0 || k <= 0 || n <= 0 || m > 32768 || k > 32768 || n > 32768 then revert st
+    else if not (memory_span st dst [m; n] && memory_span st lhs [m; k] &&
+      memory_span st rhs [k; n]) then revert st
+    else begin
+      if not (add_dyn_product st [m; n; k] 512) then revert st
+      else if not (reserve_vectors st (Vector_space.matmul m k n)) then revert st
+      else begin
+        let lhs_arr = Array.make (m * k) 0.0 in
+        for i = 0 to m * k - 1 do
+          lhs_arr.(i) <- mem_get_fp64 st.memory.data (lhs + i)
+        done;
+        let rhs_arr = Array.make (k * n) 0.0 in
+        for i = 0 to k * n - 1 do
+          rhs_arr.(i) <- mem_get_fp64 st.memory.data (rhs + i)
+        done;
+        let dst_arr = Array.make (m * n) 0.0 in
+        for r = 0 to m - 1 do
+          let r_k = r * k in
+          let r_n = r * n in
+          for c = 0 to n - 1 do
+            let acc = ref 0.0 in
+            for i = 0 to k - 1 do
+              acc := !acc +. (Array.unsafe_get lhs_arr (r_k + i)
+                              *. Array.unsafe_get rhs_arr (i * n + c))
+            done;
+            Array.unsafe_set dst_arr (r_n + c) !acc
+          done
+        done;
+        for i = 0 to m * n - 1 do
+          mem_set_fp64 st.memory.data (dst + i) (Array.unsafe_get dst_arr i)
+        done;
+        true
+      end
+    end
+  | RMSNORM_FP (rs_addr, rs_n, rs_gamma) ->
+    let addr = Z.to_int (to_z (getr st rs_addr)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    let gamma = Z.to_int (to_z (getr st rs_gamma)) in
+    if n <= 0 || n > 131072 then revert st
+    else if not (memory_span st addr [n] && memory_span st gamma [n]) then revert st
+    else begin
+      if not (add_dyn_product st [n; 4] 1) then revert st
+      else if not (reserve_vectors st (Vector_space.arrays 1 n)) then revert st
+      else begin
+        let arr = Array.init n (fun i -> mem_get_fp64 st.memory.data (addr + i)) in
+        let sum_sq = Array.fold_left (fun acc v -> acc +. v *. v) 0.0 arr in
+        let mean_sq = sum_sq /. float_of_int n in
+        let inv_rms = 1.0 /. sqrt (mean_sq +. 1e-5) in
+        for i = 0 to n - 1 do
+          let g = mem_get_fp64 st.memory.data (gamma + i) in
+          mem_set_fp64 st.memory.data (addr + i) (g *. arr.(i) *. inv_rms)
+        done;
+        true
+      end
+    end
+  | SILU_FP (rs_addr, rs_n) ->
+    let addr = Z.to_int (to_z (getr st rs_addr)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    if n <= 0 || n > 131072 then revert st
+    else if not (memory_span st addr [n]) then revert st
+    else begin
+      if not (add_dyn_product st [n; 3] 1) then revert st
+      else begin
+        for i = 0 to n - 1 do
+          let x = mem_get_fp64 st.memory.data (addr + i) in
+          let s = 1.0 /. (1.0 +. exp (-. x)) in
+          mem_set_fp64 st.memory.data (addr + i) (x *. s)
+        done;
+        true
+      end
+    end
+  | ELEMWISE_MUL_FP (rs_dst, rs_src, rs_n) ->
+    let dst = Z.to_int (to_z (getr st rs_dst)) in
+    let src = Z.to_int (to_z (getr st rs_src)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    if n <= 0 || n > 1_048_576 then revert st
+    else if not (memory_span st dst [n] && memory_span st src [n]) then revert st
+    else begin
+      if not (add_dyn_effort st n) then revert st
+      else begin
+        for i = 0 to n - 1 do
+          let a = mem_get_fp64 st.memory.data (dst + i) in
+          let b = mem_get_fp64 st.memory.data (src + i) in
+          mem_set_fp64 st.memory.data (dst + i) (a *. b)
+        done;
+        true
+      end
+    end
+  | RESIDUAL_ADD_FP (rs_dst, rs_src, rs_n) ->
+    let dst = Z.to_int (to_z (getr st rs_dst)) in
+    let src = Z.to_int (to_z (getr st rs_src)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    if n <= 0 || n > 1_048_576 then revert st
+    else if not (memory_span st dst [n] && memory_span st src [n]) then revert st
+    else begin
+      if not (add_dyn_effort st (n / 2)) then revert st
+      else begin
+        for i = 0 to n - 1 do
+          let a = mem_get_fp64 st.memory.data (dst + i) in
+          let b = mem_get_fp64 st.memory.data (src + i) in
+          mem_set_fp64 st.memory.data (dst + i) (a +. b)
+        done;
+        true
+      end
+    end
+  | ROPE_APPLY_FP (rs_addr, rs_n_dim, rs_pos, rs_base) ->
+    let addr = Z.to_int (to_z (getr st rs_addr)) in
+    let n_dim = Z.to_int (to_z (getr st rs_n_dim)) in
+    let pos = Z.to_int (to_z (getr st rs_pos)) in
+    let base_z = to_z (getr st rs_base) in
+    if n_dim <= 0 || n_dim > 131072 || (n_dim land 1) <> 0 then revert st
+    else if pos < 0 then revert st
+    else if not (memory_span st addr [n_dim]) then revert st
+    else begin
+      if not (add_dyn_product st [n_dim; 8] 1) then revert st
+      else begin
+        let base_f = z_to_fp64 base_z in
+        let half = n_dim / 2 in
+        let pf = float_of_int pos in
+        let nf = float_of_int n_dim in
+        for i = 0 to half - 1 do
+          let exp_term = (2.0 *. float_of_int i) /. nf in
+          let inv_freq = 1.0 /. (base_f ** exp_term) in
+          let angle = pf *. inv_freq in
+          let c = cos angle in
+          let s = sin angle in
+          let x_re = mem_get_fp64 st.memory.data (addr + i) in
+          let x_im = mem_get_fp64 st.memory.data (addr + i + half) in
+          mem_set_fp64 st.memory.data (addr + i) (x_re *. c -. x_im *. s);
+          mem_set_fp64 st.memory.data (addr + i + half) (x_re *. s +. x_im *. c)
+        done;
+        true
+      end
+    end
+  | LOAD_INT8_FP (rs_dst, rs_src, rs_off, rs_n, rs_scale) ->
+    let dst = Z.to_int (to_z (getr st rs_dst)) in
+    let src_b64 = to_string (getr st rs_src) in
+    let off = Z.to_int (to_z (getr st rs_off)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    let scale = z_to_fp64 (to_z (getr st rs_scale)) in
+    if n <= 0 || n > 1_048_576 then revert st
+    else if not (decode_span st dst off n) then revert st
+    else if not (charge_bytes st ~base:0 ~prior:0
+      [Byte_work.Scan (String.length src_b64); Byte_work.Allocate 32]) then revert st
+    else begin
+      let cache_key =
+        Digestif.SHA256.(to_raw_string (digest_string src_b64)), src_b64
+      in
+      let decoded_opt = Hashtbl.find_opt st.decoded_chunk_cache cache_key in
+      let cached = decoded_opt <> None in
+      if not (reserve_decode st ~input:src_b64 ~count:n ~bits:64 ~cached
+        ~cost:(fun size -> Some (if cached then n / 2 else n + size / 4)))
+      then revert st
+      else
+      let decoded = match decoded_opt with
+        | Some d -> Some d
+        | None ->
+          (match Base64.decode src_b64 with
+           | Ok d ->
+             Hashtbl.replace st.decoded_chunk_cache cache_key d;
+             Some d
+           | Error _ -> None)
+      in
+      match decoded with
+      | None -> revert st
+      | Some decoded ->
+        let dlen = String.length decoded in
+        if off < 0 || off > dlen || n > dlen - off then revert st
+        else begin
+          let was_cached = decoded_opt <> None in
+          let cost = if was_cached then n / 2 else n + dlen / 4 in
+          if not (add_dyn_effort st cost) then revert st
+          else begin
+            for i = 0 to n - 1 do
+              let b = Char.code decoded.[off + i] in
+              let signed = if b >= 128 then b - 256 else b in
+              mem_set_fp64 st.memory.data (dst + i) (float_of_int signed *. scale)
+            done;
+            true
+          end
+        end
+    end
+  | VECDOT_FP (rd, rs_a, rs_b, rs_n) ->
+    let a = Z.to_int (to_z (getr st rs_a)) in
+    let b = Z.to_int (to_z (getr st rs_b)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    if n <= 0 || n > 1_048_576 then revert st
+    else if not (memory_span st a [n] && memory_span st b [n]) then revert st
+    else begin
+      if not (add_dyn_effort st (n / 8)) then revert st
+      else if not (reserve_vectors st (Vector_space.arrays 2 n)) then revert st
+      else begin
+        let a_arr = Array.make n 0.0 in
+        let b_arr = Array.make n 0.0 in
+        for i = 0 to n - 1 do
+          a_arr.(i) <- mem_get_fp64 st.memory.data (a + i);
+          b_arr.(i) <- mem_get_fp64 st.memory.data (b + i)
+        done;
+        let acc = ref 0.0 in
+        for i = 0 to n - 1 do
+          acc := !acc +. (Array.unsafe_get a_arr i *. Array.unsafe_get b_arr i)
+        done;
+        setr st rd (VInt (fp64_to_z !acc));
+        true
+      end
+    end
+  | ATTENTION_KV_FP (rs_q, rs_k, rs_v, rs_ctx, rs_T, rs_n_q_heads, rs_n_kv_heads, rs_head_dim) ->
+    let q_addr = Z.to_int (to_z (getr st rs_q)) in
+    let k_addr = Z.to_int (to_z (getr st rs_k)) in
+    let v_addr = Z.to_int (to_z (getr st rs_v)) in
+    let ctx_addr = Z.to_int (to_z (getr st rs_ctx)) in
+    let t_total = Z.to_int (to_z (getr st rs_T)) in
+    let n_q_heads = Z.to_int (to_z (getr st rs_n_q_heads)) in
+    let n_kv_heads = Z.to_int (to_z (getr st rs_n_kv_heads)) in
+    let head_dim = Z.to_int (to_z (getr st rs_head_dim)) in
+    if t_total <= 0 || t_total > 8192 || n_q_heads <= 0 || n_q_heads > 256
+       || n_kv_heads <= 0 || n_kv_heads > 256 || head_dim <= 0 || head_dim > 1024
+       || n_q_heads mod n_kv_heads <> 0 then revert st
+    else if not (memory_span st q_addr [n_q_heads; head_dim] &&
+      memory_span st k_addr [t_total; n_kv_heads; head_dim] &&
+      memory_span st v_addr [t_total; n_kv_heads; head_dim] &&
+      memory_span st ctx_addr [n_q_heads; head_dim]) then revert st
+    else begin
+      if not (add_dyn_product st [n_q_heads; t_total; head_dim; 4] 1) then revert st
+      else if not (reserve_vectors st (Vector_space.arrays 1 t_total)) then revert st
+      else begin
+        let kv_dim = n_kv_heads * head_dim in
+        let group = n_q_heads / n_kv_heads in
+        let inv_sqrt_d = 1.0 /. sqrt (float_of_int head_dim) in
+        let scores = Array.make t_total 0.0 in
+        for q_head = 0 to n_q_heads - 1 do
+          let kv_head = q_head / group in
+          let q_off = q_head * head_dim in
+          for t = 0 to t_total - 1 do
+            let k_off = t * kv_dim + kv_head * head_dim in
+            let acc = ref 0.0 in
+            for d = 0 to head_dim - 1 do
+              let qv = mem_get_fp64 st.memory.data (q_addr + q_off + d) in
+              let kv = mem_get_fp64 st.memory.data (k_addr + k_off + d) in
+              acc := !acc +. (qv *. kv)
+            done;
+            scores.(t) <- !acc *. inv_sqrt_d
+          done;
+          let max_score = ref neg_infinity in
+          for t = 0 to t_total - 1 do
+            if scores.(t) > !max_score then max_score := scores.(t)
+          done;
+          let sum_exp = ref 0.0 in
+          for t = 0 to t_total - 1 do
+            let e = exp (scores.(t) -. !max_score) in
+            scores.(t) <- e;
+            sum_exp := !sum_exp +. e
+          done;
+          let inv_sum = 1.0 /. !sum_exp in
+          for t = 0 to t_total - 1 do
+            scores.(t) <- scores.(t) *. inv_sum
+          done;
+          for d = 0 to head_dim - 1 do
+            let acc = ref 0.0 in
+            for t = 0 to t_total - 1 do
+              let v_off = t * kv_dim + kv_head * head_dim + d in
+              acc := !acc +. (scores.(t) *. mem_get_fp64 st.memory.data (v_addr + v_off))
+            done;
+            mem_set_fp64 st.memory.data (ctx_addr + q_off + d) !acc
+          done
+        done;
+        true
+      end
+    end
+  | ATTENTION_KV_Q16 (rs_q, rs_k, rs_v, rs_ctx, rs_T, rs_n_q_heads, rs_n_kv_heads, rs_head_dim) ->
+    (match read_int st rs_q, read_int st rs_k, read_int st rs_v, read_int st rs_ctx,
+           read_int st rs_T, read_int st rs_n_q_heads, read_int st rs_n_kv_heads,
+           read_int st rs_head_dim with
+     | Some q_addr, Some k_addr, Some v_addr, Some ctx_addr, Some total_tokens,
+       Some query_heads, Some key_heads, Some head_dim
+       when total_tokens > 0 && total_tokens <= 8192 && query_heads > 0 &&
+            query_heads <= 256 && key_heads > 0 && key_heads <= 256 &&
+            head_dim > 0 && head_dim <= 1024 && query_heads mod key_heads = 0 &&
+            query_heads <= max_int / head_dim &&
+            key_heads <= max_int / head_dim &&
+            total_tokens <= max_int / (key_heads * head_dim) ->
+       let query_size = query_heads * head_dim in
+       let key_size = total_tokens * key_heads * head_dim in
+       if not (valid_mem_span q_addr query_size) ||
+          not (valid_mem_span k_addr key_size) ||
+          not (valid_mem_span v_addr key_size) ||
+          not (valid_mem_span ctx_addr query_size) then revert st
+       else if not (add_dyn_product st [query_heads; total_tokens; head_dim; 4] 1) then
+         revert st
+       else if not (reserve_vectors st
+         (Vector_space.attention total_tokens query_heads key_heads head_dim)) then
+         revert st
+       else
+         (match read_q16 st q_addr query_size, read_q16 st k_addr key_size,
+                read_q16 st v_addr key_size with
+          | Some query, Some key, Some value ->
+            (match Fixed_q16.attention query key value total_tokens query_heads
+                     key_heads head_dim with
+             | Some result -> write_q16 st ctx_addr result; true
+             | None -> revert st)
+          | _ -> revert st)
+     | _ -> revert st)
+  | APPEND_VEC_FP (rs_dst, rs_pos, rs_src, rs_n) ->
+    let dst = Z.to_int (to_z (getr st rs_dst)) in
+    let pos = Z.to_int (to_z (getr st rs_pos)) in
+    let src = Z.to_int (to_z (getr st rs_src)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    if n <= 0 || n > 1_048_576 || pos < 0 || pos > 16_777_216 then revert st
+    else if not (memory_span st src [n] && memory_offset st dst pos n) then revert st
+    else begin
+      if not (add_dyn_effort st n) then revert st
+      else begin
+        for i = 0 to n - 1 do
+          let v = mem_get_fp64 st.memory.data (src + i) in
+          mem_set_fp64 st.memory.data (dst + pos * n + i) v
+        done;
+        true
+      end
+    end
+  | ARGMAX_FP (rd, rs_addr, rs_n) ->
+    let addr = Z.to_int (to_z (getr st rs_addr)) in
+    let n = Z.to_int (to_z (getr st rs_n)) in
+    if n <= 0 || n > 1_048_576 then revert st
+    else if not (memory_span st addr [n]) then revert st
+    else begin
+      if not (add_dyn_effort st (n / 2)) then revert st
+      else begin
+        let best_id = ref 0 in
+        let best_val = ref neg_infinity in
+        for i = 0 to n - 1 do
+          let v = mem_get_fp64 st.memory.data (addr + i) in
+          if v > !best_val then begin
+            best_val := v;
+            best_id := i
+          end
+        done;
+        setr st rd (VInt (Z.of_int !best_id));
+        true
+      end
+    end
+  | JMP addr ->
+    st.pc <- addr; true
+  | JIF (rs, addr) ->
+    if to_bool (getr st rs) then st.pc <- addr; true
+  | JDEST _ -> true
+  | STOP ->
+    (match st.return_stack with
+     | [] -> false
+     | (ret_pc, dest_r, saved_regs) :: rest ->
+       let result = st.regs.(0) in
+       Array.blit saved_regs 0 st.regs 0 64;
+       st.regs.(dest_r) <- result;
+       st.return_stack <- rest;
+       st.pc <- ret_pc;
+       true)
+  | REVERT -> revert st
+  | CALLER rd -> setr st rd (VAddr st.caller); true
+  | ORIGIN rd -> setr st rd (VAddr st.origin); true
+  | SELF rd -> setr st rd (VAddr st.address); true
+  | EPOCH rd -> setr st rd (VInt (Z.of_int st.ctx.current_epoch)); true
+  | EPOCH_TIME rd -> setr st rd (VInt (Z.of_int64 st.ctx.epoch_time_ms)); true
+  | VALUE rd -> setr st rd (VInt st.value); true
+  | BALANCE (rd, rs) ->
+    (match getr st rs with
+     | VAddr addr | VString addr -> setr st rd (VInt (st.ctx.get_balance addr)); true
+     | _ -> setr st rd (VInt Z.zero); true)
+  | TREEHASH rd -> setr st rd (VString st.ctx.tree_hash); true
+  | NODEID rd -> setr st rd (VString st.ctx.node_id); true
+  | TXHASH rd -> setr st rd (VString st.ctx.tx_hash); true
+  | XCALL (rd, rt, rm, ra, nargs) ->
+    if not (valid_reg_span ra nargs) then revert st
+    else if st.call_depth >= 8 then revert st
+    else
+      let target = to_string (getr st rt) in
+      let method_name = to_string (getr st rm) in
+      let args = List.init nargs (fun i -> getr st (ra + i)) in
+      if st.ctx.async_exec then raise (Suspend (Call_wait (rd, target, method_name, args)));
+      (match st.ctx.call_contract st.address target method_name args (child_scope st) with
+       | Ok sub ->
+         if not (add_dyn_effort st sub.effort_used) then revert st
+         else begin
+           st.logs := List.rev_append sub.events !(st.logs);
+           setr st rd sub.return_value;
+           true
+         end
+       | Error _ -> revert st)
+  | SPAWN (rd, rs) ->
+    if not (view_guard st) then false
+    else if st.call_depth >= 8 then revert st
+    else
+      let input = to_string (getr st rs) in
+
+      (match spawn_input st input with
+      | None -> revert st
+      | Some bytecode_raw when String.length bytecode_raw < 12 -> revert st
+      | Some bytecode_raw ->
+        let nonce_key = "\x00spawn_nonce" in
+        let nonce = match Hashtbl.find_opt st.storage nonce_key with
+          | Some s -> (try int_of_string s with (Out_of_memory | Stack_overflow) as error -> raise error | _ -> 0) | None -> 0 in
+        let next = string_of_int (nonce + 1) in
+        if not (charge_bytes st ~base:0 ~prior:0
+          [Byte_work.Write (String.length nonce_key, String.length next)]) then revert st
+        else begin
+        storage_replace st nonce_key next;
+
+        let spawn_effort = 5000 + (String.length bytecode_raw / 100) in
+        if not (add_dyn_effort st spawn_effort) then revert st
+        else begin
+        if st.ctx.async_exec then raise (Suspend (Spawn_wait (rd, bytecode_raw, nonce, [])));
+        (match st.ctx.deploy_contract st.address bytecode_raw nonce (child_scope st) [] with
+         | Ok sp ->
+           if not (add_dyn_effort st sp.effort_used) then revert st
+           else begin
+             st.logs := List.rev_append sp.events !(st.logs);
+             setr st rd (VAddr sp.spawned_addr);
+             true
+           end
+         | Error e ->
+           Octra_log.warn "program"
+             "event = spawn_reverted error = %s bytecode_bytes = %d"
+             e (String.length bytecode_raw);
+           storage_replace st nonce_key (string_of_int nonce); revert st)
+        end
+        end)
+  | SPAWN2 (rd, rs, base, nargs) ->
+    if not (valid_reg_span base nargs) then revert st
+    else if not (view_guard st) then false
+    else if st.call_depth >= 8 then revert st
+    else
+      let input = to_string (getr st rs) in
+      (match spawn_input st input with
+      | None -> revert st
+      | Some bytecode_raw when String.length bytecode_raw < 12 -> revert st
+      | Some bytecode_raw ->
+        let params = List.init nargs (fun i -> getr st (base + i)) in
+        let nonce_key = "\x00spawn_nonce" in
+        let nonce = match Hashtbl.find_opt st.storage nonce_key with
+          | Some s -> (try int_of_string s with (Out_of_memory | Stack_overflow) as error -> raise error | _ -> 0) | None -> 0 in
+        let next = string_of_int (nonce + 1) in
+        if not (charge_bytes st ~base:0 ~prior:0
+          [Byte_work.Write (String.length nonce_key, String.length next)]) then revert st
+        else begin
+        storage_replace st nonce_key next;
+        let spawn_effort = 5000 + (String.length bytecode_raw / 100) in
+        if not (add_dyn_effort st spawn_effort) then revert st
+        else begin
+        if st.ctx.async_exec then raise (Suspend (Spawn_wait (rd, bytecode_raw, nonce, params)));
+        (match st.ctx.deploy_contract st.address bytecode_raw nonce (child_scope st) params with
+         | Ok sp ->
+           if not (add_dyn_effort st sp.effort_used) then revert st
+           else begin
+             st.logs := List.rev_append sp.events !(st.logs);
+             setr st rd (VAddr sp.spawned_addr);
+             true
+           end
+         | Error e ->
+           Octra_log.warn "program"
+             "event = spawn_reverted version = 2 error = %s bytecode_bytes = %d params = %d"
+             e (String.length bytecode_raw) nargs;
+           storage_replace st nonce_key (string_of_int nonce); revert st)
+        end
+        end)
+  | TRANSFER (rd, ra, rv) ->
+    if not (view_guard st) then false
+    else
+      let to_addr = to_string (getr st ra) in
+      if not (is_valid_addr to_addr) then (setr st rd (VBool false); true)
+      else
+        let amount = to_z (getr st rv) in
+
+        if Z.sign amount < 0 then (setr st rd (VBool false); true)
+        else if Z.equal amount Z.zero then (setr st rd (VBool true); true)
+        else
+          let ok = st.ctx.do_transfer st.address to_addr amount in
+          setr st rd (VBool ok); true
+  | CHECKPOINT ->
+    st.undo_id <- st.undo_id + 1;
+    st.undo_stack <- UndoMarker st.undo_id :: st.undo_stack;
+    true
+  | ROLLBACK ->
+    let rec remove cap left = function
+      | [] -> List.rev left
+      | value :: rest when cap_equal cap value -> List.rev_append left rest
+      | value :: rest -> remove cap (value :: left) rest
+    in
+    let rec restore = function
+      | [] -> []
+      | UndoMarker _ :: rest -> rest
+      | UndoWrite (k, Some v) :: rest ->
+        storage_replace st k v; restore rest
+      | UndoWrite (k, None) :: rest ->
+        storage_remove st k; restore rest
+      | UndoClose cap :: rest ->
+        st.closes <- remove cap [] st.closes;
+        restore rest
+    in
+    st.undo_stack <- restore st.undo_stack;
+    true
+  | COMMIT ->
+    let rec has_marker = function
+      | [] -> false
+      | UndoMarker _ :: _ -> true
+      | UndoWrite _ :: rest | UndoClose _ :: rest -> has_marker rest
+    in
+    let rec discard undo = function
+      | [] -> []
+      | UndoMarker _ :: rest ->
+        if st.ctx.point_ops && has_marker rest then List.rev_append undo rest
+        else rest
+      | (UndoWrite _ | UndoClose _) as entry :: rest ->
+        discard (entry :: undo) rest
+    in
+    st.undo_stack <- discard [] st.undo_stack;
+    true
+  | EMIT (event, regs_list) ->
+    if List.length !(st.logs) >= 256 then revert st
+    else
+    let vals = List.map (fun r -> getr st r) regs_list in
+    if append_event st { contract = st.address; depth = st.call_depth;
+      event; values = vals } then true else revert st
+  | CONCAT (rd, rs1, rs2) ->
+    let left = getr st rs1 in
+    let right = getr st rs2 in
+    let first = to_string left in
+    let second = to_string right in
+    if not (charge_bytes st ~base:0 ~prior:0
+      [Byte_work.Copy (String.length first, String.length second)]) then revert st
+    else begin
+    let value = first ^ second in
+    let out =
+      match st.byte_result, left, right with
+      | Typed_bytes, VBytes _, VBytes _ -> VBytes value
+      | Typed_bytes, _, _ | String_bytes, _, _ -> VString value
+    in
+    setr st rd out;
+    true
+    end
+  | STRLEN (rd, rs) ->
+    setr st rd (VInt (Z.of_int (String.length (to_string (getr st rs))))); true
+  | ASSERT rs ->
+    if not (to_bool (getr st rs)) then revert st else true
+  | EFFORT rd ->
+    setr st rd (VInt (Z.of_int st.effort_used)); true
+  | NOP -> true
+  | FHE_LOAD_PK (rd, rs) ->
+    if not (st.ctx.allow_fhe_capability Fhe_load_pk_cap) then
+      revert_with_reason st "fhe_load_pk not allowed"
+    else
+      let addr = to_string (getr st rs) in
+      (match st.ctx.get_fhe_pubkey addr with
+       | Some source when not (charge_fhe_key st source) -> revert st
+       | Some source when key_allowed ?memory:st.ctx.fhe_memory source ->
+         begin match source with
+         | Key_value key -> setr st rd (VPubKey key); true
+         | Key_bytes raw -> eval_fhe st rd
+             ~reason:("fhe pubkey not available: " ^ addr) (Fhe_task.Load_key raw)
+         end
+       | Some _ | None -> revert_with_reason st ("fhe pubkey not available: " ^ addr))
+  | FHE_ADD (rd, rpk, ra, rb) ->
+    if not (st.ctx.allow_fhe_capability Fhe_cipher_arithmetic_cap) then
+      revert st
+    else
+      (match to_pubkey (getr st rpk), to_cipher (getr st ra), to_cipher (getr st rb) with
+       | Some pk, Some a, Some b ->
+         eval_fhe st rd (Fhe_task.Add (pk, a, b))
+       | _ -> revert st)
+  | FHE_SUB (rd, rpk, ra, rb) ->
+    if not (st.ctx.allow_fhe_capability Fhe_cipher_arithmetic_cap) then
+      revert st
+    else
+      (match to_pubkey (getr st rpk), to_cipher (getr st ra), to_cipher (getr st rb) with
+       | Some pk, Some a, Some b ->
+         eval_fhe st rd (Fhe_task.Sub (pk, a, b))
+       | _ -> revert st)
+  | FHE_MUL (rd, rpk, ra, rb) ->
+    if not (st.ctx.allow_fhe_capability Fhe_cipher_arithmetic_cap) then
+      revert st
+    else
+      (match to_pubkey (getr st rpk), to_cipher (getr st ra), to_cipher (getr st rb) with
+       | Some pk, Some a, Some b ->
+         if not (fhe_slots_match a b) then
+           revert st
+         else
+           let seed = deterministic_seed [
+             "aml.fhe_mul";
+             st.ctx.tx_hash;
+             st.address;
+             string_of_int st.pc;
+             string_of_int rd;
+           ] |> Bytes.to_string in
+           let work = st.is_view || st.ctx.fhe_work = Octra_core.Rule_graph.Active in
+           eval_fhe st rd (Fhe_task.Mul (st.ctx.math, work, pk, a, b, seed))
+       | _ -> revert st)
+  | FHE_SCALE (rd, rpk, rct, rscalar) ->
+    if not (st.ctx.allow_fhe_capability Fhe_cipher_arithmetic_cap) then
+      revert st
+    else
+      (match to_pubkey (getr st rpk), to_cipher (getr st rct) with
+       | Some pk, Some ct ->
+         let amount = Z.to_int64 (to_z (getr st rscalar)) in
+         eval_fhe st rd (Fhe_task.Scale (st.ctx.math, pk, ct, amount))
+       | _ -> revert st)
+  | FHE_DIV_CONST (rd, rpk, rct, rdivisor) ->
+    if not (st.ctx.allow_fhe_capability Fhe_cipher_arithmetic_cap) then
+      revert st
+    else
+      (match to_pubkey (getr st rpk), to_cipher (getr st rct) with
+       | Some pk, Some ct ->
+         let divisor = to_z (getr st rdivisor) in
+         if Z.sign divisor <= 0 || Z.gt divisor (Z.of_int64 Int64.max_int) then
+           revert_with_reason st "fhe_div_const divisor out of range"
+         else
+           eval_fhe st rd (Fhe_task.Divide (pk, ct, Z.to_int64 divisor))
+       | _ -> revert st)
+  | FHE_ADD_CONST (rd, rpk, rct, rconst) ->
+    if not (st.ctx.allow_fhe_capability Fhe_cipher_arithmetic_cap) then
+      revert st
+    else
+      (match to_pubkey (getr st rpk), to_cipher (getr st rct) with
+       | Some pk, Some ct ->
+         let amount = Z.to_int64 (to_z (getr st rconst)) in
+         eval_fhe st rd (Fhe_task.Add_int (st.ctx.math, pk, ct, amount))
+       | _ -> revert st)
+  | FHE_SUB_CONST (rd, rpk, rct, rconst) ->
+    if not (st.ctx.allow_fhe_capability Fhe_cipher_arithmetic_cap) then
+      revert st
+    else
+      (match to_pubkey (getr st rpk), to_cipher (getr st rct) with
+       | Some pk, Some ct ->
+         let amount = Z.to_int64 (to_z (getr st rconst)) in
+         eval_fhe st rd (Fhe_task.Sub_int (st.ctx.math, pk, ct, amount))
+       | _ -> revert st)
+  | FHE_VERIFY_ZERO (rd, rpk, rct, rproof) ->
+    if not (st.ctx.allow_fhe_capability Fhe_verify_zero_cap) then
+      revert st
+    else if not st.is_view && not (state_proof_enabled st) then
+      revert st
+    else
+      (match to_pubkey (getr st rpk), to_cipher (getr st rct), to_bytes (getr st rproof) with
+       | Some pk, Some ct, Some proof_bytes
+         when fhe_verifier_cipher_allowed ct ->
+         let raw_len = match Base64.decode proof_bytes with
+           | Ok r -> String.length r | Error _ -> String.length proof_bytes in
+         if raw_len > max_fhe_proof_bytes then
+           (setr st rd (VBool false); true)
+         else
+           let verification =
+             with_fhe_verifier_lane (fun () ->
+               match worker_zero_proof proof_bytes with
+               | None -> Fhe_rejected
+               | Some proof ->
+                 pack_proof st rd Fhe_task.Zero pk ct proof)
+           in
+           finish_fhe_verification st rd verification
+       | _ -> revert st)
+  | FHE_VERIFY_RANGE (rd, rpk, rct, rproof) ->
+    if not (st.ctx.allow_fhe_capability Fhe_verify_range_cap) then
+      revert st
+    else if not st.is_view && not (state_proof_enabled st) then
+      revert st
+    else
+    (match to_pubkey (getr st rpk), to_cipher (getr st rct), to_bytes (getr st rproof) with
+     | Some pk, Some ct, Some proof_bytes
+       when fhe_verifier_cipher_allowed ct ->
+       let raw_len = match Base64.decode proof_bytes with
+         | Ok r -> String.length r | Error _ -> String.length proof_bytes in
+       if raw_len > max_fhe_proof_bytes then
+         (setr st rd (VBool false); true)
+       else
+         let verification =
+           with_fhe_verifier_lane (fun () ->
+             match worker_range_proof proof_bytes with
+             | None -> Fhe_rejected
+             | Some proof ->
+               pack_proof st rd Fhe_task.Range pk ct proof)
+         in
+         finish_fhe_verification st rd verification
+     | _ -> revert st)
+  | GROTH16_VERIFY_BN254 (rd, rvk, rproof, rinputs) ->
+    if not st.is_view && not (state_proof_enabled st) then
+      revert st
+    else
+    (match to_bytes (getr st rvk), to_bytes (getr st rproof), to_bytes (getr st rinputs) with
+     | Some vk_in, Some proof_in, Some inputs_in ->
+       let decode_b64 b =
+         match Base64.decode b with Ok r -> r | Error _ -> b
+       in
+       let vk_raw = decode_b64 vk_in in
+       let proof_raw = decode_b64 proof_in in
+       let inputs_raw = decode_b64 inputs_in in
+       if String.length vk_raw > max_zk_vk_bytes
+          || String.length proof_raw > max_zk_proof_bytes
+          || String.length inputs_raw > max_zk_inputs_bytes then
+         (setr st rd (VBool false); true)
+       else
+         (match groth16_public_inputs vk_raw with
+          | None ->
+            setr st rd (VBool false);
+            true
+          | Some count when
+              not (groth16_shape_ok vk_raw proof_raw inputs_raw count) ->
+            setr st rd (VBool false);
+            true
+          | Some count when
+              not (add_dyn_effort st (count * groth16_public_input_effort)) ->
+            setr st rd (VBool false);
+            true
+          | Some _ when state_proof_enabled st ->
+            verify_proof st rd (Octra_core.Pvac_verify_protocol.Groth16 {
+              key = vk_raw;
+              proof = proof_raw;
+              inputs = inputs_raw;
+            }) |> finish_fhe_verification st rd
+          | Some _ ->
+            Zk_ffi.initialize ();
+            (try
+               let ok = Zk_ffi.groth16_verify_bn254
+                 (Bytes.of_string vk_raw)
+                 (Bytes.of_string proof_raw)
+                 (Bytes.of_string inputs_raw) in
+               setr st rd (VBool ok); true
+             with (Out_of_memory | Stack_overflow) as error -> raise error | _ -> setr st rd (VBool false); true))
+     | _ -> revert st)
+  | FHE_VERIFY_BOUND (rd, rpk, rct, rproof, rcommit) ->
+    if not (st.ctx.allow_fhe_capability Fhe_verify_bound_cap) then
+      revert st
+    else if not st.is_view && not (state_proof_enabled st) then
+      revert st
+    else
+      (match to_pubkey (getr st rpk), to_cipher (getr st rct),
+             to_bytes (getr st rproof), to_bytes (getr st rcommit) with
+       | Some pk, Some ct, Some proof_bytes, Some commit_bytes
+         when fhe_verifier_cipher_allowed ct ->
+         let raw_len = match Base64.decode proof_bytes with
+           | Ok r -> String.length r | Error _ -> String.length proof_bytes in
+         if raw_len > max_fhe_proof_bytes then
+           (setr st rd (VBool false); true)
+         else
+           let verification =
+             with_fhe_verifier_lane (fun () ->
+               match
+                 worker_zero_proof proof_bytes,
+                 worker_commitment commit_bytes
+               with
+               | Some proof, Some commitment ->
+                 pack_proof st rd (Fhe_task.Claim commitment) pk ct proof
+               | _ -> Fhe_rejected)
+           in
+           finish_fhe_verification st rd verification
+       | _ -> revert st)
+  | FHE_COMMIT (rd, rpk, rct) ->
+    if not (st.ctx.allow_fhe_capability Fhe_commit_cap) then
+      revert st
+    else
+      (match to_pubkey (getr st rpk), to_cipher (getr st rct) with
+       | Some pk, Some ct ->
+         eval_fhe st rd (Fhe_task.Commit (pk, ct))
+       | _ -> revert st)
+  | FHE_PEDERSEN (rd, ramount, rblinding) ->
+    if not (st.ctx.allow_fhe_capability Fhe_pedersen_cap) then
+      revert st
+    else
+      (match to_bytes (getr st rblinding) with
+       | Some blinding ->
+         (try
+            let amount = Z.to_int64 (to_z (getr st ramount)) in
+            let result = Pvac_ffi.pedersen_commit_amount amount (Bytes.of_string blinding) in
+            setr st rd (VString (Base64.encode_exn (Bytes.to_string result))); true
+          with (Out_of_memory | Stack_overflow) as error -> raise error | _ -> revert st)
+       | _ -> revert st)
+  | (FHE_PEDERSEN_ADD (rd, rleft, rright)
+    | FHE_PEDERSEN_SUB (rd, rleft, rright)) as point_op ->
+    if not st.ctx.point_ops
+        || not (st.ctx.allow_fhe_capability Fhe_pedersen_cap) then
+      revert st
+    else
+      (match to_bytes (getr st rleft), to_bytes (getr st rright) with
+       | Some left, Some right ->
+         (match decode_raw_or_b64_len 32 left, decode_raw_or_b64_len 32 right with
+          | Some left_raw, Some right_raw ->
+            (try
+               let combine =
+                 match point_op with
+                 | FHE_PEDERSEN_ADD _ -> Pvac_ffi.pedersen_add
+                 | FHE_PEDERSEN_SUB _ -> Pvac_ffi.pedersen_sub
+                 | _ -> assert false
+               in
+               let result =
+                 combine (Bytes.of_string left_raw) (Bytes.of_string right_raw)
+               in
+               setr st rd (VString (Base64.encode_exn (Bytes.to_string result)));
+               true
+             with (Out_of_memory | Stack_overflow) as error -> raise error | _ -> revert st)
+          | _ -> revert st)
+       | _ -> revert st)
+  | FHE_PEDERSEN_IDENTITY rd ->
+    if not st.ctx.point_ops
+        || not (st.ctx.allow_fhe_capability Fhe_pedersen_cap) then
+      revert st
+    else
+      (try
+         let result = Pvac_ffi.pedersen_identity () in
+         setr st rd (VString (Base64.encode_exn (Bytes.to_string result)));
+         true
+       with (Out_of_memory | Stack_overflow) as error -> raise error | _ -> revert st)
+  | FHE_SER (rd, rct) ->
+    if not (st.ctx.allow_fhe_capability Fhe_cipher_serde_cap) then
+      revert st
+    else
+      (match to_cipher (getr st rct) with
+       | Some ct ->
+         eval_fhe st rd (Fhe_task.Write_cipher ct)
+       | None -> revert st)
+  | FHE_DESER (rd, rbytes) ->
+    if not (st.ctx.allow_fhe_capability Fhe_cipher_serde_cap) then
+      revert st
+    else
+      (match to_bytes (getr st rbytes) with
+       | Some encoded
+         when add_dyn_effort st (fhe_decode_input_cost encoded) ->
+         let raw = decode_serialized_text encoded in
+         if String.length raw > max_fhe_cipher_bytes
+            || not (reserve_fhe st.ctx (Fhe_memory.cipher_decode raw)) then
+           revert st
+         else
+           let cap = st.is_view || st.ctx.point_ops
+             || st.ctx.fhe_work = Octra_core.Rule_graph.Active in
+           eval_fhe st rd (Fhe_task.Read_cipher (st.ctx.point_ops, cap, raw))
+       | Some _ -> revert st
+       | None -> revert st)
+  | FHE_SER_PK (rd, rpk) ->
+    if not (st.ctx.allow_fhe_capability Fhe_pubkey_serde_cap) then
+      revert st
+    else
+      (match to_pubkey (getr st rpk) with
+       | Some pk ->
+         if not (charge_fhe_key st (Key_value pk))
+           || not (reserve_fhe st.ctx (Fhe_memory.key_value pk)) then revert st
+         else eval_fhe st rd (Fhe_task.Write_key pk)
+       | None -> revert st)
+  | FHE_DESER_PK (rd, rbytes) ->
+    if not (st.ctx.allow_fhe_capability Fhe_pubkey_serde_cap) then
+      revert st
+    else
+      (match to_bytes (getr st rbytes) with
+       | Some encoded
+         when add_dyn_effort st (fhe_decode_input_cost encoded) ->
+         let raw = decode_serialized_text encoded in
+         if String.length raw > max_fhe_pubkey_bytes then
+           revert st
+         else
+           (match fhe_pubkey_output_cost raw with
+            | Some cost when add_dyn_effort st cost
+                && (st.ctx.fhe_memory = None
+                  || Option.fold ~none:false ~some:(reserve_fhe st.ctx)
+                    (Fhe_memory.key_decode raw)) ->
+              eval_fhe st rd (Fhe_task.Read_key raw)
+            | Some _ | None ->
+              revert st)
+       | Some _ -> revert st
+       | None -> revert st)
+  | CALL_INT (rd, label) ->
+    if List.length st.return_stack >= 8 then revert st
+    else begin
+      let saved = Array.copy st.regs in
+      st.return_stack <- (st.pc, rd, saved) :: st.return_stack;
+      st.pc <- label;
+      true
+    end
+
+let run state program =
+  try
+    let len = Array.length program in
+    while state.pc < len && not state.reverted do
+      let op = program.(state.pc) in
+      state.pc <- state.pc + 1;
+      if not (exec_one state op) then state.pc <- len
+    done;
+    finish_output state
+  with
+  | Z.Overflow
+  | Invalid_argument _
+  | Failure _
+  | Not_found
+  | Division_by_zero ->
+    state.closes <- [];
+    state.reverted <- true;
+    false
+
+let refuse state =
+  state.closes <- [];
+  state.reverted <- true;
+  Refused
+
+let step state program =
+  try
+    let len = Array.length program in
+    if state.reverted then Refused
+    else if state.pc < 0 then refuse state
+    else if state.pc >= len then
+      if finish_output state then Finished else Refused
+    else
+      let op = program.(state.pc) in
+      state.pc <- state.pc + 1;
+      if not (exec_one state op) then state.pc <- len;
+      if state.reverted then Refused
+      else if state.pc >= len then
+        if finish_output state then Finished else Refused
+      else Running
+  with
+  | Z.Overflow
+  | Invalid_argument _
+  | Failure _
+  | Not_found
+  | Division_by_zero ->
+    refuse state
+
+let proof_host run =
+  Lwt.catch (fun () -> Octra_core.Exec_resource.protect run ()) (function
+    | Lwt.Canceled as error -> Lwt.fail error
+    | Octra_core.Exec_resource.Unavailable _ as error -> Lwt.fail error
+    | Out_of_memory -> Lwt.fail (Octra_core.Exec_resource.Unavailable Memory)
+    | Stack_overflow -> Lwt.fail (Octra_core.Exec_resource.Unavailable Stack)
+    | _ -> Lwt.fail (Octra_core.Exec_resource.Unavailable Host))
+
+let run_async ?(running = fun () -> true) ?(view_seconds = 10.) state program =
+  if not (Float.is_finite view_seconds) || view_seconds <= 0. then
+    invalid_arg "view duration must be finite and positive";
+  let ( let* ) work next = Lwt.bind work (Octra_core.Exec_resource.protect next) in
+  let valid () =
+    if not (running ()) then raise (Octra_core.Exec_resource.Unavailable Host)
+  in
+  let rec resume = function
+    | Fhe_wait (rd, reason, request) ->
+      let pc = state.pc in
+      let seconds = if state.is_view then view_seconds else Octra_core.Pvac_verify_worker.timeout_seconds () in
+      let now = Mtime_clock.elapsed_ns () in
+      let deadline = Int64.add now (Int64.of_float (seconds *. 1_000_000_000.)) in
+      if deadline <= now then raise (Octra_core.Exec_resource.Unavailable Host);
+      let ticket = Proof_wait.{
+        request = deterministic_seed [string_of_int pc; string_of_int state.effort_used]
+          |> Bytes.to_string;
+        generation = deterministic_seed [
+          string_of_int state.ctx.current_epoch; state.ctx.tree_hash;
+          state.ctx.tx_hash; state.address; string_of_int state.call_depth;
+        ] |> Bytes.to_string;
+      } in
+      let waiting = ref (Proof_wait.Waiting (ticket, deadline)) in
+      Lwt.finalize (fun () ->
+        let* result = proof_host (fun () ->
+          Fhe_task.run ~urgent:(not state.is_view) ~ticket ~deadline request) in
+        valid ();
+        let next, effects = Proof_wait.delta !waiting
+          (Proof_wait.Reply (ticket, Mtime_clock.elapsed_ns (), result)) in
+        waiting := next;
+        match effects with
+        | [Proof_wait.Deliver result] when state.pc = pc && not state.reverted ->
+          begin match result with
+          | Ok (Fhe_task.Check request) -> resume (Proof_wait (rd, request))
+          | result -> Lwt.return (finish_fhe state rd reason result)
+          end
+        | _ -> Lwt.fail (Octra_core.Exec_resource.Unavailable Host))
+        (fun () ->
+          waiting := fst (Proof_wait.delta !waiting Proof_wait.Cancel);
+          Lwt.return_unit)
+    | Proof_wait (rd, request) ->
+      let request = if state.ctx.proof_key = Octra_core.Rule_graph.Active then
+        Octra_core.Pvac_verify_protocol.Proof_key request else request in
+      let pc = state.pc in
+      let seconds = if state.is_view then view_seconds else Octra_core.Pvac_verify_worker.timeout_seconds () in
+      let now = Mtime_clock.elapsed_ns () in
+      let deadline = Int64.add now (Int64.of_float (seconds *. 1_000_000_000.)) in
+      if deadline <= now then raise (Octra_core.Exec_resource.Unavailable Host);
+      let ticket = Proof_wait.{
+        request = Octra_core.Pvac_verify_protocol.request_hash request;
+        generation = deterministic_seed [
+          string_of_int state.ctx.current_epoch; state.ctx.tree_hash;
+          state.ctx.tx_hash; state.address; string_of_int state.call_depth;
+          string_of_int pc; string_of_int state.effort_used;
+        ] |> Bytes.to_string;
+      } in
+      let waiting = ref (Proof_wait.Waiting (ticket, deadline)) in
+      Lwt.finalize (fun () ->
+        let* result = proof_host (fun () ->
+          Fhe_task.run ~urgent:(not state.is_view) ~ticket ~deadline
+            (Fhe_task.Verify (state.ctx.math, request))) in
+        valid ();
+        let next, effects = Proof_wait.delta !waiting
+          (Proof_wait.Reply (ticket, Mtime_clock.elapsed_ns (), result)) in
+        waiting := next;
+        match effects with
+        | [Proof_wait.Deliver result] when state.pc = pc && not state.reverted ->
+          let verification = match result with
+            | Ok (Fhe_task.Verified true) -> Fhe_verified
+            | Ok (Fhe_task.Verified false) -> Fhe_rejected
+            | Error (Fhe_task.Resource resource) ->
+              if not state.is_view && state_proof_enabled state then
+                raise (Octra_core.Exec_resource.Unavailable resource);
+              Fhe_unavailable
+            | Ok _ | Error Fhe_task.Invalid ->
+              raise (Octra_core.Exec_resource.Unavailable Host) in
+          Lwt.return (finish_fhe_verification state rd verification)
+        | _ -> Lwt.fail (Octra_core.Exec_resource.Unavailable Host))
+        (fun () ->
+          waiting := fst (Proof_wait.delta !waiting Proof_wait.Cancel);
+          Lwt.return_unit)
+    | Call_wait (rd, target, method_name, args) ->
+      let* result = state.ctx.call_async state.address target method_name args (child_scope state) in
+      valid ();
+      begin match result with
+      | Ok sub when add_dyn_effort state sub.effort_used ->
+        state.logs := List.rev_append sub.events !(state.logs);
+        setr state rd sub.return_value;
+        Lwt.return_true
+      | Ok _ | Error _ -> Lwt.return (revert state)
+      end
+    | Spawn_wait (rd, code, nonce, params) ->
+      let* result = state.ctx.deploy_async state.address code nonce (child_scope state) params in
+      valid ();
+      begin match result with
+      | Ok spawn when add_dyn_effort state spawn.effort_used ->
+        state.logs := List.rev_append spawn.events !(state.logs);
+        setr state rd (VAddr spawn.spawned_addr);
+        Lwt.return_true
+      | Ok _ | Error _ ->
+        storage_replace state "\x00spawn_nonce" (string_of_int nonce);
+        Lwt.return (revert state)
+      end
+  in
+  let rec loop quota =
+    valid ();
+    match step state program with
+    | Finished -> Lwt.return_true
+    | Refused -> Lwt.return_false
+    | Running when quota > 0 -> loop (quota - 1)
+    | Running ->
+      let* () = Lwt.pause () in
+      loop 4096
+    | exception Suspend request ->
+      let* continued = resume request in
+      if continued then loop 4096 else Lwt.return_false
+  in
+  Lwt.catch (fun () -> Octra_core.Exec_resource.protect (fun () -> loop 4096) ()) (fun error ->
+    ignore (refuse state);
+    match error with
+    | Lwt_unix.Timeout -> Lwt.fail (Octra_core.Exec_resource.Unavailable Host)
+    | _ -> Lwt.fail error)
+
+module Verifier = struct
+  type err =
+    | InvalidReg of int * int
+    | InvalidRegSpan of int * int * int
+    | InvalidJumpDest of int
+    | DuplicateJDest of int
+    | CodeTooLarge of int
+    | EmptyCode
+    | ReservedKey of int * string
+    | CapabilityLiteral of int
+    | CapabilityKind of int * Z.t
+
+  let max_size = 33_554_432
+
+  let check_reg pc r =
+    if r < 0 || r > 63 then Some (InvalidReg (pc, r)) else None
+
+  let check_regs pc regs =
+    List.find_map (check_reg pc) regs
+
+  let check_reg_span pc base count =
+    if not (valid_reg_span base count) then
+      Some (InvalidRegSpan (pc, base, count))
+    else None
+
+  let check_cap pc kind =
+    if Z.sign kind < 0 || Z.gt kind (Z.of_int 1_000_000) then
+      Some (CapabilityKind (pc, kind))
+    else None
+
+  let verify code =
+    if Array.length code = 0 then Error EmptyCode
+    else if Array.length code * 32 > max_size then Error (CodeTooLarge (Array.length code))
+    else
+      let dests = Hashtbl.create 32 in
+      let dup = ref None in
+      Array.iter (fun op -> match op with
+        | JDEST n ->
+          if Hashtbl.mem dests n then dup := Some n;
+          Hashtbl.replace dests n true
+        | _ -> ()
+      ) code;
+      match !dup with
+      | Some n -> Error (DuplicateJDest n)
+      | None ->
+      let rec check pc =
+        if pc >= Array.length code then Ok ()
+        else
+          let err = match code.(pc) with
+            | ADD (d,a,b) | SUB (d,a,b) | MUL (d,a,b)
+            | DIV (d,a,b) | MOD (d,a,b)
+            | EQ (d,a,b) | LT (d,a,b) | GT (d,a,b) | NEQ (d,a,b)
+            | CONCAT (d,a,b) -> check_regs pc [d;a;b]
+            | NEG (d,s) | ABS (d,s) | MOV (d,s) | BALANCE (d,s)
+            | SLOADK (d,s) | SSTOREK (d,s) | SPAWN (d,s)
+            | STRLEN (d,s) -> check_regs pc [d;s]
+            | SDELK s -> check_reg pc s
+            | CAP_CHECK (kind, src) | CAP_CLOSE (kind, src) ->
+              begin
+                match check_cap pc kind with
+                | Some error -> Some error
+                | None -> check_reg pc src
+              end
+            | LDI (_, VCap _) -> Some (CapabilityLiteral pc)
+            | LDI (d,_) | SLOAD (d,_) | MLOAD (d,_)
+            | CALLER d | ORIGIN d | SELF d | EPOCH d | EPOCH_TIME d | VALUE d
+            | TREEHASH d | NODEID d | TXHASH d | EFFORT d -> check_reg pc d
+            | SSTORE (k,s) ->
+              if is_reserved_key k then Some (ReservedKey (pc, k))
+              else check_reg pc s
+            | SDEL k ->
+              if is_reserved_key k then Some (ReservedKey (pc, k))
+              else None
+            | MSTORE (_,s) | ASSERT s -> check_reg pc s
+            | TRANSFER (d,a,v) -> check_regs pc [d;a;v]
+            | XCALL (d,t,m,a,n) -> check_regs pc [d;t;m] |> (function
+              | Some e -> Some e
+              | None -> check_reg_span pc a n)
+            | SPAWN2 (d,s,a,n) -> check_regs pc [d;s] |> (function
+              | Some e -> Some e
+              | None -> check_reg_span pc a n)
+            | FHE_ADD (d,pk,a,b) | FHE_SUB (d,pk,a,b) | FHE_MUL (d,pk,a,b)
+            | FHE_SCALE (d,pk,a,b) | FHE_DIV_CONST (d,pk,a,b)
+            | FHE_ADD_CONST (d,pk,a,b)
+            | FHE_SUB_CONST (d,pk,a,b)
+            | FHE_VERIFY_ZERO (d,pk,a,b) | FHE_VERIFY_RANGE (d,pk,a,b) ->
+              check_regs pc [d;pk;a;b]
+            | GROTH16_VERIFY_BN254 (d,vk,pf,inp) -> check_regs pc [d;vk;pf;inp]
+            | FHE_VERIFY_BOUND (d,pk,ct,pf,cm) -> check_regs pc [d;pk;ct;pf;cm]
+            | FHE_COMMIT (d,pk,ct) | FHE_PEDERSEN (d,pk,ct)
+            | FHE_PEDERSEN_ADD (d,pk,ct)
+            | FHE_PEDERSEN_SUB (d,pk,ct) -> check_regs pc [d;pk;ct]
+            | FHE_PEDERSEN_IDENTITY d -> check_regs pc [d]
+            | FHE_LOAD_PK (d,s) | FHE_SER (d,s) | FHE_DESER (d,s)
+            | FHE_SER_PK (d,s) | FHE_DESER_PK (d,s)
+            | MLOADR (d,s) | MSTORER (d,s) -> check_regs pc [d;s]
+            | PARSE_INTS (d,a,b) -> check_regs pc [d;a;b]
+            | ISADDR (d,s) -> check_regs pc [d;s]
+            | ISHEX (d,s) -> check_regs pc [d;s]
+            | STATE_PATH_KEY (d,s) -> check_regs pc [d;s]
+            | OBJECT_MEMBER_COUNT (d,s) -> check_regs pc [d;s]
+            | OBJECT_HAS_MEMBER (d,a,b)
+            | OBJECT_MEMBER_REF_AT (d,a,b) -> check_regs pc [d;a;b]
+            | OBJECT_TRANSITION_APPLY (d,a,b,c,e,f,g,h,i,j,k) ->
+              check_regs pc [d;a;b;c;e;f;g;h;i;j;k]
+            | ASSERT_ADDR s -> check_reg pc s
+            | SUBSTR (d,s,a,b) -> check_regs pc [d;s;a;b]
+            | INDEXOF (d,s,p) -> check_regs pc [d;s;p]
+            | SHA256 (d,s) | KECCAK256 (d,s) -> check_regs pc [d;s]
+            | ED25519_OK (d,pk,msg,sig_) -> check_regs pc [d;pk;msg;sig_]
+            | BITAND (d,a,b) | BITOR (d,a,b) | BITXOR (d,a,b)
+            | BITSHL (d,a,b) | BITSHR (d,a,b) -> check_regs pc [d;a;b]
+            | SKEYS (d,p,b) -> check_regs pc [d;p;b]
+            | SKEYS_PAGE (d,n,p,a,b) -> check_regs pc [d;n;p;a;b]
+            | SLOADN (a,b,c) -> check_regs pc [a;b;c]
+            | SSTOREN (a,b,c) -> check_regs pc [a;b;c]
+            | FSTORE (d,s) -> check_regs pc [d;s]
+            | FLOAD (d,s) -> check_regs pc [d;s]
+            | MATMUL (d,l,r,m,k,n) -> check_regs pc [d;l;r;m;k;n]
+            | VECDOT (d,a,b,n) -> check_regs pc [d;a;b;n]
+            | VECDOT_Q16 (d,a,b,n) -> check_regs pc [d;a;b;n]
+            | EXP_LUT (d,x) -> check_regs pc [d;x]
+            | EXP_Q16 (d,x) -> check_regs pc [d;x]
+            | SOFTMAX_INPLACE (a,n) -> check_regs pc [a;n]
+            | SOFTMAX_Q16_INPLACE (a,n) -> check_regs pc [a;n]
+            | LAYERNORM_INPLACE (a,n,g,b) -> check_regs pc [a;n;g;b]
+            | LAYERNORM_Q16_INPLACE (a,n,g,b) -> check_regs pc [a;n;g;b]
+            | RELU_INPLACE (a,n) -> check_regs pc [a;n]
+            | RMSNORM_INPLACE (a,n,g) -> check_regs pc [a;n;g]
+            | RMSNORM_Q16_INPLACE (a,n,g) -> check_regs pc [a;n;g]
+            | SILU_INPLACE (a,n) -> check_regs pc [a;n]
+            | SILU_Q16_INPLACE (a,n) -> check_regs pc [a;n]
+            | ELEMWISE_MUL_INPLACE (d,s,n) -> check_regs pc [d;s;n]
+            | ELEMWISE_MUL_Q16 (d,s,n) -> check_regs pc [d;s;n]
+            | LOAD_INT8_BYTES_TO_MEM (d,s,o,n,sc) -> check_regs pc [d;s;o;n;sc]
+            | RESIDUAL_ADD (d,s,n) -> check_regs pc [d;s;n]
+            | RESIDUAL_ADD_Q16 (d,s,n) -> check_regs pc [d;s;n]
+            | ROPE_APPLY (a,n,p,b) -> check_regs pc [a;n;p;b]
+            | ROPE_APPLY_Q16 (a,n,p,b) -> check_regs pc [a;n;p;b]
+            | LOAD_INT8_B64_TO_MEM (d,s,o,n,sc) -> check_regs pc [d;s;o;n;sc]
+            | LOAD_INT8_Q16 (d,s,o,n,sc) -> check_regs pc [d;s;o;n;sc]
+            | APPEND_VEC_Q16 (d,p,s,n) -> check_regs pc [d;p;s;n]
+            | ARGMAX_Q16 (d,a,n) -> check_regs pc [d;a;n]
+            | MATMUL_Q16 (d,l,r,m,k,n) -> check_regs pc [d;l;r;m;k;n]
+            | SHIFT_ROUND_INPLACE (a,n,b) -> check_regs pc [a;n;b]
+            | MATMUL_FP (d,l,r,m,k,n) -> check_regs pc [d;l;r;m;k;n]
+            | RMSNORM_FP (a,n,g) -> check_regs pc [a;n;g]
+            | SILU_FP (a,n) -> check_regs pc [a;n]
+            | ELEMWISE_MUL_FP (d,s,n) -> check_regs pc [d;s;n]
+            | RESIDUAL_ADD_FP (d,s,n) -> check_regs pc [d;s;n]
+            | ROPE_APPLY_FP (a,n,p,b) -> check_regs pc [a;n;p;b]
+            | LOAD_INT8_FP (d,s,o,n,sc) -> check_regs pc [d;s;o;n;sc]
+            | VECDOT_FP (d,a,b,n) -> check_regs pc [d;a;b;n]
+            | ARGMAX_FP (d,a,n) -> check_regs pc [d;a;n]
+            | ATTENTION_KV_FP (q,k,v,c,t,nq,nk,hd) -> check_regs pc [q;k;v;c;t;nq;nk;hd]
+            | ATTENTION_KV_Q16 (q,k,v,c,t,nq,nk,hd) -> check_regs pc [q;k;v;c;t;nq;nk;hd]
+            | APPEND_VEC_FP (d,p,s,n) -> check_regs pc [d;p;s;n]
+            | EMIT (_,rs) -> check_regs pc rs
+            | JIF (s, dest) ->
+              (match check_reg pc s with
+               | Some e -> Some e
+               | None ->
+                 if not (Hashtbl.mem dests dest) then Some (InvalidJumpDest dest)
+                 else None)
+            | JMP dest ->
+              if not (Hashtbl.mem dests dest) then Some (InvalidJumpDest dest)
+              else None
+            | CALL_INT (d, dest) ->
+              (match check_reg pc d with
+               | Some e -> Some e
+               | None ->
+                 if not (Hashtbl.mem dests dest) then Some (InvalidJumpDest dest)
+                 else None)
+            | JDEST _ -> None
+            | _ -> None
+          in
+          match err with Some e -> Error e | None -> check (pc + 1)
+      in
+      check 0
+end

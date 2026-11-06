@@ -1,0 +1,60 @@
+{
+  "status": "stopped_by_user",
+  "startedAt": "2026-11-05T22:17:27.290Z",
+  "pid": 34112,
+  "chainId": 11155111,
+  "runs": 50,
+  "widths": [
+    16,
+    128
+  ],
+  "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\isolated-validation\\accounts.secret.json",
+  "operationOrder": [
+    "notarize",
+    "add",
+    "mul_scalar",
+    "mean",
+    "max",
+    "view_decrypt"
+  ],
+  "viewDecryptScope": "One persisted getter plus fresh authorized decryption after max per round, separate warmups and samples",
+  "stages": [
+    {
+      "kind": "pilot",
+      "width": 16,
+      "status": "finished",
+      "startedAt": "2026-11-05T22:17:27.295Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05-attempt2\\pilot-euint16\\report.json",
+      "completedAt": "2026-11-05T22:21:33.456Z"
+    },
+    {
+      "kind": "pilot",
+      "width": 128,
+      "status": "stopped_by_user",
+      "startedAt": "2026-11-05T22:21:33.473Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05-attempt2\\pilot-euint128\\report.json"
+    }
+  ],
+  "currentStage": "pilot-euint128",
+  "decryptionPolling": {
+    "requestedIntervalMs": 10,
+    "serverRetryAfter": "respected; can lengthen the effective interval",
+    "patch": "benchmark-decryption-polling-v1",
+    "bundles": {
+      "zama": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+        "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+      },
+      "zamaEsm": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+        "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+      },
+      "fhenix": {
+        "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+        "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+      }
+    }
+  },
+  "stoppedAt": "2026-11-05T22:26:36.469Z",
+  "stopReason": "User requested stop and restart after adding per-meter encrypted owner operation"
+}

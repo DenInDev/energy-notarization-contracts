@@ -1,0 +1,124 @@
+{
+  "at": "2026-11-06T00:48:26.407Z",
+  "width": 128,
+  "complete": false,
+  "reportSha256": "a156c28e4815ab3314726ff7ae800c581db40c2d8ec7bdfea51b47872bb4cebb",
+  "planned": 900,
+  "measured": 177,
+  "primaryOk": 176,
+  "primaryFailures": [
+    {
+      "platform": "fhenix",
+      "run": 10,
+      "operation": "mean",
+      "error": "sealOutput request failed: Too Many Requests",
+      "transactionHash": "0x26c212011f106b7203407892e50c3fc28a02304ebbe9a1023a90dca7b2852012",
+      "receiptStatus": 1
+    }
+  ],
+  "warmupOk": 18,
+  "measuredViews": 27,
+  "warmupViews": 3,
+  "distinctWorkerPids": 3,
+  "sourceMismatches": [],
+  "bundleMismatches": [],
+  "problems": [],
+  "counts": {
+    "baseline": {
+      "set_meter_owner": {
+        "attempted": 10,
+        "ok": 10,
+        "failed": 0
+      },
+      "notarize": {
+        "attempted": 10,
+        "ok": 10,
+        "failed": 0
+      },
+      "add": {
+        "attempted": 10,
+        "ok": 10,
+        "failed": 0
+      },
+      "mul_scalar": {
+        "attempted": 10,
+        "ok": 10,
+        "failed": 0
+      },
+      "mean": {
+        "attempted": 10,
+        "ok": 10,
+        "failed": 0
+      },
+      "max": {
+        "attempted": 9,
+        "ok": 9,
+        "failed": 0
+      }
+    },
+    "zama": {
+      "set_meter_owner": {
+        "attempted": 10,
+        "ok": 10,
+        "failed": 0
+      },
+      "notarize": {
+        "attempted": 10,
+        "ok": 10,
+        "failed": 0
+      },
+      "add": {
+        "attempted": 10,
+        "ok": 10,
+        "failed": 0
+      },
+      "mul_scalar": {
+        "attempted": 10,
+        "ok": 10,
+        "failed": 0
+      },
+      "mean": {
+        "attempted": 10,
+        "ok": 10,
+        "failed": 0
+      },
+      "max": {
+        "attempted": 9,
+        "ok": 9,
+        "failed": 0
+      }
+    },
+    "fhenix": {
+      "set_meter_owner": {
+        "attempted": 10,
+        "ok": 10,
+        "failed": 0
+      },
+      "notarize": {
+        "attempted": 10,
+        "ok": 10,
+        "failed": 0
+      },
+      "add": {
+        "attempted": 10,
+        "ok": 10,
+        "failed": 0
+      },
+      "mul_scalar": {
+        "attempted": 10,
+        "ok": 10,
+        "failed": 0
+      },
+      "mean": {
+        "attempted": 10,
+        "ok": 9,
+        "failed": 1
+      },
+      "max": {
+        "attempted": 9,
+        "ok": 9,
+        "failed": 0
+      }
+    }
+  }
+}

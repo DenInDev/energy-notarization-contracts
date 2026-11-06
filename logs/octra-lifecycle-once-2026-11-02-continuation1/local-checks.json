@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "operation": "mean_field",
+      "inputs": [
+        43,
+        85
+      ],
+      "actual": "64",
+      "expectedFloorInteger": "64",
+      "expectedField": "64",
+      "matchesIntegerMean": true,
+      "matchesField": true
+    },
+    {
+      "operation": "mean_field",
+      "inputs": [
+        42,
+        17
+      ],
+      "actual": "85070591730234615865843651857942052893",
+      "expectedFloorInteger": "29",
+      "expectedField": "85070591730234615865843651857942052893",
+      "matchesIntegerMean": false,
+      "matchesField": true
+    }
+  ],
+  "keySetupMs": 587.667665
+}

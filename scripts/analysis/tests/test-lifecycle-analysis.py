@@ -10,7 +10,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 
-spec = importlib.util.spec_from_file_location("lifecycle_analysis", Path(__file__).with_name("analyze-lifecycle.py"))
+spec = importlib.util.spec_from_file_location("lifecycle_analysis", Path(__file__).resolve().parent.parent / "analyze-lifecycle.py")
 analysis = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(analysis)
 

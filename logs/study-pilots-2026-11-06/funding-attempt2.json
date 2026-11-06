@@ -1,0 +1,1659 @@
+{
+  "schemaVersion": 1,
+  "chainId": 11155111,
+  "status": "finished",
+  "pid": 16784,
+  "startedAt": "2026-11-06T11:00:28.520Z",
+  "source": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+  "sourceNonceBefore": 991,
+  "authorization": "Explicit user approval: transfer existing Sepolia funds, 0.001 ETH to each of three pilot accounts, total 0.003 ETH.",
+  "previousAttempt": "funding.json",
+  "previousFailureRetained": "0x5e936724f7a15d149d474175ada83c0e07a6fde09341f0567536d03bdef1fe70",
+  "discardedNeverBroadcastPreparedHashes": [
+    "0xb08786901d33f16ba23c6314d04cca9a9f69740709d828ec55c96d7842175e6a",
+    "0x64f6771c6064349b7f98b5af05794d44d2b84272c7c443bf3bd9bcddd8f7e99c"
+  ],
+  "transfers": [
+    {
+      "role": "operator",
+      "to": "0x8d597B9C2e568d43840215E887A94cdD5e19E0cF",
+      "amountWei": "1000000000000000",
+      "estimatedGas": "248869",
+      "transaction": {
+        "id": "fund-pilot-attempt2-0",
+        "method": "authorized_pilot_funding",
+        "user": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+        "transactionNonce": 991,
+        "preparedTransactionHash": "0x4759ce8c9df1175bbeb12679d7245381dd49cbeda8fc8f2526f1094acdbf6882",
+        "gasLimit": "311087",
+        "maxFeePerGasWei": "42",
+        "maxPriorityFeePerGasWei": "2",
+        "broadcastState": "acknowledged",
+        "status": "confirmed",
+        "stages": [
+          {
+            "stage": "transaction.raw_broadcast",
+            "startMs": 317.91449999999986,
+            "durationMs": 117.59529999999995,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 436.1941999999999,
+            "durationMs": 59.211600000000544,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 495.5101999999997,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 996.7030999999997,
+            "durationMs": 63.72600000000057,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 1060.4553000000005,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 1560.1475,
+            "durationMs": 64.20330000000013,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 1624.3654999999999,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 2125.9461,
+            "durationMs": 57.137399999999616,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 2183.1017999999995,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 2691.4419000000007,
+            "durationMs": 344.8660999999993,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 3036.3239999999996,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 3550.1071999999995,
+            "durationMs": 64.28830000000016,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 3614.4134000000004,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 4127.5364,
+            "durationMs": 54.601300000000265,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 4182.1521999999995,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 4690.0187,
+            "durationMs": 54.79520000000048,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 4744.8288999999995,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 5252.469900000001,
+            "durationMs": 54.842099999999846,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 5307.330999999999,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 5820.084100000001,
+            "durationMs": 65.36359999999877,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 5885.4857,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 6400.558,
+            "durationMs": 56.66200000000026,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 6457.2422,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 6958.634000000001,
+            "durationMs": 55.414199999999255,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 7014.0657,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 7517.5708,
+            "durationMs": 54.20550000000003,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 7571.7871000000005,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 8083.4562,
+            "durationMs": 59.91350000000057,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 8143.3811,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 8644.979299999999,
+            "durationMs": 103.28299999999945,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 8748.2739,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 9254.7049,
+            "durationMs": 84.16809999999896,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 9338.8875,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 9847.781500000001,
+            "durationMs": 56.5782999999974,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 9904.3711,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 10410.318899999998,
+            "durationMs": 60.62960000000021,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 10470.9653,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 10986.562999999998,
+            "durationMs": 57.28810000000158,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 11043.861099999998,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 11555.8727,
+            "durationMs": 61.51640000000043,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 11617.4022,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 12120.0256,
+            "durationMs": 55.081899999997404,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 12175.1175,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 12682.806399999998,
+            "durationMs": 57.61460000000079,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 12740.432,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 13247.8458,
+            "durationMs": 51.43990000000122,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 13299.2977,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 13813.534599999999,
+            "durationMs": 60.993500000000495,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 13874.538499999999,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 14389.194599999999,
+            "durationMs": 49.81920000000173,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 14439.042399999998,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 14950.253099999998,
+            "durationMs": 55.07090000000244,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 15005.332899999998,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 15510.8982,
+            "durationMs": 57.81209999999919,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 15568.7192,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 16074.7585,
+            "durationMs": 53.54820000000109,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 16128.3154,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 16636.6865,
+            "durationMs": 54.14719999999943,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 16690.8445,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 17198.6914,
+            "durationMs": 53.85389999999825,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 17252.5539,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 17760.775999999998,
+            "durationMs": 60.87069999999949,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 17821.6583,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 18337.1424,
+            "durationMs": 53.55569999999716,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 18390.707,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 18904.1956,
+            "durationMs": 54.681000000000495,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 18958.885599999998,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 19470.2692,
+            "durationMs": 62.723799999999756,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 19533.001099999998,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 20034.8032,
+            "durationMs": 59.18500000000131,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 20093.9994,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 20600.2793,
+            "durationMs": 54.050900000002,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 20654.340799999998,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 21162.6924,
+            "durationMs": 55.922999999998865,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 21218.6276,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 21723.2787,
+            "durationMs": 62.39640000000145,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 21785.6866,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 22319.609399999998,
+            "durationMs": 56.35750000000189,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 22375.9765,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 22881.4709,
+            "durationMs": 59.487600000000384,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 22940.967099999998,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 23443.102199999998,
+            "durationMs": 63.18180000000211,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 23506.2955,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 24007.9777,
+            "durationMs": 99.1846000000005,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 24107.1728,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 24618.8949,
+            "durationMs": 58.379799999998795,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 24677.285499999998,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 25184.1233,
+            "durationMs": 54.84370000000126,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 25238.9778,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 25745.427499999998,
+            "durationMs": 56.04119999999966,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 25801.482,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 26311.1577,
+            "durationMs": 52.70669999999882,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 26363.8756,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 26873.853900000002,
+            "durationMs": 50.91679999999906,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 26924.7825,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 27437.909999999996,
+            "durationMs": 59.655600000005506,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 27497.577899999997,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 28011.9277,
+            "durationMs": 61.97860000000219,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 28073.915199999996,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 28583.7987,
+            "durationMs": 59.78790000000299,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 28643.596100000002,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 29146.672599999998,
+            "durationMs": 53.21850000000268,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 29199.900499999996,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 29711.144500000002,
+            "durationMs": 53.97189999999682,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 29765.1261,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 30277.553999999996,
+            "durationMs": 52.58510000000388,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 30330.1478,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 30844.2503,
+            "durationMs": 75.30739999999787,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 30919.5688,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 31425.6622,
+            "durationMs": 54.91820000000007,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 31480.5881,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 31990.040500000003,
+            "durationMs": 51.01339999999618,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 32041.068099999997,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 32551.5348,
+            "durationMs": 52.98229999999603,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 32604.527199999997,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 33113.3615,
+            "durationMs": 61.26180000000022,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 33174.6334,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 33690.2893,
+            "durationMs": 54.530100000003586,
+            "status": "ok"
+          }
+        ],
+        "startedAt": "2026-11-06T11:00:28.911Z",
+        "transactionHash": "0x4759ce8c9df1175bbeb12679d7245381dd49cbeda8fc8f2526f1094acdbf6882",
+        "broadcastStartedAt": "2026-11-06T11:00:28.911Z",
+        "broadcastStartedOffsetMs": 317.3831,
+        "rpcSendStartedAt": "2026-11-06T11:00:28.911Z",
+        "rpcSendMonotonicMs": 6496.642,
+        "broadcastAcknowledgedAt": "2026-11-06T11:00:29.029Z",
+        "broadcastAckMs": 117.66790000000037,
+        "transactionIndex": 166,
+        "receiptObservedMonotonicMs": 39923.4757,
+        "receiptMs": 33426.8337,
+        "receiptOffsetMs": 33744.8577,
+        "blockHash": "0x4ae93bd1d4c274762c8103de206577cf91949d03e1b105fd25d377088c91f6df",
+        "blockNumber": 12076134,
+        "receiptStatus": 1,
+        "gasUsed": 204600,
+        "effectiveGasPriceWei": "20",
+        "gasCostWei": "4092000"
+      },
+      "balanceAfterEth": "0.001"
+    },
+    {
+      "role": "writer-1",
+      "to": "0x5Df7Adc822605Cb15434966BBA810939F21F55a9",
+      "amountWei": "1000000000000000",
+      "estimatedGas": "248869",
+      "transaction": {
+        "id": "fund-pilot-attempt2-1",
+        "method": "authorized_pilot_funding",
+        "user": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+        "transactionNonce": 992,
+        "preparedTransactionHash": "0xb8b1d6b6dab3fe2f8ff97c1c7ad93978131f0d7f4cd79c911bc198bfe1869f3f",
+        "gasLimit": "311087",
+        "maxFeePerGasWei": "42",
+        "maxPriorityFeePerGasWei": "2",
+        "broadcastState": "acknowledged",
+        "status": "confirmed",
+        "stages": [
+          {
+            "stage": "transaction.raw_broadcast",
+            "startMs": 33603.245500000005,
+            "durationMs": 110.09049999999843,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 33713.913100000005,
+            "durationMs": 71.38420000000042,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 33785.3072,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 34298.398,
+            "durationMs": 182.32110000000102,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 34480.731,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 34984.350900000005,
+            "durationMs": 56.60190000000148,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 35040.966,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 35549.0915,
+            "durationMs": 87.99489999999787,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 35637.0968,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 36141.1943,
+            "durationMs": 54.21600000000035,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 36195.4221,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 36705.455500000004,
+            "durationMs": 51.36269999999786,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 36756.8283,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 37270.074,
+            "durationMs": 54.02019999999902,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 37324.1014,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 37831.086200000005,
+            "durationMs": 71.36290000000008,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 37902.458300000006,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 38407.7381,
+            "durationMs": 59.23569999999745,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 38466.9836,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 38971.411100000005,
+            "durationMs": 54.98059999999532,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 39026.399600000004,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 39536.1302,
+            "durationMs": 77.51950000000215,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 39613.66,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 40113.2442,
+            "durationMs": 54.33690000000206,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 40167.590500000006,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 40679.456900000005,
+            "durationMs": 87.43789999999717,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 40766.9038,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 41269.8226,
+            "durationMs": 56.464700000004086,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 41326.294700000006,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 41831.3243,
+            "durationMs": 53.91290000000299,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 41885.248100000004,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 42395.2416,
+            "durationMs": 51.842100000001665,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 42447.094000000005,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 42958.3802,
+            "durationMs": 61.4375,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 43019.8291,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 43534.408500000005,
+            "durationMs": 65.0135999999984,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 43599.432400000005,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 44110.774900000004,
+            "durationMs": 61.489199999996345,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 44172.2768,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 44675.5898,
+            "durationMs": 80.94710000000487,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 44756.5466,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 45271.226800000004,
+            "durationMs": 62.889900000001944,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 45334.127400000005,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 45836.237700000005,
+            "durationMs": 52.93959999999788,
+            "status": "ok"
+          }
+        ],
+        "startedAt": "2026-11-06T11:01:02.340Z",
+        "transactionHash": "0xb8b1d6b6dab3fe2f8ff97c1c7ad93978131f0d7f4cd79c911bc198bfe1869f3f",
+        "broadcastStartedAt": "2026-11-06T11:01:02.341Z",
+        "broadcastStartedOffsetMs": 33602.684100000006,
+        "rpcSendStartedAt": "2026-11-06T11:01:02.342Z",
+        "rpcSendMonotonicMs": 39926.6455,
+        "broadcastAcknowledgedAt": "2026-11-06T11:01:02.452Z",
+        "broadcastAckMs": 110.10379999999714,
+        "transactionIndex": 34,
+        "receiptObservedMonotonicMs": 52212.5816,
+        "receiptMs": 12285.936099999999,
+        "receiptOffsetMs": 45889.201400000005,
+        "blockHash": "0xffaf1ba48acb1d2e05c1480244f943a3284b9d8efe2271271fb9fd756a75b034",
+        "blockNumber": 12076135,
+        "receiptStatus": 1,
+        "gasUsed": 204600,
+        "effectiveGasPriceWei": "21",
+        "gasCostWei": "4296600"
+      },
+      "balanceAfterEth": "0.001"
+    },
+    {
+      "role": "writer-2",
+      "to": "0x073E31aF380A81D2339C8952052A353E218ebD91",
+      "amountWei": "1000000000000000",
+      "estimatedGas": "248869",
+      "transaction": {
+        "id": "fund-pilot-attempt2-2",
+        "method": "authorized_pilot_funding",
+        "user": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+        "transactionNonce": 993,
+        "preparedTransactionHash": "0xd64df96a391b347cd87b8a928e3f00a0f7e7adb261498916367960b27e54ffa0",
+        "gasLimit": "311087",
+        "maxFeePerGasWei": "42",
+        "maxPriorityFeePerGasWei": "2",
+        "broadcastState": "acknowledged",
+        "status": "confirmed",
+        "stages": [
+          {
+            "stage": "transaction.raw_broadcast",
+            "startMs": 45774.3724,
+            "durationMs": 100.1952999999994,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 45875.2346,
+            "durationMs": 54.59909999999945,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 45929.844900000004,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 46435.733700000004,
+            "durationMs": 54.5054999999993,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 46490.249800000005,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 46999.5458,
+            "durationMs": 58.26589999999851,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 47057.822700000004,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 47559.2451,
+            "durationMs": 56.488400000002,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 47615.7466,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 48125.7609,
+            "durationMs": 53.39760000000388,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 48179.1707,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 48688.3807,
+            "durationMs": 64.17489999999816,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 48752.5662,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 49252.7649,
+            "durationMs": 59.69049999999697,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 49312.4666,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 49812.4033,
+            "durationMs": 51.74000000000524,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 49864.1527,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 50375.497,
+            "durationMs": 53.61839999999938,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 50429.1304,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 50942.5976,
+            "durationMs": 51.98380000000179,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 50994.596300000005,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 51508.1096,
+            "durationMs": 52.4516999999978,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 51560.5774,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 52072.1203,
+            "durationMs": 53.93789999999717,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 52126.0714,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 52632.381,
+            "durationMs": 79.40959999999905,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 52711.802800000005,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 53212.2908,
+            "durationMs": 54.01279999999679,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 53266.337,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 53774.526000000005,
+            "durationMs": 56.81999999999971,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 53831.360400000005,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 54336.179000000004,
+            "durationMs": 59.32890000000043,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 54395.5201,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 54896.8471,
+            "durationMs": 53.87720000000263,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 54950.733700000004,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 55462.7705,
+            "durationMs": 59.39270000000397,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 55522.1728,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 56025.8972,
+            "durationMs": 59.05419999999867,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 56084.9642,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 56585.890400000004,
+            "durationMs": 68.75969999999506,
+            "status": "ok"
+          },
+          {
+            "stage": "transaction.receipt_poll",
+            "startMs": 56654.6604,
+            "durationMs": 0,
+            "status": "event",
+            "detail": {
+              "intervalMs": 500
+            }
+          },
+          {
+            "stage": "transaction.receipt.read_attempt",
+            "startMs": 57165.367,
+            "durationMs": 74.64560000000347,
+            "status": "ok"
+          }
+        ],
+        "startedAt": "2026-11-06T11:01:14.629Z",
+        "transactionHash": "0xd64df96a391b347cd87b8a928e3f00a0f7e7adb261498916367960b27e54ffa0",
+        "broadcastStartedAt": "2026-11-06T11:01:14.629Z",
+        "broadcastStartedOffsetMs": 45773.7817,
+        "rpcSendStartedAt": "2026-11-06T11:01:14.630Z",
+        "rpcSendMonotonicMs": 52214.7596,
+        "broadcastAcknowledgedAt": "2026-11-06T11:01:14.730Z",
+        "broadcastAckMs": 100.21349999999802,
+        "transactionIndex": 91,
+        "receiptObservedMonotonicMs": 63680.4022,
+        "receiptMs": 11465.6426,
+        "receiptOffsetMs": 57240.0322,
+        "blockHash": "0x0301b1660858bc512eb2feab4147072a9c0189e25f708b75a898fa8ab668cd13",
+        "blockNumber": 12076136,
+        "receiptStatus": 1,
+        "gasUsed": 204600,
+        "effectiveGasPriceWei": "21",
+        "gasCostWei": "4296600"
+      },
+      "balanceAfterEth": "0.001"
+    }
+  ],
+  "finishedAt": "2026-11-06T11:01:26.355Z",
+  "totalTransferredEth": "0.003",
+  "totalGasCostWei": "12685200"
+}

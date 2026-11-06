@@ -1,0 +1,35 @@
+{
+  "status": "failed",
+  "startedAt": "2026-11-05T22:34:51.938Z",
+  "pid": 26792,
+  "chainId": 11155111,
+  "runs": 50,
+  "widths": [
+    16,
+    128
+  ],
+  "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\isolated-validation\\accounts.secret.json",
+  "operationOrder": [
+    "set_meter_owner",
+    "notarize",
+    "add",
+    "mul_scalar",
+    "mean",
+    "max",
+    "view_decrypt"
+  ],
+  "ownershipScope": "50 measured encrypted-address imports per platform and width, before the energy operations, with receipt-pinned owner getter and equality-validated authorized decryption",
+  "viewDecryptScope": "One persisted getter plus fresh authorized decryption after max per round, separate warmups and samples",
+  "stages": [
+    {
+      "kind": "pilot",
+      "width": 16,
+      "status": "failed",
+      "startedAt": "2026-11-05T22:34:51.944Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05\\pilot-euint16\\report.json"
+    }
+  ],
+  "currentStage": "pilot-euint16",
+  "error": "Preparation failed before barrier release: The value must be a valid address.",
+  "abortedAt": "2026-11-05T22:35:47.079Z"
+}

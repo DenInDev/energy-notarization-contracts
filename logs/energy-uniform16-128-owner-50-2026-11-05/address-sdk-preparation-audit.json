@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-05T22:37:03.582Z",
+  "type": "read-only-offchain-SDK-input-preparation",
+  "platform": "zama",
+  "addressType": "eaddress",
+  "inputAddress": "0x1234567890AbcdEF1234567890aBcdef12345678",
+  "handleAndProofPresent": true,
+  "transactionBroadcasts": 0,
+  "trace": [
+    {
+      "stage": "setup.sdk_initialization",
+      "startMs": 0.08619999999973516,
+      "durationMs": 2244.0077999999994,
+      "status": "ok"
+    },
+    {
+      "stage": "encrypt.local_ciphertext_and_zkproof",
+      "startMs": 2244.161899999999,
+      "durationMs": 6508.338600000001,
+      "status": "ok"
+    },
+    {
+      "stage": "encrypt.sdk_progress",
+      "startMs": 8901.1998,
+      "durationMs": 0,
+      "status": "event",
+      "detail": {
+        "type": "queued",
+        "operation": "INPUT_PROOF",
+        "step": 0,
+        "retryCount": 0,
+        "retryAfterMs": 2000,
+        "elapsed": 0,
+        "jobId": "ba39155d-3414-4e44-8f7f-c119f1c84486",
+        "requestId": "78ad00a3-dc33-424a-bcf3-0b4b0450470b"
+      }
+    },
+    {
+      "stage": "encrypt.sdk_progress",
+      "startMs": 10975.7882,
+      "durationMs": 0,
+      "status": "event",
+      "detail": {
+        "type": "succeeded",
+        "operation": "INPUT_PROOF",
+        "step": 1,
+        "retryCount": 1,
+        "elapsed": 2008,
+        "jobId": "ba39155d-3414-4e44-8f7f-c119f1c84486",
+        "requestId": "b6814550-dcc0-4595-a86b-40107f42dc22"
+      }
+    },
+    {
+      "stage": "encrypt.remote_input_approval",
+      "startMs": 8752.5035,
+      "durationMs": 2235.1384,
+      "status": "ok"
+    }
+  ],
+  "failedReportSha256": "e484229a66d1ed03c567edbe2efadb3ed1887b58ecad52c5e718cfd967beef2d"
+}

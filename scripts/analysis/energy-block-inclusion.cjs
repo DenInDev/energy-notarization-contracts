@@ -22,7 +22,7 @@ const comparisons = [...groups.values()].filter(samples =>
 const sameBlockCount = comparisons.filter(c => c.sameBlock).length;
 const result = {complete: !!report.complete, comparisonCount: comparisons.length, sameBlockCount,
   sameBlockFraction: comparisons.length ? sameBlockCount / comparisons.length : null,
-  plannedComparisonCount: report.runs * 5, comparisons};
+  plannedComparisonCount: report.runs * (report.measuredOperations?.length ?? 5), comparisons};
 const output = path.join(path.dirname(file), 'block-inclusion.json');
 fs.writeFileSync(output, JSON.stringify(result, null, 2) + '\n');
 console.log(JSON.stringify({output, comparisons: comparisons.length, sameBlockCount,

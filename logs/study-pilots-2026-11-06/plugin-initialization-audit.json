@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-06T11:32:02.601Z",
+  "network": "sepolia",
+  "mock": false,
+  "methods": {
+    "eth_chainId": 7,
+    "eth_call": 6
+  },
+  "mutations": 0
+}

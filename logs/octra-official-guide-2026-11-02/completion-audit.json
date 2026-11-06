@@ -1,0 +1,9 @@
+{
+  "all_checks_ok": true,
+  "two_transactions_confirmed": true,
+  "fee_balance_delta_matches": true,
+  "initial_nonce": 4,
+  "final_nonce": 6,
+  "pending_nonce": 6,
+  "raw_report_sha256": "ef0fe4c8c0d097ef4e0616dbb550ab3e83c9c504d72b0ae13cc10c8244450e69"
+}

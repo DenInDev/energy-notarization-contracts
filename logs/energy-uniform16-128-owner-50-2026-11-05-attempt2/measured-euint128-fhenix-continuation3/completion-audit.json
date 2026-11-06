@@ -1,0 +1,108 @@
+{
+  "at": "2026-11-06T02:24:11.345Z",
+  "status": "fhenix_execution_complete_with_retained_failures",
+  "reportSha256": "75d9ae589d8d0d8edef3511ae55d2e1ab301131470d0cb1ba59c124ea04dfe9b",
+  "primarySlots": 300,
+  "primaryOk": 298,
+  "historicalPrimaryFailures": [
+    {
+      "run": 10,
+      "operation": "mean",
+      "transactionHash": "0x26c212011f106b7203407892e50c3fc28a02304ebbe9a1023a90dca7b2852012",
+      "error": "sealOutput request failed: Too Many Requests"
+    },
+    {
+      "run": 16,
+      "operation": "max",
+      "transactionHash": "0xd385b4a4dad9146962238d09a1d674da610f854e7ecae6f904c11ca6eebacd0d",
+      "error": "sealOutput request failed: Too Many Requests"
+    }
+  ],
+  "successfulExplicitRetries": 1,
+  "retryHash": "0x4a3df21c8bbff1e4718251705a2d950c75de1f59f88617ea02a0089c56ffe174",
+  "retryNonce": 748,
+  "normalViews": 49,
+  "separateLateRecoveryViews": 1,
+  "ownerRegistrationsOk": 50,
+  "newPrimaryOk": 204,
+  "newNonces": {
+    "first": 786,
+    "last": 989
+  },
+  "sourceChecks": [
+    {
+      "file": "logs/energy-uniform16-128-owner-50-2026-11-05-attempt2/measured-euint128/report.json",
+      "expectedSha256": "a156c28e4815ab3314726ff7ae800c581db40c2d8ec7bdfea51b47872bb4cebb",
+      "currentSha256": "a156c28e4815ab3314726ff7ae800c581db40c2d8ec7bdfea51b47872bb4cebb"
+    },
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\measured-euint128-fhenix-continuation1\\report.json",
+      "expectedSha256": "cb28e7c9a0a9f847300ced4bd85456e2959e481652cdc00203291baade8a2934",
+      "currentSha256": "cb28e7c9a0a9f847300ced4bd85456e2959e481652cdc00203291baade8a2934"
+    },
+    {
+      "file": "logs/energy-uniform16-128-owner-50-2026-11-05-attempt2/measured-euint128-fhenix-continuation2/report.json",
+      "expectedSha256": "1265139df01e0253cf58179c397894a6c6d70cac78331d443b8db201c525811c",
+      "currentSha256": "1265139df01e0253cf58179c397894a6c6d70cac78331d443b8db201c525811c"
+    },
+    {
+      "file": "logs/energy-uniform16-128-owner-50-2026-11-05-attempt2/measured-euint16/report.json",
+      "expectedSha256": "ea71bf7e2a4503fa82ab48fa6deee9e1a97392bd857720da44f85573dc3e1d73",
+      "currentSha256": "ea71bf7e2a4503fa82ab48fa6deee9e1a97392bd857720da44f85573dc3e1d73"
+    }
+  ],
+  "codeMismatches": [],
+  "sdkMismatches": [],
+  "accountChecks": [
+    {
+      "platform": "baseline",
+      "lastHash": "0x90c4e861f01d7e944c62e447fad4ddb64fa884d2876bbd2174b957f7d7739f98",
+      "lastNonce": 747,
+      "latest": 748,
+      "pending": 748,
+      "expected": 748,
+      "canonical": true
+    },
+    {
+      "platform": "zama",
+      "lastHash": "0xb1e198f9d7940bcffabd4a6ba6e3fe676f553cb64e49356a8d73a93e5e922246",
+      "lastNonce": 747,
+      "latest": 748,
+      "pending": 748,
+      "expected": 748,
+      "canonical": true
+    },
+    {
+      "platform": "fhenix",
+      "lastHash": "0x776b95acc7839ffa88555e14afcb8facd424e1549691356d43d14497eb9a657c",
+      "lastNonce": 989,
+      "latest": 990,
+      "pending": 990,
+      "expected": 990,
+      "canonical": true
+    }
+  ],
+  "gasCostWeiFhenixIncludingDeploymentWarmupFailuresAndRetry": "1858180548",
+  "baselineZamaNewTransactions": 0,
+  "globalCampaignComplete": false,
+  "finalSegment": {
+    "primarySuccesses": 204,
+    "primaryAttempts": 204,
+    "httpStatusCounts": {
+      "200": 272,
+      "204": 475,
+      "404": 20
+    },
+    "http429ReadRetries": 0,
+    "observedSdkPollHintsMs": {
+      "1000": 495
+    }
+  },
+  "metadataSupplement": {
+    "provenance": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\measured-euint128-fhenix-continuation3\\supplementary\\provenance.json",
+    "recoveredBlocks": 73,
+    "recoveredRows": 81,
+    "boundedReadOnlyRpcCalls": 74,
+    "unresolved": 0
+  }
+}

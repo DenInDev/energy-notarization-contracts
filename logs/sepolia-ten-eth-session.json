@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-10-21T18:54:43.1732337Z",
+  "observedRewardEth": "0",
+  "accounts": 9,
+  "targetPerAccountEth": "10",
+  "status": "recurring-limit-cooldown",
+  "url": "https://sepolia-faucet.pk910.de/#/",
+  "collector": "0x3552Cc153DCcC007d1c0D88Ff5aDB258d2688121",
+  "lastClaimHash": "0xd3a1219b4ff9a56f4e7d2b34955ef22a2427386fc00329637ef19eeef11afb62",
+  "lastClaimEth": "2.5",
+  "limitMessage": "[RECURRING_LIMIT] You have already requested 5.545 SepETH in the last 2d",
+  "nextEligibleAt": "2026-10-23T19:04:00Z",
+  "retryTimeBasis": "Conservative retry: latest confirmed claim plus two days and ten minutes; exact faucet eligibility is not supplied."
+}

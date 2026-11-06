@@ -1,0 +1,65 @@
+{
+  "at": "2026-11-06T14:56:27.016Z",
+  "status": "failed_canonical_receipt_changed",
+  "rawReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\concurrency-euint16-continuation3\\report.json",
+  "rawSha256": "510aa431e29e5a35deb1065bf40ecaad03c6c47e4f2cd8ab0bca6836a4b87dac",
+  "executionComplete": false,
+  "allValid": false,
+  "counts": {
+    "measuredPlanned": 432,
+    "measuredValidated": 40,
+    "measuredConfirmed": 48,
+    "warmupPlanned": 216,
+    "warmupValidatedDuringOriginalAudit": 200,
+    "warmupValidatedBySeparateLateAudit": 16,
+    "warmupConfirmed": 216
+  },
+  "retainedFailure": "Duplicate or noncanonical Applied event",
+  "canonicalReinclusions": [
+    {
+      "requestId": "0xfff647595ecadcc73c49fc18a214817444e3d76175b5b2c62036a0cde5a769cb",
+      "hash": "0xa63e983f64bd606479fb9f030c79f86c1cc662059c7f931c1559b367e47f6888",
+      "status": "0x1",
+      "blockHash": "0x86f4d14ee0bc234b7a263f8dd59b9757fcea14e1369ca062543731756c1ff149",
+      "index": 118,
+      "block": 12077260,
+      "canonical": true,
+      "matchesRecorded": false
+    }
+  ],
+  "allAffectedWindowReceiptsCurrentlyCanonical": true,
+  "affectedWindow": {
+    "scopeId": "0x0f0772ca648d954dd7b8f6e0095603cbbdff13d9ebb0410ca74c5ad1a0bdcefb",
+    "platform": "zama",
+    "requests": 8,
+    "originalAuditCompleted": false
+  },
+  "priorPrefixes": [
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\concurrency-euint16\\report.json",
+      "sha256": "b5b85f760c43e06e7f166ae50d4f08f8af07ad74c4e8e9c53695732bfc3ac748",
+      "matchesRecordedSha": true,
+      "serializedTrialPrefixUnchanged": true,
+      "serializedSetupPrefixUnchanged": true
+    },
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\concurrency-euint16-continuation1\\report.json",
+      "sha256": "927fc5d73594635ae5635841f31d9c268eb92793602d5d70cb4c3ab4938f6127",
+      "matchesRecordedSha": true,
+      "serializedTrialPrefixUnchanged": true,
+      "serializedSetupPrefixUnchanged": true
+    },
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\concurrency-euint16-continuation2\\report.json",
+      "sha256": "d1561a0eb1ec4408a7f3dfd9657e349b18dfc0af26fdf4d924c327664988d92c",
+      "matchesRecordedSha": true,
+      "serializedTrialPrefixUnchanged": true,
+      "serializedSetupPrefixUnchanged": true
+    }
+  ],
+  "interpretation": "A saved first-observed receipt differs from the later canonical receipt for the same transaction hash. This is reinclusion/chain-RPC canonical-history evidence, not evidence of an FHE arithmetic inconsistency. Its original receipt latency must not be relabeled as current canonical inclusion latency. No failed or confirmed transaction was replayed.",
+  "gasQualification": "Raw cost records use first-observed receipts. Canonical cost must use recovered receipts for reincluded transactions; no reconciled all-campaign gas total is claimed in this partial analysis.",
+  "nextStep": "A continuation must explicitly reconcile canonical receipt changes in supplementary provenance, preserve raw timing/outcome records, separately audit this fully confirmed measured window without recovering original latency, and send only still-unattempted planned operations. Existing continuation deliberately refuses this source.",
+  "noAdditionalSendsAfterFailure": true,
+  "mutationCallsDuringAudit": 0
+}

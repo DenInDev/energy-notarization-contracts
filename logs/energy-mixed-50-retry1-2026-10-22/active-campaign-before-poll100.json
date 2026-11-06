@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "previousReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-2026-10-22/report.json",
+  "stderr": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-retry1-2026-10-22.stderr.log",
+  "pid": 33968,
+  "startedAt": "2026-10-22T18:50:33.0705308Z",
+  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-retry1-2026-10-22/report.json",
+  "runs": 50,
+  "stdout": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-retry1-2026-10-22.stdout.log",
+  "completedAt": "2026-10-22T20:06:09.185Z",
+  "measuredValidated": 750,
+  "warmupValidated": 15,
+  "sameBlockComparisons": 244,
+  "totalComparisons": 250,
+  "totalGasCostEth": "0.000000009173102553",
+  "analysis": "logs/energy-mixed-50-retry1-2026-10-22/analysis-input/analysis.json",
+  "metadataSupplement": "logs/energy-mixed-50-retry1-2026-10-22/metadata-recovery.json"
+}

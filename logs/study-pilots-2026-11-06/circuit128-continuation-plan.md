@@ -1,0 +1,5 @@
+# Circuit128: continuation of an unsent compute preparation
+
+Original report SHA256 02c5605709d8b5458641c312abe9a814e279cc1d32463a64882a32be874f2a39.54validated measured computes,2known measured HCU rejections,26valid warmups,1known warmup HCU rejection.170confirmed transactions. Last compute had nonce-1 and no signed hash/broadcast; its input load at nonce478 is canonical. Latest=pending479 verified read-only.
+Continue25remaining planned compute attempts (including a possible known capacity boundary), with24new input loads. Reuse the last confirmed load. Do not repeat deployment/warmup/successful computes. The full planned matrix is unchanged; known HCU rejections remain unsent capacity evidence, not successful observations.
+Source SHA and serialized prefixes checked on each save. Canonical supplementary receipts can provide anchors/gas, never reconstructed timing. The two16bit stages are finished and skipped by SHA. After circuit128, only the authorized reduced concurrency128 pilot remains. No funding or full50-repetition experiment.

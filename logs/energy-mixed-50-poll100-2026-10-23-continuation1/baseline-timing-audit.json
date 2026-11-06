@@ -1,0 +1,721 @@
+{
+  "sourceReportSha256": "c1d88b6bdd9cfd1b189b246798ec303c564176a79e0f0d398cb9232a8f184c0a",
+  "decomposition": [
+    {
+      "platform": "baseline",
+      "operation": "notarize",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 3046.7,
+        "median": 465.5,
+        "min": 2,
+        "max": 6811
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 6609.534643999992,
+        "median": 6595.767700000084,
+        "min": 6061.299100000062,
+        "max": 7674.153099999996
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 12748.96553399999,
+        "median": 5893.759900000034,
+        "min": 2932.931499999948,
+        "max": 66514.05969999963
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 93.60509599999845,
+        "median": 63.42930000011984,
+        "min": 49.552199999801815,
+        "max": 1133.0806999999913
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 50,
+        "mean": 1466.48,
+        "median": 1400.5,
+        "min": 647,
+        "max": 3725
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "add",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 467.69441399996754,
+        "median": 435.83989999990445,
+        "min": 345.8986999997869,
+        "max": 837.8862999999837
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 11662.21720800001,
+        "median": 6205.12770000007,
+        "min": 2184.779999999999,
+        "max": 54767.57290000003
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 61.08935799999832,
+        "median": 59.7599499999269,
+        "min": 51.49589999997988,
+        "max": 91.84769999980927
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 49,
+        "mean": 1541.5510204081634,
+        "median": 1463,
+        "min": 574,
+        "max": 2503
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "mul_scalar",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 452.2848579999933,
+        "median": 433.60620000003837,
+        "min": 331.7098999999871,
+        "max": 823.4623999999603
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 9020.967283999995,
+        "median": 5315.030550000025,
+        "min": 3343.125599999912,
+        "max": 29924.467599999858
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 65.47039200003957,
+        "median": 58.039050000021234,
+        "min": 51.23460000008345,
+        "max": 138.81400000001304
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 50,
+        "mean": 1598.16,
+        "median": 1554.5,
+        "min": 663,
+        "max": 2813
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "mean",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 427.16624400002746,
+        "median": 425.82350000001315,
+        "min": 333.7235000000801,
+        "max": 535.1679000000004
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 9623.249422000043,
+        "median": 5491.317499999946,
+        "min": 1631.2221999999601,
+        "max": 53821.43460000027
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 108.59407999996111,
+        "median": 62.52284999983385,
+        "min": 52.09349999995902,
+        "max": 1147.4158999999054
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 50,
+        "mean": 1435.36,
+        "median": 1415,
+        "min": 677,
+        "max": 2681
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "max",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 442.2669179999926,
+        "median": 424.5510999998078,
+        "min": 327.1119000001345,
+        "max": 679.6891000000032
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 8259.374005999956,
+        "median": 4680.620000000024,
+        "min": 1592.0540999999503,
+        "max": 28148.74139999994
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 64.10142799997965,
+        "median": 60.42779999997583,
+        "min": 47.62309999996796,
+        "max": 151.3931000000448
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 50,
+        "mean": 1491.04,
+        "median": 1308,
+        "min": 515,
+        "max": 3908
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "notarize",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 14576.42,
+        "median": 14430.5,
+        "min": 13281,
+        "max": 15990
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 422.8012459999975,
+        "median": 419.0968499999144,
+        "min": 319.19860000000335,
+        "max": 717.3204000000842
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 12821.418632000019,
+        "median": 12181.093200000061,
+        "min": 1347.028899999801,
+        "max": 50872.14280000003
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 4293.830917999975,
+        "median": 4565.449699999881,
+        "min": 2438.61819999991,
+        "max": 9866.76139999996
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 50,
+        "mean": 1474.94,
+        "median": 1359.5,
+        "min": 803,
+        "max": 3983
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "add",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 476.75271400000315,
+        "median": 446.21635000011884,
+        "min": 353.62309999996796,
+        "max": 921.2425999999978
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 11858.005163999982,
+        "median": 6333.289850000059,
+        "min": 2247.1816999999864,
+        "max": 54748.402199999895
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 4484.722398000013,
+        "median": 4655.350350000081,
+        "min": 2540.4139999998733,
+        "max": 9838.068800000008
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 50,
+        "mean": 1520.9,
+        "median": 1452,
+        "min": 585,
+        "max": 2774
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "mul_scalar",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 0.02,
+        "median": 0,
+        "min": 0,
+        "max": 1
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 458.02300799998136,
+        "median": 432.1153499999782,
+        "min": 350.24340000003576,
+        "max": 871.405199999921
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 9437.862900000006,
+        "median": 5283.456299999962,
+        "min": 2695.930000000051,
+        "max": 39761.12229999993
+      },
+      "postReceiptMs": {
+        "n": 49,
+        "mean": 4513.365344897948,
+        "median": 4624.538399999961,
+        "min": 2461.544899999979,
+        "max": 10058.555200000003
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 50,
+        "mean": 1540.94,
+        "median": 1487.5,
+        "min": 582,
+        "max": 3377
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "mean",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 442.1436740000187,
+        "median": 436.6013499998953,
+        "min": 331.68720000004396,
+        "max": 616.6512999999104
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 9587.257236000021,
+        "median": 5491.07050000038,
+        "min": 2360.232900000061,
+        "max": 53774.27169999946
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 4821.685898000036,
+        "median": 4655.572000000393,
+        "min": 2515.0100000000093,
+        "max": 10237.05369999999
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 50,
+        "mean": 1414.38,
+        "median": 1380,
+        "min": 662,
+        "max": 2507
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "max",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 456.6201620000224,
+        "median": 440.05700000026263,
+        "min": 323.65260000003036,
+        "max": 886.8475999999791
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 8512.535482000021,
+        "median": 4698.86955000009,
+        "min": 1697.3355000000447,
+        "max": 28203.213400000008
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 4534.384039999997,
+        "median": 4657.796150000067,
+        "min": 2533.1687999998685,
+        "max": 9934.713900000032
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 50,
+        "mean": 1518.64,
+        "median": 1412,
+        "min": 692,
+        "max": 3573
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "notarize",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 10112.62,
+        "median": 10140.5,
+        "min": 6677,
+        "max": 14613
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 392.9553219999897,
+        "median": 364.57494999983464,
+        "min": 314.51480000000447,
+        "max": 727.7042999998666
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 10930.562291999953,
+        "median": 5559.413850000012,
+        "min": 2417.5267999999924,
+        "max": 52605.09299999988
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 218.46915400006662,
+        "median": 212.40975000013714,
+        "min": 194.07029999999213,
+        "max": 308.56460000015795
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 50,
+        "mean": 1504.48,
+        "median": 1420.5,
+        "min": 760,
+        "max": 3857
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "add",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 463.3553060000151,
+        "median": 430.9114999999583,
+        "min": 337.3489999999292,
+        "max": 942.3849000000628
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 11863.413940000033,
+        "median": 6349.445099999895,
+        "min": 2288.5639000000083,
+        "max": 54629.5307
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 362.27805599995656,
+        "median": 228.49080000002868,
+        "min": 197.29550000000745,
+        "max": 1331.6918999999762
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 50,
+        "mean": 1513.02,
+        "median": 1486.5,
+        "min": 715,
+        "max": 2622
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mul_scalar",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 468.5618680000314,
+        "median": 441.5686500000302,
+        "min": 329.154799999902,
+        "max": 785.0785000000615
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 9179.128001999994,
+        "median": 5183.4551500000525,
+        "min": 2382.09580000001,
+        "max": 39892.564199999906
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 589.4459740000029,
+        "median": 391.1076499999035,
+        "min": 196.08600000012666,
+        "max": 4367.479400000069
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 50,
+        "mean": 1532.68,
+        "median": 1492.5,
+        "min": 639,
+        "max": 2682
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mean",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 435.2259079999661,
+        "median": 437.18324999988545,
+        "min": 336.1110000000044,
+        "max": 582.1986000000034
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 9580.94267200001,
+        "median": 5695.273899999913,
+        "min": 1651.2109000000637,
+        "max": 53774.3415000001
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 5013.51990600001,
+        "median": 4674.135649999953,
+        "min": 4029.7691999999806,
+        "max": 7957.678700000048
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 50,
+        "mean": 1401.08,
+        "median": 1327.5,
+        "min": 552,
+        "max": 2620
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "max",
+      "preInvocationMs": {
+        "n": 50,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "invokeSignSubmitMs": {
+        "n": 50,
+        "mean": 446.3188180000207,
+        "median": 426.0725499999244,
+        "min": 336.83460000000196,
+        "max": 723.3374000000767
+      },
+      "receiptWaitMs": {
+        "n": 50,
+        "mean": 8513.627054000026,
+        "median": 4869.264600000024,
+        "min": 1652.643800000078,
+        "max": 28237.58629999985
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 300.32873599997924,
+        "median": 226.31454999977723,
+        "min": 205.6107999999076,
+        "max": 1292.8033000002615
+      },
+      "receiptObservationAfterBlockMs": {
+        "n": 50,
+        "mean": 1509.32,
+        "median": 1395.5,
+        "min": 455,
+        "max": 3997
+      }
+    }
+  ],
+  "notarizationOffsets": {
+    "sameBlockTriples": 37,
+    "n": 50,
+    "zamaInvocationAfterBaselineMs": {
+      "n": 50,
+      "mean": 8282.64,
+      "median": 8307.5,
+      "min": 6829,
+      "max": 9438
+    },
+    "fhenixInvocationAfterBaselineMs": {
+      "n": 50,
+      "mean": 6872.88,
+      "median": 6849.5,
+      "min": 6288,
+      "max": 7997
+    }
+  },
+  "example": [
+    {
+      "platform": "fhenix",
+      "startedAt": "2026-10-23T13:50:23.636Z",
+      "transactionStartedAt": "2026-10-23T13:50:36.065Z",
+      "receiptObservedAt": "2026-10-23T13:50:49.344Z",
+      "blockHash": "0xad739c64319a56cc0409ea0aab1e6be48cf38bb03a7c7e23612a2ccfa91e6e7c",
+      "stages": [
+        {
+          "stage": "encrypt.sdk_stage.prove",
+          "startMs": 6403.022199999978,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": true,
+            "isEnd": false,
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.sdk_observed.prove",
+          "startMs": 6403.021699999983,
+          "durationMs": 5406.286300000007,
+          "status": "ok",
+          "detail": {
+            "sdkDurationMs": 5406
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.prove",
+          "startMs": 11809.318899999984,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": false,
+            "isEnd": true,
+            "sdkDurationMs": 5406,
+            "usedWorker": false
+          }
+        },
+        {
+          "stage": "transaction.invoke_sign_and_submit",
+          "startMs": 12429.117100000003,
+          "durationMs": 386.6601999999839,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.wait_receipt",
+          "startMs": 12815.783200000005,
+          "durationMs": 12892.934799999988,
+          "status": "ok"
+        }
+      ]
+    },
+    {
+      "platform": "baseline",
+      "startedAt": "2026-10-23T13:50:23.636Z",
+      "transactionStartedAt": "2026-10-23T13:50:29.650Z",
+      "receiptObservedAt": "2026-10-23T13:50:50.046Z",
+      "blockHash": "0xad739c64319a56cc0409ea0aab1e6be48cf38bb03a7c7e23612a2ccfa91e6e7c",
+      "stages": [
+        {
+          "stage": "transaction.invoke_sign_and_submit",
+          "startMs": 6014.604099999997,
+          "durationMs": 6164.492599999998,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.wait_receipt",
+          "startMs": 12179.099799999996,
+          "durationMs": 14231.67300000001,
+          "status": "ok"
+        }
+      ]
+    },
+    {
+      "platform": "zama",
+      "startedAt": "2026-10-23T13:50:23.636Z",
+      "transactionStartedAt": "2026-10-23T13:50:37.546Z",
+      "receiptObservedAt": "2026-10-23T13:50:49.475Z",
+      "blockHash": "0xad739c64319a56cc0409ea0aab1e6be48cf38bb03a7c7e23612a2ccfa91e6e7c",
+      "stages": [
+        {
+          "stage": "encrypt.local_ciphertext_and_zkproof",
+          "startMs": 0.003200000006472692,
+          "durationMs": 5682.6109,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.invoke_sign_and_submit",
+          "startMs": 13910.402899999986,
+          "durationMs": 438.5981000000029,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.wait_receipt",
+          "startMs": 14349.004199999996,
+          "durationMs": 11490.3891,
+          "status": "ok"
+        }
+      ]
+    }
+  ],
+  "chainEvidence": "baseline-chain-evidence.json",
+  "findings": [
+    "The displayed baseline notarization completion is mean6.6095s invoke/sign/submit +12.7490s receipt wait +0.0936s result read/validation. It is not EVM execution time.",
+    "Concurrent workers are async callbacks in a single Node process, not CPU-isolated processes. CoFHE prove events report usedWorker:false. On run1, the 5.406s main-thread proof interval overlaps the baseline6.164s invoke/sign/submit span. This demonstrates client interference in the measured interval; there is no event-loop-delay probe that attributes every millisecond.",
+    "FHE notarization timers start after input preparation, on average8.283s (Zama) and6.873s (Fhenix) after baseline invocation.37/50 notarization triples share a block. Unequal time origins prevent interpreting timer rankings as computation rankings.",
+    "Baseline receipt wait is heavy-tailed: notarization mean12.749s vsmedian5.894s, maximum66.514s. Non-notarization baseline submission spans are0.427-0.468s on average.",
+    "Read-only canonical block checks for run27 addition show regular12s block timestamps during a54.768s receipt-wait span; receipt was observed1.799s after its block timestamp. This is not a55-second block interval or a55-second post-inclusion wait.",
+    "The exact source of delayed inclusion (RPC propagation, mempool, builder policy/fees) cannot be identified from these logs. Observed examples have priority fee2wei, blocks not full and nonce-ordered confirmed preceding operations; these facts alone do not prove a specific cause.",
+    "Fix the comparison design using separate CPU worker processes, precompute inputs before a common submission barrier, and instrument raw send start/ack plus observed receipt separately. Historical measurements must remain unchanged."
+  ]
+}

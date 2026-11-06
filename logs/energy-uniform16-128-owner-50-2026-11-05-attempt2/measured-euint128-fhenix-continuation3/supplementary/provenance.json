@@ -1,0 +1,1220 @@
+{
+  "at": "2026-11-06T02:26:17.124Z",
+  "rawReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\measured-euint128-fhenix-continuation3\\report.json",
+  "rawSha256": "75d9ae589d8d0d8edef3511ae55d2e1ab301131470d0cb1ba59c124ea04dfe9b",
+  "chainId": 11155111,
+  "rpcHost": "ethereum-sepolia-rpc.publicnode.com",
+  "method": "Bounded eth_getBlockByNumber with exact recorded number/hash canonical match",
+  "rpcCalls": 74,
+  "changedFields": [
+    "blockTimestamp",
+    "blockGasUsed",
+    "blockGasLimit",
+    "blockTargetUtilization"
+  ],
+  "blocks": [
+    {
+      "hash": "0x1550aad1dbb362dfc5c5baab2f3b1b552ef52613e3a312e5b4ac1e1bf962ec91",
+      "number": 12073008,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 12
+        },
+        {
+          "field": "samples",
+          "index": 14
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793924724,
+        "blockGasUsed": "58419980",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.5841998
+      }
+    },
+    {
+      "hash": "0x8dbc4943839e18de27b5b62a9393acef91512f8d2575031b10facf039bdedb61",
+      "number": 12073005,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 3
+        },
+        {
+          "field": "samples",
+          "index": 4
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793924688,
+        "blockGasUsed": "56192557",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.56192557
+      }
+    },
+    {
+      "hash": "0xbee3d74a6e8d24c36017b4ced651d80a8e2218d2c35ba6f1e945e1fd5ba09164",
+      "number": 12073006,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 8
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793924700,
+        "blockGasUsed": "56117203",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.5617205810420195
+      }
+    },
+    {
+      "hash": "0x26aa66819fb020691e01bca78849dface7b8d6c3a0db2f6d523424f12a624694",
+      "number": 12073025,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 43
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793924940,
+        "blockGasUsed": "67048152",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.67048152
+      }
+    },
+    {
+      "hash": "0x0a8e9ce4597d7a0c36c45de8db8bbc3d46ac0c1655fce08783fe1da063b1f38f",
+      "number": 12073020,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 33
+        },
+        {
+          "field": "samples",
+          "index": 35
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793924880,
+        "blockGasUsed": "89988732",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.8998881793932113
+      }
+    },
+    {
+      "hash": "0xa74106d09119ffc39cc6d3ea669bc8ffb6d35afce3986bb46bce1c3b97aea5a8",
+      "number": 12073026,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 47
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793924952,
+        "blockGasUsed": "60290563",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.6034949760363232
+      }
+    },
+    {
+      "hash": "0x9cfc6ff9d850d91b53ddf7351e6883636408774197cdba7cdad481f09f6a6ae3",
+      "number": 12073028,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 50
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793924976,
+        "blockGasUsed": "64490376",
+        "blockGasLimit": "199414639",
+        "blockTargetUtilization": 0.6467968081320249
+      }
+    },
+    {
+      "hash": "0x2a3bc5e59c080089289b5101e62812a0a74cb3e9faa7b9e555b654e12b551904",
+      "number": 12073033,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 55
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925036,
+        "blockGasUsed": "69709902",
+        "blockGasLimit": "199999237",
+        "blockTargetUtilization": 0.6971016794429071
+      }
+    },
+    {
+      "hash": "0x5a3b271f5cc3eabf7c99e488f6216b7e2063ff544058c5a77feb3e65e86ef3d1",
+      "number": 12073036,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 60
+        },
+        {
+          "field": "samples",
+          "index": 62
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925072,
+        "blockGasUsed": "60418511",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.60418511
+      }
+    },
+    {
+      "hash": "0x33031d8490e84c9a78964af3ef439770941088bd89e4d47e1bb5eb4b3ff291dd",
+      "number": 12073037,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 65
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925084,
+        "blockGasUsed": "59554306",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.59554306
+      }
+    },
+    {
+      "hash": "0xbb5bc554e1a35762f831bc280d4426bddb2e488ad64bc3df6174782cf4589f89",
+      "number": 12073045,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 75
+        },
+        {
+          "field": "samples",
+          "index": 76
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925192,
+        "blockGasUsed": "60112614",
+        "blockGasLimit": "199999619",
+        "blockTargetUtilization": 0.6011272851474782
+      }
+    },
+    {
+      "hash": "0x53bcec569abeff126842e5e73afbdfa3400dade64255d01db4dad6c65b462b82",
+      "number": 12073048,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 86
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925228,
+        "blockGasUsed": "57854987",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.57854987
+      }
+    },
+    {
+      "hash": "0xe4c324240f60033d45c70fe5fe8326826610be1528bb49fc452c896b5eca5b41",
+      "number": 12073052,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 87
+        },
+        {
+          "field": "samples",
+          "index": 89
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925276,
+        "blockGasUsed": "74265015",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.74265015
+      }
+    },
+    {
+      "hash": "0xe882af382279d1e236731fd57e561753d17a19ec35f043a57ebb18ce6f16f4c4",
+      "number": 12073057,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 100
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925348,
+        "blockGasUsed": "59336647",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.5939464914159247
+      }
+    },
+    {
+      "hash": "0xacc043746af7596637c464d05533efe07772eb8525b656fc365709eff47e361c",
+      "number": 12073060,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 106
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925384,
+        "blockGasUsed": "59769541",
+        "blockGasLimit": "199609378",
+        "blockTargetUtilization": 0.5988650593360398
+      }
+    },
+    {
+      "hash": "0x162096ea96ed7937f61b366e9726ecac78ec777162cee28d5fc2d3a844f5f858",
+      "number": 12073062,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 108
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925408,
+        "blockGasUsed": "59751572",
+        "blockGasLimit": "199999428",
+        "blockTargetUtilization": 0.5975174288998466
+      }
+    },
+    {
+      "hash": "0xbfea9b187106b2b4d368719502a8d29435b46283ecd94c48de92ecef959bbc24",
+      "number": 12073074,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 130
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925564,
+        "blockGasUsed": "93179154",
+        "blockGasLimit": "199414259",
+        "blockTargetUtilization": 0.9345284982855715
+      }
+    },
+    {
+      "hash": "0x9d90581a52fdec5e2c86a72a7ba04eae628be41003e2858760baed25d886e580",
+      "number": 12073075,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 132
+        },
+        {
+          "field": "samples",
+          "index": 134
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925576,
+        "blockGasUsed": "48097511",
+        "blockGasLimit": "199608998",
+        "blockTargetUtilization": 0.4819172630684715
+      }
+    },
+    {
+      "hash": "0xed33668a3e99d934a864c9db42f75e11143ed9476b94a9dae2e66ee4eb0a6a39",
+      "number": 12073083,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 147
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925672,
+        "blockGasUsed": "59113861",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.5917164536614054
+      }
+    },
+    {
+      "hash": "0xbe5fecdab5eb66744f2f2ee40e8896c995236f6eb3eedf2ca99fa7e72a34e0bf",
+      "number": 12073079,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 142
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925624,
+        "blockGasUsed": "62351394",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.62351394
+      }
+    },
+    {
+      "hash": "0x8a03dc6f308def7a03e1c279dfdd764229c36f9cd89c58fc03eb616ac26794e8",
+      "number": 12073085,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 154
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925696,
+        "blockGasUsed": "60511099",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.60511099
+      }
+    },
+    {
+      "hash": "0xa0380c1063cd3740f32738e8c6b3bc67d65e6a9da1797f3d8e094f0a4f9efefc",
+      "number": 12073086,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 156
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925708,
+        "blockGasUsed": "63419324",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.6348131699752051
+      }
+    },
+    {
+      "hash": "0x975aa24b6a9261f56e17020c8cad9835125831b3af74ef42ddcc206070b8e775",
+      "number": 12073088,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 160
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925732,
+        "blockGasUsed": "60281362",
+        "blockGasLimit": "199804499",
+        "blockTargetUtilization": 0.6034034498892841
+      }
+    },
+    {
+      "hash": "0xc94954e2bce1bcc7c175590a2e63981fb02da5473ba5499321b7330cc58292f0",
+      "number": 12073093,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 168
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925792,
+        "blockGasUsed": "63350263",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.6341218848973059
+      }
+    },
+    {
+      "hash": "0x95aab45883b729f25c5365096defad6294b42dd6b07c59bedd0ac5a81b02fc9b",
+      "number": 12073097,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 177
+        },
+        {
+          "field": "samples",
+          "index": 179
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925840,
+        "blockGasUsed": "56058980",
+        "blockGasLimit": "199804309",
+        "blockTargetUtilization": 0.5611388491126085
+      }
+    },
+    {
+      "hash": "0xbc473db0f9df72318356423235ce6d05fd2375d7f92f816ae1db1167a69995c2",
+      "number": 12073095,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 176
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925816,
+        "blockGasUsed": "64148324",
+        "blockGasLimit": "199804499",
+        "blockTargetUtilization": 0.6421109066217773
+      }
+    },
+    {
+      "hash": "0xf97448be333790cae599b06055c6f811eaf82b8cde7d6c7b76a7ab0fc2ad90d4",
+      "number": 12073102,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 187
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925900,
+        "blockGasUsed": "62505745",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.6250580469304348
+      }
+    },
+    {
+      "hash": "0xbc3628c1077f447f0d9ee9df9f2b33b05659d6c418622e9d5b2e1116170585f7",
+      "number": 12073104,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 193
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793925924,
+        "blockGasUsed": "59397054",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.59397054
+      }
+    },
+    {
+      "hash": "0xe0deb2e61bbe32c9b0347d825a709331d3bfed44893486a20a50f288f18c4b3e",
+      "number": 12073184,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 195
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793926896,
+        "blockGasUsed": "85557600",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.855576
+      }
+    },
+    {
+      "hash": "0x605715cf25f302741a7428cc15584c9a36dff8c76f1578254ba46e9772b6fab9",
+      "number": 12073196,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 204
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793927040,
+        "blockGasUsed": "63445681",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.63445681
+      }
+    },
+    {
+      "hash": "0x8176178c705e1f7b88d7fb72c4ecf45cf803a14ca11c538468a8908bcb82881e",
+      "number": 12073216,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 219
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793927280,
+        "blockGasUsed": "59174821",
+        "blockGasLimit": "199999237",
+        "blockTargetUtilization": 0.5917504675280336
+      }
+    },
+    {
+      "hash": "0xf64723f9f7654766c1e9a017043a9d30f93950ff84a0741c410e8940834048d7",
+      "number": 12073217,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 220
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793927292,
+        "blockGasUsed": "57419192",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.57419192
+      }
+    },
+    {
+      "hash": "0x3d5d11f0c22c423a06595fc8f6e118c455b9317a24387e2830e861e90d66f77f",
+      "number": 12073218,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 221
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793927304,
+        "blockGasUsed": "63114992",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.63114992
+      }
+    },
+    {
+      "hash": "0x596e371e701468ecf041e0b47e1929d5a537e455ad0dc09e47cf2aa0cad06be5",
+      "number": 12073312,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 237
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793928444,
+        "blockGasUsed": "73839656",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.73839656
+      }
+    },
+    {
+      "hash": "0xb55e4f36a346401d1b4f8e62c74b8316681a8c8ec3770a09f7407cc30cc364fc",
+      "number": 12073318,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 241
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793928516,
+        "blockGasUsed": "59981618",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.5998167528249989
+      }
+    },
+    {
+      "hash": "0x0a3362763177fa4149aafb1579a52ff4aa0f52d56ef2bdfbb6768571fb03ed38",
+      "number": 12073322,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 243
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793928564,
+        "blockGasUsed": "58935350",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.58935406283313
+      }
+    },
+    {
+      "hash": "0x773a919abfaa3a6dc6adcf4ce9c2ed64bdabeb2afaae2ba94898dd157a9247c1",
+      "number": 12073326,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 246
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793928612,
+        "blockGasUsed": "68405689",
+        "blockGasLimit": "199609569",
+        "blockTargetUtilization": 0.6853948870557403
+      }
+    },
+    {
+      "hash": "0xc4bb4b9caa5eb3d3922f37d13049416bad3beec4e35287d35a88a18fc42e701d",
+      "number": 12073327,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 247
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793928624,
+        "blockGasUsed": "65490596",
+        "blockGasLimit": "199804499",
+        "blockTargetUtilization": 0.6555467602358643
+      }
+    },
+    {
+      "hash": "0xa38f60f7dda5bc8e482f6c6646608960516739c99bae30e0e846fcd6747a7ce7",
+      "number": 12073344,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 259
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793928840,
+        "blockGasUsed": "110253678",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 1.1025378329236304
+      }
+    },
+    {
+      "hash": "0xac1ff4f9f853f53835dd7c4680616ca143e48edf91640bdf869925661e6fe8d1",
+      "number": 12073352,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 264
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793928936,
+        "blockGasUsed": "60191721",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.60191721
+      }
+    },
+    {
+      "hash": "0x4441d198a5522439c64ab3b3976c18d16e9ea29c28499c7612b4734e919a17a1",
+      "number": 12073347,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 261
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793928876,
+        "blockGasUsed": "124398923",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 1.24398923
+      }
+    },
+    {
+      "hash": "0xa4a0a54512a896059b1987354be754514bdfc365d0e286de16add15607dba547",
+      "number": 12073356,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 267
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793928984,
+        "blockGasUsed": "71063286",
+        "blockGasLimit": "199804498",
+        "blockTargetUtilization": 0.7113281904194169
+      }
+    },
+    {
+      "hash": "0xb225cd4f8c13be229371f5a118cc19fbe7add5a3910cd36f89f5048e5a71e5ff",
+      "number": 12073358,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 269
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793929008,
+        "blockGasUsed": "56909009",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.56909009
+      }
+    },
+    {
+      "hash": "0xc07707a514f7fa47b60d44fd6d90adf2c9d89aa3eb0e0f37dabd26aed90cc01f",
+      "number": 12073368,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 276
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793929140,
+        "blockGasUsed": "53115340",
+        "blockGasLimit": "199999619",
+        "blockTargetUtilization": 0.5311544118491546
+      }
+    },
+    {
+      "hash": "0x0d6ae31da881aec3cf8ba14a7d699f9b5de12a8037e0fb35ad42f604f6adb127",
+      "number": 12073366,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 274
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793929116,
+        "blockGasUsed": "83671110",
+        "blockGasLimit": "199609569",
+        "blockTargetUtilization": 0.8383476846242777
+      }
+    },
+    {
+      "hash": "0x45b2a321f7e32134272f3443fedddc9b375d1241c8fb688ac9814bed5d72dc1f",
+      "number": 12073384,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 288
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793929332,
+        "blockGasUsed": "71345182",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.71345182
+      }
+    },
+    {
+      "hash": "0x1ce8d135d1346d74e1b2d1a5b9d24fae3072c219f61f1f7d24020ff9c3a2cbf0",
+      "number": 12073409,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 306
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793929632,
+        "blockGasUsed": "59235870",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.5923592657030987
+      }
+    },
+    {
+      "hash": "0xaa27df4592232db7f306dab6f1665d40614222bdce36f2f7a8abe311a96cb0db",
+      "number": 12073413,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 309
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793929680,
+        "blockGasUsed": "60534033",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.6059320559789265
+      }
+    },
+    {
+      "hash": "0xcf44caf0e0a9caac8862270b345e517c9c7330cc9ea517c31eccdf0b445c6bd0",
+      "number": 12073437,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 327
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793929968,
+        "blockGasUsed": "60292536",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.60292536
+      }
+    },
+    {
+      "hash": "0xd2bf5401d374e0a3c66ec837abfa1567fdb227615a527efe28123ca0ab62f663",
+      "number": 12073441,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 330
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793930016,
+        "blockGasUsed": "64208530",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.6420853
+      }
+    },
+    {
+      "hash": "0xc711318621f8e2e052d9bbef60f9950cf8eed71881584f3af9d4ca9a90c69e0f",
+      "number": 12073447,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 334
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793930088,
+        "blockGasUsed": "58073490",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.5807349
+      }
+    },
+    {
+      "hash": "0x4cc4016b1e2062f8e1c2a71ffb2d05bf5fd10e2bd5cd570cb57952d1aaadbd27",
+      "number": 12073470,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 351
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793930364,
+        "blockGasUsed": "64991642",
+        "blockGasLimit": "199804308",
+        "blockTargetUtilization": 0.6505529600492899
+      }
+    },
+    {
+      "hash": "0x36d92a7e95c4f3d78556ecbbdf5ea6f1cd1c53fc643e8aa514d25b8da5860363",
+      "number": 12073449,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 336
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793930112,
+        "blockGasUsed": "62032078",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.6203213724069107
+      }
+    },
+    {
+      "hash": "0xcf2f56d260fd5636c5de14361c795e1cba78ad162b84e0693e7c035b36dfdc62",
+      "number": 12073472,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 353
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793930388,
+        "blockGasUsed": "55774711",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.55774711
+      }
+    },
+    {
+      "hash": "0xdbfdc747dcba09728ff526e55ccbce8e145dfaf5f608bc3f4ebcdbb24225f674",
+      "number": 12073475,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 356
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793930424,
+        "blockGasUsed": "57807880",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.5780793520657812
+      }
+    },
+    {
+      "hash": "0x0ea0249bad2f4b14da692ee9e99b9c1d2a87ce5c43dcaa234062c6b29db61498",
+      "number": 12073473,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 354
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793930400,
+        "blockGasUsed": "65850084",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.65850084
+      }
+    },
+    {
+      "hash": "0x1b2d3ed8a8fdab5c975e14ad16478c7d13885043a09119c69cb1f288ad92049f",
+      "number": 12073479,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 358
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793930472,
+        "blockGasUsed": "56732400",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.567324
+      }
+    },
+    {
+      "hash": "0x96d6345b8460d2b722422c513cd49a3e2ebdfeab05ec0cc30879e23610d1c3ed",
+      "number": 12073489,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 364
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793930592,
+        "blockGasUsed": "61100713",
+        "blockGasLimit": "199804308",
+        "blockTargetUtilization": 0.6116055615777813
+      }
+    },
+    {
+      "hash": "0x20ca76a155053baf9b362cace44fa71a21345eabdd33ce17adb2447617534c73",
+      "number": 12073495,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 369
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793930664,
+        "blockGasUsed": "54899147",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.549528114427785
+      }
+    },
+    {
+      "hash": "0x0eeac26a6920a62f60d392d2bb3b2154ba193cee0b119dba11a823e1d6e66482",
+      "number": 12073490,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 365
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793930604,
+        "blockGasUsed": "67022386",
+        "blockGasLimit": "199609188",
+        "blockTargetUtilization": 0.6715360817959943
+      }
+    },
+    {
+      "hash": "0x0b06c54e6079a20daf84a560a294b035c26aa9fd9745966405ad1490382bdfb5",
+      "number": 12073497,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 371
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793930688,
+        "blockGasUsed": "60638360",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.6063836
+      }
+    },
+    {
+      "hash": "0x692d676815da55c4227b37c24c4f26b09cb808085d4d904bee495243c4d3637b",
+      "number": 12073517,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 388
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793930928,
+        "blockGasUsed": "65430996",
+        "blockGasLimit": "199609379",
+        "blockTargetUtilization": 0.6555903968821024
+      }
+    },
+    {
+      "hash": "0x3df8032f56af10b8bad461a32e54e6602c75445f7c33f17b6c070437fc5fc461",
+      "number": 12073519,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 389
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793930952,
+        "blockGasUsed": "78753670",
+        "blockGasLimit": "199999429",
+        "blockTargetUtilization": 0.7875389484236978
+      }
+    },
+    {
+      "hash": "0x62bcf2eaf028814322cf677c45798dfcb1209cdb2c5b9e958feb720dff5322d2",
+      "number": 12073527,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 396
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793931048,
+        "blockGasUsed": "64630567",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.64630567
+      }
+    },
+    {
+      "hash": "0x4b774c91943a540b8b898ebf1549c536cf38c103ecab70be2bfaa1d04b60374b",
+      "number": 12073533,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 401
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793931132,
+        "blockGasUsed": "59770923",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.59770923
+      }
+    },
+    {
+      "hash": "0xd8fba3a8613ff37f30231b3c039310550d5b9fe52ecceeb5a1598c853e28951e",
+      "number": 12073540,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 405
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793931216,
+        "blockGasUsed": "62938437",
+        "blockGasLimit": "199999428",
+        "blockTargetUtilization": 0.6293861700444463
+      }
+    },
+    {
+      "hash": "0x48b3b7deace82045567051eb1066e052d9b352453530d7afcb4153ef1554a769",
+      "number": 12073543,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 408
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793931264,
+        "blockGasUsed": "54748939",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.54748939
+      }
+    },
+    {
+      "hash": "0x2e13034bc5c11e9d2132706b76be26b62dde84c01576d45873b34970f5657b89",
+      "number": 12073542,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 407
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793931252,
+        "blockGasUsed": "90594357",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.90594357
+      }
+    },
+    {
+      "hash": "0xcbd6bb91c440ca88852316b397b04dd347dc891df070c765d99159a576d8b3fa",
+      "number": 12073549,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 412
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793931336,
+        "blockGasUsed": "65214907",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.65214907
+      }
+    },
+    {
+      "hash": "0x89c459624fb29d700eedda375866c90ecbb0ccc3093a03b4787702dd2ef9c6ab",
+      "number": 12073557,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 417
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793931432,
+        "blockGasUsed": "77858640",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.7785871435507221
+      }
+    },
+    {
+      "hash": "0x2cf021a068186167c5da1ba98c7f5f407523f170936c41915cd967ef3a57d6ee",
+      "number": 12073558,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 418
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793931444,
+        "blockGasUsed": "57790145",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.57790145
+      }
+    },
+    {
+      "hash": "0x2beee2180d599d92c0998bdfe0e73987be421e867231c97a96c5b99ca29a7534",
+      "number": 12073574,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 429
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793931636,
+        "blockGasUsed": "79087230",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.7908723
+      }
+    },
+    {
+      "hash": "0x2b18aac02828ee4e511c7d0b4f1e3009c554f45a9737a8e13b04c486ddb08483",
+      "number": 12073577,
+      "locations": [
+        {
+          "field": "samples",
+          "index": 432
+        }
+      ],
+      "fields": {
+        "blockTimestamp": 1793931672,
+        "blockGasUsed": "61257517",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.6125757550098461
+      }
+    }
+  ],
+  "unresolved": [],
+  "protectedFields": "Original timings, outcomes, canonical hashes and metadataError messages unchanged",
+  "supplementaryReportSha256": "fccafe53aa9332489ec310b5ff28fb1dd21913a2493c21f4b31cd331a98a6900"
+}

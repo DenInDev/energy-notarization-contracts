@@ -1,0 +1,96 @@
+{
+  "at": "2026-11-06T00:49:06.374Z",
+  "status": "terminal_failure",
+  "stage": "measured-euint128",
+  "reason": "sealOutput request failed: Too Many Requests",
+  "httpStatus": 429,
+  "platform": "fhenix",
+  "operation": "mean",
+  "run": 10,
+  "primaryFailureRetained": true,
+  "lateRecoveryAttempted": false,
+  "additionalTransactionsSent": false,
+  "accountChecks": [
+    {
+      "platform": "baseline",
+      "address": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC",
+      "transactionHash": "0x90c4e861f01d7e944c62e447fad4ddb64fa884d2876bbd2174b957f7d7739f98",
+      "lastNonce": 747,
+      "receiptStatus": "0x1",
+      "blockHash": "0xbc3628c1077f447f0d9ee9df9f2b33b05659d6c418622e9d5b2e1116170585f7",
+      "canonical": true,
+      "recordedBlockHashMatches": true,
+      "latestNonce": 748,
+      "pendingNonce": 748
+    },
+    {
+      "platform": "zama",
+      "address": "0x268fcAE6206890E4de082535F12C40Cc5119033d",
+      "transactionHash": "0xb1e198f9d7940bcffabd4a6ba6e3fe676f553cb64e49356a8d73a93e5e922246",
+      "lastNonce": 747,
+      "receiptStatus": "0x1",
+      "blockHash": "0xbc3628c1077f447f0d9ee9df9f2b33b05659d6c418622e9d5b2e1116170585f7",
+      "canonical": true,
+      "recordedBlockHashMatches": true,
+      "latestNonce": 748,
+      "pendingNonce": 748
+    },
+    {
+      "platform": "fhenix",
+      "address": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+      "transactionHash": "0x26c212011f106b7203407892e50c3fc28a02304ebbe9a1023a90dca7b2852012",
+      "lastNonce": 747,
+      "receiptStatus": "0x1",
+      "blockHash": "0xbc3628c1077f447f0d9ee9df9f2b33b05659d6c418622e9d5b2e1116170585f7",
+      "canonical": true,
+      "recordedBlockHashMatches": true,
+      "latestNonce": 748,
+      "pendingNonce": 748
+    }
+  ],
+  "widths": [
+    {
+      "width": 16,
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\measured-euint16\\report.json",
+      "rawSha256": "ea71bf7e2a4503fa82ab48fa6deee9e1a97392bd857720da44f85573dc3e1d73",
+      "complete": true,
+      "planned": 900,
+      "attempted": 900,
+      "successful": 900,
+      "failed": 0,
+      "ownerSuccessful": 150,
+      "gasCostWei": "4916703501"
+    },
+    {
+      "width": 128,
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\measured-euint128\\report.json",
+      "rawSha256": "a156c28e4815ab3314726ff7ae800c581db40c2d8ec7bdfea51b47872bb4cebb",
+      "complete": false,
+      "planned": 900,
+      "attempted": 177,
+      "successful": 176,
+      "failed": 1,
+      "ownerSuccessful": 30,
+      "gasCostWei": "1267692612"
+    }
+  ],
+  "monitorStoppedBecause": "Measured 128-bit campaign failed after the current workers settled; no automatic restart",
+  "historicalRawIntegrity": [
+    {
+      "file": "logs/energy-uniform16-128-50-2026-11-05/measured-euint16-preflight2/report.json",
+      "expectedSha256": "0a48672a8facf3951fb53696a6fa9e086d985fa2ab868f8b069c96b7920a824e",
+      "currentSha256": "0a48672a8facf3951fb53696a6fa9e086d985fa2ab868f8b069c96b7920a824e"
+    },
+    {
+      "file": "logs/energy-uniform16-128-50-2026-11-05-attempt2/pilot-euint128/report.json",
+      "expectedSha256": "00ae882fcac988bf81b78f1e96be1beb9f9ad184f0d6d6b9f762edd0bc17c527",
+      "currentSha256": "00ae882fcac988bf81b78f1e96be1beb9f9ad184f0d6d6b9f762edd0bc17c527"
+    },
+    {
+      "file": "logs/energy-uniform16-128-owner-50-2026-11-05/pilot-euint16/report.json",
+      "expectedSha256": "e484229a66d1ed03c567edbe2efadb3ed1887b58ecad52c5e718cfd967beef2d",
+      "currentSha256": "e484229a66d1ed03c567edbe2efadb3ed1887b58ecad52c5e718cfd967beef2d"
+    }
+  ],
+  "results": "results.md"
+}

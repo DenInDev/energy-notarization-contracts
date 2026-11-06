@@ -1,5 +1,4 @@
 PAIRED LIFECYCLE LATENCY ANALYSIS
-Formulas and context for the Zama, Fhenix, and plaintext comparisons
 
 1. Build the paired dataset
 

@@ -1,0 +1,53 @@
+{
+  "at": "2026-11-05T22:26:36.469Z",
+  "status": "stopped_by_user",
+  "reason": "User requested stop and restart after adding per-meter encrypted owner operation",
+  "processId": 34112,
+  "processCreationTimeUtc": "2026-11-05T22:17:22.4520720Z",
+  "rawReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05-attempt2\\pilot-euint128\\report.json",
+  "rawReportSha256": "00ae882fcac988bf81b78f1e96be1beb9f9ad184f0d6d6b9f762edd0bc17c527",
+  "primaryCounts": {
+    "measured": 15,
+    "ok": 12,
+    "pending": 3,
+    "error": 0
+  },
+  "accountChecks": [
+    {
+      "platform": "baseline",
+      "address": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC",
+      "latestNonce": 348,
+      "pendingNonce": 348,
+      "balanceWei": "99990293539742629",
+      "lastTransactionHash": "0xf1b8db7236781e1828b6a0e8d0591c4d958341fec9669920fe5c3b89e411d52f",
+      "lastNonce": 347,
+      "receiptStatus": "0x1",
+      "receiptBlockHash": "0x6a2ed89c2f9f1e58843b179870f03696fe5198ec7405b203f7290db3aede6c42",
+      "receiptCanonical": true
+    },
+    {
+      "platform": "zama",
+      "address": "0x268fcAE6206890E4de082535F12C40Cc5119033d",
+      "latestNonce": 348,
+      "pendingNonce": 348,
+      "balanceWei": "99900390832680350",
+      "lastTransactionHash": "0xb61907699851774aebb8d7afa664b724d41673df45c25f7e76f3d80655122d64",
+      "lastNonce": 347,
+      "receiptStatus": "0x1",
+      "receiptBlockHash": "0x6a2ed89c2f9f1e58843b179870f03696fe5198ec7405b203f7290db3aede6c42",
+      "receiptCanonical": true
+    },
+    {
+      "platform": "fhenix",
+      "address": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+      "latestNonce": 348,
+      "pendingNonce": 348,
+      "balanceWei": "99898558982927788",
+      "lastTransactionHash": "0x86617f85bc918343d0b079dda0bc31da2d9deb56a9b29e2a3d113d538621b9e1",
+      "lastNonce": 347,
+      "receiptStatus": "0x1",
+      "receiptBlockHash": "0x6a2ed89c2f9f1e58843b179870f03696fe5198ec7405b203f7290db3aede6c42",
+      "receiptCanonical": true
+    }
+  ]
+}

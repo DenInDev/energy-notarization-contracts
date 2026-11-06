@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-06T11:39:39.836Z",
+  "expectedRevert": "Wrong input count",
+  "observedError": "execution reverted: Wrong input count",
+  "providerMaskRemoved": true,
+  "methods": {
+    "eth_chainId": 7,
+    "eth_call": 6
+  },
+  "mutations": 0
+}

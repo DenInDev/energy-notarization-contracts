@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-06T11:24:43.673Z",
+  "sourceReport": "circuits-euint16/report.json",
+  "historicalError": "The Hardhat Fhevm plugin is not initialized.",
+  "computeWasBroadcast": false,
+  "loadedInputNonce": 68,
+  "expectedNextNonce": 69,
+  "latest": "0x45",
+  "pending": "0x45",
+  "probes": [
+    {
+      "method": "eth_estimateGas",
+      "block": "latest",
+      "httpStatus": 200,
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": "0xbf8dd"
+    },
+    {
+      "method": "eth_call",
+      "block": "latest",
+      "httpStatus": 200,
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": "0x"
+    },
+    {
+      "method": "eth_estimateGas",
+      "block": "0xb844ce",
+      "httpStatus": 200,
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": "0xbf8dd"
+    },
+    {
+      "method": "eth_call",
+      "block": "0xb844ce",
+      "httpStatus": 200,
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": "0x"
+    }
+  ]
+}

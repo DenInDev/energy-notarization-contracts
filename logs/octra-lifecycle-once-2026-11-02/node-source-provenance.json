@@ -1,0 +1,72 @@
+{
+  "repository": "https://github.com/octra-labs/lite_node",
+  "commit": "c49de45cf49ebbc2e5c0697eb956cbcada5845e7",
+  "files": [
+    {
+      "path": "lib/vm/runtime/contract_vm.ml",
+      "url": "https://raw.githubusercontent.com/octra-labs/lite_node/c49de45cf49ebbc2e5c0697eb956cbcada5845e7/lib/vm/runtime/contract_vm.ml",
+      "sha256": "2721748dce06edcc1856691f799a7fbe6ff7b832578758f7c74f88fa883381f6",
+      "bytes": 170812
+    },
+    {
+      "path": "lib/vm/compiler/oct_check.ml",
+      "url": "https://raw.githubusercontent.com/octra-labs/lite_node/c49de45cf49ebbc2e5c0697eb956cbcada5845e7/lib/vm/compiler/oct_check.ml",
+      "sha256": "9896934ed54de7d1e7005d20f9087af40e97d271069466aec1c7121fd046ff3a",
+      "bytes": 20929
+    },
+    {
+      "path": "lib/vm/compiler/oct_gen.ml",
+      "url": "https://raw.githubusercontent.com/octra-labs/lite_node/c49de45cf49ebbc2e5c0697eb956cbcada5845e7/lib/vm/compiler/oct_gen.ml",
+      "sha256": "30d9b178dacacdbc354a313967c8bbc8e09c1598457cf5acbbe73688a6afd8d0",
+      "bytes": 145820
+    },
+    {
+      "path": "lib/core/resource_lanes.ml",
+      "url": "https://raw.githubusercontent.com/octra-labs/lite_node/c49de45cf49ebbc2e5c0697eb956cbcada5845e7/lib/core/resource_lanes.ml",
+      "sha256": "20311e2c96c464711765cd3f1f56ada6d803f36b6e4e49b92767929ae82b8c4b",
+      "bytes": 6335
+    },
+    {
+      "path": "lib/vm/runtime/call_plan.ml",
+      "url": "https://raw.githubusercontent.com/octra-labs/lite_node/c49de45cf49ebbc2e5c0697eb956cbcada5845e7/lib/vm/runtime/call_plan.ml",
+      "sha256": "c77acf78aa2e60eae66cafdad5211d22f3f67644f79dcf6fe23744130717e12b",
+      "bytes": 11849
+    },
+    {
+      "path": "lib/vm/rpc/contract_rpc.ml",
+      "url": "https://raw.githubusercontent.com/octra-labs/lite_node/c49de45cf49ebbc2e5c0697eb956cbcada5845e7/lib/vm/rpc/contract_rpc.ml",
+      "sha256": "d09ac5d15cab900ac24de7d5962eb2c55f44188b95eca5b1f34283da4ce4b13e",
+      "bytes": 51077
+    },
+    {
+      "path": "pvac_ffi/pvac_ffi.ml",
+      "url": "https://raw.githubusercontent.com/octra-labs/lite_node/c49de45cf49ebbc2e5c0697eb956cbcada5845e7/pvac_ffi/pvac_ffi.ml",
+      "sha256": "722efbf7ad4eee263eaf37c6de182b290011bd1b9290eabcd5ef0bffcdfabeb5",
+      "bytes": 11716
+    },
+    {
+      "path": "pvac_ffi/pvac_ffi.mli",
+      "url": "https://raw.githubusercontent.com/octra-labs/lite_node/c49de45cf49ebbc2e5c0697eb956cbcada5845e7/pvac_ffi/pvac_ffi.mli",
+      "sha256": "d71c0af06ee958577f731eea2e3213ae208a2695aad4c0cfa3cd74fc5e5aae81",
+      "bytes": 5310
+    },
+    {
+      "path": "pvac_ffi/pvac_stubs.cpp",
+      "url": "https://raw.githubusercontent.com/octra-labs/lite_node/c49de45cf49ebbc2e5c0697eb956cbcada5845e7/pvac_ffi/pvac_stubs.cpp",
+      "sha256": "d8fc28785de58709db27d4929e064578f6f4138eaf7ec9b3e9bc0ac91ffeae2d",
+      "bytes": 64364
+    },
+    {
+      "path": "pvac/include/pvac/ops/arithmetic.hpp",
+      "url": "https://raw.githubusercontent.com/octra-labs/lite_node/c49de45cf49ebbc2e5c0697eb956cbcada5845e7/pvac/include/pvac/ops/arithmetic.hpp",
+      "sha256": "5a0f71daae1bf57778669671517990cfdc0e37c50b8d9776faf50f0133d88d79",
+      "bytes": 18019
+    },
+    {
+      "path": "pvac/include/pvac/core/field.hpp",
+      "url": "https://raw.githubusercontent.com/octra-labs/lite_node/c49de45cf49ebbc2e5c0697eb956cbcada5845e7/pvac/include/pvac/core/field.hpp",
+      "sha256": "8e13993d70a956443187a5f1fc146f56b501be2f69b76ef92df17db6f338ffe2",
+      "bytes": 7251
+    }
+  ]
+}

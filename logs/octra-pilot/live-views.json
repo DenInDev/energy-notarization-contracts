@@ -1,0 +1,79 @@
+{
+  "endpoint": "https://devnet.octrascan.io/rpc",
+  "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+  "startedAt": "2026-10-21T15:02:02.743Z",
+  "transactions": [
+    {
+      "label": "deploy",
+      "hash": "6e8174593531c7994f05675e33f6078b3ce11fe80050eaf5b412146ce45ac439",
+      "nonce": 4,
+      "ou": "200000",
+      "status": "confirmed",
+      "submittedAt": "2026-10-21T15:03:43.696Z",
+      "submission": {
+        "tx_hash": "6e8174593531c7994f05675e33f6078b3ce11fe80050eaf5b412146ce45ac439",
+        "status": "accepted",
+        "nonce": 4,
+        "ou_cost": "200000"
+      },
+      "localCanonicalSha256": "7fe7eb7c082f65f35deddc4c88373109c5591c063bca770c79de33627d91c16c",
+      "lastTransactionState": {
+        "status": "confirmed",
+        "tx_hash": "6e8174593531c7994f05675e33f6078b3ce11fe80050eaf5b412146ce45ac439",
+        "epoch": 1727676,
+        "from": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+        "to": "oct4vJkHFXiAjBmgANC7cKDLh2vnu9wNqTbC28MuNWEf4pm",
+        "amount": "0",
+        "amount_raw": "0",
+        "nonce": 4,
+        "ou": "200000",
+        "timestamp": 1792595023.695,
+        "op_type": "deploy",
+        "message": null
+      },
+      "confirmedAt": "2026-10-21T15:04:09.476Z",
+      "receipt": {
+        "contract": "oct4vJkHFXiAjBmgANC7cKDLh2vnu9wNqTbC28MuNWEf4pm",
+        "method": "constructor",
+        "success": true,
+        "effort": 14,
+        "events": [],
+        "error": null,
+        "epoch": 1727676,
+        "ts": 1792595033.759827
+      }
+    }
+  ],
+  "checks": [],
+  "status": "stopped",
+  "node": {
+    "node": "octra",
+    "version": "3.0.0",
+    "protocol": "json-rpc-2.0"
+  },
+  "initialBalance": {
+    "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+    "balance": "2.758492",
+    "balance_raw": "2758492",
+    "nonce": 3,
+    "pending_nonce": 3,
+    "has_public_key": true
+  },
+  "sourceSha256": "0c74164b9a8603879e0a18ee74255be6128221ee4796b272101b90d44d61c596",
+  "compilerVersion": "1.0 Rehovot",
+  "registration": {
+    "verified": true,
+    "publicKeySha256": "7ab68ecc2b524fccce80c47f1bcaabc8754019a8b1d963831a258099c8521868",
+    "evidence": "live-pilot.json"
+  },
+  "contractAddress": "oct4vJkHFXiAjBmgANC7cKDLh2vnu9wNqTbC28MuNWEf4pm",
+  "metadata": {
+    "address": "oct4vJkHFXiAjBmgANC7cKDLh2vnu9wNqTbC28MuNWEf4pm",
+    "version": "1.0 Rehovot",
+    "code_hash": "13716b7c705084da85ec01ae923b1edbd11999f1ceadff3f408bc2a26c80ca81",
+    "balance": "0",
+    "owner": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+  },
+  "codeHashVerified": true,
+  "error": "The operation was aborted due to timeout"
+}

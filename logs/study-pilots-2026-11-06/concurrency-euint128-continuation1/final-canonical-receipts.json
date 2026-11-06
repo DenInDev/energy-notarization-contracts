@@ -1,0 +1,33 @@
+{
+  "rawReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\concurrency-euint128-continuation1\\report.json",
+  "rawSha256": "42b1194d1601dcbecfeaf1cf388fed7cafa2397c71ee43d6bb4f48897b687dde",
+  "provenance": "Existing report reconciliations plus final-canonical-audit.json; no raw fields overwritten.",
+  "reconciliations": [
+    {
+      "transactionHash": "0x2a83cc02ae4e0dbe41a98e4b4967cf7b6cfbce8198053a29d64551f9a1c57b82",
+      "observedAt": "2026-11-06T21:14:11.074Z",
+      "previous": {
+        "blockHash": "0x71ac860c935902ba442ab417385dfaf4d488448f75a6b6ea3e74224b2ea2d281",
+        "blockNumber": 12079133,
+        "transactionIndex": 94,
+        "receiptStatus": 1,
+        "gasUsed": 997374,
+        "effectiveGasPriceWei": "17",
+        "gasCostWei": "16955358"
+      },
+      "canonical": {
+        "blockHash": "0xe56ec700d7a40b0bdb2c404b69a651c941a44fb8ebce8f5cd8cf5f07c63f0806",
+        "blockNumber": 12079134,
+        "transactionIndex": 166,
+        "receiptStatus": 1,
+        "gasUsed": 997374,
+        "effectiveGasPriceWei": "18",
+        "gasCostWei": "17952732"
+      },
+      "sameHashSenderNonceTargetVerified": true,
+      "previousBlockNoLongerCanonical": true,
+      "canonicalReceiptRepeated": true,
+      "timingUse": "Supplementary canonical identity/gas only; first-observed timing retained and excluded from canonical latency statistics."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "pid": 3420,
+  "startedAt": "2026-11-05T19:15:55.605Z",
+  "status": "terminal_failure",
+  "manifest": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05\\campaign.json",
+  "currentStage": "measured-euint16",
+  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05\\measured-euint16-preflight2\\report.json",
+  "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\isolated-validation\\accounts.secret.json",
+  "runs": 50,
+  "widths": [
+    16,
+    128
+  ],
+  "command": "node scripts/run-uniform-energy.cjs",
+  "terminalReason": "hash is not currently canonical",
+  "terminalAt": "2026-11-05T19:40:36.707Z",
+  "primarySuccesses": 92,
+  "primaryFailures": 1,
+  "counts": {
+    "baseline": {
+      "ok": 30,
+      "failed": 1
+    },
+    "zama": {
+      "ok": 31,
+      "failed": 0
+    },
+    "fhenix": {
+      "ok": 31,
+      "failed": 0
+    }
+  },
+  "audit": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05\\terminal-failure-audit.json"
+}

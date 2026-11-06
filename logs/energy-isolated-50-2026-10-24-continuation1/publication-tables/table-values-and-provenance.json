@@ -1,0 +1,663 @@
+{
+  "sourceReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-isolated-50-2026-10-24-continuation1\\report.json",
+  "sourceSha256": "1d2461641eb45460379ee8e7aeea1ce58c8f5700419b7659ded945e42b59b63d",
+  "primaryObservationsAttempted": 750,
+  "primaryObservationsValid": 749,
+  "latencyDefinition": "inputPreparationMs (zero when not applicable) + confirmationMs + postReceiptToValidatedPlaintextMs, summed per observation before descriptive statistics; transaction estimation/signing and intentional barrier waits excluded",
+  "cvDefinition": "100 * sample standard deviation (ddof=1) / arithmetic mean; no independence or inferential claim",
+  "gasDefinition": "Arithmetic mean gasUsed over all 50 confirmed measured transactions per platform/operation, including late-included historical failure",
+  "blockTargetDefinition": "Transaction-weighted arithmetic mean of 2 * containing block gasUsed / block gasLimit over all 250 measured transactions per platform",
+  "rounding": "Integer means: nearest, half up; CV: two decimals. Totals calculated before rounding.",
+  "performance": [
+    {
+      "platform": "baseline",
+      "operation": "notarize",
+      "gasN": 50,
+      "meanGas": 34185,
+      "latencyN": 50,
+      "input": null,
+      "receipt": {
+        "n": 50,
+        "mean": 6341.637985999986,
+        "sampleSd": 3962.1591916463267,
+        "cvPct": 62.478482694744216
+      },
+      "postReceipt": {
+        "n": 50,
+        "mean": 153.8245139999967,
+        "sampleSd": 158.9702782916059,
+        "cvPct": 103.3452173244697
+      },
+      "derivedTotal": {
+        "n": 50,
+        "mean": 6495.462499999982,
+        "sampleSd": 3966.384421629708,
+        "cvPct": 61.06392611195459
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "add",
+      "gasN": 50,
+      "meanGas": 36022,
+      "latencyN": 50,
+      "input": null,
+      "receipt": {
+        "n": 50,
+        "mean": 4905.485850000006,
+        "sampleSd": 4674.874181271218,
+        "cvPct": 95.29890258008209
+      },
+      "postReceipt": {
+        "n": 50,
+        "mean": 81.27096399999922,
+        "sampleSd": 34.4189270918353,
+        "cvPct": 42.35082912494507
+      },
+      "derivedTotal": {
+        "n": 50,
+        "mean": 4986.756814000006,
+        "sampleSd": 4694.345781299777,
+        "cvPct": 94.13624839536384
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "mul_scalar",
+      "gasN": 50,
+      "meanGas": 36011,
+      "latencyN": 50,
+      "input": null,
+      "receipt": {
+        "n": 50,
+        "mean": 6169.820734000032,
+        "sampleSd": 5579.344167577282,
+        "cvPct": 90.42959930474461
+      },
+      "postReceipt": {
+        "n": 50,
+        "mean": 83.11235199999588,
+        "sampleSd": 33.686743014358015,
+        "cvPct": 40.53157226781368
+      },
+      "derivedTotal": {
+        "n": 50,
+        "mean": 6252.933086000027,
+        "sampleSd": 5603.242574119852,
+        "cvPct": 89.60982785287122
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "mean",
+      "gasN": 50,
+      "meanGas": 37938,
+      "latencyN": 50,
+      "input": null,
+      "receipt": {
+        "n": 50,
+        "mean": 4853.493763999999,
+        "sampleSd": 3884.1847442311087,
+        "cvPct": 80.02863366264974
+      },
+      "postReceipt": {
+        "n": 50,
+        "mean": 70.8288960000164,
+        "sampleSd": 28.718968880787227,
+        "cvPct": 40.54696670802348
+      },
+      "derivedTotal": {
+        "n": 50,
+        "mean": 4924.322660000015,
+        "sampleSd": 3907.9581178824587,
+        "cvPct": 79.36031790984319
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "max",
+      "gasN": 50,
+      "meanGas": 37945,
+      "latencyN": 50,
+      "input": null,
+      "receipt": {
+        "n": 50,
+        "mean": 4721.672638000007,
+        "sampleSd": 4124.970772864606,
+        "cvPct": 87.36248971745422
+      },
+      "postReceipt": {
+        "n": 50,
+        "mean": 100.52682199998817,
+        "sampleSd": 154.6478899306533,
+        "cvPct": 153.83744045014322
+      },
+      "derivedTotal": {
+        "n": 50,
+        "mean": 4822.199459999995,
+        "sampleSd": 4140.6680070602215,
+        "cvPct": 85.86679255818724
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "notarize",
+      "gasN": 50,
+      "meanGas": 486174.56,
+      "latencyN": 50,
+      "input": {
+        "n": 50,
+        "mean": 10358.531009999995,
+        "sampleSd": 922.106308406843,
+        "cvPct": 8.901902282443844
+      },
+      "receipt": {
+        "n": 50,
+        "mean": 6326.46497999999,
+        "sampleSd": 3980.3758272927257,
+        "cvPct": 62.91627061678182
+      },
+      "postReceipt": {
+        "n": 50,
+        "mean": 4592.471911999997,
+        "sampleSd": 788.9034954393061,
+        "cvPct": 17.178188795840512
+      },
+      "derivedTotal": {
+        "n": 50,
+        "mean": 21277.467901999982,
+        "sampleSd": 4323.519610564439,
+        "cvPct": 20.319709236445604
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "add",
+      "gasN": 50,
+      "meanGas": 343060.04,
+      "latencyN": 49,
+      "input": null,
+      "receipt": {
+        "n": 49,
+        "mean": 4536.642018367342,
+        "sampleSd": 3840.7527671169564,
+        "cvPct": 84.66069730798765
+      },
+      "postReceipt": {
+        "n": 49,
+        "mean": 5003.540783673476,
+        "sampleSd": 1367.6530502884202,
+        "cvPct": 27.33370445887169
+      },
+      "derivedTotal": {
+        "n": 49,
+        "mean": 9540.182802040817,
+        "sampleSd": 4062.0103540267937,
+        "cvPct": 42.57790902243357
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "mul_scalar",
+      "gasN": 50,
+      "meanGas": 339218.64,
+      "latencyN": 50,
+      "input": null,
+      "receipt": {
+        "n": 50,
+        "mean": 6175.260701999987,
+        "sampleSd": 5562.227078240267,
+        "cvPct": 90.07274909768302
+      },
+      "postReceipt": {
+        "n": 50,
+        "mean": 4920.6660380000085,
+        "sampleSd": 801.2977401627813,
+        "cvPct": 16.284334965525655
+      },
+      "derivedTotal": {
+        "n": 50,
+        "mean": 11095.926739999995,
+        "sampleSd": 5755.7636068365355,
+        "cvPct": 51.87276143494561
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "mean",
+      "gasN": 50,
+      "meanGas": 358386.88,
+      "latencyN": 50,
+      "input": null,
+      "receipt": {
+        "n": 50,
+        "mean": 4850.247979999982,
+        "sampleSd": 3885.384019813157,
+        "cvPct": 80.10691485949903
+      },
+      "postReceipt": {
+        "n": 50,
+        "mean": 4775.869304000003,
+        "sampleSd": 719.9097752265701,
+        "cvPct": 15.073900255679394
+      },
+      "derivedTotal": {
+        "n": 50,
+        "mean": 9626.117283999984,
+        "sampleSd": 3752.823474308886,
+        "cvPct": 38.98584822508477
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "max",
+      "gasN": 50,
+      "meanGas": 344625.96,
+      "latencyN": 50,
+      "input": null,
+      "receipt": {
+        "n": 50,
+        "mean": 4718.989814000011,
+        "sampleSd": 4159.57486997577,
+        "cvPct": 88.14545133442323
+      },
+      "postReceipt": {
+        "n": 50,
+        "mean": 4956.018593999987,
+        "sampleSd": 1242.2324682536148,
+        "cvPct": 25.06512929062707
+      },
+      "derivedTotal": {
+        "n": 50,
+        "mean": 9675.008407999998,
+        "sampleSd": 4546.843404706629,
+        "cvPct": 46.99575662329109
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "notarize",
+      "gasN": 50,
+      "meanGas": 320490.96,
+      "latencyN": 50,
+      "input": {
+        "n": 50,
+        "mean": 9126.800870000008,
+        "sampleSd": 978.4315665874134,
+        "cvPct": 10.72042198053799
+      },
+      "receipt": {
+        "n": 50,
+        "mean": 6312.836148000008,
+        "sampleSd": 3959.0627219411485,
+        "cvPct": 62.71448567844476
+      },
+      "postReceipt": {
+        "n": 50,
+        "mean": 289.86423999999215,
+        "sampleSd": 38.922605191806625,
+        "cvPct": 13.427874094371791
+      },
+      "derivedTotal": {
+        "n": 50,
+        "mean": 15729.501258000008,
+        "sampleSd": 4223.01023257008,
+        "cvPct": 26.847705870027262
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "add",
+      "gasN": 50,
+      "meanGas": 343751,
+      "latencyN": 50,
+      "input": null,
+      "receipt": {
+        "n": 50,
+        "mean": 4915.563917999956,
+        "sampleSd": 4664.08689587631,
+        "cvPct": 94.88406566736361
+      },
+      "postReceipt": {
+        "n": 50,
+        "mean": 387.4670600000207,
+        "sampleSd": 221.5018816693185,
+        "cvPct": 57.166635447489824
+      },
+      "derivedTotal": {
+        "n": 50,
+        "mean": 5303.030977999977,
+        "sampleSd": 4668.25316591976,
+        "cvPct": 88.02990563861233
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mul_scalar",
+      "gasN": 50,
+      "meanGas": 482917,
+      "latencyN": 50,
+      "input": null,
+      "receipt": {
+        "n": 50,
+        "mean": 6165.625738000007,
+        "sampleSd": 5555.378843573647,
+        "cvPct": 90.1024337130085
+      },
+      "postReceipt": {
+        "n": 50,
+        "mean": 619.5126460000109,
+        "sampleSd": 328.55428849436913,
+        "cvPct": 53.03431505647801
+      },
+      "derivedTotal": {
+        "n": 50,
+        "mean": 6785.138384000018,
+        "sampleSd": 5664.320889115732,
+        "cvPct": 83.48128761047413
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mean",
+      "gasN": 50,
+      "meanGas": 406004,
+      "latencyN": 50,
+      "input": null,
+      "receipt": {
+        "n": 50,
+        "mean": 4855.364150000005,
+        "sampleSd": 3869.441286571112,
+        "cvPct": 79.69415201475894
+      },
+      "postReceipt": {
+        "n": 50,
+        "mean": 4593.727780000003,
+        "sampleSd": 420.11179881914666,
+        "cvPct": 9.14533509469615
+      },
+      "derivedTotal": {
+        "n": 50,
+        "mean": 9449.091930000008,
+        "sampleSd": 3840.327079661329,
+        "cvPct": 40.6422871965997
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "max",
+      "gasN": 50,
+      "meanGas": 347930,
+      "latencyN": 50,
+      "input": null,
+      "receipt": {
+        "n": 50,
+        "mean": 4729.484372000016,
+        "sampleSd": 4141.713437191923,
+        "cvPct": 87.57219839253776
+      },
+      "postReceipt": {
+        "n": 50,
+        "mean": 350.2007779999988,
+        "sampleSd": 219.5922098355903,
+        "cvPct": 62.704660763372445
+      },
+      "derivedTotal": {
+        "n": 50,
+        "mean": 5079.685150000015,
+        "sampleSd": 4175.047463697585,
+        "cvPct": 82.19106776130747
+      }
+    }
+  ],
+  "deployments": [
+    {
+      "platform": "baseline",
+      "contract": "0x8A142EA82A505Fa818CaCA86261F75D354226B12",
+      "intervalsUtc": [
+        {
+          "start": "2026-10-24T09:18:18.736Z",
+          "end": "2026-10-24T09:30:25.363Z"
+        },
+        {
+          "start": "2026-10-24T09:45:03.753Z",
+          "end": "2026-10-24T10:39:36.155Z"
+        }
+      ],
+      "firstContainingBlock": 11982862,
+      "lastContainingBlock": 11983261,
+      "meanBlockGasTargetRatio": 0.7137124763510777,
+      "n": 250
+    },
+    {
+      "platform": "zama",
+      "contract": "0x5CF6e3D826Af508dd39b6c953476dACDc025c79b",
+      "intervalsUtc": [
+        {
+          "start": "2026-10-24T09:18:18.736Z",
+          "end": "2026-10-24T09:33:01.638Z"
+        },
+        {
+          "start": "2026-10-24T09:45:03.752Z",
+          "end": "2026-10-24T10:39:42.253Z"
+        }
+      ],
+      "firstContainingBlock": 11982862,
+      "lastContainingBlock": 11983261,
+      "meanBlockGasTargetRatio": 0.7108521649304523,
+      "n": 250
+    },
+    {
+      "platform": "fhenix",
+      "contract": "0xDE38d6c0C6fAb9290224A77d2134E25Cdb9e388b",
+      "intervalsUtc": [
+        {
+          "start": "2026-10-24T09:18:18.736Z",
+          "end": "2026-10-24T09:30:25.692Z"
+        },
+        {
+          "start": "2026-10-24T09:45:03.753Z",
+          "end": "2026-10-24T10:39:36.457Z"
+        }
+      ],
+      "firstContainingBlock": 11982862,
+      "lastContainingBlock": 11983261,
+      "meanBlockGasTargetRatio": 0.7137124763510777,
+      "n": 250
+    }
+  ],
+  "metadataRecoveries": [
+    {
+      "transactionHash": "0x0bf2eb091e52798b2693e1d3aa26d79593f877c6f770f769245ed8557cbd5f57",
+      "blockHash": "0x8eb407cc0914d87c333ee482804aebedd997734a1f9bc3251f970c02682a091b",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0xe1d9ce4a60c2d7edb277e796d10c6c96bc18f9ad57c72983a013ae8bcbb51de8"
+    },
+    {
+      "transactionHash": "0x5e061c17a87816ef4cd8fda21fef356387bef770439b6dd449eaffe02cb6b9dc",
+      "blockHash": "0x6f3adca2c0ac444a3c6ec99fc64459214614962145d6ace41d869a973098e32a",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0xe134d0d76fa8ef48fdb0778d10bb06f7783734cf6f6a87a41bb03d4c7edb6248"
+    },
+    {
+      "transactionHash": "0x722c4b9581b760f7acc4ad2a86e835a9e8cee44f6c774900ab849259a9fc8b09",
+      "blockHash": "0x5e68890b70859ae78a38a19b5915a4a1e50caedb4c3abd60be9f9161649d69a1",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0xdf4509260ee33695273498e3bb76c60f6abe997c0a2337cfd337f1291555f4ac"
+    },
+    {
+      "transactionHash": "0x700fffacd37ab863ec11d5349799af880a14e52ded3edfe013f6a27f17839a9b",
+      "blockHash": "0xf21b62b9f57cff70cb78ab6cea731b7674a81965e22d2b40dbe01d54b2aab93e",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x9f1cc5eb485b006203a1ff7e0db700c9bedb689f243e899c6b9e645f83229f4b"
+    },
+    {
+      "transactionHash": "0xf7c7b7eea0165d2e6216b50f502a5f029fc8ad3757930a794259738740b19e58",
+      "blockHash": "0xd91ab43110f59c1ed1aebb24f5f513722dfb821cc70b59c8740ec5cf4f99e263",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x746068ca27f811342e9119a292640b6b12f3ac7403a3f67a8e760477bebcaf86"
+    },
+    {
+      "transactionHash": "0x82b9e593192f8da82efa43f43f9c04dd72bbf33d857ca6b24295edc5330ff4e9",
+      "blockHash": "0x6ad3689f78218a2c73c36e73bbb28089f9023c8729a4b654c53da6db5999852d",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0xcca164ffdaff0c55ddcb31ce37b4a323228917c1fbbb581dc1dd291124fbfe02"
+    },
+    {
+      "transactionHash": "0x4a8829507fa27c41c4161ff39c35449526bdcac63f6690ca9039d703816eb212",
+      "blockHash": "0x3f44ddeee04a71a9f80cf8e9549054a4cd80e10584ebecc8319ef882147b3225",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x8ddd748f9c15eccbfadec52510f5c6fa5dd4cfffc90d750a5f93998c0e174bd8"
+    },
+    {
+      "transactionHash": "0xbea797ac6f69457ca787a3d0423f7682baf4acc933d10eaf0515ed266c836e35",
+      "blockHash": "0x76cd920bc8780b982373947ea6bdf1bb1cc04239f6677848e65fcaaebc673ee2",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x2e6b14dc8131e9eb4be1024d8126c461b97bbcc200a3c79a4328367dd6ed5ad5"
+    },
+    {
+      "transactionHash": "0x4a3c1e70459934e423a01e1c89fd2f9d6059a2724752465c1ca527a9b7feed50",
+      "blockHash": "0x463a474b6453f08f9b954e0276b527696624e7eb5cac2cd678f97e884e68cb94",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x832cdfc95bd49978884730a958f1d773bc781032e4772f857a7495aad7b54c25"
+    },
+    {
+      "transactionHash": "0xbfcbec674151459373fb4951ac3dbe4c87d704f5bb0897f7ab5af04bc71fb81c",
+      "blockHash": "0xeddc5cdca9767044b1d2f06cc576879e2e0a16356aadfacc181d79ec64e03824",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x6e0e84d2a28808589507bfc5acc193f5accd0f8493951539e74442e63a5705c1"
+    },
+    {
+      "transactionHash": "0x2e0592bb634625809732c2a9fc992dd44045871fded16afcf8b05d4ea5fa22dd",
+      "blockHash": "0x6e8621f4a85066d008c4bbf412a4257a44e2aa34c1d6a7b6b53b1749f3ab8dbf",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0xad3d2361bf0c522df9253a9bb45df18a5b36e2f52e3eb6446fd3651fe80a02b6"
+    },
+    {
+      "transactionHash": "0xceb909948ff3deed854d35ed833c2939331322712ccf8a2a5f41061a65b96fa6",
+      "blockHash": "0x7ba09cc2020be3b5bf88332cae0dc85694a4d1659c4bbeb365d91a9776805790",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0xd1959eb06a235a1540a366ea0af0a82c07a092348d08a5de003a208ce68d9437"
+    },
+    {
+      "transactionHash": "0x6bfe23352ce5802d42c8ff59e2880420501b23388081c4df7647ff0775843e75",
+      "blockHash": "0x326ae2bfef0ccf4e5941d02c94e946ae87eedf301490bad13b900d790b6c043d",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0xe25001428b5a19c78521de126f4ae66f455cb6f32e01fec02cea1a69601c59a4"
+    },
+    {
+      "transactionHash": "0x31e5468c93f6c649d5cfec9b53f21827e6a1414c1398baefa83ed0564dbe5102",
+      "blockHash": "0xe2ceb0ffde27ed68de5621e432ce74838c0c2d46466d870fa698d0573b1ce83d",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0xe54d35c497c3e17e46631dfb43c75d2a8becaba0106663bfb2a68db28bdce4c9"
+    },
+    {
+      "transactionHash": "0xaa0a4e4b1874097cc651f888dfd775c17cd3b9e4bb8d4ec5c3d1f6208f92f3ce",
+      "blockHash": "0xc8f3ed4b2ecdf40eea6d3cf18faf54c84d7d13f73a4b7d16aa262e680c5f7eca",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x6306e0d346793249d7d8b4ddaff83a78a3b8b81e5387f6a50d37b6119c58a7b7"
+    },
+    {
+      "transactionHash": "0x406d703778e7f0bc58979210e130a6d274b7fb047b7381e5db58b36993d01611",
+      "blockHash": "0x0a0c289d4bb2dbf0b624682538ca50095771dd9d8d0f4d4c4a9f252e48a8f8c5",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x3c6330de2fdc106759687e485f5625bfa14c91b58aab238bbc6edb6b55d8bb43"
+    },
+    {
+      "transactionHash": "0xe55678b355e2188fb7d8a205d293ba2383301587d378df918470e0f5489d7f89",
+      "blockHash": "0xee67b44e1afc099f536c7c75a74d03a0d04368189c0e04c4d024ef390597af6b",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x4a64dac42b30e2e7d427d237e463f0ffba7703ab6de92e1e60b81dafc4de26f1"
+    },
+    {
+      "transactionHash": "0x76233a0d9e129293e616443a271d1a4fa78da0c802512d4b2c9d307450f507d6",
+      "blockHash": "0x848bc823a27b748ded9b58ca4fd19274ceb03d8376b7a29d8e4b7015296883aa",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0xa2718e37b61bbd487bf8285917328d4a3f76e864a2040152cf0153aa2e84ea39"
+    },
+    {
+      "transactionHash": "0xe078acabd3c4d31b8286ae31af9648b5a885df2054feafff4db476568111df69",
+      "blockHash": "0x70f706b1c9724d8c7a8c4f00b3bc808c6d303cf51c590a0bbe983e46cb3820e3",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x2d87c2ece206da11f6c5563646dce04361cf1752e97ec0df17f82362d4fe4b81"
+    },
+    {
+      "transactionHash": "0xdbc3757332de58c51da1cf08a804936eecae075a8d210b9784e106b91e12aac9",
+      "blockHash": "0x31aeff380db036064a12b47c0fdcd8aaf86f37238294d52ab6c89a8f04ced4bd",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x055e4bb1a784f51124985b1be51f0b843baf3b97c0dc4971da9197c615484756"
+    },
+    {
+      "transactionHash": "0xa7428c816baae53a4cb481b8fb821fe8194e4a0001f4422036f9d9b19fee4579",
+      "blockHash": "0x1307a960bdba99e2d6af1f6d7acb649e0206f06b6c0b3b4664a037c0ff446668",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x68409b1ed0323331e8aefc794cfcf1a00ca4a57ec0633ae20960a387f9efd79f"
+    },
+    {
+      "transactionHash": "0x67f6445998b342c9a4e1ae1e736031307ef1ba56cca6160a3b49b5c2ce7c3d94",
+      "blockHash": "0xc1ae35850ac7c244c9f240a5e44c5104cd4f875e8ad9cb418a9a35cb180feb93",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x357f31efa9086cf37bfa6e90d58a47aec2b4d8d18b805388efd436a7cb088a64"
+    },
+    {
+      "transactionHash": "0x91a091777ea321b11a1224d8cd73636d62fb32878348b99c0e046cfe8c4c9a39",
+      "blockHash": "0x9a60a8e0b276b357b3a65126b9d9645e40a6505bfb4c3578a6261f1dd57e0c2c",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x7edcb18a7b3af9c9f1b0d1bff2df83b5e48c0cba5b0ecde41433e6b62a6b195d"
+    },
+    {
+      "transactionHash": "0x9bc86760264212845131ec077282dc14831704a5fa6919f37357b18282fa97b1",
+      "blockHash": "0xec075c028853b0132f54c4540defebef47bf5f1832230f48aab2a00fbf61b561",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x6d1bb9a401fb49614eab85a556d6d1c0a5349859d383c04c9d0a30907a2ce0c2"
+    },
+    {
+      "transactionHash": "0xd724fe0ae9d15d4cf6bc733a9edf433eb5beffb2655e022993201a402c51c88f",
+      "blockHash": "0xd28d856309a09dea6b61b633eaf776e7e61a2dc2823170e244a10298d04ccde2",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x604ff495c48eba08a3fdd2ab1346fd397691ca08636a0da217f41ff4b83f9dea"
+    },
+    {
+      "transactionHash": "0xf18835e34d803d204fd191fd8bdaaf4c757a3893844f97963d3b4dfe1c6b77d9",
+      "blockHash": "0x7a353ad3eb0350521126b92ed5a3e5b217531fcba8944742b170c4330136e461",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x380cabb1e34a25a7cdcde08fa871449245cb1a47826351751d0e0b54070b1b9f"
+    },
+    {
+      "transactionHash": "0x83f56383f9a2fca5c76f2046833f96fdeb238d4fdad0ebd69b49f1894761d28c",
+      "blockHash": "0x10331a22ff259a56fa4c02ebb7ff3279c51e6487e20df3e7bd9d94c02c47eb07",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x4b8226056e287ad978340e796441b05118e37f6e71bc84ca5ac572acf6ac7414"
+    },
+    {
+      "transactionHash": "0x656aaa805a891e9e16936b23db98079817c970027a8459fc9708eb1e697404a3",
+      "blockHash": "0xd5024961fc493f99c9cb252aabed6556b39234c01fd573a8fcbe1b9353be011b",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x77b2c18745cd20c310ad78cb4a79d7b6c6d144a94ca7c47a9e0b3c0b8abaa067"
+    },
+    {
+      "transactionHash": "0x23d91d05bfa2ad397204793769e8f3a1a51ae563dc2d56d950f81a5382750b32",
+      "blockHash": "0x5e62cc06d728dcb7526f3c246d62fbfb3250c2b8143759d370662784183db999",
+      "method": "canonical late receipt and block metadata in continuation preflight",
+      "observedAt": "2026-10-24T09:44:30.029Z"
+    },
+    {
+      "transactionHash": "0xa61c742ee28678099b9f5fac3b0bdb998eea5fd34113262fc5ff4f9ff6604808",
+      "blockHash": "0xc8f3ed4b2ecdf40eea6d3cf18faf54c84d7d13f73a4b7d16aa262e680c5f7eca",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x6306e0d346793249d7d8b4ddaff83a78a3b8b81e5387f6a50d37b6119c58a7b7"
+    },
+    {
+      "transactionHash": "0x7b8c9f9518e4f7aec28a723223855712e91f8df4f9496d88e462a95e18993b03",
+      "blockHash": "0xc1ae35850ac7c244c9f240a5e44c5104cd4f875e8ad9cb418a9a35cb180feb93",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0x357f31efa9086cf37bfa6e90d58a47aec2b4d8d18b805388efd436a7cb088a64"
+    },
+    {
+      "transactionHash": "0xbf611c1b58a1746db7bc8e6c20b58596a00cc620508256dfe639b3abfd4b6d31",
+      "blockHash": "0x7e7e7a715cf088753ab49cef76d48257dcbbb90d9b6b3afa488ac70fd144b4c5",
+      "method": "exact containing-block hash join to another raw observation",
+      "donorTransactionHash": "0xa4852def31698c7880531d723bca0d50c45a55c37848a0716509c8aee5e6f662"
+    }
+  ]
+}

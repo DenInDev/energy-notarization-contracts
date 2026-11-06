@@ -1,0 +1,70 @@
+{
+  "at": "2026-10-22T16:27:49.600Z",
+  "chainId": 11155111,
+  "configuredOwner": {
+    "status": "invalid-local-signer"
+  },
+  "accounts": [
+    {
+      "id": "user-1",
+      "address": "0x3552Cc153DCcC007d1c0D88Ff5aDB258d2688121",
+      "balanceEth": "0.425248567774947"
+    },
+    {
+      "id": "user-2",
+      "address": "0xbFfa3190d423F15C1E5281a10e5d89B3Dcf26eD0",
+      "balanceEth": "0.1"
+    },
+    {
+      "id": "user-3",
+      "address": "0xB85E3C85c39e2FD06308649F466d360B0bE792af",
+      "balanceEth": "0.1"
+    },
+    {
+      "id": "user-4",
+      "address": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC",
+      "balanceEth": "0.1"
+    },
+    {
+      "id": "user-5",
+      "address": "0x268fcAE6206890E4de082535F12C40Cc5119033d",
+      "balanceEth": "0.1"
+    },
+    {
+      "id": "user-6",
+      "address": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+      "balanceEth": "0.1"
+    },
+    {
+      "id": "user-7",
+      "address": "0xA0B9422C5c0b528a7D50E902836ab15613b281Cf",
+      "balanceEth": "0.1"
+    },
+    {
+      "id": "user-8",
+      "address": "0xD1e180A8341601fA6784E9C361268b111949b9b2",
+      "balanceEth": "0.1"
+    },
+    {
+      "id": "user-9",
+      "address": "0xaC78Dfa651E76a57437aDbc1c6052a4a5d984EE3",
+      "balanceEth": "0.0"
+    },
+    {
+      "id": "user-10",
+      "address": "0xA125FE955C8f24De4f613E6d1FB8cb5372D9Fe6D",
+      "balanceEth": "0.0"
+    },
+    {
+      "id": "previous-deployment-owner",
+      "address": "0x940a5ca24aFe2b971f91FBF9112CafDCe0A73F6B",
+      "balanceEth": "6.421259003968040719"
+    },
+    {
+      "id": "user-supplied-account",
+      "address": "0x8f3FCeEcedab52f783762040ce130DBf755765e7",
+      "balanceEth": "1.45045126203047882"
+    }
+  ],
+  "totalTenAccountsEth": "1.125248567774947"
+}

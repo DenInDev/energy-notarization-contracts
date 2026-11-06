@@ -1,0 +1,51 @@
+{
+  "at": "2026-11-05T22:37:31.913Z",
+  "status": "terminal_pilot_preparation_failure",
+  "reason": "Preparation failed before barrier release: The value must be a valid address.",
+  "rawSha256": "e484229a66d1ed03c567edbe2efadb3ed1887b58ecad52c5e718cfd967beef2d",
+  "measuredPrimarySuccesses": 0,
+  "applicationBroadcasts": 0,
+  "deployments": 3,
+  "preparedButNeverBroadcast": [
+    {
+      "platform": "baseline",
+      "hash": "0xf9cbd6a0e76bed72ae5a93e16ca1d5ca8c89a2c270e5883aee088bdf6fe30726",
+      "nonce": 349
+    },
+    {
+      "platform": "fhenix",
+      "hash": "0xb8ce470e32d01f4760020dc217e0d88d30fc26db36c1d8636ce7329b05f1c38a",
+      "nonce": 349
+    }
+  ],
+  "checks": [
+    {
+      "platform": "baseline",
+      "address": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC",
+      "latest": 349,
+      "pending": 349,
+      "deploymentTransactionHash": "0x1a2361deae6cf30715e8e039722d8894c8af6301b280c27554ab1dfac69e58b4",
+      "canonicalStatus1": true,
+      "balanceWei": "99990293436966049"
+    },
+    {
+      "platform": "zama",
+      "address": "0x268fcAE6206890E4de082535F12C40Cc5119033d",
+      "latest": 349,
+      "pending": 349,
+      "deploymentTransactionHash": "0xc76a70538f63944b11de01e93300136ed5c6b1ee41da92e98ca385cb5501dd9c",
+      "canonicalStatus1": true,
+      "balanceWei": "99900390661052276"
+    },
+    {
+      "platform": "fhenix",
+      "address": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+      "latest": 349,
+      "pending": 349,
+      "deploymentTransactionHash": "0x5b8f610e7569b9a368ce237062e5ccff5fd70c7f7d24f77b233d4e5c06eb2419",
+      "canonicalStatus1": true,
+      "balanceWei": "99898558814321374"
+    }
+  ],
+  "fix": "Normalize Zama address input to EIP-55 checksum; actual off-chain SDK proof preparation passed without broadcasting"
+}

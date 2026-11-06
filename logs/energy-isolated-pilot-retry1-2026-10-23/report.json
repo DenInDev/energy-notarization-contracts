@@ -1,0 +1,4375 @@
+{
+  "schemaVersion": 12,
+  "platformOwners": {
+    "baseline": "0x3552Cc153DCcC007d1c0D88Ff5aDB258d2688121",
+    "zama": "0xbFfa3190d423F15C1E5281a10e5d89B3Dcf26eD0",
+    "fhenix": "0xB85E3C85c39e2FD06308649F466d360B0bE792af"
+  },
+  "signerMode": "independent_platform_accounts",
+  "decryptionPolling": {
+    "requestedIntervalMs": 100,
+    "serverRetryAfter": "respected; can lengthen the effective interval",
+    "patch": "benchmark-decryption-polling-v1",
+    "bundles": {
+      "zama": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+        "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+      },
+      "zamaEsm": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+        "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+      },
+      "fhenix": {
+        "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+        "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+      }
+    }
+  },
+  "energyRepresentation": {
+    "unit": "Wh",
+    "readingBits": 16,
+    "accumulatorBits": 64,
+    "resultBits": 64,
+    "timestampBits": 64,
+    "timestampEncrypted": false,
+    "readingRange": "0..65535 Wh per measurement interval",
+    "computation": "Widen reading to 64 bits before arithmetic; conversion is included in transaction cost.",
+    "dataset": "Synthetic readings; acquisition interval and physical meter validation are outside this benchmark."
+  },
+  "observationTimeoutMs": 180000,
+  "setupObservationTimeoutMs": 180000,
+  "executionMode": "isolated_processes_prepared_submission_barrier",
+  "studyScope": "observable operational performance of public Sepolia deployments; not isolated TFHE computation",
+  "startedAt": "2026-10-23T16:30:30.054Z",
+  "chainId": "11155111",
+  "owner": "0x3552Cc153DCcC007d1c0D88Ff5aDB258d2688121",
+  "rpcHost": "ethereum-sepolia-rpc.publicnode.com",
+  "runs": 1,
+  "selectedPlatforms": [
+    "baseline",
+    "zama",
+    "fhenix"
+  ],
+  "scheduleSeed": "energy-mixed16-64-independent-v1",
+  "schedule": [
+    {
+      "run": 1,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    }
+  ],
+  "sdkVersions": {
+    "zama": "0.4.1",
+    "fhenix": "1.0.1"
+  },
+  "contractLibraries": {
+    "zama": "@fhevm/solidity 0.11.1",
+    "fhenix": "@fhenixprotocol/cofhe-contracts 0.2.0"
+  },
+  "contractNames": {
+    "baseline": "EnergyNotarizationPlainTest",
+    "zama": "EnergyNotarizationFHETest",
+    "fhenix": "EnergyLifecycleCoFHE"
+  },
+  "compiler": {
+    "version": "0.8.27",
+    "optimizer": {
+      "enabled": true,
+      "runs": 800
+    },
+    "evmVersion": "cancun",
+    "viaIR": false
+  },
+  "sourceSha256": {
+    "hardhat.config.ts": "f2c7451f127f8f87555025976a0d37c84208f9630b842a769d0c773c50496b3d",
+    "package-lock.json": "4571f420b5ef346a377e26b0d86ed6d3c9c4cfa5e268e184f876936f862fa35e",
+    "contracts/EnergyNotarizationPlainTest.sol": "e62095efce878660a6a2ef0cf465071a289af43dd005b6474031d4b2441f28ca",
+    "contracts/EnergyNotarizationFHETest.sol": "4010cc5450e064032023d43c5c5e984d4b3f3a3ca7357fc8112453a013b098e9",
+    "contracts/EnergyLifecycleCoFHE.sol": "49561f7379746fad6a9a7cc126ddd27df8d6953affce911d17cb05448460bbfb",
+    "tasks/benchmarkEnergyLifecycle.ts": "6934d407ff6a43311b64b836e3c854766b9f96edd4df4c0206a865357cf86a59",
+    "tasks/lib/lifecycleTiming.ts": "00e7c4c07b08934c2530268b6b38907a3da087df4bbaa57e765103cbd96e4b26",
+    "tasks/lib/lifecycleSchedule.ts": "53f15d45880e39a39b2ce1011af66aa2d967917de5b226bcbaae0841f41b7a36",
+    "tasks/lib/lifecycleResult.ts": "2c464da462addf84a75037150ff631eff7b0b0b6d90c89cad92791c542aa2f7f",
+    "tasks/lib/lifecycleReadRetry.ts": "60c7db6fa19f8eaa3ff16b93aa4aa61c5c5d44783712466c786e50e0ecb29fd9",
+    "tasks/lib/lifecycleConcurrent.ts": "040f0640cac5db6721fbc41049cba42df44488a6252ea3d2fc4b3664f114d7a9",
+    "tasks/lib/lifecycleNonce.ts": "617f2bfe15dea12eaf4cbfeefc09b54577093a06eba69e85116847fdd7a9321a",
+    "tasks/lifecycle/types.ts": "4a227e2ae9f5153cb8d49e9abf36dbce89c18617cc5826a423eecf74a1ebc2e6",
+    "tasks/lifecycle/operations.ts": "022592069095029c5c5468cf3c3eac00cf40dbaf3d367dfb3e82f8c826a592b1",
+    "tasks/lifecycle/errors.ts": "4298ba265e69aa3c771cb4ac421944ce34569c8a7b6b9a563181d7509353b34c",
+    "tasks/lifecycle/adapters.ts": "6f11bab42cc31b868511f55f17995eb2d6cd0ea84de5ccac6245d860bde7ee78",
+    "tasks/lifecycle/zama.ts": "6e9928d3454ed0f2ef2c907b649e0ffe5d6cd23afaed92ab0f8c015d0da624a9",
+    "tasks/lifecycle/cofhe.ts": "8a61ad4a6b736e69c0fa3ffd16d488b4316aee73d3ffee3f31ac89a3cae23255",
+    "tasks/lifecycle/report.ts": "31114e35221a6f372ed6a457e9ca75b2a16162869c21dbc69a2f13eba437146e",
+    "tasks/lifecycle/measurement.ts": "97a55f32ea027f0dba728a408918e8993f77a93d6c4c867d2cb15f84d4ff71a8",
+    "tasks/lifecycle/campaign.ts": "95f26f0c4a74f19d9dbdf6055d5ba11cbf289a2f0f60374d9679febe37ecc17d",
+    "tasks/lifecycle/processCampaign.ts": "76f7ca95882edd25999f957e8bd74e9bf57d403b0788254757c448ca9aeab7ce",
+    "tasks/lifecycle/processWorker.ts": "b3b1018241ba504b86171967948b03aff1d39af336712580fc0708f1ea9fb607",
+    "tasks/lifecycle/workerClient.ts": "05d083c9d0a130ec83c7a3322ad7f9651ecf9e257702b3d5de48794f7d1063ec",
+    "tasks/lifecycle/broadcast.ts": "91231d5eb30a929377031bede8e03894067fe7ec045d35e49b42a1baa038f86a",
+    "scripts/energy-platform-worker.cjs": "74aae9010ec6e1abc5fb7296d933078b6426d7b63d313d6f010b91d9a0ac8db2",
+    "scripts/run-energy-campaign.cjs": "0c2e6b619e873d2ef5e028c98e47a4bb0bb60fc4abd991d579885a1ea88bafbc",
+    "tasks/lib/decryptionPolling.cjs": "9c7755517b08687366ab9c043c8603220656319513f1944daf012d3aa60507c5",
+    "scripts/patch-decryption-polling.cjs": "1859e40236c69faa45cc83d6c1857e7e687a0d38133c95eac28d91415800624a",
+    "tasks/experiments/accounts.ts": "2a930be994cd3ba0808f3f79fd88641b472a86c639a33883f2149f3fe3bca75e"
+  },
+  "machine": {
+    "os": "Windows_NT",
+    "release": "10.0.26200",
+    "architecture": "x64",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core Processor           ",
+    "logicalCpus": 16,
+    "ramBytes": 33397133312,
+    "node": "v24.11.0"
+  },
+  "methodology": {
+    "clock": "performance.now (monotonic client clock); ISO wall time is metadata only",
+    "confirmation": "Before prepared transaction broadcast invocation to observation of its successful receipt (1 inclusion confirmation; not finality); signing and gas estimation precede the barrier",
+    "completion": "Prepared broadcast invocation to equality-validated plaintext; input preparation, transaction preparation and barrier wait excluded and recorded separately",
+    "postReceipt": "receipt observation to validated plaintext, including handle read, authorization and SDK decrypt",
+    "sdkPolling": "SDK retrieval includes service-directed polling and retry waits; Zama progress records retryAfterMs and CoFHE poll events record intervalMs. These are polling hints, not measured sleep durations, and must not be subtracted to infer backend computation time",
+    "alreadyReady": "second authenticated SDK decrypt of the same known-ready handle, measured separately",
+    "caching": "fresh encrypted input each round; ready-repeat service caches cannot be excluded; Zama uses fresh keypairs, CoFHE reuses a setup ACP",
+    "warmup": "all operation paths initialized before measurement; EIP-2929 cold accesses still apply per transaction",
+    "sequencing": "One persistent OS process, signer and nonce cursor per platform; sequential deployment/setup; all encrypted inputs and signed transactions prepared before a shared timed submission barrier; all workers settle before the next operation",
+    "baseline": "same transaction/getter/equality endpoint, with plaintext returned directly; encryption and authenticated decryption are not applicable",
+    "temporalControl": "nearby operation-matched comparisons and balanced order reduce, but cannot eliminate, public-network load and slot-phase confounding",
+    "receiptPolling": "Immediate eth_getTransactionReceipt, then 500 ms waits after pending responses; raw broadcast acknowledgement is separate; only receipt reads can retry",
+    "resultRead": "EIP-1898 eth_call pinned to the receipt block hash with requireCanonical=true; no latest-state fallback",
+    "deploymentBytecodeRead": "EIP-1898 eth_getCode pinned to deployment receipt block hash; transport errors retried up to five attempts and block-not-found propagation errors retried within the original setup deadline; every attempt retained; empty code and non-canonical blocks fail",
+    "retrievalRetry": "up to five read/retrieval attempts on transport errors, Zama SDK user-decrypt ACL check denials or HTTP 503 USER_DECRYPT responses (including SDK schema errors); receipt-block-not-found and the specific 503 gateway ciphertext-not-ready USER_DECRYPT response can retry beyond five attempts within the original observation deadline; receipt reads always use the same canonical block hash, without latest fallback; exponential backoff capped at 8 seconds; Zama attempts receive only the remaining time budget; every attempt and wait included in timing and traces; persistent failures still abort; never retry application mutations, other authorization errors or plaintext mismatches",
+    "ancillaryFailure": "a failed already-ready repeat is retained without replacing it or aborting successful primary completions; report actual successful ready-repeat n and failure counts separately",
+    "unobservable": {
+      "coprocessorQueueMs": null,
+      "pureFheEvaluationMs": null,
+      "kmsOrMpcComputeMs": null,
+      "interServiceTransportMs": null,
+      "serverProofVerificationComputeMs": null
+    },
+    "sdkStages": "client-observed API boundaries, NOT pure internal service compute durations",
+    "previews": "eth_call symbolic simulations only; no persisted coprocessor request and no completion claim",
+    "fhenixWorkload": "mul_scalar encrypts the constant; mean encrypts divisor 2, unlike Zama plaintext scalar operations",
+    "broadcast": "Exactly one eth_sendRawTransaction per signed operation; predetermined hash journaled before barrier release; start and acknowledgement recorded separately; failed acknowledgement is uncertain and never automatically retransmitted",
+    "feeControl": "One recorded EIP-1559 fee quote shared by all platforms per comparison; gas estimated and transaction signed before the barrier",
+    "fullLifecycle": "preparationMs + transactionToValidatedPlaintextMs excludes intentional barrier waiting; worker wall time also includes the barrier and must be labeled separately",
+    "processIsolation": "Separate Node processes isolate SDK main-thread proof generation; OS scheduling and shared CPU/RPC/network contention remain possible"
+  },
+  "setup": [
+    {
+      "platform": "baseline",
+      "workerPid": 9064,
+      "stages": [
+        {
+          "stage": "setup.bytecode.read_attempt",
+          "startMs": 22743.0931,
+          "durationMs": 51.0656999999992,
+          "status": "error"
+        },
+        {
+          "stage": "setup.bytecode.receipt_block_retry",
+          "startMs": 22794.410799999998,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "failedAttempt": 1,
+            "backoffMs": 1000
+          }
+        },
+        {
+          "stage": "setup.bytecode.retry_backoff",
+          "startMs": 22794.4144,
+          "durationMs": 1007.4994999999981,
+          "status": "ok"
+        },
+        {
+          "stage": "setup.bytecode.read_attempt",
+          "startMs": 23801.9239,
+          "durationMs": 49.66259999999602,
+          "status": "ok"
+        }
+      ],
+      "transactionNonce": 855,
+      "transactionHash": "0xad80652e020e65bf23c7689b777f942ff58872ce7de37cf83bba79dcbc3a8f73",
+      "address": "0x9901313123BDF98496eA571bEf2C2304D12Ce498",
+      "blockNumber": 11977875,
+      "blockHash": "0xa2118112c327e7dc8feb932ea1bd61be02f484aecdf4a71887c64f0259085d19",
+      "gasUsed": "7325488",
+      "gasCostWei": "102556832",
+      "deployedBytecodeKeccak256": "0x1924ef009eafd8b6fbebdebff7211164879e6e8a8a920e0f8cd3985ee693f670",
+      "status": "initialized"
+    },
+    {
+      "platform": "zama",
+      "workerPid": 12156,
+      "stages": [
+        {
+          "stage": "setup.bytecode.read_attempt",
+          "startMs": 4760.192099999999,
+          "durationMs": 54.450700000001234,
+          "status": "ok"
+        },
+        {
+          "stage": "setup.sdk_initialization",
+          "startMs": 4815.3525,
+          "durationMs": 2177.354300000001,
+          "status": "ok"
+        }
+      ],
+      "transactionNonce": 839,
+      "transactionHash": "0xa5f60f8e97a41b27a09fb4b2a8ba8ba4844ebab0c7dda6f74feb956009414bb2",
+      "address": "0x3b4DDa371e7c661BD6E3b99603Cc6E9377f9bd7E",
+      "blockNumber": 11977876,
+      "blockHash": "0x71a33e60348fb236d9efa8b695ffab9e4bf886a3c0e14612d6951e531b63244c",
+      "gasUsed": "13518032",
+      "gasCostWei": "189252448",
+      "deployedBytecodeKeccak256": "0x33cae53f499572c97359c4e70558176e04e71c42a63dd4fa8e98d2e2c8a3cbe8",
+      "status": "initialized"
+    },
+    {
+      "platform": "fhenix",
+      "workerPid": 31152,
+      "stages": [
+        {
+          "stage": "setup.bytecode.read_attempt",
+          "startMs": 4191.572499999999,
+          "durationMs": 56.17309999999998,
+          "status": "ok"
+        },
+        {
+          "stage": "setup.sdk_connection",
+          "startMs": 4280.8685,
+          "durationMs": 71.41300000000047,
+          "status": "ok"
+        },
+        {
+          "stage": "setup.authenticated_acp",
+          "startMs": 4352.2848,
+          "durationMs": 600.8251,
+          "status": "ok"
+        }
+      ],
+      "transactionNonce": 838,
+      "transactionHash": "0xe45521fc0d11328d7892fd63e5a10ddb08f6627078528bb0b1b48e0508494229",
+      "address": "0xb63EFd85B40582Fe5A023D5c1395d0bE6F369771",
+      "blockNumber": 11977877,
+      "blockHash": "0xeaae95b454f45762a5b5edbc6b4cbeef4832b7e0d3b6ffae4e8b4259fb233b35",
+      "gasUsed": "7676109",
+      "gasCostWei": "107465526",
+      "deployedBytecodeKeccak256": "0x0e066a8f643825db09a2ef67e7d8b93ecfbf94b4ec93df3a3320215f6e6d1738",
+      "status": "initialized"
+    }
+  ],
+  "samples": [
+    {
+      "platform": "baseline",
+      "operation": "notarize",
+      "run": 0,
+      "warmup": true,
+      "startedAt": "2026-10-23T16:31:25.964Z",
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "transaction.prepare_and_sign",
+          "startMs": 0.2246999999988475,
+          "durationMs": 261.0748999999996,
+          "status": "ok"
+        },
+        {
+          "stage": "barrier.wait",
+          "startMs": 261.3992999999973,
+          "durationMs": 12292.314599999998,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.raw_broadcast",
+          "startMs": 12554.2146,
+          "durationMs": 136.77419999999256,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.invoke_sign_and_submit",
+          "startMs": 12553.744199999994,
+          "durationMs": 137.3226000000068,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 12691.2307,
+          "durationMs": 120.45199999999022,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 12811.698900000003,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 13326.714899999992,
+          "durationMs": 53.52170000001206,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 13380.247099999993,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 13885.777600000001,
+          "durationMs": 58.823199999998906,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 13944.618799999997,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 14445.791100000002,
+          "durationMs": 49.32679999999527,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 14495.1348,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 15004.088600000003,
+          "durationMs": 47.65979999999399,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 15051.76389999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 15564.499899999995,
+          "durationMs": 47.099499999996624,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 15611.611099999995,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 16122.0187,
+          "durationMs": 55.850500000000466,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 16177.8799,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 16681.8621,
+          "durationMs": 47.987899999992806,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 16729.863799999992,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 17242.026100000003,
+          "durationMs": 50.7954999999929,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 17292.839500000002,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 17800.392299999992,
+          "durationMs": 50.0622000000003,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 17850.4709,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 18358.6394,
+          "durationMs": 57.689199999993434,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 18416.353399999993,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 18917.04299999999,
+          "durationMs": 49.291600000011385,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 18966.347599999994,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 19473.539999999994,
+          "durationMs": 53.02240000000165,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 19526.5717,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 20033.6336,
+          "durationMs": 54.736699999994016,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 20088.378299999997,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 20594.59969999999,
+          "durationMs": 64.01780000000144,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 20658.62879999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 21167.2227,
+          "durationMs": 48.09070000000065,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 21215.32209999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 21726.5469,
+          "durationMs": 48.66369999999006,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 21775.220799999996,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 22287.282399999996,
+          "durationMs": 57.92260000000533,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 22345.21639999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 22846.505099999995,
+          "durationMs": 52.5908000000054,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 22899.122300000003,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 23405.714399999997,
+          "durationMs": 65.94789999999921,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.wait_receipt",
+          "startMs": 12691.098700000002,
+          "durationMs": 10780.586599999995,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.handle.read_attempt",
+          "startMs": 23471.939700000003,
+          "durationMs": 158.76669999999285,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.read_persisted_handle",
+          "startMs": 23471.8211,
+          "durationMs": 158.89389999999548,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.validate_plaintext",
+          "startMs": 23630.717600000004,
+          "durationMs": 0.04629999998724088,
+          "status": "ok"
+        }
+      ],
+      "expectedPlaintext": "42",
+      "orderPosition": 2,
+      "resultRepresentation": "plaintext",
+      "workerPid": 9064,
+      "transactionPreparationMs": 261.087099999997,
+      "preparationMs": 261.3073000000004,
+      "preparationCompletedAt": "2026-10-23T16:31:26.225Z",
+      "preparedTransactionHash": "0xbfdcdc60a4a546b5442c679eee0b16671038c9c4db31213dc08085aeddf4fcb7",
+      "transactionNonce": 856,
+      "broadcastState": "acknowledged",
+      "preparedGasLimit": "291716",
+      "preparedMaxFeePerGasWei": "26",
+      "preparedMaxPriorityFeePerGasWei": "2",
+      "barrierWaitMs": 12292.318500000001,
+      "barrierReleasedAt": "2026-10-23T16:31:38.518Z",
+      "transactionStartedAt": "2026-10-23T16:31:38.518Z",
+      "transactionHash": "0xbfdcdc60a4a546b5442c679eee0b16671038c9c4db31213dc08085aeddf4fcb7",
+      "broadcastStartedAt": "2026-10-23T16:31:38.518Z",
+      "broadcastStartedOffsetMs": 12554.1492,
+      "broadcastAcknowledgedAt": "2026-10-23T16:31:38.655Z",
+      "broadcastAckMs": 136.78830000000744,
+      "receiptObservedAt": "2026-10-23T16:31:49.436Z",
+      "receiptStatus": 1,
+      "confirmationMs": 10917.945700000004,
+      "blockNumber": 11977879,
+      "blockHash": "0x66eed2576b50d027ec594adf702e87d4d64b93a1e26cbef4acf7af1b26a69a95",
+      "gasUsed": 240025,
+      "effectiveGasPriceWei": "14",
+      "gasCostWei": "3360350",
+      "broadcastToReceiptMs": 10917.539900000003,
+      "plaintext": "42",
+      "plaintextValidatedAt": "2026-10-23T16:31:49.595Z",
+      "transactionToValidatedPlaintextMs": 11077.026999999995,
+      "postReceiptToValidatedPlaintextMs": 159.08129999999073,
+      "completedAt": "2026-10-23T16:31:49.595Z",
+      "blockTimestamp": 1792773108,
+      "blockGasUsed": "64332811",
+      "blockGasLimit": "199999428",
+      "blockTargetUtilization": 0.6433299499236568
+    },
+    {
+      "platform": "fhenix",
+      "operation": "notarize",
+      "run": 0,
+      "warmup": true,
+      "startedAt": "2026-10-23T16:31:25.963Z",
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "encrypt.sdk_stage.initTfhe",
+          "startMs": 0.5431000000007771,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": true,
+            "isEnd": false,
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.sdk_observed.initTfhe",
+          "startMs": 0.5194000000010419,
+          "durationMs": 0.1754000000000815,
+          "status": "ok",
+          "detail": {
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.initTfhe",
+          "startMs": 0.70640000000094,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": false,
+            "isEnd": true,
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.fetchKeys",
+          "startMs": 0.7128000000011525,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": true,
+            "isEnd": false,
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.sdk_observed.fetchKeys",
+          "startMs": 0.7100000000009459,
+          "durationMs": 1071.7824,
+          "status": "ok",
+          "detail": {
+            "sdkDurationMs": 1072
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.fetchKeys",
+          "startMs": 1072.506300000001,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": false,
+            "isEnd": true,
+            "sdkDurationMs": 1072,
+            "fheKeyFetchedFromCoFHE": false,
+            "crsFetchedFromCoFHE": false
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.pack",
+          "startMs": 1072.5205000000005,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": true,
+            "isEnd": false,
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.sdk_observed.pack",
+          "startMs": 1072.5161000000007,
+          "durationMs": 0.33250000000043656,
+          "status": "ok",
+          "detail": {
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.pack",
+          "startMs": 1072.8558000000012,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": false,
+            "isEnd": true,
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.prove",
+          "startMs": 1072.8636000000006,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": true,
+            "isEnd": false,
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.sdk_observed.prove",
+          "startMs": 1072.8599000000013,
+          "durationMs": 8999.166399999998,
+          "status": "ok",
+          "detail": {
+            "sdkDurationMs": 8999
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.prove",
+          "startMs": 10072.0423,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": false,
+            "isEnd": true,
+            "sdkDurationMs": 8999,
+            "usedWorker": false
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.verify",
+          "startMs": 10072.058600000002,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": true,
+            "isEnd": false,
+            "sdkDurationMs": 0
+          }
+        },
+        {
+          "stage": "encrypt.http_headers",
+          "startMs": 10073.090900000001,
+          "durationMs": 677.8703999999998,
+          "status": "ok",
+          "detail": {
+            "host": "testnet-cofhe-vrf.fhenix.zone",
+            "path": "/verifyBatch",
+            "method": "POST",
+            "httpStatus": 200,
+            "serverDate": "Fri, 23 Oct 2026 16:31:30 GMT"
+          }
+        },
+        {
+          "stage": "encrypt.sdk_observed.verify",
+          "startMs": 10072.053000000002,
+          "durationMs": 679.5436999999984,
+          "status": "ok",
+          "detail": {
+            "sdkDurationMs": 680
+          }
+        },
+        {
+          "stage": "encrypt.sdk_stage.verify",
+          "startMs": 10751.6079,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "isStart": false,
+            "isEnd": true,
+            "sdkDurationMs": 680
+          }
+        },
+        {
+          "stage": "encrypt.sdk_total",
+          "startMs": 0.09200000000055297,
+          "durationMs": 10751.5506,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.prepare_and_sign",
+          "startMs": 10751.732600000001,
+          "durationMs": 251.96939999999813,
+          "status": "ok"
+        },
+        {
+          "stage": "barrier.wait",
+          "startMs": 11003.8323,
+          "durationMs": 1549.9745000000003,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.raw_broadcast",
+          "startMs": 12554.6624,
+          "durationMs": 124.41730000000098,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.invoke_sign_and_submit",
+          "startMs": 12553.842200000001,
+          "durationMs": 125.33239999999932,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 12679.355700000002,
+          "durationMs": 61.670099999999366,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 12741.0875,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 13249.912000000002,
+          "durationMs": 55.05829999999696,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 13304.985999999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 13808.659300000001,
+          "durationMs": 70.17770000000019,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 13878.852100000002,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 14383.781400000002,
+          "durationMs": 58.75829999999769,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 14442.5518,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 14957.5155,
+          "durationMs": 54.9288000000015,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 15012.482300000001,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 15517.6969,
+          "durationMs": 54.03949999999895,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 15571.745799999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 16075.850500000002,
+          "durationMs": 69.48819999999978,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 16145.3471,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 16651.492700000003,
+          "durationMs": 61.51799999999639,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 16713.0207,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 17226.7586,
+          "durationMs": 55.60599999999977,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 17282.3765,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 17784.764799999997,
+          "durationMs": 60.12360000000626,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 17844.9009,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 18358.716699999997,
+          "durationMs": 57.64100000000326,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 18416.3791,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 18917.122499999998,
+          "durationMs": 54.16389999999956,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 18971.301,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 19473.611100000002,
+          "durationMs": 57.36019999999553,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 19530.983699999997,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 20033.7097,
+          "durationMs": 65.77999999999884,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 20099.497000000003,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 20610.5225,
+          "durationMs": 63.33669999999984,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 20673.875700000004,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 21182.485699999997,
+          "durationMs": 59.31620000000112,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 21241.8102,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 21742.240100000003,
+          "durationMs": 57.11049999999523,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 21799.3592,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 22302.699800000002,
+          "durationMs": 60.47929999999906,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 22363.1933,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 22877.3166,
+          "durationMs": 56.42029999999795,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 22933.745799999997,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 23436.600099999996,
+          "durationMs": 54.11880000000383,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.wait_receipt",
+          "startMs": 12679.2273,
+          "durationMs": 10811.5264,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.handle.read_attempt",
+          "startMs": 23491.055,
+          "durationMs": 148.55319999999483,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.read_persisted_handle",
+          "startMs": 23490.946899999995,
+          "durationMs": 148.668700000002,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.http_headers",
+          "startMs": 23641.6207,
+          "durationMs": 176.26610000000073,
+          "status": "ok",
+          "detail": {
+            "host": "testnet-cofhe-tn.fhenix.zone",
+            "path": "/v2/sealoutput",
+            "method": "POST",
+            "httpStatus": 200,
+            "serverDate": "Fri, 23 Oct 2026 16:31:42 GMT"
+          }
+        },
+        {
+          "stage": "completion.read_attempt",
+          "startMs": 23639.845,
+          "durationMs": 181.90409999999974,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.sdk_sealoutput_and_unseal",
+          "startMs": 23639.8304,
+          "durationMs": 181.9210000000021,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.validate_plaintext",
+          "startMs": 23821.761899999998,
+          "durationMs": 0.03949999999895226,
+          "status": "ok"
+        }
+      ],
+      "expectedPlaintext": "42",
+      "orderPosition": 1,
+      "resultRepresentation": "ciphertext_handle",
+      "inputPreparationMs": 10751.6083,
+      "workerPid": 31152,
+      "transactionPreparationMs": 251.97200000000157,
+      "preparationMs": 11003.7132,
+      "preparationCompletedAt": "2026-10-23T16:31:36.967Z",
+      "preparedTransactionHash": "0xc82c7000d548af8e7157f735b3f50397eab15b1bf826437aa4d76be0fae1b72c",
+      "transactionNonce": 839,
+      "broadcastState": "acknowledged",
+      "preparedGasLimit": "756453",
+      "preparedMaxFeePerGasWei": "26",
+      "preparedMaxPriorityFeePerGasWei": "2",
+      "barrierWaitMs": 1549.9801000000007,
+      "barrierReleasedAt": "2026-10-23T16:31:38.517Z",
+      "transactionStartedAt": "2026-10-23T16:31:38.517Z",
+      "transactionHash": "0xc82c7000d548af8e7157f735b3f50397eab15b1bf826437aa4d76be0fae1b72c",
+      "broadcastStartedAt": "2026-10-23T16:31:38.518Z",
+      "broadcastStartedOffsetMs": 12554.562100000001,
+      "broadcastAcknowledgedAt": "2026-10-23T16:31:38.642Z",
+      "broadcastAckMs": 124.4330000000009,
+      "receiptObservedAt": "2026-10-23T16:31:49.454Z",
+      "receiptStatus": 1,
+      "confirmationMs": 10936.917599999995,
+      "blockNumber": 11977879,
+      "blockHash": "0x66eed2576b50d027ec594adf702e87d4d64b93a1e26cbef4acf7af1b26a69a95",
+      "gasUsed": 624256,
+      "effectiveGasPriceWei": "14",
+      "gasCostWei": "8739584",
+      "broadcastToReceiptMs": 10936.195799999996,
+      "outputHandle": "0x33af2760b70fc6a50d1b0de02c0749b0745aef86bd21f28b1083e2ef3e260300",
+      "plaintext": "42",
+      "plaintextValidatedAt": "2026-10-23T16:31:49.785Z",
+      "transactionToValidatedPlaintextMs": 11267.966299999995,
+      "postReceiptToValidatedPlaintextMs": 331.04869999999937,
+      "completedAt": "2026-10-23T16:31:49.785Z",
+      "blockTimestamp": 1792773108,
+      "blockGasUsed": "64332811",
+      "blockGasLimit": "199999428",
+      "blockTargetUtilization": 0.6433299499236568
+    },
+    {
+      "platform": "zama",
+      "operation": "notarize",
+      "run": 0,
+      "warmup": true,
+      "startedAt": "2026-10-23T16:31:25.963Z",
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "encrypt.local_ciphertext_and_zkproof",
+          "startMs": 0.1022000000011758,
+          "durationMs": 9577.6103,
+          "status": "ok"
+        },
+        {
+          "stage": "encrypt.sdk_progress",
+          "startMs": 9905.098700000002,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "type": "queued",
+            "operation": "INPUT_PROOF",
+            "step": 0,
+            "retryCount": 0,
+            "retryAfterMs": 2000,
+            "elapsed": 0,
+            "jobId": "d0cfeeb4-c953-4e3d-aa70-783246618d67",
+            "requestId": "6fa8b6e0-f018-4175-bbb1-dda702ad37a3"
+          }
+        },
+        {
+          "stage": "encrypt.sdk_progress",
+          "startMs": 11996.342499999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "type": "succeeded",
+            "operation": "INPUT_PROOF",
+            "step": 1,
+            "retryCount": 1,
+            "elapsed": 2012,
+            "jobId": "d0cfeeb4-c953-4e3d-aa70-783246618d67",
+            "requestId": "3d92b262-68f3-4c2b-8448-8abe9ed6f568"
+          }
+        },
+        {
+          "stage": "encrypt.remote_input_approval",
+          "startMs": 9577.718400000005,
+          "durationMs": 2428.5771999999997,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.prepare_and_sign",
+          "startMs": 12006.442300000002,
+          "durationMs": 276.1851999999999,
+          "status": "ok"
+        },
+        {
+          "stage": "barrier.wait",
+          "startMs": 12282.734000000004,
+          "durationMs": 270.98509999999806,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.raw_broadcast",
+          "startMs": 12554.695700000004,
+          "durationMs": 120.0648000000001,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.invoke_sign_and_submit",
+          "startMs": 12553.751100000001,
+          "durationMs": 121.0815999999977,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 12674.993200000004,
+          "durationMs": 65.89630000000034,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 12740.912799999998,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 13249.852299999999,
+          "durationMs": 55.047200000000885,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 13304.919699999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 13808.557500000003,
+          "durationMs": 64.6420999999973,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 13873.218400000005,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 14383.713600000003,
+          "durationMs": 58.75379999999859,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 14442.482499999998,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 14942.253700000001,
+          "durationMs": 55.98309999999765,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 14998.266600000003,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 15502.318500000001,
+          "durationMs": 60.4516999999978,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 15562.783000000003,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 16075.7831,
+          "durationMs": 72.97310000000289,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 16148.770199999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 16651.4285,
+          "durationMs": 56.199099999998,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 16707.649400000002,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 17211.507400000002,
+          "durationMs": 63.148199999995995,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 17274.670100000003,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 17784.671500000004,
+          "durationMs": 62.390299999999115,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 17847.0697,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 18358.643600000003,
+          "durationMs": 57.68839999999909,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 18416.352700000003,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 18917.047100000003,
+          "durationMs": 54.173799999996845,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 18971.2313,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 19473.5375,
+          "durationMs": 57.3718000000008,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 19530.9194,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 20033.637000000002,
+          "durationMs": 60.105499999997846,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 20093.7491,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 20594.6022,
+          "durationMs": 79.20240000000194,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 20673.8194,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 21182.4197,
+          "durationMs": 56.74520000000484,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 21239.170600000005,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 21742.167,
+          "durationMs": 61.20350000000326,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 21803.377200000003,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 22318.409200000002,
+          "durationMs": 53.634799999999814,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 22372.054900000003,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 22877.2197,
+          "durationMs": 56.45019999999931,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 22933.6772,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 23436.5461,
+          "durationMs": 59.44190000000526,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.wait_receipt",
+          "startMs": 12674.8603,
+          "durationMs": 10821.149300000005,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.handle.read_attempt",
+          "startMs": 23496.2276,
+          "durationMs": 131.58870000000024,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.read_persisted_handle",
+          "startMs": 23496.133800000003,
+          "durationMs": 131.68769999999495,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.local_keypair_and_authorization",
+          "startMs": 23628.235400000005,
+          "durationMs": 5.979299999999057,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.read_attempt",
+          "startMs": 23634.240000000005,
+          "durationMs": 190.8449999999939,
+          "status": "error"
+        },
+        {
+          "stage": "completion.acl_check_retry",
+          "startMs": 23825.333,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "failedAttempt": 1,
+            "backoffMs": 1000
+          }
+        },
+        {
+          "stage": "completion.retry_backoff",
+          "startMs": 23825.3341,
+          "durationMs": 1009.994200000001,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.sdk_progress",
+          "startMs": 25170.145300000004,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "type": "queued",
+            "operation": "USER_DECRYPT",
+            "step": 0,
+            "retryCount": 0,
+            "retryAfterMs": 2000,
+            "elapsed": 0,
+            "jobId": "c0bc9060-a657-4288-ac15-601bd412afef",
+            "requestId": "758ceb8e-4bd1-45da-98bf-018cb65ac207"
+          }
+        },
+        {
+          "stage": "completion.sdk_progress",
+          "startMs": 27293.7575,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "type": "succeeded",
+            "operation": "USER_DECRYPT",
+            "step": 1,
+            "retryCount": 1,
+            "elapsed": 2014,
+            "jobId": "c0bc9060-a657-4288-ac15-601bd412afef",
+            "requestId": "6dc4ca2a-6a48-4de4-8ee8-472ee7333c80"
+          }
+        },
+        {
+          "stage": "completion.read_attempt",
+          "startMs": 24835.353500000005,
+          "durationMs": 2481.3215999999957,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.sdk_user_decrypt",
+          "startMs": 23634.2166,
+          "durationMs": 3682.4614,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.validate_plaintext",
+          "startMs": 27316.694000000003,
+          "durationMs": 0.04099999999743886,
+          "status": "ok"
+        }
+      ],
+      "expectedPlaintext": "42",
+      "orderPosition": 3,
+      "resultRepresentation": "ciphertext_handle",
+      "inputPreparationMs": 12006.2556,
+      "workerPid": 12156,
+      "transactionPreparationMs": 276.1883000000016,
+      "preparationMs": 12282.635699999999,
+      "preparationCompletedAt": "2026-10-23T16:31:38.246Z",
+      "preparedTransactionHash": "0x7bf96751232ef07cb737b53e4c381c2f29e3f7fea5c8701238ca07369ac7372b",
+      "transactionNonce": 840,
+      "broadcastState": "acknowledged",
+      "preparedGasLimit": "956862",
+      "preparedMaxFeePerGasWei": "26",
+      "preparedMaxPriorityFeePerGasWei": "2",
+      "barrierWaitMs": 270.9910999999993,
+      "barrierReleasedAt": "2026-10-23T16:31:38.517Z",
+      "transactionStartedAt": "2026-10-23T16:31:38.517Z",
+      "transactionHash": "0x7bf96751232ef07cb737b53e4c381c2f29e3f7fea5c8701238ca07369ac7372b",
+      "broadcastStartedAt": "2026-10-23T16:31:38.518Z",
+      "broadcastStartedOffsetMs": 12554.605600000003,
+      "broadcastAcknowledgedAt": "2026-10-23T16:31:38.638Z",
+      "broadcastAckMs": 120.07990000000427,
+      "receiptObservedAt": "2026-10-23T16:31:49.459Z",
+      "receiptStatus": 1,
+      "confirmationMs": 10942.263000000006,
+      "blockNumber": 11977879,
+      "blockHash": "0x66eed2576b50d027ec594adf702e87d4d64b93a1e26cbef4acf7af1b26a69a95",
+      "gasUsed": 789948,
+      "effectiveGasPriceWei": "14",
+      "gasCostWei": "11059272",
+      "broadcastToReceiptMs": 10941.406900000002,
+      "outputHandle": "0xebde8f25f315fb1b5601e0ddcef06dfaf44ab21772000000000000aa36a70300",
+      "plaintext": "42",
+      "plaintextValidatedAt": "2026-10-23T16:31:53.280Z",
+      "transactionToValidatedPlaintextMs": 14762.991100000007,
+      "postReceiptToValidatedPlaintextMs": 3820.7281000000003,
+      "completedAt": "2026-10-23T16:31:53.280Z",
+      "blockTimestamp": 1792773108,
+      "blockGasUsed": "64332811",
+      "blockGasLimit": "199999428",
+      "blockTargetUtilization": 0.6433299499236568
+    },
+    {
+      "platform": "zama",
+      "operation": "add",
+      "run": 0,
+      "warmup": true,
+      "startedAt": "2026-10-23T16:31:53.677Z",
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "transaction.prepare_and_sign",
+          "startMs": 0.036099999997531995,
+          "durationMs": 109.36290000000008,
+          "status": "ok"
+        },
+        {
+          "stage": "barrier.wait",
+          "startMs": 109.45410000000265,
+          "durationMs": 275.2085999999981,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.raw_broadcast",
+          "startMs": 385.1218999999983,
+          "durationMs": 125.74760000000242,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.invoke_sign_and_submit",
+          "startMs": 384.7163999999975,
+          "durationMs": 126.21050000000105,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 510.96429999999964,
+          "durationMs": 59.38220000000001,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 570.3551999999981,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 1081.5972000000038,
+          "durationMs": 55.814800000000105,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 1137.4227000000028,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 1641.7989000000016,
+          "durationMs": 54.615499999999884,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 1696.4213000000018,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 2200.886599999998,
+          "durationMs": 64.95140000000538,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 2265.8476999999984,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 2772.8645000000033,
+          "durationMs": 55.744200000001,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 2828.6212000000014,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 3329.6853000000046,
+          "durationMs": 58.94539999999688,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 3388.638700000003,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 3892.815800000004,
+          "durationMs": 56.57860000000073,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 3949.4051000000036,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 4451.521500000003,
+          "durationMs": 54.86839999999938,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 4506.398000000001,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 5011.5524000000005,
+          "durationMs": 60.925900000002,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 5072.4870999999985,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 5572.316700000003,
+          "durationMs": 55.310599999997066,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 5627.633099999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 6129.767899999999,
+          "durationMs": 57.31060000000434,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 6187.087599999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 6690.493600000002,
+          "durationMs": 57.806700000001,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 6748.321000000004,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 7251.3865000000005,
+          "durationMs": 59.387000000002445,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.wait_receipt",
+          "startMs": 510.95040000000154,
+          "durationMs": 6799.841099999998,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.handle.read_attempt",
+          "startMs": 7310.902999999998,
+          "durationMs": 130.46310000000085,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.read_persisted_handle",
+          "startMs": 7310.8970000000045,
+          "durationMs": 130.47479999999632,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.local_keypair_and_authorization",
+          "startMs": 7441.557699999998,
+          "durationMs": 1.4543000000048778,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.sdk_progress",
+          "startMs": 7967.4711000000025,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "type": "queued",
+            "operation": "USER_DECRYPT",
+            "step": 0,
+            "retryCount": 0,
+            "retryAfterMs": 2000,
+            "elapsed": 0,
+            "jobId": "9dcd12f4-0fe0-4041-a018-ea348f60aee4",
+            "requestId": "92628ce6-2b00-48bc-b199-ae636b6337ae"
+          }
+        },
+        {
+          "stage": "completion.sdk_progress",
+          "startMs": 10063.9735,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "type": "queued",
+            "operation": "USER_DECRYPT",
+            "step": 0,
+            "retryCount": 1,
+            "retryAfterMs": 2000,
+            "elapsed": 2016,
+            "jobId": "9dcd12f4-0fe0-4041-a018-ea348f60aee4",
+            "requestId": "ba3f7d9a-c0df-4e91-99ea-b5a1324e4277"
+          }
+        },
+        {
+          "stage": "completion.sdk_progress",
+          "startMs": 12197.288800000002,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "type": "succeeded",
+            "operation": "USER_DECRYPT",
+            "step": 1,
+            "retryCount": 2,
+            "elapsed": 4112,
+            "jobId": "9dcd12f4-0fe0-4041-a018-ea348f60aee4",
+            "requestId": "251f492d-8e14-4fc2-8fa0-4ab381168f3f"
+          }
+        },
+        {
+          "stage": "completion.read_attempt",
+          "startMs": 7443.017,
+          "durationMs": 4766.434099999999,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.sdk_user_decrypt",
+          "startMs": 7443.014199999998,
+          "durationMs": 4766.438500000004,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.validate_plaintext",
+          "startMs": 12209.4594,
+          "durationMs": 0.003400000001420267,
+          "status": "ok"
+        }
+      ],
+      "expectedPlaintext": "42",
+      "orderPosition": 1,
+      "resultRepresentation": "ciphertext_handle",
+      "workerPid": 12156,
+      "transactionPreparationMs": 109.36590000000433,
+      "preparationMs": 109.40600000000268,
+      "preparationCompletedAt": "2026-10-23T16:31:53.786Z",
+      "preparedTransactionHash": "0xfea918788f3cee0463fedc6faf5d418284d5fe12a0f39839cf6aae8b993ab432",
+      "transactionNonce": 841,
+      "broadcastState": "acknowledged",
+      "preparedGasLimit": "544282",
+      "preparedMaxFeePerGasWei": "26",
+      "preparedMaxPriorityFeePerGasWei": "2",
+      "barrierWaitMs": 275.2146999999968,
+      "barrierReleasedAt": "2026-10-23T16:31:54.062Z",
+      "transactionStartedAt": "2026-10-23T16:31:54.062Z",
+      "transactionHash": "0xfea918788f3cee0463fedc6faf5d418284d5fe12a0f39839cf6aae8b993ab432",
+      "broadcastStartedAt": "2026-10-23T16:31:54.062Z",
+      "broadcastStartedOffsetMs": 385.06090000000404,
+      "broadcastAcknowledgedAt": "2026-10-23T16:31:54.188Z",
+      "broadcastAckMs": 125.76430000000255,
+      "receiptObservedAt": "2026-10-23T16:32:00.988Z",
+      "receiptStatus": 1,
+      "confirmationMs": 6926.0869999999995,
+      "blockNumber": 11977880,
+      "blockHash": "0xfc93bd1babe45c9f9cc55b7b95ecc6449d097d4decc12d8c96d42fab53e1798a",
+      "gasUsed": 448840,
+      "effectiveGasPriceWei": "14",
+      "gasCostWei": "6283760",
+      "broadcastToReceiptMs": 6925.740899999997,
+      "outputHandle": "0xfb702192601cab4eb0ce084410ed31b348b2df07e6ff0000000000aa36a70500",
+      "plaintext": "42",
+      "plaintextValidatedAt": "2026-10-23T16:32:05.887Z",
+      "transactionToValidatedPlaintextMs": 11824.7532,
+      "postReceiptToValidatedPlaintextMs": 4898.6662,
+      "completedAt": "2026-10-23T16:32:05.887Z",
+      "blockTimestamp": 1792773120,
+      "blockGasUsed": "60557984",
+      "blockGasLimit": "199804118",
+      "blockTargetUtilization": 0.6061735324193869
+    },
+    {
+      "platform": "fhenix",
+      "operation": "add",
+      "run": 0,
+      "warmup": true,
+      "startedAt": "2026-10-23T16:31:53.677Z",
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "transaction.prepare_and_sign",
+          "startMs": 0.05169999999634456,
+          "durationMs": 112.59219999999914,
+          "status": "ok"
+        },
+        {
+          "stage": "barrier.wait",
+          "startMs": 112.71140000000014,
+          "durationMs": 271.8891999999978,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.raw_broadcast",
+          "startMs": 385.0205999999962,
+          "durationMs": 157.7089000000051,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.invoke_sign_and_submit",
+          "startMs": 384.6435999999958,
+          "durationMs": 158.14480000000185,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 542.8117999999959,
+          "durationMs": 53.84230000000389,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 596.6671999999962,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 1097.5472999999984,
+          "durationMs": 57.39020000000164,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 1154.9645000000019,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 1657.1656999999977,
+          "durationMs": 57.843699999997625,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 1715.0152000000016,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 2216.4262000000017,
+          "durationMs": 54.714799999994284,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 2271.150999999998,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 2772.781799999997,
+          "durationMs": 55.75660000000062,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 2828.5516999999963,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 3329.6077000000005,
+          "durationMs": 52.38850000000093,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 3382.0069000000003,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 3892.726999999999,
+          "durationMs": 62.14229999999952,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 3954.8776,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 4467.291299999997,
+          "durationMs": 58.696100000001024,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 4525.993799999997,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 5026.850099999996,
+          "durationMs": 60.320400000004156,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 5087.179199999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 5587.832999999999,
+          "durationMs": 58.68529999999737,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 5646.525300000001,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 6161.717299999997,
+          "durationMs": 54.7013999999981,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 6216.427199999998,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 6722.285100000001,
+          "durationMs": 59.359599999996135,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 6781.652799999996,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 7281.676899999999,
+          "durationMs": 54.797599999998056,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.wait_receipt",
+          "startMs": 542.8050000000003,
+          "durationMs": 6793.683899999996,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.handle.read_attempt",
+          "startMs": 7336.590100000001,
+          "durationMs": 150.58809999999357,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.read_persisted_handle",
+          "startMs": 7336.581999999995,
+          "durationMs": 150.60400000000664,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.http_headers",
+          "startMs": 7487.640999999996,
+          "durationMs": 165.58250000000407,
+          "status": "ok",
+          "detail": {
+            "host": "testnet-cofhe-tn.fhenix.zone",
+            "path": "/v2/sealoutput",
+            "method": "POST",
+            "httpStatus": 200,
+            "serverDate": "Fri, 23 Oct 2026 16:31:53 GMT"
+          }
+        },
+        {
+          "stage": "completion.read_attempt",
+          "startMs": 7487.337200000002,
+          "durationMs": 167.0312999999951,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.sdk_sealoutput_and_unseal",
+          "startMs": 7487.333500000001,
+          "durationMs": 167.0370999999941,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.validate_plaintext",
+          "startMs": 7654.379099999998,
+          "durationMs": 0.003400000001420267,
+          "status": "ok"
+        }
+      ],
+      "expectedPlaintext": "42",
+      "orderPosition": 2,
+      "resultRepresentation": "ciphertext_handle",
+      "workerPid": 31152,
+      "transactionPreparationMs": 112.59730000000127,
+      "preparationMs": 112.65490000000136,
+      "preparationCompletedAt": "2026-10-23T16:31:53.790Z",
+      "preparedTransactionHash": "0xc16045d0a6bb53710909b7b6b5efd8d72a26e891b4db3d2f51f53bad7217f890",
+      "transactionNonce": 840,
+      "broadcastState": "acknowledged",
+      "preparedGasLimit": "563683",
+      "preparedMaxFeePerGasWei": "26",
+      "preparedMaxPriorityFeePerGasWei": "2",
+      "barrierWaitMs": 271.89689999999973,
+      "barrierReleasedAt": "2026-10-23T16:31:54.062Z",
+      "transactionStartedAt": "2026-10-23T16:31:54.062Z",
+      "transactionHash": "0xc16045d0a6bb53710909b7b6b5efd8d72a26e891b4db3d2f51f53bad7217f890",
+      "broadcastStartedAt": "2026-10-23T16:31:54.062Z",
+      "broadcastStartedOffsetMs": 384.9586999999956,
+      "broadcastAcknowledgedAt": "2026-10-23T16:31:54.220Z",
+      "broadcastAckMs": 157.72439999999915,
+      "receiptObservedAt": "2026-10-23T16:32:01.014Z",
+      "receiptStatus": 1,
+      "confirmationMs": 6951.849899999994,
+      "blockNumber": 11977880,
+      "blockHash": "0xfc93bd1babe45c9f9cc55b7b95ecc6449d097d4decc12d8c96d42fab53e1798a",
+      "gasUsed": 464879,
+      "effectiveGasPriceWei": "14",
+      "gasCostWei": "6508306",
+      "broadcastToReceiptMs": 6951.5337,
+      "outputHandle": "0xea1d0bad4e6116ea2262178fc14cf58b8e18e3ff21885d6f107312382e750500",
+      "plaintext": "42",
+      "plaintextValidatedAt": "2026-10-23T16:32:01.332Z",
+      "transactionToValidatedPlaintextMs": 7269.748499999994,
+      "postReceiptToValidatedPlaintextMs": 317.89860000000044,
+      "completedAt": "2026-10-23T16:32:01.332Z",
+      "blockTimestamp": 1792773120,
+      "blockGasUsed": "60557984",
+      "blockGasLimit": "199804118",
+      "blockTargetUtilization": 0.6061735324193869
+    },
+    {
+      "platform": "baseline",
+      "operation": "add",
+      "run": 0,
+      "warmup": true,
+      "startedAt": "2026-10-23T16:31:53.678Z",
+      "status": "ok",
+      "stages": [
+        {
+          "stage": "transaction.prepare_and_sign",
+          "startMs": 0.030500000008032657,
+          "durationMs": 114.80539999999746,
+          "status": "ok"
+        },
+        {
+          "stage": "barrier.wait",
+          "startMs": 114.88719999999739,
+          "durationMs": 269.703600000008,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.raw_broadcast",
+          "startMs": 385.1466999999975,
+          "durationMs": 122.47470000000612,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.invoke_sign_and_submit",
+          "startMs": 384.6287000000011,
+          "durationMs": 123.0396999999939,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 507.6970000000001,
+          "durationMs": 51.59799999999814,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 559.3061000000016,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 1065.2320000000036,
+          "durationMs": 49.78900000000431,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 1115.0311000000074,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 1625.375,
+          "durationMs": 47.53299999999581,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 1672.9159999999974,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 2184.6891000000032,
+          "durationMs": 50.29450000000361,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 2234.9897999999957,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 2740.7004000000015,
+          "durationMs": 49.32270000000426,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 2790.029800000004,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 3298.714399999997,
+          "durationMs": 47.907600000005914,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 3346.629000000001,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 3861.4976000000024,
+          "durationMs": 49.10559999999532,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 3910.612200000003,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 4420.510900000008,
+          "durationMs": 48.90879999999015,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 4469.426399999997,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 4980.5380000000005,
+          "durationMs": 50.66280000000552,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 5031.208700000003,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 5541.8171,
+          "durationMs": 51.72269999999844,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 5593.548500000004,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 6098.758100000006,
+          "durationMs": 49.09449999999197,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 6147.861199999999,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 6659.7706000000035,
+          "durationMs": 52.838999999992666,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.receipt_poll",
+          "startMs": 6712.619699999996,
+          "durationMs": 0,
+          "status": "event",
+          "detail": {
+            "intervalMs": 500
+          }
+        },
+        {
+          "stage": "transaction.receipt.read_attempt",
+          "startMs": 7219.860499999995,
+          "durationMs": 50.015500000008615,
+          "status": "ok"
+        },
+        {
+          "stage": "transaction.wait_receipt",
+          "startMs": 507.68880000000354,
+          "durationMs": 6762.199800000002,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.handle.read_attempt",
+          "startMs": 7269.983699999997,
+          "durationMs": 125.02530000000843,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.read_persisted_handle",
+          "startMs": 7269.975699999995,
+          "durationMs": 125.04320000000007,
+          "status": "ok"
+        },
+        {
+          "stage": "completion.validate_plaintext",
+          "startMs": 7395.023000000001,
+          "durationMs": 0.0044999999954598024,
+          "status": "ok"
+        }
+      ],
+      "expectedPlaintext": "42",
+      "orderPosition": 3,
+      "resultRepresentation": "plaintext",
+      "workerPid": 9064,
+      "transactionPreparationMs": 114.81020000000717,
+      "preparationMs": 114.84360000000743,
+      "preparationCompletedAt": "2026-10-23T16:31:53.793Z",
+      "preparedTransactionHash": "0x0e3c06466a1dcd0907802d0ec72fe25814b32f125b918fb3dfe3710e454f0754",
+      "transactionNonce": 857,
+      "broadcastState": "acknowledged",
+      "preparedGasLimit": "162067",
+      "preparedMaxFeePerGasWei": "26",
+      "preparedMaxPriorityFeePerGasWei": "2",
+      "barrierWaitMs": 269.7095999999874,
+      "barrierReleasedAt": "2026-10-23T16:31:54.063Z",
+      "transactionStartedAt": "2026-10-23T16:31:54.063Z",
+      "transactionHash": "0x0e3c06466a1dcd0907802d0ec72fe25814b32f125b918fb3dfe3710e454f0754",
+      "broadcastStartedAt": "2026-10-23T16:31:54.063Z",
+      "broadcastStartedOffsetMs": 385.0890000000072,
+      "broadcastAcknowledgedAt": "2026-10-23T16:31:54.186Z",
+      "broadcastAckMs": 122.48519999999553,
+      "receiptObservedAt": "2026-10-23T16:32:00.948Z",
+      "receiptStatus": 1,
+      "confirmationMs": 6885.264899999995,
+      "blockNumber": 11977880,
+      "blockHash": "0xfc93bd1babe45c9f9cc55b7b95ecc6449d097d4decc12d8c96d42fab53e1798a",
+      "gasUsed": 133942,
+      "effectiveGasPriceWei": "14",
+      "gasCostWei": "1875188",
+      "broadcastToReceiptMs": 6884.803199999995,
+      "plaintext": "42",
+      "plaintextValidatedAt": "2026-10-23T16:32:01.073Z",
+      "transactionToValidatedPlaintextMs": 7010.402300000002,
+      "postReceiptToValidatedPlaintextMs": 125.13740000000689,
+      "completedAt": "2026-10-23T16:32:01.073Z",
+      "blockTimestamp": 1792773120,
+      "blockGasUsed": "60557984",
+      "blockGasLimit": "199804118",
+      "blockTargetUtilization": 0.6061735324193869
+    },
+    {
+      "platform": "zama",
+      "operation": "mul_scalar",
+      "run": 0,
+      "warmup": true,
+      "startedAt": "2026-10-23T16:32:06.248Z",
+      "status": "pending",
+      "stages": [
+        {
+          "stage": "transaction.prepare_and_sign",
+          "startMs": 0.029800000003888272,
+          "durationMs": 217.71390000000247,
+          "status": "ok"
+        }
+      ],
+      "expectedPlaintext": "126",
+      "orderPosition": 1,
+      "resultRepresentation": "ciphertext_handle",
+      "workerPid": 12156,
+      "transactionPreparationMs": 217.73070000000007,
+      "preparationMs": 217.77580000000307,
+      "preparationCompletedAt": "2026-10-23T16:32:06.466Z",
+      "preparedTransactionHash": "0xb306f3fc4c4a9ef8c3b198c0b8936192cfea065d0a4835462cdf8f94d41f18f0",
+      "transactionNonce": 842,
+      "broadcastState": "prepared",
+      "preparedGasLimit": "530132",
+      "preparedMaxFeePerGasWei": "26",
+      "preparedMaxPriorityFeePerGasWei": "2"
+    },
+    {
+      "platform": "baseline",
+      "operation": "mul_scalar",
+      "run": 0,
+      "warmup": true,
+      "startedAt": "2026-10-23T16:32:06.248Z",
+      "status": "pending",
+      "stages": [
+        {
+          "stage": "transaction.prepare_and_sign",
+          "startMs": 0.0283999999955995,
+          "durationMs": 254.95149999999558,
+          "status": "ok"
+        },
+        {
+          "stage": "barrier.wait",
+          "startMs": 255.0390999999945,
+          "durationMs": 276.37119999999413,
+          "status": "ok"
+        }
+      ],
+      "expectedPlaintext": "126",
+      "orderPosition": 2,
+      "resultRepresentation": "plaintext",
+      "workerPid": 9064,
+      "transactionPreparationMs": 254.9551999999967,
+      "preparationMs": 254.9872999999934,
+      "preparationCompletedAt": "2026-10-23T16:32:06.503Z",
+      "preparedTransactionHash": "0xd20fe139a9ee7b3fed8a7471fd8608bf1b19622739950e919ca47f9c0dc9c83c",
+      "transactionNonce": 858,
+      "broadcastState": "started",
+      "preparedGasLimit": "162054",
+      "preparedMaxFeePerGasWei": "26",
+      "preparedMaxPriorityFeePerGasWei": "2",
+      "barrierWaitMs": 276.3755000000092,
+      "barrierReleasedAt": "2026-10-23T16:32:06.780Z",
+      "transactionStartedAt": "2026-10-23T16:32:06.780Z",
+      "transactionHash": "0xd20fe139a9ee7b3fed8a7471fd8608bf1b19622739950e919ca47f9c0dc9c83c",
+      "broadcastStartedAt": "2026-10-23T16:32:06.780Z",
+      "broadcastStartedOffsetMs": 531.6070999999938
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mul_scalar",
+      "run": 0,
+      "warmup": true,
+      "startedAt": "2026-10-23T16:32:06.247Z",
+      "status": "pending",
+      "stages": [
+        {
+          "stage": "transaction.prepare_and_sign",
+          "startMs": 0.02840000000287546,
+          "durationMs": 274.2112999999954,
+          "status": "ok"
+        },
+        {
+          "stage": "barrier.wait",
+          "startMs": 274.32020000000193,
+          "durationMs": 257.0501000000004,
+          "status": "ok"
+        }
+      ],
+      "expectedPlaintext": "126",
+      "orderPosition": 3,
+      "resultRepresentation": "ciphertext_handle",
+      "workerPid": 31152,
+      "transactionPreparationMs": 274.2163999999975,
+      "preparationMs": 274.2491000000009,
+      "preparationCompletedAt": "2026-10-23T16:32:06.522Z",
+      "preparedTransactionHash": "0xf66107cf9499b6fff3f9740900db04005275e260d1f20abe901f48da70f4adf3",
+      "transactionNonce": 841,
+      "broadcastState": "started",
+      "preparedGasLimit": "703936",
+      "preparedMaxFeePerGasWei": "26",
+      "preparedMaxPriorityFeePerGasWei": "2",
+      "barrierWaitMs": 257.05519999999524,
+      "barrierReleasedAt": "2026-10-23T16:32:06.779Z",
+      "transactionStartedAt": "2026-10-23T16:32:06.779Z",
+      "transactionHash": "0xf66107cf9499b6fff3f9740900db04005275e260d1f20abe901f48da70f4adf3",
+      "broadcastStartedAt": "2026-10-23T16:32:06.779Z",
+      "broadcastStartedOffsetMs": 531.6163000000015
+    }
+  ],
+  "workers": {
+    "baseline": {
+      "pid": 9064,
+      "owner": "0x3552Cc153DCcC007d1c0D88Ff5aDB258d2688121"
+    },
+    "zama": {
+      "pid": 12156,
+      "owner": "0xbFfa3190d423F15C1E5281a10e5d89B3Dcf26eD0"
+    },
+    "fhenix": {
+      "pid": 31152,
+      "owner": "0xB85E3C85c39e2FD06308649F466d360B0bE792af"
+    }
+  },
+  "barriers": [
+    {
+      "run": 0,
+      "operation": "notarize",
+      "warmup": true,
+      "fees": {
+        "maxFeePerGas": "26",
+        "maxPriorityFeePerGas": "2",
+        "quotedAt": "2026-10-23T16:31:25.963Z"
+      },
+      "prepared": {
+        "fhenix": {
+          "hash": "0xc82c7000d548af8e7157f735b3f50397eab15b1bf826437aa4d76be0fae1b72c",
+          "at": "2026-10-23T16:31:36.967Z"
+        },
+        "baseline": {
+          "hash": "0xbfdcdc60a4a546b5442c679eee0b16671038c9c4db31213dc08085aeddf4fcb7",
+          "at": "2026-10-23T16:31:26.225Z"
+        },
+        "zama": {
+          "hash": "0x7bf96751232ef07cb737b53e4c381c2f29e3f7fea5c8701238ca07369ac7372b",
+          "at": "2026-10-23T16:31:38.246Z"
+        }
+      },
+      "releaseAt": "2026-10-23T16:31:38.503Z",
+      "broadcastStartSpreadMs": 0
+    },
+    {
+      "run": 0,
+      "operation": "add",
+      "warmup": true,
+      "fees": {
+        "maxFeePerGas": "26",
+        "maxPriorityFeePerGas": "2",
+        "quotedAt": "2026-10-23T16:31:53.678Z"
+      },
+      "prepared": {
+        "zama": {
+          "hash": "0xfea918788f3cee0463fedc6faf5d418284d5fe12a0f39839cf6aae8b993ab432",
+          "at": "2026-10-23T16:31:53.786Z"
+        },
+        "fhenix": {
+          "hash": "0xc16045d0a6bb53710909b7b6b5efd8d72a26e891b4db3d2f51f53bad7217f890",
+          "at": "2026-10-23T16:31:53.790Z"
+        },
+        "baseline": {
+          "hash": "0x0e3c06466a1dcd0907802d0ec72fe25814b32f125b918fb3dfe3710e454f0754",
+          "at": "2026-10-23T16:31:53.793Z"
+        }
+      },
+      "releaseAt": "2026-10-23T16:31:54.051Z",
+      "broadcastStartSpreadMs": 1
+    },
+    {
+      "run": 0,
+      "operation": "mul_scalar",
+      "warmup": true,
+      "fees": {
+        "maxFeePerGas": "26",
+        "maxPriorityFeePerGas": "2",
+        "quotedAt": "2026-10-23T16:32:06.248Z"
+      },
+      "prepared": {
+        "zama": {
+          "hash": "0xb306f3fc4c4a9ef8c3b198c0b8936192cfea065d0a4835462cdf8f94d41f18f0",
+          "at": "2026-10-23T16:32:06.466Z"
+        },
+        "baseline": {
+          "hash": "0xd20fe139a9ee7b3fed8a7471fd8608bf1b19622739950e919ca47f9c0dc9c83c",
+          "at": "2026-10-23T16:32:06.503Z"
+        },
+        "fhenix": {
+          "hash": "0xf66107cf9499b6fff3f9740900db04005275e260d1f20abe901f48da70f4adf3",
+          "at": "2026-10-23T16:32:06.522Z"
+        }
+      },
+      "releaseAt": "2026-10-23T16:32:06.779Z"
+    }
+  ],
+  "summary": [
+    {
+      "platform": "baseline",
+      "operation": "notarize",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "add",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "mul_scalar",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "mean",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "max",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "notarize",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "add",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "mul_scalar",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "mean",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "max",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "notarize",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "add",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mul_scalar",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mean",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "max",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    }
+  ],
+  "stageSummary": []
+}

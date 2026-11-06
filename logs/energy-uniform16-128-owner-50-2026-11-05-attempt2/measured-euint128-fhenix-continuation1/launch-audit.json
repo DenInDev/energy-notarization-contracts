@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-06T01:01:51.5692602Z",
+  "pid": 30788,
+  "processCreationTimeUtc": "2026-11-06T01:01:04.5263970Z",
+  "platformOnly": "fhenix",
+  "uniformWidth": 128,
+  "authorization": "User explicitly requested Fhenix continuation and redoing the failed transaction",
+  "expectedNewTransactions": 242,
+  "expectedNewPrimarySamples": 241,
+  "expectedNewViews": 41,
+  "firstNonce": 748,
+  "lastNonce": 989,
+  "sourceReportSha256": "a156c28e4815ab3314726ff7ae800c581db40c2d8ec7bdfea51b47872bb4cebb",
+  "originalFailedTransactionHash": "0x26c212011f106b7203407892e50c3fc28a02304ebbe9a1023a90dca7b2852012",
+  "newRetryTransactionHash": "0x4a3df21c8bbff1e4718251705a2d950c75de1f59f88617ea02a0089c56ffe174",
+  "retryStatus": "ok",
+  "sameOutputHandle": true,
+  "retryTimingInterpretation": "Fresh transaction and nonce, unchanged operands; result may already be available. This does not repair or replace the original failed primary latency.",
+  "verification": [
+    "Typecheck passed",
+    "3 targeted continuation integration tests passed",
+    "6 legacy continuation tests passed",
+    "No baseline or Zama worker is started; tests verify no sends for those platforms",
+    "Original sample, view, deployment and barrier prefixes checked on every save"
+  ],
+  "monitor": "Current chat; no recurring automation created"
+}

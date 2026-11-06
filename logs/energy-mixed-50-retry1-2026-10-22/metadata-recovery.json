@@ -1,0 +1,22 @@
+{
+  "sourceReport": "../report.json",
+  "sourceSha256": "8dbba1416783b45acbc2bd1a1dbfaacc4e78507306c2d7133cb9a1f43d439567",
+  "recoveredAt": "2026-10-22T20:07:17.701Z",
+  "method": "Read-only retrieval of missing block metadata; block hash checked against canonical block number. Timings, gas, receipts and all measurement outcomes are unchanged.",
+  "recovered": [
+    {
+      "platform": "baseline",
+      "run": 38,
+      "operation": "add",
+      "originalError": "Included block unavailable",
+      "blockHash": "0x6426da48c7f2bb86fde8d2fffa7bc5cfac7f8659d06e87bbd48feb26fb1cbaa2"
+    },
+    {
+      "platform": "fhenix",
+      "run": 38,
+      "operation": "add",
+      "originalError": "Included block unavailable",
+      "blockHash": "0x6426da48c7f2bb86fde8d2fffa7bc5cfac7f8659d06e87bbd48feb26fb1cbaa2"
+    }
+  ]
+}

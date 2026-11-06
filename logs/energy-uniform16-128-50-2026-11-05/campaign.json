@@ -1,0 +1,86 @@
+{
+  "status": "failed",
+  "startedAt": "2026-11-05T19:15:55.605Z",
+  "pid": 3420,
+  "chainId": 11155111,
+  "runs": 50,
+  "widths": [
+    16,
+    128
+  ],
+  "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\isolated-validation\\accounts.secret.json",
+  "operationOrder": [
+    "notarize",
+    "add",
+    "mul_scalar",
+    "mean",
+    "max",
+    "view_decrypt"
+  ],
+  "viewDecryptScope": "One persisted getter plus fresh authorized decryption after max per round, separate warmups and samples",
+  "stages": [
+    {
+      "kind": "pilot",
+      "width": 16,
+      "status": "finished",
+      "startedAt": "2026-11-05T19:15:55.609Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05\\pilot-euint16\\report.json",
+      "completedAt": "2026-11-05T19:20:09.507Z"
+    },
+    {
+      "kind": "pilot",
+      "width": 128,
+      "status": "finished",
+      "startedAt": "2026-11-05T19:20:09.521Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05\\pilot-euint128\\report.json",
+      "completedAt": "2026-11-05T19:24:44.022Z"
+    },
+    {
+      "kind": "measured",
+      "width": 16,
+      "status": "failed",
+      "startedAt": "2026-11-05T19:24:44.036Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05\\measured-euint16\\report.json"
+    },
+    {
+      "kind": "measured",
+      "width": 16,
+      "status": "failed",
+      "startedAt": "2026-11-05T19:26:37.370Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05\\measured-euint16-preflight2\\report.json"
+    }
+  ],
+  "currentStage": "measured-euint16",
+  "decryptionPolling": {
+    "requestedIntervalMs": 10,
+    "serverRetryAfter": "respected; can lengthen the effective interval",
+    "patch": "benchmark-decryption-polling-v1",
+    "bundles": {
+      "zama": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+        "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+      },
+      "zamaEsm": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+        "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+      },
+      "fhenix": {
+        "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+        "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+      }
+    }
+  },
+  "preflightResumes": [
+    {
+      "at": "2026-11-05T19:26:37.356Z",
+      "previousPid": 33816,
+      "failedReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05\\measured-euint16\\report.json",
+      "reason": "Funded signer with no pending transactions required for fhenix",
+      "file": "scripts/run-uniform-energy.cjs",
+      "previousHash": "535dd10242c05cb05195715d19ec3e0a0d993fec16bec4411aec8155dd1bf132",
+      "currentHash": "aaa4e7f26046a956720310b7ed9cce29eb9c60427d483d6cff63df5c6b8af974"
+    }
+  ],
+  "error": "Isolated campaign stopped after all current workers settled; observations and prepared transaction hashes retained",
+  "abortedAt": "2026-11-05T19:37:53.534Z"
+}

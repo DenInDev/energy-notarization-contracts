@@ -1,0 +1,74 @@
+[
+  {
+    "caseId": "concurrency-w16-c1-independent",
+    "platform": "baseline",
+    "complete": false,
+    "expectedSameFinal": true,
+    "sameObservedFinal": null,
+    "interpretation": "Controlled serial forward/reverse executions use identical plaintext inputs, fresh ciphertexts and fresh zero state; this is a legitimate order effect, not an inconsistency."
+  },
+  {
+    "caseId": "concurrency-w16-c1-independent",
+    "platform": "zama",
+    "complete": false,
+    "expectedSameFinal": true,
+    "sameObservedFinal": null,
+    "interpretation": "Controlled serial forward/reverse executions use identical plaintext inputs, fresh ciphertexts and fresh zero state; this is a legitimate order effect, not an inconsistency."
+  },
+  {
+    "caseId": "concurrency-w16-c1-independent",
+    "platform": "fhenix",
+    "complete": false,
+    "expectedSameFinal": true,
+    "sameObservedFinal": null,
+    "interpretation": "Controlled serial forward/reverse executions use identical plaintext inputs, fresh ciphertexts and fresh zero state; this is a legitimate order effect, not an inconsistency."
+  },
+  {
+    "caseId": "concurrency-w16-c1-shared_sum",
+    "platform": "baseline",
+    "complete": false,
+    "expectedSameFinal": true,
+    "sameObservedFinal": null,
+    "interpretation": "Controlled serial forward/reverse executions use identical plaintext inputs, fresh ciphertexts and fresh zero state; this is a legitimate order effect, not an inconsistency."
+  },
+  {
+    "caseId": "concurrency-w16-c1-shared_sum",
+    "platform": "zama",
+    "complete": false,
+    "expectedSameFinal": true,
+    "sameObservedFinal": null,
+    "interpretation": "Controlled serial forward/reverse executions use identical plaintext inputs, fresh ciphertexts and fresh zero state; this is a legitimate order effect, not an inconsistency."
+  },
+  {
+    "caseId": "concurrency-w16-c1-shared_sum",
+    "platform": "fhenix",
+    "complete": false,
+    "expectedSameFinal": true,
+    "sameObservedFinal": null,
+    "interpretation": "Controlled serial forward/reverse executions use identical plaintext inputs, fresh ciphertexts and fresh zero state; this is a legitimate order effect, not an inconsistency."
+  },
+  {
+    "caseId": "concurrency-w16-c1-shared_ordered",
+    "platform": "baseline",
+    "complete": false,
+    "expectedSameFinal": false,
+    "sameObservedFinal": null,
+    "interpretation": "Controlled serial forward/reverse executions use identical plaintext inputs, fresh ciphertexts and fresh zero state; this is a legitimate order effect, not an inconsistency."
+  },
+  {
+    "caseId": "concurrency-w16-c1-shared_ordered",
+    "platform": "zama",
+    "complete": false,
+    "expectedSameFinal": false,
+    "sameObservedFinal": null,
+    "interpretation": "Controlled serial forward/reverse executions use identical plaintext inputs, fresh ciphertexts and fresh zero state; this is a legitimate order effect, not an inconsistency."
+  },
+  {
+    "caseId": "concurrency-w16-c1-shared_ordered",
+    "platform": "fhenix",
+    "complete": false,
+    "expectedSameFinal": false,
+    "sameObservedFinal": null,
+    "interpretation": "Controlled serial forward/reverse executions use identical plaintext inputs, fresh ciphertexts and fresh zero state; this is a legitimate order effect, not an inconsistency."
+  }
+]

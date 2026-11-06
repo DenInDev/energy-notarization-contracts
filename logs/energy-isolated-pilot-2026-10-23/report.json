@@ -1,0 +1,1651 @@
+{
+  "schemaVersion": 12,
+  "platformOwners": {
+    "baseline": "0x3552Cc153DCcC007d1c0D88Ff5aDB258d2688121",
+    "zama": "0xbFfa3190d423F15C1E5281a10e5d89B3Dcf26eD0",
+    "fhenix": "0xB85E3C85c39e2FD06308649F466d360B0bE792af"
+  },
+  "signerMode": "independent_platform_accounts",
+  "decryptionPolling": {
+    "requestedIntervalMs": 100,
+    "serverRetryAfter": "respected; can lengthen the effective interval",
+    "patch": "benchmark-decryption-polling-v1",
+    "bundles": {
+      "zama": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+        "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+      },
+      "zamaEsm": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+        "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+      },
+      "fhenix": {
+        "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+        "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+      }
+    }
+  },
+  "energyRepresentation": {
+    "unit": "Wh",
+    "readingBits": 16,
+    "accumulatorBits": 64,
+    "resultBits": 64,
+    "timestampBits": 64,
+    "timestampEncrypted": false,
+    "readingRange": "0..65535 Wh per measurement interval",
+    "computation": "Widen reading to 64 bits before arithmetic; conversion is included in transaction cost.",
+    "dataset": "Synthetic readings; acquisition interval and physical meter validation are outside this benchmark."
+  },
+  "observationTimeoutMs": 180000,
+  "setupObservationTimeoutMs": 180000,
+  "executionMode": "isolated_processes_prepared_submission_barrier",
+  "studyScope": "observable operational performance of public Sepolia deployments; not isolated TFHE computation",
+  "startedAt": "2026-10-23T16:28:36.382Z",
+  "chainId": "11155111",
+  "owner": "0x3552Cc153DCcC007d1c0D88Ff5aDB258d2688121",
+  "rpcHost": "ethereum-sepolia-rpc.publicnode.com",
+  "runs": 1,
+  "selectedPlatforms": [
+    "baseline",
+    "zama",
+    "fhenix"
+  ],
+  "scheduleSeed": "energy-mixed16-64-independent-v1",
+  "schedule": [
+    {
+      "run": 1,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    }
+  ],
+  "sdkVersions": {
+    "zama": "0.4.1",
+    "fhenix": "1.0.1"
+  },
+  "contractLibraries": {
+    "zama": "@fhevm/solidity 0.11.1",
+    "fhenix": "@fhenixprotocol/cofhe-contracts 0.2.0"
+  },
+  "contractNames": {
+    "baseline": "EnergyNotarizationPlainTest",
+    "zama": "EnergyNotarizationFHETest",
+    "fhenix": "EnergyLifecycleCoFHE"
+  },
+  "compiler": {
+    "version": "0.8.27",
+    "optimizer": {
+      "enabled": true,
+      "runs": 800
+    },
+    "evmVersion": "cancun",
+    "viaIR": false
+  },
+  "sourceSha256": {
+    "hardhat.config.ts": "f2c7451f127f8f87555025976a0d37c84208f9630b842a769d0c773c50496b3d",
+    "package-lock.json": "4571f420b5ef346a377e26b0d86ed6d3c9c4cfa5e268e184f876936f862fa35e",
+    "contracts/EnergyNotarizationPlainTest.sol": "e62095efce878660a6a2ef0cf465071a289af43dd005b6474031d4b2441f28ca",
+    "contracts/EnergyNotarizationFHETest.sol": "4010cc5450e064032023d43c5c5e984d4b3f3a3ca7357fc8112453a013b098e9",
+    "contracts/EnergyLifecycleCoFHE.sol": "49561f7379746fad6a9a7cc126ddd27df8d6953affce911d17cb05448460bbfb",
+    "tasks/benchmarkEnergyLifecycle.ts": "6934d407ff6a43311b64b836e3c854766b9f96edd4df4c0206a865357cf86a59",
+    "tasks/lib/lifecycleTiming.ts": "00e7c4c07b08934c2530268b6b38907a3da087df4bbaa57e765103cbd96e4b26",
+    "tasks/lib/lifecycleSchedule.ts": "53f15d45880e39a39b2ce1011af66aa2d967917de5b226bcbaae0841f41b7a36",
+    "tasks/lib/lifecycleResult.ts": "2c464da462addf84a75037150ff631eff7b0b0b6d90c89cad92791c542aa2f7f",
+    "tasks/lib/lifecycleReadRetry.ts": "60c7db6fa19f8eaa3ff16b93aa4aa61c5c5d44783712466c786e50e0ecb29fd9",
+    "tasks/lib/lifecycleConcurrent.ts": "040f0640cac5db6721fbc41049cba42df44488a6252ea3d2fc4b3664f114d7a9",
+    "tasks/lib/lifecycleNonce.ts": "617f2bfe15dea12eaf4cbfeefc09b54577093a06eba69e85116847fdd7a9321a",
+    "tasks/lifecycle/types.ts": "4a227e2ae9f5153cb8d49e9abf36dbce89c18617cc5826a423eecf74a1ebc2e6",
+    "tasks/lifecycle/operations.ts": "022592069095029c5c5468cf3c3eac00cf40dbaf3d367dfb3e82f8c826a592b1",
+    "tasks/lifecycle/errors.ts": "4298ba265e69aa3c771cb4ac421944ce34569c8a7b6b9a563181d7509353b34c",
+    "tasks/lifecycle/adapters.ts": "6f11bab42cc31b868511f55f17995eb2d6cd0ea84de5ccac6245d860bde7ee78",
+    "tasks/lifecycle/zama.ts": "6e9928d3454ed0f2ef2c907b649e0ffe5d6cd23afaed92ab0f8c015d0da624a9",
+    "tasks/lifecycle/cofhe.ts": "8a61ad4a6b736e69c0fa3ffd16d488b4316aee73d3ffee3f31ac89a3cae23255",
+    "tasks/lifecycle/report.ts": "31114e35221a6f372ed6a457e9ca75b2a16162869c21dbc69a2f13eba437146e",
+    "tasks/lifecycle/measurement.ts": "97a55f32ea027f0dba728a408918e8993f77a93d6c4c867d2cb15f84d4ff71a8",
+    "tasks/lifecycle/campaign.ts": "95f26f0c4a74f19d9dbdf6055d5ba11cbf289a2f0f60374d9679febe37ecc17d",
+    "tasks/lifecycle/processCampaign.ts": "a171106f41e46e9d738a0e488c433b2392dfe8c83a2d6d33d7b1dcb6f2155c28",
+    "tasks/lifecycle/processWorker.ts": "0ab0984eda829f875e25b9cc5f9616f3d904e0e31de6963ccf44fe3a071d7f5b",
+    "tasks/lifecycle/workerClient.ts": "0f737810f42e043c585092385cb84f49f8850d6f3929757c5bc13039948669c5",
+    "tasks/lifecycle/broadcast.ts": "91231d5eb30a929377031bede8e03894067fe7ec045d35e49b42a1baa038f86a",
+    "scripts/energy-platform-worker.cjs": "6ad4f2d2905890e0c92c73f972cce3f810b30149e7e96e192ae409e213b62d55",
+    "scripts/run-energy-campaign.cjs": "0c2e6b619e873d2ef5e028c98e47a4bb0bb60fc4abd991d579885a1ea88bafbc",
+    "tasks/lib/decryptionPolling.cjs": "9c7755517b08687366ab9c043c8603220656319513f1944daf012d3aa60507c5",
+    "scripts/patch-decryption-polling.cjs": "1859e40236c69faa45cc83d6c1857e7e687a0d38133c95eac28d91415800624a",
+    "tasks/experiments/accounts.ts": "2a930be994cd3ba0808f3f79fd88641b472a86c639a33883f2149f3fe3bca75e"
+  },
+  "machine": {
+    "os": "Windows_NT",
+    "release": "10.0.26200",
+    "architecture": "x64",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core Processor           ",
+    "logicalCpus": 16,
+    "ramBytes": 33397133312,
+    "node": "v24.11.0"
+  },
+  "methodology": {
+    "clock": "performance.now (monotonic client clock); ISO wall time is metadata only",
+    "confirmation": "Before prepared transaction broadcast invocation to observation of its successful receipt (1 inclusion confirmation; not finality); signing and gas estimation precede the barrier",
+    "completion": "Prepared broadcast invocation to equality-validated plaintext; input preparation, transaction preparation and barrier wait excluded and recorded separately",
+    "postReceipt": "receipt observation to validated plaintext, including handle read, authorization and SDK decrypt",
+    "sdkPolling": "SDK retrieval includes service-directed polling and retry waits; Zama progress records retryAfterMs and CoFHE poll events record intervalMs. These are polling hints, not measured sleep durations, and must not be subtracted to infer backend computation time",
+    "alreadyReady": "second authenticated SDK decrypt of the same known-ready handle, measured separately",
+    "caching": "fresh encrypted input each round; ready-repeat service caches cannot be excluded; Zama uses fresh keypairs, CoFHE reuses a setup ACP",
+    "warmup": "all operation paths initialized before measurement; EIP-2929 cold accesses still apply per transaction",
+    "sequencing": "One persistent OS process, signer and nonce cursor per platform; sequential deployment/setup; all encrypted inputs and signed transactions prepared before a shared timed submission barrier; all workers settle before the next operation",
+    "baseline": "same transaction/getter/equality endpoint, with plaintext returned directly; encryption and authenticated decryption are not applicable",
+    "temporalControl": "nearby operation-matched comparisons and balanced order reduce, but cannot eliminate, public-network load and slot-phase confounding",
+    "receiptPolling": "Immediate eth_getTransactionReceipt, then 500 ms waits after pending responses; raw broadcast acknowledgement is separate; only receipt reads can retry",
+    "resultRead": "EIP-1898 eth_call pinned to the receipt block hash with requireCanonical=true; no latest-state fallback",
+    "deploymentBytecodeRead": "EIP-1898 eth_getCode pinned to deployment receipt block hash; transport errors retried up to five attempts and block-not-found propagation errors retried within the original setup deadline; every attempt retained; empty code and non-canonical blocks fail",
+    "retrievalRetry": "up to five read/retrieval attempts on transport errors, Zama SDK user-decrypt ACL check denials or HTTP 503 USER_DECRYPT responses (including SDK schema errors); receipt-block-not-found and the specific 503 gateway ciphertext-not-ready USER_DECRYPT response can retry beyond five attempts within the original observation deadline; receipt reads always use the same canonical block hash, without latest fallback; exponential backoff capped at 8 seconds; Zama attempts receive only the remaining time budget; every attempt and wait included in timing and traces; persistent failures still abort; never retry application mutations, other authorization errors or plaintext mismatches",
+    "ancillaryFailure": "a failed already-ready repeat is retained without replacing it or aborting successful primary completions; report actual successful ready-repeat n and failure counts separately",
+    "unobservable": {
+      "coprocessorQueueMs": null,
+      "pureFheEvaluationMs": null,
+      "kmsOrMpcComputeMs": null,
+      "interServiceTransportMs": null,
+      "serverProofVerificationComputeMs": null
+    },
+    "sdkStages": "client-observed API boundaries, NOT pure internal service compute durations",
+    "previews": "eth_call symbolic simulations only; no persisted coprocessor request and no completion claim",
+    "fhenixWorkload": "mul_scalar encrypts the constant; mean encrypts divisor 2, unlike Zama plaintext scalar operations",
+    "broadcast": "Exactly one eth_sendRawTransaction per signed operation; predetermined hash journaled before barrier release; start and acknowledgement recorded separately; failed acknowledgement is uncertain and never automatically retransmitted",
+    "feeControl": "One recorded EIP-1559 fee quote shared by all platforms per comparison; gas estimated and transaction signed before the barrier",
+    "fullLifecycle": "preparationMs + transactionToValidatedPlaintextMs excludes intentional barrier waiting; worker wall time also includes the barrier and must be labeled separately",
+    "processIsolation": "Separate Node processes isolate SDK main-thread proof generation; OS scheduling and shared CPU/RPC/network contention remain possible"
+  },
+  "setup": [],
+  "samples": [],
+  "workers": {
+    "baseline": {
+      "pid": 18800,
+      "owner": "0x3552Cc153DCcC007d1c0D88Ff5aDB258d2688121"
+    }
+  },
+  "barriers": [],
+  "summary": [
+    {
+      "platform": "baseline",
+      "operation": "notarize",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "add",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "mul_scalar",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "mean",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "max",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "notarize",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "add",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "mul_scalar",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "mean",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "max",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "notarize",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "add",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mul_scalar",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mean",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "max",
+      "attempted": 0,
+      "validated": 0,
+      "failed": 0,
+      "readyDecryptFailed": 0,
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "confirmationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "preparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "transactionPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "barrierWaitMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      },
+      "broadcastToReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "min": null,
+        "max": null,
+        "median": null
+      }
+    }
+  ],
+  "stageSummary": [],
+  "complete": false,
+  "abortedAt": "2026-10-23T16:28:41.378Z",
+  "error": "Platform process exited (1)"
+}

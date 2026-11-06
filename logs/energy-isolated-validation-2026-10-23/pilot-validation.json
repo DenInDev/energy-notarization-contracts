@@ -1,0 +1,218 @@
+{
+  "sourceReportSha256": "c54c3525637a24d2f2e3361f13bef474a4d1ae152e872292301ac7dd7bde003d",
+  "purpose": "One-round protocol validation, not statistical performance evaluation",
+  "executionMode": "isolated_processes_prepared_submission_barrier",
+  "measuredValid": 15,
+  "warmupValid": 15,
+  "workerPids": {
+    "baseline": 30740,
+    "zama": 44788,
+    "fhenix": 1484
+  },
+  "platformOwners": {
+    "baseline": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC",
+    "zama": "0x268fcAE6206890E4de082535F12C40Cc5119033d",
+    "fhenix": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd"
+  },
+  "sameBlockTriples": 5,
+  "measuredTriples": 5,
+  "broadcastStartSpreadsMs": [
+    0,
+    16,
+    0,
+    0,
+    0
+  ],
+  "baselineBroadcastAckMeanMs": 127.18189999999012,
+  "readyRepeatFailures": 0,
+  "gasCostWei": "531423676",
+  "gasCostEth": "0.000000000531423676",
+  "rows": [
+    {
+      "platform": "baseline",
+      "operation": "notarize",
+      "preparationMs": 248.82569999998668,
+      "transactionPreparationMs": 248.76700000002165,
+      "barrierWaitMs": 9272.748499999987,
+      "invokeMs": 121.66260000001057,
+      "broadcastAckMs": 121.38190000000759,
+      "receiptMs": 8691.001400000008,
+      "postReceiptMs": 131.5728999999992,
+      "validatedMs": 8822.574300000007
+    },
+    {
+      "platform": "fhenix",
+      "operation": "notarize",
+      "preparationMs": 8161.656999999992,
+      "transactionPreparationMs": 358.64850000001024,
+      "barrierWaitMs": 1359.8381000000081,
+      "invokeMs": 139.79859999999462,
+      "broadcastAckMs": 139.45900000000256,
+      "receiptMs": 8639.069799999997,
+      "postReceiptMs": 267.53429999999935,
+      "validatedMs": 8906.604099999997
+    },
+    {
+      "platform": "zama",
+      "operation": "notarize",
+      "preparationMs": 9261.147700000001,
+      "transactionPreparationMs": 274.74049999998533,
+      "barrierWaitMs": 260.41279999999097,
+      "invokeMs": 147.6777000000002,
+      "broadcastAckMs": 147.36980000001495,
+      "receiptMs": 8909.126599999989,
+      "postReceiptMs": 4852.935300000012,
+      "validatedMs": 13762.0619
+    },
+    {
+      "platform": "zama",
+      "operation": "add",
+      "preparationMs": 185.2117000000144,
+      "transactionPreparationMs": 185.18640000000596,
+      "barrierWaitMs": 385.21610000001965,
+      "invokeMs": 122.47990000000573,
+      "broadcastAckMs": 122.24040000000969,
+      "receiptMs": 4794.204000000027,
+      "postReceiptMs": 4831.0484,
+      "validatedMs": 9625.252400000027
+    },
+    {
+      "platform": "fhenix",
+      "operation": "add",
+      "preparationMs": 256.64710000000196,
+      "transactionPreparationMs": 256.613400000002,
+      "barrierWaitMs": 297.6200000000099,
+      "invokeMs": 128.16499999997905,
+      "broadcastAckMs": 127.82929999998305,
+      "receiptMs": 4708.105299999996,
+      "postReceiptMs": 313.36840000000666,
+      "validatedMs": 5021.473700000002
+    },
+    {
+      "platform": "baseline",
+      "operation": "add",
+      "preparationMs": 296.1152000000002,
+      "transactionPreparationMs": 296.0880999999936,
+      "barrierWaitMs": 258.1466000000073,
+      "invokeMs": 128.38710000002175,
+      "broadcastAckMs": 128.12609999999404,
+      "receiptMs": 4696.255600000004,
+      "postReceiptMs": 130.78100000001723,
+      "validatedMs": 4827.036600000021
+    },
+    {
+      "platform": "zama",
+      "operation": "mul_scalar",
+      "preparationMs": 192.52960000000894,
+      "transactionPreparationMs": 192.50029999998515,
+      "barrierWaitMs": 339.93779999998515,
+      "invokeMs": 157.80329999999958,
+      "broadcastAckMs": 157.49400000000605,
+      "receiptMs": 2462.1730999999854,
+      "postReceiptMs": 6579.878100000002,
+      "validatedMs": 9042.051199999987
+    },
+    {
+      "platform": "baseline",
+      "operation": "mul_scalar",
+      "preparationMs": 237.83400000000256,
+      "transactionPreparationMs": 237.7913000000117,
+      "barrierWaitMs": 294.52470000000903,
+      "invokeMs": 115.57580000002054,
+      "broadcastAckMs": 115.25379999997676,
+      "receiptMs": 2970.5141000000003,
+      "postReceiptMs": 51.842499999998836,
+      "validatedMs": 3022.356599999999
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mul_scalar",
+      "preparationMs": 260.6640999999945,
+      "transactionPreparationMs": 260.62410000001546,
+      "barrierWaitMs": 271.68659999998636,
+      "invokeMs": 127.13289999999688,
+      "broadcastAckMs": 126.81930000000284,
+      "receiptMs": 2443.483600000007,
+      "postReceiptMs": 1287.0136000000057,
+      "validatedMs": 3730.4972000000125
+    },
+    {
+      "platform": "zama",
+      "operation": "mean",
+      "preparationMs": 198.3367000000144,
+      "transactionPreparationMs": 198.30389999999898,
+      "barrierWaitMs": 333.85820000001695,
+      "invokeMs": 149.69060000000172,
+      "broadcastAckMs": 149.42809999999008,
+      "receiptMs": 14087.173100000015,
+      "postReceiptMs": 4926.006699999998,
+      "validatedMs": 19013.179800000013
+    },
+    {
+      "platform": "baseline",
+      "operation": "mean",
+      "preparationMs": 244.90140000000247,
+      "transactionPreparationMs": 244.85540000000037,
+      "barrierWaitMs": 287.26310000001104,
+      "invokeMs": 149.88549999997485,
+      "broadcastAckMs": 149.64379999999073,
+      "receiptMs": 14316.23490000001,
+      "postReceiptMs": 133.02249999999185,
+      "validatedMs": 14449.257400000002
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mean",
+      "preparationMs": 268.50719999999274,
+      "transactionPreparationMs": 268.46119999999064,
+      "barrierWaitMs": 263.6559999999881,
+      "invokeMs": 169.40649999998277,
+      "broadcastAckMs": 169.1070999999938,
+      "receiptMs": 14279.736000000004,
+      "postReceiptMs": 5830.592600000004,
+      "validatedMs": 20110.328600000008
+    },
+    {
+      "platform": "fhenix",
+      "operation": "max",
+      "preparationMs": 186.54869999998482,
+      "transactionPreparationMs": 186.50620000000345,
+      "barrierWaitMs": 380.7558999999892,
+      "invokeMs": 121.76299999997718,
+      "broadcastAckMs": 121.49090000000433,
+      "receiptMs": 16023.223299999983,
+      "postReceiptMs": 318.77069999999367,
+      "validatedMs": 16341.993999999977
+    },
+    {
+      "platform": "zama",
+      "operation": "max",
+      "preparationMs": 194.45019999999204,
+      "transactionPreparationMs": 194.40570000000298,
+      "barrierWaitMs": 372.7765000000072,
+      "invokeMs": 133.7853999999934,
+      "broadcastAckMs": 133.52069999999367,
+      "receiptMs": 16075.710900000005,
+      "postReceiptMs": 4863.290100000013,
+      "validatedMs": 20939.00100000002
+    },
+    {
+      "platform": "baseline",
+      "operation": "max",
+      "preparationMs": 301.9323999999906,
+      "transactionPreparationMs": 301.8800999999803,
+      "barrierWaitMs": 265.3640000000014,
+      "invokeMs": 121.75929999997607,
+      "broadcastAckMs": 121.50389999998151,
+      "receiptMs": 15826.844000000012,
+      "postReceiptMs": 138.17379999998957,
+      "validatedMs": 15965.017800000001
+    }
+  ],
+  "notes": [
+    "Signing/estimation and encryption precede the common barrier. Intentional barrier waiting is recorded separately and excluded from completion.",
+    "Receipt is observed inclusion, not isolated EVM execution; post-receipt includes retrieval, authorization and SDK waits.",
+    "One measured round provides validation evidence, not confidence intervals or a controlled causal performance comparison.",
+    "This validation uses saved accounts user-4/user-5/user-6. Earlier interrupted pilots and their unacknowledged hashes remain retained without retransmission."
+  ]
+}

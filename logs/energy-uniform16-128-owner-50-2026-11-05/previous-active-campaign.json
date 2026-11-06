@@ -1,0 +1,8 @@
+{
+  "status": "stopped_by_user",
+  "pid": 34112,
+  "manifest": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05-attempt2\\campaign.json",
+  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05-attempt2\\pilot-euint128\\report.json",
+  "audit": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05-attempt2\\user-stop-audit.json",
+  "at": "2026-11-05T22:26:36.469Z"
+}

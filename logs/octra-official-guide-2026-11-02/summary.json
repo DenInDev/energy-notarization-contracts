@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "network": "Octra devnet",
+  "endpoint": "https://devnet.octrascan.io/rpc",
+  "contractAddress": "oct45VdbGMVGgqV2L5W7ny6yn81y2N1XZrGyo5yFJU2gniY",
+  "deployer": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+  "recipient": "octFhEHo1rg1GndfTXwMeonpZVzX9Hi4gHg7jzjEzFqDArG",
+  "upstreamCommit": "52fca461dd2e81652dec588f0ab861662bf38cf6",
+  "compiler": "2.0 AML-preview",
+  "sourceUnmodified": true,
+  "token": {
+    "name": "MyToken",
+    "symbol": "MTK",
+    "decimals": 6,
+    "totalSupplyRaw": "1000000000000",
+    "totalSupplyTokens": "1000000",
+    "deployerBalanceRaw": "999999000000",
+    "recipientBalanceRaw": "1000000"
+  },
+  "sourceVerification": {
+    "committed": true,
+    "verified": true,
+    "published": true,
+    "code_hash": "a242b3a4e8e28af6aa91657235e8eba55ed3dda5f867829a2509742cc35400ca"
+  },
+  "transactions": [
+    {
+      "label": "deploy",
+      "hash": "7615e6f0c3a5dcf36027d08cdf67b7bd4d6be42edef30e844ce588f189931092",
+      "nonce": 5,
+      "ou": "218000",
+      "status": "confirmed"
+    },
+    {
+      "label": "transfer",
+      "hash": "292fdff4ca63e643f4698e788180911cb537de33126905644cdddc83aba186d5",
+      "nonce": 6,
+      "ou": "1000",
+      "status": "confirmed"
+    }
+  ],
+  "feeTotalOCT": "0.219",
+  "nativeBalanceBeforeOCT": "2.558492",
+  "nativeBalanceAfterOCT": "2.339492",
+  "checksPassed": 12,
+  "scope": "Official OCS-01 token tutorial: deployment, metadata, balances, one token transfer, source verification. No FHE performance claim."
+}

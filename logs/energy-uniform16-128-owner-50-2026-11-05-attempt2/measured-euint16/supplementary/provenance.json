@@ -1,0 +1,1740 @@
+{
+  "at": "2026-11-06T00:47:35.693Z",
+  "rawReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\measured-euint16\\report.json",
+  "rawSha256": "ea71bf7e2a4503fa82ab48fa6deee9e1a97392bd857720da44f85573dc3e1d73",
+  "chainId": 11155111,
+  "method": "eth_getBlockByNumber with exact recorded number/hash canonical match",
+  "rpcHost": "ethereum-sepolia-rpc.publicnode.com",
+  "changedFields": [
+    "blockTimestamp",
+    "blockGasUsed",
+    "blockGasLimit",
+    "blockTargetUtilization"
+  ],
+  "blockCount": 129,
+  "rowCount": 171,
+  "unresolved": [],
+  "blocks": [
+    {
+      "hash": "0xec685f49027d7fe2d3735c64b9d47cf58945122d6b376cd92681215ebb5f88f4",
+      "number": 12072542,
+      "rowIndices": [
+        12
+      ],
+      "fields": {
+        "blockTimestamp": 1793919060,
+        "blockGasUsed": "59644959",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.59644959
+      }
+    },
+    {
+      "hash": "0x6d3ed66d04ee1b414b30189577e8aa72105640ee28be7b0954079272a9a3b7d3",
+      "number": 12072552,
+      "rowIndices": [
+        35
+      ],
+      "fields": {
+        "blockTimestamp": 1793919180,
+        "blockGasUsed": "78124860",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.7820122780001424
+      }
+    },
+    {
+      "hash": "0x6df95a6f47271b2dd9764d82da8aa864b2afd060c85052bfe9c625fc5e3dae67",
+      "number": 12072557,
+      "rowIndices": [
+        43
+      ],
+      "fields": {
+        "blockTimestamp": 1793919240,
+        "blockGasUsed": "99713160",
+        "blockGasLimit": "199999428",
+        "blockTargetUtilization": 0.9971344518045322
+      }
+    },
+    {
+      "hash": "0x2322bd85437a0efcdb68dc068a0b5e5d339ee6a894855c9bcc3d0a300094b24c",
+      "number": 12072559,
+      "rowIndices": [
+        50
+      ],
+      "fields": {
+        "blockTimestamp": 1793919264,
+        "blockGasUsed": "60807942",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.60807942
+      }
+    },
+    {
+      "hash": "0xea4ac2b0b66aae7d78b011467cfad1dd98f9074627106048e21ed4866a434b9d",
+      "number": 12072556,
+      "rowIndices": [
+        39
+      ],
+      "fields": {
+        "blockTimestamp": 1793919228,
+        "blockGasUsed": "69792480",
+        "blockGasLimit": "199804308",
+        "blockTargetUtilization": 0.6986083603362546
+      }
+    },
+    {
+      "hash": "0xb238871b140497a294687b1615d2dd9caabf193051e6dcd663545ba0bfa57e91",
+      "number": 12072560,
+      "rowIndices": [
+        51,
+        52
+      ],
+      "fields": {
+        "blockTimestamp": 1793919276,
+        "blockGasUsed": "84809430",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.8480943
+      }
+    },
+    {
+      "hash": "0x319b7ea721e716037d99f760b17154c55e79fb8b56c7e5528def26f270540fa0",
+      "number": 12072564,
+      "rowIndices": [
+        57
+      ],
+      "fields": {
+        "blockTimestamp": 1793919324,
+        "blockGasUsed": "62272966",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.62272966
+      }
+    },
+    {
+      "hash": "0x98edc4c46e2bcdb9c4c58bd20fcf4aaa83b35dba9f6e7bd96e2ace70177a698c",
+      "number": 12072567,
+      "rowIndices": [
+        67
+      ],
+      "fields": {
+        "blockTimestamp": 1793919360,
+        "blockGasUsed": "57885478",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.57885478
+      }
+    },
+    {
+      "hash": "0x7901087f669b08322437f6010c18c107eaaffc17326e45b7ca866bb351c63684",
+      "number": 12072565,
+      "rowIndices": [
+        61
+      ],
+      "fields": {
+        "blockTimestamp": 1793919336,
+        "blockGasUsed": "58147138",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.5820397738513534
+      }
+    },
+    {
+      "hash": "0xf456c13e7f08a9cfbc9970acd5c01232f19424c40bae2c643e31195abc2996d3",
+      "number": 12072568,
+      "rowIndices": [
+        69,
+        71
+      ],
+      "fields": {
+        "blockTimestamp": 1793919372,
+        "blockGasUsed": "63605856",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.636680313343397
+      }
+    },
+    {
+      "hash": "0x2208a0043d26511005dd4ec1eb58214faa3faddc71a3c344e7e584198199e4fa",
+      "number": 12072573,
+      "rowIndices": [
+        75
+      ],
+      "fields": {
+        "blockTimestamp": 1793919432,
+        "blockGasUsed": "67747087",
+        "blockGasLimit": "199999428",
+        "blockTargetUtilization": 0.6774728075722296
+      }
+    },
+    {
+      "hash": "0xf4db3de6e3d1299fca88c51598b156048d5974cd74cf5ca467acc4f7d1eec926",
+      "number": 12072575,
+      "rowIndices": [
+        83
+      ],
+      "fields": {
+        "blockTimestamp": 1793919456,
+        "blockGasUsed": "61850913",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.61911372860724
+      }
+    },
+    {
+      "hash": "0x1d598be76fe662135d51127596a07e87d9a8b1d71b135d1af7041b5ab4186696",
+      "number": 12072576,
+      "rowIndices": [
+        85
+      ],
+      "fields": {
+        "blockTimestamp": 1793919468,
+        "blockGasUsed": "65886134",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.6588619692131806
+      }
+    },
+    {
+      "hash": "0x7c11dd0413f863e10e2ea09b632a74bed73f2f0d0e5e0e6bcc0e85728341888c",
+      "number": 12072580,
+      "rowIndices": [
+        90
+      ],
+      "fields": {
+        "blockTimestamp": 1793919516,
+        "blockGasUsed": "60574735",
+        "blockGasLimit": "199609569",
+        "blockTargetUtilization": 0.6069321756814173
+      }
+    },
+    {
+      "hash": "0x9ab9971f62894b11b979ad4e8afecc5a011635407dc278f74e82458f195ec8be",
+      "number": 12072583,
+      "rowIndices": [
+        93
+      ],
+      "fields": {
+        "blockTimestamp": 1793919552,
+        "blockGasUsed": "72463809",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.72463809
+      }
+    },
+    {
+      "hash": "0xee92c23f1da878f40c45383c22542721aa14abf2795308f8c48cc7668da70639",
+      "number": 12072584,
+      "rowIndices": [
+        96,
+        98
+      ],
+      "fields": {
+        "blockTimestamp": 1793919564,
+        "blockGasUsed": "50700506",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.5075006623092815
+      }
+    },
+    {
+      "hash": "0x3e535b7b4af5a85b5d2019ac2371d80b28b9624cded66ba8818e81427017bc86",
+      "number": 12072590,
+      "rowIndices": [
+        108
+      ],
+      "fields": {
+        "blockTimestamp": 1793919636,
+        "blockGasUsed": "132812721",
+        "blockGasLimit": "199609378",
+        "blockTargetUtilization": 1.3307262647749947
+      }
+    },
+    {
+      "hash": "0xceadeef41a467d9aa98128b66bed2761b33a7e318f7d3f00fe2bb55b9166c98e",
+      "number": 12072593,
+      "rowIndices": [
+        116
+      ],
+      "fields": {
+        "blockTimestamp": 1793919672,
+        "blockGasUsed": "64035247",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.64035247
+      }
+    },
+    {
+      "hash": "0x4f390cffa6d423ceb5533c24889f51fd77da7e3f0350de25bbcc10e66d940396",
+      "number": 12072594,
+      "rowIndices": [
+        119
+      ],
+      "fields": {
+        "blockTimestamp": 1793919684,
+        "blockGasUsed": "68017558",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.6808404581536122
+      }
+    },
+    {
+      "hash": "0x1dac86fb29469b200d64629a895a1b6d0689c00b71aaf7c4b939d925141daa7c",
+      "number": 12072596,
+      "rowIndices": [
+        122
+      ],
+      "fields": {
+        "blockTimestamp": 1793919708,
+        "blockGasUsed": "71328054",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.71328054
+      }
+    },
+    {
+      "hash": "0x85db56c35d641994cc3ff36431dabce4de7b148ab715a1b3f4259d9f8dbc5b9a",
+      "number": 12072597,
+      "rowIndices": [
+        124
+      ],
+      "fields": {
+        "blockTimestamp": 1793919720,
+        "blockGasUsed": "68747944",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.68747944
+      }
+    },
+    {
+      "hash": "0xb59e2ed94ae500a2599c60c68e52bd8b55ba1e33492f189373dd82145c21d1d8",
+      "number": 12072604,
+      "rowIndices": [
+        139,
+        140
+      ],
+      "fields": {
+        "blockTimestamp": 1793919804,
+        "blockGasUsed": "58103920",
+        "blockGasLimit": "199999429",
+        "blockTargetUtilization": 0.5810408588716521
+      }
+    },
+    {
+      "hash": "0x2bf4062a831271c7928f33efcfe11c331ca31d1e0eb7ebaccafa5389a3965f07",
+      "number": 12072607,
+      "rowIndices": [
+        144,
+        145
+      ],
+      "fields": {
+        "blockTimestamp": 1793919840,
+        "blockGasUsed": "58670821",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.58670821
+      }
+    },
+    {
+      "hash": "0x0cceabbc3aeefcba4bf4c3c02894da3e24d1827fc68b3cd92c6e02c4dabb3e92",
+      "number": 12072618,
+      "rowIndices": [
+        166
+      ],
+      "fields": {
+        "blockTimestamp": 1793919972,
+        "blockGasUsed": "59566996",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.59566996
+      }
+    },
+    {
+      "hash": "0xa2d0ec3cee90430620f78877b93db26c8d818136a177b5de83ea4b53ec624f2a",
+      "number": 12072622,
+      "rowIndices": [
+        175
+      ],
+      "fields": {
+        "blockTimestamp": 1793920020,
+        "blockGasUsed": "76260628",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.76260628
+      }
+    },
+    {
+      "hash": "0x3a25a24deeed203f1a438bbe1e5f1381d7a594d70bf3c6f26a53f83e4228aae2",
+      "number": 12072629,
+      "rowIndices": [
+        188
+      ],
+      "fields": {
+        "blockTimestamp": 1793920104,
+        "blockGasUsed": "55882984",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.55882984
+      }
+    },
+    {
+      "hash": "0x62468cfe18d7f16f648e742739020ddc622187d9e1b0e2a5bfd540cbbeef6cdb",
+      "number": 12072632,
+      "rowIndices": [
+        197
+      ],
+      "fields": {
+        "blockTimestamp": 1793920140,
+        "blockGasUsed": "61559785",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.61559785
+      }
+    },
+    {
+      "hash": "0x4c818acb0e743527588d2f0a004996127dc14741f37ada541d53845681c0327c",
+      "number": 12072631,
+      "rowIndices": [
+        192,
+        193
+      ],
+      "fields": {
+        "blockTimestamp": 1793920128,
+        "blockGasUsed": "57322706",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.57322706
+      }
+    },
+    {
+      "hash": "0x37c40c76ebff8b84eb564e2e2e428af3007e87a02a8dad4801a8e9bf7ae6bd20",
+      "number": 12072638,
+      "rowIndices": [
+        201,
+        202
+      ],
+      "fields": {
+        "blockTimestamp": 1793920212,
+        "blockGasUsed": "70767363",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.7083653877612451
+      }
+    },
+    {
+      "hash": "0x5a6ef3e6a484ce0e9df61a269933ec1cb123aa39d2ecd8597ed2384bc80086bc",
+      "number": 12072645,
+      "rowIndices": [
+        216
+      ],
+      "fields": {
+        "blockTimestamp": 1793920296,
+        "blockGasUsed": "63973894",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.6397395509512711
+      }
+    },
+    {
+      "hash": "0x320c548e1466fea35279b7f54629d8855b60595d8bc561d499d0059c1ab82ec9",
+      "number": 12072643,
+      "rowIndices": [
+        214,
+        215
+      ],
+      "fields": {
+        "blockTimestamp": 1793920272,
+        "blockGasUsed": "62694158",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.62694158
+      }
+    },
+    {
+      "hash": "0x49d4626dc439befd078212960a2ba9f41aaf733df827c743bf2525ace2619640",
+      "number": 12072650,
+      "rowIndices": [
+        227
+      ],
+      "fields": {
+        "blockTimestamp": 1793920356,
+        "blockGasUsed": "59155227",
+        "blockGasLimit": "199609569",
+        "blockTargetUtilization": 0.5927093304830492
+      }
+    },
+    {
+      "hash": "0x075adfb8f681eb986b4ce8ff8e38b5acb9512c5a4d988bb413f1977e4825b78f",
+      "number": 12072647,
+      "rowIndices": [
+        220
+      ],
+      "fields": {
+        "blockTimestamp": 1793920320,
+        "blockGasUsed": "61457614",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.61457614
+      }
+    },
+    {
+      "hash": "0xf684ac510795743d00807761c7aa276b97eb3dcba5bbdac9c956f029276a49f6",
+      "number": 12072654,
+      "rowIndices": [
+        234
+      ],
+      "fields": {
+        "blockTimestamp": 1793920404,
+        "blockGasUsed": "120730241",
+        "blockGasLimit": "199999428",
+        "blockTargetUtilization": 1.207305862894768
+      }
+    },
+    {
+      "hash": "0x33748d9cbe59de0d9a2bbf8bd2a8755de2ce6e3332b25d2a0a29f8f06cf85319",
+      "number": 12072660,
+      "rowIndices": [
+        248
+      ],
+      "fields": {
+        "blockTimestamp": 1793920476,
+        "blockGasUsed": "52234558",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.5223460788405053
+      }
+    },
+    {
+      "hash": "0x0fdfcaca3e06fb16daaef26fc30fa2373e37c42981e7952a6c464984084bc533",
+      "number": 12072659,
+      "rowIndices": [
+        243,
+        245
+      ],
+      "fields": {
+        "blockTimestamp": 1793920464,
+        "blockGasUsed": "68419862",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.6848674307138007
+      }
+    },
+    {
+      "hash": "0x73bdc7fc7771f92e9bf7a6737041c405b78b4df082b2e4979134abc9ebba7cd2",
+      "number": 12072667,
+      "rowIndices": [
+        258
+      ],
+      "fields": {
+        "blockTimestamp": 1793920560,
+        "blockGasUsed": "63718895",
+        "blockGasLimit": "199803926",
+        "blockTargetUtilization": 0.6378142439503416
+      }
+    },
+    {
+      "hash": "0xf5324d3a444e067497e4c455a1578485909cf765f6417a4867f1afc5e6651427",
+      "number": 12072680,
+      "rowIndices": [
+        283
+      ],
+      "fields": {
+        "blockTimestamp": 1793920728,
+        "blockGasUsed": "62778400",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.627784
+      }
+    },
+    {
+      "hash": "0xd4b547921d51e250f376296c8e1ec4a64a909712ccdafebebf7cc2d2d60d9362",
+      "number": 12072673,
+      "rowIndices": [
+        270,
+        271
+      ],
+      "fields": {
+        "blockTimestamp": 1793920632,
+        "blockGasUsed": "70030968",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.7003103487963831
+      }
+    },
+    {
+      "hash": "0x662fd373eae714d2413dc6d8c0d70516b3cc2483985ba0daff6d1f1d373b88b4",
+      "number": 12072685,
+      "rowIndices": [
+        292
+      ],
+      "fields": {
+        "blockTimestamp": 1793920788,
+        "blockGasUsed": "61453866",
+        "blockGasLimit": "199804498",
+        "blockTargetUtilization": 0.6151399654676443
+      }
+    },
+    {
+      "hash": "0x7f595e642ce5f104343162535193a2a9d288b062efccd10425763ff0c1edbd8b",
+      "number": 12072686,
+      "rowIndices": [
+        296
+      ],
+      "fields": {
+        "blockTimestamp": 1793920800,
+        "blockGasUsed": "70896876",
+        "blockGasLimit": "199609378",
+        "blockTargetUtilization": 0.7103561637269367
+      }
+    },
+    {
+      "hash": "0x34cbc7c5a4361e796ced2877d663903e9c18d582d889f45dffd3eee28e0601b1",
+      "number": 12072687,
+      "rowIndices": [
+        297,
+        299
+      ],
+      "fields": {
+        "blockTimestamp": 1793920812,
+        "blockGasUsed": "61007423",
+        "blockGasLimit": "199804308",
+        "blockTargetUtilization": 0.6106717478784291
+      }
+    },
+    {
+      "hash": "0x1cdf7ba09487f87f049b87cc7ad9d20aee8f4752a696942ff301f43d3d167da4",
+      "number": 12072688,
+      "rowIndices": [
+        301
+      ],
+      "fields": {
+        "blockTimestamp": 1793920824,
+        "blockGasUsed": "65133555",
+        "blockGasLimit": "199609188",
+        "blockTargetUtilization": 0.652610790641561
+      }
+    },
+    {
+      "hash": "0x2a3aed2927e11c9498708a3c6c50716a240f2dd970d1661cd6dff78b8f216125",
+      "number": 12072689,
+      "rowIndices": [
+        305
+      ],
+      "fields": {
+        "blockTimestamp": 1793920836,
+        "blockGasUsed": "60175958",
+        "blockGasLimit": "199804117",
+        "blockTargetUtilization": 0.6023495301650866
+      }
+    },
+    {
+      "hash": "0x93f8888d83cb995c573fc79ca355c675bc22cd247c40ec37ff7472749ee63930",
+      "number": 12072695,
+      "rowIndices": [
+        317
+      ],
+      "fields": {
+        "blockTimestamp": 1793920908,
+        "blockGasUsed": "56799284",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.56799284
+      }
+    },
+    {
+      "hash": "0x0f8c91c30611cf2c0f1555aaf65c2a9cf49bbd3b30acfa8678cfb9aab0d98f15",
+      "number": 12072701,
+      "rowIndices": [
+        324
+      ],
+      "fields": {
+        "blockTimestamp": 1793920980,
+        "blockGasUsed": "63993283",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.63993283
+      }
+    },
+    {
+      "hash": "0x863ee0601c0d74f78ab4b6ddd19a744d53e9fa65e7f1544ae706a2838135feff",
+      "number": 12072710,
+      "rowIndices": [
+        342,
+        343
+      ],
+      "fields": {
+        "blockTimestamp": 1793921100,
+        "blockGasUsed": "59536720",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.5953672
+      }
+    },
+    {
+      "hash": "0xef2d9c132440aea0426e237316303464ba24169f4c0d688d58bbe8b6638e8346",
+      "number": 12072707,
+      "rowIndices": [
+        336,
+        338
+      ],
+      "fields": {
+        "blockTimestamp": 1793921064,
+        "blockGasUsed": "115185101",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 1.15185101
+      }
+    },
+    {
+      "hash": "0x99873aff6c0e9d10cdf5756e262c98265aa2aded21790682858e16b850c700af",
+      "number": 12072714,
+      "rowIndices": [
+        345
+      ],
+      "fields": {
+        "blockTimestamp": 1793921148,
+        "blockGasUsed": "70686593",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.70686593
+      }
+    },
+    {
+      "hash": "0x73a01c1568d8cee268b9597bb1d97ed6152c7f2e266330b6c80f259d18d64de5",
+      "number": 12072715,
+      "rowIndices": [
+        349,
+        350
+      ],
+      "fields": {
+        "blockTimestamp": 1793921160,
+        "blockGasUsed": "61604391",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.6166460988310439
+      }
+    },
+    {
+      "hash": "0x4043151e71ebdc754c335c97dad66b2e75455238ae7bbab359943849b53c5a83",
+      "number": 12072716,
+      "rowIndices": [
+        351,
+        352
+      ],
+      "fields": {
+        "blockTimestamp": 1793921172,
+        "blockGasUsed": "58232800",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.5823285561237711
+      }
+    },
+    {
+      "hash": "0x5590337fa5eeae37f296e3f7c92900eecb9b4564d1aba9e880b669240e168623",
+      "number": 12072725,
+      "rowIndices": [
+        374
+      ],
+      "fields": {
+        "blockTimestamp": 1793921280,
+        "blockGasUsed": "58588830",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.58646101143302
+      }
+    },
+    {
+      "hash": "0x8e58a01c44682f8bf02a54c3e21c81d2446e7ecef103e21ce88684667733ae54",
+      "number": 12072717,
+      "rowIndices": [
+        355
+      ],
+      "fields": {
+        "blockTimestamp": 1793921184,
+        "blockGasUsed": "61549170",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.6154917
+      }
+    },
+    {
+      "hash": "0x1ae69af855bd9b9b3293a78bbe0cf06b1963f2f3fdde009a25bfe4e393c3e6e5",
+      "number": 12072730,
+      "rowIndices": [
+        381
+      ],
+      "fields": {
+        "blockTimestamp": 1793921340,
+        "blockGasUsed": "64697532",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.64697532
+      }
+    },
+    {
+      "hash": "0xcd222fd773043cc6c18efbe347ad7b0eff5aeaad542f51c078daa7933bd953ab",
+      "number": 12072732,
+      "rowIndices": [
+        387,
+        389
+      ],
+      "fields": {
+        "blockTimestamp": 1793921364,
+        "blockGasUsed": "65527540",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.6552754
+      }
+    },
+    {
+      "hash": "0x5b1cd29c715254d9921a5437c897696c1d13e8784a693cdf2d5d5d8bd880e5ed",
+      "number": 12072733,
+      "rowIndices": [
+        392
+      ],
+      "fields": {
+        "blockTimestamp": 1793921376,
+        "blockGasUsed": "56520494",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.56520494
+      }
+    },
+    {
+      "hash": "0x4ec97599890e1728c116ca8a66ab0b0e016ed85f8baf5899a56a72c3c32539a9",
+      "number": 12072731,
+      "rowIndices": [
+        384,
+        386
+      ],
+      "fields": {
+        "blockTimestamp": 1793921352,
+        "blockGasUsed": "69425280",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.6942528
+      }
+    },
+    {
+      "hash": "0x0e24f1d3d4bf420162f1adac89693399d5b5d5e85db4aa94e7f6cabdc0392f38",
+      "number": 12072736,
+      "rowIndices": [
+        396,
+        397
+      ],
+      "fields": {
+        "blockTimestamp": 1793921412,
+        "blockGasUsed": "58433350",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.5843340580390254
+      }
+    },
+    {
+      "hash": "0xa4565e79cd3ae43ab3318ff964bd62aef02980e4fa7860008df803f368478d0b",
+      "number": 12072743,
+      "rowIndices": [
+        411,
+        413
+      ],
+      "fields": {
+        "blockTimestamp": 1793921496,
+        "blockGasUsed": "60392346",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.60392346
+      }
+    },
+    {
+      "hash": "0xfc69bd5d42a96145fbdd86a5892913ee7a39a62080b9f0aa2ececa35b8ca6ada",
+      "number": 12072755,
+      "rowIndices": [
+        435,
+        436,
+        437
+      ],
+      "fields": {
+        "blockTimestamp": 1793921640,
+        "blockGasUsed": "116859561",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 1.1685967260098733
+      }
+    },
+    {
+      "hash": "0x5076775cc11c886c74b15094fef00075ed82d11b16056c4560ecd3c7965dd8ed",
+      "number": 12072756,
+      "rowIndices": [
+        438,
+        439
+      ],
+      "fields": {
+        "blockTimestamp": 1793921652,
+        "blockGasUsed": "65769000",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.65769
+      }
+    },
+    {
+      "hash": "0x4dc8f2a589c77f3d7a3a1f74c70aa0421bb1cd8e1aa5ef204870a3fe4c3e69aa",
+      "number": 12072757,
+      "rowIndices": [
+        443
+      ],
+      "fields": {
+        "blockTimestamp": 1793921664,
+        "blockGasUsed": "59381495",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.59381495
+      }
+    },
+    {
+      "hash": "0x0e9149ae1f5de8442279d25b90ecdbdc6c61912cba0d0706002da9916beb64b0",
+      "number": 12072764,
+      "rowIndices": [
+        453,
+        454,
+        455
+      ],
+      "fields": {
+        "blockTimestamp": 1793921748,
+        "blockGasUsed": "56071487",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.5612629741637345
+      }
+    },
+    {
+      "hash": "0x19c866589444269bd1242520dd886539730c2f7b8f56fe581479bfaabb4bcec9",
+      "number": 12072768,
+      "rowIndices": [
+        462,
+        464
+      ],
+      "fields": {
+        "blockTimestamp": 1793921796,
+        "blockGasUsed": "64607831",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.64607831
+      }
+    },
+    {
+      "hash": "0x619ad88e40c23eb66db279020226669b58c4b48fcde6f602c2716714a0adbfee",
+      "number": 12072775,
+      "rowIndices": [
+        474
+      ],
+      "fields": {
+        "blockTimestamp": 1793921904,
+        "blockGasUsed": "62566830",
+        "blockGasLimit": "199609188",
+        "blockTargetUtilization": 0.626893287096584
+      }
+    },
+    {
+      "hash": "0xbf26049bd9866afd2d9e04047d71de5cdd30cc75b593d9b96882b999cea75722",
+      "number": 12072779,
+      "rowIndices": [
+        485
+      ],
+      "fields": {
+        "blockTimestamp": 1793921952,
+        "blockGasUsed": "74887757",
+        "blockGasLimit": "199608807",
+        "blockTargetUtilization": 0.7503452189862545
+      }
+    },
+    {
+      "hash": "0x93bf293a4ccbfdee0a48dc05a135fa1f173d1a37ef6263a13d13b6cf0a3d9ea2",
+      "number": 12072781,
+      "rowIndices": [
+        486
+      ],
+      "fields": {
+        "blockTimestamp": 1793921976,
+        "blockGasUsed": "71635165",
+        "blockGasLimit": "199608617",
+        "blockTargetUtilization": 0.7177562379483847
+      }
+    },
+    {
+      "hash": "0xf6ffe5559d179e7d4737eafe1bb4b4799ec355408626af1dc0509cffcbe81ada",
+      "number": 12072791,
+      "rowIndices": [
+        507
+      ],
+      "fields": {
+        "blockTimestamp": 1793922096,
+        "blockGasUsed": "131886798",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 1.31886798
+      }
+    },
+    {
+      "hash": "0xde33b23b0c1e887157c3a5dea50c5517e7f7d08552fc74e76d3565a94ce443c5",
+      "number": 12072794,
+      "rowIndices": [
+        518
+      ],
+      "fields": {
+        "blockTimestamp": 1793922132,
+        "blockGasUsed": "110382140",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 1.1038214
+      }
+    },
+    {
+      "hash": "0xf9105b733dbbef14b16566dede2b69a0ca708e546bf2e20a5f2d74c050077ad6",
+      "number": 12072800,
+      "rowIndices": [
+        525
+      ],
+      "fields": {
+        "blockTimestamp": 1793922204,
+        "blockGasUsed": "61282227",
+        "blockGasLimit": "199609569",
+        "blockTargetUtilization": 0.614020934036484
+      }
+    },
+    {
+      "hash": "0x5e4aebaa0e0106f45060e13c0b35514150a2061d95f9166e400a28e147d3e574",
+      "number": 12072802,
+      "rowIndices": [
+        532
+      ],
+      "fields": {
+        "blockTimestamp": 1793922228,
+        "blockGasUsed": "59911615",
+        "blockGasLimit": "199999619",
+        "blockTargetUtilization": 0.5991172913184399
+      }
+    },
+    {
+      "hash": "0xbee912f6d3424933c659dc528ac5c8a8854687bc3b150e53f4adc57616bd0871",
+      "number": 12072803,
+      "rowIndices": [
+        535,
+        536
+      ],
+      "fields": {
+        "blockTimestamp": 1793922240,
+        "blockGasUsed": "57337175",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.57337175
+      }
+    },
+    {
+      "hash": "0x557d6d70009047a58e3aecfa901cfc0205ff229c60eae929d86efeb5e5de9925",
+      "number": 12072805,
+      "rowIndices": [
+        538,
+        539
+      ],
+      "fields": {
+        "blockTimestamp": 1793922264,
+        "blockGasUsed": "66015250",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.6601525
+      }
+    },
+    {
+      "hash": "0x1848f2fe368f20a014c21c1b414d8905408db4462bcde9c78968b163574db927",
+      "number": 12072810,
+      "rowIndices": [
+        546
+      ],
+      "fields": {
+        "blockTimestamp": 1793922324,
+        "blockGasUsed": "61978769",
+        "blockGasLimit": "199609569",
+        "blockTargetUtilization": 0.6209999782124673
+      }
+    },
+    {
+      "hash": "0xcc5a1838d1994d0afe8b1fea0c0303df056a15bb720ce5acba8f3412b4aea56d",
+      "number": 12072811,
+      "rowIndices": [
+        550
+      ],
+      "fields": {
+        "blockTimestamp": 1793922336,
+        "blockGasUsed": "60083522",
+        "blockGasLimit": "199414639",
+        "blockTargetUtilization": 0.602598909501323
+      }
+    },
+    {
+      "hash": "0x5270570d496f3449433e65bc2036374c89dc25b82312d8724b3096179d3fd3ca",
+      "number": 12072813,
+      "rowIndices": [
+        557
+      ],
+      "fields": {
+        "blockTimestamp": 1793922360,
+        "blockGasUsed": "57616093",
+        "blockGasLimit": "199804308",
+        "blockTargetUtilization": 0.5767252325710615
+      }
+    },
+    {
+      "hash": "0x7c47b9b0f64a7c68ac89758c9597e5ea2591c139fe8da4f3c8efb02b8e6e810d",
+      "number": 12072817,
+      "rowIndices": [
+        558
+      ],
+      "fields": {
+        "blockTimestamp": 1793922408,
+        "blockGasUsed": "73799353",
+        "blockGasLimit": "199803927",
+        "blockTargetUtilization": 0.7387177430201359
+      }
+    },
+    {
+      "hash": "0x689bd3d07d4f50460c77a5cc85ed77e464ed74a10afb2835f8965137cae8f272",
+      "number": 12072822,
+      "rowIndices": [
+        568
+      ],
+      "fields": {
+        "blockTimestamp": 1793922468,
+        "blockGasUsed": "58542477",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.58542477
+      }
+    },
+    {
+      "hash": "0x3b000183e0b336935679ffc48a2dd0c537eb3073267d775bf095943a8d03977b",
+      "number": 12072825,
+      "rowIndices": [
+        575
+      ],
+      "fields": {
+        "blockTimestamp": 1793922504,
+        "blockGasUsed": "63652201",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.63652201
+      }
+    },
+    {
+      "hash": "0xa900672e0507513ea999449660a788d04a92556bc6b6ae3465d954387a4877e9",
+      "number": 12072833,
+      "rowIndices": [
+        590
+      ],
+      "fields": {
+        "blockTimestamp": 1793922600,
+        "blockGasUsed": "62871912",
+        "blockGasLimit": "199609187",
+        "blockTargetUtilization": 0.629950083409738
+      }
+    },
+    {
+      "hash": "0x1b529d654099c83b62b702fa505e6b4ab6c7f291e0315701efca30e57b89b098",
+      "number": 12072834,
+      "rowIndices": [
+        591,
+        593
+      ],
+      "fields": {
+        "blockTimestamp": 1793922612,
+        "blockGasUsed": "64561733",
+        "blockGasLimit": "199804116",
+        "blockTargetUtilization": 0.646250280449678
+      }
+    },
+    {
+      "hash": "0x6e0bbebaa06632b75e5ea4cb2aacf4d1ac4a0afa79486209a0399dae6c5441fe",
+      "number": 12072836,
+      "rowIndices": [
+        594,
+        595
+      ],
+      "fields": {
+        "blockTimestamp": 1793922636,
+        "blockGasUsed": "67443887",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.67443887
+      }
+    },
+    {
+      "hash": "0xa776e4cc1865fce1dcc201ef7e8e2397b40f9c5d2b5b741025f780f5d19d6ab8",
+      "number": 12072841,
+      "rowIndices": [
+        605
+      ],
+      "fields": {
+        "blockTimestamp": 1793922696,
+        "blockGasUsed": "96970455",
+        "blockGasLimit": "199804309",
+        "blockTargetUtilization": 0.9706542915448335
+      }
+    },
+    {
+      "hash": "0x105f072c2fd7234b2bbf79b360c7f5baab4b6e2d8e354442a7c5fdfdcd7dc73e",
+      "number": 12072844,
+      "rowIndices": [
+        610
+      ],
+      "fields": {
+        "blockTimestamp": 1793922732,
+        "blockGasUsed": "128080311",
+        "blockGasLimit": "199999238",
+        "blockTargetUtilization": 1.2808079898784415
+      }
+    },
+    {
+      "hash": "0xd67f68b5a781b06ead8522089e60b90af9bf18ffb1397718f99a9d5b1b6acb8d",
+      "number": 12072842,
+      "rowIndices": [
+        607,
+        608
+      ],
+      "fields": {
+        "blockTimestamp": 1793922708,
+        "blockGasUsed": "116224781",
+        "blockGasLimit": "199609189",
+        "blockTargetUtilization": 1.164523352679921
+      }
+    },
+    {
+      "hash": "0xd692aa1a882e001089aef3cf664fe8984e1662c615dde3d5e41311bf8c92ab71",
+      "number": 12072846,
+      "rowIndices": [
+        613
+      ],
+      "fields": {
+        "blockTimestamp": 1793922756,
+        "blockGasUsed": "114393377",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 1.1450519762326499
+      }
+    },
+    {
+      "hash": "0x81fb0d3fa7b5a55679f30f64724d4ef72490a95613d12b288babbd18cc336791",
+      "number": 12072850,
+      "rowIndices": [
+        620
+      ],
+      "fields": {
+        "blockTimestamp": 1793922804,
+        "blockGasUsed": "62659449",
+        "blockGasLimit": "199804309",
+        "blockTargetUtilization": 0.6272081849846391
+      }
+    },
+    {
+      "hash": "0x522eda1a721755ba3dfca164c78cb7cd2d30c7323155e95d919f1b42d2add0ce",
+      "number": 12072851,
+      "rowIndices": [
+        621
+      ],
+      "fields": {
+        "blockTimestamp": 1793922816,
+        "blockGasUsed": "62334128",
+        "blockGasLimit": "199999429",
+        "blockTargetUtilization": 0.6233430596444353
+      }
+    },
+    {
+      "hash": "0x3d53b330b21af3214364a0755335c4742a95a56718298b2fda0bb2a7301cb028",
+      "number": 12072853,
+      "rowIndices": [
+        625
+      ],
+      "fields": {
+        "blockTimestamp": 1793922840,
+        "blockGasUsed": "62974320",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.6297432
+      }
+    },
+    {
+      "hash": "0x665204a939ae429511e86fce3ad40bdab068f6c68e50a1e7045e3d4f80ec07c4",
+      "number": 12072856,
+      "rowIndices": [
+        630
+      ],
+      "fields": {
+        "blockTimestamp": 1793922876,
+        "blockGasUsed": "57804769",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.5780482420360712
+      }
+    },
+    {
+      "hash": "0x46570610d94c06d1f33cfa83b5813f151a98bdb2c17e29b575871d184b83f1e1",
+      "number": 12072858,
+      "rowIndices": [
+        634
+      ],
+      "fields": {
+        "blockTimestamp": 1793922900,
+        "blockGasUsed": "56127764",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.56127764
+      }
+    },
+    {
+      "hash": "0xf5558f394011a721f2dc61eeca41e3cc700479c53484366e770d274d993f4450",
+      "number": 12072861,
+      "rowIndices": [
+        643,
+        644
+      ],
+      "fields": {
+        "blockTimestamp": 1793922936,
+        "blockGasUsed": "59908903",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.59908903
+      }
+    },
+    {
+      "hash": "0x5ea45d05ac9fa538a1583e3a2656c2601e37ba33cba394e17f3ae14d235e8687",
+      "number": 12072862,
+      "rowIndices": [
+        646
+      ],
+      "fields": {
+        "blockTimestamp": 1793922948,
+        "blockGasUsed": "62148024",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.62148024
+      }
+    },
+    {
+      "hash": "0x82ac9ffe1f67727ee564497ce15dd6645373d3a3869d543006109818a27d568a",
+      "number": 12072866,
+      "rowIndices": [
+        651
+      ],
+      "fields": {
+        "blockTimestamp": 1793922996,
+        "blockGasUsed": "59963281",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.6002189568233807
+      }
+    },
+    {
+      "hash": "0x9625d0b870ad4e256c6c0c6ac7a55d5af5b9200817c591b531a5f82bf4c42c53",
+      "number": 12072870,
+      "rowIndices": [
+        660
+      ],
+      "fields": {
+        "blockTimestamp": 1793923044,
+        "blockGasUsed": "53400260",
+        "blockGasLimit": "199804308",
+        "blockTargetUtilization": 0.5345256119302493
+      }
+    },
+    {
+      "hash": "0xcc10c86eb6aadfb976e83f1a766203bac55f2c87babc6bcd547c10e80dee8681",
+      "number": 12072868,
+      "rowIndices": [
+        655,
+        656
+      ],
+      "fields": {
+        "blockTimestamp": 1793923020,
+        "blockGasUsed": "64912083",
+        "blockGasLimit": "199804499",
+        "blockTargetUtilization": 0.6497559697091706
+      }
+    },
+    {
+      "hash": "0x875ab4a0bd7ed3626204e5956d271af82bd125cf7490344d9897337f1c69cddc",
+      "number": 12072871,
+      "rowIndices": [
+        665
+      ],
+      "fields": {
+        "blockTimestamp": 1793923056,
+        "blockGasUsed": "65321490",
+        "blockGasLimit": "199999428",
+        "blockTargetUtilization": 0.653216768199957
+      }
+    },
+    {
+      "hash": "0xd8d0f785406ac9ac2c53857ba6d15dbebd0a7b5810cb41242629e7204727f333",
+      "number": 12072877,
+      "rowIndices": [
+        673
+      ],
+      "fields": {
+        "blockTimestamp": 1793923128,
+        "blockGasUsed": "60302271",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.60302271
+      }
+    },
+    {
+      "hash": "0x53db5b9e94c04423f090ee0b34a3609c56bec28d8c8ca79d3fb3768973afff83",
+      "number": 12072878,
+      "rowIndices": [
+        675,
+        677
+      ],
+      "fields": {
+        "blockTimestamp": 1793923152,
+        "blockGasUsed": "88644339",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.8873098969163832
+      }
+    },
+    {
+      "hash": "0x7ab1967aeaa33e1defa14934439abed425aeaf25101dc2ee54f98900cff85c42",
+      "number": 12072880,
+      "rowIndices": [
+        682
+      ],
+      "fields": {
+        "blockTimestamp": 1793923176,
+        "blockGasUsed": "65559508",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.65559508
+      }
+    },
+    {
+      "hash": "0xf8b5f304c42c614aa7ddb2f01b1a5e33ec654c2491a64e29a3ad08a2c0216841",
+      "number": 12072886,
+      "rowIndices": [
+        692
+      ],
+      "fields": {
+        "blockTimestamp": 1793923248,
+        "blockGasUsed": "61178105",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.6123790718445051
+      }
+    },
+    {
+      "hash": "0x2cecaa1390803270b540549706a993ae613c891bd7080bf6fa8203953df1c33e",
+      "number": 12072887,
+      "rowIndices": [
+        695
+      ],
+      "fields": {
+        "blockTimestamp": 1793923260,
+        "blockGasUsed": "62786378",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.6278643796104826
+      }
+    },
+    {
+      "hash": "0xdb93ec9b94c380cdf3e16a3d74c22bf4e0fc1a53d08dee52e17f03f067b28abb",
+      "number": 12072888,
+      "rowIndices": [
+        696,
+        698
+      ],
+      "fields": {
+        "blockTimestamp": 1793923272,
+        "blockGasUsed": "65571010",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.6557101
+      }
+    },
+    {
+      "hash": "0x988c4328c867918c731099cf5d689869218e54c60648390fd260c307386b1db0",
+      "number": 12072894,
+      "rowIndices": [
+        708,
+        709
+      ],
+      "fields": {
+        "blockTimestamp": 1793923344,
+        "blockGasUsed": "78787350",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.7878735
+      }
+    },
+    {
+      "hash": "0x628fa07d8be75087fbbf08f90ca8ecd31968c72d047dea7bd6be41080b0ba2f6",
+      "number": 12072898,
+      "rowIndices": [
+        717,
+        719
+      ],
+      "fields": {
+        "blockTimestamp": 1793923392,
+        "blockGasUsed": "78066720",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.7806672
+      }
+    },
+    {
+      "hash": "0x316edc483f6c4594314f8382a0e3edb9dd1f1e4e5b0acbaca2721219ea5bd556",
+      "number": 12072901,
+      "rowIndices": [
+        721
+      ],
+      "fields": {
+        "blockTimestamp": 1793923428,
+        "blockGasUsed": "64160224",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.64160224
+      }
+    },
+    {
+      "hash": "0xf6551f029b366bd8df84eddde19a6cda08fdae7ce677afafccdb0808f4d1624b",
+      "number": 12072915,
+      "rowIndices": [
+        745,
+        746
+      ],
+      "fields": {
+        "blockTimestamp": 1793923596,
+        "blockGasUsed": "61322938",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.61322938
+      }
+    },
+    {
+      "hash": "0x1a3b9f57d752ae577a3a470b686b0ce6f7f457094ed4b08d1de8a9f22339fd57",
+      "number": 12072908,
+      "rowIndices": [
+        733
+      ],
+      "fields": {
+        "blockTimestamp": 1793923512,
+        "blockGasUsed": "62918818",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.6298032174810472
+      }
+    },
+    {
+      "hash": "0x8c1b52179459305f11fd70478e4b4a536f02c8e98da350a6e19d5a7108fba869",
+      "number": 12072917,
+      "rowIndices": [
+        752
+      ],
+      "fields": {
+        "blockTimestamp": 1793923620,
+        "blockGasUsed": "63273725",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.63273725
+      }
+    },
+    {
+      "hash": "0xa3ddf68e3f5cfd186d939716992cef79ecae36a2057bfd1436971beb15c5ff8b",
+      "number": 12072918,
+      "rowIndices": [
+        755
+      ],
+      "fields": {
+        "blockTimestamp": 1793923632,
+        "blockGasUsed": "61252192",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.61252192
+      }
+    },
+    {
+      "hash": "0x5929f9b901e122c413fab2602d4eba79633041be27d9c9a4c79975ecd3fa26a6",
+      "number": 12072925,
+      "rowIndices": [
+        766
+      ],
+      "fields": {
+        "blockTimestamp": 1793923716,
+        "blockGasUsed": "65991821",
+        "blockGasLimit": "199804309",
+        "blockTargetUtilization": 0.6605645426796076
+      }
+    },
+    {
+      "hash": "0x1958e1f2f7f2224cc11182262be269ab0b533e643e06df5ca7f242b98c0e6e36",
+      "number": 12072927,
+      "rowIndices": [
+        769
+      ],
+      "fields": {
+        "blockTimestamp": 1793923740,
+        "blockGasUsed": "71753061",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.71753061
+      }
+    },
+    {
+      "hash": "0x072ba60c6e7ee2ea34ca52d8d1e01a7b0cc1e9d7295d2547e601274c8ff2be19",
+      "number": 12072928,
+      "rowIndices": [
+        773
+      ],
+      "fields": {
+        "blockTimestamp": 1793923752,
+        "blockGasUsed": "69855646",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.69855646
+      }
+    },
+    {
+      "hash": "0x61239beb5eb3bc2cd67ee13b23db4f930dda98b09a8b49e6f222c52c430e0a01",
+      "number": 12072930,
+      "rowIndices": [
+        775
+      ],
+      "fields": {
+        "blockTimestamp": 1793923776,
+        "blockGasUsed": "63127869",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.63127869
+      }
+    },
+    {
+      "hash": "0x6cb4cb9df7e29de0255731798c0f847270621f92cdc63ce0407a21014194cd9f",
+      "number": 12072935,
+      "rowIndices": [
+        787,
+        788
+      ],
+      "fields": {
+        "blockTimestamp": 1793923836,
+        "blockGasUsed": "64795673",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.64795673
+      }
+    },
+    {
+      "hash": "0x5f78204ae3b9d2333f30eae6960995b1a1a60ad22866d93f7637dad710e5876e",
+      "number": 12072941,
+      "rowIndices": [
+        803
+      ],
+      "fields": {
+        "blockTimestamp": 1793923920,
+        "blockGasUsed": "90032850",
+        "blockGasLimit": "199609569",
+        "blockTargetUtilization": 0.9020895185641126
+      }
+    },
+    {
+      "hash": "0xeafc1ebe678ce30d594e15029b8b8d3c10e386e5772d3ce2d55931f2121657e7",
+      "number": 12072946,
+      "rowIndices": [
+        810
+      ],
+      "fields": {
+        "blockTimestamp": 1793923980,
+        "blockGasUsed": "82269630",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.8226963
+      }
+    },
+    {
+      "hash": "0x53f747d03ec19445f42b152d13552cb68fa72519a2f67ca234517c4f4c22cfe8",
+      "number": 12072949,
+      "rowIndices": [
+        818
+      ],
+      "fields": {
+        "blockTimestamp": 1793924016,
+        "blockGasUsed": "94047570",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.9404757
+      }
+    },
+    {
+      "hash": "0x13c708db71b67433cf0faab2bdf038cbd7bdb8730a0fce2b302e1ef293ae1e53",
+      "number": 12072954,
+      "rowIndices": [
+        828
+      ],
+      "fields": {
+        "blockTimestamp": 1793924076,
+        "blockGasUsed": "56922703",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.56922703
+      }
+    },
+    {
+      "hash": "0xa597052b0f85973ba8b3d71c2d53e88a3933709715c81879a6158a2e1ee0cf5c",
+      "number": 12072950,
+      "rowIndices": [
+        821
+      ],
+      "fields": {
+        "blockTimestamp": 1793924028,
+        "blockGasUsed": "82269630",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.8226963
+      }
+    },
+    {
+      "hash": "0x030531499cdaa129fabba56d3117db64a782a5b979fdf24cb500ed6fe9c18672",
+      "number": 12072957,
+      "rowIndices": [
+        834,
+        836
+      ],
+      "fields": {
+        "blockTimestamp": 1793924112,
+        "blockGasUsed": "67592514",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.67592514
+      }
+    },
+    {
+      "hash": "0x7565a9b90246bef40961dd2733cee5bb892fd3f03264d9b639c5d7de48890ab6",
+      "number": 12072959,
+      "rowIndices": [
+        840
+      ],
+      "fields": {
+        "blockTimestamp": 1793924136,
+        "blockGasUsed": "64245782",
+        "blockGasLimit": "199999809",
+        "blockTargetUtilization": 0.6424584335478041
+      }
+    },
+    {
+      "hash": "0xef3187c99f398a2e8a6a3d1c1c6a4e6f4435f98c07421c5c51bb6f1f61a69019",
+      "number": 12072977,
+      "rowIndices": [
+        874,
+        875
+      ],
+      "fields": {
+        "blockTimestamp": 1793924352,
+        "blockGasUsed": "63449291",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.63449291
+      }
+    },
+    {
+      "hash": "0x5c1ef41ccc3669151653f7bd73471bf0bb099ed2728c80845316732208dba329",
+      "number": 12072981,
+      "rowIndices": [
+        882
+      ],
+      "fields": {
+        "blockTimestamp": 1793924400,
+        "blockGasUsed": "63974273",
+        "blockGasLimit": "199804689",
+        "blockTargetUtilization": 0.6403680846549101
+      }
+    },
+    {
+      "hash": "0xeba6641fe12afb7d6901cfd6f13da26f53d3382266020bf4af96c27044bb95b7",
+      "number": 12072988,
+      "rowIndices": [
+        899
+      ],
+      "fields": {
+        "blockTimestamp": 1793924484,
+        "blockGasUsed": "67127081",
+        "blockGasLimit": "199999238",
+        "blockTargetUtilization": 0.6712733675515303
+      }
+    },
+    {
+      "hash": "0x0fc2b02177497aa560788eefce12c79002b9306c0d7d9fd3172b90e61981a07a",
+      "number": 12072985,
+      "rowIndices": [
+        889
+      ],
+      "fields": {
+        "blockTimestamp": 1793924448,
+        "blockGasUsed": "66601790",
+        "blockGasLimit": "199804308",
+        "blockTargetUtilization": 0.6666702101338076
+      }
+    },
+    {
+      "hash": "0xe1baca6f130ae198c50156ef2df8d54f811cab29feb4d30eef6b4f3f8ae22475",
+      "number": 12072993,
+      "rowIndices": [
+        903,
+        904
+      ],
+      "fields": {
+        "blockTimestamp": 1793924544,
+        "blockGasUsed": "60179329",
+        "blockGasLimit": "199999619",
+        "blockTargetUtilization": 0.6017944364184014
+      }
+    },
+    {
+      "hash": "0xd5a45f572328bfa8e5ae60b256e724c6e2ad4611d9acca47ac05f10f0d9ada76",
+      "number": 12072994,
+      "rowIndices": [
+        906,
+        908
+      ],
+      "fields": {
+        "blockTimestamp": 1793924556,
+        "blockGasUsed": "62290208",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.62290208
+      }
+    },
+    {
+      "hash": "0xed11477d989254736b13f561d41087b54a66734cdf07ed813b9b8f2eb4846460",
+      "number": 12072996,
+      "rowIndices": [
+        913
+      ],
+      "fields": {
+        "blockTimestamp": 1793924580,
+        "blockGasUsed": "65607913",
+        "blockGasLimit": "200000000",
+        "blockTargetUtilization": 0.65607913
+      }
+    }
+  ],
+  "protectedFields": "Original timings, statuses, canonical hashes, receipts and all other sample fields preserved; original metadataError messages retained.",
+  "supplementaryReportSha256": "a6599444ac58456dab5cc44adc4fa600a411768f4f736bb1bcf85127024db710"
+}

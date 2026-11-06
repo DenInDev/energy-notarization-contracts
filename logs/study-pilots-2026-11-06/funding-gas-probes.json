@@ -1,0 +1,12 @@
+[
+  {
+    "gas": 21000,
+    "status": "error",
+    "error": "out of gas: gas required exceeds: 21000"
+  },
+  {
+    "gas": 350000,
+    "status": "ok",
+    "result": "0x"
+  }
+]

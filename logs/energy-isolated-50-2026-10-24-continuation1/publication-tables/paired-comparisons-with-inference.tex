@@ -1,0 +1,101 @@
+% BEGIN GENERATED PAIRED LATENCY TABLE
+\begin{table*}[!t]
+\caption{Paired latency comparison against the plaintext baseline}
+\label{tab:paired-lifecycle-comparison}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} &
+\textbf{Platform} &
+\textbf{Baseline Mean} &
+\textbf{FHE Mean} &
+\textbf{Paired Ratio} &
+\textbf{95\% CI} &
+\textbf{Overhead} &
+\textbf{Holm \(p\)} \\
+\hline
+
+
+\multirow{2}{*}{notarize}
+& Zama & \multirow{2}{*}{6495} & 21277 & 3.567 & [3.296, 3.814] & +256.7\% & $<0.001$ \\
+& Fhenix & & 15730 & 2.615 & [2.426, 2.785] & +161.5\% & $<0.001$ \\
+\hline
+
+\multirow{2}{*}{add}
+& Zama & 4601 & 9540 & 2.248 & [2.135, 2.361] & +124.8\% & $<0.001$ \\
+& Fhenix & 4987 & 5303 & 1.083 & [1.064, 1.099] & +8.3\% & $<0.001$ \\
+\hline
+
+\multirow{2}{*}{mul\_scalar}
+& Zama & \multirow{2}{*}{6253} & 11096 & 2.082 & [1.959, 2.216] & +108.2\% & $<0.001$ \\
+& Fhenix & & 6785 & 1.120 & [1.098, 1.142] & +12.0\% & $<0.001$ \\
+\hline
+
+\multirow{2}{*}{mean}
+& Zama & \multirow{2}{*}{4924} & 9626 & 2.232 & [2.027, 2.440] & +123.2\% & $<0.001$ \\
+& Fhenix & & 9449 & 2.181 & [2.028, 2.347] & +118.1\% & $<0.001$ \\
+\hline
+
+\multirow{2}{*}{max}
+& Zama & \multirow{2}{*}{4822} & 9675 & 2.193 & [2.088, 2.295] & +119.3\% & $<0.001$ \\
+& Fhenix & & 5080 & 1.063 & [1.052, 1.073] & +6.3\% & $<0.001$ \\
+\hline
+\end{tabular}
+\end{table*}
+
+\noindent
+Means are in milliseconds over the same round-matched successful primary
+observations in each pair ($n=50$, except Zama \texttt{add}, $n=49$).
+The two \texttt{add} baseline means differ because their matched round sets differ.
+Lifecycle is the same sum of displayed components as in the preceding tables.
+Ratios are geometric means of per-round lifecycle ratios, with overhead
+$100(\mathrm{ratio}-1)\%$. The pointwise 95\% intervals are basic circular
+block-bootstrap intervals on the mean log-ratio, transformed back to the ratio
+scale (199999 replicates, block length 3). Blocks are resampled separately
+within the original and continuation segments, preserving their sample counts.
+Two-sided tests use the corresponding null-centered bootstrap distribution;
+Holm adjustment covers all 15 comparisons across both tables. Intervals are
+pointwise, not multiplicity-adjusted. These exploratory inferences are
+conditional on successful observations and assumptions of approximate
+within-segment stationarity and weak dependence; they do not identify causal
+or isolated FHE computation effects.
+% END GENERATED PAIRED LATENCY TABLE
+
+
+% BEGIN GENERATED ZAMA FHENIX TABLE
+\begin{table*}[!t]
+\caption{Paired latency comparison: Zama fhEVM versus Fhenix CoFHE}
+\label{tab:zama-fhenix-lifecycle-comparison}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|r|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} &
+\textbf{Pairs} &
+\textbf{Fhenix Mean} &
+\textbf{Zama Mean} &
+\textbf{Paired Ratio} &
+\textbf{95\% CI} &
+\textbf{Overhead} &
+\textbf{Holm \(p\)} \\
+\hline
+
+notarize & 50 & 15730 & 21277 & 1.364 & [1.345, 1.382] & +36.4\% & $<0.001$ \\
+add & 49 & 4921 & 9540 & 2.073 & [1.966, 2.181] & +107.3\% & $<0.001$ \\
+mul\_scalar & 50 & 6785 & 11096 & 1.858 & [1.757, 1.962] & +85.8\% & $<0.001$ \\
+mean & 50 & 9449 & 9626 & 1.023 & [0.991, 1.055] & +2.3\% & 0.1593 \\
+max & 50 & 5080 & 9675 & 2.063 & [1.966, 2.156] & +106.3\% & $<0.001$ \\
+\hline
+\end{tabular}
+\end{table*}
+
+\noindent
+The ratio is Zama/Fhenix; positive overhead indicates a higher Zama lifecycle
+latency on the matched observations. Means are in milliseconds. Pairing,
+bootstrap and the joint 15-test Holm correction follow the preceding table.
+The $n=49$ \texttt{add} comparison excludes the same historical failed Zama
+primary observation from both sides of that pair.
+% END GENERATED ZAMA FHENIX TABLE

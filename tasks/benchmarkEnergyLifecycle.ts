@@ -25,6 +25,7 @@ task(
   .addOptionalParam("outputDir", "Output folder", "")
   .addOptionalParam("accountsFile", "Local accounts: baseline=1, Zama=2, Fhenix=3", ".benchmark-accounts/accounts.secret.json")
   .addOptionalParam("execution", "processes (isolated, prepared barrier) or async (legacy)", "processes")
+  .addOptionalParam("width", "Uniform input/arithmetic width: 16 or 128; omitted preserves mixed 16/64", undefined, types.int)
   .setAction(runLifecycleCampaign);
 
 task("benchmark:energy:diagnose", "Recheck a saved Zama ciphertext without sending transactions")

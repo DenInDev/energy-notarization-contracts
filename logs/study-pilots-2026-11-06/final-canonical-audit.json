@@ -1,0 +1,162 @@
+{
+  "startedAt": "2026-11-06T22:19:45.136Z",
+  "status": "verified",
+  "scope": "Read-only final canonical receipt and gas audit; no change to raw timing/outcomes",
+  "manifest": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\campaign-continuation8.json",
+  "stages": [
+    {
+      "suite": "circuits",
+      "width": 16,
+      "rawReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\circuits-euint16-continuation2\\report.json",
+      "rawSha256": "bd5f0336dd9d1b808ccf8fc270692b96368a26d647236b95dc37212a6d12c698",
+      "plannedRecordedReceipts": 222,
+      "verifiedReceipts": 222,
+      "canonicalGasCostWei": "4463092524",
+      "existingReconciliations": 0,
+      "newReconciliations": [
+        {
+          "transactionHash": "0xda6693596f03955f98b43ef7b395da61af2448253a197987ac8a727d0696b132",
+          "observedAt": "2026-11-06T22:19:54.134Z",
+          "previous": {
+            "blockHash": "0xaf4adc45d35e2ac02a12375089ddffc9de8cf75da59f757daa3057e0f98da7f3",
+            "blockNumber": 12076592,
+            "transactionIndex": 23,
+            "receiptStatus": 1,
+            "gasUsed": 2933232,
+            "effectiveGasPriceWei": "19",
+            "gasCostWei": "55731408"
+          },
+          "canonical": {
+            "blockHash": "0x90d9662911050f93f76e2dc675fd1eab63b9ae3a5a45d39377699cd5f28e5756",
+            "blockNumber": 12076594,
+            "transactionIndex": 90,
+            "receiptStatus": 1,
+            "gasUsed": 2933232,
+            "effectiveGasPriceWei": "18",
+            "gasCostWei": "52798176"
+          },
+          "sameHashSenderNonceTargetVerified": true,
+          "previousBlockNoLongerCanonical": true,
+          "canonicalReceiptRepeated": true,
+          "timingUse": "Supplementary canonical identity/gas only; first-observed timing retained and excluded from canonical latency statistics."
+        }
+      ],
+      "maxCanonicalBlock": 12076630,
+      "status": "verified",
+      "canonicalBlocksChecked": 221
+    },
+    {
+      "suite": "concurrency",
+      "width": 16,
+      "rawReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\concurrency-euint16-continuation4\\report.json",
+      "rawSha256": "215315ec2df02dd93ce3e1e0ec395d36c209e409e6c95a13f4f0fc3cec3b3e05",
+      "plannedRecordedReceipts": 735,
+      "verifiedReceipts": 735,
+      "canonicalGasCostWei": "10602020178",
+      "existingReconciliations": 1,
+      "newReconciliations": [],
+      "maxCanonicalBlock": 12077894,
+      "status": "verified",
+      "canonicalBlocksChecked": 592
+    },
+    {
+      "suite": "circuits",
+      "width": 128,
+      "rawReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\circuits-euint128-continuation1\\report.json",
+      "rawSha256": "1046dc71347a0708ace1c2a50d57be7628e9997254c039e5cccfc282a297edf9",
+      "plannedRecordedReceipts": 218,
+      "verifiedReceipts": 218,
+      "canonicalGasCostWei": "3889423955",
+      "existingReconciliations": 0,
+      "newReconciliations": [],
+      "maxCanonicalBlock": 12078448,
+      "status": "verified",
+      "canonicalBlocksChecked": 218
+    },
+    {
+      "suite": "concurrency",
+      "width": 128,
+      "rawReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\concurrency-euint128-continuation1\\report.json",
+      "rawSha256": "42b1194d1601dcbecfeaf1cf388fed7cafa2397c71ee43d6bb4f48897b687dde",
+      "plannedRecordedReceipts": 735,
+      "verifiedReceipts": 735,
+      "canonicalGasCostWei": "10947972204",
+      "existingReconciliations": 1,
+      "newReconciliations": [],
+      "maxCanonicalBlock": 12079463,
+      "status": "verified",
+      "canonicalBlocksChecked": 592
+    }
+  ],
+  "mutationCalls": 0,
+  "finalizedBlockAtAudit": 12079408,
+  "maxCanonicalBlock": 12079463,
+  "allReceiptsAtOrBelowFinalized": true,
+  "finishedAt": "2026-11-06T22:21:51.651Z",
+  "finalizationChecks": [
+    {
+      "at": "2026-11-06T22:25:02.346Z",
+      "finalizedBlock": 12079408,
+      "finalizedHash": "0x59d4d94cc023e22fc74f7910d281643e2ef6c3145b0c6a13828380745ca2674b",
+      "target": 12079463
+    },
+    {
+      "at": "2026-11-06T22:25:52.461Z",
+      "finalizedBlock": 12079438,
+      "finalizedHash": "0xafee675e2c3e79742feb1697f37b88875a07d74b80718cd2f72b669da7906a4d",
+      "target": 12079463
+    },
+    {
+      "at": "2026-11-06T22:26:42.583Z",
+      "finalizedBlock": 12079438,
+      "finalizedHash": "0xafee675e2c3e79742feb1697f37b88875a07d74b80718cd2f72b669da7906a4d",
+      "target": 12079463
+    },
+    {
+      "at": "2026-11-06T22:27:32.689Z",
+      "finalizedBlock": 12079438,
+      "finalizedHash": "0xafee675e2c3e79742feb1697f37b88875a07d74b80718cd2f72b669da7906a4d",
+      "target": 12079463
+    },
+    {
+      "at": "2026-11-06T22:28:22.825Z",
+      "finalizedBlock": 12079438,
+      "finalizedHash": "0xafee675e2c3e79742feb1697f37b88875a07d74b80718cd2f72b669da7906a4d",
+      "target": 12079463
+    },
+    {
+      "at": "2026-11-06T22:29:12.945Z",
+      "finalizedBlock": 12079438,
+      "finalizedHash": "0xafee675e2c3e79742feb1697f37b88875a07d74b80718cd2f72b669da7906a4d",
+      "target": 12079463
+    },
+    {
+      "at": "2026-11-06T22:30:03.075Z",
+      "finalizedBlock": 12079438,
+      "finalizedHash": "0xafee675e2c3e79742feb1697f37b88875a07d74b80718cd2f72b669da7906a4d",
+      "target": 12079463
+    },
+    {
+      "at": "2026-11-06T22:30:53.185Z",
+      "finalizedBlock": 12079438,
+      "finalizedHash": "0xafee675e2c3e79742feb1697f37b88875a07d74b80718cd2f72b669da7906a4d",
+      "target": 12079463
+    },
+    {
+      "at": "2026-11-06T22:31:43.336Z",
+      "finalizedBlock": 12079438,
+      "finalizedHash": "0xafee675e2c3e79742feb1697f37b88875a07d74b80718cd2f72b669da7906a4d",
+      "target": 12079463
+    },
+    {
+      "at": "2026-11-06T22:32:33.448Z",
+      "finalizedBlock": 12079469,
+      "finalizedHash": "0x777b188877b646698c3df0e8b491e1139e9ffd4579739b2e5a5f9aa037c4ee0c",
+      "target": 12079463
+    }
+  ],
+  "finalizedBlockAtCompletion": 12079469,
+  "finalizedHashAtCompletion": "0x777b188877b646698c3df0e8b491e1139e9ffd4579739b2e5a5f9aa037c4ee0c",
+  "recentReceiptsRecheckedAfterFinalization": 53,
+  "finalizationVerifiedAt": "2026-11-06T22:32:39.472Z"
+}

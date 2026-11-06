@@ -23,10 +23,11 @@ export async function readLifecycleResult(
   caller: string,
   getter: string,
   receiptBlockHash: string,
+  getterArgs: unknown[] = [],
 ): Promise<bigint | string> {
   // A load-balanced RPC's latest state can lag a receipt observed on another backend.
   const result = await send("eth_call", [
-    { to: address, from: caller, data: abi.encodeFunctionData(getter) },
+    { to: address, from: caller, data: abi.encodeFunctionData(getter, getterArgs) },
     { blockHash: receiptBlockHash, requireCanonical: true },
   ]);
   return abi.decodeFunctionResult(getter, result)[0];

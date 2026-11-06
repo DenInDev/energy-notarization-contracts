@@ -1,0 +1,34 @@
+title FHE transaction lifecycle
+
+participant "Client / SDK" as C
+participant "Host chain / contract" as S
+participant "Off-chain FHE services" as E
+
+C->>(1)S:Submit FHE transaction
+activate S
+S->S:Derive and store output handle h
+note over S:Symbolic execution on-chain
+parallel
+S-->(1)C:Transaction receipt
+S->>(1)E:Observe operation event
+parallel off
+space -3.6
+deactivate S
+space -0.5
+activate E
+E->E:Evaluate the encrypted operation
+
+C->S:Read result at receipt block
+S-->C:Return handle h
+
+loop Until plaintext is validated or the deadline expires
+  C->>(1)E:Request or poll authorized decryption of h
+  alt Pending or retryable not-ready response
+    E-->(1)C:Pending status or retryable error
+    C->C:Wait before the next attempt
+  else Result available
+    E-->(1)C:Return protected result
+    C->C:Unseal and validate plaintext
+  end
+end
+deactivate E

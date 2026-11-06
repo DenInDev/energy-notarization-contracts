@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "createdAt": "2026-11-06T10:55:18.101Z",
+  "chainId": 11155111,
+  "authorization": "User requested continuing the two focused studies; initial reduced pilots only, no full matrix launched.",
+  "accountsFile": ".benchmark-accounts/studies/accounts.secret.json",
+  "stages": [
+    {
+      "suite": "circuits",
+      "width": 16,
+      "measuredTransactions": 81,
+      "warmupTransactions": 27,
+      "setupTransactions": 114,
+      "requiredAccounts": 1,
+      "outputDir": "logs/study-pilots-2026-11-06/circuits-euint16-continuation1",
+      "status": "failed",
+      "planFile": "circuits-euint16-continuation1-plan.json",
+      "continuationFrom": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\circuits-euint16\\report.json",
+      "sourceReportSha256": "f08036a0b4152af83762aeddd7054b440f9e1aa6fa72aa8b83c93599c6b47020",
+      "sourceMeasuredOk": 4,
+      "sourceWarmupsOk": 27,
+      "expectedNewComputeSends": 77,
+      "expectedNewInputLoads": 76,
+      "expectedNewDeployments": 0,
+      "startedAt": "2026-11-06T11:44:23.010Z",
+      "error": "execution reverted: Wrong input count"
+    },
+    {
+      "suite": "concurrency",
+      "width": 16,
+      "measuredTransactions": 432,
+      "warmupTransactions": 216,
+      "setupTransactions": 87,
+      "requiredAccounts": 3,
+      "outputDir": "logs/study-pilots-2026-11-06/concurrency-euint16",
+      "status": "planned"
+    },
+    {
+      "suite": "circuits",
+      "width": 128,
+      "measuredTransactions": 81,
+      "warmupTransactions": 27,
+      "setupTransactions": 114,
+      "requiredAccounts": 1,
+      "outputDir": "logs/study-pilots-2026-11-06/circuits-euint128",
+      "status": "planned"
+    },
+    {
+      "suite": "concurrency",
+      "width": 128,
+      "measuredTransactions": 432,
+      "warmupTransactions": 216,
+      "setupTransactions": 87,
+      "requiredAccounts": 3,
+      "outputDir": "logs/study-pilots-2026-11-06/concurrency-euint128",
+      "status": "planned"
+    }
+  ],
+  "totalPlannedTransactions": 1914,
+  "feeQuote": {
+    "maxFeePerGasWei": "34",
+    "maxPriorityFeePerGasWei": "2"
+  },
+  "sourcePolicy": "No funding, no mined transactions, no deployment, no account reuse while awaiting funding choice.",
+  "funding": {
+    "status": "finished",
+    "report": "logs/study-pilots-2026-11-06/funding-attempt2.json",
+    "retainedFailedAttempt": "logs/study-pilots-2026-11-06/funding.json",
+    "totalTransferredEth": "0.003"
+  },
+  "parentManifest": {
+    "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\campaign.json",
+    "sha256": "6acb547da3da1d27655f02aa4dc7b0ac9b83107cd8609c82e66720baadec0d1b"
+  },
+  "continuationReason": "Read-only-verified FHEVM plugin initialization repair; preserve original report and failed preparation, continue only unattempted circuit computations, reuse confirmed input loads.",
+  "remainingPlannedTransactions": 1845,
+  "startedAt": "2026-11-06T11:44:21.705Z",
+  "pid": 36484,
+  "sourceSnapshot": {
+    "files": {
+      "scripts/run-study-pilots.cjs": "76e8bf5cd43e5ac212350c29c8dc66c4668758d296271e23ee7e403d9af61ff0",
+      "hardhat.config.ts": "f2c7451f127f8f87555025976a0d37c84208f9630b842a769d0c773c50496b3d",
+      "package-lock.json": "4571f420b5ef346a377e26b0d86ed6d3c9c4cfa5e268e184f876936f862fa35e",
+      "tasks/benchmarkExperiments.ts": "33ad628b72733fc55e0cf9dec1547fae5240567761a3e5ef0d3783024622d253",
+      "tasks/experiments/accounts.ts": "2a930be994cd3ba0808f3f79fd88641b472a86c639a33883f2149f3fe3bca75e",
+      "tasks/lifecycle/broadcast.ts": "b1106a4e490c4d395cba490d12641d40c7e2d5ae2fe3bc0d06c0fbb687a7dfd9",
+      "tasks/lifecycle/errors.ts": "6871cf491202633327f12a054e1e9cbde2c75aa51df2da01912ef4698c2b7ccd",
+      "tasks/lib/lifecycleTiming.ts": "11ca028648485eca0a34ca4166dcf12662838609b73c5ee7ad3fcfa1e82b9164",
+      "tasks/lib/lifecycleReadRetry.ts": "2841400f23a743978c6041996fe37ac75e81253b2817cccd09fcae6401fafa79",
+      "tasks/lib/lifecycleNonce.ts": "9514a35406d16839c932269580fe863c3db1fa05ad351602a6b547f5747eda08",
+      "tasks/lib/lifecycleResult.ts": "d02bdfc151228a0b67210bc079a10f4af90fed3b85fb0c50e47f41aad3b23cfa",
+      "tasks/lib/lifecycleReportWrite.ts": "024ce556ba300422b0ae8732fa35fff7941b9965095ba4d830b6d11812a328b1",
+      "tasks/lib/cofheReadPolicy.ts": "d135b4bcb2d63be4dbe17529ff9de8c23366f9234fcc820fca1f36be67236279",
+      "tasks/lib/decryptionPolling.cjs": "b436d09f7c9c148f8c39205be554701e4977e95ddd59e2eb0789ade9717cc5e1",
+      "tasks/studies/adapters.ts": "32da75d997818aa371a7e339b3873a524fb872f5180c145cd95a6d405cd436f7",
+      "tasks/studies/capacity.ts": "ca5dc996204c668b76d6186e07ce3a9f16624aee4518d0eb9d9a636a3e64100a",
+      "tasks/studies/continuation.ts": "4e7e9311cb4277bb92bd066e86864e9f8522d856c0b90eb3eccdabf8ca0b8ba3",
+      "tasks/studies/oracle.ts": "303b362ad5a67e3bd92d1c827b3c589965d13a027eebec619a9f74afa65657df",
+      "tasks/studies/plan.ts": "1df1033eb7014f4fa9144428c77a1d8622adc741fe3b31e8243f2372666fb0ff",
+      "tasks/studies/report.ts": "5bc0cdc9be1c72f6965290baeca1f4d2bd974190ef455ba18b0c38223d02a33d",
+      "tasks/studies/runner.ts": "49a07bc453438adc31e7f6354d1f63845ed7f05140c1ea238f5f9791006899a4",
+      "tasks/studies/transactions.ts": "d02d5cba30875189ad75717a01fbcf7804a0185d119f793ea7c3535c4a585df0",
+      "tasks/studies/types.ts": "95f8ee4f85a10d362f394993506d9864cefa5fb37c7a1f26b725cd408b4767cc",
+      "contracts/studies/StudyCoFHE.sol": "aaa41702bddc7284fdb894483892a44dd3cbba9f0bda49a48e705e1483864ef8",
+      "contracts/studies/StudyPlain.sol": "c547d2da2b8fe7512520f5201aa0703b4e9062564e7e2ae0d730210d16bde92c",
+      "contracts/studies/StudyZama.sol": "763d22515b2e6d5fe2485efb1ea20010b15ff80362a33ae8ef7027373b64cfba"
+    },
+    "polling": {
+      "requestedIntervalMs": 10,
+      "serverRetryAfter": "respected; can lengthen the effective interval",
+      "patch": "benchmark-decryption-polling-v1",
+      "bundles": {
+        "zama": {
+          "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+          "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+        },
+        "zamaEsm": {
+          "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+          "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+        },
+        "fhenix": {
+          "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+          "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+        }
+      }
+    }
+  },
+  "currentStage": "circuits/euint16",
+  "currentReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\circuits-euint16-continuation1\\report.json",
+  "error": "execution reverted: Wrong input count",
+  "finishedAt": "2026-11-06T11:46:43.834Z"
+}

@@ -1,0 +1,13 @@
+{
+  "runs": 50,
+  "status": "failed",
+  "stdout": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-2026-10-22.stdout.log",
+  "pid": 24404,
+  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-2026-10-22/report.json",
+  "stderr": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-2026-10-22.stderr.log",
+  "startedAt": "2026-10-22T16:43:52.9257359Z",
+  "failedAt": "2026-10-22T17:02:44.201Z",
+  "failure": "Run 11 add: receipt-pinned result reads failed with block not found on baseline and Fhenix. Follow-up RPC found the block and successful receipts; no rerun or report edits.",
+  "measuredSucceeded": 154,
+  "measuredAttempted": 156
+}

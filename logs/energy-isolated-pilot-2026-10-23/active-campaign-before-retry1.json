@@ -1,0 +1,16 @@
+{
+  "stderr": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-isolated-pilot-2026-10-23.stderr.log",
+  "runs": 1,
+  "executionMode": "isolated_processes_prepared_submission_barrier",
+  "previousReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-poll100-2026-10-23-continuation1/report.json",
+  "startedAt": "2026-10-23T16:28:30.8034720Z",
+  "pid": 40196,
+  "purpose": "Validation pilot of corrected runner, not 50-run statistical campaign",
+  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-isolated-pilot-2026-10-23/report.json",
+  "status": "failed_before_transactions",
+  "stdout": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-isolated-pilot-2026-10-23.stdout.log",
+  "serverRetryAfter": "respected",
+  "pollingBaseMs": 100,
+  "error": "Platform process exited (1)",
+  "failedAt": "2026-10-23T16:28:41.378Z"
+}

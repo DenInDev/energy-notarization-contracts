@@ -7,6 +7,16 @@ import type {
 
 
 export type Platform = LifecyclePlatform;
+export type UniformWidth = 16 | 128;
+
+export function lifecycleContracts(width?: UniformWidth) {
+  if (width === undefined) return contracts;
+  return {
+    baseline: `EnergyUniformPlain${width}`,
+    zama: `EnergyUniformZama${width}`,
+    fhenix: `EnergyUniformCoFHE${width}`,
+  };
+}
 
 export type Operation = LifecycleOperation;
 
@@ -17,6 +27,15 @@ export const operations: Operation[] = [
   "mean",
   "max",
 ];
+
+// The ownership import precedes energy operations only in the uniform workload.
+// Classic mixed-width campaigns keep their original five-operation schedule.
+export function lifecycleOperations(width?: UniformWidth): Operation[] {
+  return width === undefined ? [...operations] : ["set_meter_owner", ...operations];
+}
+
+export const smartMeterId = "0x" + Buffer.from("energy-benchmark-smart-meter-001").toString("hex").padEnd(64, "0");
+export const smartMeterOwner = "0x1234567890abcdef1234567890abcdef12345678";
 
 export const contracts = {
   baseline: "EnergyNotarizationPlainTest",
@@ -50,6 +69,9 @@ export type Sample = {
   alreadyReadyDecryptMs?: number;
   plaintext?: string;
   expectedPlaintext: string;
+  smartMeterId?: string;
+  expectedOwnerAddress?: string;
+  plaintextAddress?: string;
   outputHandle?: string;
   error?: string;
   readyDecryptError?: string;
@@ -80,13 +102,13 @@ export type Sample = {
 };
 
 export type Adapter = {
-  encrypt(value: bigint, trace: TimingTrace, timeoutMs?: number): Promise<unknown[]>;
+  encrypt(value: bigint, trace: TimingTrace, timeoutMs?: number, kind?: "integer" | "address"): Promise<unknown[]>;
   decrypt(
     handle: bigint | string,
     trace: TimingTrace,
     phase: "completion" | "already_ready",
     timeoutMs?: number,
-    width?: 16 | 64,
+    width?: 16 | 64 | 128 | "address",
   ): Promise<unknown>;
 };
 
@@ -95,6 +117,7 @@ export type PlatformContext = {
   adapter: Adapter;
   last: bigint;
   total: bigint;
+  width?: UniformWidth;
 };
 
 export type BenchmarkArgs = {
@@ -106,4 +129,27 @@ export type BenchmarkArgs = {
   outputDir: string;
   accountsFile?: string;
   execution?: "processes" | "async";
+  width?: UniformWidth;
+};
+
+export type ViewDecryptSample = {
+  platform: Platform;
+  operation: "view_decrypt";
+  run: number;
+  warmup: boolean;
+  width: UniformWidth;
+  status: "pending" | "ok" | "error";
+  startedAt: string;
+  completedAt?: string;
+  workerPid: number;
+  referenceTransactionHash: string;
+  referenceBlockHash: string;
+  expectedPlaintext: string;
+  plaintext?: string;
+  outputHandle?: string;
+  viewMs?: number;
+  decryptAndValidationMs?: number;
+  viewToValidatedPlaintextMs?: number;
+  stages: TimingTrace["stages"];
+  error?: string;
 };

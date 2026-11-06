@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 
 export type LifecyclePlatform = "baseline" | "zama" | "fhenix";
-export type LifecycleOperation = "notarize" | "add" | "mul_scalar" | "mean" | "max";
+export type LifecycleOperation = "set_meter_owner" | "notarize" | "add" | "mul_scalar" | "mean" | "max";
 export type ScheduledComparison = {
   run: number;
   operation: LifecycleOperation;

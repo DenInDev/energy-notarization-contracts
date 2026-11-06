@@ -7,14 +7,15 @@ import { buildLifecycleSchedule, type ScheduledComparison } from "../lib/lifecyc
 import { createLifecycleReport, saveLifecycleReport, type LifecycleReport } from "./report";
 import { createLifecycleWorker, type LifecycleWorkerClient } from "./workerClient";
 import { safeError } from "./errors";
-import { operations, type BenchmarkArgs, type Platform, type Sample } from "./types";
+import { readSettledNonce } from "../lib/lifecycleNonce";
+import { lifecycleOperations, smartMeterOwner, type BenchmarkArgs, type Platform, type Sample, type ViewDecryptSample } from "./types";
 
 export type ProcessContinuation = {
   report: LifecycleReport;
   segment: any;
   owners: Awaited<ReturnType<typeof loadProcessOwners>>;
   saveReport: () => void;
-  remaining: ScheduledComparison[];
+  remaining: (ScheduledComparison & { retryOfTransactionHash?: string })[];
   resume: Record<Platform, any>;
 };
 
@@ -42,6 +43,7 @@ export async function loadProcessOwners(
 export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: HardhatRuntimeEnvironment,
   continuation?: ProcessContinuation) {
   if (!args.accountsFile) throw new Error("Process isolation requires saved independent platform accounts");
+  if (args.width !== undefined && ![16, 128].includes(args.width)) throw new Error("Invalid uniform width");
   if (!Number.isInteger(args.runs) || args.runs < 1 || args.runs > 1000 ||
       !Number.isInteger(args.timeout) || args.timeout < 10 || !Number.isInteger(args.setupTimeout ?? args.timeout) ||
       (args.setupTimeout ?? args.timeout) < 10) throw new Error("Invalid campaign limits");
@@ -49,6 +51,11 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
 
   const selected: Platform[] = args.platform === "all" ? ["baseline", "zama", "fhenix"] :
     args.platform === "both" ? ["zama", "fhenix"] : [args.platform as Platform];
+  if (continuation && args.width !== undefined &&
+      (continuation.segment.platformOnly !== "fhenix" || continuation.segment.uniformWidth !== args.width ||
+       selected.length !== 1 || selected[0] !== "fhenix")) {
+    throw new Error("Uniform-width continuation requires the explicit validated Fhenix-only plan");
+  }
   const owners = continuation?.owners ?? await loadProcessOwners(hre, args.accountsFile, selected);
 
   const output = path.resolve(args.outputDir || `logs/energy-process-${new Date().toISOString().replace(/[:.]/g, "-")}`);
@@ -57,13 +64,15 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
 
   fs.mkdirSync(output, { recursive: true });
 
+  const operations = lifecycleOperations(args.width);
   const schedule = buildLifecycleSchedule(args.runs, selected, operations, args.seed);
   const samples: Sample[] = continuation?.report.samples ?? [], setup: any[] = continuation?.report.setup ?? [];
   const report = continuation?.report ?? createLifecycleReport(args, hre, owners.get(selected[0])! as unknown as HardhatEthersSigner,
     selected, schedule, setup, samples);
 
-  report.schemaVersion = 12; report.executionMode = "isolated_processes_prepared_submission_barrier";
-  report.platformOwners = Object.fromEntries([...owners].map(([p, s]) => [p, s.address]));
+  report.schemaVersion = args.width === undefined ? 12 : 14;
+  report.executionMode = "isolated_processes_prepared_submission_barrier";
+  if (!continuation) report.platformOwners = Object.fromEntries([...owners].map(([p, s]) => [p, s.address]));
   report.signerMode = "independent_platform_accounts";
   report.methodology.confirmation = "Before prepared transaction broadcast invocation to observation of its successful receipt (1 inclusion confirmation; not finality); signing and gas estimation precede the barrier";
   report.methodology.completion = "Prepared broadcast invocation to equality-validated plaintext; input preparation, transaction preparation and barrier wait excluded and recorded separately";
@@ -81,6 +90,11 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
   if (continuation) continuation.segment.previousWorkers = runtime.workers;
 
   runtime.workers = {}; runtime.barriers ??= [];
+  runtime.retrySamples ??= [];
+  if (args.width !== undefined) {
+    runtime.viewDecryptSamples ??= [];
+    runtime.methodology.viewDecrypt = "Once after max in every round including warmup; concurrent persisted getLastResult eth_call at the max receipt block plus fresh SDK authorized decryption and equality validation, one shared observation deadline per worker; all waits retained; no transaction or arithmetic preview.";
+  }
 
   let persistenceError: string | undefined;
 
@@ -110,9 +124,11 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
   // Identifies a sample by platform, round, operation and warmup status.
   // Replaces its earlier snapshot or appends it when first observed.
   const upsertSample = (sample: Sample) => {
-    const i = samples.findIndex(s => s.platform === sample.platform && s.run === sample.run && s.operation === sample.operation && s.warmup === sample.warmup);
+    const target: Sample[] = (sample as any).retryOfTransactionHash ? runtime.retrySamples : samples;
+    const i = target.findIndex(s => s.platform === sample.platform && s.run === sample.run && s.operation === sample.operation && s.warmup === sample.warmup &&
+      (s as any).retryOfTransactionHash === (sample as any).retryOfTransactionHash);
 
-    if (i < 0) samples.push(sample); else samples[i] = sample;
+    if (i < 0) target.push(sample); else target[i] = sample;
   };
 
   try {
@@ -120,10 +136,9 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
 
     for (const p of selected) {
       const owner = owners.get(p)!;
-      const pending = BigInt(await hre.ethers.provider.send("eth_getTransactionCount", [owner.address, "pending"]));
-      const latest = BigInt(await hre.ethers.provider.send("eth_getTransactionCount", [owner.address, "latest"]));
+      await readSettledNonce((method, params) => hre.ethers.provider.send(method, params), owner.address);
 
-      if (pending !== latest || await hre.ethers.provider.getBalance(owner.address) === 0n)
+      if (await hre.ethers.provider.getBalance(owner.address) === 0n)
         throw new Error(`Funded signer with no pending transactions required for ${p}`);
     }
 
@@ -131,6 +146,11 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
       const worker = createLifecycleWorker(message => {
         if (message?.type === "fatal") runtime.workerStartupError = { platform: p, error: message.error };
         if (message?.type === "sample" && message.sample?.platform === p) upsertSample(message.sample);
+        if (message?.type === "view_sample" && message.sample?.platform === p) {
+          const views: ViewDecryptSample[] = runtime.viewDecryptSamples;
+          const i = views.findIndex(s => s.platform === p && s.run === message.sample.run && s.warmup === message.sample.warmup);
+          if (i < 0) views.push(message.sample); else views[i] = message.sample;
+        }
         if (message?.type === "setup" && message.entry?.platform === p) {
           const i = setup.findIndex(e => e.platform === p);
 
@@ -145,11 +165,14 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
 
       const initialized = await worker.request("initialize", { platform: p, ownerAddress: owners.get(p)!.address,
         accountsFile: path.resolve(args.accountsFile), timeoutMs, setupTimeoutMs,
+        width: args.width,
+        readPolicy: continuation?.segment.readPolicy,
         resume: continuation?.resume[p] }, commandBudget);
 
       if (continuation) {
         continuation.segment.checks.push(initialized);
         continuation.segment.recoveries.push(...initialized.recoveries);
+        if (initialized.recoveryView) continuation.segment.recoveryViews.push(initialized.recoveryView);
         save();
       }
 
@@ -166,7 +189,7 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
     }
 
     const warmup = buildLifecycleSchedule(1, selected, operations, args.seed).map(c => ({ ...c, run: 0, warmup: true }));
-    const comparisons = continuation ? continuation.remaining.map(c => ({ ...c, warmup: false })) :
+    const comparisons: (ScheduledComparison & { warmup: boolean; retryOfTransactionHash?: string })[] = continuation ? continuation.remaining.map(c => ({ ...c, warmup: false })) :
       [...warmup, ...schedule.map(c => ({ ...c, warmup: false }))];
 
     for (const comparison of comparisons) {
@@ -180,7 +203,9 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
       const prepared = await Promise.allSettled(comparison.order.map((platform, position) =>
         workers.get(platform)!.request("prepare", { fees, request: { platform, operation: comparison.operation,
           run: comparison.run, warmup: comparison.warmup, orderPosition: position + 1,
-          value: String(comparison.operation === "notarize" ? 42 + comparison.run : 3 + comparison.run) } }, commandBudget)));
+          retryOfTransactionHash: comparison.retryOfTransactionHash,
+          value: comparison.operation === "set_meter_owner" ? BigInt(smartMeterOwner).toString()
+            : String(comparison.operation === "notarize" ? 42 + comparison.run : 3 + comparison.run) } }, commandBudget)));
       const preparationFailure = prepared.find(r => r.status === "rejected");
 
       verifyPersistence();
@@ -189,6 +214,7 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
 
       // Signed hashes/nonces are journaled before any permission to broadcast.
       const barrier: any = { run: comparison.run, operation: comparison.operation, warmup: comparison.warmup,
+        retryOfTransactionHash: comparison.retryOfTransactionHash,
         fees, prepared: Object.fromEntries(comparison.order.map((p, i) =>
           [p, { hash: (prepared[i] as PromiseFulfilledResult<Sample>).value.preparedTransactionHash,
             at: (prepared[i] as PromiseFulfilledResult<Sample>).value.preparationCompletedAt }])) };
@@ -209,7 +235,10 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
 
       for (const result of settled) if (result.status === "fulfilled") upsertSample(result.value);
 
-      const rows = samples.filter(s => s.run === comparison.run && s.operation === comparison.operation && s.warmup === comparison.warmup);
+      const target: Sample[] = comparison.retryOfTransactionHash ? runtime.retrySamples : samples;
+      const rows = target.filter(s => selected.includes(s.platform) && s.run === comparison.run &&
+        s.operation === comparison.operation && s.warmup === comparison.warmup &&
+        (s as any).retryOfTransactionHash === comparison.retryOfTransactionHash);
       const starts = rows.flatMap(s => s.broadcastStartedAt ? [Date.parse(s.broadcastStartedAt)] : []);
 
       barrier.broadcastStartSpreadMs = starts.length === selected.length ? Math.max(...starts) - Math.min(...starts) : null;
@@ -225,12 +254,27 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
 
       if (settled.some(r => r.status === "rejected") || rows.length !== selected.length || rows.some(s => s.status !== "ok"))
         throw new Error("Isolated campaign stopped after all current workers settled; observations and prepared transaction hashes retained");
+
+      if (args.width !== undefined && comparison.operation === "max") {
+        const reads = await Promise.allSettled(selected.map(p => workers.get(p)!.request("view_decrypt", {}, commandBudget)));
+        save();
+        verifyPersistence();
+        const failedRead = reads.some(result => result.status === "rejected" || result.value.status !== "ok");
+        if (failedRead) throw new Error("Separate view_decrypt failed; all primary and read observations retained");
+        console.log(`${comparison.warmup ? "warmup" : `run ${comparison.run}`} view_decrypt: all platforms validated`);
+      }
     }
 
     if (continuation) {
       continuation.segment.status = "finished";
       continuation.segment.completedAt = new Date().toISOString();
-      runtime.executionComplete = true; runtime.executionCompletedAt = continuation.segment.completedAt;
+      if (continuation.segment.platformOnly) {
+        runtime.platformExecutionComplete ??= {};
+        runtime.platformExecutionComplete[continuation.segment.platformOnly] = true;
+        runtime.executionComplete = samples.filter(s => !s.warmup).length ===
+          report.selectedPlatforms.length * report.runs * operations.length;
+      } else runtime.executionComplete = true;
+      runtime.executionCompletedAt = continuation.segment.completedAt;
       report.complete = samples.every(s => s.status === "ok");
     } else { report.complete = true; report.completedAt = new Date().toISOString(); }
 

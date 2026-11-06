@@ -1,0 +1,141 @@
+{
+  "at": "2026-11-06T00:48:26.410Z",
+  "rawReportSha256": "a156c28e4815ab3314726ff7ae800c581db40c2d8ec7bdfea51b47872bb4cebb",
+  "requestedBaseMs": 10,
+  "scope": "Observed Zama decrypt progress hints (input-proof hints excluded), CoFHE SDK poll hints, receipt-read poll events, read retries, and CoFHE HTTP headers. Hints are not measured sleep durations. HTTP 404/204 readiness responses are not counted as primary failures.",
+  "groups": {
+    "baseline/warmup_primary": {
+      "samples": 6,
+      "retryAfterHintsMs": {},
+      "cofheIntervalHintsMs": {},
+      "receiptPollIntervalsMs": {
+        "500": 113
+      },
+      "httpStatusCounts": {},
+      "readRetryEvents": {},
+      "retryBackoffSpans": 0,
+      "retryBackoffObservedMs": 0
+    },
+    "fhenix/warmup_primary": {
+      "samples": 6,
+      "retryAfterHintsMs": {},
+      "cofheIntervalHintsMs": {
+        "100": 71
+      },
+      "receiptPollIntervalsMs": {
+        "500": 114
+      },
+      "httpStatusCounts": {
+        "200": 8,
+        "204": 71
+      },
+      "readRetryEvents": {
+        "completion.handle.receipt_block_retry": 1
+      },
+      "retryBackoffSpans": 1,
+      "retryBackoffObservedMs": 101.1871000000101
+    },
+    "zama/warmup_primary": {
+      "samples": 6,
+      "retryAfterHintsMs": {
+        "2000": 9
+      },
+      "cofheIntervalHintsMs": {},
+      "receiptPollIntervalsMs": {
+        "500": 115
+      },
+      "httpStatusCounts": {},
+      "readRetryEvents": {
+        "completion.acl_check_retry": 2
+      },
+      "retryBackoffSpans": 2,
+      "retryBackoffObservedMs": 2017.4556000000011
+    },
+    "baseline/measured_primary": {
+      "samples": 59,
+      "retryAfterHintsMs": {},
+      "cofheIntervalHintsMs": {},
+      "receiptPollIntervalsMs": {
+        "500": 1075
+      },
+      "httpStatusCounts": {},
+      "readRetryEvents": {
+        "completion.handle.receipt_block_retry": 3
+      },
+      "retryBackoffSpans": 3,
+      "retryBackoffObservedMs": 327.7851999999257
+    },
+    "fhenix/measured_primary": {
+      "samples": 59,
+      "retryAfterHintsMs": {},
+      "cofheIntervalHintsMs": {
+        "100": 743
+      },
+      "receiptPollIntervalsMs": {
+        "500": 1081
+      },
+      "httpStatusCounts": {
+        "200": 78,
+        "204": 722,
+        "404": 21,
+        "429": 1
+      },
+      "readRetryEvents": {
+        "completion.handle.receipt_block_retry": 5
+      },
+      "retryBackoffSpans": 5,
+      "retryBackoffObservedMs": 523.0317000000505
+    },
+    "zama/measured_primary": {
+      "samples": 59,
+      "retryAfterHintsMs": {
+        "2000": 86
+      },
+      "cofheIntervalHintsMs": {},
+      "receiptPollIntervalsMs": {
+        "500": 1079
+      },
+      "httpStatusCounts": {},
+      "readRetryEvents": {
+        "completion.acl_check_retry": 16,
+        "completion.handle.receipt_block_retry": 3
+      },
+      "retryBackoffSpans": 19,
+      "retryBackoffObservedMs": 16447.89350000024
+    },
+    "baseline/view_decrypt": {
+      "samples": 10,
+      "retryAfterHintsMs": {},
+      "cofheIntervalHintsMs": {},
+      "receiptPollIntervalsMs": {},
+      "httpStatusCounts": {},
+      "readRetryEvents": {},
+      "retryBackoffSpans": 0,
+      "retryBackoffObservedMs": 0
+    },
+    "fhenix/view_decrypt": {
+      "samples": 10,
+      "retryAfterHintsMs": {},
+      "cofheIntervalHintsMs": {},
+      "receiptPollIntervalsMs": {},
+      "httpStatusCounts": {
+        "200": 10
+      },
+      "readRetryEvents": {},
+      "retryBackoffSpans": 0,
+      "retryBackoffObservedMs": 0
+    },
+    "zama/view_decrypt": {
+      "samples": 10,
+      "retryAfterHintsMs": {
+        "2000": 10
+      },
+      "cofheIntervalHintsMs": {},
+      "receiptPollIntervalsMs": {},
+      "httpStatusCounts": {},
+      "readRetryEvents": {},
+      "retryBackoffSpans": 0,
+      "retryBackoffObservedMs": 0
+    }
+  }
+}

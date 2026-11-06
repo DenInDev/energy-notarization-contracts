@@ -1,0 +1,25 @@
+{
+  "exactEnumerationValidation": {
+    "sampleSize": 4,
+    "allIIDResamples": 256,
+    "exactTwoSidedCenteredP": 0.1171875,
+    "monteCarloP": 0.11736,
+    "exactCI": [
+      0.9692332344763441,
+      1.5011778000001228
+    ],
+    "monteCarloCI": [
+      0.9692332344763441,
+      1.5011778000001228
+    ]
+  },
+  "all15RowsVerified": true,
+  "sourceReportUnchanged": true,
+  "holmPBoundsVerified": true,
+  "allConclusionsStableForBlockLengths": [
+    1,
+    2,
+    3,
+    5
+  ]
+}

@@ -1,0 +1,5105 @@
+{
+  "kind": "Descriptive segmented reduced pilot; no inferential or causal claims",
+  "audit": {
+    "rawReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\circuits-euint128-continuation1\\report.json",
+    "rawSha256": "1046dc71347a0708ace1c2a50d57be7628e9997254c039e5cccfc282a297edf9",
+    "executionComplete": true,
+    "allOriginalTrialsValid": false,
+    "suite": "circuits",
+    "width": 128,
+    "measuredPlanned": 81,
+    "measuredOriginalValidated": 78,
+    "measuredSeparatelyLateValidated": 0,
+    "measuredUnsentCapacityLimits": 3,
+    "warmupPlanned": 27,
+    "warmupOriginalValidated": 26,
+    "warmupSeparatelyLateValidated": 0,
+    "warmupUnsentCapacityLimits": 1,
+    "confirmedReceipts": 218,
+    "deployments": 3,
+    "canonicalReconciliations": 0,
+    "canonicalGasCostWei": "3889423955",
+    "canonicalGasCostEth": "0.000000003889423955",
+    "gasWeiByPlatform": {
+      "baseline": "630850202",
+      "zama": "1664782966",
+      "fhenix": "1593790787"
+    },
+    "sourceBytesAndPrefixesVerified": true,
+    "independentModularOracleAndFinalCanonicalOrderVerified": true,
+    "noncesAndGasProductsVerified": true
+  },
+  "segments": [
+    {
+      "segment": "original",
+      "trialPrefixStart": 0,
+      "trialPrefixEndExclusive": 84,
+      "startedAt": "2026-11-06T16:59:53.280Z",
+      "intervalEndsAt": "2026-11-06T18:37:45.388Z",
+      "originalMeasuredValidated": 54,
+      "originalWarmupValidated": 26,
+      "retainedIncompleteAttempts": 1,
+      "unsentCapacityAttempts": 3,
+      "lateMeasuredCorrectnessChecks": 0,
+      "lateWarmupCorrectnessChecks": 0,
+      "sourceHashes": {
+        "package-lock.json": "4571f420b5ef346a377e26b0d86ed6d3c9c4cfa5e268e184f876936f862fa35e",
+        "hardhat.config.ts": "f2c7451f127f8f87555025976a0d37c84208f9630b842a769d0c773c50496b3d",
+        "tasks/benchmarkExperiments.ts": "33ad628b72733fc55e0cf9dec1547fae5240567761a3e5ef0d3783024622d253",
+        "scripts/generate-study-contracts.cjs": "79d7cb683e5709fbbf3b1e186bb1e2615087a3fa6ee490290a2c38a81aeca8e9",
+        "tasks/experiments/accounts.ts": "2a930be994cd3ba0808f3f79fd88641b472a86c639a33883f2149f3fe3bca75e",
+        "tasks/lifecycle/broadcast.ts": "b1106a4e490c4d395cba490d12641d40c7e2d5ae2fe3bc0d06c0fbb687a7dfd9",
+        "tasks/lib/lifecycleTiming.ts": "11ca028648485eca0a34ca4166dcf12662838609b73c5ee7ad3fcfa1e82b9164",
+        "tasks/lib/lifecycleReadRetry.ts": "2841400f23a743978c6041996fe37ac75e81253b2817cccd09fcae6401fafa79",
+        "tasks/lib/cofheReadPolicy.ts": "d135b4bcb2d63be4dbe17529ff9de8c23366f9234fcc820fca1f36be67236279",
+        "tasks/lib/decryptionPolling.cjs": "b436d09f7c9c148f8c39205be554701e4977e95ddd59e2eb0789ade9717cc5e1",
+        "tasks/lib/lifecycleNonce.ts": "9514a35406d16839c932269580fe863c3db1fa05ad351602a6b547f5747eda08",
+        "tasks/lib/lifecycleResult.ts": "d02bdfc151228a0b67210bc079a10f4af90fed3b85fb0c50e47f41aad3b23cfa",
+        "tasks/lib/lifecycleReportWrite.ts": "024ce556ba300422b0ae8732fa35fff7941b9965095ba4d830b6d11812a328b1",
+        "tasks/lifecycle/errors.ts": "6871cf491202633327f12a054e1e9cbde2c75aa51df2da01912ef4698c2b7ccd",
+        "tasks/studies/adapters.ts": "32da75d997818aa371a7e339b3873a524fb872f5180c145cd95a6d405cd436f7",
+        "tasks/studies/canonical.ts": "8d1e7312c4346f92f785ea8e24a37e7d1d31d72cca9c6d6b2291cd29def57198",
+        "tasks/studies/capacity.ts": "ca5dc996204c668b76d6186e07ce3a9f16624aee4518d0eb9d9a636a3e64100a",
+        "tasks/studies/continuation.ts": "e8612cc3343818c81e76472e3d26149a8c834748608a838645fc65ab7115289e",
+        "tasks/studies/logs.ts": "f3d096b6ad72b51d36cae98fe7c24967a51ff3a30a4ac3c43edbd8b64d34323e",
+        "tasks/studies/oracle.ts": "303b362ad5a67e3bd92d1c827b3c589965d13a027eebec619a9f74afa65657df",
+        "tasks/studies/plan.ts": "1df1033eb7014f4fa9144428c77a1d8622adc741fe3b31e8243f2372666fb0ff",
+        "tasks/studies/preparation.ts": "8fb1fe6fd576ff7e32e76882f56e360fbb62f4a578a79c3e736717d3a2115d17",
+        "tasks/studies/report.ts": "fab8ffb975c56880327a8619c8d22007520db40071ccc60128b9868f106c8f3c",
+        "tasks/studies/runner.ts": "869b0ebd577780d88b74f1f9e13d6a20c4b2e6b8d3c996d22ef73d81f1bddbfc",
+        "tasks/studies/transactions.ts": "d02d5cba30875189ad75717a01fbcf7804a0185d119f793ea7c3535c4a585df0",
+        "tasks/studies/types.ts": "76409e2fb2e2573a40b2b9a7b046834a8b68256dd788c080093700c22bc44079",
+        "contracts/studies/StudyCoFHE.sol": "aaa41702bddc7284fdb894483892a44dd3cbba9f0bda49a48e705e1483864ef8",
+        "contracts/studies/StudyPlain.sol": "c547d2da2b8fe7512520f5201aa0703b4e9062564e7e2ae0d730210d16bde92c",
+        "contracts/studies/StudyZama.sol": "763d22515b2e6d5fe2485efb1ea20010b15ff80362a33ae8ef7027373b64cfba"
+      },
+      "change": null,
+      "rows": [
+        {
+          "caseId": "circuits-w128-sum_linear-n2",
+          "platform": "baseline",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 9862.930949999485,
+            "sd": 2492.5067852460666,
+            "cvPercent": 25.271461372708856,
+            "median": 9862.930949999485,
+            "min": 8100.46249999851,
+            "max": 11625.39940000046
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 9982.034549999516,
+            "sd": 2498.919536644742,
+            "cvPercent": 25.034170380074098,
+            "median": 9982.034549999516,
+            "min": 8215.031599998474,
+            "max": 11749.037500000559
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n2",
+          "platform": "zama",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 7175.3671000003815,
+            "sd": 257.1758676885827,
+            "cvPercent": 3.5841492721476094,
+            "median": 7175.3671000003815,
+            "min": 6993.51630000025,
+            "max": 7357.217900000513
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 10889.487149999943,
+            "sd": 1193.5664774472662,
+            "cvPercent": 10.960722585060147,
+            "median": 10889.487149999943,
+            "min": 10045.50820000004,
+            "max": 11733.466099999845
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n2",
+          "platform": "fhenix",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 10168.689350000117,
+            "sd": 412.94039000780214,
+            "cvPercent": 4.06090082796951,
+            "median": 10168.689350000117,
+            "min": 9876.696399999782,
+            "max": 10460.682300000452
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 11558.14944999991,
+            "sd": 431.00824105900637,
+            "cvPercent": 3.7290419450235586,
+            "median": 11558.14944999991,
+            "min": 11253.3805999998,
+            "max": 11862.91830000002
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n2",
+          "platform": "baseline",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 16934.509800000116,
+            "sd": 7527.360565074745,
+            "cvPercent": 44.44982850979657,
+            "median": 16934.509800000116,
+            "min": 11611.862099999562,
+            "max": 22257.15750000067
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 17065.935600000434,
+            "sd": 7500.733186436962,
+            "cvPercent": 43.95149121760878,
+            "median": 17065.935600000434,
+            "min": 11762.116299999878,
+            "max": 22369.75490000099
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n2",
+          "platform": "zama",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 13228.30779999867,
+            "sd": 6459.478004630789,
+            "cvPercent": 48.83072046926091,
+            "median": 13228.30779999867,
+            "min": 8660.767099998891,
+            "max": 17795.84849999845
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 16408.722649999894,
+            "sd": 7290.897764194184,
+            "cvPercent": 44.43306112066091,
+            "median": 16408.722649999894,
+            "min": 11253.279400000349,
+            "max": 21564.16589999944
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n2",
+          "platform": "fhenix",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 17407.433950000443,
+            "sd": 8271.59971537249,
+            "cvPercent": 47.517628038291534,
+            "median": 17407.433950000443,
+            "min": 11558.529699999839,
+            "max": 23256.338200001046
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 17710.938300000504,
+            "sd": 8275.860952967972,
+            "cvPercent": 46.72739982933449,
+            "median": 17710.938300000504,
+            "min": 11859.020899999887,
+            "max": 23562.85570000112
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n4",
+          "platform": "baseline",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 16036.883850000333,
+            "sd": 6275.284819859692,
+            "cvPercent": 39.13032530855153,
+            "median": 16036.883850000333,
+            "min": 11599.587400000542,
+            "max": 20474.180300000124
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 16140.793400000315,
+            "sd": 6261.529683777123,
+            "cvPercent": 38.79319639750175,
+            "median": 16140.793400000315,
+            "min": 11713.223300000653,
+            "max": 20568.363499999978
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n4",
+          "platform": "zama",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 6746.788200000301,
+            "sd": 1231.1569103309291,
+            "cvPercent": 18.248044459597445,
+            "median": 6746.788200000301,
+            "min": 5876.228800000623,
+            "max": 7617.347599999979
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 11605.295650000218,
+            "sd": 1183.0158785862345,
+            "cvPercent": 10.193759075721713,
+            "median": 11605.295650000218,
+            "min": 10768.77710000053,
+            "max": 12441.814199999906
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n4",
+          "platform": "fhenix",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 10201.809299999848,
+            "sd": 1449.213368143571,
+            "cvPercent": 14.205454400560031,
+            "median": 10201.809299999848,
+            "min": 9177.060699999332,
+            "max": 11226.557900000364
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 11051.41410000017,
+            "sd": 682.6493718385459,
+            "cvPercent": 6.177031877201448,
+            "median": 11051.41410000017,
+            "min": 10568.708100000396,
+            "max": 11534.120099999942
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n4",
+          "platform": "baseline",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 11247.309849999845,
+            "sd": 432.3319449523813,
+            "cvPercent": 3.843869785025859,
+            "median": 11247.309849999845,
+            "min": 10941.605000000447,
+            "max": 11553.014699999243
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 11913.81364999991,
+            "sd": 1175.7826004783867,
+            "cvPercent": 9.869069930251895,
+            "median": 11913.81364999991,
+            "min": 11082.409800000489,
+            "max": 12745.21749999933
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n4",
+          "platform": "zama",
+          "originalValidated": 3,
+          "receiptMs": {
+            "n": 3,
+            "mean": 7162.726200000073,
+            "sd": 1789.7451397644068,
+            "cvPercent": 24.98692662249729,
+            "median": 7456.568600000814,
+            "min": 5244.243499999866,
+            "max": 8787.366499999538
+          },
+          "validatedPlaintextMs": {
+            "n": 3,
+            "mean": 11993.327933333194,
+            "sd": 778.5891514480223,
+            "cvPercent": 6.491852434753165,
+            "median": 12124.514200000092,
+            "min": 11157.479199999943,
+            "max": 12697.990399999544
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n4",
+          "platform": "fhenix",
+          "originalValidated": 3,
+          "receiptMs": {
+            "n": 3,
+            "mean": 11550.480933334058,
+            "sd": 473.17267015921817,
+            "cvPercent": 4.096562497182846,
+            "median": 11683.849500000477,
+            "min": 11024.93720000051,
+            "max": 11942.656100001186
+          },
+          "validatedPlaintextMs": {
+            "n": 3,
+            "mean": 12586.188700001067,
+            "sd": 1114.0700401809872,
+            "cvPercent": 8.851528184865787,
+            "median": 13088.01000000164,
+            "min": 11309.469299999997,
+            "max": 13361.086800001562
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n8",
+          "platform": "baseline",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 10944.353949999902,
+            "sd": 3087.0073772131204,
+            "cvPercent": 28.20639200190659,
+            "median": 10944.353949999902,
+            "min": 8761.510099999607,
+            "max": 13127.197800000198
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 11058.337749999948,
+            "sd": 3071.0624021397275,
+            "cvPercent": 27.771465039035746,
+            "median": 11058.337749999948,
+            "min": 8886.768699999899,
+            "max": 13229.906799999997
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n8",
+          "platform": "zama",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 10620.682500000577,
+            "sd": 9186.419184242484,
+            "cvPercent": 86.49556357834805,
+            "median": 10620.682500000577,
+            "min": 4124.9032000005245,
+            "max": 17116.46180000063
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 17402.791400000453,
+            "sd": 9330.708565583533,
+            "cvPercent": 53.61616048321587,
+            "median": 17402.791400000453,
+            "min": 10804.984100000933,
+            "max": 24000.598699999973
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n8",
+          "platform": "fhenix",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 17102.935250001028,
+            "sd": 6883.70353602407,
+            "cvPercent": 40.24866746790529,
+            "median": 17102.935250001028,
+            "min": 12235.421800000593,
+            "max": 21970.448700001463
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 19589.476550000254,
+            "sd": 6873.4828731870875,
+            "cvPercent": 35.08762909332051,
+            "median": 19589.476550000254,
+            "min": 14729.19020000007,
+            "max": 24449.762900000438
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n8",
+          "platform": "baseline",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 10922.26649999991,
+            "sd": 827.2699619969814,
+            "cvPercent": 7.574160198315872,
+            "median": 10922.26649999991,
+            "min": 10337.298299999908,
+            "max": 11507.234699999914
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 11067.585700000636,
+            "sd": 816.8815734312735,
+            "cvPercent": 7.380847057106832,
+            "median": 11067.585700000636,
+            "min": 10489.963200001046,
+            "max": 11645.208200000226
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n8",
+          "platform": "zama",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 4512.225650000386,
+            "sd": 269.68692009976917,
+            "cvPercent": 5.97680481914166,
+            "median": 4512.225650000386,
+            "min": 4321.5282000005245,
+            "max": 4702.923100000247
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 10369.776500000618,
+            "sd": 1748.9365579616756,
+            "cvPercent": 16.86571121336676,
+            "median": 10369.776500000618,
+            "min": 9133.091600000858,
+            "max": 11606.461400000378
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n8",
+          "platform": "fhenix",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 10139.106350000482,
+            "sd": 1207.7450997821454,
+            "cvPercent": 11.91175097775839,
+            "median": 10139.106350000482,
+            "min": 9285.101599999703,
+            "max": 10993.11110000126
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 11523.781850000378,
+            "sd": 1186.8420333807733,
+            "cvPercent": 10.299067171084415,
+            "median": 11523.781850000378,
+            "min": 10684.557799999602,
+            "max": 12363.005900001153
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k1",
+          "platform": "baseline",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 18102.814399999566,
+            "sd": 9395.114113957181,
+            "cvPercent": 51.89863800380899,
+            "median": 18102.814399999566,
+            "min": 11459.465499999002,
+            "max": 24746.16330000013
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 18223.886799999513,
+            "sd": 9388.86894686414,
+            "cvPercent": 51.51957455565621,
+            "median": 18223.886799999513,
+            "min": 11584.95390000008,
+            "max": 24862.819699998945
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k1",
+          "platform": "zama",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 12722.074500000104,
+            "sd": 8163.086189493715,
+            "cvPercent": 64.16474128880198,
+            "median": 12722.074500000104,
+            "min": 6949.900899998844,
+            "max": 18494.248100001365
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 20695.509200000204,
+            "sd": 8025.28875550867,
+            "cvPercent": 38.77792364494511,
+            "median": 20695.509200000204,
+            "min": 15020.773099999875,
+            "max": 26370.245300000533
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k1",
+          "platform": "fhenix",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 10669.371700000018,
+            "sd": 366.5235674372719,
+            "cvPercent": 3.4352872666088787,
+            "median": 10669.371700000018,
+            "min": 10410.200400000438,
+            "max": 10928.542999999598
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 13874.586799999699,
+            "sd": 143.48257250383608,
+            "cvPercent": 1.0341394275167834,
+            "median": 13874.586799999699,
+            "min": 13773.129300000146,
+            "max": 13976.044299999252
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k2",
+          "platform": "baseline",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 7880.94704999961,
+            "sd": 4371.700756161451,
+            "cvPercent": 55.471769172229976,
+            "median": 7880.94704999961,
+            "min": 4789.68779999949,
+            "max": 10972.206299999729
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 8038.084549999796,
+            "sd": 4361.636646765274,
+            "cvPercent": 54.262139439244706,
+            "median": 8038.084549999796,
+            "min": 4953.941700000316,
+            "max": 11122.227399999276
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k2",
+          "platform": "zama",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 7487.224199999124,
+            "sd": 817.4435819011481,
+            "cvPercent": 10.917845653683562,
+            "median": 7487.224199999124,
+            "min": 6909.204299999401,
+            "max": 8065.244099998847
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 19155.930900000036,
+            "sd": 1613.8068964422796,
+            "cvPercent": 8.4245809032558,
+            "median": 19155.930900000036,
+            "min": 18014.797100000083,
+            "max": 20297.064699999988
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k2",
+          "platform": "fhenix",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 7503.8839499996975,
+            "sd": 50.17962059512398,
+            "cvPercent": 0.6687153070261168,
+            "median": 7503.8839499996975,
+            "min": 7468.401599999517,
+            "max": 7539.366299999878
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 13566.323949999176,
+            "sd": 2076.257771897544,
+            "cvPercent": 15.304497957957652,
+            "median": 13566.323949999176,
+            "min": 12098.18799999915,
+            "max": 15034.459899999201
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k4",
+          "platform": "baseline",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 12011.294600000605,
+            "sd": 9.66388695696015,
+            "cvPercent": 0.08045666415475035,
+            "median": 12011.294600000605,
+            "min": 12004.461200000718,
+            "max": 12018.128000000492
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 12136.269749999978,
+            "sd": 28.195670768139582,
+            "cvPercent": 0.2323256762494063,
+            "median": 12136.269749999978,
+            "min": 12116.332399999723,
+            "max": 12156.207100000232
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k4",
+          "platform": "zama",
+          "originalValidated": 0,
+          "receiptMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          },
+          "validatedPlaintextMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k4",
+          "platform": "fhenix",
+          "originalValidated": 2,
+          "receiptMs": {
+            "n": 2,
+            "mean": 10920.273850000463,
+            "sd": 796.2953615789894,
+            "cvPercent": 7.291899200668449,
+            "median": 10920.273850000463,
+            "min": 10357.208000000566,
+            "max": 11483.33970000036
+          },
+          "validatedPlaintextMs": {
+            "n": 2,
+            "mean": 21040.234200000763,
+            "sd": 798.4542292920673,
+            "cvPercent": 3.7948923082426447,
+            "median": 21040.234200000763,
+            "min": 20475.641800001264,
+            "max": 21604.826600000262
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        }
+      ]
+    },
+    {
+      "segment": "continuation1",
+      "trialPrefixStart": 84,
+      "trialPrefixEndExclusive": 109,
+      "startedAt": "2026-11-06T18:37:45.388Z",
+      "intervalEndsAt": "2026-11-06T18:51:37.944Z",
+      "originalMeasuredValidated": 24,
+      "originalWarmupValidated": 0,
+      "retainedIncompleteAttempts": 0,
+      "unsentCapacityAttempts": 1,
+      "lateMeasuredCorrectnessChecks": 0,
+      "lateWarmupCorrectnessChecks": 0,
+      "sourceHashes": {
+        "package-lock.json": "4571f420b5ef346a377e26b0d86ed6d3c9c4cfa5e268e184f876936f862fa35e",
+        "hardhat.config.ts": "f2c7451f127f8f87555025976a0d37c84208f9630b842a769d0c773c50496b3d",
+        "tasks/benchmarkExperiments.ts": "33ad628b72733fc55e0cf9dec1547fae5240567761a3e5ef0d3783024622d253",
+        "scripts/generate-study-contracts.cjs": "79d7cb683e5709fbbf3b1e186bb1e2615087a3fa6ee490290a2c38a81aeca8e9",
+        "tasks/experiments/accounts.ts": "2a930be994cd3ba0808f3f79fd88641b472a86c639a33883f2149f3fe3bca75e",
+        "tasks/lifecycle/broadcast.ts": "b1106a4e490c4d395cba490d12641d40c7e2d5ae2fe3bc0d06c0fbb687a7dfd9",
+        "tasks/lib/lifecycleTiming.ts": "11ca028648485eca0a34ca4166dcf12662838609b73c5ee7ad3fcfa1e82b9164",
+        "tasks/lib/lifecycleReadRetry.ts": "2841400f23a743978c6041996fe37ac75e81253b2817cccd09fcae6401fafa79",
+        "tasks/lib/cofheReadPolicy.ts": "d135b4bcb2d63be4dbe17529ff9de8c23366f9234fcc820fca1f36be67236279",
+        "tasks/lib/decryptionPolling.cjs": "b436d09f7c9c148f8c39205be554701e4977e95ddd59e2eb0789ade9717cc5e1",
+        "tasks/lib/lifecycleNonce.ts": "9514a35406d16839c932269580fe863c3db1fa05ad351602a6b547f5747eda08",
+        "tasks/lib/lifecycleResult.ts": "d02bdfc151228a0b67210bc079a10f4af90fed3b85fb0c50e47f41aad3b23cfa",
+        "tasks/lib/lifecycleReportWrite.ts": "024ce556ba300422b0ae8732fa35fff7941b9965095ba4d830b6d11812a328b1",
+        "tasks/lifecycle/errors.ts": "6871cf491202633327f12a054e1e9cbde2c75aa51df2da01912ef4698c2b7ccd",
+        "tasks/studies/adapters.ts": "32da75d997818aa371a7e339b3873a524fb872f5180c145cd95a6d405cd436f7",
+        "tasks/studies/canonical.ts": "8d1e7312c4346f92f785ea8e24a37e7d1d31d72cca9c6d6b2291cd29def57198",
+        "tasks/studies/capacity.ts": "ca5dc996204c668b76d6186e07ce3a9f16624aee4518d0eb9d9a636a3e64100a",
+        "tasks/studies/continuation.ts": "329408a55461dc84f71cbf230a918d156388256764b77954327abfa4a3c81002",
+        "tasks/studies/logs.ts": "f3d096b6ad72b51d36cae98fe7c24967a51ff3a30a4ac3c43edbd8b64d34323e",
+        "tasks/studies/oracle.ts": "303b362ad5a67e3bd92d1c827b3c589965d13a027eebec619a9f74afa65657df",
+        "tasks/studies/plan.ts": "1df1033eb7014f4fa9144428c77a1d8622adc741fe3b31e8243f2372666fb0ff",
+        "tasks/studies/preparation.ts": "8fb1fe6fd576ff7e32e76882f56e360fbb62f4a578a79c3e736717d3a2115d17",
+        "tasks/studies/report.ts": "fab8ffb975c56880327a8619c8d22007520db40071ccc60128b9868f106c8f3c",
+        "tasks/studies/runner.ts": "4b6b238d06dd594ce449d1eeb830880ff3668d59ebbc684a1f72e901173fe32d",
+        "tasks/studies/transactions.ts": "d02d5cba30875189ad75717a01fbcf7804a0185d119f793ea7c3535c4a585df0",
+        "tasks/studies/types.ts": "76409e2fb2e2573a40b2b9a7b046834a8b68256dd788c080093700c22bc44079",
+        "contracts/studies/StudyCoFHE.sol": "aaa41702bddc7284fdb894483892a44dd3cbba9f0bda49a48e705e1483864ef8",
+        "contracts/studies/StudyPlain.sol": "c547d2da2b8fe7512520f5201aa0703b4e9062564e7e2ae0d730210d16bde92c",
+        "contracts/studies/StudyZama.sol": "763d22515b2e6d5fe2485efb1ea20010b15ff80362a33ae8ef7027373b64cfba"
+      },
+      "change": "Initialize the FHEVM provider; pin compute gas to the input-load receipt and concurrent submit gas to the opened-window receipt, passing explicit limits to signing. Recover zero-send preparations and separately audit fully confirmed interrupted windows without replaying sends. Canonical reinclusions require the same hash/sender/nonce/target, an orphaned old block and a repeated stable canonical receipt; supplementary evidence supplies order/gas but no replacement timing. Log-head lag retries preserve the exact confirmed range within the original read deadline. Contracts, timed broadcast transport, SDK bundles and decrypt policy unchanged.",
+      "rows": [
+        {
+          "caseId": "circuits-w128-sum_linear-n2",
+          "platform": "baseline",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 12934.449800000002,
+            "sd": null,
+            "cvPercent": null,
+            "median": 12934.449800000002,
+            "min": 12934.449800000002,
+            "max": 12934.449800000002
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 13208.773100000006,
+            "sd": null,
+            "cvPercent": null,
+            "median": 13208.773100000006,
+            "min": 13208.773100000006,
+            "max": 13208.773100000006
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n2",
+          "platform": "zama",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 6624.480100000001,
+            "sd": null,
+            "cvPercent": null,
+            "median": 6624.480100000001,
+            "min": 6624.480100000001,
+            "max": 6624.480100000001
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 11460.0294,
+            "sd": null,
+            "cvPercent": null,
+            "median": 11460.0294,
+            "min": 11460.0294,
+            "max": 11460.0294
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n2",
+          "platform": "fhenix",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 9674.672599999998,
+            "sd": null,
+            "cvPercent": null,
+            "median": 9674.672599999998,
+            "min": 9674.672599999998,
+            "max": 9674.672599999998
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 9956.404099999992,
+            "sd": null,
+            "cvPercent": null,
+            "median": 9956.404099999992,
+            "min": 9956.404099999992,
+            "max": 9956.404099999992
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n2",
+          "platform": "baseline",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 12133.1581,
+            "sd": null,
+            "cvPercent": null,
+            "median": 12133.1581,
+            "min": 12133.1581,
+            "max": 12133.1581
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 12236.470100000035,
+            "sd": null,
+            "cvPercent": null,
+            "median": 12236.470100000035,
+            "min": 12236.470100000035,
+            "max": 12236.470100000035
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n2",
+          "platform": "zama",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 6398.453099999984,
+            "sd": null,
+            "cvPercent": null,
+            "median": 6398.453099999984,
+            "min": 6398.453099999984,
+            "max": 6398.453099999984
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 11106.044500000018,
+            "sd": null,
+            "cvPercent": null,
+            "median": 11106.044500000018,
+            "min": 11106.044500000018,
+            "max": 11106.044500000018
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n2",
+          "platform": "fhenix",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 11957.200699999987,
+            "sd": null,
+            "cvPercent": null,
+            "median": 11957.200699999987,
+            "min": 11957.200699999987,
+            "max": 11957.200699999987
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 12234.378499999992,
+            "sd": null,
+            "cvPercent": null,
+            "median": 12234.378499999992,
+            "min": 12234.378499999992,
+            "max": 12234.378499999992
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n4",
+          "platform": "baseline",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 11507.219899999967,
+            "sd": null,
+            "cvPercent": null,
+            "median": 11507.219899999967,
+            "min": 11507.219899999967,
+            "max": 11507.219899999967
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 11622.801500000001,
+            "sd": null,
+            "cvPercent": null,
+            "median": 11622.801500000001,
+            "min": 11622.801500000001,
+            "max": 11622.801500000001
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n4",
+          "platform": "zama",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 2434.0785000000033,
+            "sd": null,
+            "cvPercent": null,
+            "median": 2434.0785000000033,
+            "min": 2434.0785000000033,
+            "max": 2434.0785000000033
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 8079.666199999978,
+            "sd": null,
+            "cvPercent": null,
+            "median": 8079.666199999978,
+            "min": 8079.666199999978,
+            "max": 8079.666199999978
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n4",
+          "platform": "fhenix",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 24128.323399999994,
+            "sd": null,
+            "cvPercent": null,
+            "median": 24128.323399999994,
+            "min": 24128.323399999994,
+            "max": 24128.323399999994
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 24390.313199999975,
+            "sd": null,
+            "cvPercent": null,
+            "median": 24390.313199999975,
+            "min": 24390.313199999975,
+            "max": 24390.313199999975
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n4",
+          "platform": "baseline",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 9819.231099999997,
+            "sd": null,
+            "cvPercent": null,
+            "median": 9819.231099999997,
+            "min": 9819.231099999997,
+            "max": 9819.231099999997
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 9916.513699999996,
+            "sd": null,
+            "cvPercent": null,
+            "median": 9916.513699999996,
+            "min": 9916.513699999996,
+            "max": 9916.513699999996
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n8",
+          "platform": "baseline",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 24366.965000000026,
+            "sd": null,
+            "cvPercent": null,
+            "median": 24366.965000000026,
+            "min": 24366.965000000026,
+            "max": 24366.965000000026
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 24496.92340000003,
+            "sd": null,
+            "cvPercent": null,
+            "median": 24496.92340000003,
+            "min": 24496.92340000003,
+            "max": 24496.92340000003
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n8",
+          "platform": "zama",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 5222.146400000027,
+            "sd": null,
+            "cvPercent": null,
+            "median": 5222.146400000027,
+            "min": 5222.146400000027,
+            "max": 5222.146400000027
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 12196.613599999982,
+            "sd": null,
+            "cvPercent": null,
+            "median": 12196.613599999982,
+            "min": 12196.613599999982,
+            "max": 12196.613599999982
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_linear-n8",
+          "platform": "fhenix",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 8913.321999999986,
+            "sd": null,
+            "cvPercent": null,
+            "median": 8913.321999999986,
+            "min": 8913.321999999986,
+            "max": 8913.321999999986
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 10316.583699999988,
+            "sd": null,
+            "cvPercent": null,
+            "median": 10316.583699999988,
+            "min": 10316.583699999988,
+            "max": 10316.583699999988
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n8",
+          "platform": "baseline",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 10111.005200000014,
+            "sd": null,
+            "cvPercent": null,
+            "median": 10111.005200000014,
+            "min": 10111.005200000014,
+            "max": 10111.005200000014
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 10240.829700000002,
+            "sd": null,
+            "cvPercent": null,
+            "median": 10240.829700000002,
+            "min": 10240.829700000002,
+            "max": 10240.829700000002
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n8",
+          "platform": "zama",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 4685.153600000078,
+            "sd": null,
+            "cvPercent": null,
+            "median": 4685.153600000078,
+            "min": 4685.153600000078,
+            "max": 4685.153600000078
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 10588.623500000103,
+            "sd": null,
+            "cvPercent": null,
+            "median": 10588.623500000103,
+            "min": 10588.623500000103,
+            "max": 10588.623500000103
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-sum_tree-n8",
+          "platform": "fhenix",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 10908.09990000003,
+            "sd": null,
+            "cvPercent": null,
+            "median": 10908.09990000003,
+            "min": 10908.09990000003,
+            "max": 10908.09990000003
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 12300.888000000035,
+            "sd": null,
+            "cvPercent": null,
+            "median": 12300.888000000035,
+            "min": 12300.888000000035,
+            "max": 12300.888000000035
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k1",
+          "platform": "baseline",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 8746.018700000015,
+            "sd": null,
+            "cvPercent": null,
+            "median": 8746.018700000015,
+            "min": 8746.018700000015,
+            "max": 8746.018700000015
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 9925.968400000012,
+            "sd": null,
+            "cvPercent": null,
+            "median": 9925.968400000012,
+            "min": 9925.968400000012,
+            "max": 9925.968400000012
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k1",
+          "platform": "zama",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 6892.280700000003,
+            "sd": null,
+            "cvPercent": null,
+            "median": 6892.280700000003,
+            "min": 6892.280700000003,
+            "max": 6892.280700000003
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 14857.735600000015,
+            "sd": null,
+            "cvPercent": null,
+            "median": 14857.735600000015,
+            "min": 14857.735600000015,
+            "max": 14857.735600000015
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k1",
+          "platform": "fhenix",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 10426.3820000001,
+            "sd": null,
+            "cvPercent": null,
+            "median": 10426.3820000001,
+            "min": 10426.3820000001,
+            "max": 10426.3820000001
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 12869.349200000055,
+            "sd": null,
+            "cvPercent": null,
+            "median": 12869.349200000055,
+            "min": 12869.349200000055,
+            "max": 12869.349200000055
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k2",
+          "platform": "baseline",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 11019.285399999935,
+            "sd": null,
+            "cvPercent": null,
+            "median": 11019.285399999935,
+            "min": 11019.285399999935,
+            "max": 11019.285399999935
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 11143.034600000014,
+            "sd": null,
+            "cvPercent": null,
+            "median": 11143.034600000014,
+            "min": 11143.034600000014,
+            "max": 11143.034600000014
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k2",
+          "platform": "zama",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 18370.151700000046,
+            "sd": null,
+            "cvPercent": null,
+            "median": 18370.151700000046,
+            "min": 18370.151700000046,
+            "max": 18370.151700000046
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 29512.076300000073,
+            "sd": null,
+            "cvPercent": null,
+            "median": 29512.076300000073,
+            "min": 29512.076300000073,
+            "max": 29512.076300000073
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k2",
+          "platform": "fhenix",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 10260.81090000004,
+            "sd": null,
+            "cvPercent": null,
+            "median": 10260.81090000004,
+            "min": 10260.81090000004,
+            "max": 10260.81090000004
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 14898.03780000005,
+            "sd": null,
+            "cvPercent": null,
+            "median": 14898.03780000005,
+            "min": 14898.03780000005,
+            "max": 14898.03780000005
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k4",
+          "platform": "baseline",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 34462.35319999998,
+            "sd": null,
+            "cvPercent": null,
+            "median": 34462.35319999998,
+            "min": 34462.35319999998,
+            "max": 34462.35319999998
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 34596.212899999984,
+            "sd": null,
+            "cvPercent": null,
+            "median": 34596.212899999984,
+            "min": 34596.212899999984,
+            "max": 34596.212899999984
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k4",
+          "platform": "zama",
+          "originalValidated": 0,
+          "receiptMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          },
+          "validatedPlaintextMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        },
+        {
+          "caseId": "circuits-w128-affine_chain-k4",
+          "platform": "fhenix",
+          "originalValidated": 1,
+          "receiptMs": {
+            "n": 1,
+            "mean": 9721.519099999976,
+            "sd": null,
+            "cvPercent": null,
+            "median": 9721.519099999976,
+            "min": 9721.519099999976,
+            "max": 9721.519099999976
+          },
+          "validatedPlaintextMs": {
+            "n": 1,
+            "mean": 19851.641899999988,
+            "sd": null,
+            "cvPercent": null,
+            "median": 19851.641899999988,
+            "min": 19851.641899999988,
+            "max": 19851.641899999988
+          },
+          "deferredAuditMs": {
+            "n": 0,
+            "mean": null,
+            "sd": null,
+            "cvPercent": null,
+            "median": null,
+            "min": null,
+            "max": null
+          }
+        }
+      ]
+    }
+  ],
+  "observedInstrumentedPollingRetryEvents": {
+    "decrypt.client_poll_floor": 247,
+    "decrypt.sdk_poll": 75,
+    "audit.read.receipt_block_retry": 16,
+    "audit.read.retry_backoff": 16,
+    "preparation.gas.receipt_block_retry": 33,
+    "preparation.gas.retry_backoff": 33,
+    "decrypt.acl_check_retry": 18,
+    "decrypt.retry_backoff": 18
+  },
+  "methodology": [
+    "Three planned measured repetitions per case/platform; pilots and widths remain separate.",
+    "Concurrency audit-call duration is deferred already-ready retrieval, not FHE completion latency.",
+    "Late audits never restore original timing; known reincluded receipts and affected window throughput are excluded from timing summaries.",
+    "Fresh circuit preparation includes loading/readiness; resumed preparations and reincluded input loads are excluded from fresh lifecycle statistics.",
+    "Capacity rejections consume no compute nonce, gas or primary latency; values are unavailable, not zero."
+  ],
+  "rows": [
+    {
+      "caseId": "circuits-w128-sum_linear-n2",
+      "platform": "baseline",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 2,
+      "inputCount": 2,
+      "additions": 1,
+      "multiplications": 0,
+      "dependencyDepth": 1,
+      "mode": null,
+      "circuit": "sum_linear",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 10886.770566666324,
+        "sd": 2500.2075352294937,
+        "cvPercent": 22.965557324086156,
+        "median": 11625.39940000046,
+        "min": 8100.46249999851,
+        "max": 12934.449800000002
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 11057.614066666347,
+        "sd": 2567.6669011638055,
+        "cvPercent": 23.22080410550905,
+        "median": 11749.037500000559,
+        "min": 8215.031599998474,
+        "max": 13208.773100000006
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 170.8435000000221,
+        "sd": 89.7307831587229,
+        "cvPercent": 52.52221077109243,
+        "median": 123.63810000009835,
+        "min": 114.56909999996424,
+        "max": 274.32330000000366
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 465333,
+        "sd": 6.928203230275509,
+        "cvPercent": 0.0014888699555534444,
+        "median": 465337,
+        "min": 465325,
+        "max": 465337
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 12437.283633333447,
+        "sd": 1914.8865038118204,
+        "cvPercent": 15.396340232039812,
+        "median": 12502.474799999967,
+        "min": 10490.633999999991,
+        "max": 14318.742100000381
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 23494.897699999794,
+        "sd": 876.9404458116054,
+        "cvPercent": 3.7324718626530267,
+        "median": 23699.407099999997,
+        "min": 22533.773699998856,
+        "max": 24251.512300000526
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 114.28906666706219,
+        "sd": 15.99571571056033,
+        "cvPercent": 13.99584070203126,
+        "median": 114.87190000060946,
+        "min": 98.00989999999001,
+        "max": 129.9854000005871
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_linear-n2",
+      "platform": "zama",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 2,
+      "inputCount": 2,
+      "additions": 1,
+      "multiplications": 0,
+      "dependencyDepth": 1,
+      "mode": null,
+      "circuit": "sum_linear",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 6991.738100000254,
+        "sd": 366.3721364730505,
+        "cvPercent": 5.240072371604382,
+        "median": 6993.51630000025,
+        "min": 6624.480100000001,
+        "max": 7357.217900000513
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 11079.667899999962,
+        "sd": 905.98378630892,
+        "cvPercent": 8.176994062330362,
+        "median": 11460.0294,
+        "min": 10045.50820000004,
+        "max": 11733.466099999845
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 4087.929799999707,
+        "sd": 1213.0654819797016,
+        "cvPercent": 29.674322733716917,
+        "median": 4739.949799999595,
+        "min": 2688.2902999995276,
+        "max": 4835.549299999999
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 761558,
+        "sd": 0.0,
+        "cvPercent": 0.0,
+        "median": 761558,
+        "min": 761558,
+        "max": 761558
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 17739.938966666592,
+        "sd": 2991.2931146922633,
+        "cvPercent": 16.861913224802596,
+        "median": 16646.09750000015,
+        "min": 15449.525099999999,
+        "max": 21124.194299999624
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 28819.606866666552,
+        "sd": 3498.7544459996307,
+        "cvPercent": 12.140187970594331,
+        "median": 26909.5545,
+        "min": 26691.60570000019,
+        "max": 32857.66039999947
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 110.97329999969224,
+        "sd": 12.23220654360665,
+        "cvPercent": 11.022657291114683,
+        "median": 110.09899999946356,
+        "min": 99.20170000000508,
+        "max": 123.6191999996081
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_linear-n2",
+      "platform": "fhenix",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 2,
+      "inputCount": 2,
+      "additions": 1,
+      "multiplications": 0,
+      "dependencyDepth": 1,
+      "mode": null,
+      "circuit": "sum_linear",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 10004.017100000077,
+        "sd": 408.1797797663727,
+        "cvPercent": 4.080158757089385,
+        "median": 9876.696399999782,
+        "min": 9674.672599999998,
+        "max": 10460.682300000452
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 11024.23433333327,
+        "sd": 973.6940522288518,
+        "cvPercent": 8.832305471634937,
+        "median": 11253.3805999998,
+        "min": 9956.404099999992,
+        "max": 11862.91830000002
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 1020.2172333331933,
+        "sd": 639.6750013665602,
+        "cvPercent": 62.69988199245095,
+        "median": 1376.6842000000179,
+        "min": 281.7314999999944,
+        "max": 1402.2359999995679
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 751676,
+        "sd": 0.0,
+        "cvPercent": 0.0,
+        "median": 751676,
+        "min": 751676,
+        "max": 751676
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 19641.73723333274,
+        "sd": 3098.273369396624,
+        "cvPercent": 15.773927390387556,
+        "median": 21083.461199998856,
+        "min": 16085.3203,
+        "max": 21756.430199999362
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 30665.97156666601,
+        "sd": 4055.730791448159,
+        "cvPercent": 13.225508875957965,
+        "median": 32336.841799998656,
+        "min": 26041.724399999992,
+        "max": 33619.34849999938
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 181.43720000007548,
+        "sd": 97.82847145020034,
+        "cvPercent": 53.91864041671699,
+        "median": 128.60800000093877,
+        "min": 121.3808999992907,
+        "max": 294.322699999997
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_tree-n2",
+      "platform": "baseline",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 2,
+      "inputCount": 2,
+      "additions": 1,
+      "multiplications": 0,
+      "dependencyDepth": 1,
+      "mode": null,
+      "circuit": "sum_tree",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 15334.059233333412,
+        "sd": 6001.241920415518,
+        "cvPercent": 39.13668148203006,
+        "median": 12133.1581,
+        "min": 11611.862099999562,
+        "max": 22257.15750000067
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 15456.113766666967,
+        "sd": 5992.084626596135,
+        "cvPercent": 38.76837811273628,
+        "median": 12236.470100000035,
+        "min": 11762.116299999878,
+        "max": 22369.75490000099
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 122.05453333355642,
+        "sd": 24.859013724976705,
+        "cvPercent": 20.367136759304802,
+        "median": 112.59740000031888,
+        "min": 103.31200000003446,
+        "max": 150.2542000003159
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 465674,
+        "sd": 6.928203230275509,
+        "cvPercent": 0.0014877796978735142,
+        "median": 465678,
+        "min": 465666,
+        "max": 465678
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 10038.24163333377,
+        "sd": 4466.435911135986,
+        "cvPercent": 44.49420600022607,
+        "median": 11770.519799999893,
+        "min": 4965.148900000029,
+        "max": 13379.056200001389
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 25494.35540000074,
+        "sd": 9427.928757558273,
+        "cvPercent": 36.98045551509806,
+        "median": 23532.63609999977,
+        "min": 17201.619000000064,
+        "max": 35748.81110000238
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 111.57496666615286,
+        "sd": 6.7368457971951,
+        "cvPercent": 6.037954568566118,
+        "median": 107.97059999965131,
+        "min": 107.40710000001127,
+        "max": 119.34719999879599
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_tree-n2",
+      "platform": "zama",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 2,
+      "inputCount": 2,
+      "additions": 1,
+      "multiplications": 0,
+      "dependencyDepth": 1,
+      "mode": null,
+      "circuit": "sum_tree",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 10951.689566665775,
+        "sd": 6034.1859258052245,
+        "cvPercent": 55.09821922063778,
+        "median": 8660.767099998891,
+        "min": 6398.453099999984,
+        "max": 17795.84849999845
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 14641.163266666603,
+        "sd": 5995.94810057547,
+        "cvPercent": 40.952675626713265,
+        "median": 11253.279400000349,
+        "min": 11106.044500000018,
+        "max": 21564.16589999944
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 3689.4737000008267,
+        "sd": 1059.741547069371,
+        "cvPercent": 28.72337989749415,
+        "median": 3768.3174000009894,
+        "min": 2592.5123000014573,
+        "max": 4707.591400000034
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 762322,
+        "sd": 6.928203230275509,
+        "cvPercent": 0.0009088289765054018,
+        "median": 762326,
+        "min": 762314,
+        "max": 762326
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 16882.465400000045,
+        "sd": 620.8301586959134,
+        "cvPercent": 3.677366687781938,
+        "median": 16905.519099999976,
+        "min": 16250.429499998689,
+        "max": 17491.44760000147
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 31523.628666666646,
+        "sd": 6527.830860727113,
+        "cvPercent": 20.7077393587931,
+        "median": 28011.563599999994,
+        "min": 27503.708899999037,
+        "max": 39055.61350000091
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 107.11833333326892,
+        "sd": 3.810095432316335,
+        "cvPercent": 3.556903205786709,
+        "median": 105.42119999974966,
+        "min": 104.45170000009239,
+        "max": 111.4820999999647
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_tree-n2",
+      "platform": "fhenix",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 2,
+      "inputCount": 2,
+      "additions": 1,
+      "multiplications": 0,
+      "dependencyDepth": 1,
+      "mode": null,
+      "circuit": "sum_tree",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 15590.689533333623,
+        "sd": 6641.63848399966,
+        "cvPercent": 42.60003042071697,
+        "median": 11957.200699999987,
+        "min": 11558.529699999839,
+        "max": 23256.338200001046
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 15885.418366667,
+        "sd": 6651.504065805257,
+        "cvPercent": 41.87175881852989,
+        "median": 12234.378499999992,
+        "min": 11859.020899999887,
+        "max": 23562.85570000112
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 294.7288333333757,
+        "sd": 15.495423557437848,
+        "cvPercent": 5.257518710397282,
+        "median": 300.4912000000477,
+        "min": 277.17780000000494,
+        "max": 306.5175000000745
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 752440,
+        "sd": 6.928203230275509,
+        "cvPercent": 0.0009207648756413148,
+        "median": 752444,
+        "min": 752432,
+        "max": 752444
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 18048.473333333695,
+        "sd": 4397.1438331550535,
+        "cvPercent": 24.36296827961607,
+        "median": 20026.65969999996,
+        "min": 13009.694000000134,
+        "max": 21109.066300000995
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 33933.8917000007,
+        "sd": 2312.329259172618,
+        "cvPercent": 6.814217713710009,
+        "median": 32968.08720000088,
+        "min": 32261.03819999995,
+        "max": 36572.549700001255
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 87.34230000005725,
+        "sd": 34.902594704102654,
+        "cvPercent": 39.960700261018744,
+        "median": 94.16079999995418,
+        "min": 49.53359999880195,
+        "max": 118.33250000141561
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_linear-n4",
+      "platform": "baseline",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 4,
+      "inputCount": 4,
+      "additions": 3,
+      "multiplications": 0,
+      "dependencyDepth": 3,
+      "mode": null,
+      "circuit": "sum_linear",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 14526.995866666877,
+        "sd": 5150.6198609317935,
+        "cvPercent": 35.45550579215225,
+        "median": 11599.587400000542,
+        "min": 11507.219899999967,
+        "max": 20474.180300000124
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 14634.79610000021,
+        "sd": 5138.818988175574,
+        "cvPercent": 35.11370403155463,
+        "median": 11713.223300000653,
+        "min": 11622.801500000001,
+        "max": 20568.363499999978
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 107.80023333333277,
+        "sd": 11.832756852324422,
+        "cvPercent": 10.976559592163362,
+        "median": 113.63590000011027,
+        "min": 94.18319999985397,
+        "max": 115.58160000003409
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 468157,
+        "sd": 6.928203230275509,
+        "cvPercent": 0.0014798888471763765,
+        "median": 468161,
+        "min": 468149,
+        "max": 468161
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 11757.601866666673,
+        "sd": 1839.6983673331483,
+        "cvPercent": 15.646884357844904,
+        "median": 11641.51999999996,
+        "min": 9978.69319999963,
+        "max": 13652.59240000043
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 26392.397966666886,
+        "sd": 6825.163284323346,
+        "cvPercent": 25.860337862983886,
+        "median": 23264.32149999996,
+        "min": 21691.916500000283,
+        "max": 34220.95590000041
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 112.11386666650651,
+        "sd": 5.002392533827913,
+        "cvPercent": 4.461885654794166,
+        "median": 110.35159999970347,
+        "min": 108.23110000003362,
+        "max": 117.75889999978244
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_linear-n4",
+      "platform": "zama",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 4,
+      "inputCount": 4,
+      "additions": 3,
+      "multiplications": 0,
+      "dependencyDepth": 3,
+      "mode": null,
+      "circuit": "sum_linear",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 5309.218300000201,
+        "sd": 2637.7443623457307,
+        "cvPercent": 49.6823489504214,
+        "median": 5876.228800000623,
+        "min": 2434.0785000000033,
+        "max": 7617.347599999979
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 10430.08583333347,
+        "sd": 2200.708436859196,
+        "cvPercent": 21.099619619868903,
+        "median": 10768.77710000053,
+        "min": 8079.666199999978,
+        "max": 12441.814199999906
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 5120.867533333269,
+        "sd": 455.6942170455674,
+        "cvPercent": 8.898769868177931,
+        "median": 4892.548299999908,
+        "min": 4824.466599999927,
+        "max": 5645.587699999975
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 802024.6666666666,
+        "sd": 2.309401076758503,
+        "cvPercent": 0.0002879463902720993,
+        "median": 802026,
+        "min": 802022,
+        "max": 802026
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 21444.10166666649,
+        "sd": 4885.280169204407,
+        "cvPercent": 22.781463383930266,
+        "median": 20556.10620000004,
+        "min": 17063.72790000029,
+        "max": 26712.47089999914
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 31874.18749999996,
+        "sd": 4875.291829291079,
+        "cvPercent": 15.295423073266058,
+        "median": 29505.542100000195,
+        "min": 28635.772400000016,
+        "max": 37481.24799999967
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 104.26060000003781,
+        "sd": 10.065903152859121,
+        "cvPercent": 9.654560929877125,
+        "median": 102.91379999928176,
+        "min": 94.93590000085533,
+        "max": 114.93209999997634
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_linear-n4",
+      "platform": "fhenix",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 4,
+      "inputCount": 4,
+      "additions": 3,
+      "multiplications": 0,
+      "dependencyDepth": 3,
+      "mode": null,
+      "circuit": "sum_linear",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 14843.980666666563,
+        "sd": 8105.515078371267,
+        "cvPercent": 54.604726726523566,
+        "median": 11226.557900000364,
+        "min": 9177.060699999332,
+        "max": 24128.323399999994
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 15497.713800000105,
+        "sd": 7716.329966317817,
+        "cvPercent": 49.79011785801442,
+        "median": 11534.120099999942,
+        "min": 10568.708100000396,
+        "max": 24390.313199999975
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 653.7331333335411,
+        "sd": 639.4586066541225,
+        "cvPercent": 97.81645966043828,
+        "median": 307.5621999995783,
+        "min": 261.9897999999812,
+        "max": 1391.647400001064
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 815494,
+        "sd": 13.856406460551018,
+        "cvPercent": 0.001699142662061403,
+        "median": 815502,
+        "min": 815478,
+        "max": 815502
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 18031.187533333275,
+        "sd": 5471.838750871945,
+        "cvPercent": 30.34652454674133,
+        "median": 19638.675799999386,
+        "min": 11935.656799999997,
+        "max": 22519.230000000447
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 33528.90133333338,
+        "sd": 2604.7336247863573,
+        "cvPercent": 7.7686220579998935,
+        "median": 33087.93810000084,
+        "min": 31172.795899999328,
+        "max": 36325.96999999997
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 96.17676666629268,
+        "sd": 44.18265429816538,
+        "cvPercent": 45.939009835366186,
+        "median": 117.71569999866188,
+        "min": 45.35529999999562,
+        "max": 125.45930000022054
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_tree-n4",
+      "platform": "baseline",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 4,
+      "inputCount": 4,
+      "additions": 3,
+      "multiplications": 0,
+      "dependencyDepth": 2,
+      "mode": null,
+      "circuit": "sum_tree",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 1,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 10771.283599999895,
+        "sd": 879.3511399777663,
+        "cvPercent": 8.163847250087954,
+        "median": 10941.605000000447,
+        "min": 9819.231099999997,
+        "max": 11553.014699999243
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 11248.046999999939,
+        "sd": 1421.6075613721287,
+        "cvPercent": 12.638705735956973,
+        "median": 11082.409800000489,
+        "min": 9916.513699999996,
+        "max": 12745.21749999933
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 476.7634000000423,
+        "sd": 619.9707225164171,
+        "cvPercent": 130.03739853276534,
+        "median": 140.80480000004172,
+        "min": 97.28259999999864,
+        "max": 1192.2028000000864
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 468892,
+        "sd": 6.928203230275509,
+        "cvPercent": 0.0014775690841975356,
+        "median": 468896,
+        "min": 468884,
+        "max": 468896
+      },
+      "freshPreparationMs": {
+        "n": 2,
+        "mean": 7721.358900000341,
+        "sd": 878.6431081275896,
+        "cvPercent": 11.379384374006378,
+        "median": 7721.358900000341,
+        "min": 7100.064400000498,
+        "max": 8342.653400000185
+      },
+      "freshFullClientWorkMs": {
+        "n": 2,
+        "mean": 19635.17255000025,
+        "sd": 297.13949235079696,
+        "cvPercent": 1.5133021703483487,
+        "median": 19635.17255000025,
+        "min": 19425.063200000674,
+        "max": 19845.281899999827
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 112.81896666664154,
+        "sd": 16.811204556698534,
+        "cvPercent": 14.901044614574806,
+        "median": 103.25339999981225,
+        "min": 102.97330000000511,
+        "max": 132.2302000001073
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_tree-n4",
+      "platform": "zama",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 4,
+      "inputCount": 4,
+      "additions": 3,
+      "multiplications": 0,
+      "dependencyDepth": 2,
+      "mode": null,
+      "circuit": "sum_tree",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 7162.726200000073,
+        "sd": 1789.7451397644068,
+        "cvPercent": 24.98692662249729,
+        "median": 7456.568600000814,
+        "min": 5244.243499999866,
+        "max": 8787.366499999538
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 11993.327933333194,
+        "sd": 778.5891514480223,
+        "cvPercent": 6.491852434753165,
+        "median": 12124.514200000092,
+        "min": 11157.479199999943,
+        "max": 12697.990399999544
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 4830.601733333121,
+        "sd": 1011.165796819799,
+        "cvPercent": 20.932501842210314,
+        "median": 4667.945599999279,
+        "min": 3910.623900000006,
+        "max": 5913.2357000000775
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 803888,
+        "sd": 0.0,
+        "cvPercent": 0.0,
+        "median": 803888,
+        "min": 803888,
+        "max": 803888
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 20186.359566666808,
+        "sd": 7213.253950922907,
+        "cvPercent": 35.733307568908856,
+        "median": 16986.06269999966,
+        "min": 15126.957900000736,
+        "max": 28446.058100000024
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 32179.6875,
+        "sd": 7268.465193260877,
+        "cvPercent": 22.587121746477113,
+        "median": 28143.541899999604,
+        "min": 27824.94830000028,
+        "max": 40570.572300000116
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 105.38780000060797,
+        "sd": 16.18588563082577,
+        "cvPercent": 15.358405461289063,
+        "median": 96.31680000014603,
+        "min": 95.77160000056028,
+        "max": 124.07500000111759
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_tree-n4",
+      "platform": "fhenix",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 4,
+      "inputCount": 4,
+      "additions": 3,
+      "multiplications": 0,
+      "dependencyDepth": 2,
+      "mode": null,
+      "circuit": "sum_tree",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 11550.480933334058,
+        "sd": 473.17267015921817,
+        "cvPercent": 4.096562497182846,
+        "median": 11683.849500000477,
+        "min": 11024.93720000051,
+        "max": 11942.656100001186
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 12586.188700001067,
+        "sd": 1114.0700401809872,
+        "cvPercent": 8.851528184865787,
+        "median": 13088.01000000164,
+        "min": 11309.469299999997,
+        "max": 13361.086800001562
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 1035.7077666670084,
+        "sd": 650.5763377936908,
+        "cvPercent": 62.81466246867089,
+        "median": 1404.1605000011623,
+        "min": 284.5320999994874,
+        "max": 1418.4307000003755
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 817364,
+        "sd": 0.0,
+        "cvPercent": 0.0,
+        "median": 817364,
+        "min": 817364,
+        "max": 817364
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 18293.577166667208,
+        "sd": 5373.967184416661,
+        "cvPercent": 29.37625121350561,
+        "median": 18992.905999999493,
+        "min": 12604.18170000054,
+        "max": 23283.64380000159
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 30879.765866668273,
+        "sd": 5227.164494530325,
+        "cvPercent": 16.927474505797807,
+        "median": 30302.37529999949,
+        "min": 25965.2685000021,
+        "max": 36371.65380000323
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 94.86270000040531,
+        "sd": 36.89021778193348,
+        "cvPercent": 38.88801160179487,
+        "median": 109.55450000055134,
+        "min": 52.8902000002563,
+        "max": 122.14340000040829
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_linear-n8",
+      "platform": "baseline",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 8,
+      "inputCount": 8,
+      "additions": 7,
+      "multiplications": 0,
+      "dependencyDepth": 7,
+      "mode": null,
+      "circuit": "sum_linear",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 15418.557633333277,
+        "sd": 8051.105705016294,
+        "cvPercent": 52.21698356278581,
+        "median": 13127.197800000198,
+        "min": 8761.510099999607,
+        "max": 24366.965000000026
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 15537.866299999974,
+        "sd": 8056.937397653909,
+        "cvPercent": 51.853563688174624,
+        "median": 13229.906799999997,
+        "min": 8886.768699999899,
+        "max": 24496.92340000003
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 119.30866666669802,
+        "sd": 14.566527729642507,
+        "cvPercent": 12.209111153958093,
+        "median": 125.25860000029206,
+        "min": 102.70899999979883,
+        "max": 129.95840000000317
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 473809,
+        "sd": 0.0,
+        "cvPercent": 0.0,
+        "median": 473809,
+        "min": 473809,
+        "max": 473809
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 13459.018999999564,
+        "sd": 10207.325739578037,
+        "cvPercent": 75.84004257352164,
+        "median": 13674.680599998683,
+        "min": 3145.5712999999523,
+        "max": 23556.805100000056
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 28996.88529999954,
+        "sd": 16791.03970824494,
+        "cvPercent": 57.90635626732368,
+        "median": 22561.44929999858,
+        "min": 16375.47809999995,
+        "max": 48053.728500000085
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 90.40540000014396,
+        "sd": 22.935256284598733,
+        "cvPercent": 25.369343296486946,
+        "median": 100.2614000000176,
+        "min": 64.18960000015795,
+        "max": 106.7652000002563
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_linear-n8",
+      "platform": "zama",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 8,
+      "inputCount": 8,
+      "additions": 7,
+      "multiplications": 0,
+      "dependencyDepth": 7,
+      "mode": null,
+      "circuit": "sum_linear",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 8821.170466667061,
+        "sd": 7204.851101073884,
+        "cvPercent": 81.67681520609047,
+        "median": 5222.146400000027,
+        "min": 4124.9032000005245,
+        "max": 17116.46180000063
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 15667.398800000296,
+        "sd": 7250.229209916944,
+        "cvPercent": 46.275896225458986,
+        "median": 12196.613599999982,
+        "min": 10804.984100000933,
+        "max": 24000.598699999973
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 6846.228333333235,
+        "sd": 150.80987360536074,
+        "cvPercent": 2.2028168834377113,
+        "median": 6884.136899999343,
+        "min": 6680.080900000408,
+        "max": 6974.4671999999555
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 882963,
+        "sd": 0.0,
+        "cvPercent": 0.0,
+        "median": 882963,
+        "min": 882963,
+        "max": 882963
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 26137.15713333286,
+        "sd": 5694.79938423087,
+        "cvPercent": 21.788136158726537,
+        "median": 29186.32319999952,
+        "min": 19567.01369999908,
+        "max": 29658.134499999986
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 41804.555933333155,
+        "sd": 11407.54486567466,
+        "cvPercent": 27.287802994167855,
+        "median": 41854.74809999997,
+        "min": 30371.997800000012,
+        "max": 53186.92189999949
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 103.28463333330971,
+        "sd": 19.33296578593957,
+        "cvPercent": 18.718143408177845,
+        "median": 92.27830000035465,
+        "min": 91.96789999998873,
+        "max": 125.60769999958575
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_linear-n8",
+      "platform": "fhenix",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 8,
+      "inputCount": 8,
+      "additions": 7,
+      "multiplications": 0,
+      "dependencyDepth": 7,
+      "mode": null,
+      "circuit": "sum_linear",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 14373.064166667347,
+        "sd": 6785.961654828249,
+        "cvPercent": 47.213047796485945,
+        "median": 12235.421800000593,
+        "min": 8913.321999999986,
+        "max": 21970.448700001463
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 16498.512266666832,
+        "sd": 7230.806594462805,
+        "cvPercent": 43.8270219616816,
+        "median": 14729.19020000007,
+        "min": 10316.583699999988,
+        "max": 24449.762900000438
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 2125.448099999485,
+        "sd": 625.4735232066763,
+        "cvPercent": 29.42784268441219,
+        "median": 2479.314199998975,
+        "min": 1403.2617000000027,
+        "max": 2493.768399999477
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 943154,
+        "sd": 0.0,
+        "cvPercent": 0.0,
+        "median": 943154,
+        "min": 943154,
+        "max": 943154
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 25428.645799999824,
+        "sd": 5658.361443935079,
+        "cvPercent": 22.25191812587644,
+        "median": 28646.55950000044,
+        "min": 18895.175999999046,
+        "max": 28744.201899999985
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 41927.158066666656,
+        "sd": 2482.399175112215,
+        "cvPercent": 5.920742758583955,
+        "median": 43344.938899999484,
+        "min": 39060.785599999974,
+        "max": 43375.74970000051
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 102.77723333289032,
+        "sd": 6.896448909359508,
+        "cvPercent": 6.710093943687173,
+        "median": 99.44390000030398,
+        "min": 98.18069999999716,
+        "max": 110.70709999836981
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_tree-n8",
+      "platform": "baseline",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 8,
+      "inputCount": 8,
+      "additions": 7,
+      "multiplications": 0,
+      "dependencyDepth": 3,
+      "mode": null,
+      "circuit": "sum_tree",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 10651.846066666612,
+        "sd": 749.379361407659,
+        "cvPercent": 7.035206448887124,
+        "median": 10337.298299999908,
+        "min": 10111.005200000014,
+        "max": 11507.234699999914
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 10792.000366667091,
+        "sd": 749.3260841259028,
+        "cvPercent": 6.9433474672621625,
+        "median": 10489.963200001046,
+        "min": 10240.829700000002,
+        "max": 11645.208200000226
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 140.15430000047976,
+        "sd": 11.575313582520575,
+        "cvPercent": 8.258978556120613,
+        "median": 137.97350000031292,
+        "min": 129.8244999999879,
+        "max": 152.66490000113845
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 475238,
+        "sd": 0.0,
+        "cvPercent": 0.0,
+        "median": 475238,
+        "min": 475238,
+        "max": 475238
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 14862.688066666675,
+        "sd": 5775.200946002119,
+        "cvPercent": 38.85704201082215,
+        "median": 12131.450199999963,
+        "min": 10959.701799999923,
+        "max": 21496.912200000137
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 25654.688433333766,
+        "sd": 6500.694782484459,
+        "cvPercent": 25.339207682748338,
+        "median": 22372.279899999965,
+        "min": 21449.66500000097,
+        "max": 33142.12040000036
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 112.3025333332286,
+        "sd": 1.6563915512811234,
+        "cvPercent": 1.474936942309406,
+        "median": 112.40740000002552,
+        "min": 110.59620000049472,
+        "max": 113.90399999916553
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_tree-n8",
+      "platform": "zama",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 8,
+      "inputCount": 8,
+      "additions": 7,
+      "multiplications": 0,
+      "dependencyDepth": 3,
+      "mode": null,
+      "circuit": "sum_tree",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 4569.868300000283,
+        "sd": 215.25227695307112,
+        "cvPercent": 4.710251211245143,
+        "median": 4685.153600000078,
+        "min": 4321.5282000005245,
+        "max": 4702.923100000247
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 10442.725500000446,
+        "sd": 1243.122766137899,
+        "cvPercent": 11.904198440702533,
+        "median": 10588.623500000103,
+        "min": 9133.091600000858,
+        "max": 11606.461400000378
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 5872.857200000163,
+        "sd": 1046.3233719115003,
+        "cvPercent": 17.81625767967713,
+        "median": 5903.4699000000255,
+        "min": 4811.563400000334,
+        "max": 6903.538300000131
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 886763.6666666666,
+        "sd": 2.309401076758503,
+        "cvPercent": 0.00026043027737474993,
+        "median": 886765,
+        "min": 886761,
+        "max": 886765
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 23550.814600000158,
+        "sd": 7324.314779922968,
+        "cvPercent": 31.100048572939464,
+        "median": 19538.764100000262,
+        "min": 19109.113499999978,
+        "max": 32004.566200000234
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 33993.5401000006,
+        "sd": 6229.174826813232,
+        "cvPercent": 18.32458404887675,
+        "median": 31145.22550000064,
+        "min": 29697.73700000008,
+        "max": 41137.65780000109
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 107.98600000034396,
+        "sd": 8.624102667211222,
+        "cvPercent": 7.986315510514096,
+        "median": 110.9870999995619,
+        "min": 98.26230000145733,
+        "max": 114.70860000001267
+      }
+    },
+    {
+      "caseId": "circuits-w128-sum_tree-n8",
+      "platform": "fhenix",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 8,
+      "inputCount": 8,
+      "additions": 7,
+      "multiplications": 0,
+      "dependencyDepth": 3,
+      "mode": null,
+      "circuit": "sum_tree",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 10395.437533333665,
+        "sd": 962.5181243336987,
+        "cvPercent": 9.259043895433164,
+        "median": 10908.09990000003,
+        "min": 9285.101599999703,
+        "max": 10993.11110000126
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 11782.817233333597,
+        "sd": 951.6275508598245,
+        "cvPercent": 8.076400847224123,
+        "median": 12300.888000000035,
+        "min": 10684.557799999602,
+        "max": 12363.005900001153
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 1387.3796999999322,
+        "sd": 15.505069668036983,
+        "cvPercent": 1.117579395751411,
+        "median": 1392.7881000000052,
+        "min": 1369.8947999998927,
+        "max": 1399.4561999998987
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 946956,
+        "sd": 0.0,
+        "cvPercent": 0.0,
+        "median": 946956,
+        "min": 946956,
+        "max": 946956
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 20208.356066667107,
+        "sd": 1536.2818795967908,
+        "cvPercent": 7.602211058280132,
+        "median": 19589.33819999994,
+        "min": 19078.15160000138,
+        "max": 21957.5784
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 31991.173300000704,
+        "sd": 606.8197402940838,
+        "cvPercent": 1.8968349006882794,
+        "median": 31890.226199999976,
+        "min": 31441.157500002533,
+        "max": 32642.1361999996
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 112.78186666693848,
+        "sd": 4.198134254988356,
+        "cvPercent": 3.722348617784512,
+        "median": 112.67170000076294,
+        "min": 108.63990000006743,
+        "max": 117.0339999999851
+      }
+    },
+    {
+      "caseId": "circuits-w128-affine_chain-k1",
+      "platform": "baseline",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 1,
+      "inputCount": 2,
+      "additions": 1,
+      "multiplications": 1,
+      "dependencyDepth": 2,
+      "mode": null,
+      "circuit": "affine_chain",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 14983.882499999716,
+        "sd": 8562.55179240679,
+        "cvPercent": 57.14508100558685,
+        "median": 11459.465499999002,
+        "min": 8746.018700000015,
+        "max": 24746.16330000013
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 15457.913999999679,
+        "sd": 8187.016956236968,
+        "cvPercent": 52.963271475291805,
+        "median": 11584.95390000008,
+        "min": 9925.968400000012,
+        "max": 24862.819699998945
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 474.0314999999634,
+        "sd": 611.3590433407164,
+        "cvPercent": 128.97013032694318,
+        "median": 125.48840000107884,
+        "min": 116.65639999881387,
+        "max": 1179.9496999999974
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 465407,
+        "sd": 0.0,
+        "cvPercent": 0.0,
+        "median": 465407,
+        "min": 465407,
+        "max": 465407
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 9439.184133333116,
+        "sd": 594.6505221557201,
+        "cvPercent": 6.299808476622441,
+        "median": 9456.956600000034,
+        "min": 8835.846599999815,
+        "max": 10024.749199999496
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 24897.098133332795,
+        "sd": 7703.2679312750215,
+        "cvPercent": 30.94042482389429,
+        "median": 21609.703099999577,
+        "min": 19382.925000000047,
+        "max": 33698.66629999876
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 103.64410000042214,
+        "sd": 15.1069428392819,
+        "cvPercent": 14.575786599739269,
+        "median": 96.36870000138879,
+        "min": 93.55149999994319,
+        "max": 121.01209999993443
+      }
+    },
+    {
+      "caseId": "circuits-w128-affine_chain-k1",
+      "platform": "zama",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 1,
+      "inputCount": 2,
+      "additions": 1,
+      "multiplications": 1,
+      "dependencyDepth": 2,
+      "mode": null,
+      "circuit": "affine_chain",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 10778.809900000071,
+        "sd": 6681.827593210662,
+        "cvPercent": 61.99040204995746,
+        "median": 6949.900899998844,
+        "min": 6892.280700000003,
+        "max": 18494.248100001365
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 18749.584666666808,
+        "sd": 6600.189139178766,
+        "cvPercent": 35.20178850101488,
+        "median": 15020.773099999875,
+        "min": 14857.735600000015,
+        "max": 26370.245300000533
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 7970.774766666737,
+        "sd": 97.54635893996912,
+        "cvPercent": 1.2238002176137464,
+        "median": 7965.454900000012,
+        "min": 7875.9971999991685,
+        "max": 8070.872200001031
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 777557.6666666666,
+        "sd": 6.110100926607787,
+        "cvPercent": 0.0007858067881706249,
+        "median": 777559,
+        "min": 777551,
+        "max": 777563
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 24498.751266666844,
+        "sd": 7688.171793252059,
+        "cvPercent": 31.381892528182174,
+        "median": 28871.44519999996,
+        "min": 15621.541399999987,
+        "max": 29003.267200000584
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 43248.33593333365,
+        "sd": 12399.418072417797,
+        "cvPercent": 28.670277838044974,
+        "median": 44024.04030000046,
+        "min": 30479.277000000002,
+        "max": 55241.69050000049
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 115.25616666620287,
+        "sd": 10.852290597712186,
+        "cvPercent": 9.415800396296241,
+        "median": 116.7208999991417,
+        "min": 103.74589999951422,
+        "max": 125.30169999995269
+      }
+    },
+    {
+      "caseId": "circuits-w128-affine_chain-k1",
+      "platform": "fhenix",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 1,
+      "inputCount": 2,
+      "additions": 1,
+      "multiplications": 1,
+      "dependencyDepth": 2,
+      "mode": null,
+      "circuit": "affine_chain",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 10588.375133333378,
+        "sd": 294.7050969678371,
+        "cvPercent": 2.7832891568043596,
+        "median": 10426.3820000001,
+        "min": 10410.200400000438,
+        "max": 10928.542999999598
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 13539.507599999817,
+        "sd": 589.1755554364426,
+        "cvPercent": 4.351528673291268,
+        "median": 13773.129300000146,
+        "min": 12869.349200000055,
+        "max": 13976.044299999252
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 2951.132466666439,
+        "sd": 568.9701969993494,
+        "cvPercent": 19.279724086464025,
+        "median": 2844.5863000005484,
+        "min": 2442.9671999999555,
+        "max": 3565.843899998814
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 780386,
+        "sd": 0.0,
+        "cvPercent": 0.0,
+        "median": 780386,
+        "min": 780386,
+        "max": 780386
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 23963.136666666756,
+        "sd": 16193.58617568486,
+        "cvPercent": 67.57707223783642,
+        "median": 16828.76300000027,
+        "min": 12561.764200000092,
+        "max": 42498.882799999905
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 37502.644266666575,
+        "sd": 15632.64056830868,
+        "cvPercent": 41.68410221196967,
+        "median": 30804.80729999952,
+        "min": 26334.89350000024,
+        "max": 55368.23199999996
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 115.76690000020123,
+        "sd": 11.315991263774226,
+        "cvPercent": 9.774807189062294,
+        "median": 120.33170000009704,
+        "min": 102.88150000013411,
+        "max": 124.08750000037253
+      }
+    },
+    {
+      "caseId": "circuits-w128-affine_chain-k2",
+      "platform": "baseline",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 2,
+      "inputCount": 2,
+      "additions": 2,
+      "multiplications": 2,
+      "dependencyDepth": 4,
+      "mode": null,
+      "circuit": "affine_chain",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 8927.05983333305,
+        "sd": 3583.1466083698306,
+        "cvPercent": 40.13803732994595,
+        "median": 10972.206299999729,
+        "min": 4789.68779999949,
+        "max": 11019.285399999935
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 9073.067899999869,
+        "sd": 3567.283101119819,
+        "cvPercent": 39.31727548429204,
+        "median": 11122.227399999276,
+        "min": 4953.941700000316,
+        "max": 11143.034600000014
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 146.00806666681697,
+        "sd": 20.54838212450879,
+        "cvPercent": 14.073456757289417,
+        "median": 150.021099999547,
+        "min": 123.74920000007842,
+        "max": 164.25390000082552
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 465583,
+        "sd": 0.0,
+        "cvPercent": 0.0,
+        "median": 465583,
+        "min": 465583,
+        "max": 465583
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 14763.827733333339,
+        "sd": 5005.778961558289,
+        "cvPercent": 33.90569879284345,
+        "median": 13564.224799999967,
+        "min": 10466.840699999942,
+        "max": 20260.417700000107
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 23836.895633333206,
+        "sd": 1946.6345771004585,
+        "cvPercent": 8.166476906406848,
+        "median": 24686.452199999243,
+        "min": 21609.875299999956,
+        "max": 25214.359400000423
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 106.5176333329485,
+        "sd": 4.39276154734773,
+        "cvPercent": 4.123975918256664,
+        "median": 106.72749999910593,
+        "min": 102.02370000001974,
+        "max": 110.80169999971986
+      }
+    },
+    {
+      "caseId": "circuits-w128-affine_chain-k2",
+      "platform": "zama",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 2,
+      "inputCount": 2,
+      "additions": 2,
+      "multiplications": 2,
+      "dependencyDepth": 4,
+      "mode": null,
+      "circuit": "affine_chain",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 11114.866699999431,
+        "sd": 6309.792177894699,
+        "cvPercent": 56.768941528511746,
+        "median": 8065.244099998847,
+        "min": 6909.204299999401,
+        "max": 18370.151700000046
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 22607.979366666714,
+        "sd": 6087.043797949022,
+        "cvPercent": 26.92431596484815,
+        "median": 20297.064699999988,
+        "min": 18014.797100000083,
+        "max": 29512.076300000073
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 11493.112666667284,
+        "sd": 639.9977015588278,
+        "cvPercent": 5.568532390837609,
+        "median": 11141.924600000028,
+        "min": 11105.592800000682,
+        "max": 12231.820600001141
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 809635,
+        "sd": 0.0,
+        "cvPercent": 0.0,
+        "median": 809635,
+        "min": 809635,
+        "max": 809635
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 29839.87233333406,
+        "sd": 17203.008783118414,
+        "cvPercent": 57.651080376443055,
+        "median": 24154.05090000108,
+        "min": 16199.546500001103,
+        "max": 49166.0196
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 52447.85170000078,
+        "sd": 22892.419065544742,
+        "cvPercent": 43.647963307416845,
+        "median": 42168.84800000116,
+        "min": 36496.61120000109,
+        "max": 78678.09590000007
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 107.39846666700517,
+        "sd": 7.305066707847064,
+        "cvPercent": 6.801835197979896,
+        "median": 107.91419999999925,
+        "min": 99.84920000098646,
+        "max": 114.4320000000298
+      }
+    },
+    {
+      "caseId": "circuits-w128-affine_chain-k2",
+      "platform": "fhenix",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 2,
+      "inputCount": 2,
+      "additions": 2,
+      "multiplications": 2,
+      "dependencyDepth": 4,
+      "mode": null,
+      "circuit": "affine_chain",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 8422.859599999812,
+        "sd": 1592.1079526969686,
+        "cvPercent": 18.90222594588902,
+        "median": 7539.366299999878,
+        "min": 7468.401599999517,
+        "max": 10260.81090000004
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 14010.228566666134,
+        "sd": 1657.2800287752198,
+        "cvPercent": 11.82907203040432,
+        "median": 14898.03780000005,
+        "min": 12098.18799999915,
+        "max": 15034.459899999201
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 5587.368966666322,
+        "sd": 1652.1421844772367,
+        "cvPercent": 29.569233647066262,
+        "median": 4637.226900000009,
+        "min": 4629.786399999633,
+        "max": 7495.0935999993235
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 836837,
+        "sd": 6.928203230275509,
+        "cvPercent": 0.0008279035499476611,
+        "median": 836841,
+        "min": 836829,
+        "max": 836841
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 14396.870200000276,
+        "sd": 1698.6392819838482,
+        "cvPercent": 11.798670533153905,
+        "median": 14677.868900001049,
+        "min": 12575.253600000055,
+        "max": 15937.488099999726
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 28407.09876666641,
+        "sd": 1164.81252467325,
+        "cvPercent": 4.100427622830916,
+        "median": 28035.676099998876,
+        "min": 27473.291400000104,
+        "max": 29712.32880000025
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 93.9130000002915,
+        "sd": 34.29839367315335,
+        "cvPercent": 36.521454615491876,
+        "median": 107.27529999986291,
+        "min": 54.94459999992978,
+        "max": 119.51910000108182
+      }
+    },
+    {
+      "caseId": "circuits-w128-affine_chain-k4",
+      "platform": "baseline",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 4,
+      "inputCount": 2,
+      "additions": 4,
+      "multiplications": 4,
+      "dependencyDepth": 8,
+      "mode": null,
+      "circuit": "affine_chain",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 19494.980800000398,
+        "sd": 12962.126527524624,
+        "cvPercent": 66.48955780210032,
+        "median": 12018.128000000492,
+        "min": 12004.461200000718,
+        "max": 34462.35319999998
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 19622.917466666648,
+        "sd": 12967.26955061611,
+        "cvPercent": 66.08227126594986,
+        "median": 12156.207100000232,
+        "min": 12116.332399999723,
+        "max": 34596.212899999984
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 127.93666666624874,
+        "sd": 14.072144417845504,
+        "cvPercent": 10.999305191025357,
+        "median": 133.85970000000088,
+        "min": 111.8711999990046,
+        "max": 138.07909999974072
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 465931,
+        "sd": 6.928203230275509,
+        "cvPercent": 0.0014869590626671136,
+        "median": 465935,
+        "min": 465923,
+        "max": 465935
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 12167.324800000453,
+        "sd": 3234.9794003785005,
+        "cvPercent": 26.587433585880603,
+        "median": 14024.946000000462,
+        "min": 8431.910500000013,
+        "max": 14045.117900000885
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 31790.2422666671,
+        "sd": 9732.336855747059,
+        "cvPercent": 30.614226762127156,
+        "median": 26201.325000001118,
+        "min": 26141.278400000185,
+        "max": 43028.1234
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 10009.235866666053,
+        "sd": 17147.826606867413,
+        "cvPercent": 171.32003716662473,
+        "median": 111.25639999844134,
+        "min": 106.61089999973774,
+        "max": 29809.84029999998
+      }
+    },
+    {
+      "caseId": "circuits-w128-affine_chain-k4",
+      "platform": "zama",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 4,
+      "inputCount": 2,
+      "additions": 4,
+      "multiplications": 4,
+      "dependencyDepth": 8,
+      "mode": null,
+      "circuit": "affine_chain",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 0,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 0,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 3,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "validatedPlaintextMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "postReceiptMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "freshPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "freshFullClientWorkMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      }
+    },
+    {
+      "caseId": "circuits-w128-affine_chain-k4",
+      "platform": "fhenix",
+      "width": 128,
+      "suite": "circuits",
+      "users": 1,
+      "size": 4,
+      "inputCount": 2,
+      "additions": 4,
+      "multiplications": 4,
+      "dependencyDepth": 8,
+      "mode": null,
+      "circuit": "affine_chain",
+      "plannedWindows": 3,
+      "originalValidatedRequests": 3,
+      "lateValidatedRequests": 0,
+      "successfulOriginalWindows": 3,
+      "separatelyLateWindows": 0,
+      "capacityRejected": 0,
+      "retainedIncompleteAttempts": 0,
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedWindows": 0,
+      "receiptMs": {
+        "n": 3,
+        "mean": 10520.688933333635,
+        "sd": 892.2149227170644,
+        "cvPercent": 8.48057506852218,
+        "median": 10357.208000000566,
+        "min": 9721.519099999976,
+        "max": 11483.33970000036
+      },
+      "validatedPlaintextMs": {
+        "n": 3,
+        "mean": 20644.03676666717,
+        "sd": 888.6404203487326,
+        "cvPercent": 4.3045865030795385,
+        "median": 20475.641800001264,
+        "min": 19851.641899999988,
+        "max": 21604.826600000262
+      },
+      "postReceiptMs": {
+        "n": 3,
+        "mean": 10123.347833333537,
+        "sd": 6.0626301965541485,
+        "cvPercent": 0.059887601378187286,
+        "median": 10121.486899999902,
+        "min": 10118.433800000697,
+        "max": 10130.122800000012
+      },
+      "deferredAlreadyReadyAuditMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "gasUsed": {
+        "n": 3,
+        "mean": 949752,
+        "sd": 0.0,
+        "cvPercent": 0.0,
+        "median": 949752,
+        "min": 949752,
+        "max": 949752
+      },
+      "freshPreparationMs": {
+        "n": 3,
+        "mean": 20280.06780000002,
+        "sd": 2079.962307980089,
+        "cvPercent": 10.256190109877675,
+        "median": 21141.077399998903,
+        "min": 17907.85240000114,
+        "max": 21791.273600000015
+      },
+      "freshFullClientWorkMs": {
+        "n": 3,
+        "mean": 40924.10456666719,
+        "sd": 1222.4005723214482,
+        "cvPercent": 2.9869940595281763,
+        "median": 41616.71920000017,
+        "min": 39512.6790000014,
+        "max": 41642.9155
+      },
+      "receiptWindowMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "receiptThroughputPerSecond": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastSpreadMs": {
+        "n": 0,
+        "mean": null,
+        "sd": null,
+        "cvPercent": null,
+        "median": null,
+        "min": null,
+        "max": null
+      },
+      "broadcastAckMs": {
+        "n": 3,
+        "mean": 111.6168333333723,
+        "sd": 13.776575301943323,
+        "cvPercent": 12.342739791583272,
+        "median": 114.96460000000661,
+        "min": 96.47489999979734,
+        "max": 123.41100000031292
+      }
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "chainId": 11155111,
+  "claimHash": "0x30e2bce8d93a9d5d48a98eeb15d4268608815068e28ab59fdc636868206dec6d",
+  "claimedEth": "0.545",
+  "sender": "0x3552Cc153DCcC007d1c0D88Ff5aDB258d2688121",
+  "targetWorkerEth": "0.1",
+  "preservedSenderEth": "0.170248567778517",
+  "transfers": [
+    {
+      "to": "0xbFfa3190d423F15C1E5281a10e5d89B3Dcf26eD0",
+      "valueWei": "50000000000000000",
+      "maxFeeWei": "882000",
+      "nonce": 7,
+      "gasLimit": "25200",
+      "hash": "0x428b6ed4b718451a85b4728d7b17c02868327a2134af2f895ca109246af6787a",
+      "status": "confirmed",
+      "blockNumber": 11964107,
+      "actualFeeWei": "420000"
+    },
+    {
+      "to": "0xB85E3C85c39e2FD06308649F466d360B0bE792af",
+      "valueWei": "50000000000000000",
+      "maxFeeWei": "882000",
+      "nonce": 8,
+      "gasLimit": "25200",
+      "hash": "0xb141872d55a6367112bb44cdcfe9ccd0e793c8b1f0d17ed5e6a8fa0d6606e3b7",
+      "status": "confirmed",
+      "blockNumber": 11964110,
+      "actualFeeWei": "441000"
+    },
+    {
+      "to": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC",
+      "valueWei": "50000000000000000",
+      "maxFeeWei": "932400",
+      "nonce": 9,
+      "gasLimit": "25200",
+      "hash": "0xaf89ad1e7fba889e41d2b9359842769d565c696c87000d73f50d4fd276f184df",
+      "status": "confirmed",
+      "blockNumber": 11964111,
+      "actualFeeWei": "462000"
+    },
+    {
+      "to": "0x268fcAE6206890E4de082535F12C40Cc5119033d",
+      "valueWei": "50000000000000000",
+      "maxFeeWei": "982800",
+      "nonce": 10,
+      "gasLimit": "25200",
+      "hash": "0x813ee09a66f845fce2651d89cbdd8b0a88aee9dc5435bfd62574b71771dc31b5",
+      "status": "confirmed",
+      "blockNumber": 11964112,
+      "actualFeeWei": "462000"
+    },
+    {
+      "to": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+      "valueWei": "50000000000000000",
+      "maxFeeWei": "982800",
+      "nonce": 11,
+      "gasLimit": "25200",
+      "hash": "0xe56baac3a790b09ef10d3c16790f3391f8ef37c6a65cdc104867894896d38204",
+      "status": "confirmed",
+      "blockNumber": 11964113,
+      "actualFeeWei": "462000"
+    },
+    {
+      "to": "0xA0B9422C5c0b528a7D50E902836ab15613b281Cf",
+      "valueWei": "50000000000000000",
+      "maxFeeWei": "982800",
+      "nonce": 12,
+      "gasLimit": "25200",
+      "hash": "0x8450d24a846f984f0419058df19b0d4b5aa9121eac3b79bd528a3ea2a0be3018",
+      "status": "confirmed",
+      "blockNumber": 11964114,
+      "actualFeeWei": "462000"
+    },
+    {
+      "to": "0xD1e180A8341601fA6784E9C361268b111949b9b2",
+      "valueWei": "50000000000000000",
+      "maxFeeWei": "982800",
+      "nonce": 13,
+      "gasLimit": "25200",
+      "hash": "0x78bb1d345dfaa8f3f1537cb7e3d6d2273ed65d226d1065f0967ba8561c74e98c",
+      "status": "confirmed",
+      "blockNumber": 11964117,
+      "actualFeeWei": "441000"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "owner",
+      "address": "0x940a5ca24aFe2b971f91FBF9112CafDCe0A73F6B",
+      "balanceEth": "1.431259003968460719"
+    },
+    {
+      "id": "user-1",
+      "address": "0x3552Cc153DCcC007d1c0D88Ff5aDB258d2688121",
+      "balanceEth": "0.365248567775367"
+    },
+    {
+      "id": "user-2",
+      "address": "0xbFfa3190d423F15C1E5281a10e5d89B3Dcf26eD0",
+      "balanceEth": "0.1"
+    },
+    {
+      "id": "user-3",
+      "address": "0xB85E3C85c39e2FD06308649F466d360B0bE792af",
+      "balanceEth": "0.1"
+    },
+    {
+      "id": "user-4",
+      "address": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC",
+      "balanceEth": "0.1"
+    },
+    {
+      "id": "user-5",
+      "address": "0x268fcAE6206890E4de082535F12C40Cc5119033d",
+      "balanceEth": "0.1"
+    },
+    {
+      "id": "user-6",
+      "address": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+      "balanceEth": "0.1"
+    },
+    {
+      "id": "user-7",
+      "address": "0xA0B9422C5c0b528a7D50E902836ab15613b281Cf",
+      "balanceEth": "0.1"
+    },
+    {
+      "id": "user-8",
+      "address": "0xD1e180A8341601fA6784E9C361268b111949b9b2",
+      "balanceEth": "0.1"
+    }
+  ],
+  "status": "complete",
+  "completedAt": "2026-10-21T18:12:16.030Z"
+}

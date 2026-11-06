@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-06T15:02:26.313Z",
+  "sourceSha256": "510aa431e29e5a35deb1065bf40ecaad03c6c47e4f2cd8ab0bca6836a4b87dac",
+  "confirmedReceipts": 303,
+  "confirmedWriters": 264,
+  "accounts": [
+    {
+      "address": "0x8d597B9C2e568d43840215E887A94cdD5e19E0cF",
+      "latest": 261,
+      "pending": 261,
+      "expectedNext": 261
+    },
+    {
+      "address": "0x5Df7Adc822605Cb15434966BBA810939F21F55a9",
+      "latest": 228,
+      "pending": 228,
+      "expectedNext": 228
+    },
+    {
+      "address": "0x073E31aF380A81D2339C8952052A353E218ebD91",
+      "latest": 36,
+      "pending": 36,
+      "expectedNext": 36
+    }
+  ],
+  "changedReceiptsVerified": [
+    {
+      "transactionHash": "0xa63e983f64bd606479fb9f030c79f86c1cc662059c7f931c1559b367e47f6888",
+      "observedAt": "2026-11-06T15:02:24.773Z",
+      "previous": {
+        "blockHash": "0x179ea93c63e10ffb4959928420f9b26b8ca3cb4e60b9022eb0f36f9618f8c19d",
+        "blockNumber": 12077259,
+        "transactionIndex": 85,
+        "receiptStatus": 1,
+        "gasUsed": 1075348,
+        "effectiveGasPriceWei": "25",
+        "gasCostWei": "26883700"
+      },
+      "canonical": {
+        "blockHash": "0x86f4d14ee0bc234b7a263f8dd59b9757fcea14e1369ca062543731756c1ff149",
+        "blockNumber": 12077260,
+        "transactionIndex": 118,
+        "receiptStatus": 1,
+        "gasUsed": 1075348,
+        "effectiveGasPriceWei": "26",
+        "gasCostWei": "27959048"
+      },
+      "sameHashSenderNonceTargetVerified": true,
+      "previousBlockNoLongerCanonical": true,
+      "canonicalReceiptRepeated": true,
+      "timingUse": "Supplementary canonical identity/gas only; first-observed timing retained and excluded from canonical latency statistics."
+    }
+  ],
+  "affectedBatchCanonicalReceiptsVerified": 8,
+  "mutationCalls": 0
+}

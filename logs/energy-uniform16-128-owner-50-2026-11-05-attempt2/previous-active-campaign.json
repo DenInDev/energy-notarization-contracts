@@ -1,0 +1,15 @@
+{
+  "pid": 26792,
+  "startedAt": "2026-11-05T22:34:51.938Z",
+  "status": "failed",
+  "manifest": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05\\campaign.json",
+  "currentStage": "pilot-euint16",
+  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05\\pilot-euint16\\report.json",
+  "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\isolated-validation\\accounts.secret.json",
+  "runs": 50,
+  "widths": [
+    16,
+    128
+  ],
+  "command": "node scripts/run-uniform-energy.cjs"
+}

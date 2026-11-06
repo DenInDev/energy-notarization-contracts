@@ -1,0 +1,51 @@
+{
+  "observedAt": "2026-10-23T15:09:34.733Z",
+  "process": {
+    "pid": 20508,
+    "expectedStartedAt": "2026-10-23T13:46:55.0183650Z",
+    "present": false
+  },
+  "sourceReportSha256": "3e3fd24b3687f7530d6b73c52c8758eb967cd9470d966a4017eed660bbb3cb4d",
+  "complete": false,
+  "measuredAttempted": 624,
+  "measuredValidated": 623,
+  "warmupValidated": 15,
+  "platformCounts": [
+    {
+      "platform": "baseline",
+      "attempted": 208,
+      "validated": 208
+    },
+    {
+      "platform": "zama",
+      "attempted": 208,
+      "validated": 207
+    },
+    {
+      "platform": "fhenix",
+      "attempted": 208,
+      "validated": 208
+    }
+  ],
+  "primaryFailures": [
+    {
+      "platform": "zama",
+      "run": 42,
+      "operation": "mul_scalar",
+      "error": "Response body does not match the expected schema\n\nstatus: 503\nurl: [endpoint]\nmethod: POST\noperation: USER_DECRYPT\nretryCount: 0\n\nVersion: @zama-fhe/relayer-sdk@0.4.1",
+      "transactionHash": "0xdddbd425d7e7788103e21d20b4ccdaa14a20a5f7c0230d0dacffd3f36e6de731",
+      "receiptObservedAt": "2026-10-23T15:06:01.695Z",
+      "blockHash": "0x29af87f62103c58c46d91c97d80c34ce2c9c0450d07f405398174bae9c475193",
+      "failedAt": "2026-10-23T15:06:02.237Z"
+    }
+  ],
+  "readyFailures": [
+    {
+      "platform": "zama",
+      "run": 42,
+      "operation": "add",
+      "error": "Response body does not match the expected schema\n\nstatus: 503\nurl: [endpoint]\nmethod: GET\noperation: USER_DECRYPT\nretryCount: 1\njobId: 16e7400a-dfd4-410b-a4d1-6ce396b52bbb\n\nVersion: @zama-fhe/relayer-sdk@0.4.1"
+    }
+  ],
+  "interpretation": "Zama USER_DECRYPT returned HTTP 503 with a response body rejected by the SDK schema; the failure is in plaintext retrieval after receipt observation, not a recorded transaction submission failure. No cause beyond this response is established. No transaction was retried or replacement campaign launched."
+}

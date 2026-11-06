@@ -1,0 +1,22 @@
+{
+  "createdAt": "2026-11-05T22:17:40.1870709Z",
+  "authorization": "User requested restarting from scratch",
+  "pid": 34112,
+  "processCreationTimeUtc": "2026-11-05T22:17:22.4520720Z",
+  "command": "node scripts/run-uniform-energy.cjs logs/energy-uniform16-128-50-2026-11-05-attempt2 .benchmark-accounts/isolated-validation/accounts.secret.json 50",
+  "previousReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05\\measured-euint16-preflight2\\report.json",
+  "previousReportSha256": "0a48672a8facf3951fb53696a6fa9e086d985fa2ab868f8b069c96b7920a824e",
+  "changes": [
+    "Retry exact temporary hash-is-not-currently-canonical rejection on the same canonical receipt block hash within the existing deadline; no latest-block fallback",
+    "Bounded read-only latest/pending nonce convergence before deployment; no mutation retry"
+  ],
+  "verification": [
+    "Typecheck passed",
+    "27 targeted local tests passed",
+    "2 isolated worker-process integration tests passed: uniform16 and uniform128",
+    "Uniform contract generator consistency passed"
+  ],
+  "pollingBaseMs": 10,
+  "stageTimeoutMs": 180000,
+  "monitoring": "Current chat monitors this process; no recurring automation created"
+}

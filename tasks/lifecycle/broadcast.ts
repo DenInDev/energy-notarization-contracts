@@ -2,7 +2,7 @@ import { performance } from "node:perf_hooks";
 import { keccak256, Transaction, type ContractTransactionResponse } from "ethers";
 import { deadline, ObservationDeadlineError, type TimingTrace } from "../lib/lifecycleTiming";
 import { retryLifecycleRead } from "../lib/lifecycleReadRetry";
-import type { Sample, Operation } from "./types";
+import { smartMeterId, type Sample, type Operation } from "./types";
 
 export type FeeQuote = { maxFeePerGas: string; maxPriorityFeePerGas: string; quotedAt: string };
 
@@ -41,11 +41,12 @@ export async function sendRawTransactionOnce(url: string, raw: string, timeoutMs
 // Signs it with the assigned nonce and shared fee quote before the barrier.
 export async function prepareSignedOperation(contract: any, signer: any, operation: Operation,
   input: unknown[], value: bigint, nonce: number, fees: FeeQuote) {
-  const names = { notarize: "addEnergyEntry", add: "addLastEntryToEncryptedTotal",
+  const names = { set_meter_owner: "setSmartMeterOwner", notarize: "addEnergyEntry", add: "addLastEntryToEncryptedTotal",
     mul_scalar: "multiplyLastEntryByConstant", mean: "meanLastEntryAndEncryptedTotal",
     max: "maxLastEntryAndEncryptedTotal" };
 
-  const args = operation === "notarize" ? input : operation === "mul_scalar" ? [value] : [];
+  const args = operation === "set_meter_owner" ? [smartMeterId, ...input]
+    : operation === "notarize" ? input : operation === "mul_scalar" ? [value] : [];
 
   const request = await contract.getFunction(names[operation]).populateTransaction(...args);
 

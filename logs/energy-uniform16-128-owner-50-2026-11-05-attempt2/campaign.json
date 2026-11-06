@@ -1,0 +1,78 @@
+{
+  "status": "failed",
+  "startedAt": "2026-11-05T22:37:49.564Z",
+  "pid": 12828,
+  "chainId": 11155111,
+  "runs": 50,
+  "widths": [
+    16,
+    128
+  ],
+  "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\isolated-validation\\accounts.secret.json",
+  "operationOrder": [
+    "set_meter_owner",
+    "notarize",
+    "add",
+    "mul_scalar",
+    "mean",
+    "max",
+    "view_decrypt"
+  ],
+  "ownershipScope": "50 measured encrypted-address imports per platform and width, before the energy operations, with receipt-pinned owner getter and equality-validated authorized decryption",
+  "viewDecryptScope": "One persisted getter plus fresh authorized decryption after max per round, separate warmups and samples",
+  "stages": [
+    {
+      "kind": "pilot",
+      "width": 16,
+      "status": "finished",
+      "startedAt": "2026-11-05T22:37:49.569Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\pilot-euint16\\report.json",
+      "completedAt": "2026-11-05T22:42:43.618Z"
+    },
+    {
+      "kind": "pilot",
+      "width": 128,
+      "status": "finished",
+      "startedAt": "2026-11-05T22:42:43.631Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\pilot-euint128\\report.json",
+      "completedAt": "2026-11-05T22:48:45.395Z"
+    },
+    {
+      "kind": "measured",
+      "width": 16,
+      "status": "finished",
+      "startedAt": "2026-11-05T22:48:45.408Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\measured-euint16\\report.json",
+      "completedAt": "2026-11-06T00:23:19.495Z"
+    },
+    {
+      "kind": "measured",
+      "width": 128,
+      "status": "failed",
+      "startedAt": "2026-11-06T00:23:19.526Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\measured-euint128\\report.json"
+    }
+  ],
+  "currentStage": "measured-euint128",
+  "decryptionPolling": {
+    "requestedIntervalMs": 10,
+    "serverRetryAfter": "respected; can lengthen the effective interval",
+    "patch": "benchmark-decryption-polling-v1",
+    "bundles": {
+      "zama": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+        "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+      },
+      "zamaEsm": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+        "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+      },
+      "fhenix": {
+        "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+        "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+      }
+    }
+  },
+  "error": "Isolated campaign stopped after all current workers settled; observations and prepared transaction hashes retained",
+  "abortedAt": "2026-11-06T00:45:40.517Z"
+}

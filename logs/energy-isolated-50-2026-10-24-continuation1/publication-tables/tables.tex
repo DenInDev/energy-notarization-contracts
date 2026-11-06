@@ -1,0 +1,243 @@
+\begin{table*}[!t]
+\caption{Plaintext baseline performance on Sepolia}
+\label{tab:baseline-sepolia-benchmark}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|r|}
+\hline
+\textbf{Operation} &
+\textbf{Mean Gas} &
+\multicolumn{3}{c|}{\textbf{Latency Components: Mean ms (CV\%)}} &
+\textbf{Derived total} \\
+\cline{3-5}
+&
+&
+\textbf{Input preparation} &
+\textbf{Tx to receipt} &
+\textbf{Receipt to validation} &
+\textbf{Lifecycle ms (CV\%)} \\
+\hline
+
+notarize & 34185 & -- & 6342 (62.48\%) & 154 (103.35\%) & 6495 (61.06\%) \\
+add & 36022 & -- & 4905 (95.30\%) & 81 (42.35\%) & 4987 (94.14\%) \\
+mul\_scalar & 36011 & -- & 6170 (90.43\%) & 83 (40.53\%) & 6253 (89.61\%) \\
+mean & 37938 & -- & 4853 (80.03\%) & 71 (40.55\%) & 4924 (79.36\%) \\
+max & 37945 & -- & 4722 (87.36\%) & 101 (153.84\%) & 4822 (85.87\%) \\
+\hline
+\end{tabular}
+\end{table*}
+
+\paragraph{Measurement procedure.}
+All 750 scheduled primary operations were attempted in two observation segments.
+Latency summaries use successful primary observations: $n=50$ for each row,
+except Zama \texttt{add} ($n=49$), for which one receipt-observation deadline
+was exceeded; its transaction was subsequently confirmed, and its late recovery
+does not replace the failed latency observation. Gas summaries include all 50
+confirmed transactions per operation. Warmups and deployments are excluded from
+the performance rows. The two UTC intervals below denote the original segment
+and its continuation, respectively.
+Input preparation denotes encrypted-input work when applicable. Each derived
+lifecycle is the per-observation sum of the three displayed components,
+excluding separately recorded transaction estimation/signing, intentional
+barrier waits, and already-ready decryption repeats. Means and CVs are computed
+before rounding; CV is the sample standard deviation divided by the mean.
+Post-receipt validation includes RPC reads, authorization and SDK/service waits,
+and does not isolate FHE computation.
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals (interleaved runs)}
+\label{tab:sepolia-experimental-deployments}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+
+Plaintext baseline &
+\shortstack[l]{2026-10-24 09:18:18 -- 2026-10-24 09:30:25 \\ 2026-10-24 09:45:03 -- 2026-10-24 10:39:36} &
+\texttt{0x8A14...6B12} &
+11982862--11983261 &
+71.4\% \\
+\hline
+Zama fhEVM &
+\shortstack[l]{2026-10-24 09:18:18 -- 2026-10-24 09:33:01 \\ 2026-10-24 09:45:03 -- 2026-10-24 10:39:42} &
+\texttt{0x5CF6...c79b} &
+11982862--11983261 &
+71.1\% \\
+\hline
+Fhenix CoFHE &
+\shortstack[l]{2026-10-24 09:18:18 -- 2026-10-24 09:30:25 \\ 2026-10-24 09:45:03 -- 2026-10-24 10:39:36} &
+\texttt{0xDE38...388b} &
+11982862--11983261 &
+71.4\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Zama fhEVM performance on Sepolia}
+\label{tab:zama-fhevm-sepolia-benchmark}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|r|}
+\hline
+\textbf{Operation} &
+\textbf{Mean Gas} &
+\multicolumn{3}{c|}{\textbf{Latency Components: Mean ms (CV\%)}} &
+\textbf{Derived total} \\
+\cline{3-5}
+&
+&
+\textbf{Input preparation} &
+\textbf{Tx to receipt} &
+\textbf{Receipt to validation} &
+\textbf{Lifecycle ms (CV\%)} \\
+\hline
+
+notarize & 486175 & 10359 (8.90\%) & 6326 (62.92\%) & 4592 (17.18\%) & 21277 (20.32\%) \\
+add & 343060 & -- & 4537 (84.66\%) & 5004 (27.33\%) & 9540 (42.58\%) \\
+mul\_scalar & 339219 & -- & 6175 (90.07\%) & 4921 (16.28\%) & 11096 (51.87\%) \\
+mean & 358387 & -- & 4850 (80.11\%) & 4776 (15.07\%) & 9626 (38.99\%) \\
+max & 344626 & -- & 4719 (88.15\%) & 4956 (25.07\%) & 9675 (47.00\%) \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Fhenix CoFHE performance on Sepolia}
+\label{tab:fhenix-cofhe-sepolia-benchmark}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|r|}
+\hline
+\textbf{Operation} &
+\textbf{Mean Gas} &
+\multicolumn{3}{c|}{\textbf{Latency Components: Mean ms (CV\%)}} &
+\textbf{Derived total} \\
+\cline{3-5}
+&
+&
+\textbf{Input preparation} &
+\textbf{Tx to receipt} &
+\textbf{Receipt to validation} &
+\textbf{Lifecycle ms (CV\%)} \\
+\hline
+
+notarize & 320491 & 9127 (10.72\%) & 6313 (62.71\%) & 290 (13.43\%) & 15730 (26.85\%) \\
+add & 343751 & -- & 4916 (94.88\%) & 387 (57.17\%) & 5303 (88.03\%) \\
+mul\_scalar & 482917 & -- & 6166 (90.10\%) & 620 (53.03\%) & 6785 (83.48\%) \\
+mean & 406004 & -- & 4855 (79.69\%) & 4594 (9.15\%) & 9449 (40.64\%) \\
+max & 347930 & -- & 4729 (87.57\%) & 350 (62.70\%) & 5080 (82.19\%) \\
+\hline
+\end{tabular}
+\end{table*}
+
+% BEGIN GENERATED PAIRED LATENCY TABLE
+\begin{table*}[!t]
+\caption{Paired latency comparison against the plaintext baseline}
+\label{tab:paired-lifecycle-comparison}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} &
+\textbf{Platform} &
+\textbf{Baseline Mean} &
+\textbf{FHE Mean} &
+\textbf{Paired Ratio} &
+\textbf{95\% CI} &
+\textbf{Overhead} &
+\textbf{Holm \(p\)} \\
+\hline
+
+
+\multirow{2}{*}{notarize}
+& Zama & \multirow{2}{*}{6495} & 21277 & 3.567 & [3.296, 3.814] & +256.7\% & $<0.001$ \\
+& Fhenix & & 15730 & 2.615 & [2.426, 2.785] & +161.5\% & $<0.001$ \\
+\hline
+
+\multirow{2}{*}{add}
+& Zama & 4601 & 9540 & 2.248 & [2.135, 2.361] & +124.8\% & $<0.001$ \\
+& Fhenix & 4987 & 5303 & 1.083 & [1.064, 1.099] & +8.3\% & $<0.001$ \\
+\hline
+
+\multirow{2}{*}{mul\_scalar}
+& Zama & \multirow{2}{*}{6253} & 11096 & 2.082 & [1.959, 2.216] & +108.2\% & $<0.001$ \\
+& Fhenix & & 6785 & 1.120 & [1.098, 1.142] & +12.0\% & $<0.001$ \\
+\hline
+
+\multirow{2}{*}{mean}
+& Zama & \multirow{2}{*}{4924} & 9626 & 2.232 & [2.027, 2.440] & +123.2\% & $<0.001$ \\
+& Fhenix & & 9449 & 2.181 & [2.028, 2.347] & +118.1\% & $<0.001$ \\
+\hline
+
+\multirow{2}{*}{max}
+& Zama & \multirow{2}{*}{4822} & 9675 & 2.193 & [2.088, 2.295] & +119.3\% & $<0.001$ \\
+& Fhenix & & 5080 & 1.063 & [1.052, 1.073] & +6.3\% & $<0.001$ \\
+\hline
+\end{tabular}
+\end{table*}
+
+\noindent
+Means are in milliseconds over the same round-matched successful primary
+observations in each pair ($n=50$, except Zama \texttt{add}, $n=49$).
+The two \texttt{add} baseline means differ because their matched round sets differ.
+Lifecycle is the same sum of displayed components as in the preceding tables.
+Ratios are geometric means of per-round lifecycle ratios, with overhead
+$100(\mathrm{ratio}-1)\%$. The pointwise 95\% intervals are basic circular
+block-bootstrap intervals on the mean log-ratio, transformed back to the ratio
+scale (199999 replicates, block length 3). Blocks are resampled separately
+within the original and continuation segments, preserving their sample counts.
+Two-sided tests use the corresponding null-centered bootstrap distribution;
+Holm adjustment covers all 15 comparisons across both tables. Intervals are
+pointwise, not multiplicity-adjusted. These exploratory inferences are
+conditional on successful observations and assumptions of approximate
+within-segment stationarity and weak dependence; they do not identify causal
+or isolated FHE computation effects.
+% END GENERATED PAIRED LATENCY TABLE
+
+
+% BEGIN GENERATED ZAMA FHENIX TABLE
+\begin{table*}[!t]
+\caption{Paired latency comparison: Zama fhEVM versus Fhenix CoFHE}
+\label{tab:zama-fhenix-lifecycle-comparison}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|r|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} &
+\textbf{Pairs} &
+\textbf{Fhenix Mean} &
+\textbf{Zama Mean} &
+\textbf{Paired Ratio} &
+\textbf{95\% CI} &
+\textbf{Overhead} &
+\textbf{Holm \(p\)} \\
+\hline
+
+notarize & 50 & 15730 & 21277 & 1.364 & [1.345, 1.382] & +36.4\% & $<0.001$ \\
+add & 49 & 4921 & 9540 & 2.073 & [1.966, 2.181] & +107.3\% & $<0.001$ \\
+mul\_scalar & 50 & 6785 & 11096 & 1.858 & [1.757, 1.962] & +85.8\% & $<0.001$ \\
+mean & 50 & 9449 & 9626 & 1.023 & [0.991, 1.055] & +2.3\% & 0.1593 \\
+max & 50 & 5080 & 9675 & 2.063 & [1.966, 2.156] & +106.3\% & $<0.001$ \\
+\hline
+\end{tabular}
+\end{table*}
+
+\noindent
+The ratio is Zama/Fhenix; positive overhead indicates a higher Zama lifecycle
+latency on the matched observations. Means are in milliseconds. Pairing,
+bootstrap and the joint 15-test Holm correction follow the preceding table.
+The $n=49$ \texttt{add} comparison excludes the same historical failed Zama
+primary observation from both sides of that pair.
+% END GENERATED ZAMA FHENIX TABLE

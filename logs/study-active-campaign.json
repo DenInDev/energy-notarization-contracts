@@ -1,0 +1,9 @@
+{
+  "pid": 41852,
+  "status": "execution_complete_with_retained_failures",
+  "startedAt": "2026-11-06T21:13:10.975Z",
+  "manifest": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\campaign-continuation8.json",
+  "currentStage": "concurrency/euint128",
+  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\concurrency-euint128-continuation1\\report.json",
+  "finishedAt": "2026-11-06T22:18:13.645Z"
+}

@@ -1,0 +1,2759 @@
+{
+  "sourceReportSha256": "706da50a8831d2816983a617412aeb43f38816eceeb5b1533c3cebab7fa6cda6",
+  "experimentalPeriod": {
+    "startedAt": "2026-10-22T20:34:19.178Z",
+    "completedAt": "2026-10-22T21:48:20.173Z",
+    "measuredSamplesStartedAt": "2026-10-22T20:36:30.435Z",
+    "firstMeasuredTransactionInvokedAt": "2026-10-22T20:36:36.746Z",
+    "lastMeasuredPlaintextValidatedAt": "2026-10-22T21:48:17.680Z",
+    "scope": "campaign start/end include excluded setup; measured timestamps are client wall-clock context, not latency clocks"
+  },
+  "analysisVersions": {
+    "python": "3.14.0",
+    "numpy": "2.5.3",
+    "scipy": "1.16.2"
+  },
+  "methodology": {
+    "executionMode": "concurrent_operation_workers",
+    "sequencing": "Sequential deployments; one distinct funded signer and nonce allocator per platform; concurrent operation workers with seeded balanced launch order; all workers settle before the next operation; stop at first failed comparison. Input preparation precedes each worker submission and is not synchronized across platforms.",
+    "pairing": "same operation and round; nearby observations, not identical network conditions",
+    "tests": "two-sided paired t-tests of round-matched mean differences; approximate inference assumes independent round differences",
+    "multiplicity": "Holm adjustment across all 30 operation/configuration/receipt-and-completion comparisons",
+    "uncertainty": "sample SD; pointwise paired-t 95% CIs are not simultaneous; circular paired-difference block bootstrap is a sensitivity analysis (length 3, 20000 resamples)",
+    "scope": "observable deployment-level performance, not pure TFHE compute; serial correlation/heavy tails can limit paired-t inference",
+    "readyDecrypt": "reported separately by operation; primary classic ready-decrypt comparison uses notarize only, not pooled across operations",
+    "clientLifecycle": "input preparation plus transaction-to-validated-plaintext; geometric FHE/baseline ratios use round-matched log ratios and Holm correction over ten tests"
+  },
+  "provenance": [
+    {
+      "platform": "baseline",
+      "address": "0x4A82630Ad382Afabd36339B734d4Ea1799DBdac0",
+      "firstMeasuredBlock": 11971963,
+      "lastMeasuredBlock": 11972316,
+      "measuredApplicationTransactions": 250,
+      "observedRetrievalTransportRetries": 0,
+      "observedRetrievalAclCheckRetries": 0,
+      "observedRetrievalGatewayReadinessRetries": 0,
+      "failedReadyDecryptRepeats": 0,
+      "measuredGasCostWei": "595127612",
+      "blockGasTargetUtilization": {
+        "n": 250,
+        "mean": 0.6763843546036817,
+        "stddev": 0.05853940194313503,
+        "relativeStdPct": 8.654753993745967,
+        "median": 0.6675521429141633,
+        "p95": 0.7726610938848029,
+        "min": 0.5333524379900814,
+        "max": 1.00645547
+      }
+    },
+    {
+      "platform": "zama",
+      "address": "0x4Cb8B87df63FD45d7F7eEdc5FC7094b8BA478960",
+      "firstMeasuredBlock": 11971963,
+      "lastMeasuredBlock": 11972316,
+      "measuredApplicationTransactions": 250,
+      "observedRetrievalTransportRetries": 0,
+      "observedRetrievalAclCheckRetries": 7,
+      "observedRetrievalGatewayReadinessRetries": 0,
+      "failedReadyDecryptRepeats": 0,
+      "measuredGasCostWei": "5878285717",
+      "blockGasTargetUtilization": {
+        "n": 250,
+        "mean": 0.6763843546036817,
+        "stddev": 0.05853940194313503,
+        "relativeStdPct": 8.654753993745967,
+        "median": 0.6675521429141633,
+        "p95": 0.7726610938848029,
+        "min": 0.5333524379900814,
+        "max": 1.00645547
+      }
+    },
+    {
+      "platform": "fhenix",
+      "address": "0x1B602B517E0A2aCA7308c6bdB81DAecdFBeE0df7",
+      "firstMeasuredBlock": 11971963,
+      "lastMeasuredBlock": 11972316,
+      "measuredApplicationTransactions": 250,
+      "observedRetrievalTransportRetries": 0,
+      "observedRetrievalAclCheckRetries": 0,
+      "observedRetrievalGatewayReadinessRetries": 0,
+      "failedReadyDecryptRepeats": 0,
+      "measuredGasCostWei": "6094679811",
+      "blockGasTargetUtilization": {
+        "n": 250,
+        "mean": 0.6763843546036817,
+        "stddev": 0.05853940194313503,
+        "relativeStdPct": 8.654753993745967,
+        "median": 0.6675521429141633,
+        "p95": 0.7726610938848029,
+        "min": 0.5333524379900814,
+        "max": 1.00645547
+      }
+    }
+  ],
+  "summary": [
+    {
+      "platform": "baseline",
+      "operation": "notarize",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 34185.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 34185.0,
+        "p95": 34185.0,
+        "min": 34185.0,
+        "max": 34185.0
+      },
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 13226.632194000007,
+        "stddev": 5895.502870613551,
+        "relativeStdPct": 44.572970535068826,
+        "median": 11101.578249999904,
+        "p95": 23482.08852999989,
+        "min": 9717.565699999686,
+        "max": 36830.7758
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 13295.210849999989,
+        "stddev": 5897.030628406618,
+        "relativeStdPct": 44.35454762574618,
+        "median": 11167.469399999827,
+        "p95": 23609.89619499985,
+        "min": 9775.400999999605,
+        "max": 36887.3609
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 68.57865599997865,
+        "stddev": 28.28511416394584,
+        "relativeStdPct": 41.244777622872405,
+        "median": 58.135500000207685,
+        "p95": 134.36264499990497,
+        "min": 47.1285999994725,
+        "max": 181.06260000006296
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 13295.210849999989,
+        "stddev": 5897.030628406618,
+        "relativeStdPct": 44.35454762574618,
+        "median": 11167.469399999827,
+        "p95": 23609.89619499985,
+        "min": 9775.400999999605,
+        "max": 36887.3609
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "add",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 36022.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 36022.0,
+        "p95": 36022.0,
+        "min": 36022.0,
+        "max": 36022.0
+      },
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 9570.440934000004,
+        "stddev": 7160.822814274625,
+        "relativeStdPct": 74.82228732884234,
+        "median": 6073.189300000202,
+        "p95": 18932.600299999995,
+        "min": 2755.09580000001,
+        "max": 40193.21510000015
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 9632.253966000006,
+        "stddev": 7162.608218543866,
+        "relativeStdPct": 74.36066619325537,
+        "median": 6124.553700000048,
+        "p95": 19006.217940000068,
+        "min": 2811.8628000000026,
+        "max": 40244.44090000028
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 61.813032000002565,
+        "stddev": 21.72924355245297,
+        "relativeStdPct": 35.15317538937755,
+        "median": 55.81644999992568,
+        "p95": 96.52577500003382,
+        "min": 46.142200000118464,
+        "max": 162.59700000006706
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 9632.253966000006,
+        "stddev": 7162.608218543866,
+        "relativeStdPct": 74.36066619325537,
+        "median": 6124.553700000048,
+        "p95": 19006.217940000068,
+        "min": 2811.8628000000026,
+        "max": 40244.44090000028
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "mul_scalar",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 36011.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 36011.0,
+        "p95": 36011.0,
+        "min": 36011.0,
+        "max": 36011.0
+      },
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 8617.261944000042,
+        "stddev": 6826.5343725948915,
+        "relativeStdPct": 79.21929746313464,
+        "median": 5554.9555000001565,
+        "p95": 23681.233785000113,
+        "min": 3245.127400000114,
+        "max": 30634.94989999989
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 8677.254718000042,
+        "stddev": 6824.651777424575,
+        "relativeStdPct": 78.64989560889069,
+        "median": 5613.380699999863,
+        "p95": 23736.984995000046,
+        "min": 3291.6803000001237,
+        "max": 30696.72440000018
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 59.99277400000196,
+        "stddev": 17.612661085809975,
+        "relativeStdPct": 29.357970821301578,
+        "median": 56.43355000007432,
+        "p95": 66.90313000023598,
+        "min": 46.552900000009686,
+        "max": 154.41990000009537
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 8677.254718000042,
+        "stddev": 6824.651777424575,
+        "relativeStdPct": 78.64989560889069,
+        "median": 5613.380699999863,
+        "p95": 23736.984995000046,
+        "min": 3291.6803000001237,
+        "max": 30696.72440000018
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "mean",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 37938.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 37938.0,
+        "p95": 37938.0,
+        "min": 37938.0,
+        "max": 37938.0
+      },
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 7368.589155999984,
+        "stddev": 5857.130090384695,
+        "relativeStdPct": 79.48780921807045,
+        "median": 5295.334999999963,
+        "p95": 16801.775484999875,
+        "min": 3824.4793000000063,
+        "max": 29271.31150000007
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 7426.430669999984,
+        "stddev": 5856.044985006994,
+        "relativeStdPct": 78.85409889657001,
+        "median": 5354.217650000006,
+        "p95": 16862.860104999818,
+        "min": 3887.492499999935,
+        "max": 29319.45029999991
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 57.841514000000316,
+        "stddev": 12.786620911717394,
+        "relativeStdPct": 22.10630398042023,
+        "median": 55.19359999988228,
+        "p95": 71.10165999997407,
+        "min": 45.633100000210106,
+        "max": 134.92829999979585
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 7426.430669999984,
+        "stddev": 5856.044985006994,
+        "relativeStdPct": 78.85409889657001,
+        "median": 5354.217650000006,
+        "p95": 16862.860104999818,
+        "min": 3887.492499999935,
+        "max": 29319.45029999991
+      }
+    },
+    {
+      "platform": "baseline",
+      "operation": "max",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 37945.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 37945.0,
+        "p95": 37945.0,
+        "min": 37945.0,
+        "max": 37945.0
+      },
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 6875.406317999985,
+        "stddev": 5603.0559216022175,
+        "relativeStdPct": 81.49417885213965,
+        "median": 4857.149699999951,
+        "p95": 17309.27818499991,
+        "min": 3322.8178999999946,
+        "max": 28584.8461000002
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 6939.738145999981,
+        "stddev": 5604.936261350926,
+        "relativeStdPct": 80.7658177215458,
+        "median": 4921.319849999854,
+        "p95": 17368.11060999995,
+        "min": 3376.0697999999975,
+        "max": 28639.69560000021
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 64.33182799999544,
+        "stddev": 35.39561739830847,
+        "relativeStdPct": 55.020381821438335,
+        "median": 55.664549999986775,
+        "p95": 101.34138499995444,
+        "min": 45.83820000011474,
+        "max": 280.9945000000298
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 6939.738145999981,
+        "stddev": 5604.936261350926,
+        "relativeStdPct": 80.7658177215458,
+        "median": 4921.319849999854,
+        "p95": 17368.11060999995,
+        "min": 3376.0697999999975,
+        "max": 28639.69560000021
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "notarize",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 486176.48,
+        "stddev": 12.819373094290231,
+        "relativeStdPct": 0.002636773604163293,
+        "median": 486176.0,
+        "p95": 486188.0,
+        "min": 486140.0,
+        "max": 486188.0
+      },
+      "inputPreparationMs": {
+        "n": 50,
+        "mean": 13862.060238000033,
+        "stddev": 89.48903107598164,
+        "relativeStdPct": 0.6455680435630021,
+        "median": 13847.182600000175,
+        "p95": 13995.102920000127,
+        "min": 13758.18209999986,
+        "max": 14217.326700000034
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 5244.680636000047,
+        "stddev": 5943.606284072095,
+        "relativeStdPct": 113.32637192958038,
+        "median": 2959.926400000113,
+        "p95": 15499.205325000079,
+        "min": 1864.9498000000603,
+        "max": 29191.70379999999
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 9290.622894000038,
+        "stddev": 6081.439243527825,
+        "relativeStdPct": 65.45782035190847,
+        "median": 7284.824450000189,
+        "p95": 19637.704235000023,
+        "min": 5169.313700000057,
+        "max": 33855.49739999999
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 4045.942257999991,
+        "stddev": 911.9148410380894,
+        "relativeStdPct": 22.53899791167241,
+        "median": 4540.629650000017,
+        "p95": 4747.012515000033,
+        "min": 2446.0830999999307,
+        "max": 4791.273500000127
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 50,
+        "mean": 2337.079944000025,
+        "stddev": 41.78621090316004,
+        "relativeStdPct": 1.787966689391075,
+        "median": 2336.8379000000423,
+        "p95": 2361.8886150000153,
+        "min": 2282.8700000001118,
+        "max": 2592.067700000014
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 23152.683132000067,
+        "stddev": 6107.362509834342,
+        "relativeStdPct": 26.37863816912503,
+        "median": 21173.88020000013,
+        "p95": 33451.39095500001,
+        "min": 18981.850199999986,
+        "max": 48005.519
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "add",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 343060.52,
+        "stddev": 1.3130428906372635,
+        "relativeStdPct": 0.00038274380585596486,
+        "median": 343061.0,
+        "p95": 343061.0,
+        "min": 343057.0,
+        "max": 343061.0
+      },
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 9595.199257999993,
+        "stddev": 7132.36661542442,
+        "relativeStdPct": 74.33265765145849,
+        "median": 6181.8746999999275,
+        "p95": 19039.959795000064,
+        "min": 2861.4119000000064,
+        "max": 40135.13500000024
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 13838.089691999998,
+        "stddev": 7229.372702404464,
+        "relativeStdPct": 52.24256283426079,
+        "median": 10359.259300000034,
+        "p95": 23631.684260000005,
+        "min": 7339.291900000069,
+        "max": 44924.3376000002
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 4242.890434000005,
+        "stddev": 855.3239058657099,
+        "relativeStdPct": 20.158991121044558,
+        "median": 4651.3098999998765,
+        "p95": 4798.805050000106,
+        "min": 2547.624499999918,
+        "max": 5049.623800000176
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 50,
+        "mean": 2334.4813360000226,
+        "stddev": 25.42973345363306,
+        "relativeStdPct": 1.08930977778581,
+        "median": 2331.6488000000827,
+        "p95": 2374.7549200000735,
+        "min": 2290.6763999999966,
+        "max": 2441.5980999999447
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 13838.089691999998,
+        "stddev": 7229.372702404464,
+        "relativeStdPct": 52.24256283426079,
+        "median": 10359.259300000034,
+        "p95": 23631.684260000005,
+        "min": 7339.291900000069,
+        "max": 44924.3376000002
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "mul_scalar",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 339219.44,
+        "stddev": 1.4020393310154624,
+        "relativeStdPct": 0.0004133133793910698,
+        "median": 339220.0,
+        "p95": 339220.0,
+        "min": 339216.0,
+        "max": 339220.0
+      },
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 8636.973395999988,
+        "stddev": 6914.468770199158,
+        "relativeStdPct": 80.0566176735178,
+        "median": 5610.730099999986,
+        "p95": 23758.93908499999,
+        "min": 3343.4916000002995,
+        "max": 31191.729299999774
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 13126.311559999986,
+        "stddev": 7043.833793388562,
+        "relativeStdPct": 53.66194274142744,
+        "median": 10164.840650000027,
+        "p95": 28456.49509499997,
+        "min": 6887.868599999929,
+        "max": 35971.532799999695
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 4489.338163999995,
+        "stddev": 564.8650813939801,
+        "relativeStdPct": 12.582368731400843,
+        "median": 4650.142000000109,
+        "p95": 4821.325990000041,
+        "min": 2547.877400000114,
+        "max": 4984.219700000016
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 50,
+        "mean": 2341.172859999988,
+        "stddev": 43.10676565474473,
+        "relativeStdPct": 1.8412465987131317,
+        "median": 2335.4598500002176,
+        "p95": 2387.004284999927,
+        "min": 2298.738100000075,
+        "max": 2577.4884999999776
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 13126.311559999986,
+        "stddev": 7043.833793388562,
+        "relativeStdPct": 53.66194274142744,
+        "median": 10164.840650000027,
+        "p95": 28456.49509499997,
+        "min": 6887.868599999929,
+        "max": 35971.532799999695
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "mean",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 358387.52,
+        "stddev": 1.3130428906372635,
+        "relativeStdPct": 0.00036637517138913303,
+        "median": 358388.0,
+        "p95": 358388.0,
+        "min": 358384.0,
+        "max": 358388.0
+      },
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 7364.170539999988,
+        "stddev": 5850.403383799533,
+        "relativeStdPct": 79.44415942056038,
+        "median": 5283.086050000042,
+        "p95": 16965.900854999985,
+        "min": 3694.2485999999335,
+        "max": 29455.32150000008
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 11827.170448000017,
+        "stddev": 5898.873611038523,
+        "relativeStdPct": 49.875611727875516,
+        "median": 9688.182299999753,
+        "p95": 21601.50201499999,
+        "min": 7617.876400000008,
+        "max": 34084.08749999991
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 4462.999908000028,
+        "stddev": 548.6879533816966,
+        "relativeStdPct": 12.294151124631687,
+        "median": 4628.841199999908,
+        "p95": 4794.251620000485,
+        "min": 2551.135100000014,
+        "max": 4829.03059999994
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 50,
+        "mean": 2478.2313259999664,
+        "stddev": 774.4154792213807,
+        "relativeStdPct": 31.248716417096535,
+        "median": 2335.9395999999833,
+        "p95": 2416.7671450001653,
+        "min": 2295.2978000002913,
+        "max": 7594.730799999961
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 11827.170448000017,
+        "stddev": 5898.873611038523,
+        "relativeStdPct": 49.875611727875516,
+        "median": 9688.182299999753,
+        "p95": 21601.50201499999,
+        "min": 7617.876400000008,
+        "max": 34084.08749999991
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "max",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 344626.76,
+        "stddev": 0.9595917499283809,
+        "relativeStdPct": 0.0002784437720182788,
+        "median": 344627.0,
+        "p95": 344627.0,
+        "min": 344623.0,
+        "max": 344627.0
+      },
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 6912.518446000005,
+        "stddev": 5667.912747860096,
+        "relativeStdPct": 81.99490232304389,
+        "median": 4896.582200000063,
+        "p95": 17571.96456500011,
+        "min": 2766.212300000014,
+        "max": 28530.54870000016
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 11484.008543999997,
+        "stddev": 5506.0605717438675,
+        "relativeStdPct": 47.945458684115984,
+        "median": 9565.016950000077,
+        "p95": 22217.46041499992,
+        "min": 7351.396800000017,
+        "max": 33216.369799999986
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 4571.490097999991,
+        "stddev": 374.10535195736753,
+        "relativeStdPct": 8.183444433600263,
+        "median": 4628.322799999965,
+        "p95": 4794.3468700000085,
+        "min": 2674.5745999999344,
+        "max": 4951.529899999965
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 50,
+        "mean": 2346.9781340000245,
+        "stddev": 41.78794793817562,
+        "relativeStdPct": 1.7805000963922564,
+        "median": 2337.7438000000548,
+        "p95": 2424.2730699999024,
+        "min": 2302.0540999999503,
+        "max": 2541.157000000123
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 11484.008543999997,
+        "stddev": 5506.0605717438675,
+        "relativeStdPct": 47.945458684115984,
+        "median": 9565.016950000077,
+        "p95": 22217.46041499992,
+        "min": 7351.396800000017,
+        "max": 33216.369799999986
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "notarize",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 320492.64,
+        "stddev": 5.958221896108377,
+        "relativeStdPct": 0.0018590822853555627,
+        "median": 320496.0,
+        "p95": 320496.0,
+        "min": 320472.0,
+        "max": 320496.0
+      },
+      "inputPreparationMs": {
+        "n": 50,
+        "mean": 9574.412588000048,
+        "stddev": 2884.5448411561233,
+        "relativeStdPct": 30.12764297176232,
+        "median": 9809.502049999894,
+        "p95": 12541.733780000102,
+        "min": 6590.831000000006,
+        "max": 12783.118699999992
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 6656.380809999998,
+        "stddev": 5978.785067119696,
+        "relativeStdPct": 89.82035790587074,
+        "median": 4385.259149999823,
+        "p95": 17228.431695,
+        "min": 3350.4616000000387,
+        "max": 30620.738199999993
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 6878.916703999986,
+        "stddev": 5979.311033097453,
+        "relativeStdPct": 86.922277015225,
+        "median": 4589.219999999972,
+        "p95": 17430.382444999974,
+        "min": 3556.780900000129,
+        "max": 30927.771800000017
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 222.53589399998774,
+        "stddev": 46.347511136092216,
+        "relativeStdPct": 20.826982246780723,
+        "median": 206.6071000000229,
+        "p95": 322.13923999996905,
+        "min": 190.7640999997966,
+        "max": 396.1618000000017
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 50,
+        "mean": 146.94155999994254,
+        "stddev": 26.753419665115477,
+        "relativeStdPct": 18.206843363528968,
+        "median": 142.139499999932,
+        "p95": 162.32984499977897,
+        "min": 129.17689999984577,
+        "max": 281.38550000009127
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 16453.329292000035,
+        "stddev": 6784.208737225305,
+        "relativeStdPct": 41.23304540269509,
+        "median": 16624.419300000183,
+        "p95": 29777.473620000073,
+        "min": 10357.722400000319,
+        "max": 43586.68490000002
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "add",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 343751.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 343751.0,
+        "p95": 343751.0,
+        "min": 343751.0,
+        "max": 343751.0
+      },
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 9560.551280000022,
+        "stddev": 7172.950291096237,
+        "relativeStdPct": 75.02653436001675,
+        "median": 6216.234150000382,
+        "p95": 19007.703190000033,
+        "min": 2806.869799999986,
+        "max": 40021.36720000021
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 9899.214772000007,
+        "stddev": 7185.648013172442,
+        "relativeStdPct": 72.58806055503608,
+        "median": 6461.6756500001065,
+        "p95": 19347.01449499998,
+        "min": 3414.6926000000094,
+        "max": 40341.9012000002
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 338.6634919999854,
+        "stddev": 230.35245635585446,
+        "relativeStdPct": 68.01809518808847,
+        "median": 232.17365000001155,
+        "p95": 762.7668749999159,
+        "min": 199.16310000000522,
+        "max": 1301.0170999998227
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 50,
+        "mean": 149.2801419999916,
+        "stddev": 25.664184001639146,
+        "relativeStdPct": 17.191961139506816,
+        "median": 143.42379999998957,
+        "p95": 160.14775999998673,
+        "min": 133.43690000008792,
+        "max": 282.76189999992494
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 9899.214772000007,
+        "stddev": 7185.648013172442,
+        "relativeStdPct": 72.58806055503608,
+        "median": 6461.6756500001065,
+        "p95": 19347.01449499998,
+        "min": 3414.6926000000094,
+        "max": 40341.9012000002
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mul_scalar",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 482917.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 482917.0,
+        "p95": 482917.0,
+        "min": 482917.0,
+        "max": 482917.0
+      },
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 8647.437829999953,
+        "stddev": 6890.988090586461,
+        "relativeStdPct": 79.6882062184944,
+        "median": 5530.095600000001,
+        "p95": 23672.70626000002,
+        "min": 3295.9786999998614,
+        "max": 30450.428299999796
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 9145.334449999982,
+        "stddev": 6953.444415826424,
+        "relativeStdPct": 76.03269682309363,
+        "median": 6089.110449999804,
+        "p95": 24495.575209999977,
+        "min": 4018.086799999699,
+        "max": 31390.607499999925
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 497.89662000002807,
+        "stddev": 282.72981041204815,
+        "relativeStdPct": 56.78484228553956,
+        "median": 402.11550000007264,
+        "p95": 967.2738599998061,
+        "min": 188.1204000003636,
+        "max": 1160.71669999999
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 50,
+        "mean": 149.05861600002333,
+        "stddev": 14.528208701657178,
+        "relativeStdPct": 9.746641349235997,
+        "median": 146.42035000014585,
+        "p95": 169.12188000034072,
+        "min": 132.95690000010654,
+        "max": 227.7862000000896
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 9145.334449999982,
+        "stddev": 6953.444415826424,
+        "relativeStdPct": 76.03269682309363,
+        "median": 6089.110449999804,
+        "p95": 24495.575209999977,
+        "min": 4018.086799999699,
+        "max": 31390.607499999925
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mean",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 406004.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 406004.0,
+        "p95": 406004.0,
+        "min": 406004.0,
+        "max": 406004.0
+      },
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 7373.064592000014,
+        "stddev": 5883.861183969701,
+        "relativeStdPct": 79.80211092079485,
+        "median": 5365.432150000008,
+        "p95": 16944.715190000155,
+        "min": 3394.5729000000283,
+        "max": 29399.292799999937
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 12394.66941999997,
+        "stddev": 5915.815897365658,
+        "relativeStdPct": 47.728710600541966,
+        "median": 10310.369250000105,
+        "p95": 21410.875030000047,
+        "min": 8200.674399999902,
+        "max": 36097.05780000007
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 5021.604827999956,
+        "stddev": 997.6173265962726,
+        "relativeStdPct": 19.86650405132758,
+        "median": 4673.6868999999715,
+        "p95": 7085.943564999812,
+        "min": 3563.714200000046,
+        "max": 7652.587200000009
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 50,
+        "mean": 151.23020399996486,
+        "stddev": 23.80692583422452,
+        "relativeStdPct": 15.742176631746164,
+        "median": 142.65910000004806,
+        "p95": 211.447939999838,
+        "min": 131.40620000008494,
+        "max": 235.42700000002515
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 12394.66941999997,
+        "stddev": 5915.815897365658,
+        "relativeStdPct": 47.728710600541966,
+        "median": 10310.369250000105,
+        "p95": 21410.875030000047,
+        "min": 8200.674399999902,
+        "max": 36097.05780000007
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "max",
+      "readyDecryptFailures": 0,
+      "gasUsed": {
+        "n": 50,
+        "mean": 347930.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 347930.0,
+        "p95": 347930.0,
+        "min": 347930.0,
+        "max": 347930.0
+      },
+      "inputPreparationMs": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "confirmationMs": {
+        "n": 50,
+        "mean": 6926.86396199995,
+        "stddev": 5578.453334661633,
+        "relativeStdPct": 80.53360604834226,
+        "median": 4870.207849999773,
+        "p95": 17567.555154999856,
+        "min": 3386.1310999999987,
+        "max": 28380.058799999766
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 7284.841493999942,
+        "stddev": 5550.536893458228,
+        "relativeStdPct": 76.19296724616247,
+        "median": 5434.684499999974,
+        "p95": 17781.645969999918,
+        "min": 3599.6868999999715,
+        "max": 28597.867899999954
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "mean": 357.977531999991,
+        "stddev": 246.4443152547666,
+        "relativeStdPct": 68.84351480884916,
+        "median": 236.9116999998223,
+        "p95": 769.3300250000494,
+        "min": 201.11370000010356,
+        "max": 1349.653500000015
+      },
+      "alreadyReadyDecryptMs": {
+        "n": 50,
+        "mean": 149.73863999994356,
+        "stddev": 37.21894045751602,
+        "relativeStdPct": 24.85593595449381,
+        "median": 142.1831499999389,
+        "p95": 216.32895499993455,
+        "min": 70.44110000017099,
+        "max": 304.11140000028536
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "mean": 7284.841493999942,
+        "stddev": 5550.536893458228,
+        "relativeStdPct": 76.19296724616247,
+        "median": 5434.684499999974,
+        "p95": 17781.645969999918,
+        "min": 3599.6868999999715,
+        "max": 28597.867899999954
+      }
+    }
+  ],
+  "sdkNotarizationStages": [
+    {
+      "stage": "Ciphertext + ZKP",
+      "zama": {
+        "n": 50,
+        "mean": 5724.37109800005,
+        "stddev": 52.398800550900035,
+        "relativeStdPct": 0.9153634461121302,
+        "median": 5714.304450000171,
+        "p95": 5756.347794999939,
+        "min": 5667.110299999942,
+        "max": 5968.79800000001
+      },
+      "fhenix": {
+        "n": 50,
+        "mean": 5350.24247199998,
+        "stddev": 48.481596724626336,
+        "relativeStdPct": 0.9061570008901555,
+        "median": 5343.480149999959,
+        "p95": 5450.778815000039,
+        "min": 5260.524800000014,
+        "max": 5470.349799999967
+      }
+    },
+    {
+      "stage": "Input approval",
+      "zama": {
+        "n": 50,
+        "mean": 8137.660134000022,
+        "stddev": 52.854683834766305,
+        "relativeStdPct": 0.6495071428939841,
+        "median": 8129.633800000069,
+        "p95": 8238.510174999898,
+        "min": 8052.605500000063,
+        "max": 8274.750499999966
+      },
+      "fhenix": {
+        "n": 50,
+        "mean": 668.0179180000088,
+        "stddev": 123.34413214612213,
+        "relativeStdPct": 18.4641951694057,
+        "median": 630.8855999999796,
+        "p95": 918.8317000001432,
+        "min": 590.5095999999903,
+        "max": 1309.437299999874
+      }
+    },
+    {
+      "stage": "Key fetch/preparation",
+      "zama": {
+        "n": 0,
+        "mean": null,
+        "stddev": null,
+        "median": null,
+        "p95": null
+      },
+      "fhenix": {
+        "n": 50,
+        "mean": 690.9703840000235,
+        "stddev": 24.46375021721713,
+        "relativeStdPct": 3.5404918624148003,
+        "median": 688.4605000000447,
+        "p95": 734.4358800000161,
+        "min": 651.9549999996088,
+        "max": 756.3277000000235
+      }
+    },
+    {
+      "stage": "First SDK decrypt",
+      "zama": {
+        "n": 50,
+        "mean": 3985.2257959999693,
+        "stddev": 911.9485272168445,
+        "relativeStdPct": 22.88323357065943,
+        "median": 4480.78204999998,
+        "p95": 4687.540005000052,
+        "min": 2386.2981000000145,
+        "max": 4733.119399999734
+      },
+      "fhenix": {
+        "n": 50,
+        "mean": 151.63575600001786,
+        "stddev": 17.34944362628977,
+        "relativeStdPct": 11.441525458077134,
+        "median": 146.14915000018664,
+        "p95": 180.27708999999882,
+        "min": 137.00290000019595,
+        "max": 220.58679999993183
+      }
+    },
+    {
+      "stage": "Total input preparation",
+      "zama": {
+        "n": 50,
+        "mean": 13862.060238000033,
+        "stddev": 89.48903107598164,
+        "relativeStdPct": 0.6455680435630021,
+        "median": 13847.182600000175,
+        "p95": 13995.102920000127,
+        "min": 13758.18209999986,
+        "max": 14217.326700000034
+      },
+      "fhenix": {
+        "n": 50,
+        "mean": 9574.412588000048,
+        "stddev": 2884.5448411561233,
+        "relativeStdPct": 30.12764297176232,
+        "median": 9809.502049999894,
+        "p95": 12541.733780000102,
+        "min": 6590.831000000006,
+        "max": 12783.118699999992
+      }
+    },
+    {
+      "stage": "Ready decrypt + auth",
+      "zama": {
+        "n": 50,
+        "mean": 2337.079944000025,
+        "stddev": 41.78621090316004,
+        "relativeStdPct": 1.787966689391075,
+        "median": 2336.8379000000423,
+        "p95": 2361.8886150000153,
+        "min": 2282.8700000001118,
+        "max": 2592.067700000014
+      },
+      "fhenix": {
+        "n": 50,
+        "mean": 146.94155999994254,
+        "stddev": 26.753419665115477,
+        "relativeStdPct": 18.206843363528968,
+        "median": 142.139499999932,
+        "p95": 162.32984499977897,
+        "min": 129.17689999984577,
+        "max": 281.38550000009127
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "metric": "confirmationMs",
+      "operation": "notarize",
+      "left": "baseline",
+      "right": "zama",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": 7981.951557999961,
+        "stddev": 411.7974863525125,
+        "relativeStdPct": 5.159107811670267,
+        "median": 7890.3013000001665,
+        "p95": 8734.71666499984,
+        "min": 7311.665500000119,
+        "max": 8981.458500000066
+      },
+      "pairedTStatistic": 137.05989620667006,
+      "pUnadjusted": 5.353605999281656e-65,
+      "pointwise95PctMeanDifferenceCI": [
+        7864.920007277531,
+        8098.98310872239
+      ],
+      "circularBlockBootstrap95PctCI": [
+        7877.853424849985,
+        8100.030670149965
+      ],
+      "pairedDifferenceLagOneCorrelation": 0.0009133528597212314,
+      "pHolmAll30Comparisons": 1.6060817997844967e-63,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "confirmationMs",
+      "operation": "notarize",
+      "left": "baseline",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": 6570.251384000012,
+        "stddev": 349.8913092894022,
+        "relativeStdPct": 5.325386942445817,
+        "median": 6547.1851499999175,
+        "p95": 7235.988204999908,
+        "min": 6136.200100000016,
+        "max": 7653.926600000006
+      },
+      "pairedTStatistic": 132.78035733902763,
+      "pUnadjusted": 2.5230199204781482e-64,
+      "pointwise95PctMeanDifferenceCI": [
+        6470.81337413468,
+        6669.689393865344
+      ],
+      "circularBlockBootstrap95PctCI": [
+        6495.010683100042,
+        6651.29598479992
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.1981923741481313,
+      "pHolmAll30Comparisons": 7.31675776938663e-63,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "confirmationMs",
+      "operation": "notarize",
+      "left": "zama",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -1411.7001739999496,
+        "stddev": 293.05307974501255,
+        "relativeStdPct": -20.758875371862285,
+        "median": -1378.7445000000444,
+        "p95": -990.5930900002365,
+        "min": -2424.464700000128,
+        "max": -701.8019999999087
+      },
+      "pairedTStatistic": -34.06286557050189,
+      "pUnadjusted": 8.936256286463387e-36,
+      "pointwise95PctMeanDifferenceCI": [
+        -1494.9849377568216,
+        -1328.4154102430775
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -1496.1515686999733,
+        -1335.5617930999729
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.003457589669919285,
+      "pHolmAll30Comparisons": 1.7872512572926774e-34,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "confirmationMs",
+      "operation": "add",
+      "left": "baseline",
+      "right": "zama",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -24.75832399998966,
+        "stddev": 252.05080084106035,
+        "relativeStdPct": -1018.0446820276106,
+        "median": -54.05930000031367,
+        "p95": 408.79780000002256,
+        "min": -711.939400000032,
+        "max": 688.3371000001207
+      },
+      "pairedTStatistic": -0.6945734245949039,
+      "pUnadjusted": 0.49060307280743687,
+      "pointwise95PctMeanDifferenceCI": [
+        -96.39036902419949,
+        46.873721024220174
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -96.06215515002586,
+        41.57806959999667
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.12181033010100184,
+      "pHolmAll30Comparisons": 1.0,
+      "rejectEqualMeansAt05AfterHolm": false
+    },
+    {
+      "metric": "confirmationMs",
+      "operation": "add",
+      "left": "baseline",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": 9.88965399998182,
+        "stddev": 252.71696233587556,
+        "relativeStdPct": 2555.3670769102755,
+        "median": 54.981199999921955,
+        "p95": 497.78414000007285,
+        "min": -617.5758000002243,
+        "max": 695.8349999999627
+      },
+      "pairedTStatistic": 0.2767143662356011,
+      "pUnadjusted": 0.783163375643187,
+      "pointwise95PctMeanDifferenceCI": [
+        -61.93171202630684,
+        81.71102002627048
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -59.70727770002994,
+        74.5688388499877
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.12882708220134442,
+      "pHolmAll30Comparisons": 1.0,
+      "rejectEqualMeansAt05AfterHolm": false
+    },
+    {
+      "metric": "confirmationMs",
+      "operation": "add",
+      "left": "zama",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": 34.64797799997148,
+        "stddev": 229.32558721575685,
+        "relativeStdPct": 661.8729301200365,
+        "median": 59.01989999972284,
+        "p95": 427.1490599998494,
+        "min": -697.1110999998637,
+        "max": 631.5356000000611
+      },
+      "pairedTStatistic": 1.0683421983405599,
+      "pUnadjusted": 0.29060126974146233,
+      "pointwise95PctMeanDifferenceCI": [
+        -30.525632771458383,
+        99.82158877140134
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -23.22166950004635,
+        93.2061247499704
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.06113726144335243,
+      "pHolmAll30Comparisons": 1.0,
+      "rejectEqualMeansAt05AfterHolm": false
+    },
+    {
+      "metric": "confirmationMs",
+      "operation": "mul_scalar",
+      "left": "baseline",
+      "right": "zama",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -19.711451999948476,
+        "stddev": 240.58206097912174,
+        "relativeStdPct": -1220.5192239503745,
+        "median": -59.54075000004377,
+        "p95": 408.983085000025,
+        "min": -698.9331000000238,
+        "max": 703.4905000003055
+      },
+      "pairedTStatistic": -0.5793491551062189,
+      "pUnadjusted": 0.5650077659770395,
+      "pointwise95PctMeanDifferenceCI": [
+        -88.08411721889684,
+        48.661213218999876
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -84.467321999954,
+        41.722601550071545
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.020901168359957836,
+      "pHolmAll30Comparisons": 1.0,
+      "rejectEqualMeansAt05AfterHolm": false
+    },
+    {
+      "metric": "confirmationMs",
+      "operation": "mul_scalar",
+      "left": "baseline",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -30.175885999914026,
+        "stddev": 198.2764354964194,
+        "relativeStdPct": -657.0691428811214,
+        "median": -46.52474999989499,
+        "p95": 204.2040700003504,
+        "min": -712.0123999998905,
+        "max": 257.2463000002317
+      },
+      "pairedTStatistic": -1.0761527745558417,
+      "pUnadjusted": 0.2871291231467085,
+      "pointwise95PctMeanDifferenceCI": [
+        -86.52542548689834,
+        26.173653487070293
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -78.60877059988869,
+        15.10222985003352
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.1961741853045886,
+      "pHolmAll30Comparisons": 1.0,
+      "rejectEqualMeansAt05AfterHolm": false
+    },
+    {
+      "metric": "confirmationMs",
+      "operation": "mul_scalar",
+      "left": "zama",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -10.46443399996555,
+        "stddev": 269.3003502860334,
+        "relativeStdPct": -2573.4822379014477,
+        "median": 61.13280000013765,
+        "p95": 196.54612499998765,
+        "min": -823.523999999743,
+        "max": 741.3009999999776
+      },
+      "pairedTStatistic": -0.27476652870282076,
+      "pUnadjusted": 0.7846508274152242,
+      "pointwise95PctMeanDifferenceCI": [
+        -86.99874673515484,
+        66.06987873522374
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -76.10666009994596,
+        51.754197050056874
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.08150553338058217,
+      "pHolmAll30Comparisons": 1.0,
+      "rejectEqualMeansAt05AfterHolm": false
+    },
+    {
+      "metric": "confirmationMs",
+      "operation": "mean",
+      "left": "baseline",
+      "right": "zama",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": 4.4186159999948,
+        "stddev": 165.8130618958386,
+        "relativeStdPct": 3752.6017625436048,
+        "median": 4.9398000000510365,
+        "p95": 188.35775500016751,
+        "min": -554.7457000007853,
+        "max": 561.43619999988
+      },
+      "pairedTStatistic": 0.18843107420683333,
+      "pUnadjusted": 0.851316983031871,
+      "pointwise95PctMeanDifferenceCI": [
+        -42.70493479092136,
+        51.542166790910954
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -41.625477750030754,
+        49.28970299997176
+      ],
+      "pairedDifferenceLagOneCorrelation": 0.10179061147053946,
+      "pHolmAll30Comparisons": 1.0,
+      "rejectEqualMeansAt05AfterHolm": false
+    },
+    {
+      "metric": "confirmationMs",
+      "operation": "mean",
+      "left": "baseline",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -4.475436000030604,
+        "stddev": 197.2841965046622,
+        "relativeStdPct": -4408.155909353035,
+        "median": 40.42599999997765,
+        "p95": 312.4273800000193,
+        "min": -669.3713000006974,
+        "max": 557.4952000000048
+      },
+      "pairedTStatistic": -0.16040875044510988,
+      "pUnadjusted": 0.8732185760175158,
+      "pointwise95PctMeanDifferenceCI": [
+        -60.542984285657276,
+        51.592112285596066
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -61.611399850085924,
+        46.28454079999771
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.018804461893213074,
+      "pHolmAll30Comparisons": 1.0,
+      "rejectEqualMeansAt05AfterHolm": false
+    },
+    {
+      "metric": "confirmationMs",
+      "operation": "mean",
+      "left": "zama",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -8.894052000025404,
+        "stddev": 199.78685601973012,
+        "relativeStdPct": -2246.2973683891155,
+        "median": -59.990600000019185,
+        "p95": 281.59706000003456,
+        "min": -707.3446000004187,
+        "max": 619.2701999999117
+      },
+      "pairedTStatistic": -0.31478769958833824,
+      "pUnadjusted": 0.7542594282115858,
+      "pointwise95PctMeanDifferenceCI": [
+        -65.67284825021085,
+        47.88474425016004
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -66.67365395002923,
+        48.45754670004927
+      ],
+      "pairedDifferenceLagOneCorrelation": 0.0845759302452692,
+      "pHolmAll30Comparisons": 1.0,
+      "rejectEqualMeansAt05AfterHolm": false
+    },
+    {
+      "metric": "confirmationMs",
+      "operation": "max",
+      "left": "baseline",
+      "right": "zama",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -37.112128000019,
+        "stddev": 248.45390489330066,
+        "relativeStdPct": -669.4682258402792,
+        "median": -49.46249999990687,
+        "p95": 246.65711000015705,
+        "min": -674.1200000005774,
+        "max": 556.6055999999808
+      },
+      "pairedTStatistic": -1.0562215709327005,
+      "pUnadjusted": 0.29604688099769966,
+      "pointwise95PctMeanDifferenceCI": [
+        -107.7219465063302,
+        33.4976905062922
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -110.05438719996816,
+        35.12834179997152
+      ],
+      "pairedDifferenceLagOneCorrelation": 0.13769194260958267,
+      "pHolmAll30Comparisons": 1.0,
+      "rejectEqualMeansAt05AfterHolm": false
+    },
+    {
+      "metric": "confirmationMs",
+      "operation": "max",
+      "left": "baseline",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -51.45764399996551,
+        "stddev": 213.28611050319722,
+        "relativeStdPct": -414.48868219333974,
+        "median": -53.07214999990538,
+        "p95": 179.12367000004156,
+        "min": -675.3013999997638,
+        "max": 635.3317999998108
+      },
+      "pairedTStatistic": -1.705973676880072,
+      "pUnadjusted": 0.09434479270876693,
+      "pointwise95PctMeanDifferenceCI": [
+        -112.07288592588894,
+        9.157597925957916
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -114.93010204992349,
+        8.575010350038276
+      ],
+      "pairedDifferenceLagOneCorrelation": 0.1373377145723354,
+      "pHolmAll30Comparisons": 1.0,
+      "rejectEqualMeansAt05AfterHolm": false
+    },
+    {
+      "metric": "confirmationMs",
+      "operation": "max",
+      "left": "zama",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -14.34551599994651,
+        "stddev": 272.28912538925647,
+        "relativeStdPct": -1898.0782942228898,
+        "median": -51.49054999998771,
+        "p95": 565.8021800000453,
+        "min": -684.5569000001997,
+        "max": 737.1416999999201
+      },
+      "pairedTStatistic": -0.3725382579521309,
+      "pUnadjusted": 0.7110986811768281,
+      "pointwise95PctMeanDifferenceCI": [
+        -91.72922922125572,
+        63.038197221362694
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -96.19981449993402,
+        67.04415455010593
+      ],
+      "pairedDifferenceLagOneCorrelation": 0.12015267455446126,
+      "pHolmAll30Comparisons": 1.0,
+      "rejectEqualMeansAt05AfterHolm": false
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "notarize",
+      "left": "baseline",
+      "right": "zama",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": 4004.587955999949,
+        "stddev": 914.0994589781966,
+        "relativeStdPct": 22.826304953762595,
+        "median": 3608.820949999761,
+        "p95": 5582.022655000072,
+        "min": 2955.5746000001673,
+        "max": 5865.77509999997
+      },
+      "pairedTStatistic": 30.97771551807779,
+      "pUnadjusted": 7.647106762385535e-34,
+      "pointwise95PctMeanDifferenceCI": [
+        3744.8037641479973,
+        4264.3721478519
+      ],
+      "circularBlockBootstrap95PctCI": [
+        3789.712146499939,
+        4232.139394899961
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.2352149430870247,
+      "pHolmAll30Comparisons": 1.376479217229396e-32,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "notarize",
+      "left": "baseline",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": 6416.294146000003,
+        "stddev": 361.0435223717294,
+        "relativeStdPct": 5.626978971916498,
+        "median": 6401.403500000015,
+        "p95": 7114.613589999999,
+        "min": 5956.625599999446,
+        "max": 7527.164900000091
+      },
+      "pairedTStatistic": 125.663661569667,
+      "pUnadjusted": 3.7225095164071513e-63,
+      "pointwise95PctMeanDifferenceCI": [
+        6313.686712244855,
+        6518.901579755151
+      ],
+      "circularBlockBootstrap95PctCI": [
+        6329.926358549993,
+        6504.817413799998
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.14995972596638465,
+      "pHolmAll30Comparisons": 1.0423026645940024e-61,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "notarize",
+      "left": "zama",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": 2411.7061900000535,
+        "stddev": 899.1190569702438,
+        "relativeStdPct": 37.28145081263916,
+        "median": 2918.1184500001837,
+        "p95": 3207.9819750000634,
+        "min": 458.15039999992587,
+        "max": 3317.222399999853
+      },
+      "pairedTStatistic": 18.966718455785635,
+      "pUnadjusted": 3.240751575512389e-24,
+      "pointwise95PctMeanDifferenceCI": [
+        2156.179381292824,
+        2667.232998707283
+      ],
+      "circularBlockBootstrap95PctCI": [
+        2195.939861650023,
+        2623.6074170500447
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.2581884173092171,
+      "pHolmAll30Comparisons": 5.509277678371062e-23,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "add",
+      "left": "baseline",
+      "right": "zama",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -4205.835725999993,
+        "stddev": 822.1312701248756,
+        "relativeStdPct": -19.54739375678785,
+        "median": -4590.186149999965,
+        "p95": -2622.4779749999525,
+        "min": -5243.4781999997795,
+        "max": -2422.1361000000034
+      },
+      "pairedTStatistic": -36.17396722982592,
+      "pUnadjusted": 5.242404576675284e-37,
+      "pointwise95PctMeanDifferenceCI": [
+        -4439.482847774193,
+        -3972.188604225793
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -4398.94231915,
+        -4009.8595073499873
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.11373903067566733,
+      "pHolmAll30Comparisons": 1.1533290068685625e-35,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "add",
+      "left": "baseline",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -266.960806000001,
+        "stddev": 311.292835321643,
+        "relativeStdPct": -116.60619399000534,
+        "median": -256.9182000000146,
+        "p95": 103.07430499996974,
+        "min": -1272.9561999998987,
+        "max": 352.20060000009835
+      },
+      "pairedTStatistic": -6.064058494586966,
+      "pUnadjusted": 1.864508925646478e-07,
+      "pointwise95PctMeanDifferenceCI": [
+        -355.42925093676206,
+        -178.49236106323997
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -350.7304978499822,
+        -182.16711834999592
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.09001166883608047,
+      "pHolmAll30Comparisons": 2.610312495905069e-06,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "add",
+      "left": "zama",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": 3938.8749199999916,
+        "stddev": 817.870959702187,
+        "relativeStdPct": 20.764075435586278,
+        "median": 4355.403049999964,
+        "p95": 4646.8279650000095,
+        "min": 2146.8249999999534,
+        "max": 4684.2731000003405
+      },
+      "pairedTStatistic": 34.05433501626951,
+      "pUnadjusted": 9.042194904325509e-36,
+      "pointwise95PctMeanDifferenceCI": [
+        3706.438565051355,
+        4171.311274948628
+      ],
+      "circularBlockBootstrap95PctCI": [
+        3734.856915249948,
+        4135.490188149953
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.04281358535779297,
+      "pHolmAll30Comparisons": 1.7872512572926774e-34,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "mul_scalar",
+      "left": "baseline",
+      "right": "zama",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -4449.056841999942,
+        "stddev": 649.2978048486843,
+        "relativeStdPct": -14.594055052729146,
+        "median": -4633.851449999842,
+        "p95": -2786.5864849999784,
+        "min": -5479.34440000006,
+        "max": -2352.3395000002347
+      },
+      "pairedTStatistic": -48.45170027327775,
+      "pUnadjusted": 4.664368245825777e-43,
+      "pointwise95PctMeanDifferenceCI": [
+        -4633.585236418218,
+        -4264.528447581665
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -4618.0143265998495,
+        -4258.026621749929
+      ],
+      "pairedDifferenceLagOneCorrelation": 0.08688236001111212,
+      "pHolmAll30Comparisons": 1.1194483789981865e-41,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "mul_scalar",
+      "left": "baseline",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -468.0797319999401,
+        "stddev": 290.26304195545356,
+        "relativeStdPct": -62.01145277435142,
+        "median": -381.91534999993746,
+        "p95": -84.78414000006168,
+        "min": -1102.0145999998786,
+        "max": 54.79130000062287
+      },
+      "pairedTStatistic": -11.402841726020878,
+      "pUnadjusted": 2.1594653003709698e-15,
+      "pointwise95PctMeanDifferenceCI": [
+        -550.5715757903051,
+        -385.5878882095751
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -541.9387633499105,
+        -394.6782602999738
+      ],
+      "pairedDifferenceLagOneCorrelation": 0.03743849453310725,
+      "pHolmAll30Comparisons": 3.4551444805935516e-14,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "mul_scalar",
+      "left": "zama",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": 3980.9771100000016,
+        "stddev": 607.7010397918745,
+        "relativeStdPct": 15.265122682201863,
+        "median": 4179.338850000204,
+        "p95": 4570.285049999919,
+        "min": 2135.636100000236,
+        "max": 4722.287899999879
+      },
+      "pairedTStatistic": 46.32172278647901,
+      "pUnadjusted": 4.031233480563323e-42,
+      "pointwise95PctMeanDifferenceCI": [
+        3808.2703854096653,
+        4153.683834590338
+      ],
+      "circularBlockBootstrap95PctCI": [
+        3809.446561500011,
+        4137.599860950037
+      ],
+      "pairedDifferenceLagOneCorrelation": 0.045572122363068165,
+      "pHolmAll30Comparisons": 9.271837005295643e-41,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "mean",
+      "left": "baseline",
+      "right": "zama",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -4400.739778000033,
+        "stddev": 570.1867346445383,
+        "relativeStdPct": -12.956611011062014,
+        "median": -4586.867300000275,
+        "p95": -2889.252075000213,
+        "min": -5119.623399999924,
+        "max": -2433.0544000000227
+      },
+      "pairedTStatistic": -54.57497956702091,
+      "pUnadjusted": 1.5188806879588437e-45,
+      "pointwise95PctMeanDifferenceCI": [
+        -4562.785055031389,
+        -4238.694500968677
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -4536.5903056500665,
+        -4246.74946455005
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.02100549722131457,
+      "pHolmAll30Comparisons": 3.7972017198971094e-44,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "mean",
+      "left": "baseline",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -4968.238749999987,
+        "stddev": 1002.3987055955307,
+        "relativeStdPct": -20.176137984422212,
+        "median": -4578.337599999853,
+        "p95": -3958.335775000043,
+        "min": -7727.502400000056,
+        "max": -3586.9825000001583
+      },
+      "pairedTStatistic": -35.046686423957716,
+      "pUnadjusted": 2.3369926539388082e-36,
+      "pointwise95PctMeanDifferenceCI": [
+        -5253.117310083227,
+        -4683.360189916747
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -5216.928456900027,
+        -4732.757221600018
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.022792309877456327,
+      "pHolmAll30Comparisons": 4.907684573271497e-35,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "mean",
+      "left": "zama",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -567.4989719999535,
+        "stddev": 1089.984028446762,
+        "relativeStdPct": -192.06801813322957,
+        "median": -165.43520000006538,
+        "p95": 655.8487800000928,
+        "min": -3383.936400000006,
+        "max": 906.5253999999259
+      },
+      "pairedTStatistic": -3.6815435909587872,
+      "pUnadjusted": 0.0005775097770000488,
+      "pointwise95PctMeanDifferenceCI": [
+        -877.2690054250916,
+        -257.7289385748154
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -853.75337459993,
+        -288.7122224000025
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.021907292060127943,
+      "pHolmAll30Comparisons": 0.007507627101000633,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "max",
+      "left": "baseline",
+      "right": "zama",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -4544.270398000015,
+        "stddev": 444.1628528426925,
+        "relativeStdPct": -9.774129044745523,
+        "median": -4616.96120000002,
+        "p95": -3871.7131049999607,
+        "min": -5275.704299999867,
+        "max": -2595.4250000000466
+      },
+      "pairedTStatistic": -72.34473557177775,
+      "pUnadjusted": 1.8041850319727234e-51,
+      "pointwise95PctMeanDifferenceCI": [
+        -4670.500084105921,
+        -4418.040711894109
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -4658.7193418500065,
+        -4413.586633550045
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.0008642923784721655,
+      "pHolmAll30Comparisons": 4.871299586326353e-50,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "max",
+      "left": "baseline",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": -345.1033479999611,
+        "stddev": 300.0699071533771,
+        "relativeStdPct": -86.95073776954807,
+        "median": -294.25680000020657,
+        "p95": -45.00579000001308,
+        "min": -1296.3217000002041,
+        "max": 236.8352999999188
+      },
+      "pairedTStatistic": -8.13226890679921,
+      "pUnadjusted": 1.200181357150089e-10,
+      "pointwise95PctMeanDifferenceCI": [
+        -430.3822720418465,
+        -259.8244239580757
+      ],
+      "circularBlockBootstrap95PctCI": [
+        -432.8168909499833,
+        -264.14966390001484
+      ],
+      "pairedDifferenceLagOneCorrelation": 0.0076604788953805215,
+      "pHolmAll30Comparisons": 1.8002720357251335e-09,
+      "rejectEqualMeansAt05AfterHolm": true
+    },
+    {
+      "metric": "transactionToValidatedPlaintextMs",
+      "operation": "max",
+      "left": "zama",
+      "right": "fhenix",
+      "pairedRounds": 50,
+      "differenceMs": {
+        "n": 50,
+        "mean": 4199.167050000054,
+        "stddev": 415.25523063327944,
+        "relativeStdPct": 9.888990499515234,
+        "median": 4335.6638000000385,
+        "p95": 4587.896815000078,
+        "min": 2415.157499999972,
+        "max": 4763.819099999964
+      },
+      "pairedTStatistic": 71.50444539523123,
+      "pUnadjusted": 3.181372334232503e-51,
+      "pointwise95PctMeanDifferenceCI": [
+        4081.1528192259216,
+        4317.181280774186
+      ],
+      "circularBlockBootstrap95PctCI": [
+        4096.00438385003,
+        4298.074977350126
+      ],
+      "pairedDifferenceLagOneCorrelation": -0.16746100618367696,
+      "pHolmAll30Comparisons": 8.271568069004507e-50,
+      "rejectEqualMeansAt05AfterHolm": true
+    }
+  ],
+  "lifecycleComparisons": [
+    {
+      "operation": "notarize",
+      "configuration": "zama",
+      "pairedRounds": 50,
+      "baselineClientLifecycleMs": {
+        "n": 50,
+        "mean": 13295.210849999989,
+        "stddev": 5897.030628406618,
+        "relativeStdPct": 44.35454762574618,
+        "median": 11167.469399999827,
+        "p95": 23609.89619499985,
+        "min": 9775.400999999605,
+        "max": 36887.3609
+      },
+      "configurationClientLifecycleMs": {
+        "n": 50,
+        "mean": 23152.683132000067,
+        "stddev": 6107.362509834342,
+        "relativeStdPct": 26.37863816912503,
+        "median": 21173.88020000013,
+        "p95": 33451.39095500001,
+        "min": 18981.850199999986,
+        "max": 48005.519
+      },
+      "geometricMeanLifecycleRatio": 1.8054346384813065,
+      "lifecycleOverheadPct": 80.54346384813064,
+      "circularBlockBootstrap95PctRatioCI": [
+        1.749387951538398,
+        1.8607896655456515
+      ],
+      "pUnadjustedLogRatio": 4.46973106612151e-36,
+      "baselineGasUsed": {
+        "n": 50,
+        "mean": 34185.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 34185.0,
+        "p95": 34185.0,
+        "min": 34185.0,
+        "max": 34185.0
+      },
+      "configurationGasUsed": {
+        "n": 50,
+        "mean": 486176.48,
+        "stddev": 12.819373094290231,
+        "relativeStdPct": 0.002636773604163293,
+        "median": 486176.0,
+        "p95": 486188.0,
+        "min": 486140.0,
+        "max": 486188.0
+      },
+      "arithmeticMeanGasRatio": 14.221924235775925,
+      "pHolmAll10LifecycleComparisons": 4.46973106612151e-35,
+      "rejectUnitLifecycleRatioAt05AfterHolm": true
+    },
+    {
+      "operation": "notarize",
+      "configuration": "fhenix",
+      "pairedRounds": 50,
+      "baselineClientLifecycleMs": {
+        "n": 50,
+        "mean": 13295.210849999989,
+        "stddev": 5897.030628406618,
+        "relativeStdPct": 44.35454762574618,
+        "median": 11167.469399999827,
+        "p95": 23609.89619499985,
+        "min": 9775.400999999605,
+        "max": 36887.3609
+      },
+      "configurationClientLifecycleMs": {
+        "n": 50,
+        "mean": 16453.329292000035,
+        "stddev": 6784.208737225305,
+        "relativeStdPct": 41.23304540269509,
+        "median": 16624.419300000183,
+        "p95": 29777.473620000073,
+        "min": 10357.722400000319,
+        "max": 43586.68490000002
+      },
+      "geometricMeanLifecycleRatio": 1.2342891770390896,
+      "lifecycleOverheadPct": 23.428917703908958,
+      "circularBlockBootstrap95PctRatioCI": [
+        1.1852806739631856,
+        1.2828720003168996
+      ],
+      "pUnadjustedLogRatio": 3.5646635613759224e-09,
+      "baselineGasUsed": {
+        "n": 50,
+        "mean": 34185.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 34185.0,
+        "p95": 34185.0,
+        "min": 34185.0,
+        "max": 34185.0
+      },
+      "configurationGasUsed": {
+        "n": 50,
+        "mean": 320492.64,
+        "stddev": 5.958221896108377,
+        "relativeStdPct": 0.0018590822853555627,
+        "median": 320496.0,
+        "p95": 320496.0,
+        "min": 320472.0,
+        "max": 320496.0
+      },
+      "arithmeticMeanGasRatio": 9.375241772707328,
+      "pHolmAll10LifecycleComparisons": 7.129327122751845e-09,
+      "rejectUnitLifecycleRatioAt05AfterHolm": true
+    },
+    {
+      "operation": "add",
+      "configuration": "zama",
+      "pairedRounds": 50,
+      "baselineClientLifecycleMs": {
+        "n": 50,
+        "mean": 9632.253966000006,
+        "stddev": 7162.608218543866,
+        "relativeStdPct": 74.36066619325537,
+        "median": 6124.553700000048,
+        "p95": 19006.217940000068,
+        "min": 2811.8628000000026,
+        "max": 40244.44090000028
+      },
+      "configurationClientLifecycleMs": {
+        "n": 50,
+        "mean": 13838.089691999998,
+        "stddev": 7229.372702404464,
+        "relativeStdPct": 52.24256283426079,
+        "median": 10359.259300000034,
+        "p95": 23631.684260000005,
+        "min": 7339.291900000069,
+        "max": 44924.3376000002
+      },
+      "geometricMeanLifecycleRatio": 1.5931851811373388,
+      "lifecycleOverheadPct": 59.31851811373387,
+      "circularBlockBootstrap95PctRatioCI": [
+        1.5239601412250556,
+        1.6655603217062718
+      ],
+      "pUnadjustedLogRatio": 5.499925961726219e-21,
+      "baselineGasUsed": {
+        "n": 50,
+        "mean": 36022.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 36022.0,
+        "p95": 36022.0,
+        "min": 36022.0,
+        "max": 36022.0
+      },
+      "configurationGasUsed": {
+        "n": 50,
+        "mean": 343060.52,
+        "stddev": 1.3130428906372635,
+        "relativeStdPct": 0.00038274380585596486,
+        "median": 343061.0,
+        "p95": 343061.0,
+        "min": 343057.0,
+        "max": 343061.0
+      },
+      "arithmeticMeanGasRatio": 9.523638887346623,
+      "pHolmAll10LifecycleComparisons": 2.7499629808631095e-20,
+      "rejectUnitLifecycleRatioAt05AfterHolm": true
+    },
+    {
+      "operation": "add",
+      "configuration": "fhenix",
+      "pairedRounds": 50,
+      "baselineClientLifecycleMs": {
+        "n": 50,
+        "mean": 9632.253966000006,
+        "stddev": 7162.608218543866,
+        "relativeStdPct": 74.36066619325537,
+        "median": 6124.553700000048,
+        "p95": 19006.217940000068,
+        "min": 2811.8628000000026,
+        "max": 40244.44090000028
+      },
+      "configurationClientLifecycleMs": {
+        "n": 50,
+        "mean": 9899.214772000007,
+        "stddev": 7185.648013172442,
+        "relativeStdPct": 72.58806055503608,
+        "median": 6461.6756500001065,
+        "p95": 19347.01449499998,
+        "min": 3414.6926000000094,
+        "max": 40341.9012000002
+      },
+      "geometricMeanLifecycleRatio": 1.0374511658770444,
+      "lifecycleOverheadPct": 3.7451165877044446,
+      "circularBlockBootstrap95PctRatioCI": [
+        1.02364852695927,
+        1.0511253058774213
+      ],
+      "pUnadjustedLogRatio": 3.043747431859318e-06,
+      "baselineGasUsed": {
+        "n": 50,
+        "mean": 36022.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 36022.0,
+        "p95": 36022.0,
+        "min": 36022.0,
+        "max": 36022.0
+      },
+      "configurationGasUsed": {
+        "n": 50,
+        "mean": 343751.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 343751.0,
+        "p95": 343751.0,
+        "min": 343751.0,
+        "max": 343751.0
+      },
+      "arithmeticMeanGasRatio": 9.542807173394037,
+      "pHolmAll10LifecycleComparisons": 3.043747431859318e-06,
+      "rejectUnitLifecycleRatioAt05AfterHolm": true
+    },
+    {
+      "operation": "mul_scalar",
+      "configuration": "zama",
+      "pairedRounds": 50,
+      "baselineClientLifecycleMs": {
+        "n": 50,
+        "mean": 8677.254718000042,
+        "stddev": 6824.651777424575,
+        "relativeStdPct": 78.64989560889069,
+        "median": 5613.380699999863,
+        "p95": 23736.984995000046,
+        "min": 3291.6803000001237,
+        "max": 30696.72440000018
+      },
+      "configurationClientLifecycleMs": {
+        "n": 50,
+        "mean": 13126.311559999986,
+        "stddev": 7043.833793388562,
+        "relativeStdPct": 53.66194274142744,
+        "median": 10164.840650000027,
+        "p95": 28456.49509499997,
+        "min": 6887.868599999929,
+        "max": 35971.532799999695
+      },
+      "geometricMeanLifecycleRatio": 1.682030349606629,
+      "lifecycleOverheadPct": 68.20303496066289,
+      "circularBlockBootstrap95PctRatioCI": [
+        1.579882538416826,
+        1.7883211336791764
+      ],
+      "pUnadjustedLogRatio": 6.854609380196244e-24,
+      "baselineGasUsed": {
+        "n": 50,
+        "mean": 36011.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 36011.0,
+        "p95": 36011.0,
+        "min": 36011.0,
+        "max": 36011.0
+      },
+      "configurationGasUsed": {
+        "n": 50,
+        "mean": 339219.44,
+        "stddev": 1.4020393310154624,
+        "relativeStdPct": 0.0004133133793910698,
+        "median": 339220.0,
+        "p95": 339220.0,
+        "min": 339216.0,
+        "max": 339220.0
+      },
+      "arithmeticMeanGasRatio": 9.419883924356446,
+      "pHolmAll10LifecycleComparisons": 4.1127656281177466e-23,
+      "rejectUnitLifecycleRatioAt05AfterHolm": true
+    },
+    {
+      "operation": "mul_scalar",
+      "configuration": "fhenix",
+      "pairedRounds": 50,
+      "baselineClientLifecycleMs": {
+        "n": 50,
+        "mean": 8677.254718000042,
+        "stddev": 6824.651777424575,
+        "relativeStdPct": 78.64989560889069,
+        "median": 5613.380699999863,
+        "p95": 23736.984995000046,
+        "min": 3291.6803000001237,
+        "max": 30696.72440000018
+      },
+      "configurationClientLifecycleMs": {
+        "n": 50,
+        "mean": 9145.334449999982,
+        "stddev": 6953.444415826424,
+        "relativeStdPct": 76.03269682309363,
+        "median": 6089.110449999804,
+        "p95": 24495.575209999977,
+        "min": 4018.086799999699,
+        "max": 31390.607499999925
+      },
+      "geometricMeanLifecycleRatio": 1.0690863972474265,
+      "lifecycleOverheadPct": 6.908639724742649,
+      "circularBlockBootstrap95PctRatioCI": [
+        1.0528209631831271,
+        1.0864477972860438
+      ],
+      "pUnadjustedLogRatio": 4.625606094149455e-13,
+      "baselineGasUsed": {
+        "n": 50,
+        "mean": 36011.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 36011.0,
+        "p95": 36011.0,
+        "min": 36011.0,
+        "max": 36011.0
+      },
+      "configurationGasUsed": {
+        "n": 50,
+        "mean": 482917.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 482917.0,
+        "p95": 482917.0,
+        "min": 482917.0,
+        "max": 482917.0
+      },
+      "arithmeticMeanGasRatio": 13.410263530587876,
+      "pHolmAll10LifecycleComparisons": 1.850242437659782e-12,
+      "rejectUnitLifecycleRatioAt05AfterHolm": true
+    },
+    {
+      "operation": "mean",
+      "configuration": "zama",
+      "pairedRounds": 50,
+      "baselineClientLifecycleMs": {
+        "n": 50,
+        "mean": 7426.430669999984,
+        "stddev": 5856.044985006994,
+        "relativeStdPct": 78.85409889657001,
+        "median": 5354.217650000006,
+        "p95": 16862.860104999818,
+        "min": 3887.492499999935,
+        "max": 29319.45029999991
+      },
+      "configurationClientLifecycleMs": {
+        "n": 50,
+        "mean": 11827.170448000017,
+        "stddev": 5898.873611038523,
+        "relativeStdPct": 49.875611727875516,
+        "median": 9688.182299999753,
+        "p95": 21601.50201499999,
+        "min": 7617.876400000008,
+        "max": 34084.08749999991
+      },
+      "geometricMeanLifecycleRatio": 1.7528907347808167,
+      "lifecycleOverheadPct": 75.28907347808168,
+      "circularBlockBootstrap95PctRatioCI": [
+        1.6729238642037,
+        1.8348153425264482
+      ],
+      "pUnadjustedLogRatio": 6.302759410095867e-27,
+      "baselineGasUsed": {
+        "n": 50,
+        "mean": 37938.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 37938.0,
+        "p95": 37938.0,
+        "min": 37938.0,
+        "max": 37938.0
+      },
+      "configurationGasUsed": {
+        "n": 50,
+        "mean": 358387.52,
+        "stddev": 1.3130428906372635,
+        "relativeStdPct": 0.00036637517138913303,
+        "median": 358388.0,
+        "p95": 358388.0,
+        "min": 358384.0,
+        "max": 358388.0
+      },
+      "arithmeticMeanGasRatio": 9.446663503611155,
+      "pHolmAll10LifecycleComparisons": 5.0422075280766934e-26,
+      "rejectUnitLifecycleRatioAt05AfterHolm": true
+    },
+    {
+      "operation": "mean",
+      "configuration": "fhenix",
+      "pairedRounds": 50,
+      "baselineClientLifecycleMs": {
+        "n": 50,
+        "mean": 7426.430669999984,
+        "stddev": 5856.044985006994,
+        "relativeStdPct": 78.85409889657001,
+        "median": 5354.217650000006,
+        "p95": 16862.860104999818,
+        "min": 3887.492499999935,
+        "max": 29319.45029999991
+      },
+      "configurationClientLifecycleMs": {
+        "n": 50,
+        "mean": 12394.66941999997,
+        "stddev": 5915.815897365658,
+        "relativeStdPct": 47.728710600541966,
+        "median": 10310.369250000105,
+        "p95": 21410.875030000047,
+        "min": 8200.674399999902,
+        "max": 36097.05780000007
+      },
+      "geometricMeanLifecycleRatio": 1.848063071303215,
+      "lifecycleOverheadPct": 84.80630713032149,
+      "circularBlockBootstrap95PctRatioCI": [
+        1.7535402214910643,
+        1.9451714724824394
+      ],
+      "pUnadjustedLogRatio": 3.545501322281987e-25,
+      "baselineGasUsed": {
+        "n": 50,
+        "mean": 37938.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 37938.0,
+        "p95": 37938.0,
+        "min": 37938.0,
+        "max": 37938.0
+      },
+      "configurationGasUsed": {
+        "n": 50,
+        "mean": 406004.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 406004.0,
+        "p95": 406004.0,
+        "min": 406004.0,
+        "max": 406004.0
+      },
+      "arithmeticMeanGasRatio": 10.701776582845696,
+      "pHolmAll10LifecycleComparisons": 2.481850925597391e-24,
+      "rejectUnitLifecycleRatioAt05AfterHolm": true
+    },
+    {
+      "operation": "max",
+      "configuration": "zama",
+      "pairedRounds": 50,
+      "baselineClientLifecycleMs": {
+        "n": 50,
+        "mean": 6939.738145999981,
+        "stddev": 5604.936261350926,
+        "relativeStdPct": 80.7658177215458,
+        "median": 4921.319849999854,
+        "p95": 17368.11060999995,
+        "min": 3376.0697999999975,
+        "max": 28639.69560000021
+      },
+      "configurationClientLifecycleMs": {
+        "n": 50,
+        "mean": 11484.008543999997,
+        "stddev": 5506.0605717438675,
+        "relativeStdPct": 47.945458684115984,
+        "median": 9565.016950000077,
+        "p95": 22217.46041499992,
+        "min": 7351.396800000017,
+        "max": 33216.369799999986
+      },
+      "geometricMeanLifecycleRatio": 1.8307501367244734,
+      "lifecycleOverheadPct": 83.07501367244734,
+      "circularBlockBootstrap95PctRatioCI": [
+        1.7373206575114246,
+        1.9182042881296817
+      ],
+      "pUnadjustedLogRatio": 1.189090611940245e-28,
+      "baselineGasUsed": {
+        "n": 50,
+        "mean": 37945.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 37945.0,
+        "p95": 37945.0,
+        "min": 37945.0,
+        "max": 37945.0
+      },
+      "configurationGasUsed": {
+        "n": 50,
+        "mean": 344626.76,
+        "stddev": 0.9595917499283809,
+        "relativeStdPct": 0.0002784437720182788,
+        "median": 344627.0,
+        "p95": 344627.0,
+        "min": 344623.0,
+        "max": 344627.0
+      },
+      "arithmeticMeanGasRatio": 9.082270654895243,
+      "pHolmAll10LifecycleComparisons": 1.0701815507462204e-27,
+      "rejectUnitLifecycleRatioAt05AfterHolm": true
+    },
+    {
+      "operation": "max",
+      "configuration": "fhenix",
+      "pairedRounds": 50,
+      "baselineClientLifecycleMs": {
+        "n": 50,
+        "mean": 6939.738145999981,
+        "stddev": 5604.936261350926,
+        "relativeStdPct": 80.7658177215458,
+        "median": 4921.319849999854,
+        "p95": 17368.11060999995,
+        "min": 3376.0697999999975,
+        "max": 28639.69560000021
+      },
+      "configurationClientLifecycleMs": {
+        "n": 50,
+        "mean": 7284.841493999942,
+        "stddev": 5550.536893458228,
+        "relativeStdPct": 76.19296724616247,
+        "median": 5434.684499999974,
+        "p95": 17781.645969999918,
+        "min": 3599.6868999999715,
+        "max": 28597.867899999954
+      },
+      "geometricMeanLifecycleRatio": 1.0657491272248913,
+      "lifecycleOverheadPct": 6.574912722489135,
+      "circularBlockBootstrap95PctRatioCI": [
+        1.0489423021646864,
+        1.0847832443492298
+      ],
+      "pUnadjustedLogRatio": 4.2170288341540823e-10,
+      "baselineGasUsed": {
+        "n": 50,
+        "mean": 37945.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 37945.0,
+        "p95": 37945.0,
+        "min": 37945.0,
+        "max": 37945.0
+      },
+      "configurationGasUsed": {
+        "n": 50,
+        "mean": 347930.0,
+        "stddev": 0.0,
+        "relativeStdPct": 0.0,
+        "median": 347930.0,
+        "p95": 347930.0,
+        "min": 347930.0,
+        "max": 347930.0
+      },
+      "arithmeticMeanGasRatio": 9.169324021610226,
+      "pHolmAll10LifecycleComparisons": 1.2651086502462248e-09,
+      "rejectUnitLifecycleRatioAt05AfterHolm": true
+    }
+  ]
+}

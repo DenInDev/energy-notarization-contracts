@@ -1,0 +1,5009 @@
+{
+  "complete": true,
+  "comparisonCount": 250,
+  "sameBlockCount": 244,
+  "sameBlockFraction": 0.976,
+  "plannedComparisonCount": 250,
+  "comparisons": [
+    {
+      "run": 1,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971451,
+          "hash": "0xa94f52d9c905e292eb6c3fd012934ece54b03c4cc524852c2e477391316eef26"
+        },
+        "baseline": {
+          "number": 11971451,
+          "hash": "0xa94f52d9c905e292eb6c3fd012934ece54b03c4cc524852c2e477391316eef26"
+        },
+        "zama": {
+          "number": 11971451,
+          "hash": "0xa94f52d9c905e292eb6c3fd012934ece54b03c4cc524852c2e477391316eef26"
+        }
+      }
+    },
+    {
+      "run": 1,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971452,
+          "hash": "0x7a5c8ba693f4fb0080bd135570277d40928eea6019c4f0df8abddff6800a9f79"
+        },
+        "baseline": {
+          "number": 11971452,
+          "hash": "0x7a5c8ba693f4fb0080bd135570277d40928eea6019c4f0df8abddff6800a9f79"
+        },
+        "zama": {
+          "number": 11971452,
+          "hash": "0x7a5c8ba693f4fb0080bd135570277d40928eea6019c4f0df8abddff6800a9f79"
+        }
+      }
+    },
+    {
+      "run": 1,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971453,
+          "hash": "0x1651bde40f000638725c12c329a36b9dc42c9b39d6e60597970043280349be13"
+        },
+        "fhenix": {
+          "number": 11971453,
+          "hash": "0x1651bde40f000638725c12c329a36b9dc42c9b39d6e60597970043280349be13"
+        },
+        "baseline": {
+          "number": 11971453,
+          "hash": "0x1651bde40f000638725c12c329a36b9dc42c9b39d6e60597970043280349be13"
+        }
+      }
+    },
+    {
+      "run": 1,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971454,
+          "hash": "0xaa7349ae1161263c6371b9fe8d32240bd7eae91dd2cbdb0441328408be95e27a"
+        },
+        "zama": {
+          "number": 11971454,
+          "hash": "0xaa7349ae1161263c6371b9fe8d32240bd7eae91dd2cbdb0441328408be95e27a"
+        },
+        "fhenix": {
+          "number": 11971454,
+          "hash": "0xaa7349ae1161263c6371b9fe8d32240bd7eae91dd2cbdb0441328408be95e27a"
+        }
+      }
+    },
+    {
+      "run": 1,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971455,
+          "hash": "0xa62a82906cd02a289018ddb23c4696dcfec442fe31590105218e9c73bf8320ee"
+        },
+        "baseline": {
+          "number": 11971455,
+          "hash": "0xa62a82906cd02a289018ddb23c4696dcfec442fe31590105218e9c73bf8320ee"
+        },
+        "zama": {
+          "number": 11971455,
+          "hash": "0xa62a82906cd02a289018ddb23c4696dcfec442fe31590105218e9c73bf8320ee"
+        }
+      }
+    },
+    {
+      "run": 2,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971458,
+          "hash": "0x31351cbfe56e5523d3a182c49190da76058ab6eed596aa187a508a0a69764b7c"
+        },
+        "fhenix": {
+          "number": 11971458,
+          "hash": "0x31351cbfe56e5523d3a182c49190da76058ab6eed596aa187a508a0a69764b7c"
+        },
+        "baseline": {
+          "number": 11971458,
+          "hash": "0x31351cbfe56e5523d3a182c49190da76058ab6eed596aa187a508a0a69764b7c"
+        }
+      }
+    },
+    {
+      "run": 2,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971461,
+          "hash": "0x3270b1f80bf6f9d32dfe5db30afca8fee86a12e00ed66c59a279d6ec031a54d6"
+        },
+        "zama": {
+          "number": 11971461,
+          "hash": "0x3270b1f80bf6f9d32dfe5db30afca8fee86a12e00ed66c59a279d6ec031a54d6"
+        },
+        "fhenix": {
+          "number": 11971461,
+          "hash": "0x3270b1f80bf6f9d32dfe5db30afca8fee86a12e00ed66c59a279d6ec031a54d6"
+        }
+      }
+    },
+    {
+      "run": 2,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971462,
+          "hash": "0xd5f70bd79dd4ed1e5b66079d0396e4ebcdde76a8605b699a44f76a183b6ac735"
+        },
+        "baseline": {
+          "number": 11971462,
+          "hash": "0xd5f70bd79dd4ed1e5b66079d0396e4ebcdde76a8605b699a44f76a183b6ac735"
+        },
+        "zama": {
+          "number": 11971462,
+          "hash": "0xd5f70bd79dd4ed1e5b66079d0396e4ebcdde76a8605b699a44f76a183b6ac735"
+        }
+      }
+    },
+    {
+      "run": 2,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971463,
+          "hash": "0x02a31b6a6661bfee2da9e40a2b9db86d2b4d131588227d0c17988300f8e2080e"
+        },
+        "baseline": {
+          "number": 11971463,
+          "hash": "0x02a31b6a6661bfee2da9e40a2b9db86d2b4d131588227d0c17988300f8e2080e"
+        },
+        "zama": {
+          "number": 11971463,
+          "hash": "0x02a31b6a6661bfee2da9e40a2b9db86d2b4d131588227d0c17988300f8e2080e"
+        }
+      }
+    },
+    {
+      "run": 2,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971464,
+          "hash": "0x8dc1c946c54d1dbdf69587edde710243d9576a2fef4469fe56195fb877c8d683"
+        },
+        "fhenix": {
+          "number": 11971464,
+          "hash": "0x8dc1c946c54d1dbdf69587edde710243d9576a2fef4469fe56195fb877c8d683"
+        },
+        "baseline": {
+          "number": 11971464,
+          "hash": "0x8dc1c946c54d1dbdf69587edde710243d9576a2fef4469fe56195fb877c8d683"
+        }
+      }
+    },
+    {
+      "run": 3,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971466,
+          "hash": "0x2c41818d33bc8b9f42a2911a9f7e13273a8b3b1933a08bae27e9da0c36164604"
+        },
+        "zama": {
+          "number": 11971466,
+          "hash": "0x2c41818d33bc8b9f42a2911a9f7e13273a8b3b1933a08bae27e9da0c36164604"
+        },
+        "fhenix": {
+          "number": 11971466,
+          "hash": "0x2c41818d33bc8b9f42a2911a9f7e13273a8b3b1933a08bae27e9da0c36164604"
+        }
+      }
+    },
+    {
+      "run": 3,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971467,
+          "hash": "0xb9bacc8721daaf570255864c34cdaf1b1571d3e420bcd58e7a04bf262779d72c"
+        },
+        "fhenix": {
+          "number": 11971467,
+          "hash": "0xb9bacc8721daaf570255864c34cdaf1b1571d3e420bcd58e7a04bf262779d72c"
+        },
+        "baseline": {
+          "number": 11971467,
+          "hash": "0xb9bacc8721daaf570255864c34cdaf1b1571d3e420bcd58e7a04bf262779d72c"
+        }
+      }
+    },
+    {
+      "run": 3,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971468,
+          "hash": "0xd41277fe183929a924c45195d89e307095d3eff8e1bebfb146c5e06dbad1ea98"
+        },
+        "zama": {
+          "number": 11971468,
+          "hash": "0xd41277fe183929a924c45195d89e307095d3eff8e1bebfb146c5e06dbad1ea98"
+        },
+        "fhenix": {
+          "number": 11971468,
+          "hash": "0xd41277fe183929a924c45195d89e307095d3eff8e1bebfb146c5e06dbad1ea98"
+        }
+      }
+    },
+    {
+      "run": 3,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971469,
+          "hash": "0xaa9719d11d2190859a2f095318a18ec6961f7dd8939ab40209d95767b2b4e376"
+        },
+        "fhenix": {
+          "number": 11971469,
+          "hash": "0xaa9719d11d2190859a2f095318a18ec6961f7dd8939ab40209d95767b2b4e376"
+        },
+        "baseline": {
+          "number": 11971469,
+          "hash": "0xaa9719d11d2190859a2f095318a18ec6961f7dd8939ab40209d95767b2b4e376"
+        }
+      }
+    },
+    {
+      "run": 3,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971470,
+          "hash": "0xc1754e1ad61120d762fc6225b5938568cbe21bee4f93fcb10a40d4d4b0d2b045"
+        },
+        "zama": {
+          "number": 11971470,
+          "hash": "0xc1754e1ad61120d762fc6225b5938568cbe21bee4f93fcb10a40d4d4b0d2b045"
+        },
+        "fhenix": {
+          "number": 11971470,
+          "hash": "0xc1754e1ad61120d762fc6225b5938568cbe21bee4f93fcb10a40d4d4b0d2b045"
+        }
+      }
+    },
+    {
+      "run": 4,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971472,
+          "hash": "0xb3f0f48e12b3ba54d3d87d29502ccf1fee7044b37d07dee1d114fd046c1866ea"
+        },
+        "fhenix": {
+          "number": 11971472,
+          "hash": "0xb3f0f48e12b3ba54d3d87d29502ccf1fee7044b37d07dee1d114fd046c1866ea"
+        },
+        "baseline": {
+          "number": 11971472,
+          "hash": "0xb3f0f48e12b3ba54d3d87d29502ccf1fee7044b37d07dee1d114fd046c1866ea"
+        }
+      }
+    },
+    {
+      "run": 4,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971473,
+          "hash": "0xd34cba5b9e55840f279720a2963e748ccf49eea42e42a591c0d311560a106915"
+        },
+        "fhenix": {
+          "number": 11971473,
+          "hash": "0xd34cba5b9e55840f279720a2963e748ccf49eea42e42a591c0d311560a106915"
+        },
+        "zama": {
+          "number": 11971473,
+          "hash": "0xd34cba5b9e55840f279720a2963e748ccf49eea42e42a591c0d311560a106915"
+        }
+      }
+    },
+    {
+      "run": 4,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971474,
+          "hash": "0x30199b6d82dfc9337f9ce912840d220e0fb3c109651bdc2a93559c407694ffc8"
+        },
+        "fhenix": {
+          "number": 11971474,
+          "hash": "0x30199b6d82dfc9337f9ce912840d220e0fb3c109651bdc2a93559c407694ffc8"
+        },
+        "zama": {
+          "number": 11971474,
+          "hash": "0x30199b6d82dfc9337f9ce912840d220e0fb3c109651bdc2a93559c407694ffc8"
+        }
+      }
+    },
+    {
+      "run": 4,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971475,
+          "hash": "0xc5d6178697445c2172620381a93a0842faacb09beb285a241bb9e6fe6cd29b1e"
+        },
+        "zama": {
+          "number": 11971475,
+          "hash": "0xc5d6178697445c2172620381a93a0842faacb09beb285a241bb9e6fe6cd29b1e"
+        },
+        "fhenix": {
+          "number": 11971475,
+          "hash": "0xc5d6178697445c2172620381a93a0842faacb09beb285a241bb9e6fe6cd29b1e"
+        }
+      }
+    },
+    {
+      "run": 4,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971476,
+          "hash": "0x58b5f7516e3968d9790845717e16c16cfaaa0d318669d13f78eca3c08e93130b"
+        },
+        "zama": {
+          "number": 11971476,
+          "hash": "0x58b5f7516e3968d9790845717e16c16cfaaa0d318669d13f78eca3c08e93130b"
+        },
+        "fhenix": {
+          "number": 11971476,
+          "hash": "0x58b5f7516e3968d9790845717e16c16cfaaa0d318669d13f78eca3c08e93130b"
+        }
+      }
+    },
+    {
+      "run": 5,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971478,
+          "hash": "0xfac4c4e293d36a2e7f5f549e17105378bfa662ad8423b9aca6fd05a684ce6f35"
+        },
+        "baseline": {
+          "number": 11971478,
+          "hash": "0xfac4c4e293d36a2e7f5f549e17105378bfa662ad8423b9aca6fd05a684ce6f35"
+        },
+        "zama": {
+          "number": 11971478,
+          "hash": "0xfac4c4e293d36a2e7f5f549e17105378bfa662ad8423b9aca6fd05a684ce6f35"
+        }
+      }
+    },
+    {
+      "run": 5,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971479,
+          "hash": "0xa89d6aa240571c45266ae05cb83f125e4aeb774dac3fa4f920e4438b22c60616"
+        },
+        "zama": {
+          "number": 11971479,
+          "hash": "0xa89d6aa240571c45266ae05cb83f125e4aeb774dac3fa4f920e4438b22c60616"
+        },
+        "baseline": {
+          "number": 11971479,
+          "hash": "0xa89d6aa240571c45266ae05cb83f125e4aeb774dac3fa4f920e4438b22c60616"
+        }
+      }
+    },
+    {
+      "run": 5,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971480,
+          "hash": "0x5ac8a345b392343222a6ebaad55050588bf2d305bc7189f6da578fa2f74a34ba"
+        },
+        "zama": {
+          "number": 11971480,
+          "hash": "0x5ac8a345b392343222a6ebaad55050588bf2d305bc7189f6da578fa2f74a34ba"
+        },
+        "baseline": {
+          "number": 11971480,
+          "hash": "0x5ac8a345b392343222a6ebaad55050588bf2d305bc7189f6da578fa2f74a34ba"
+        }
+      }
+    },
+    {
+      "run": 5,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971481,
+          "hash": "0x832d304524df182ccb00c764364599e9f6ddd6e803e097c02e2cda38375c9835"
+        },
+        "fhenix": {
+          "number": 11971481,
+          "hash": "0x832d304524df182ccb00c764364599e9f6ddd6e803e097c02e2cda38375c9835"
+        },
+        "baseline": {
+          "number": 11971481,
+          "hash": "0x832d304524df182ccb00c764364599e9f6ddd6e803e097c02e2cda38375c9835"
+        }
+      }
+    },
+    {
+      "run": 5,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971482,
+          "hash": "0xcd4f125ad3952d0774ad5d08b32ed142777151e0c9593d2a6959be5b740557c6"
+        },
+        "fhenix": {
+          "number": 11971482,
+          "hash": "0xcd4f125ad3952d0774ad5d08b32ed142777151e0c9593d2a6959be5b740557c6"
+        },
+        "baseline": {
+          "number": 11971482,
+          "hash": "0xcd4f125ad3952d0774ad5d08b32ed142777151e0c9593d2a6959be5b740557c6"
+        }
+      }
+    },
+    {
+      "run": 6,
+      "operation": "notarize",
+      "sameBlock": false,
+      "blockSpread": 1,
+      "blocks": {
+        "baseline": {
+          "number": 11971484,
+          "hash": "0x800a21b1daaf738bba1767526861975be16332bf85e31209ef704279cf2292fb"
+        },
+        "zama": {
+          "number": 11971485,
+          "hash": "0xd43c22e47f3a4e851505e07862c17108d7498c91b741fb1c781bbb0c2eed4811"
+        },
+        "fhenix": {
+          "number": 11971484,
+          "hash": "0x800a21b1daaf738bba1767526861975be16332bf85e31209ef704279cf2292fb"
+        }
+      }
+    },
+    {
+      "run": 6,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971486,
+          "hash": "0xbb9f16fdefb2cdd7b0db546b9556b4fc271c939c0c1282196613b8625d3caf09"
+        },
+        "baseline": {
+          "number": 11971486,
+          "hash": "0xbb9f16fdefb2cdd7b0db546b9556b4fc271c939c0c1282196613b8625d3caf09"
+        },
+        "fhenix": {
+          "number": 11971486,
+          "hash": "0xbb9f16fdefb2cdd7b0db546b9556b4fc271c939c0c1282196613b8625d3caf09"
+        }
+      }
+    },
+    {
+      "run": 6,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971487,
+          "hash": "0x5d8aec968643b117a191e2b3b2bac23d5af837a98c0d40184a8763fd9ac24e15"
+        },
+        "baseline": {
+          "number": 11971487,
+          "hash": "0x5d8aec968643b117a191e2b3b2bac23d5af837a98c0d40184a8763fd9ac24e15"
+        },
+        "fhenix": {
+          "number": 11971487,
+          "hash": "0x5d8aec968643b117a191e2b3b2bac23d5af837a98c0d40184a8763fd9ac24e15"
+        }
+      }
+    },
+    {
+      "run": 6,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971489,
+          "hash": "0xee5ffdc3d880b4093ca294a7bdd65a4b8e072a3336a49b0f6dcc04102137f69d"
+        },
+        "baseline": {
+          "number": 11971489,
+          "hash": "0xee5ffdc3d880b4093ca294a7bdd65a4b8e072a3336a49b0f6dcc04102137f69d"
+        },
+        "zama": {
+          "number": 11971489,
+          "hash": "0xee5ffdc3d880b4093ca294a7bdd65a4b8e072a3336a49b0f6dcc04102137f69d"
+        }
+      }
+    },
+    {
+      "run": 6,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971490,
+          "hash": "0xfdf0a548b5e42c5116f90e7c34d7c5d5790b1ddd083c9ecec28a3ad0614b2307"
+        },
+        "baseline": {
+          "number": 11971490,
+          "hash": "0xfdf0a548b5e42c5116f90e7c34d7c5d5790b1ddd083c9ecec28a3ad0614b2307"
+        },
+        "zama": {
+          "number": 11971490,
+          "hash": "0xfdf0a548b5e42c5116f90e7c34d7c5d5790b1ddd083c9ecec28a3ad0614b2307"
+        }
+      }
+    },
+    {
+      "run": 7,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971493,
+          "hash": "0x2a5974c7994afdf2666c83ab49ab5df48c96530451b7d9850326617a8bf8a505"
+        },
+        "baseline": {
+          "number": 11971493,
+          "hash": "0x2a5974c7994afdf2666c83ab49ab5df48c96530451b7d9850326617a8bf8a505"
+        },
+        "fhenix": {
+          "number": 11971493,
+          "hash": "0x2a5974c7994afdf2666c83ab49ab5df48c96530451b7d9850326617a8bf8a505"
+        }
+      }
+    },
+    {
+      "run": 7,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971495,
+          "hash": "0x469b0ca745eb3c009770aff4aa2262e44284979a7d1edda15a665b2e544f294d"
+        },
+        "zama": {
+          "number": 11971495,
+          "hash": "0x469b0ca745eb3c009770aff4aa2262e44284979a7d1edda15a665b2e544f294d"
+        },
+        "baseline": {
+          "number": 11971495,
+          "hash": "0x469b0ca745eb3c009770aff4aa2262e44284979a7d1edda15a665b2e544f294d"
+        }
+      }
+    },
+    {
+      "run": 7,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971496,
+          "hash": "0x42a325055c096b4bc7f5f70cc44a448ab6045db44065454c380281d6db160775"
+        },
+        "zama": {
+          "number": 11971496,
+          "hash": "0x42a325055c096b4bc7f5f70cc44a448ab6045db44065454c380281d6db160775"
+        },
+        "fhenix": {
+          "number": 11971496,
+          "hash": "0x42a325055c096b4bc7f5f70cc44a448ab6045db44065454c380281d6db160775"
+        }
+      }
+    },
+    {
+      "run": 7,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971497,
+          "hash": "0x707cd736e4b8b6c5c354b60863af013c9260acae46c1732ba716538fd559fb9e"
+        },
+        "zama": {
+          "number": 11971497,
+          "hash": "0x707cd736e4b8b6c5c354b60863af013c9260acae46c1732ba716538fd559fb9e"
+        },
+        "baseline": {
+          "number": 11971497,
+          "hash": "0x707cd736e4b8b6c5c354b60863af013c9260acae46c1732ba716538fd559fb9e"
+        }
+      }
+    },
+    {
+      "run": 7,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971498,
+          "hash": "0xa8a3c8900d4b8c9e9e3ec8eb65e7d3772f98f2e768fed82d99bffb42bf5b0df0"
+        },
+        "baseline": {
+          "number": 11971498,
+          "hash": "0xa8a3c8900d4b8c9e9e3ec8eb65e7d3772f98f2e768fed82d99bffb42bf5b0df0"
+        },
+        "fhenix": {
+          "number": 11971498,
+          "hash": "0xa8a3c8900d4b8c9e9e3ec8eb65e7d3772f98f2e768fed82d99bffb42bf5b0df0"
+        }
+      }
+    },
+    {
+      "run": 8,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971500,
+          "hash": "0x3841f7c2dd05cf86ea7865049a5f5590376126be806ae7d0d739201ad38041e1"
+        },
+        "zama": {
+          "number": 11971500,
+          "hash": "0x3841f7c2dd05cf86ea7865049a5f5590376126be806ae7d0d739201ad38041e1"
+        },
+        "baseline": {
+          "number": 11971500,
+          "hash": "0x3841f7c2dd05cf86ea7865049a5f5590376126be806ae7d0d739201ad38041e1"
+        }
+      }
+    },
+    {
+      "run": 8,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971501,
+          "hash": "0x23cd14af4b32e31975283dd3b73decfe65bfd5afc814679d7f48e60b27fb904d"
+        },
+        "fhenix": {
+          "number": 11971501,
+          "hash": "0x23cd14af4b32e31975283dd3b73decfe65bfd5afc814679d7f48e60b27fb904d"
+        },
+        "zama": {
+          "number": 11971501,
+          "hash": "0x23cd14af4b32e31975283dd3b73decfe65bfd5afc814679d7f48e60b27fb904d"
+        }
+      }
+    },
+    {
+      "run": 8,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971502,
+          "hash": "0x983a7cd721e74376b7a67422a151bad3a202720a9b8e3dca49a0f2d53ea17b1c"
+        },
+        "baseline": {
+          "number": 11971502,
+          "hash": "0x983a7cd721e74376b7a67422a151bad3a202720a9b8e3dca49a0f2d53ea17b1c"
+        },
+        "zama": {
+          "number": 11971502,
+          "hash": "0x983a7cd721e74376b7a67422a151bad3a202720a9b8e3dca49a0f2d53ea17b1c"
+        }
+      }
+    },
+    {
+      "run": 8,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971503,
+          "hash": "0x1b91da0f6c39376a7dc20b1622d3412697ac7e13a70ec3599509623c204428c2"
+        },
+        "fhenix": {
+          "number": 11971503,
+          "hash": "0x1b91da0f6c39376a7dc20b1622d3412697ac7e13a70ec3599509623c204428c2"
+        },
+        "zama": {
+          "number": 11971503,
+          "hash": "0x1b91da0f6c39376a7dc20b1622d3412697ac7e13a70ec3599509623c204428c2"
+        }
+      }
+    },
+    {
+      "run": 8,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971504,
+          "hash": "0x7d558756914cfa35b664e202260388c32e810a03d8e5dd4a6bf167e54c65455c"
+        },
+        "zama": {
+          "number": 11971504,
+          "hash": "0x7d558756914cfa35b664e202260388c32e810a03d8e5dd4a6bf167e54c65455c"
+        },
+        "baseline": {
+          "number": 11971504,
+          "hash": "0x7d558756914cfa35b664e202260388c32e810a03d8e5dd4a6bf167e54c65455c"
+        }
+      }
+    },
+    {
+      "run": 9,
+      "operation": "notarize",
+      "sameBlock": false,
+      "blockSpread": 1,
+      "blocks": {
+        "baseline": {
+          "number": 11971506,
+          "hash": "0xa71b61d3d77627b140e4c817e650034ae411bc535d23e73c1772c5381a2c5384"
+        },
+        "fhenix": {
+          "number": 11971506,
+          "hash": "0xa71b61d3d77627b140e4c817e650034ae411bc535d23e73c1772c5381a2c5384"
+        },
+        "zama": {
+          "number": 11971507,
+          "hash": "0x1e5d22cea51fefe51e596f5ca066a028ae9488f8a76ba8a524016d5fd279de11"
+        }
+      }
+    },
+    {
+      "run": 9,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971508,
+          "hash": "0xc4b0106ed83140a5452998b2b19500196fd2df511f2e63858d13a3fe123a18ad"
+        },
+        "baseline": {
+          "number": 11971508,
+          "hash": "0xc4b0106ed83140a5452998b2b19500196fd2df511f2e63858d13a3fe123a18ad"
+        },
+        "fhenix": {
+          "number": 11971508,
+          "hash": "0xc4b0106ed83140a5452998b2b19500196fd2df511f2e63858d13a3fe123a18ad"
+        }
+      }
+    },
+    {
+      "run": 9,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971509,
+          "hash": "0x43372d35a30b94cd129a1f6ecc592f4e63b72e665e1dbb6a7aba1147f8b3dca2"
+        },
+        "fhenix": {
+          "number": 11971509,
+          "hash": "0x43372d35a30b94cd129a1f6ecc592f4e63b72e665e1dbb6a7aba1147f8b3dca2"
+        },
+        "baseline": {
+          "number": 11971509,
+          "hash": "0x43372d35a30b94cd129a1f6ecc592f4e63b72e665e1dbb6a7aba1147f8b3dca2"
+        }
+      }
+    },
+    {
+      "run": 9,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971510,
+          "hash": "0xdefac9e9262c11b611f67bf7f3b521d131f16ebf3ae114eae437a2c1c2963129"
+        },
+        "baseline": {
+          "number": 11971510,
+          "hash": "0xdefac9e9262c11b611f67bf7f3b521d131f16ebf3ae114eae437a2c1c2963129"
+        },
+        "fhenix": {
+          "number": 11971510,
+          "hash": "0xdefac9e9262c11b611f67bf7f3b521d131f16ebf3ae114eae437a2c1c2963129"
+        }
+      }
+    },
+    {
+      "run": 9,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971511,
+          "hash": "0xa88f8ea7e9a48ea1bcbe7617d1492e9d4cd5df65300a7177d6e99987a8d71dac"
+        },
+        "fhenix": {
+          "number": 11971511,
+          "hash": "0xa88f8ea7e9a48ea1bcbe7617d1492e9d4cd5df65300a7177d6e99987a8d71dac"
+        },
+        "zama": {
+          "number": 11971511,
+          "hash": "0xa88f8ea7e9a48ea1bcbe7617d1492e9d4cd5df65300a7177d6e99987a8d71dac"
+        }
+      }
+    },
+    {
+      "run": 10,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971513,
+          "hash": "0x256017f7d5a4934e16fd60bd60a92187b47193e738839246d0f69c81afa714c7"
+        },
+        "zama": {
+          "number": 11971513,
+          "hash": "0x256017f7d5a4934e16fd60bd60a92187b47193e738839246d0f69c81afa714c7"
+        },
+        "fhenix": {
+          "number": 11971513,
+          "hash": "0x256017f7d5a4934e16fd60bd60a92187b47193e738839246d0f69c81afa714c7"
+        }
+      }
+    },
+    {
+      "run": 10,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971514,
+          "hash": "0xd986ed80e51d261d2ea06ab4be2fcccf532195ebf746b0b9660a5aa578d72386"
+        },
+        "fhenix": {
+          "number": 11971514,
+          "hash": "0xd986ed80e51d261d2ea06ab4be2fcccf532195ebf746b0b9660a5aa578d72386"
+        },
+        "zama": {
+          "number": 11971514,
+          "hash": "0xd986ed80e51d261d2ea06ab4be2fcccf532195ebf746b0b9660a5aa578d72386"
+        }
+      }
+    },
+    {
+      "run": 10,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971515,
+          "hash": "0x68417e16ed0b8a6975e570bcc0ede5f3a44562e7e07ef224e9be6fff60850d3b"
+        },
+        "baseline": {
+          "number": 11971515,
+          "hash": "0x68417e16ed0b8a6975e570bcc0ede5f3a44562e7e07ef224e9be6fff60850d3b"
+        },
+        "fhenix": {
+          "number": 11971515,
+          "hash": "0x68417e16ed0b8a6975e570bcc0ede5f3a44562e7e07ef224e9be6fff60850d3b"
+        }
+      }
+    },
+    {
+      "run": 10,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971516,
+          "hash": "0x12321f5ed25b1e64f80f2f2fde1e43aae27e57316f9d1e088952c9b3f985c5f1"
+        },
+        "baseline": {
+          "number": 11971516,
+          "hash": "0x12321f5ed25b1e64f80f2f2fde1e43aae27e57316f9d1e088952c9b3f985c5f1"
+        },
+        "zama": {
+          "number": 11971516,
+          "hash": "0x12321f5ed25b1e64f80f2f2fde1e43aae27e57316f9d1e088952c9b3f985c5f1"
+        }
+      }
+    },
+    {
+      "run": 10,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971517,
+          "hash": "0x590fd3101cd7df1cd82f68726816ed49be523ba10f28cab5c52d129d973be106"
+        },
+        "baseline": {
+          "number": 11971517,
+          "hash": "0x590fd3101cd7df1cd82f68726816ed49be523ba10f28cab5c52d129d973be106"
+        },
+        "fhenix": {
+          "number": 11971517,
+          "hash": "0x590fd3101cd7df1cd82f68726816ed49be523ba10f28cab5c52d129d973be106"
+        }
+      }
+    },
+    {
+      "run": 11,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971519,
+          "hash": "0x28dde09a3b9f7efa1bede8d7e44e70c82afa8e5070820348d51245e662b0f90f"
+        },
+        "fhenix": {
+          "number": 11971519,
+          "hash": "0x28dde09a3b9f7efa1bede8d7e44e70c82afa8e5070820348d51245e662b0f90f"
+        },
+        "baseline": {
+          "number": 11971519,
+          "hash": "0x28dde09a3b9f7efa1bede8d7e44e70c82afa8e5070820348d51245e662b0f90f"
+        }
+      }
+    },
+    {
+      "run": 11,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971521,
+          "hash": "0xf620bb188fffd9edb247cdbba441c3284f0c0784d23ea2233a76f1c76d50d9c9"
+        },
+        "zama": {
+          "number": 11971521,
+          "hash": "0xf620bb188fffd9edb247cdbba441c3284f0c0784d23ea2233a76f1c76d50d9c9"
+        },
+        "baseline": {
+          "number": 11971521,
+          "hash": "0xf620bb188fffd9edb247cdbba441c3284f0c0784d23ea2233a76f1c76d50d9c9"
+        }
+      }
+    },
+    {
+      "run": 11,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971522,
+          "hash": "0x2f6d664814921fd4a983e9689e6422ba1f067ad753d9d1db0d9a907ee2021006"
+        },
+        "zama": {
+          "number": 11971522,
+          "hash": "0x2f6d664814921fd4a983e9689e6422ba1f067ad753d9d1db0d9a907ee2021006"
+        },
+        "baseline": {
+          "number": 11971522,
+          "hash": "0x2f6d664814921fd4a983e9689e6422ba1f067ad753d9d1db0d9a907ee2021006"
+        }
+      }
+    },
+    {
+      "run": 11,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971524,
+          "hash": "0x49726a4dee29cafe5a5180f9d7b0fc780661edf76677b05f45da9cdd304d7e92"
+        },
+        "fhenix": {
+          "number": 11971524,
+          "hash": "0x49726a4dee29cafe5a5180f9d7b0fc780661edf76677b05f45da9cdd304d7e92"
+        },
+        "baseline": {
+          "number": 11971524,
+          "hash": "0x49726a4dee29cafe5a5180f9d7b0fc780661edf76677b05f45da9cdd304d7e92"
+        }
+      }
+    },
+    {
+      "run": 11,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971525,
+          "hash": "0x81768dbbcb544a87eab2cc1a9b2adefe2baa2bcb1da3f5fe7acd7af98a1ce1b9"
+        },
+        "zama": {
+          "number": 11971525,
+          "hash": "0x81768dbbcb544a87eab2cc1a9b2adefe2baa2bcb1da3f5fe7acd7af98a1ce1b9"
+        },
+        "baseline": {
+          "number": 11971525,
+          "hash": "0x81768dbbcb544a87eab2cc1a9b2adefe2baa2bcb1da3f5fe7acd7af98a1ce1b9"
+        }
+      }
+    },
+    {
+      "run": 12,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971527,
+          "hash": "0x5482227acbc8a3c3cc07f7f7c1a4232fcbb31e97da2262b51654bc7c3d1a00bb"
+        },
+        "baseline": {
+          "number": 11971527,
+          "hash": "0x5482227acbc8a3c3cc07f7f7c1a4232fcbb31e97da2262b51654bc7c3d1a00bb"
+        },
+        "zama": {
+          "number": 11971527,
+          "hash": "0x5482227acbc8a3c3cc07f7f7c1a4232fcbb31e97da2262b51654bc7c3d1a00bb"
+        }
+      }
+    },
+    {
+      "run": 12,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971528,
+          "hash": "0x431e765e63fe8932138578df832f230576ef2b60e07b5a9a3563ea253801b9e0"
+        },
+        "baseline": {
+          "number": 11971528,
+          "hash": "0x431e765e63fe8932138578df832f230576ef2b60e07b5a9a3563ea253801b9e0"
+        },
+        "fhenix": {
+          "number": 11971528,
+          "hash": "0x431e765e63fe8932138578df832f230576ef2b60e07b5a9a3563ea253801b9e0"
+        }
+      }
+    },
+    {
+      "run": 12,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971529,
+          "hash": "0x24ff4c041c44e640791c22e21ffacfe94a28b458097f27143fab1ece87798d4e"
+        },
+        "fhenix": {
+          "number": 11971529,
+          "hash": "0x24ff4c041c44e640791c22e21ffacfe94a28b458097f27143fab1ece87798d4e"
+        },
+        "zama": {
+          "number": 11971529,
+          "hash": "0x24ff4c041c44e640791c22e21ffacfe94a28b458097f27143fab1ece87798d4e"
+        }
+      }
+    },
+    {
+      "run": 12,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971530,
+          "hash": "0xfbd28a55da2ec14be305bce821017cdb902886c8e1a56f11749b3cf7f8408f59"
+        },
+        "zama": {
+          "number": 11971530,
+          "hash": "0xfbd28a55da2ec14be305bce821017cdb902886c8e1a56f11749b3cf7f8408f59"
+        },
+        "fhenix": {
+          "number": 11971530,
+          "hash": "0xfbd28a55da2ec14be305bce821017cdb902886c8e1a56f11749b3cf7f8408f59"
+        }
+      }
+    },
+    {
+      "run": 12,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971531,
+          "hash": "0xf363be0b5fad3abf7c4aa82835880a66bbf54ed7ab69eb4f2b59e1c7a2ca0347"
+        },
+        "fhenix": {
+          "number": 11971531,
+          "hash": "0xf363be0b5fad3abf7c4aa82835880a66bbf54ed7ab69eb4f2b59e1c7a2ca0347"
+        },
+        "zama": {
+          "number": 11971531,
+          "hash": "0xf363be0b5fad3abf7c4aa82835880a66bbf54ed7ab69eb4f2b59e1c7a2ca0347"
+        }
+      }
+    },
+    {
+      "run": 13,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971533,
+          "hash": "0x35c1112f4709873c395aa0f91340b0b663a3472476b67a8b85d82789044cff6d"
+        },
+        "baseline": {
+          "number": 11971533,
+          "hash": "0x35c1112f4709873c395aa0f91340b0b663a3472476b67a8b85d82789044cff6d"
+        },
+        "zama": {
+          "number": 11971533,
+          "hash": "0x35c1112f4709873c395aa0f91340b0b663a3472476b67a8b85d82789044cff6d"
+        }
+      }
+    },
+    {
+      "run": 13,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971534,
+          "hash": "0xeb1394c183462a41a523779bdaf5136a432400d1a9dc982ac8181c10b0f1981e"
+        },
+        "fhenix": {
+          "number": 11971534,
+          "hash": "0xeb1394c183462a41a523779bdaf5136a432400d1a9dc982ac8181c10b0f1981e"
+        },
+        "baseline": {
+          "number": 11971534,
+          "hash": "0xeb1394c183462a41a523779bdaf5136a432400d1a9dc982ac8181c10b0f1981e"
+        }
+      }
+    },
+    {
+      "run": 13,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971535,
+          "hash": "0x9bcff0362dba53b89761fbb5ad7230bb3d388fe34849e24c708b2158a93824ec"
+        },
+        "fhenix": {
+          "number": 11971535,
+          "hash": "0x9bcff0362dba53b89761fbb5ad7230bb3d388fe34849e24c708b2158a93824ec"
+        },
+        "zama": {
+          "number": 11971535,
+          "hash": "0x9bcff0362dba53b89761fbb5ad7230bb3d388fe34849e24c708b2158a93824ec"
+        }
+      }
+    },
+    {
+      "run": 13,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971537,
+          "hash": "0x8bef865a2aba37381f102cf4716b058fb603c88d0faf64629f6b2c06686a81cb"
+        },
+        "zama": {
+          "number": 11971537,
+          "hash": "0x8bef865a2aba37381f102cf4716b058fb603c88d0faf64629f6b2c06686a81cb"
+        },
+        "baseline": {
+          "number": 11971537,
+          "hash": "0x8bef865a2aba37381f102cf4716b058fb603c88d0faf64629f6b2c06686a81cb"
+        }
+      }
+    },
+    {
+      "run": 13,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971538,
+          "hash": "0xa0c5d41726d2b1aed74134cc83e5b66ad1c7853b10ff5772059ba618d97ac12c"
+        },
+        "baseline": {
+          "number": 11971538,
+          "hash": "0xa0c5d41726d2b1aed74134cc83e5b66ad1c7853b10ff5772059ba618d97ac12c"
+        },
+        "zama": {
+          "number": 11971538,
+          "hash": "0xa0c5d41726d2b1aed74134cc83e5b66ad1c7853b10ff5772059ba618d97ac12c"
+        }
+      }
+    },
+    {
+      "run": 14,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971540,
+          "hash": "0xc52e5966b05d6daf1e892b8631784ed22c6bb9ae3c3ed2e44659d8dfba005269"
+        },
+        "fhenix": {
+          "number": 11971540,
+          "hash": "0xc52e5966b05d6daf1e892b8631784ed22c6bb9ae3c3ed2e44659d8dfba005269"
+        },
+        "baseline": {
+          "number": 11971540,
+          "hash": "0xc52e5966b05d6daf1e892b8631784ed22c6bb9ae3c3ed2e44659d8dfba005269"
+        }
+      }
+    },
+    {
+      "run": 14,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971541,
+          "hash": "0xfa17e185832073f74f033a21255bf658c08435d4830fa00f6260144b281d579c"
+        },
+        "baseline": {
+          "number": 11971541,
+          "hash": "0xfa17e185832073f74f033a21255bf658c08435d4830fa00f6260144b281d579c"
+        },
+        "zama": {
+          "number": 11971541,
+          "hash": "0xfa17e185832073f74f033a21255bf658c08435d4830fa00f6260144b281d579c"
+        }
+      }
+    },
+    {
+      "run": 14,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971542,
+          "hash": "0x001b37f14c747431d7e8e60352602bef12021df09319616930fcd101e963b615"
+        },
+        "zama": {
+          "number": 11971542,
+          "hash": "0x001b37f14c747431d7e8e60352602bef12021df09319616930fcd101e963b615"
+        },
+        "baseline": {
+          "number": 11971542,
+          "hash": "0x001b37f14c747431d7e8e60352602bef12021df09319616930fcd101e963b615"
+        }
+      }
+    },
+    {
+      "run": 14,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971543,
+          "hash": "0x033b43ce9e0b8aa63f0081a95340c84bae5f0a7c30f586e503009d05a35b892d"
+        },
+        "baseline": {
+          "number": 11971543,
+          "hash": "0x033b43ce9e0b8aa63f0081a95340c84bae5f0a7c30f586e503009d05a35b892d"
+        },
+        "fhenix": {
+          "number": 11971543,
+          "hash": "0x033b43ce9e0b8aa63f0081a95340c84bae5f0a7c30f586e503009d05a35b892d"
+        }
+      }
+    },
+    {
+      "run": 14,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971544,
+          "hash": "0x3b92f92f4b9b3e400025e66f99ecca396916c7ef6a175748489273f7009de10d"
+        },
+        "fhenix": {
+          "number": 11971544,
+          "hash": "0x3b92f92f4b9b3e400025e66f99ecca396916c7ef6a175748489273f7009de10d"
+        },
+        "baseline": {
+          "number": 11971544,
+          "hash": "0x3b92f92f4b9b3e400025e66f99ecca396916c7ef6a175748489273f7009de10d"
+        }
+      }
+    },
+    {
+      "run": 15,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971546,
+          "hash": "0x99ce94aaa48c0e2a31b0e129456feff905e3929153cc915a2b40c2787a3a8983"
+        },
+        "zama": {
+          "number": 11971546,
+          "hash": "0x99ce94aaa48c0e2a31b0e129456feff905e3929153cc915a2b40c2787a3a8983"
+        },
+        "fhenix": {
+          "number": 11971546,
+          "hash": "0x99ce94aaa48c0e2a31b0e129456feff905e3929153cc915a2b40c2787a3a8983"
+        }
+      }
+    },
+    {
+      "run": 15,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971547,
+          "hash": "0x8dc68a6314088f33a82244c6f505b2b8af1041c2ecb66fd27187e770317015f6"
+        },
+        "zama": {
+          "number": 11971547,
+          "hash": "0x8dc68a6314088f33a82244c6f505b2b8af1041c2ecb66fd27187e770317015f6"
+        },
+        "fhenix": {
+          "number": 11971547,
+          "hash": "0x8dc68a6314088f33a82244c6f505b2b8af1041c2ecb66fd27187e770317015f6"
+        }
+      }
+    },
+    {
+      "run": 15,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971548,
+          "hash": "0xfcc0394d0cb5016433f07b6eb28c3b802cfc2fb94b982b3e48b4b55ca2780565"
+        },
+        "baseline": {
+          "number": 11971548,
+          "hash": "0xfcc0394d0cb5016433f07b6eb28c3b802cfc2fb94b982b3e48b4b55ca2780565"
+        },
+        "fhenix": {
+          "number": 11971548,
+          "hash": "0xfcc0394d0cb5016433f07b6eb28c3b802cfc2fb94b982b3e48b4b55ca2780565"
+        }
+      }
+    },
+    {
+      "run": 15,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971549,
+          "hash": "0x119c8cab2ce7f793081963a918e846857a790124a5a726119e02390fb2b64879"
+        },
+        "fhenix": {
+          "number": 11971549,
+          "hash": "0x119c8cab2ce7f793081963a918e846857a790124a5a726119e02390fb2b64879"
+        },
+        "zama": {
+          "number": 11971549,
+          "hash": "0x119c8cab2ce7f793081963a918e846857a790124a5a726119e02390fb2b64879"
+        }
+      }
+    },
+    {
+      "run": 15,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971550,
+          "hash": "0x0fb3cd03f4ad7a60632f1e206c156f6a47826829aefce21d87762653cfec8f42"
+        },
+        "zama": {
+          "number": 11971550,
+          "hash": "0x0fb3cd03f4ad7a60632f1e206c156f6a47826829aefce21d87762653cfec8f42"
+        },
+        "fhenix": {
+          "number": 11971550,
+          "hash": "0x0fb3cd03f4ad7a60632f1e206c156f6a47826829aefce21d87762653cfec8f42"
+        }
+      }
+    },
+    {
+      "run": 16,
+      "operation": "notarize",
+      "sameBlock": false,
+      "blockSpread": 1,
+      "blocks": {
+        "zama": {
+          "number": 11971553,
+          "hash": "0xe963fe3e0a4d84f2f3dc1bd15fa0805c6cde741e7cc8b94b05ca73472d13b116"
+        },
+        "baseline": {
+          "number": 11971552,
+          "hash": "0x63f9bcccfcea2a1e0b2dd328a0916d9e2b99be5320bcf495a489e01c9c29c64d"
+        },
+        "fhenix": {
+          "number": 11971552,
+          "hash": "0x63f9bcccfcea2a1e0b2dd328a0916d9e2b99be5320bcf495a489e01c9c29c64d"
+        }
+      }
+    },
+    {
+      "run": 16,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971554,
+          "hash": "0xc3c6b27ee57db20f157389c6cd503b76e8663e41a8056f41ab0fef51f91f4a53"
+        },
+        "fhenix": {
+          "number": 11971554,
+          "hash": "0xc3c6b27ee57db20f157389c6cd503b76e8663e41a8056f41ab0fef51f91f4a53"
+        },
+        "zama": {
+          "number": 11971554,
+          "hash": "0xc3c6b27ee57db20f157389c6cd503b76e8663e41a8056f41ab0fef51f91f4a53"
+        }
+      }
+    },
+    {
+      "run": 16,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971555,
+          "hash": "0xb45a5da69fdfb83fb22aa4c3a9ae1029c62a3bc03be9580b9e752bb45a7014b6"
+        },
+        "fhenix": {
+          "number": 11971555,
+          "hash": "0xb45a5da69fdfb83fb22aa4c3a9ae1029c62a3bc03be9580b9e752bb45a7014b6"
+        },
+        "zama": {
+          "number": 11971555,
+          "hash": "0xb45a5da69fdfb83fb22aa4c3a9ae1029c62a3bc03be9580b9e752bb45a7014b6"
+        }
+      }
+    },
+    {
+      "run": 16,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971556,
+          "hash": "0xf7252888707ae13982cd9a45920b2a0a409bd5c6d300207db66a08c5a5563029"
+        },
+        "fhenix": {
+          "number": 11971556,
+          "hash": "0xf7252888707ae13982cd9a45920b2a0a409bd5c6d300207db66a08c5a5563029"
+        },
+        "zama": {
+          "number": 11971556,
+          "hash": "0xf7252888707ae13982cd9a45920b2a0a409bd5c6d300207db66a08c5a5563029"
+        }
+      }
+    },
+    {
+      "run": 16,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971557,
+          "hash": "0x7421836e384b2904358601eafc1e94358f94799f2ea86bb0b919e564b56bbe8e"
+        },
+        "fhenix": {
+          "number": 11971557,
+          "hash": "0x7421836e384b2904358601eafc1e94358f94799f2ea86bb0b919e564b56bbe8e"
+        },
+        "zama": {
+          "number": 11971557,
+          "hash": "0x7421836e384b2904358601eafc1e94358f94799f2ea86bb0b919e564b56bbe8e"
+        }
+      }
+    },
+    {
+      "run": 17,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971559,
+          "hash": "0xd259e7c736f9186f313951cd1e97e253cf92531a32da370c6d35476b28af413f"
+        },
+        "zama": {
+          "number": 11971559,
+          "hash": "0xd259e7c736f9186f313951cd1e97e253cf92531a32da370c6d35476b28af413f"
+        },
+        "baseline": {
+          "number": 11971559,
+          "hash": "0xd259e7c736f9186f313951cd1e97e253cf92531a32da370c6d35476b28af413f"
+        }
+      }
+    },
+    {
+      "run": 17,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971560,
+          "hash": "0x941d11af79c8766ecd68b5a39ea13655f2bb7dd0cc62710f44280ddaa37dfdc2"
+        },
+        "baseline": {
+          "number": 11971560,
+          "hash": "0x941d11af79c8766ecd68b5a39ea13655f2bb7dd0cc62710f44280ddaa37dfdc2"
+        },
+        "fhenix": {
+          "number": 11971560,
+          "hash": "0x941d11af79c8766ecd68b5a39ea13655f2bb7dd0cc62710f44280ddaa37dfdc2"
+        }
+      }
+    },
+    {
+      "run": 17,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971561,
+          "hash": "0xe4750a0bbf27d8a1bdae8207debf59f72b7fe6dd23640f371289949de6cb5ab3"
+        },
+        "baseline": {
+          "number": 11971561,
+          "hash": "0xe4750a0bbf27d8a1bdae8207debf59f72b7fe6dd23640f371289949de6cb5ab3"
+        },
+        "fhenix": {
+          "number": 11971561,
+          "hash": "0xe4750a0bbf27d8a1bdae8207debf59f72b7fe6dd23640f371289949de6cb5ab3"
+        }
+      }
+    },
+    {
+      "run": 17,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971562,
+          "hash": "0xf4e4bf9aa17e209ae07129b915cbc3bb51ecd2094096f84675751a0326111072"
+        },
+        "zama": {
+          "number": 11971562,
+          "hash": "0xf4e4bf9aa17e209ae07129b915cbc3bb51ecd2094096f84675751a0326111072"
+        },
+        "baseline": {
+          "number": 11971562,
+          "hash": "0xf4e4bf9aa17e209ae07129b915cbc3bb51ecd2094096f84675751a0326111072"
+        }
+      }
+    },
+    {
+      "run": 17,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971563,
+          "hash": "0x309abd469d8d0c2aaa3bb1ade685720373b54998f7ccb7497046eb5d924948c1"
+        },
+        "zama": {
+          "number": 11971563,
+          "hash": "0x309abd469d8d0c2aaa3bb1ade685720373b54998f7ccb7497046eb5d924948c1"
+        },
+        "baseline": {
+          "number": 11971563,
+          "hash": "0x309abd469d8d0c2aaa3bb1ade685720373b54998f7ccb7497046eb5d924948c1"
+        }
+      }
+    },
+    {
+      "run": 18,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971565,
+          "hash": "0xdb8986817ca674ef8f07a1177b8d922f80f581171572a64ca2a5fb16abb3d487"
+        },
+        "fhenix": {
+          "number": 11971565,
+          "hash": "0xdb8986817ca674ef8f07a1177b8d922f80f581171572a64ca2a5fb16abb3d487"
+        },
+        "zama": {
+          "number": 11971565,
+          "hash": "0xdb8986817ca674ef8f07a1177b8d922f80f581171572a64ca2a5fb16abb3d487"
+        }
+      }
+    },
+    {
+      "run": 18,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971566,
+          "hash": "0xf9131cb06744143ed05c92431a2537dcb4933826a4cce1a853347d99eaebc0bd"
+        },
+        "zama": {
+          "number": 11971566,
+          "hash": "0xf9131cb06744143ed05c92431a2537dcb4933826a4cce1a853347d99eaebc0bd"
+        },
+        "baseline": {
+          "number": 11971566,
+          "hash": "0xf9131cb06744143ed05c92431a2537dcb4933826a4cce1a853347d99eaebc0bd"
+        }
+      }
+    },
+    {
+      "run": 18,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971567,
+          "hash": "0x8a5ba31f87b761adcf36b4574ba7480593f0e85478a5be8e301fc41aeb834310"
+        },
+        "zama": {
+          "number": 11971567,
+          "hash": "0x8a5ba31f87b761adcf36b4574ba7480593f0e85478a5be8e301fc41aeb834310"
+        },
+        "baseline": {
+          "number": 11971567,
+          "hash": "0x8a5ba31f87b761adcf36b4574ba7480593f0e85478a5be8e301fc41aeb834310"
+        }
+      }
+    },
+    {
+      "run": 18,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971570,
+          "hash": "0x36d3b054307bec0f3c995d8e82a3a2f31c2d278938969a26f8ee2e880ff0d7fc"
+        },
+        "baseline": {
+          "number": 11971570,
+          "hash": "0x36d3b054307bec0f3c995d8e82a3a2f31c2d278938969a26f8ee2e880ff0d7fc"
+        },
+        "fhenix": {
+          "number": 11971570,
+          "hash": "0x36d3b054307bec0f3c995d8e82a3a2f31c2d278938969a26f8ee2e880ff0d7fc"
+        }
+      }
+    },
+    {
+      "run": 18,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971571,
+          "hash": "0xae3baa50ae598440513112c19209027a5b45e66b05c8fdaacd9b2f6c6277418d"
+        },
+        "baseline": {
+          "number": 11971571,
+          "hash": "0xae3baa50ae598440513112c19209027a5b45e66b05c8fdaacd9b2f6c6277418d"
+        },
+        "fhenix": {
+          "number": 11971571,
+          "hash": "0xae3baa50ae598440513112c19209027a5b45e66b05c8fdaacd9b2f6c6277418d"
+        }
+      }
+    },
+    {
+      "run": 19,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971573,
+          "hash": "0x286f146f463d81f857fa470a6af3bf4bff8b9b6d2e3d5e26af1ab2aef3868315"
+        },
+        "zama": {
+          "number": 11971573,
+          "hash": "0x286f146f463d81f857fa470a6af3bf4bff8b9b6d2e3d5e26af1ab2aef3868315"
+        },
+        "fhenix": {
+          "number": 11971573,
+          "hash": "0x286f146f463d81f857fa470a6af3bf4bff8b9b6d2e3d5e26af1ab2aef3868315"
+        }
+      }
+    },
+    {
+      "run": 19,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971574,
+          "hash": "0x130581679888904a00c637d0b399fa9082dca87584cf3d9c71100f2dbfc009ba"
+        },
+        "zama": {
+          "number": 11971574,
+          "hash": "0x130581679888904a00c637d0b399fa9082dca87584cf3d9c71100f2dbfc009ba"
+        },
+        "fhenix": {
+          "number": 11971574,
+          "hash": "0x130581679888904a00c637d0b399fa9082dca87584cf3d9c71100f2dbfc009ba"
+        }
+      }
+    },
+    {
+      "run": 19,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971575,
+          "hash": "0x5ea6a4dd4d1ac2b2b0de49760f1e89173f9af8a3bfd6c0df3be727b1fc76a155"
+        },
+        "fhenix": {
+          "number": 11971575,
+          "hash": "0x5ea6a4dd4d1ac2b2b0de49760f1e89173f9af8a3bfd6c0df3be727b1fc76a155"
+        },
+        "baseline": {
+          "number": 11971575,
+          "hash": "0x5ea6a4dd4d1ac2b2b0de49760f1e89173f9af8a3bfd6c0df3be727b1fc76a155"
+        }
+      }
+    },
+    {
+      "run": 19,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971576,
+          "hash": "0xb81182db1fad08a3242b51030e5a0a08b46285a380f5fb6005f11f8d205cb124"
+        },
+        "fhenix": {
+          "number": 11971576,
+          "hash": "0xb81182db1fad08a3242b51030e5a0a08b46285a380f5fb6005f11f8d205cb124"
+        },
+        "baseline": {
+          "number": 11971576,
+          "hash": "0xb81182db1fad08a3242b51030e5a0a08b46285a380f5fb6005f11f8d205cb124"
+        }
+      }
+    },
+    {
+      "run": 19,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971578,
+          "hash": "0xe066b4595aed24f07d717bd7cc7d90f723506e9de28d0ca27cefc97cb3f449d2"
+        },
+        "fhenix": {
+          "number": 11971578,
+          "hash": "0xe066b4595aed24f07d717bd7cc7d90f723506e9de28d0ca27cefc97cb3f449d2"
+        },
+        "baseline": {
+          "number": 11971578,
+          "hash": "0xe066b4595aed24f07d717bd7cc7d90f723506e9de28d0ca27cefc97cb3f449d2"
+        }
+      }
+    },
+    {
+      "run": 20,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971580,
+          "hash": "0x9f84f8f2ccbb16ab0612aa222777d01052ef72aab632def9bdcc600e0950d439"
+        },
+        "fhenix": {
+          "number": 11971580,
+          "hash": "0x9f84f8f2ccbb16ab0612aa222777d01052ef72aab632def9bdcc600e0950d439"
+        },
+        "baseline": {
+          "number": 11971580,
+          "hash": "0x9f84f8f2ccbb16ab0612aa222777d01052ef72aab632def9bdcc600e0950d439"
+        }
+      }
+    },
+    {
+      "run": 20,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971582,
+          "hash": "0xbf919795d7788770481233e116e9d581dd3db58b0c96ff3936c931a956ea7702"
+        },
+        "fhenix": {
+          "number": 11971582,
+          "hash": "0xbf919795d7788770481233e116e9d581dd3db58b0c96ff3936c931a956ea7702"
+        },
+        "baseline": {
+          "number": 11971582,
+          "hash": "0xbf919795d7788770481233e116e9d581dd3db58b0c96ff3936c931a956ea7702"
+        }
+      }
+    },
+    {
+      "run": 20,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971584,
+          "hash": "0x78ff4ef1e79483444853feb62df429a7aa513dceb43fd33df3e7249ccabe2e7f"
+        },
+        "zama": {
+          "number": 11971584,
+          "hash": "0x78ff4ef1e79483444853feb62df429a7aa513dceb43fd33df3e7249ccabe2e7f"
+        },
+        "fhenix": {
+          "number": 11971584,
+          "hash": "0x78ff4ef1e79483444853feb62df429a7aa513dceb43fd33df3e7249ccabe2e7f"
+        }
+      }
+    },
+    {
+      "run": 20,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971585,
+          "hash": "0xa0e194f2af139fd606d05b8d67863debb4a651eef30710488d289c89edb5eeef"
+        },
+        "baseline": {
+          "number": 11971585,
+          "hash": "0xa0e194f2af139fd606d05b8d67863debb4a651eef30710488d289c89edb5eeef"
+        },
+        "zama": {
+          "number": 11971585,
+          "hash": "0xa0e194f2af139fd606d05b8d67863debb4a651eef30710488d289c89edb5eeef"
+        }
+      }
+    },
+    {
+      "run": 20,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971586,
+          "hash": "0xa6b61eb0f9a1b80ed2787d719d6c17df750b7106cd8c1379370fd192d1217501"
+        },
+        "baseline": {
+          "number": 11971586,
+          "hash": "0xa6b61eb0f9a1b80ed2787d719d6c17df750b7106cd8c1379370fd192d1217501"
+        },
+        "zama": {
+          "number": 11971586,
+          "hash": "0xa6b61eb0f9a1b80ed2787d719d6c17df750b7106cd8c1379370fd192d1217501"
+        }
+      }
+    },
+    {
+      "run": 21,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971588,
+          "hash": "0xb7510d5d60ed1fb683a7b505a0097892fc575b470df2fd960decb27007f33e4f"
+        },
+        "baseline": {
+          "number": 11971588,
+          "hash": "0xb7510d5d60ed1fb683a7b505a0097892fc575b470df2fd960decb27007f33e4f"
+        },
+        "zama": {
+          "number": 11971588,
+          "hash": "0xb7510d5d60ed1fb683a7b505a0097892fc575b470df2fd960decb27007f33e4f"
+        }
+      }
+    },
+    {
+      "run": 21,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971589,
+          "hash": "0xb82eb7f7baa4bd690473747198e7f18f27f075be61e39e3ae6cbae4594f048fb"
+        },
+        "baseline": {
+          "number": 11971589,
+          "hash": "0xb82eb7f7baa4bd690473747198e7f18f27f075be61e39e3ae6cbae4594f048fb"
+        },
+        "zama": {
+          "number": 11971589,
+          "hash": "0xb82eb7f7baa4bd690473747198e7f18f27f075be61e39e3ae6cbae4594f048fb"
+        }
+      }
+    },
+    {
+      "run": 21,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971590,
+          "hash": "0x09ddb9479737d82b71d529fb1f0e80aff5d645cde0050250e2d6117cb194f706"
+        },
+        "baseline": {
+          "number": 11971590,
+          "hash": "0x09ddb9479737d82b71d529fb1f0e80aff5d645cde0050250e2d6117cb194f706"
+        },
+        "zama": {
+          "number": 11971590,
+          "hash": "0x09ddb9479737d82b71d529fb1f0e80aff5d645cde0050250e2d6117cb194f706"
+        }
+      }
+    },
+    {
+      "run": 21,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971591,
+          "hash": "0x73f1546ea5433dcebe8ae9bd20957ba488c8f6040a06c3467a1495497c2d952f"
+        },
+        "zama": {
+          "number": 11971591,
+          "hash": "0x73f1546ea5433dcebe8ae9bd20957ba488c8f6040a06c3467a1495497c2d952f"
+        },
+        "fhenix": {
+          "number": 11971591,
+          "hash": "0x73f1546ea5433dcebe8ae9bd20957ba488c8f6040a06c3467a1495497c2d952f"
+        }
+      }
+    },
+    {
+      "run": 21,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971593,
+          "hash": "0x356abb8c2ad6f346b522a150f785f85a044d6a6d365d852b97fead9210845a3b"
+        },
+        "zama": {
+          "number": 11971593,
+          "hash": "0x356abb8c2ad6f346b522a150f785f85a044d6a6d365d852b97fead9210845a3b"
+        },
+        "fhenix": {
+          "number": 11971593,
+          "hash": "0x356abb8c2ad6f346b522a150f785f85a044d6a6d365d852b97fead9210845a3b"
+        }
+      }
+    },
+    {
+      "run": 22,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971596,
+          "hash": "0x6d8004ac22aed11983554a2d66f809e5615389270f369969d1614562148b570f"
+        },
+        "zama": {
+          "number": 11971596,
+          "hash": "0x6d8004ac22aed11983554a2d66f809e5615389270f369969d1614562148b570f"
+        },
+        "fhenix": {
+          "number": 11971596,
+          "hash": "0x6d8004ac22aed11983554a2d66f809e5615389270f369969d1614562148b570f"
+        }
+      }
+    },
+    {
+      "run": 22,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971597,
+          "hash": "0xf16fe22480978adf9b30c9022da689412de5901de3445944357581517ecb52eb"
+        },
+        "baseline": {
+          "number": 11971597,
+          "hash": "0xf16fe22480978adf9b30c9022da689412de5901de3445944357581517ecb52eb"
+        },
+        "fhenix": {
+          "number": 11971597,
+          "hash": "0xf16fe22480978adf9b30c9022da689412de5901de3445944357581517ecb52eb"
+        }
+      }
+    },
+    {
+      "run": 22,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971599,
+          "hash": "0xae59819951d18f02527568238c71319971b3f42b265236c556f5c9aef13a8dd2"
+        },
+        "zama": {
+          "number": 11971599,
+          "hash": "0xae59819951d18f02527568238c71319971b3f42b265236c556f5c9aef13a8dd2"
+        },
+        "baseline": {
+          "number": 11971599,
+          "hash": "0xae59819951d18f02527568238c71319971b3f42b265236c556f5c9aef13a8dd2"
+        }
+      }
+    },
+    {
+      "run": 22,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971600,
+          "hash": "0xe405ebb68dab7fe9989f3d31a1c08e9c8ed5293973b8aee2e4a54e91d569ad7d"
+        },
+        "zama": {
+          "number": 11971600,
+          "hash": "0xe405ebb68dab7fe9989f3d31a1c08e9c8ed5293973b8aee2e4a54e91d569ad7d"
+        },
+        "fhenix": {
+          "number": 11971600,
+          "hash": "0xe405ebb68dab7fe9989f3d31a1c08e9c8ed5293973b8aee2e4a54e91d569ad7d"
+        }
+      }
+    },
+    {
+      "run": 22,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971601,
+          "hash": "0x334fad8b32f4ed3565681e34655e325ee6627c24e1d4cbaf6d8c8e3515f8471a"
+        },
+        "fhenix": {
+          "number": 11971601,
+          "hash": "0x334fad8b32f4ed3565681e34655e325ee6627c24e1d4cbaf6d8c8e3515f8471a"
+        },
+        "baseline": {
+          "number": 11971601,
+          "hash": "0x334fad8b32f4ed3565681e34655e325ee6627c24e1d4cbaf6d8c8e3515f8471a"
+        }
+      }
+    },
+    {
+      "run": 23,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971604,
+          "hash": "0x4baf20c65ad654f4e90e5f3cc03c0462501f5effdba4acce78dfd3ba96fb558c"
+        },
+        "fhenix": {
+          "number": 11971604,
+          "hash": "0x4baf20c65ad654f4e90e5f3cc03c0462501f5effdba4acce78dfd3ba96fb558c"
+        },
+        "baseline": {
+          "number": 11971604,
+          "hash": "0x4baf20c65ad654f4e90e5f3cc03c0462501f5effdba4acce78dfd3ba96fb558c"
+        }
+      }
+    },
+    {
+      "run": 23,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971605,
+          "hash": "0xc18cdc70d3d326763184ca1f42523587214d8d82a4ba6517575596abb8396b09"
+        },
+        "fhenix": {
+          "number": 11971605,
+          "hash": "0xc18cdc70d3d326763184ca1f42523587214d8d82a4ba6517575596abb8396b09"
+        },
+        "zama": {
+          "number": 11971605,
+          "hash": "0xc18cdc70d3d326763184ca1f42523587214d8d82a4ba6517575596abb8396b09"
+        }
+      }
+    },
+    {
+      "run": 23,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971606,
+          "hash": "0x0c1a81d698c9ee1c2f924ade0794883e3e0ab163fbb3a64c10a8e1ee655d7db7"
+        },
+        "baseline": {
+          "number": 11971606,
+          "hash": "0x0c1a81d698c9ee1c2f924ade0794883e3e0ab163fbb3a64c10a8e1ee655d7db7"
+        },
+        "fhenix": {
+          "number": 11971606,
+          "hash": "0x0c1a81d698c9ee1c2f924ade0794883e3e0ab163fbb3a64c10a8e1ee655d7db7"
+        }
+      }
+    },
+    {
+      "run": 23,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971607,
+          "hash": "0x6d487e6e6515834f07d10e09966a02e4f28d2b9c82076386a86ccae58d2dad7d"
+        },
+        "baseline": {
+          "number": 11971607,
+          "hash": "0x6d487e6e6515834f07d10e09966a02e4f28d2b9c82076386a86ccae58d2dad7d"
+        },
+        "zama": {
+          "number": 11971607,
+          "hash": "0x6d487e6e6515834f07d10e09966a02e4f28d2b9c82076386a86ccae58d2dad7d"
+        }
+      }
+    },
+    {
+      "run": 23,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971608,
+          "hash": "0xae71e734760ef8616d23d5653557324a28a9cb7637db6fdb02334d82a5febf8d"
+        },
+        "zama": {
+          "number": 11971608,
+          "hash": "0xae71e734760ef8616d23d5653557324a28a9cb7637db6fdb02334d82a5febf8d"
+        },
+        "fhenix": {
+          "number": 11971608,
+          "hash": "0xae71e734760ef8616d23d5653557324a28a9cb7637db6fdb02334d82a5febf8d"
+        }
+      }
+    },
+    {
+      "run": 24,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971610,
+          "hash": "0xda2f219e3ef441e346a29a34b7e0bb5aa53ff96fa29457fca6804ddac073eff2"
+        },
+        "baseline": {
+          "number": 11971610,
+          "hash": "0xda2f219e3ef441e346a29a34b7e0bb5aa53ff96fa29457fca6804ddac073eff2"
+        },
+        "zama": {
+          "number": 11971610,
+          "hash": "0xda2f219e3ef441e346a29a34b7e0bb5aa53ff96fa29457fca6804ddac073eff2"
+        }
+      }
+    },
+    {
+      "run": 24,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971611,
+          "hash": "0x6006913fec654d5cea59e9cf2728f8d1df6154bedcaf26d5d1bfb4ffdefa68b6"
+        },
+        "zama": {
+          "number": 11971611,
+          "hash": "0x6006913fec654d5cea59e9cf2728f8d1df6154bedcaf26d5d1bfb4ffdefa68b6"
+        },
+        "baseline": {
+          "number": 11971611,
+          "hash": "0x6006913fec654d5cea59e9cf2728f8d1df6154bedcaf26d5d1bfb4ffdefa68b6"
+        }
+      }
+    },
+    {
+      "run": 24,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971612,
+          "hash": "0xcd29f7803173e8cde6a19c65b8cbe7110e756fb81582f02407050921678b17c0"
+        },
+        "fhenix": {
+          "number": 11971612,
+          "hash": "0xcd29f7803173e8cde6a19c65b8cbe7110e756fb81582f02407050921678b17c0"
+        },
+        "zama": {
+          "number": 11971612,
+          "hash": "0xcd29f7803173e8cde6a19c65b8cbe7110e756fb81582f02407050921678b17c0"
+        }
+      }
+    },
+    {
+      "run": 24,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971613,
+          "hash": "0x368bd8d46d6a57a27f8afc854262125268a82ecdfded153d324427283b56f9df"
+        },
+        "fhenix": {
+          "number": 11971613,
+          "hash": "0x368bd8d46d6a57a27f8afc854262125268a82ecdfded153d324427283b56f9df"
+        },
+        "baseline": {
+          "number": 11971613,
+          "hash": "0x368bd8d46d6a57a27f8afc854262125268a82ecdfded153d324427283b56f9df"
+        }
+      }
+    },
+    {
+      "run": 24,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971614,
+          "hash": "0x19ca2e5f8e1120cddfb8fa1d201deaf8751e13ae1a8ee7af251135ed5e6a5025"
+        },
+        "baseline": {
+          "number": 11971614,
+          "hash": "0x19ca2e5f8e1120cddfb8fa1d201deaf8751e13ae1a8ee7af251135ed5e6a5025"
+        },
+        "zama": {
+          "number": 11971614,
+          "hash": "0x19ca2e5f8e1120cddfb8fa1d201deaf8751e13ae1a8ee7af251135ed5e6a5025"
+        }
+      }
+    },
+    {
+      "run": 25,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971616,
+          "hash": "0xb0785ccbfbbd73eccaad0d6e090d525c87c6a3a7d491f6b0ecc92f128629b144"
+        },
+        "zama": {
+          "number": 11971616,
+          "hash": "0xb0785ccbfbbd73eccaad0d6e090d525c87c6a3a7d491f6b0ecc92f128629b144"
+        },
+        "baseline": {
+          "number": 11971616,
+          "hash": "0xb0785ccbfbbd73eccaad0d6e090d525c87c6a3a7d491f6b0ecc92f128629b144"
+        }
+      }
+    },
+    {
+      "run": 25,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971617,
+          "hash": "0xec901c25ab8740997b77b258773e993933ceab8e04bb5daa6bc273268a1bffa6"
+        },
+        "zama": {
+          "number": 11971617,
+          "hash": "0xec901c25ab8740997b77b258773e993933ceab8e04bb5daa6bc273268a1bffa6"
+        },
+        "fhenix": {
+          "number": 11971617,
+          "hash": "0xec901c25ab8740997b77b258773e993933ceab8e04bb5daa6bc273268a1bffa6"
+        }
+      }
+    },
+    {
+      "run": 25,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971618,
+          "hash": "0xebbb2399745a7f266f2875df20411b6161ca86d3fccacc0cd5f885ace963c4b3"
+        },
+        "fhenix": {
+          "number": 11971618,
+          "hash": "0xebbb2399745a7f266f2875df20411b6161ca86d3fccacc0cd5f885ace963c4b3"
+        },
+        "baseline": {
+          "number": 11971618,
+          "hash": "0xebbb2399745a7f266f2875df20411b6161ca86d3fccacc0cd5f885ace963c4b3"
+        }
+      }
+    },
+    {
+      "run": 25,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971619,
+          "hash": "0xa9699904003d5628e5236e13c4dfa5b211726d905210959e13868916492a0d24"
+        },
+        "zama": {
+          "number": 11971619,
+          "hash": "0xa9699904003d5628e5236e13c4dfa5b211726d905210959e13868916492a0d24"
+        },
+        "baseline": {
+          "number": 11971619,
+          "hash": "0xa9699904003d5628e5236e13c4dfa5b211726d905210959e13868916492a0d24"
+        }
+      }
+    },
+    {
+      "run": 25,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971620,
+          "hash": "0x50dcd493184c153ed076de85ca8729bf44798f20dcb235b504d1727f945d75c6"
+        },
+        "zama": {
+          "number": 11971620,
+          "hash": "0x50dcd493184c153ed076de85ca8729bf44798f20dcb235b504d1727f945d75c6"
+        },
+        "fhenix": {
+          "number": 11971620,
+          "hash": "0x50dcd493184c153ed076de85ca8729bf44798f20dcb235b504d1727f945d75c6"
+        }
+      }
+    },
+    {
+      "run": 26,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971622,
+          "hash": "0x16f6fb2f8c8b3d7c20047bf76360c5eb1c8209f7caf47dc6d203b808f06bc8e3"
+        },
+        "baseline": {
+          "number": 11971622,
+          "hash": "0x16f6fb2f8c8b3d7c20047bf76360c5eb1c8209f7caf47dc6d203b808f06bc8e3"
+        },
+        "fhenix": {
+          "number": 11971622,
+          "hash": "0x16f6fb2f8c8b3d7c20047bf76360c5eb1c8209f7caf47dc6d203b808f06bc8e3"
+        }
+      }
+    },
+    {
+      "run": 26,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971624,
+          "hash": "0x84f69047dbd9a4893961de98d743907f925c19fbbdc32e73359d31fe44e982fb"
+        },
+        "baseline": {
+          "number": 11971624,
+          "hash": "0x84f69047dbd9a4893961de98d743907f925c19fbbdc32e73359d31fe44e982fb"
+        },
+        "zama": {
+          "number": 11971624,
+          "hash": "0x84f69047dbd9a4893961de98d743907f925c19fbbdc32e73359d31fe44e982fb"
+        }
+      }
+    },
+    {
+      "run": 26,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971625,
+          "hash": "0x3c6de09738a1500f57dcfea7791e560ce5d7ad41f66204192c26a2aba87b81d4"
+        },
+        "zama": {
+          "number": 11971625,
+          "hash": "0x3c6de09738a1500f57dcfea7791e560ce5d7ad41f66204192c26a2aba87b81d4"
+        },
+        "fhenix": {
+          "number": 11971625,
+          "hash": "0x3c6de09738a1500f57dcfea7791e560ce5d7ad41f66204192c26a2aba87b81d4"
+        }
+      }
+    },
+    {
+      "run": 26,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971626,
+          "hash": "0xcd69b17e1353bd2a96589ba250fa4364f106d4f46a85ce1160f19335840b8a46"
+        },
+        "baseline": {
+          "number": 11971626,
+          "hash": "0xcd69b17e1353bd2a96589ba250fa4364f106d4f46a85ce1160f19335840b8a46"
+        },
+        "fhenix": {
+          "number": 11971626,
+          "hash": "0xcd69b17e1353bd2a96589ba250fa4364f106d4f46a85ce1160f19335840b8a46"
+        }
+      }
+    },
+    {
+      "run": 26,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971627,
+          "hash": "0xbd494898a2e5f4832fa99c01284b7ea52f907e37955c65faf60e6e994f2bd19d"
+        },
+        "fhenix": {
+          "number": 11971627,
+          "hash": "0xbd494898a2e5f4832fa99c01284b7ea52f907e37955c65faf60e6e994f2bd19d"
+        },
+        "baseline": {
+          "number": 11971627,
+          "hash": "0xbd494898a2e5f4832fa99c01284b7ea52f907e37955c65faf60e6e994f2bd19d"
+        }
+      }
+    },
+    {
+      "run": 27,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971629,
+          "hash": "0xb8a3b99a26e1865be6bf17fea42a48899e45e4422a3f146bf864284fa7ad0aac"
+        },
+        "fhenix": {
+          "number": 11971629,
+          "hash": "0xb8a3b99a26e1865be6bf17fea42a48899e45e4422a3f146bf864284fa7ad0aac"
+        },
+        "zama": {
+          "number": 11971629,
+          "hash": "0xb8a3b99a26e1865be6bf17fea42a48899e45e4422a3f146bf864284fa7ad0aac"
+        }
+      }
+    },
+    {
+      "run": 27,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971630,
+          "hash": "0x800256914c3637984237fbb06974f6dd8f4cc497571073aa45a5039dae9215d8"
+        },
+        "fhenix": {
+          "number": 11971630,
+          "hash": "0x800256914c3637984237fbb06974f6dd8f4cc497571073aa45a5039dae9215d8"
+        },
+        "baseline": {
+          "number": 11971630,
+          "hash": "0x800256914c3637984237fbb06974f6dd8f4cc497571073aa45a5039dae9215d8"
+        }
+      }
+    },
+    {
+      "run": 27,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971631,
+          "hash": "0x5a50893af3efd05ce5175d98e02c204bcd60b2aa14f28ea4c50dd0e48b0a2821"
+        },
+        "baseline": {
+          "number": 11971631,
+          "hash": "0x5a50893af3efd05ce5175d98e02c204bcd60b2aa14f28ea4c50dd0e48b0a2821"
+        },
+        "zama": {
+          "number": 11971631,
+          "hash": "0x5a50893af3efd05ce5175d98e02c204bcd60b2aa14f28ea4c50dd0e48b0a2821"
+        }
+      }
+    },
+    {
+      "run": 27,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971634,
+          "hash": "0x30d64f6d60a4a27ca0f5077ea262eddc4a04f2cbec87f07ad156e032f3dc8509"
+        },
+        "fhenix": {
+          "number": 11971634,
+          "hash": "0x30d64f6d60a4a27ca0f5077ea262eddc4a04f2cbec87f07ad156e032f3dc8509"
+        },
+        "zama": {
+          "number": 11971634,
+          "hash": "0x30d64f6d60a4a27ca0f5077ea262eddc4a04f2cbec87f07ad156e032f3dc8509"
+        }
+      }
+    },
+    {
+      "run": 27,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971635,
+          "hash": "0x4deb758e332354bd9fbefcffd88071535d186b0da99c826bd315b165d52399f3"
+        },
+        "baseline": {
+          "number": 11971635,
+          "hash": "0x4deb758e332354bd9fbefcffd88071535d186b0da99c826bd315b165d52399f3"
+        },
+        "zama": {
+          "number": 11971635,
+          "hash": "0x4deb758e332354bd9fbefcffd88071535d186b0da99c826bd315b165d52399f3"
+        }
+      }
+    },
+    {
+      "run": 28,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971637,
+          "hash": "0xfe47020e7bad978ce59c9baaa5ad09d516a08c48eceecf38c955577f533c36cc"
+        },
+        "zama": {
+          "number": 11971637,
+          "hash": "0xfe47020e7bad978ce59c9baaa5ad09d516a08c48eceecf38c955577f533c36cc"
+        },
+        "baseline": {
+          "number": 11971637,
+          "hash": "0xfe47020e7bad978ce59c9baaa5ad09d516a08c48eceecf38c955577f533c36cc"
+        }
+      }
+    },
+    {
+      "run": 28,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971638,
+          "hash": "0x683b9b8bedd7d6ad729c032931c7c949e3b240f23b133539d35fa2d5aae84613"
+        },
+        "fhenix": {
+          "number": 11971638,
+          "hash": "0x683b9b8bedd7d6ad729c032931c7c949e3b240f23b133539d35fa2d5aae84613"
+        },
+        "zama": {
+          "number": 11971638,
+          "hash": "0x683b9b8bedd7d6ad729c032931c7c949e3b240f23b133539d35fa2d5aae84613"
+        }
+      }
+    },
+    {
+      "run": 28,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971639,
+          "hash": "0xcc66dc57653d8c70b3d931e8969b24dd179b2087e0d52be8c167b9132d21fb0b"
+        },
+        "fhenix": {
+          "number": 11971639,
+          "hash": "0xcc66dc57653d8c70b3d931e8969b24dd179b2087e0d52be8c167b9132d21fb0b"
+        },
+        "zama": {
+          "number": 11971639,
+          "hash": "0xcc66dc57653d8c70b3d931e8969b24dd179b2087e0d52be8c167b9132d21fb0b"
+        }
+      }
+    },
+    {
+      "run": 28,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971640,
+          "hash": "0x3b0cf30537a392c3eb8c884e56e07d794b04a6f52a7bb473f7db226978b2dcd1"
+        },
+        "baseline": {
+          "number": 11971640,
+          "hash": "0x3b0cf30537a392c3eb8c884e56e07d794b04a6f52a7bb473f7db226978b2dcd1"
+        },
+        "fhenix": {
+          "number": 11971640,
+          "hash": "0x3b0cf30537a392c3eb8c884e56e07d794b04a6f52a7bb473f7db226978b2dcd1"
+        }
+      }
+    },
+    {
+      "run": 28,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971641,
+          "hash": "0x52f7be2b5963c8e600635b76afd6200cfd1d8472bb592bb328898f4ff04e1f93"
+        },
+        "fhenix": {
+          "number": 11971641,
+          "hash": "0x52f7be2b5963c8e600635b76afd6200cfd1d8472bb592bb328898f4ff04e1f93"
+        },
+        "zama": {
+          "number": 11971641,
+          "hash": "0x52f7be2b5963c8e600635b76afd6200cfd1d8472bb592bb328898f4ff04e1f93"
+        }
+      }
+    },
+    {
+      "run": 29,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971644,
+          "hash": "0xa27c9b6e3529db58049e92dee3febdcd39a6d530fde1d3b2f3fb2127eb8fe89b"
+        },
+        "baseline": {
+          "number": 11971644,
+          "hash": "0xa27c9b6e3529db58049e92dee3febdcd39a6d530fde1d3b2f3fb2127eb8fe89b"
+        },
+        "fhenix": {
+          "number": 11971644,
+          "hash": "0xa27c9b6e3529db58049e92dee3febdcd39a6d530fde1d3b2f3fb2127eb8fe89b"
+        }
+      }
+    },
+    {
+      "run": 29,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971645,
+          "hash": "0x9c0099abf5cf4684107dd88c887863c868a296e43d0577e3ae22cfd52bd8d086"
+        },
+        "baseline": {
+          "number": 11971645,
+          "hash": "0x9c0099abf5cf4684107dd88c887863c868a296e43d0577e3ae22cfd52bd8d086"
+        },
+        "fhenix": {
+          "number": 11971645,
+          "hash": "0x9c0099abf5cf4684107dd88c887863c868a296e43d0577e3ae22cfd52bd8d086"
+        }
+      }
+    },
+    {
+      "run": 29,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971648,
+          "hash": "0xac0087af48977546dd8372488d88489e5dd6b6b822d51862bdfd7a0db433573c"
+        },
+        "zama": {
+          "number": 11971648,
+          "hash": "0xac0087af48977546dd8372488d88489e5dd6b6b822d51862bdfd7a0db433573c"
+        },
+        "baseline": {
+          "number": 11971648,
+          "hash": "0xac0087af48977546dd8372488d88489e5dd6b6b822d51862bdfd7a0db433573c"
+        }
+      }
+    },
+    {
+      "run": 29,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971650,
+          "hash": "0x4db93a188d077d8ee6da4f487436256c13d41c3c6aee21fe4eebbeaf909e5e2d"
+        },
+        "fhenix": {
+          "number": 11971650,
+          "hash": "0x4db93a188d077d8ee6da4f487436256c13d41c3c6aee21fe4eebbeaf909e5e2d"
+        },
+        "zama": {
+          "number": 11971650,
+          "hash": "0x4db93a188d077d8ee6da4f487436256c13d41c3c6aee21fe4eebbeaf909e5e2d"
+        }
+      }
+    },
+    {
+      "run": 29,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971651,
+          "hash": "0xa89c0d0375672512dc9fe3fde093125e39858d89b823b8369c8f37ae77d14db5"
+        },
+        "baseline": {
+          "number": 11971651,
+          "hash": "0xa89c0d0375672512dc9fe3fde093125e39858d89b823b8369c8f37ae77d14db5"
+        },
+        "fhenix": {
+          "number": 11971651,
+          "hash": "0xa89c0d0375672512dc9fe3fde093125e39858d89b823b8369c8f37ae77d14db5"
+        }
+      }
+    },
+    {
+      "run": 30,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971653,
+          "hash": "0x34afca79076a668fea93f3e474f0ac1e5e0f1f031f9ecad74394f2e1c31b4282"
+        },
+        "fhenix": {
+          "number": 11971653,
+          "hash": "0x34afca79076a668fea93f3e474f0ac1e5e0f1f031f9ecad74394f2e1c31b4282"
+        },
+        "zama": {
+          "number": 11971653,
+          "hash": "0x34afca79076a668fea93f3e474f0ac1e5e0f1f031f9ecad74394f2e1c31b4282"
+        }
+      }
+    },
+    {
+      "run": 30,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971655,
+          "hash": "0x721858d4625b23924b45dd495eceb76d2dec27c1e907414369fc55803c1c3c40"
+        },
+        "zama": {
+          "number": 11971655,
+          "hash": "0x721858d4625b23924b45dd495eceb76d2dec27c1e907414369fc55803c1c3c40"
+        },
+        "baseline": {
+          "number": 11971655,
+          "hash": "0x721858d4625b23924b45dd495eceb76d2dec27c1e907414369fc55803c1c3c40"
+        }
+      }
+    },
+    {
+      "run": 30,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971657,
+          "hash": "0x3d2cc99b5fa4912937daccec196c763a41d66be7ab2cbcfc37b2d2f33701515a"
+        },
+        "baseline": {
+          "number": 11971657,
+          "hash": "0x3d2cc99b5fa4912937daccec196c763a41d66be7ab2cbcfc37b2d2f33701515a"
+        },
+        "fhenix": {
+          "number": 11971657,
+          "hash": "0x3d2cc99b5fa4912937daccec196c763a41d66be7ab2cbcfc37b2d2f33701515a"
+        }
+      }
+    },
+    {
+      "run": 30,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971658,
+          "hash": "0xb4e3408199fbd89af3d58685c93d1c5f85af652027e5dd538ab5553c21bbb87a"
+        },
+        "zama": {
+          "number": 11971658,
+          "hash": "0xb4e3408199fbd89af3d58685c93d1c5f85af652027e5dd538ab5553c21bbb87a"
+        },
+        "baseline": {
+          "number": 11971658,
+          "hash": "0xb4e3408199fbd89af3d58685c93d1c5f85af652027e5dd538ab5553c21bbb87a"
+        }
+      }
+    },
+    {
+      "run": 30,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971660,
+          "hash": "0xd25dff7b97b61d966bb5a122e47a392c2ffc78a0328ad4c70fad0021d2677bf5"
+        },
+        "zama": {
+          "number": 11971660,
+          "hash": "0xd25dff7b97b61d966bb5a122e47a392c2ffc78a0328ad4c70fad0021d2677bf5"
+        },
+        "baseline": {
+          "number": 11971660,
+          "hash": "0xd25dff7b97b61d966bb5a122e47a392c2ffc78a0328ad4c70fad0021d2677bf5"
+        }
+      }
+    },
+    {
+      "run": 31,
+      "operation": "notarize",
+      "sameBlock": false,
+      "blockSpread": 1,
+      "blocks": {
+        "baseline": {
+          "number": 11971662,
+          "hash": "0xbdfc14e225bf7319d2882abfb51afa083652dc903d0d462cb8b17d045b5a2803"
+        },
+        "zama": {
+          "number": 11971663,
+          "hash": "0x479d3367a5ec432fd67cbfc62d4c11d0c0e1e9b3787deabfdc3c7213c073e9a2"
+        },
+        "fhenix": {
+          "number": 11971662,
+          "hash": "0xbdfc14e225bf7319d2882abfb51afa083652dc903d0d462cb8b17d045b5a2803"
+        }
+      }
+    },
+    {
+      "run": 31,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971664,
+          "hash": "0xd604b07d6b572c76439184985f9fefa00229168fdfcfc22670015eb696cdf6d5"
+        },
+        "zama": {
+          "number": 11971664,
+          "hash": "0xd604b07d6b572c76439184985f9fefa00229168fdfcfc22670015eb696cdf6d5"
+        },
+        "baseline": {
+          "number": 11971664,
+          "hash": "0xd604b07d6b572c76439184985f9fefa00229168fdfcfc22670015eb696cdf6d5"
+        }
+      }
+    },
+    {
+      "run": 31,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971665,
+          "hash": "0xf5f5cccf0df7dcbe5163db41175260c284f940fa8319edc27d14439955975121"
+        },
+        "baseline": {
+          "number": 11971665,
+          "hash": "0xf5f5cccf0df7dcbe5163db41175260c284f940fa8319edc27d14439955975121"
+        },
+        "zama": {
+          "number": 11971665,
+          "hash": "0xf5f5cccf0df7dcbe5163db41175260c284f940fa8319edc27d14439955975121"
+        }
+      }
+    },
+    {
+      "run": 31,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971666,
+          "hash": "0xec91669dd41bc5f460941be3e0da300cc075e3d858f3f6bd890a240f12cbcf6f"
+        },
+        "zama": {
+          "number": 11971666,
+          "hash": "0xec91669dd41bc5f460941be3e0da300cc075e3d858f3f6bd890a240f12cbcf6f"
+        },
+        "baseline": {
+          "number": 11971666,
+          "hash": "0xec91669dd41bc5f460941be3e0da300cc075e3d858f3f6bd890a240f12cbcf6f"
+        }
+      }
+    },
+    {
+      "run": 31,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971670,
+          "hash": "0xa0cf0aa792a2699c94f21f3420bb3d9f57e475b35522fbf35f6b24a75540f043"
+        },
+        "baseline": {
+          "number": 11971670,
+          "hash": "0xa0cf0aa792a2699c94f21f3420bb3d9f57e475b35522fbf35f6b24a75540f043"
+        },
+        "fhenix": {
+          "number": 11971670,
+          "hash": "0xa0cf0aa792a2699c94f21f3420bb3d9f57e475b35522fbf35f6b24a75540f043"
+        }
+      }
+    },
+    {
+      "run": 32,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971672,
+          "hash": "0x296685b6056919fa6fe529b6209051d7af779ca71a43dcb8f279933b2218f238"
+        },
+        "fhenix": {
+          "number": 11971672,
+          "hash": "0x296685b6056919fa6fe529b6209051d7af779ca71a43dcb8f279933b2218f238"
+        },
+        "baseline": {
+          "number": 11971672,
+          "hash": "0x296685b6056919fa6fe529b6209051d7af779ca71a43dcb8f279933b2218f238"
+        }
+      }
+    },
+    {
+      "run": 32,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971673,
+          "hash": "0x0fffcd5e0836468be4d40504dbbb72cdf4536300a28c370ff7017fa65252530b"
+        },
+        "baseline": {
+          "number": 11971673,
+          "hash": "0x0fffcd5e0836468be4d40504dbbb72cdf4536300a28c370ff7017fa65252530b"
+        },
+        "fhenix": {
+          "number": 11971673,
+          "hash": "0x0fffcd5e0836468be4d40504dbbb72cdf4536300a28c370ff7017fa65252530b"
+        }
+      }
+    },
+    {
+      "run": 32,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971674,
+          "hash": "0xd1387230cce3ddd5a08f1a19a1beb9cc7f8d7870e857f7d87e3e50df80685832"
+        },
+        "zama": {
+          "number": 11971674,
+          "hash": "0xd1387230cce3ddd5a08f1a19a1beb9cc7f8d7870e857f7d87e3e50df80685832"
+        },
+        "fhenix": {
+          "number": 11971674,
+          "hash": "0xd1387230cce3ddd5a08f1a19a1beb9cc7f8d7870e857f7d87e3e50df80685832"
+        }
+      }
+    },
+    {
+      "run": 32,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971675,
+          "hash": "0xd5aa589bd587369eaeaf864ad500d169b1ccd4b856319dcf2bd758dc5fa33ac0"
+        },
+        "fhenix": {
+          "number": 11971675,
+          "hash": "0xd5aa589bd587369eaeaf864ad500d169b1ccd4b856319dcf2bd758dc5fa33ac0"
+        },
+        "zama": {
+          "number": 11971675,
+          "hash": "0xd5aa589bd587369eaeaf864ad500d169b1ccd4b856319dcf2bd758dc5fa33ac0"
+        }
+      }
+    },
+    {
+      "run": 32,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971676,
+          "hash": "0x530d5eeb8b49ce60a465675c06ca792fe5f180ca7cd3a8749b53224c80c9afa8"
+        },
+        "fhenix": {
+          "number": 11971676,
+          "hash": "0x530d5eeb8b49ce60a465675c06ca792fe5f180ca7cd3a8749b53224c80c9afa8"
+        },
+        "zama": {
+          "number": 11971676,
+          "hash": "0x530d5eeb8b49ce60a465675c06ca792fe5f180ca7cd3a8749b53224c80c9afa8"
+        }
+      }
+    },
+    {
+      "run": 33,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971678,
+          "hash": "0xf837b8c6a5b274a2d536a2234d3971b05392fdc76461cd44f78db36ea462553e"
+        },
+        "baseline": {
+          "number": 11971678,
+          "hash": "0xf837b8c6a5b274a2d536a2234d3971b05392fdc76461cd44f78db36ea462553e"
+        },
+        "zama": {
+          "number": 11971678,
+          "hash": "0xf837b8c6a5b274a2d536a2234d3971b05392fdc76461cd44f78db36ea462553e"
+        }
+      }
+    },
+    {
+      "run": 33,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971679,
+          "hash": "0x975397e523d6122623125ca169d6b142d5f309795eb48bb1bdaa07e4a7ce2a5c"
+        },
+        "fhenix": {
+          "number": 11971679,
+          "hash": "0x975397e523d6122623125ca169d6b142d5f309795eb48bb1bdaa07e4a7ce2a5c"
+        },
+        "zama": {
+          "number": 11971679,
+          "hash": "0x975397e523d6122623125ca169d6b142d5f309795eb48bb1bdaa07e4a7ce2a5c"
+        }
+      }
+    },
+    {
+      "run": 33,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971681,
+          "hash": "0x3bcd13c5f9886c91d4309776aef5d9e0177cccb8c982140c069d5d1701165140"
+        },
+        "fhenix": {
+          "number": 11971681,
+          "hash": "0x3bcd13c5f9886c91d4309776aef5d9e0177cccb8c982140c069d5d1701165140"
+        },
+        "baseline": {
+          "number": 11971681,
+          "hash": "0x3bcd13c5f9886c91d4309776aef5d9e0177cccb8c982140c069d5d1701165140"
+        }
+      }
+    },
+    {
+      "run": 33,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971682,
+          "hash": "0x2e5ca59380f120e2a3a4b9d2f780598b74a35f935ac65efdcf9f11019702a6ad"
+        },
+        "baseline": {
+          "number": 11971682,
+          "hash": "0x2e5ca59380f120e2a3a4b9d2f780598b74a35f935ac65efdcf9f11019702a6ad"
+        },
+        "fhenix": {
+          "number": 11971682,
+          "hash": "0x2e5ca59380f120e2a3a4b9d2f780598b74a35f935ac65efdcf9f11019702a6ad"
+        }
+      }
+    },
+    {
+      "run": 33,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971683,
+          "hash": "0x6b1458bd5091fa727646ceb5761a1bb199356cc43e962ae697610d28185ec17e"
+        },
+        "zama": {
+          "number": 11971683,
+          "hash": "0x6b1458bd5091fa727646ceb5761a1bb199356cc43e962ae697610d28185ec17e"
+        },
+        "baseline": {
+          "number": 11971683,
+          "hash": "0x6b1458bd5091fa727646ceb5761a1bb199356cc43e962ae697610d28185ec17e"
+        }
+      }
+    },
+    {
+      "run": 34,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971685,
+          "hash": "0x1b517b617f1952e69c46dd48578702e8c5ca1dc4fe5c602795b762c0b4b5d00b"
+        },
+        "zama": {
+          "number": 11971685,
+          "hash": "0x1b517b617f1952e69c46dd48578702e8c5ca1dc4fe5c602795b762c0b4b5d00b"
+        },
+        "fhenix": {
+          "number": 11971685,
+          "hash": "0x1b517b617f1952e69c46dd48578702e8c5ca1dc4fe5c602795b762c0b4b5d00b"
+        }
+      }
+    },
+    {
+      "run": 34,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971686,
+          "hash": "0x794bbec1863421bd4db84de2cf44e2ae370b0df631d563793d1cd24b93f7b6f8"
+        },
+        "fhenix": {
+          "number": 11971686,
+          "hash": "0x794bbec1863421bd4db84de2cf44e2ae370b0df631d563793d1cd24b93f7b6f8"
+        },
+        "baseline": {
+          "number": 11971686,
+          "hash": "0x794bbec1863421bd4db84de2cf44e2ae370b0df631d563793d1cd24b93f7b6f8"
+        }
+      }
+    },
+    {
+      "run": 34,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971687,
+          "hash": "0x6efc3cad9d18262896737fc07f3cc50f0843db139dc5c60b89583c97891bab48"
+        },
+        "baseline": {
+          "number": 11971687,
+          "hash": "0x6efc3cad9d18262896737fc07f3cc50f0843db139dc5c60b89583c97891bab48"
+        },
+        "fhenix": {
+          "number": 11971687,
+          "hash": "0x6efc3cad9d18262896737fc07f3cc50f0843db139dc5c60b89583c97891bab48"
+        }
+      }
+    },
+    {
+      "run": 34,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971688,
+          "hash": "0x6f59c86cfbf149e562c9aeae2206498c0d78eb4d9aaf31ba66731913e05c1bbe"
+        },
+        "fhenix": {
+          "number": 11971688,
+          "hash": "0x6f59c86cfbf149e562c9aeae2206498c0d78eb4d9aaf31ba66731913e05c1bbe"
+        },
+        "baseline": {
+          "number": 11971688,
+          "hash": "0x6f59c86cfbf149e562c9aeae2206498c0d78eb4d9aaf31ba66731913e05c1bbe"
+        }
+      }
+    },
+    {
+      "run": 34,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971689,
+          "hash": "0x562ae096b696cdbc4e4392708ffd790ad570d6e62cdf27f273649acbb8182fc2"
+        },
+        "baseline": {
+          "number": 11971689,
+          "hash": "0x562ae096b696cdbc4e4392708ffd790ad570d6e62cdf27f273649acbb8182fc2"
+        },
+        "fhenix": {
+          "number": 11971689,
+          "hash": "0x562ae096b696cdbc4e4392708ffd790ad570d6e62cdf27f273649acbb8182fc2"
+        }
+      }
+    },
+    {
+      "run": 35,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971692,
+          "hash": "0x28d255e751e1a7810cc52c08c85bac9f8d02c9560e332b0b6fff0ff696463f8c"
+        },
+        "fhenix": {
+          "number": 11971692,
+          "hash": "0x28d255e751e1a7810cc52c08c85bac9f8d02c9560e332b0b6fff0ff696463f8c"
+        },
+        "baseline": {
+          "number": 11971692,
+          "hash": "0x28d255e751e1a7810cc52c08c85bac9f8d02c9560e332b0b6fff0ff696463f8c"
+        }
+      }
+    },
+    {
+      "run": 35,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971694,
+          "hash": "0x1851e166c7f947057957a6874d18c7d8e1a79cc401cdbb9080138f4450c05f62"
+        },
+        "baseline": {
+          "number": 11971694,
+          "hash": "0x1851e166c7f947057957a6874d18c7d8e1a79cc401cdbb9080138f4450c05f62"
+        },
+        "zama": {
+          "number": 11971694,
+          "hash": "0x1851e166c7f947057957a6874d18c7d8e1a79cc401cdbb9080138f4450c05f62"
+        }
+      }
+    },
+    {
+      "run": 35,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971695,
+          "hash": "0xb7e7a8da84c5c50dc1e0c02f7124bea0ffed3497af163b61d8f871c19540533d"
+        },
+        "fhenix": {
+          "number": 11971695,
+          "hash": "0xb7e7a8da84c5c50dc1e0c02f7124bea0ffed3497af163b61d8f871c19540533d"
+        },
+        "zama": {
+          "number": 11971695,
+          "hash": "0xb7e7a8da84c5c50dc1e0c02f7124bea0ffed3497af163b61d8f871c19540533d"
+        }
+      }
+    },
+    {
+      "run": 35,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971696,
+          "hash": "0x48f4a467e82612f8ca01fa5f2dd1963681e2d54631739f228fb0361b6012c7ef"
+        },
+        "zama": {
+          "number": 11971696,
+          "hash": "0x48f4a467e82612f8ca01fa5f2dd1963681e2d54631739f228fb0361b6012c7ef"
+        },
+        "fhenix": {
+          "number": 11971696,
+          "hash": "0x48f4a467e82612f8ca01fa5f2dd1963681e2d54631739f228fb0361b6012c7ef"
+        }
+      }
+    },
+    {
+      "run": 35,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971697,
+          "hash": "0x14145078ddbdb629391ea72abf741788084272712d9ba9837caeb28f4376aea1"
+        },
+        "fhenix": {
+          "number": 11971697,
+          "hash": "0x14145078ddbdb629391ea72abf741788084272712d9ba9837caeb28f4376aea1"
+        },
+        "zama": {
+          "number": 11971697,
+          "hash": "0x14145078ddbdb629391ea72abf741788084272712d9ba9837caeb28f4376aea1"
+        }
+      }
+    },
+    {
+      "run": 36,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971699,
+          "hash": "0xfc6274bbaa287d3e22af02fb1402bae6c1e9505b91c3698c79ed62d18b31ac52"
+        },
+        "baseline": {
+          "number": 11971699,
+          "hash": "0xfc6274bbaa287d3e22af02fb1402bae6c1e9505b91c3698c79ed62d18b31ac52"
+        },
+        "zama": {
+          "number": 11971699,
+          "hash": "0xfc6274bbaa287d3e22af02fb1402bae6c1e9505b91c3698c79ed62d18b31ac52"
+        }
+      }
+    },
+    {
+      "run": 36,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971700,
+          "hash": "0x0cdee2f08ff7be460170f5a88f4cd5134aba9a1344d5cc5b0eaea896f7bcca83"
+        },
+        "zama": {
+          "number": 11971700,
+          "hash": "0x0cdee2f08ff7be460170f5a88f4cd5134aba9a1344d5cc5b0eaea896f7bcca83"
+        },
+        "fhenix": {
+          "number": 11971700,
+          "hash": "0x0cdee2f08ff7be460170f5a88f4cd5134aba9a1344d5cc5b0eaea896f7bcca83"
+        }
+      }
+    },
+    {
+      "run": 36,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971702,
+          "hash": "0xb7e0c98ad0ebfc11d45852e0246b87e65907c53158d64666d24f9517e09b0645"
+        },
+        "zama": {
+          "number": 11971702,
+          "hash": "0xb7e0c98ad0ebfc11d45852e0246b87e65907c53158d64666d24f9517e09b0645"
+        },
+        "baseline": {
+          "number": 11971702,
+          "hash": "0xb7e0c98ad0ebfc11d45852e0246b87e65907c53158d64666d24f9517e09b0645"
+        }
+      }
+    },
+    {
+      "run": 36,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971703,
+          "hash": "0x7733eb141126e0aded9230a6c0fe1cbedb56562c0758a3e148b0ed08504a0974"
+        },
+        "baseline": {
+          "number": 11971703,
+          "hash": "0x7733eb141126e0aded9230a6c0fe1cbedb56562c0758a3e148b0ed08504a0974"
+        },
+        "zama": {
+          "number": 11971703,
+          "hash": "0x7733eb141126e0aded9230a6c0fe1cbedb56562c0758a3e148b0ed08504a0974"
+        }
+      }
+    },
+    {
+      "run": 36,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971704,
+          "hash": "0x6cbadd5b1cd84d697dd2fbe74e5d17cce66eea28c7a1e14d39e1d0054ddf1467"
+        },
+        "zama": {
+          "number": 11971704,
+          "hash": "0x6cbadd5b1cd84d697dd2fbe74e5d17cce66eea28c7a1e14d39e1d0054ddf1467"
+        },
+        "baseline": {
+          "number": 11971704,
+          "hash": "0x6cbadd5b1cd84d697dd2fbe74e5d17cce66eea28c7a1e14d39e1d0054ddf1467"
+        }
+      }
+    },
+    {
+      "run": 37,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971706,
+          "hash": "0x0e2b059f2cc2d9cab76aa588a43b5c3bf654f445fabc731cc8b1b245ea5e3c35"
+        },
+        "baseline": {
+          "number": 11971706,
+          "hash": "0x0e2b059f2cc2d9cab76aa588a43b5c3bf654f445fabc731cc8b1b245ea5e3c35"
+        },
+        "fhenix": {
+          "number": 11971706,
+          "hash": "0x0e2b059f2cc2d9cab76aa588a43b5c3bf654f445fabc731cc8b1b245ea5e3c35"
+        }
+      }
+    },
+    {
+      "run": 37,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971707,
+          "hash": "0xb80909b0220061148228d173a5bb4adbac49bd561989190510b5b5efe35a1657"
+        },
+        "zama": {
+          "number": 11971707,
+          "hash": "0xb80909b0220061148228d173a5bb4adbac49bd561989190510b5b5efe35a1657"
+        },
+        "baseline": {
+          "number": 11971707,
+          "hash": "0xb80909b0220061148228d173a5bb4adbac49bd561989190510b5b5efe35a1657"
+        }
+      }
+    },
+    {
+      "run": 37,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971708,
+          "hash": "0xe642b1761040a1cde7a4df82ac28d147dd928a40eb71badebf70e63ff5b1a399"
+        },
+        "fhenix": {
+          "number": 11971708,
+          "hash": "0xe642b1761040a1cde7a4df82ac28d147dd928a40eb71badebf70e63ff5b1a399"
+        },
+        "zama": {
+          "number": 11971708,
+          "hash": "0xe642b1761040a1cde7a4df82ac28d147dd928a40eb71badebf70e63ff5b1a399"
+        }
+      }
+    },
+    {
+      "run": 37,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971709,
+          "hash": "0x06d3018db4b35d3e4b1c874ef0d570825212451acc64366a76082c27f52afeab"
+        },
+        "fhenix": {
+          "number": 11971709,
+          "hash": "0x06d3018db4b35d3e4b1c874ef0d570825212451acc64366a76082c27f52afeab"
+        },
+        "baseline": {
+          "number": 11971709,
+          "hash": "0x06d3018db4b35d3e4b1c874ef0d570825212451acc64366a76082c27f52afeab"
+        }
+      }
+    },
+    {
+      "run": 37,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971711,
+          "hash": "0xe3c6c79f77fec77bcd7970715457b3eaf0e8e30c6b7bfe0617eacccd8e474eec"
+        },
+        "zama": {
+          "number": 11971711,
+          "hash": "0xe3c6c79f77fec77bcd7970715457b3eaf0e8e30c6b7bfe0617eacccd8e474eec"
+        },
+        "baseline": {
+          "number": 11971711,
+          "hash": "0xe3c6c79f77fec77bcd7970715457b3eaf0e8e30c6b7bfe0617eacccd8e474eec"
+        }
+      }
+    },
+    {
+      "run": 38,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971713,
+          "hash": "0x92eb4529963eeb653b4d41d863cf4c37101dd5ac6c8e11398f9ebd337e145662"
+        },
+        "fhenix": {
+          "number": 11971713,
+          "hash": "0x92eb4529963eeb653b4d41d863cf4c37101dd5ac6c8e11398f9ebd337e145662"
+        },
+        "zama": {
+          "number": 11971713,
+          "hash": "0x92eb4529963eeb653b4d41d863cf4c37101dd5ac6c8e11398f9ebd337e145662"
+        }
+      }
+    },
+    {
+      "run": 38,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971714,
+          "hash": "0x6426da48c7f2bb86fde8d2fffa7bc5cfac7f8659d06e87bbd48feb26fb1cbaa2"
+        },
+        "fhenix": {
+          "number": 11971714,
+          "hash": "0x6426da48c7f2bb86fde8d2fffa7bc5cfac7f8659d06e87bbd48feb26fb1cbaa2"
+        },
+        "zama": {
+          "number": 11971714,
+          "hash": "0x6426da48c7f2bb86fde8d2fffa7bc5cfac7f8659d06e87bbd48feb26fb1cbaa2"
+        }
+      }
+    },
+    {
+      "run": 38,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971715,
+          "hash": "0xacae8d0f8b920a5f4dbaa1895970cd815c194eed4471586753bec5825e83df9d"
+        },
+        "zama": {
+          "number": 11971715,
+          "hash": "0xacae8d0f8b920a5f4dbaa1895970cd815c194eed4471586753bec5825e83df9d"
+        },
+        "baseline": {
+          "number": 11971715,
+          "hash": "0xacae8d0f8b920a5f4dbaa1895970cd815c194eed4471586753bec5825e83df9d"
+        }
+      }
+    },
+    {
+      "run": 38,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971716,
+          "hash": "0x7a275dc290fb191271b45263262be963266bad97bdd3c0dcca97d3852bb03429"
+        },
+        "zama": {
+          "number": 11971716,
+          "hash": "0x7a275dc290fb191271b45263262be963266bad97bdd3c0dcca97d3852bb03429"
+        },
+        "fhenix": {
+          "number": 11971716,
+          "hash": "0x7a275dc290fb191271b45263262be963266bad97bdd3c0dcca97d3852bb03429"
+        }
+      }
+    },
+    {
+      "run": 38,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971718,
+          "hash": "0x4d8292173dd0d8155bacfaa842145d8bd5a0ba384fc1e6ea965b8fe775b71764"
+        },
+        "baseline": {
+          "number": 11971718,
+          "hash": "0x4d8292173dd0d8155bacfaa842145d8bd5a0ba384fc1e6ea965b8fe775b71764"
+        },
+        "fhenix": {
+          "number": 11971718,
+          "hash": "0x4d8292173dd0d8155bacfaa842145d8bd5a0ba384fc1e6ea965b8fe775b71764"
+        }
+      }
+    },
+    {
+      "run": 39,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971720,
+          "hash": "0x763ba4777eda911c5e80238dff0dca3a44c93184afc93b34090f21abec67308b"
+        },
+        "zama": {
+          "number": 11971720,
+          "hash": "0x763ba4777eda911c5e80238dff0dca3a44c93184afc93b34090f21abec67308b"
+        },
+        "baseline": {
+          "number": 11971720,
+          "hash": "0x763ba4777eda911c5e80238dff0dca3a44c93184afc93b34090f21abec67308b"
+        }
+      }
+    },
+    {
+      "run": 39,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971722,
+          "hash": "0xb9c75fccbcfe27565fb0d4543cf68a5238e2592df8a91eb4dec330d562fd2202"
+        },
+        "baseline": {
+          "number": 11971722,
+          "hash": "0xb9c75fccbcfe27565fb0d4543cf68a5238e2592df8a91eb4dec330d562fd2202"
+        },
+        "fhenix": {
+          "number": 11971722,
+          "hash": "0xb9c75fccbcfe27565fb0d4543cf68a5238e2592df8a91eb4dec330d562fd2202"
+        }
+      }
+    },
+    {
+      "run": 39,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971723,
+          "hash": "0x0b76193038ce3d0650785ac15930d5aa9da7eff4eecfd13392a68ad515b791b1"
+        },
+        "baseline": {
+          "number": 11971723,
+          "hash": "0x0b76193038ce3d0650785ac15930d5aa9da7eff4eecfd13392a68ad515b791b1"
+        },
+        "fhenix": {
+          "number": 11971723,
+          "hash": "0x0b76193038ce3d0650785ac15930d5aa9da7eff4eecfd13392a68ad515b791b1"
+        }
+      }
+    },
+    {
+      "run": 39,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971724,
+          "hash": "0x655128e929a9435a030f2d65259b5ec166876d2947d0eb495e9173ccee1200ca"
+        },
+        "baseline": {
+          "number": 11971724,
+          "hash": "0x655128e929a9435a030f2d65259b5ec166876d2947d0eb495e9173ccee1200ca"
+        },
+        "zama": {
+          "number": 11971724,
+          "hash": "0x655128e929a9435a030f2d65259b5ec166876d2947d0eb495e9173ccee1200ca"
+        }
+      }
+    },
+    {
+      "run": 39,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971727,
+          "hash": "0x4490c2ae66aadff4225ef4dad67e25282bb7ca41621a1d395c8b972413cf6add"
+        },
+        "fhenix": {
+          "number": 11971727,
+          "hash": "0x4490c2ae66aadff4225ef4dad67e25282bb7ca41621a1d395c8b972413cf6add"
+        },
+        "zama": {
+          "number": 11971727,
+          "hash": "0x4490c2ae66aadff4225ef4dad67e25282bb7ca41621a1d395c8b972413cf6add"
+        }
+      }
+    },
+    {
+      "run": 40,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971729,
+          "hash": "0xd2c00a2faf092ca6c779a503bcafa88474cbc85ccfd9fa7abae77ecd1c8aec62"
+        },
+        "baseline": {
+          "number": 11971729,
+          "hash": "0xd2c00a2faf092ca6c779a503bcafa88474cbc85ccfd9fa7abae77ecd1c8aec62"
+        },
+        "fhenix": {
+          "number": 11971729,
+          "hash": "0xd2c00a2faf092ca6c779a503bcafa88474cbc85ccfd9fa7abae77ecd1c8aec62"
+        }
+      }
+    },
+    {
+      "run": 40,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971730,
+          "hash": "0x49a6b404df342ccd35b441ac2ef81dbab977f12433c98f5f554e6ae7438a156c"
+        },
+        "zama": {
+          "number": 11971730,
+          "hash": "0x49a6b404df342ccd35b441ac2ef81dbab977f12433c98f5f554e6ae7438a156c"
+        },
+        "baseline": {
+          "number": 11971730,
+          "hash": "0x49a6b404df342ccd35b441ac2ef81dbab977f12433c98f5f554e6ae7438a156c"
+        }
+      }
+    },
+    {
+      "run": 40,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971731,
+          "hash": "0x3dace32f8a8ed30f1bd994a9a8d629703d00f70b2aefa7bc7b2563954b48ffd6"
+        },
+        "fhenix": {
+          "number": 11971731,
+          "hash": "0x3dace32f8a8ed30f1bd994a9a8d629703d00f70b2aefa7bc7b2563954b48ffd6"
+        },
+        "baseline": {
+          "number": 11971731,
+          "hash": "0x3dace32f8a8ed30f1bd994a9a8d629703d00f70b2aefa7bc7b2563954b48ffd6"
+        }
+      }
+    },
+    {
+      "run": 40,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971732,
+          "hash": "0xd396a09ec4446c60ed1936f4794c08237f9f739f2441e0b277c325965a983b9e"
+        },
+        "fhenix": {
+          "number": 11971732,
+          "hash": "0xd396a09ec4446c60ed1936f4794c08237f9f739f2441e0b277c325965a983b9e"
+        },
+        "zama": {
+          "number": 11971732,
+          "hash": "0xd396a09ec4446c60ed1936f4794c08237f9f739f2441e0b277c325965a983b9e"
+        }
+      }
+    },
+    {
+      "run": 40,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971733,
+          "hash": "0xe3e062644ae9149c6093c9b7b655c44a068516dc07fc17f85c60f48fdbe0ebf2"
+        },
+        "baseline": {
+          "number": 11971733,
+          "hash": "0xe3e062644ae9149c6093c9b7b655c44a068516dc07fc17f85c60f48fdbe0ebf2"
+        },
+        "fhenix": {
+          "number": 11971733,
+          "hash": "0xe3e062644ae9149c6093c9b7b655c44a068516dc07fc17f85c60f48fdbe0ebf2"
+        }
+      }
+    },
+    {
+      "run": 41,
+      "operation": "notarize",
+      "sameBlock": false,
+      "blockSpread": 1,
+      "blocks": {
+        "baseline": {
+          "number": 11971735,
+          "hash": "0x9a44393e8bde534a4a6c5ace8eac9117741ae3cef30a1b1d5ac72831d4aad4a2"
+        },
+        "fhenix": {
+          "number": 11971735,
+          "hash": "0x9a44393e8bde534a4a6c5ace8eac9117741ae3cef30a1b1d5ac72831d4aad4a2"
+        },
+        "zama": {
+          "number": 11971736,
+          "hash": "0x01429571a068b27d8b3fa8f7bc87ad3b02731c90e3e39c0d4045a7cc384c00d0"
+        }
+      }
+    },
+    {
+      "run": 41,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971739,
+          "hash": "0xbd614368f4732b606662a97f15160fc753bb70ea3f877ab4e3965c480b8fc96a"
+        },
+        "baseline": {
+          "number": 11971739,
+          "hash": "0xbd614368f4732b606662a97f15160fc753bb70ea3f877ab4e3965c480b8fc96a"
+        },
+        "fhenix": {
+          "number": 11971739,
+          "hash": "0xbd614368f4732b606662a97f15160fc753bb70ea3f877ab4e3965c480b8fc96a"
+        }
+      }
+    },
+    {
+      "run": 41,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971740,
+          "hash": "0x2a3e05756f60c3082306499ef243c28e6d3426ddfbf239fd2051d1edb63a32f1"
+        },
+        "zama": {
+          "number": 11971740,
+          "hash": "0x2a3e05756f60c3082306499ef243c28e6d3426ddfbf239fd2051d1edb63a32f1"
+        },
+        "fhenix": {
+          "number": 11971740,
+          "hash": "0x2a3e05756f60c3082306499ef243c28e6d3426ddfbf239fd2051d1edb63a32f1"
+        }
+      }
+    },
+    {
+      "run": 41,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971743,
+          "hash": "0xc49dffb20de5fd1b871b47492561ad9d3645ca933c22787ec8e64559af54fdcb"
+        },
+        "baseline": {
+          "number": 11971743,
+          "hash": "0xc49dffb20de5fd1b871b47492561ad9d3645ca933c22787ec8e64559af54fdcb"
+        },
+        "fhenix": {
+          "number": 11971743,
+          "hash": "0xc49dffb20de5fd1b871b47492561ad9d3645ca933c22787ec8e64559af54fdcb"
+        }
+      }
+    },
+    {
+      "run": 41,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971745,
+          "hash": "0x061d9925c0f3aa8d79578063234bcef3aab6ecc9e218f1cbdcfae829325cd706"
+        },
+        "fhenix": {
+          "number": 11971745,
+          "hash": "0x061d9925c0f3aa8d79578063234bcef3aab6ecc9e218f1cbdcfae829325cd706"
+        },
+        "zama": {
+          "number": 11971745,
+          "hash": "0x061d9925c0f3aa8d79578063234bcef3aab6ecc9e218f1cbdcfae829325cd706"
+        }
+      }
+    },
+    {
+      "run": 42,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971747,
+          "hash": "0x53f8dd91498dbfb6a021c754c8b9e6d5264bfde42bdcdcef04f10bd260767f93"
+        },
+        "zama": {
+          "number": 11971747,
+          "hash": "0x53f8dd91498dbfb6a021c754c8b9e6d5264bfde42bdcdcef04f10bd260767f93"
+        },
+        "baseline": {
+          "number": 11971747,
+          "hash": "0x53f8dd91498dbfb6a021c754c8b9e6d5264bfde42bdcdcef04f10bd260767f93"
+        }
+      }
+    },
+    {
+      "run": 42,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971749,
+          "hash": "0x7bb0ee31bd856a65a8d6471dbb82ed768dd37914802b373e84ea7c93b0718d79"
+        },
+        "fhenix": {
+          "number": 11971749,
+          "hash": "0x7bb0ee31bd856a65a8d6471dbb82ed768dd37914802b373e84ea7c93b0718d79"
+        },
+        "zama": {
+          "number": 11971749,
+          "hash": "0x7bb0ee31bd856a65a8d6471dbb82ed768dd37914802b373e84ea7c93b0718d79"
+        }
+      }
+    },
+    {
+      "run": 42,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971750,
+          "hash": "0xfbdedaa36ae590017199753ee14676013e84c57bea4e3e78f1e7e4782aa5c350"
+        },
+        "baseline": {
+          "number": 11971750,
+          "hash": "0xfbdedaa36ae590017199753ee14676013e84c57bea4e3e78f1e7e4782aa5c350"
+        },
+        "zama": {
+          "number": 11971750,
+          "hash": "0xfbdedaa36ae590017199753ee14676013e84c57bea4e3e78f1e7e4782aa5c350"
+        }
+      }
+    },
+    {
+      "run": 42,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971752,
+          "hash": "0xe2876ae61a3fee703be5321ad5d6cf6f2ccb08821d58af9b90b65a4d8b7ca698"
+        },
+        "zama": {
+          "number": 11971752,
+          "hash": "0xe2876ae61a3fee703be5321ad5d6cf6f2ccb08821d58af9b90b65a4d8b7ca698"
+        },
+        "baseline": {
+          "number": 11971752,
+          "hash": "0xe2876ae61a3fee703be5321ad5d6cf6f2ccb08821d58af9b90b65a4d8b7ca698"
+        }
+      }
+    },
+    {
+      "run": 42,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971754,
+          "hash": "0x2f3554bb73fabc4c855b7574771379e712a6339dd77f67ff1531cc787bfcdaf6"
+        },
+        "zama": {
+          "number": 11971754,
+          "hash": "0x2f3554bb73fabc4c855b7574771379e712a6339dd77f67ff1531cc787bfcdaf6"
+        },
+        "baseline": {
+          "number": 11971754,
+          "hash": "0x2f3554bb73fabc4c855b7574771379e712a6339dd77f67ff1531cc787bfcdaf6"
+        }
+      }
+    },
+    {
+      "run": 43,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971756,
+          "hash": "0x7b4950c8a3192eefd267715ec2ece6b3385e5476a90d698cfaf7840bc945b013"
+        },
+        "baseline": {
+          "number": 11971756,
+          "hash": "0x7b4950c8a3192eefd267715ec2ece6b3385e5476a90d698cfaf7840bc945b013"
+        },
+        "fhenix": {
+          "number": 11971756,
+          "hash": "0x7b4950c8a3192eefd267715ec2ece6b3385e5476a90d698cfaf7840bc945b013"
+        }
+      }
+    },
+    {
+      "run": 43,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971757,
+          "hash": "0x1bb3325b2666ac5fa45083f757c5bf30e3b6ca7f2f1f39451ea7da2466a0a085"
+        },
+        "fhenix": {
+          "number": 11971757,
+          "hash": "0x1bb3325b2666ac5fa45083f757c5bf30e3b6ca7f2f1f39451ea7da2466a0a085"
+        },
+        "baseline": {
+          "number": 11971757,
+          "hash": "0x1bb3325b2666ac5fa45083f757c5bf30e3b6ca7f2f1f39451ea7da2466a0a085"
+        }
+      }
+    },
+    {
+      "run": 43,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971758,
+          "hash": "0x1bb8058d4442509427fb768973f2441baba6ee5d720ff14fa846e1a04e5aeba5"
+        },
+        "fhenix": {
+          "number": 11971758,
+          "hash": "0x1bb8058d4442509427fb768973f2441baba6ee5d720ff14fa846e1a04e5aeba5"
+        },
+        "baseline": {
+          "number": 11971758,
+          "hash": "0x1bb8058d4442509427fb768973f2441baba6ee5d720ff14fa846e1a04e5aeba5"
+        }
+      }
+    },
+    {
+      "run": 43,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971759,
+          "hash": "0x1476305d9609fb297984211c48463441f3dcad119b87ccecf48e326ac2369aca"
+        },
+        "baseline": {
+          "number": 11971759,
+          "hash": "0x1476305d9609fb297984211c48463441f3dcad119b87ccecf48e326ac2369aca"
+        },
+        "fhenix": {
+          "number": 11971759,
+          "hash": "0x1476305d9609fb297984211c48463441f3dcad119b87ccecf48e326ac2369aca"
+        }
+      }
+    },
+    {
+      "run": 43,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971760,
+          "hash": "0xe2a020b696c4f9a85ea27eba0e4faaf98b74ac488e3d8248ee142cf0503ebace"
+        },
+        "fhenix": {
+          "number": 11971760,
+          "hash": "0xe2a020b696c4f9a85ea27eba0e4faaf98b74ac488e3d8248ee142cf0503ebace"
+        },
+        "zama": {
+          "number": 11971760,
+          "hash": "0xe2a020b696c4f9a85ea27eba0e4faaf98b74ac488e3d8248ee142cf0503ebace"
+        }
+      }
+    },
+    {
+      "run": 44,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971762,
+          "hash": "0xba3396e97c3da482a9bcff34afe461118b6bf794fb2275dd6b58b5fd87662097"
+        },
+        "zama": {
+          "number": 11971762,
+          "hash": "0xba3396e97c3da482a9bcff34afe461118b6bf794fb2275dd6b58b5fd87662097"
+        },
+        "baseline": {
+          "number": 11971762,
+          "hash": "0xba3396e97c3da482a9bcff34afe461118b6bf794fb2275dd6b58b5fd87662097"
+        }
+      }
+    },
+    {
+      "run": 44,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971763,
+          "hash": "0x0e544cbc6d574ad12ed9892eb21f549e229c47c0e4d4a7eafd9c1344a9f93179"
+        },
+        "zama": {
+          "number": 11971763,
+          "hash": "0x0e544cbc6d574ad12ed9892eb21f549e229c47c0e4d4a7eafd9c1344a9f93179"
+        },
+        "fhenix": {
+          "number": 11971763,
+          "hash": "0x0e544cbc6d574ad12ed9892eb21f549e229c47c0e4d4a7eafd9c1344a9f93179"
+        }
+      }
+    },
+    {
+      "run": 44,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971764,
+          "hash": "0xf483f9b4db9dd735018f0e630750e7acb65db8b61952c0e0ded4b23d2411ec7f"
+        },
+        "zama": {
+          "number": 11971764,
+          "hash": "0xf483f9b4db9dd735018f0e630750e7acb65db8b61952c0e0ded4b23d2411ec7f"
+        },
+        "fhenix": {
+          "number": 11971764,
+          "hash": "0xf483f9b4db9dd735018f0e630750e7acb65db8b61952c0e0ded4b23d2411ec7f"
+        }
+      }
+    },
+    {
+      "run": 44,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971765,
+          "hash": "0x08b815347491919b26aad811915a88d930e3faba26c1139b9ec8263231204af3"
+        },
+        "zama": {
+          "number": 11971765,
+          "hash": "0x08b815347491919b26aad811915a88d930e3faba26c1139b9ec8263231204af3"
+        },
+        "baseline": {
+          "number": 11971765,
+          "hash": "0x08b815347491919b26aad811915a88d930e3faba26c1139b9ec8263231204af3"
+        }
+      }
+    },
+    {
+      "run": 44,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971766,
+          "hash": "0x77c7cce0988753360a6b74adedbfaa89e03b3c2a4bfb130badd4337f6f276695"
+        },
+        "zama": {
+          "number": 11971766,
+          "hash": "0x77c7cce0988753360a6b74adedbfaa89e03b3c2a4bfb130badd4337f6f276695"
+        },
+        "baseline": {
+          "number": 11971766,
+          "hash": "0x77c7cce0988753360a6b74adedbfaa89e03b3c2a4bfb130badd4337f6f276695"
+        }
+      }
+    },
+    {
+      "run": 45,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971770,
+          "hash": "0xdee8c2fc13ffa35215745701180da72891301049c4048c23aa849c45bb10bcd4"
+        },
+        "fhenix": {
+          "number": 11971770,
+          "hash": "0xdee8c2fc13ffa35215745701180da72891301049c4048c23aa849c45bb10bcd4"
+        },
+        "zama": {
+          "number": 11971770,
+          "hash": "0xdee8c2fc13ffa35215745701180da72891301049c4048c23aa849c45bb10bcd4"
+        }
+      }
+    },
+    {
+      "run": 45,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971771,
+          "hash": "0xb6e8e5690a889c29a226012a13d55625ce23d0adb5a96b73d008154d05114406"
+        },
+        "baseline": {
+          "number": 11971771,
+          "hash": "0xb6e8e5690a889c29a226012a13d55625ce23d0adb5a96b73d008154d05114406"
+        },
+        "zama": {
+          "number": 11971771,
+          "hash": "0xb6e8e5690a889c29a226012a13d55625ce23d0adb5a96b73d008154d05114406"
+        }
+      }
+    },
+    {
+      "run": 45,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971772,
+          "hash": "0xd2f6ed4d9b8647fb265851ceed2f1d8a3a30e5463f962445d95046f14c4a63c9"
+        },
+        "baseline": {
+          "number": 11971772,
+          "hash": "0xd2f6ed4d9b8647fb265851ceed2f1d8a3a30e5463f962445d95046f14c4a63c9"
+        },
+        "zama": {
+          "number": 11971772,
+          "hash": "0xd2f6ed4d9b8647fb265851ceed2f1d8a3a30e5463f962445d95046f14c4a63c9"
+        }
+      }
+    },
+    {
+      "run": 45,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971773,
+          "hash": "0x68b332b5ea75d569768ed235a3ae9f08aa532dfc5eb1a147d2fc60bafe50c152"
+        },
+        "fhenix": {
+          "number": 11971773,
+          "hash": "0x68b332b5ea75d569768ed235a3ae9f08aa532dfc5eb1a147d2fc60bafe50c152"
+        },
+        "zama": {
+          "number": 11971773,
+          "hash": "0x68b332b5ea75d569768ed235a3ae9f08aa532dfc5eb1a147d2fc60bafe50c152"
+        }
+      }
+    },
+    {
+      "run": 45,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971774,
+          "hash": "0x61a518eea78e759a0aeee7b0b3d09b9bf40aaecc4934feb651a0d3a269a6059e"
+        },
+        "baseline": {
+          "number": 11971774,
+          "hash": "0x61a518eea78e759a0aeee7b0b3d09b9bf40aaecc4934feb651a0d3a269a6059e"
+        },
+        "fhenix": {
+          "number": 11971774,
+          "hash": "0x61a518eea78e759a0aeee7b0b3d09b9bf40aaecc4934feb651a0d3a269a6059e"
+        }
+      }
+    },
+    {
+      "run": 46,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971776,
+          "hash": "0x42393eabfd3eae429f11d837d14e4a9f15cbf55a17abc76ff6edf6485b750560"
+        },
+        "baseline": {
+          "number": 11971776,
+          "hash": "0x42393eabfd3eae429f11d837d14e4a9f15cbf55a17abc76ff6edf6485b750560"
+        },
+        "fhenix": {
+          "number": 11971776,
+          "hash": "0x42393eabfd3eae429f11d837d14e4a9f15cbf55a17abc76ff6edf6485b750560"
+        }
+      }
+    },
+    {
+      "run": 46,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971777,
+          "hash": "0x08f89d37879c0eba3a03f53326f1531061c75dd587c0333890a3f09e45d1e337"
+        },
+        "fhenix": {
+          "number": 11971777,
+          "hash": "0x08f89d37879c0eba3a03f53326f1531061c75dd587c0333890a3f09e45d1e337"
+        },
+        "baseline": {
+          "number": 11971777,
+          "hash": "0x08f89d37879c0eba3a03f53326f1531061c75dd587c0333890a3f09e45d1e337"
+        }
+      }
+    },
+    {
+      "run": 46,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971778,
+          "hash": "0xcd81515672f49509fdc1e3ab7f23f72f678181be0ee28151ada3300297f40a94"
+        },
+        "zama": {
+          "number": 11971778,
+          "hash": "0xcd81515672f49509fdc1e3ab7f23f72f678181be0ee28151ada3300297f40a94"
+        },
+        "fhenix": {
+          "number": 11971778,
+          "hash": "0xcd81515672f49509fdc1e3ab7f23f72f678181be0ee28151ada3300297f40a94"
+        }
+      }
+    },
+    {
+      "run": 46,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971779,
+          "hash": "0x6f27441c087603ec41b7a5788083e769a4ab16c21a92defcbd6a56112fa552a7"
+        },
+        "fhenix": {
+          "number": 11971779,
+          "hash": "0x6f27441c087603ec41b7a5788083e769a4ab16c21a92defcbd6a56112fa552a7"
+        },
+        "zama": {
+          "number": 11971779,
+          "hash": "0x6f27441c087603ec41b7a5788083e769a4ab16c21a92defcbd6a56112fa552a7"
+        }
+      }
+    },
+    {
+      "run": 46,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971781,
+          "hash": "0x9de40bfb8790d4ffafca1574deb5bfd7c2d96448e94100486ff56f4d6aa634de"
+        },
+        "zama": {
+          "number": 11971781,
+          "hash": "0x9de40bfb8790d4ffafca1574deb5bfd7c2d96448e94100486ff56f4d6aa634de"
+        },
+        "baseline": {
+          "number": 11971781,
+          "hash": "0x9de40bfb8790d4ffafca1574deb5bfd7c2d96448e94100486ff56f4d6aa634de"
+        }
+      }
+    },
+    {
+      "run": 47,
+      "operation": "notarize",
+      "sameBlock": false,
+      "blockSpread": 1,
+      "blocks": {
+        "fhenix": {
+          "number": 11971783,
+          "hash": "0xb1cc01d75337a64f2e26c722d418d96d68786f809715ab4f811a9802a53dd4e7"
+        },
+        "zama": {
+          "number": 11971784,
+          "hash": "0xa72d7f3efd96587de510886e642ff8ddaefc86bc2a44b8c78a769e2b078c8744"
+        },
+        "baseline": {
+          "number": 11971783,
+          "hash": "0xb1cc01d75337a64f2e26c722d418d96d68786f809715ab4f811a9802a53dd4e7"
+        }
+      }
+    },
+    {
+      "run": 47,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971787,
+          "hash": "0xb5b854d4663118eef22ef6b44c170be1858bd480f8769304f8f3dfbe45793470"
+        },
+        "baseline": {
+          "number": 11971787,
+          "hash": "0xb5b854d4663118eef22ef6b44c170be1858bd480f8769304f8f3dfbe45793470"
+        },
+        "zama": {
+          "number": 11971787,
+          "hash": "0xb5b854d4663118eef22ef6b44c170be1858bd480f8769304f8f3dfbe45793470"
+        }
+      }
+    },
+    {
+      "run": 47,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971788,
+          "hash": "0x7ad8e1a7dc8441024357d92aabb7683c1ab3fddeb1f21dc2524c25cb48d63065"
+        },
+        "fhenix": {
+          "number": 11971788,
+          "hash": "0x7ad8e1a7dc8441024357d92aabb7683c1ab3fddeb1f21dc2524c25cb48d63065"
+        },
+        "baseline": {
+          "number": 11971788,
+          "hash": "0x7ad8e1a7dc8441024357d92aabb7683c1ab3fddeb1f21dc2524c25cb48d63065"
+        }
+      }
+    },
+    {
+      "run": 47,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971790,
+          "hash": "0x464062985771bbe541c5d3071911a6a00a98f78e347daf132c1d9664b5759604"
+        },
+        "baseline": {
+          "number": 11971790,
+          "hash": "0x464062985771bbe541c5d3071911a6a00a98f78e347daf132c1d9664b5759604"
+        },
+        "fhenix": {
+          "number": 11971790,
+          "hash": "0x464062985771bbe541c5d3071911a6a00a98f78e347daf132c1d9664b5759604"
+        }
+      }
+    },
+    {
+      "run": 47,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971791,
+          "hash": "0xc73b94de930422c18d1207394f3f6d24062ce61936d544dd600787ad692e597a"
+        },
+        "fhenix": {
+          "number": 11971791,
+          "hash": "0xc73b94de930422c18d1207394f3f6d24062ce61936d544dd600787ad692e597a"
+        },
+        "zama": {
+          "number": 11971791,
+          "hash": "0xc73b94de930422c18d1207394f3f6d24062ce61936d544dd600787ad692e597a"
+        }
+      }
+    },
+    {
+      "run": 48,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971794,
+          "hash": "0xacb15ba5a71a06f4a3c20a80fd760351ca9002b4da156018f60b5541ec1f721f"
+        },
+        "fhenix": {
+          "number": 11971794,
+          "hash": "0xacb15ba5a71a06f4a3c20a80fd760351ca9002b4da156018f60b5541ec1f721f"
+        },
+        "zama": {
+          "number": 11971794,
+          "hash": "0xacb15ba5a71a06f4a3c20a80fd760351ca9002b4da156018f60b5541ec1f721f"
+        }
+      }
+    },
+    {
+      "run": 48,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971795,
+          "hash": "0xc57bb4fd103412052ec141067dba09afe4a28765ebbf699898beb97cf02a03d0"
+        },
+        "zama": {
+          "number": 11971795,
+          "hash": "0xc57bb4fd103412052ec141067dba09afe4a28765ebbf699898beb97cf02a03d0"
+        },
+        "fhenix": {
+          "number": 11971795,
+          "hash": "0xc57bb4fd103412052ec141067dba09afe4a28765ebbf699898beb97cf02a03d0"
+        }
+      }
+    },
+    {
+      "run": 48,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971796,
+          "hash": "0xf0a90eee09b02be55b41f0ea44dabcfa5b01cd6c3a7ffaa088f1802d06398eff"
+        },
+        "baseline": {
+          "number": 11971796,
+          "hash": "0xf0a90eee09b02be55b41f0ea44dabcfa5b01cd6c3a7ffaa088f1802d06398eff"
+        },
+        "zama": {
+          "number": 11971796,
+          "hash": "0xf0a90eee09b02be55b41f0ea44dabcfa5b01cd6c3a7ffaa088f1802d06398eff"
+        }
+      }
+    },
+    {
+      "run": 48,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971797,
+          "hash": "0x247b753190ce783c784c3415b21e4cf152ff928c35929e73c0df652a45e421f0"
+        },
+        "zama": {
+          "number": 11971797,
+          "hash": "0x247b753190ce783c784c3415b21e4cf152ff928c35929e73c0df652a45e421f0"
+        },
+        "baseline": {
+          "number": 11971797,
+          "hash": "0x247b753190ce783c784c3415b21e4cf152ff928c35929e73c0df652a45e421f0"
+        }
+      }
+    },
+    {
+      "run": 48,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971798,
+          "hash": "0x45ed237bd751623eab1297876d27ea2c7c23c86165118f6f1925d8e7a1597f44"
+        },
+        "baseline": {
+          "number": 11971798,
+          "hash": "0x45ed237bd751623eab1297876d27ea2c7c23c86165118f6f1925d8e7a1597f44"
+        },
+        "fhenix": {
+          "number": 11971798,
+          "hash": "0x45ed237bd751623eab1297876d27ea2c7c23c86165118f6f1925d8e7a1597f44"
+        }
+      }
+    },
+    {
+      "run": 49,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971800,
+          "hash": "0xe41989302f10a997b2386dc853f4e6e4cb74eeacf0af71bc8c686963a01796d2"
+        },
+        "baseline": {
+          "number": 11971800,
+          "hash": "0xe41989302f10a997b2386dc853f4e6e4cb74eeacf0af71bc8c686963a01796d2"
+        },
+        "fhenix": {
+          "number": 11971800,
+          "hash": "0xe41989302f10a997b2386dc853f4e6e4cb74eeacf0af71bc8c686963a01796d2"
+        }
+      }
+    },
+    {
+      "run": 49,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971801,
+          "hash": "0xcf6ac27be2c29abb6406d3af987f08ab905cd8e40c3385c9eaf050f2161d7311"
+        },
+        "zama": {
+          "number": 11971801,
+          "hash": "0xcf6ac27be2c29abb6406d3af987f08ab905cd8e40c3385c9eaf050f2161d7311"
+        },
+        "fhenix": {
+          "number": 11971801,
+          "hash": "0xcf6ac27be2c29abb6406d3af987f08ab905cd8e40c3385c9eaf050f2161d7311"
+        }
+      }
+    },
+    {
+      "run": 49,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971802,
+          "hash": "0x4d861a470d3136fcf6a5ea510c73351097544459f0499958cd1d0b1a1de4f0a6"
+        },
+        "fhenix": {
+          "number": 11971802,
+          "hash": "0x4d861a470d3136fcf6a5ea510c73351097544459f0499958cd1d0b1a1de4f0a6"
+        },
+        "zama": {
+          "number": 11971802,
+          "hash": "0x4d861a470d3136fcf6a5ea510c73351097544459f0499958cd1d0b1a1de4f0a6"
+        }
+      }
+    },
+    {
+      "run": 49,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971804,
+          "hash": "0x49e71e634628eab9eae8c58b0426145ed5a4c425e387f6475774396af4fc09db"
+        },
+        "baseline": {
+          "number": 11971804,
+          "hash": "0x49e71e634628eab9eae8c58b0426145ed5a4c425e387f6475774396af4fc09db"
+        },
+        "zama": {
+          "number": 11971804,
+          "hash": "0x49e71e634628eab9eae8c58b0426145ed5a4c425e387f6475774396af4fc09db"
+        }
+      }
+    },
+    {
+      "run": 49,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971805,
+          "hash": "0xb788013674a6c99a43097b77bb0ee0e384dfbcb3b3ca02cfdfad78d4cc96e552"
+        },
+        "baseline": {
+          "number": 11971805,
+          "hash": "0xb788013674a6c99a43097b77bb0ee0e384dfbcb3b3ca02cfdfad78d4cc96e552"
+        },
+        "fhenix": {
+          "number": 11971805,
+          "hash": "0xb788013674a6c99a43097b77bb0ee0e384dfbcb3b3ca02cfdfad78d4cc96e552"
+        }
+      }
+    },
+    {
+      "run": 50,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 11971807,
+          "hash": "0x0256459a763aec52cae692acdd9cd569f0695ef2d97b73dcc97ecb16033c1b42"
+        },
+        "zama": {
+          "number": 11971807,
+          "hash": "0x0256459a763aec52cae692acdd9cd569f0695ef2d97b73dcc97ecb16033c1b42"
+        },
+        "baseline": {
+          "number": 11971807,
+          "hash": "0x0256459a763aec52cae692acdd9cd569f0695ef2d97b73dcc97ecb16033c1b42"
+        }
+      }
+    },
+    {
+      "run": 50,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971808,
+          "hash": "0xf0ad981b76449febb1a14fe844e949eb78f4b3158b96b8c8c0ac79a0e4eedd46"
+        },
+        "fhenix": {
+          "number": 11971808,
+          "hash": "0xf0ad981b76449febb1a14fe844e949eb78f4b3158b96b8c8c0ac79a0e4eedd46"
+        },
+        "baseline": {
+          "number": 11971808,
+          "hash": "0xf0ad981b76449febb1a14fe844e949eb78f4b3158b96b8c8c0ac79a0e4eedd46"
+        }
+      }
+    },
+    {
+      "run": 50,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971809,
+          "hash": "0xa5048cb54ea9cc8370a5bcd4f551d393becfe7b8c8f19f8061fb0d0f17be750e"
+        },
+        "baseline": {
+          "number": 11971809,
+          "hash": "0xa5048cb54ea9cc8370a5bcd4f551d393becfe7b8c8f19f8061fb0d0f17be750e"
+        },
+        "fhenix": {
+          "number": 11971809,
+          "hash": "0xa5048cb54ea9cc8370a5bcd4f551d393becfe7b8c8f19f8061fb0d0f17be750e"
+        }
+      }
+    },
+    {
+      "run": 50,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 11971810,
+          "hash": "0xac9af759387f655632b3cb7c2841426ab89acd6ae55222888884dadc7874b73f"
+        },
+        "fhenix": {
+          "number": 11971810,
+          "hash": "0xac9af759387f655632b3cb7c2841426ab89acd6ae55222888884dadc7874b73f"
+        },
+        "baseline": {
+          "number": 11971810,
+          "hash": "0xac9af759387f655632b3cb7c2841426ab89acd6ae55222888884dadc7874b73f"
+        }
+      }
+    },
+    {
+      "run": 50,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 11971811,
+          "hash": "0xa1caad59ebb144be240bc5fec3c8817b75ef65356a4390dd2140ea1fd58af503"
+        },
+        "fhenix": {
+          "number": 11971811,
+          "hash": "0xa1caad59ebb144be240bc5fec3c8817b75ef65356a4390dd2140ea1fd58af503"
+        },
+        "zama": {
+          "number": 11971811,
+          "hash": "0xa1caad59ebb144be240bc5fec3c8817b75ef65356a4390dd2140ea1fd58af503"
+        }
+      }
+    }
+  ]
+}

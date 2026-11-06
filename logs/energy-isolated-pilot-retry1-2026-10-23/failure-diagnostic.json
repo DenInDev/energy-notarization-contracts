@@ -1,0 +1,77 @@
+{
+  "kind": "coordinator_persistence_failure",
+  "reason": "Windows EPERM replacing report.json from an IPC event; old coordinator exited before recording acknowledgements",
+  "sourceReportSha256": "02bd1af58d65f4dbee548f6f5762906bca53fa53636a2fed17c613e01050d881",
+  "temporarySnapshotSha256": "5998230f1b506ba8f7377981d8b342c7e85a839869b85c97b6d4e332f86dc911",
+  "primarySamples": 0,
+  "successfulWarmups": 6,
+  "broadcastsWithoutAcknowledgement": [
+    {
+      "platform": "zama",
+      "hash": "0xb306f3fc4c4a9ef8c3b198c0b8936192cfea065d0a4835462cdf8f94d41f18f0",
+      "nonce": 842
+    },
+    {
+      "platform": "baseline",
+      "hash": "0xd20fe139a9ee7b3fed8a7471fd8608bf1b19622739950e919ca47f9c0dc9c83c",
+      "nonce": 858
+    },
+    {
+      "platform": "fhenix",
+      "hash": "0xf66107cf9499b6fff3f9740900db04005275e260d1f20abe901f48da70f4adf3",
+      "nonce": 841
+    }
+  ],
+  "chainSnapshot": {
+    "checkedAt": "2026-10-23T16:34:42.884Z",
+    "rows": [
+      {
+        "platform": "zama",
+        "nonce": 842,
+        "hash": "0xb306f3fc4c4a9ef8c3b198c0b8936192cfea065d0a4835462cdf8f94d41f18f0",
+        "receipt": null,
+        "transactionFound": false,
+        "latest": "0x34a",
+        "pending": "0x34a",
+        "errorCodes": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "platform": "baseline",
+        "nonce": 858,
+        "hash": "0xd20fe139a9ee7b3fed8a7471fd8608bf1b19622739950e919ca47f9c0dc9c83c",
+        "receipt": null,
+        "transactionFound": false,
+        "latest": "0x35a",
+        "pending": "0x35a",
+        "errorCodes": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "platform": "fhenix",
+        "nonce": 841,
+        "hash": "0xf66107cf9499b6fff3f9740900db04005275e260d1f20abe901f48da70f4adf3",
+        "receipt": null,
+        "transactionFound": false,
+        "latest": "0x349",
+        "pending": "0x349",
+        "errorCodes": [
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  "interpretation": "These three hashes are not observed on the queried RPC and latest/pending nonces remain unconsumed. No retransmission, cancellation or replacement was sent. Keep the journal; do not claim validated latency or chain execution for these observations. A new validation pilot uses different already saved/funded accounts.",
+  "baselineNotarizeAckMs": 136.78830000000744
+}

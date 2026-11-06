@@ -1,0 +1,129 @@
+{
+  "complete": true,
+  "comparisonCount": 6,
+  "sameBlockCount": 6,
+  "sameBlockFraction": 1,
+  "plannedComparisonCount": 6,
+  "comparisons": [
+    {
+      "run": 1,
+      "operation": "set_meter_owner",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 12072494,
+          "hash": "0xa7681392f5b6f82b54b320af0d01043bb0202c77c0cf859340eab8d2acb92976"
+        },
+        "fhenix": {
+          "number": 12072494,
+          "hash": "0xa7681392f5b6f82b54b320af0d01043bb0202c77c0cf859340eab8d2acb92976"
+        },
+        "zama": {
+          "number": 12072494,
+          "hash": "0xa7681392f5b6f82b54b320af0d01043bb0202c77c0cf859340eab8d2acb92976"
+        }
+      }
+    },
+    {
+      "run": 1,
+      "operation": "notarize",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "baseline": {
+          "number": 12072496,
+          "hash": "0xc1e6bf49fcbce3b9fcb20d9aba1b5e6837c25ea2ce00edd34259c7ff4c93192f"
+        },
+        "fhenix": {
+          "number": 12072496,
+          "hash": "0xc1e6bf49fcbce3b9fcb20d9aba1b5e6837c25ea2ce00edd34259c7ff4c93192f"
+        },
+        "zama": {
+          "number": 12072496,
+          "hash": "0xc1e6bf49fcbce3b9fcb20d9aba1b5e6837c25ea2ce00edd34259c7ff4c93192f"
+        }
+      }
+    },
+    {
+      "run": 1,
+      "operation": "add",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "fhenix": {
+          "number": 12072497,
+          "hash": "0x208407a9e65ae04483e12e09db0c8114c2267bbcaa4c5ffd03c82ee1db5d3b89"
+        },
+        "baseline": {
+          "number": 12072497,
+          "hash": "0x208407a9e65ae04483e12e09db0c8114c2267bbcaa4c5ffd03c82ee1db5d3b89"
+        },
+        "zama": {
+          "number": 12072497,
+          "hash": "0x208407a9e65ae04483e12e09db0c8114c2267bbcaa4c5ffd03c82ee1db5d3b89"
+        }
+      }
+    },
+    {
+      "run": 1,
+      "operation": "mul_scalar",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 12072499,
+          "hash": "0x8f8ec6d826e90ddd74b707cc2e0df4ba8551dbf9d70f84996ee2c679777ad8f9"
+        },
+        "baseline": {
+          "number": 12072499,
+          "hash": "0x8f8ec6d826e90ddd74b707cc2e0df4ba8551dbf9d70f84996ee2c679777ad8f9"
+        },
+        "fhenix": {
+          "number": 12072499,
+          "hash": "0x8f8ec6d826e90ddd74b707cc2e0df4ba8551dbf9d70f84996ee2c679777ad8f9"
+        }
+      }
+    },
+    {
+      "run": 1,
+      "operation": "mean",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 12072500,
+          "hash": "0xf30945b68b129d4684a33a129295b90482c7db37000d9d6ef4bccfc3f4f3d6ca"
+        },
+        "baseline": {
+          "number": 12072500,
+          "hash": "0xf30945b68b129d4684a33a129295b90482c7db37000d9d6ef4bccfc3f4f3d6ca"
+        },
+        "fhenix": {
+          "number": 12072500,
+          "hash": "0xf30945b68b129d4684a33a129295b90482c7db37000d9d6ef4bccfc3f4f3d6ca"
+        }
+      }
+    },
+    {
+      "run": 1,
+      "operation": "max",
+      "sameBlock": true,
+      "blockSpread": 0,
+      "blocks": {
+        "zama": {
+          "number": 12072501,
+          "hash": "0x19c41af2ef045be14a4ae747821130d70356d10ab15e74024bd7f4602b61a297"
+        },
+        "baseline": {
+          "number": 12072501,
+          "hash": "0x19c41af2ef045be14a4ae747821130d70356d10ab15e74024bd7f4602b61a297"
+        },
+        "fhenix": {
+          "number": 12072501,
+          "hash": "0x19c41af2ef045be14a4ae747821130d70356d10ab15e74024bd7f4602b61a297"
+        }
+      }
+    }
+  ]
+}

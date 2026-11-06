@@ -1,0 +1,70 @@
+{
+  "checkedAt": "2026-11-05T19:40:36.707Z",
+  "status": "terminal_failure",
+  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-50-2026-11-05\\measured-euint16-preflight2\\report.json",
+  "rawSha256": "0a48672a8facf3951fb53696a6fa9e086d985fa2ab868f8b069c96b7920a824e",
+  "reason": "Isolated campaign stopped after all current workers settled; observations and prepared transaction hashes retained",
+  "primarySuccesses": 92,
+  "primaryFailures": 1,
+  "counts": {
+    "baseline": {
+      "ok": 30,
+      "failed": 1
+    },
+    "zama": {
+      "ok": 31,
+      "failed": 0
+    },
+    "fhenix": {
+      "ok": 31,
+      "failed": 0
+    }
+  },
+  "warmupSuccesses": 15,
+  "measuredViewSuccesses": 18,
+  "canonicalChecks": [
+    {
+      "platform": "baseline",
+      "run": 7,
+      "operation": "notarize",
+      "transactionHash": "0xe4438b130155bbc92c2a24e8d51a7d8477e4aa542e12a6558d7281ca90f5ddd7",
+      "nonce": 325,
+      "recordedBlockHash": "0xfa23eeecdef1a28172f9ae61ffccf8175e319c001c560d6ed1dd106a9a890e73",
+      "currentReceiptStatus": "0x1",
+      "currentReceiptBlockHash": "0xfa23eeecdef1a28172f9ae61ffccf8175e319c001c560d6ed1dd106a9a890e73",
+      "currentReceiptBlockNumber": "0xb832af",
+      "currentBlockHash": "0xfa23eeecdef1a28172f9ae61ffccf8175e319c001c560d6ed1dd106a9a890e73",
+      "receiptCanonical": true,
+      "receiptMatchesRecordedBlock": true
+    },
+    {
+      "platform": "zama",
+      "run": 7,
+      "operation": "notarize",
+      "transactionHash": "0xc39192d7726faa4fe20f098448ec95cb78125a38677987565c11f5c6b9523e8b",
+      "nonce": 325,
+      "recordedBlockHash": "0xfa23eeecdef1a28172f9ae61ffccf8175e319c001c560d6ed1dd106a9a890e73",
+      "currentReceiptStatus": "0x1",
+      "currentReceiptBlockHash": "0xfa23eeecdef1a28172f9ae61ffccf8175e319c001c560d6ed1dd106a9a890e73",
+      "currentReceiptBlockNumber": "0xb832af",
+      "currentBlockHash": "0xfa23eeecdef1a28172f9ae61ffccf8175e319c001c560d6ed1dd106a9a890e73",
+      "receiptCanonical": true,
+      "receiptMatchesRecordedBlock": true
+    },
+    {
+      "platform": "fhenix",
+      "run": 7,
+      "operation": "notarize",
+      "transactionHash": "0xd64818e897d498c070058e20d8d1c1492fbc2acdf341ebde2b877b172bab3f30",
+      "nonce": 325,
+      "recordedBlockHash": "0xfa23eeecdef1a28172f9ae61ffccf8175e319c001c560d6ed1dd106a9a890e73",
+      "currentReceiptStatus": "0x1",
+      "currentReceiptBlockHash": "0xfa23eeecdef1a28172f9ae61ffccf8175e319c001c560d6ed1dd106a9a890e73",
+      "currentReceiptBlockNumber": "0xb832af",
+      "currentBlockHash": "0xfa23eeecdef1a28172f9ae61ffccf8175e319c001c560d6ed1dd106a9a890e73",
+      "receiptCanonical": true,
+      "receiptMatchesRecordedBlock": true
+    }
+  ],
+  "remainingWidth128Started": false
+}

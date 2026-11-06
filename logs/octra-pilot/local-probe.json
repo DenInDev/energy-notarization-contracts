@@ -1,0 +1,188 @@
+{
+  "scope": "local-wallet-library",
+  "networkExecution": false,
+  "keygenMs": 587.05429,
+  "cases": [
+    {
+      "operation": "store_roundtrip",
+      "inputs": [
+        42,
+        17
+      ],
+      "scalar": 3,
+      "expected": "42",
+      "actual": "42",
+      "correct": true,
+      "computeMs": 0.001103
+    },
+    {
+      "operation": "add",
+      "inputs": [
+        42,
+        17
+      ],
+      "scalar": 3,
+      "expected": "59",
+      "actual": "59",
+      "correct": true,
+      "computeMs": 0.010548
+    },
+    {
+      "operation": "scale",
+      "inputs": [
+        42,
+        17
+      ],
+      "scalar": 3,
+      "expected": "126",
+      "actual": "126",
+      "correct": true,
+      "computeMs": 0.006009
+    },
+    {
+      "operation": "store_roundtrip",
+      "inputs": [
+        0,
+        1
+      ],
+      "scalar": 0,
+      "expected": "0",
+      "actual": "0",
+      "correct": true,
+      "computeMs": 0.000248
+    },
+    {
+      "operation": "add",
+      "inputs": [
+        0,
+        1
+      ],
+      "scalar": 0,
+      "expected": "1",
+      "actual": "1",
+      "correct": true,
+      "computeMs": 0.009009
+    },
+    {
+      "operation": "scale",
+      "inputs": [
+        0,
+        1
+      ],
+      "scalar": 0,
+      "expected": "0",
+      "actual": "0",
+      "correct": true,
+      "computeMs": 0.005631
+    },
+    {
+      "operation": "store_roundtrip",
+      "inputs": [
+        1,
+        0
+      ],
+      "scalar": 1,
+      "expected": "1",
+      "actual": "1",
+      "correct": true,
+      "computeMs": 0.000258
+    },
+    {
+      "operation": "add",
+      "inputs": [
+        1,
+        0
+      ],
+      "scalar": 1,
+      "expected": "1",
+      "actual": "1",
+      "correct": true,
+      "computeMs": 0.00864
+    },
+    {
+      "operation": "scale",
+      "inputs": [
+        1,
+        0
+      ],
+      "scalar": 1,
+      "expected": "1",
+      "actual": "1",
+      "correct": true,
+      "computeMs": 0.010826
+    },
+    {
+      "operation": "store_roundtrip",
+      "inputs": [
+        255,
+        1024
+      ],
+      "scalar": 7,
+      "expected": "255",
+      "actual": "255",
+      "correct": true,
+      "computeMs": 0.000228
+    },
+    {
+      "operation": "add",
+      "inputs": [
+        255,
+        1024
+      ],
+      "scalar": 7,
+      "expected": "1279",
+      "actual": "1279",
+      "correct": true,
+      "computeMs": 0.008502
+    },
+    {
+      "operation": "scale",
+      "inputs": [
+        255,
+        1024
+      ],
+      "scalar": 7,
+      "expected": "1785",
+      "actual": "1785",
+      "correct": true,
+      "computeMs": 0.005095
+    },
+    {
+      "operation": "store_roundtrip",
+      "inputs": [
+        4294967295,
+        17
+      ],
+      "scalar": 2,
+      "expected": "4294967295",
+      "actual": "4294967295",
+      "correct": true,
+      "computeMs": 0.000387
+    },
+    {
+      "operation": "add",
+      "inputs": [
+        4294967295,
+        17
+      ],
+      "scalar": 2,
+      "expected": "4294967312",
+      "actual": "4294967312",
+      "correct": true,
+      "computeMs": 0.009307
+    },
+    {
+      "operation": "scale",
+      "inputs": [
+        4294967295,
+        17
+      ],
+      "scalar": 2,
+      "expected": "8589934590",
+      "actual": "8589934590",
+      "correct": true,
+      "computeMs": 0.00573
+    }
+  ],
+  "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt"
+}

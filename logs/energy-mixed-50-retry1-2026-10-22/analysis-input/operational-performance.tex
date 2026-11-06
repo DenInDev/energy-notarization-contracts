@@ -1,0 +1,185 @@
+% Mean +/- sample standard deviation; times in milliseconds.
+% SDK stage timings do not isolate backend compute. n=50 only if the input report has 50 rounds.
+\begin{table*}[!t]
+\centering\small
+\caption{Gas consumption: 50 interleaved rounds.}
+\label{tab:lifecycle-gasUsed}
+\begin{tabular}{lrrr}
+\hline
+Operation & Baseline & Zama & Fhenix \\
+\hline
+notarize & \(34185.0 \pm 0.0\) & \(486177.2 \pm 11.9\) & \(320492.2 \pm 6.6\) \\
+add & \(36022.0 \pm 0.0\) & \(343059.0 \pm 2.0\) & \(343751.0 \pm 0.0\) \\
+mul\_scalar & \(36011.0 \pm 0.0\) & \(339217.3 \pm 1.9\) & \(482917.0 \pm 0.0\) \\
+mean & \(37938.0 \pm 0.0\) & \(358385.5 \pm 2.0\) & \(406004.0 \pm 0.0\) \\
+max & \(37945.0 \pm 0.0\) & \(344625.0 \pm 2.0\) & \(347930.0 \pm 0.0\) \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\centering\small
+\caption{Host-chain receipt latency (ms): 50 interleaved rounds.}
+\label{tab:lifecycle-confirmationMs}
+\begin{tabular}{lrrr}
+\hline
+Operation & Baseline & Zama & Fhenix \\
+\hline
+notarize & \(13088.4 \pm 5190.9\) & \(6552.7 \pm 5630.6\) & \(6608.0 \pm 5198.8\) \\
+add & \(8574.1 \pm 6599.3\) & \(8580.8 \pm 6560.7\) & \(8545.5 \pm 6564.0\) \\
+mul\_scalar & \(6812.8 \pm 5229.9\) & \(6823.0 \pm 5148.6\) & \(6863.1 \pm 5201.3\) \\
+mean & \(7718.3 \pm 6889.8\) & \(7763.6 \pm 6829.3\) & \(7733.5 \pm 6847.9\) \\
+max & \(8161.6 \pm 8423.1\) & \(8219.8 \pm 8412.8\) & \(8222.2 \pm 8463.2\) \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\centering\small
+\caption{Validated-result completion latency (ms): 50 interleaved rounds.}
+\label{tab:lifecycle-transactionToValidatedPlaintextMs}
+\begin{tabular}{lrrr}
+\hline
+Operation & Baseline & Zama & Fhenix \\
+\hline
+notarize & \(13150.7 \pm 5191.5\) & \(10933.8 \pm 5876.6\) & \(6844.1 \pm 5194.6\) \\
+add & \(8636.1 \pm 6599.4\) & \(13132.9 \pm 6749.1\) & \(9041.1 \pm 6608.8\) \\
+mul\_scalar & \(6875.3 \pm 5231.2\) & \(11782.3 \pm 5115.6\) & \(7858.3 \pm 5140.6\) \\
+mean & \(7783.3 \pm 6887.6\) & \(12434.1 \pm 6889.9\) & \(13217.2 \pm 6962.4\) \\
+max & \(8245.5 \pm 8414.9\) & \(12977.4 \pm 8507.6\) & \(8778.2 \pm 8410.5\) \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\centering\small
+\caption{Post-receipt completion interval (ms): 50 interleaved rounds.}
+\label{tab:lifecycle-postReceiptToValidatedPlaintextMs}
+\begin{tabular}{lrrr}
+\hline
+Operation & Baseline & Zama & Fhenix \\
+\hline
+notarize & \(62.2 \pm 9.2\) & \(4381.1 \pm 898.9\) & \(236.2 \pm 81.8\) \\
+add & \(62.0 \pm 7.1\) & \(4552.1 \pm 925.2\) & \(495.5 \pm 454.5\) \\
+mul\_scalar & \(62.5 \pm 8.9\) & \(4959.3 \pm 1279.3\) & \(995.2 \pm 581.4\) \\
+mean & \(65.0 \pm 15.2\) & \(4670.6 \pm 447.1\) & \(5483.7 \pm 1434.3\) \\
+max & \(83.9 \pm 153.6\) & \(4757.6 \pm 639.0\) & \(556.0 \pm 492.2\) \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table}[!t]
+\centering\footnotesize
+\caption{Client-observed SDK stages, not isolated server compute.}
+\label{tab:lifecycle-sdk-stages}
+\begin{tabular}{lrr}
+\hline
+Stage & Zama (ms) & Fhenix (ms) \\
+\hline
+Ciphertext + ZKP & \(5712 \pm 36\) & \(5360 \pm 43\) \\
+Input approval & \(8158 \pm 77\) & \(656 \pm 78\) \\
+Key fetch/preparation & n/a & \(690 \pm 27\) \\
+First SDK decrypt & \(4318 \pm 899\) & \(174 \pm 77\) \\
+Total input preparation & \(13871 \pm 93\) & \(9565 \pm 2873\) \\
+Ready decrypt + auth & \(2385 \pm 182\) & \(156 \pm 35\) \\
+Ready successful $n$ & 50 & 50 \\
+Ready failed requests & 0 & 0 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table*}[!t]
+\centering\footnotesize
+\caption{Direct round-matched comparisons of receipt latency. Negative differences favor the left configuration. Confidence intervals are pointwise; Holm correction covers all thirty tests.}
+\label{tab:lifecycle-comparisons-confirmationMs}
+\begin{tabular}{lllrrr}
+\hline
+Operation & Left & Right & Mean difference (ms) & Pointwise 95\% CI (ms) & Holm $p$ \\
+\hline
+notarize & baseline & zama & 6535.7 & [5434.7, 7636.7] & 7.986e-15 \\
+notarize & baseline & fhenix & 6480.5 & [6417.4, 6543.6] & 3.259e-72 \\
+notarize & zama & fhenix & -55.2 & [-1161.7, 1051.2] & 1 \\
+add & baseline & zama & -6.7 & [-71.4, 58.0] & 1 \\
+add & baseline & fhenix & 28.6 & [-50.6, 107.7] & 1 \\
+add & zama & fhenix & 35.2 & [-32.8, 103.3] & 1 \\
+mul\_scalar & baseline & zama & -10.2 & [-81.6, 61.2] & 1 \\
+mul\_scalar & baseline & fhenix & -50.3 & [-101.2, 0.6] & 0.6864 \\
+mul\_scalar & zama & fhenix & -40.1 & [-101.8, 21.6] & 1 \\
+mean & baseline & zama & -45.3 & [-130.8, 40.3] & 1 \\
+mean & baseline & fhenix & -15.2 & [-87.3, 56.9] & 1 \\
+mean & zama & fhenix & 30.1 & [-47.1, 107.3] & 1 \\
+max & baseline & zama & -58.2 & [-125.4, 9.1] & 0.9723 \\
+max & baseline & fhenix & -60.7 & [-127.2, 5.9] & 0.8766 \\
+max & zama & fhenix & -2.5 & [-81.4, 76.5] & 1 \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\centering\footnotesize
+\caption{Direct round-matched comparisons of validated-result completion. Negative differences favor the left configuration. Confidence intervals are pointwise; Holm correction covers all thirty tests.}
+\label{tab:lifecycle-comparisons-transactionToValidatedPlaintextMs}
+\begin{tabular}{lllrrr}
+\hline
+Operation & Left & Right & Mean difference (ms) & Pointwise 95\% CI (ms) & Holm $p$ \\
+\hline
+notarize & baseline & zama & 2216.8 & [1126.5, 3307.1] & 0.002434 \\
+notarize & baseline & fhenix & 6306.6 & [6240.5, 6372.6] & 1.09e-70 \\
+notarize & zama & fhenix & 4089.7 & [2996.6, 5182.8] & 1.782e-08 \\
+add & baseline & zama & -4496.8 & [-4741.9, -4251.7] & 5.363e-36 \\
+add & baseline & fhenix & -405.0 & [-537.6, -272.4] & 2.301e-06 \\
+add & zama & fhenix & 4091.8 & [3820.4, 4363.3] & 5.19e-32 \\
+mul\_scalar & baseline & zama & -4907.0 & [-5276.3, -4537.8] & 1.694e-29 \\
+mul\_scalar & baseline & fhenix & -983.0 & [-1143.4, -822.5] & 2.617e-15 \\
+mul\_scalar & zama & fhenix & 3924.0 & [3556.8, 4291.2] & 2.945e-25 \\
+mean & baseline & zama & -4650.8 & [-4811.4, -4490.2] & 1.934e-45 \\
+mean & baseline & fhenix & -5433.9 & [-5853.8, -5014.0] & 5.462e-29 \\
+mean & zama & fhenix & -783.1 & [-1210.2, -356.0] & 0.008016 \\
+max & baseline & zama & -4731.9 & [-4923.4, -4540.3] & 3.911e-42 \\
+max & baseline & fhenix & -532.7 & [-670.1, -395.3] & 7.186e-09 \\
+max & zama & fhenix & 4199.2 & [3978.2, 4420.1] & 1.049e-36 \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\centering\footnotesize
+\caption{Full client-observed lifecycle and gas relative to the plaintext baseline. Lifecycle includes input preparation and validated-result completion; ready-repeat decryption is excluded.}
+\label{tab:lifecycle-relative-baseline}
+\begin{tabular}{llrrrrrrr}
+\hline
+Operation & Configuration & Baseline ms & FHE ms & Ratio & Overhead & 95\% ratio CI & Baseline gas & FHE gas \\
+\hline
+notarize & zama & 13150.7 & 24804.3 & 1.946 & +94.6\% & [1.859, 2.041] & 34185.0 & 486177.2 \\
+notarize & fhenix & 13150.7 & 16409.5 & 1.263 & +26.3\% & [1.215, 1.309] & 34185.0 & 320492.2 \\
+add & zama & 8636.1 & 13132.9 & 1.684 & +68.4\% & [1.599, 1.771] & 36022.0 & 343059.0 \\
+add & fhenix & 8636.1 & 9041.1 & 1.061 & +6.1\% & [1.039, 1.086] & 36022.0 & 343751.0 \\
+mul\_scalar & zama & 6875.3 & 11782.3 & 1.908 & +90.8\% & [1.731, 2.123] & 36011.0 & 339217.3 \\
+mul\_scalar & fhenix & 6875.3 & 7858.3 & 1.190 & +19.0\% & [1.151, 1.230] & 36011.0 & 482917.0 \\
+mean & zama & 7783.3 & 12434.1 & 1.871 & +87.1\% & [1.746, 2.023] & 37938.0 & 358385.5 \\
+mean & fhenix & 7783.3 & 13217.2 & 2.005 & +100.5\% & [1.854, 2.183] & 37938.0 & 406004.0 \\
+max & zama & 8245.5 & 12977.4 & 1.816 & +81.6\% & [1.690, 1.941] & 37945.0 & 344625.0 \\
+max & fhenix & 8245.5 & 8778.2 & 1.095 & +9.5\% & [1.066, 1.126] & 37945.0 & 347930.0 \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\centering\footnotesize
+\caption{Versioned revised campaign provenance; block utilization is relative to gas target.}
+\label{tab:lifecycle-provenance}
+\begin{tabular}{llllr}
+\hline
+Configuration & Contract & Measured blocks & Mean gas/target & Retrieval retries \\
+\hline
+baseline & \texttt{0x7af0e0...3C19} & 11971451--11971811 & 0.702 & 0 \\
+zama & \texttt{0xF4353B...7D47} & 11971451--11971811 & 0.702 & 0 \\
+fhenix & \texttt{0x679Fc5...c30B} & 11971451--11971811 & 0.702 & 0 \\
+\hline
+\end{tabular}
+\end{table*}
+
+The revised campaign ran from \texttt{2026-10-22T18:50:36.097Z} to \texttt{2026-10-22T20:06:09.185Z} (UTC).
+The raw report contains full addresses, transaction hashes, individual block metadata, SDK versions and machine metadata.
+Already-ready decryption above uses notarization only, not a pool of operation types. Stages overlap and must not be summed as independent totals.
+Zama key preparation occurs in excluded SDK setup; CoFHE key-fetch/preparation is observed per input request. Remote approval and decrypt API timings include communication and client processing, not just server computation.

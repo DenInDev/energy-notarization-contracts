@@ -1,0 +1,31 @@
+{
+  "contract_receipt": {
+    "jsonrpc": "2.0",
+    "error": {
+      "code": 112,
+      "message": "not found",
+      "data": "receipt not found"
+    },
+    "id": 1
+  },
+  "contract_call": {
+    "jsonrpc": "2.0",
+    "error": {
+      "code": -32000,
+      "message": "execution reverted"
+    },
+    "id": 1
+  },
+  "octra_balance": {
+    "jsonrpc": "2.0",
+    "result": {
+      "address": "oct1CKqP7MG8cVnRixBrH1CvPmfFZHKi71JaMNeCaLC3hnt",
+      "balance": "2.758492",
+      "balance_raw": "2758492",
+      "nonce": 3,
+      "pending_nonce": 3,
+      "has_public_key": true
+    },
+    "id": 1
+  }
+}

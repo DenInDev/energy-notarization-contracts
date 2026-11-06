@@ -1,0 +1,16 @@
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "epoch": 1682083,
+    "current_epoch": 1682083,
+    "validator": "oct6CWD7r19DMAEuGcoy7HVRWVXSugjNzyJwbNZPYaCWm2g",
+    "roots": 0,
+    "timestamp": 1791840124.494207,
+    "network_version": "v3.0.0-irmin",
+    "head_epoch": 1682082,
+    "state_root": "e33a66374532bc2328c818ded8f3de68ffb47289d4e6504cc4c1219607f3d601",
+    "txid_hi": "2505790",
+    "irmin_commit": "762be7d4e81206281e7313e90fc45e551466259e9e89c16c233c4d9321d3d20303a8ff07b8c619b3c0582ca910e60fe619ff238c2d045f65173ea4b316891fdc"
+  },
+  "id": 1
+}

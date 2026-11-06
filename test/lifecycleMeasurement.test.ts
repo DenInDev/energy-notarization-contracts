@@ -88,11 +88,14 @@ describe("lifecycle measurement", () => {
     assert.equal(f.submissions(),1);assert.equal(f.reads(),3);
     assert.equal(sample.plaintext,"142");
     assert.equal(sample.stages.filter(s=>s.stage==="completion.handle.receipt_block_retry").length,2);
-    assert.ok(sample.postReceiptToValidatedPlaintextMs!>=3000);
+    const waits = sample.stages.filter(s=>s.stage==="completion.handle.retry_backoff");
+    assert.equal(waits.length,2);
+    const waitedMs = waits.reduce((sum,s)=>sum+s.durationMs,0);
+    assert.ok(sample.postReceiptToValidatedPlaintextMs!>=waitedMs);
   });
   it("uses the reading width for notarization and 64 bits for computed result decryption", async () => {
     for (const notarize of [true,false]) {
-      const widths: (number | undefined)[]=[];
+      const widths: (number | "address" | undefined)[]=[];
       const f=fixture("fhenix",async (_h,_t,_p,_timeout,width)=>{widths.push(width);return 142n;},notarize);
       const sample=await f.measure({platform:"fhenix",operation:notarize ? "notarize" : "add",
         run:1,value:142n,warmup:false,nonce:90});

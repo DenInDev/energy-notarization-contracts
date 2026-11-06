@@ -1,0 +1,29 @@
+{
+  "pid": 3680,
+  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-isolated-validation-2026-10-23/report.json",
+  "status": "complete",
+  "executionMode": "isolated_processes_prepared_submission_barrier",
+  "stdout": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-isolated-validation-2026-10-23.stdout.log",
+  "previousReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-isolated-pilot-retry1-2026-10-23/report.json",
+  "sourceAccountIds": [
+    "user-4",
+    "user-5",
+    "user-6"
+  ],
+  "runs": 1,
+  "stderr": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-isolated-validation-2026-10-23.stderr.log",
+  "pollingBaseMs": 100,
+  "startedAt": "2026-10-23T16:41:39.3834830Z",
+  "accountsFile": ".benchmark-accounts/isolated-validation/accounts.secret.json",
+  "purpose": "Corrected runner validation on separate saved accounts; no reuse of unacknowledged pilot hashes",
+  "completedAt": "2026-10-23T16:45:56.627Z",
+  "measuredValidated": 15,
+  "warmupValidated": 15,
+  "readyDecryptFailures": 0,
+  "sameBlockComparisons": 5,
+  "totalComparisons": 5,
+  "baselineBroadcastAckMeanMs": 127.18189999999012,
+  "analysis": "logs/energy-isolated-validation-2026-10-23/pilot-validation.json",
+  "localTestsPassed": 74,
+  "analysisTestsPassed": 6
+}

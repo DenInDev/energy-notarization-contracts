@@ -1,0 +1,20 @@
+{
+  "runs": 50,
+  "startedAt": "2026-10-23T13:46:55.0183650Z",
+  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-poll100-2026-10-23/report.json",
+  "pollingBaseMs": 100,
+  "stderr": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-poll100-2026-10-23.stderr.log",
+  "stdout": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-poll100-2026-10-23.stdout.log",
+  "pid": 20508,
+  "previousReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts/logs/energy-mixed-50-poll100-2026-10-22/report.json",
+  "serverRetryAfter": "respected",
+  "status": "failed",
+  "failedAt": "2026-10-23T15:06:02.237Z",
+  "failureObservedAt": "2026-10-23T15:09:34.733Z",
+  "measuredAttempted": 624,
+  "measuredValidated": 623,
+  "warmupValidated": 15,
+  "readyDecryptFailures": 1,
+  "error": "Response body does not match the expected schema\n\nstatus: 503\nurl: [endpoint]\nmethod: POST\noperation: USER_DECRYPT\nretryCount: 0\n\nVersion: @zama-fhe/relayer-sdk@0.4.1",
+  "failureDiagnostic": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-mixed-50-poll100-2026-10-23\\failure-diagnostic.json"
+}
