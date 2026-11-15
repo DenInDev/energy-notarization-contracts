@@ -1,0 +1,21 @@
+{
+  "scope": "recorded measured and warmup request/transaction traces; setup and uninstrumented SDK requests excluded",
+  "failedStages": {
+    "preparation.gas.read_attempt": 32,
+    "decrypt.read_attempt": 5
+  },
+  "observedHintsAndHttp": {
+    "encrypt.http_headers:httpStatus=200": 368,
+    "decrypt.http_headers:httpStatus=200": 368,
+    "decrypt.client_poll_floor:httpStatus=200": 368,
+    "transaction.receipt_poll:intervalMs=500": 23122,
+    "preparation.gas.receipt_block_retry:backoffMs=1000": 25,
+    "preparation.gas.receipt_block_retry:backoffMs=2000": 7,
+    "encrypt.sdk_progress:retryAfterMs=2000": 368,
+    "decrypt.sdk_progress:retryAfterMs=2000": 395,
+    "decrypt.service_unavailable_retry:backoffMs=1000": 1,
+    "decrypt.service_unavailable_retry:backoffMs=2000": 1,
+    "decrypt.service_unavailable_retry:backoffMs=4000": 1,
+    "decrypt.service_unavailable_retry:backoffMs=8000": 1
+  }
+}

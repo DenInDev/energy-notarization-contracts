@@ -1,0 +1,41 @@
+\begin{table*}[!t]
+\caption{Already-ready view and decryption performance on Sepolia (16-bit arithmetic)}
+\label{tab:ready-view-decrypt-sepolia-16}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|}
+\hline
+\textbf{Platform} & \textbf{Samples} & \multicolumn{3}{c|}{\textbf{Latency: Mean ms (CV\%)}} \\
+\cline{3-5}
+& & \textbf{View read} & \textbf{Decrypt and validation} & \textbf{Total retrieval} \\
+\hline
+Plaintext baseline & 50 & 80.2 (36.03\%) & 0.008 (81.71\%) & 80.2 (36.02\%) \\
+Zama fhEVM & 50 & 54.1 (10.71\%) & 2338.9 (1.12\%) & 2393.0 (1.18\%) \\
+Fhenix CoFHE & 50 & 74.2 (38.95\%) & 117.2 (73.82\%) & 191.4 (54.56\%) \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Each read retrieves the persisted \texttt{max} result after primary validation. This is already-ready retrieval, without a new transaction or fresh homomorphic computation. The baseline reads and validates plaintext without FHE decryption.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Already-ready view and decryption performance on Sepolia (128-bit arithmetic)}
+\label{tab:ready-view-decrypt-sepolia-128}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|}
+\hline
+\textbf{Platform} & \textbf{Samples} & \multicolumn{3}{c|}{\textbf{Latency: Mean ms (CV\%)}} \\
+\cline{3-5}
+& & \textbf{View read} & \textbf{Decrypt and validation} & \textbf{Total retrieval} \\
+\hline
+Plaintext baseline & 50 & 97.0 (34.01\%) & 0.007 (79.93\%) & 97.0 (34.01\%) \\
+Zama fhEVM & 50 & 62.6 (29.67\%) & 2405.3 (7.72\%) & 2467.9 (7.72\%) \\
+Fhenix CoFHE & 50 & 87.7 (37.97\%) & 137.9 (38.70\%) & 225.6 (35.70\%) \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Each read retrieves the persisted \texttt{max} result after primary validation. This is already-ready retrieval, without a new transaction or fresh homomorphic computation. The baseline reads and validates plaintext without FHE decryption.}
+\end{table*}

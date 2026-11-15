@@ -1,0 +1,71 @@
+{
+  "at": "2026-11-10T15:47:03.089Z",
+  "chainId": 11155111,
+  "accounts": [
+    {
+      "id": "user-1",
+      "address": "0x8d597B9C2e568d43840215E887A94cdD5e19E0cF",
+      "balanceWei": "999988314597122",
+      "latest": 614,
+      "pending": 614
+    },
+    {
+      "id": "user-2",
+      "address": "0x5Df7Adc822605Cb15434966BBA810939F21F55a9",
+      "balanceWei": "999985822825407",
+      "latest": 1008,
+      "pending": 1008
+    },
+    {
+      "id": "user-3",
+      "address": "0x073E31aF380A81D2339C8952052A353E218ebD91",
+      "balanceWei": "999995960068610",
+      "latest": 288,
+      "pending": 288
+    },
+    {
+      "id": "user-4",
+      "address": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "balanceWei": "0",
+      "latest": 0,
+      "pending": 0
+    },
+    {
+      "id": "user-5",
+      "address": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+      "balanceWei": "0",
+      "latest": 0,
+      "pending": 0
+    },
+    {
+      "id": "user-6",
+      "address": "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+      "balanceWei": "0",
+      "latest": 0,
+      "pending": 0
+    },
+    {
+      "id": "user-7",
+      "address": "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+      "balanceWei": "0",
+      "latest": 0,
+      "pending": 0
+    },
+    {
+      "id": "user-8",
+      "address": "0x324CAA6F704fa42e92b302b637440238d905AE77",
+      "balanceWei": "0",
+      "latest": 0,
+      "pending": 0
+    },
+    {
+      "id": "user-9",
+      "address": "0xD607F87A85c34D95D381A3908Fcc84d56e504512",
+      "balanceWei": "0",
+      "latest": 0,
+      "pending": 0
+    }
+  ],
+  "lockAbsent": true,
+  "mutationCalls": 0
+}

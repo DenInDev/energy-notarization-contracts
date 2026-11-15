@@ -3,7 +3,7 @@ import type { Platform } from "../lifecycle/types";
 import type { Circuit, Mode, StudyArgs, StudyCase, Width } from "./types";
 
 export const defaults: StudyArgs = {
-  suite: "all", platform: "all", widths: "16,128", users: "1,2,4,8",
+  suite: "all", platform: "all", widths: "16", users: "1,2,4,8",
   modes: "independent,shared_sum,shared_ordered",
   sizes: "2,4,8,16,32", depths: "1,2,4,8,16,32", repetitions: 50,
   requests: 32, timeout: 180, seed: "ordering-circuits-v1",
@@ -39,7 +39,7 @@ export function buildPlan(args: StudyArgs): StudyCase[] {
   if (suites.includes("concurrency") && args.requests < 2) throw new Error("Concurrency order controls require at least two requests");
   if (!Number.isInteger(args.timeout) || args.timeout < 10 || args.timeout > 600) throw new Error("Timeout must be 10..600 seconds");
   selectedPlatforms(args.platform);
-  const widths = choices(args.widths, [16,128], "Widths") as Width[];
+  const widths = choices(args.widths, [16], "Widths") as Width[];
   const users = choices(args.users, [1,2,4,8], "Users");
   const modes = args.modes.split(",") as Mode[];
   if (!modes.length || modes.some(m => !["independent","shared_sum","shared_ordered"].includes(m)) || new Set(modes).size !== modes.length)

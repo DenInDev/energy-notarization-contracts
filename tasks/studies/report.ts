@@ -4,10 +4,11 @@ import { formatEther } from "ethers";
 import { writeLifecycleJson } from "../lib/lifecycleReportWrite";
 import { summarize } from "../lib/lifecycleTiming";
 import type { Platform } from "../lifecycle/types";
-import type { CanonicalReceiptRecovery, LateWindowAudit, StudyArgs, StudyCase, StudyTransaction, Trial, Width } from "./types";
+import type { SettledSetupReceipt, CanonicalReceiptRecovery, LateWindowAudit, StudyArgs, StudyCase, StudyTransaction, Trial, Width } from "./types";
 import { effectiveReceipt, receiptWasReconciled } from "./canonical";
 import { latestAttempts, trialKey } from "./continuation";
 import { zeroFailureUpper95 } from "./oracle";
+import { allStudyTransactions } from "./history";
 
 export type StudyReport = {
   schemaVersion: 1;
@@ -27,10 +28,16 @@ export type StudyReport = {
   methodology: Record<string,unknown>;
   setups: { platform: Platform; width: Width; kind: string; transaction: StudyTransaction; address?: string; bytecodeHash?: string }[];
   trials: Trial[];
+  supplementaryTrials?: Trial[];
+  scopeRevision?: { originalReport: string; originalSha256: string; originalConfig: Record<string,unknown>; originalCases: StudyCase[];
+    selectedIndices: number[]; supplementaryIndices: number[]; selectedCaseIds: string[];
+    repetitions: number; reason: string; at: string };
   error?: string;
   historicalErrors?: string[];
   recoveredAudits?: LateWindowAudit[];
   canonicalReceipts?: CanonicalReceiptRecovery[];
+  settledSetupReceipts?: SettledSetupReceipt[];
+  lateComputeReceipts?: SettledSetupReceipt[];
   continuations?: {
     sourceFile: string; sourceSha256: string; sourceTrialCount: number;
     startedAt: string; finishedAt?: string; status: "preflight" | "running" | "finished" | "failed";
@@ -95,12 +102,16 @@ export function saveStudy(folder: string, report: StudyReport) {
         interpretation:"Controlled serial forward/reverse executions use identical plaintext inputs, fresh ciphertexts and fresh zero state; this is a legitimate order effect, not an inconsistency."};
     }));
   writeLifecycleJson(path.join(folder,"controls.json"),controls);
-  const transactions = [...report.setups.map(s => s.transaction), ...report.trials.flatMap(t => [...t.setup,...t.requests.map(r => r.transaction)])];
+  const transactions = allStudyTransactions(report);
   const gasCostWei = transactions.reduce((n,t) => n+BigInt(effectiveReceipt(t,report).gasCostWei ?? 0),0n).toString();
   writeLifecycleJson(path.join(folder,"costs.json"),{gasCostWei,gasCostEth:formatEther(BigInt(gasCostWei)),
-    confirmedReceipts:transactions.filter(t => t.receiptStatus !== undefined).length,
+    supplementaryTrials:report.supplementaryTrials?.length??0,
+    supplementaryGasCostWei:(report.supplementaryTrials??[]).flatMap(t=>[...t.setup,...t.requests.map(r=>r.transaction)]).reduce((n,t)=>n+BigInt(effectiveReceipt(t,report).gasCostWei??0),0n).toString(),
+    confirmedReceipts:transactions.filter(t => effectiveReceipt(t,report).receiptStatus !== undefined).length,
     reconciledCanonicalReceipts:report.canonicalReceipts?.length??0,
-    unresolvedBroadcasts:transactions.filter(t => ["started","uncertain","acknowledged"].includes(t.broadcastState) && t.receiptStatus === undefined).length,
+    separatelySettledSetupReceipts:report.settledSetupReceipts?.length??0,
+    separatelyLateComputeReceipts:report.lateComputeReceipts?.length??0,
+    unresolvedBroadcasts:transactions.filter(t => ["started","uncertain","acknowledged"].includes(t.broadcastState) && effectiveReceipt(t,report).receiptStatus === undefined).length,
     includes:"deployment, authorization, window/input setup, warmup, measured receipts, including confirmed failed observations; unresolved broadcasts excluded until recovered"});
   fs.writeFileSync(path.join(folder,"summary.md"),[
     "# Concurrency and circuit studies", "",`Execution complete: ${report.executionComplete ?? false}. All trials valid: ${report.complete}. Local mock: ${report.mock}.`,

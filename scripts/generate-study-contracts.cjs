@@ -1,7 +1,7 @@
 // Generate only the concurrency/circuit contracts; classic lifecycle is untouched.
 const fs = require('node:fs');
 const path = require('node:path');
-const widths = [16, 128];
+const widths = [16];
 
 function contract(platform, width) {
   const plain = platform === 'Plain', zama = platform === 'Zama';
@@ -81,7 +81,7 @@ function contract(platform, width) {
     }
 
     // Append fresh operands in setup batches, before the job is executed once.
-    // Batching supports 32 uint128 operands within the SDK's per-proof bit limit.
+    // Each job contains at most 32 operands at the selected 16-bit width.
     function loadCircuit(bytes32 jobId, ${external}[] calldata encrypted, bytes calldata proof) external onlyOwner {
         require(!circuitExecuted[jobId] && encrypted.length >= 2 && circuitInputs[jobId].length + encrypted.length <= 32, "Bad inputs");
         ${type}[] memory values = importValues(encrypted, proof);

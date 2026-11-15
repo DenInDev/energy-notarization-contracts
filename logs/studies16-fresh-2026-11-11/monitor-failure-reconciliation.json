@@ -1,0 +1,47 @@
+{
+  "at": "2026-11-11T12:39:48.576Z",
+  "status": "canonical_success_after_rpc_read_failure",
+  "chainId": 11155111,
+  "mutationCalls": 0,
+  "sourceReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-fresh-2026-11-11\\concurrency-euint16\\report.json",
+  "rawSha256": "36c16b4f32a3445b57831c450e63d62f177c743a6b250decaa707bf2a399a9c7",
+  "error": "HH110: Invalid JSON-RPC response received: Service Unavailable\n",
+  "transactionHash": "0xeaa7e281d9830fb46830a3e8223484e0add241f440e697674bbd01d826db3833",
+  "user": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+  "nonce": 207,
+  "canonicalReceipt": {
+    "blockHash": "0xbad15f73f14c79fa705d2cff0b03cdd0804abe7021b0aaf9b6dc75d2ce9f5143",
+    "blockNumber": 12111620,
+    "transactionIndex": 108,
+    "status": 1,
+    "gasUsed": "801096",
+    "effectiveGasPriceWei": "70",
+    "gasCostWei": "56076720"
+  },
+  "latestNonce": 208,
+  "pendingNonce": 208,
+  "unsent": [
+    {
+      "hash": "0x51c4b6408058a1076187085f0270dc9df2410ae08e9b92d496737ec103570cd1",
+      "nonce": 208
+    },
+    {
+      "hash": "0xeb8fb1edb0d0450f9490eb316da386464031b1c6c9914cb0ad6e412ab00b4666",
+      "nonce": 209
+    },
+    {
+      "hash": "0x78977657d95610b8f32ea6b37923a29a37bdbb2850369fe6d4152737aa3494fc",
+      "nonce": 210
+    },
+    {
+      "hash": "0x3ebb4fce7e37f5632956c21017989a39b95b79ce7b615a70548b2588c57c60fe",
+      "nonce": 211
+    },
+    {
+      "hash": "0x8f40222d5cdf2ec6a0d76d9d37fe90914bbd59d9e27119921cdd1a6a5b671b8e",
+      "nonce": 212
+    }
+  ],
+  "rawUnchanged": true,
+  "timingUse": "Late read-only confirmation; original missing receipt/completion latencies remain absent. No failed observation or partial window is marked complete."
+}

@@ -7,6 +7,14 @@ export type CofheReadPolicy = {
   rateLimitBackoffMs: number;
 };
 
+// Uniform-width reruns use the throttling already validated in the study pilots
+// and Fhenix continuation. The legacy mixed-width protocol remains unchanged.
+export const uniformCofheReadPolicy: CofheReadPolicy = Object.freeze({
+  minimumPollingMs: 1000,
+  maxRateLimitAttempts: 3,
+  rateLimitBackoffMs: 5000,
+});
+
 // Throttle only off-chain seal-output reads, preserving larger server hints.
 // A fresh SDK read can retry HTTP 429 within the same original deadline.
 export async function withCofheReadPolicy<T>(trace: TimingTrace, phase: string, timeoutMs: number,

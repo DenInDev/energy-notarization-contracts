@@ -1,0 +1,89 @@
+{
+  "status": "finished",
+  "at": "2026-11-10T16:55:22.207Z",
+  "chainId": 11155111,
+  "totalTransferredEth": "0.006",
+  "additionalTransfersInThisAudit": 0,
+  "sourceReport": {
+    "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-full-50-2026-11-10\\funding-continuation2.json",
+    "sha256": "6125f9e87ef80716b808877af094554462abbe880876ce2f834ddebcbbd35223"
+  },
+  "originalTransferRevertRetained": true,
+  "transfers": [
+    {
+      "to": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "nonce": 1635,
+      "transactionHash": "0x0900007bd645d453c9fce1535b370a19c8726e542b2e3438f2ebd0fea1bbf65c",
+      "blockHash": "0x7fef502af01833cfb56c44e412ce45ebf8f0779af1026b37defe8cac5cca77f6",
+      "blockNumber": 12105930,
+      "receiptStatus": 1,
+      "balanceWei": "1000000000000000",
+      "gasUsed": "204600",
+      "effectiveGasPriceWei": "65",
+      "gasCostWei": "13299000"
+    },
+    {
+      "to": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+      "nonce": 1636,
+      "transactionHash": "0xa68371dc5c4b25f306448a2a42cc7c74932e87823d29f8906e81ea0156c5ae8c",
+      "blockHash": "0xd4e1b25b20477ecb54e8d14ebc3d8bbe582ae0b4a53f747548e97b9004062441",
+      "blockNumber": 12105939,
+      "receiptStatus": 1,
+      "balanceWei": "1000000000000000",
+      "gasUsed": "204600",
+      "effectiveGasPriceWei": "65",
+      "gasCostWei": "13299000"
+    },
+    {
+      "to": "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+      "nonce": 1637,
+      "transactionHash": "0x5af4d592148956665dd24524175e123959e1f90ae4b291407d83cf135d649965",
+      "blockHash": "0xd4d1dddc191634061c707b31922efbbfb4cad445b47fc412fed8661c68f0d907",
+      "blockNumber": 12105940,
+      "receiptStatus": 1,
+      "balanceWei": "1000000000000000",
+      "gasUsed": "204600",
+      "effectiveGasPriceWei": "65",
+      "gasCostWei": "13299000"
+    },
+    {
+      "to": "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+      "nonce": 1638,
+      "transactionHash": "0xc25e9f161f1c4476847beffae4cf02699f134890918ac9763444eded155ffd51",
+      "blockHash": "0xac2adea1597d42388148305dc0d9c526517f5a0275f10c1bf804c8b6f1bc1ec4",
+      "blockNumber": 12105941,
+      "receiptStatus": 1,
+      "balanceWei": "1000000000000000",
+      "gasUsed": "204600",
+      "effectiveGasPriceWei": "65",
+      "gasCostWei": "13299000"
+    },
+    {
+      "to": "0x324CAA6F704fa42e92b302b637440238d905AE77",
+      "nonce": 1639,
+      "transactionHash": "0x0d9b569fbb702908a3226d60ae72c0ab257d3a897dc4f6c0ddfe44df864c49c0",
+      "blockHash": "0x0c623a4bd4d1ae4a4955aedeee9f9bc2702bd1d13b790da539ed81f425e12e8c",
+      "blockNumber": 12105942,
+      "receiptStatus": 1,
+      "balanceWei": "1000000000000000",
+      "gasUsed": "204600",
+      "effectiveGasPriceWei": "65",
+      "gasCostWei": "13299000"
+    },
+    {
+      "to": "0xD607F87A85c34D95D381A3908Fcc84d56e504512",
+      "nonce": 1640,
+      "transactionHash": "0x16d6a605dd56848f39fa22a2725da8f406425b31465ebcd10d2838d5d4cba6d8",
+      "blockHash": "0x34d7283f6183e800d2221c7f3f1b1824b587b16f644045b61d10d3c327f1c59c",
+      "blockNumber": 12105943,
+      "receiptStatus": 1,
+      "balanceWei": "1000000000000000",
+      "gasUsed": "204600",
+      "effectiveGasPriceWei": "66",
+      "gasCostWei": "13503600"
+    }
+  ],
+  "donorLatest": 1641,
+  "donorPending": 1641,
+  "isolatedDonorLockAbsent": true
+}

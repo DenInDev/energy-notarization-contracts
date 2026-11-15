@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-14T16:54:40.109Z",
+  "rawReportsUnchanged": true,
+  "sourceReports": [
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-compact-2026-11-11-continuation2\\concurrency-euint16\\report.json",
+      "sha256": "de8d19f1009aa9e31c700dcdcb93dbf64e9629007ad708ce495131b11332f7d9"
+    },
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-2\\concurrency-euint16\\report.json",
+      "sha256": "1a83072f07d7ba3ce1f5a827081c48d083acc8a8708c7c608a0810b41f358d50"
+    }
+  ],
+  "blockMetadataSha256": "d615bc1fd3112543eda6445538f3262acfa29d30573c1ee9788e56cadf0e63b2",
+  "tablesSha256": "9c277f71aea77fbb288a1ea0db3fdb719bc4b764b51eda758a3a6548af1620af",
+  "latexCompilation": "success",
+  "measuredWindows": 240,
+  "measuredTransactions": 1920,
+  "repetitionsPerConfiguration": 20,
+  "successfulPrimaryWindows": 239,
+  "lateValidatedWindows": 1
+}

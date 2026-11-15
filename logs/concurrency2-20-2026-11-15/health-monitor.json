@@ -1,0 +1,53 @@
+{
+  "at": "2026-11-15T03:58:19.946Z",
+  "intervalMs": 600000,
+  "mutationCalls": 0,
+  "processIdentityVerified": false,
+  "status": "finished",
+  "sessions": [
+    {
+      "id": "session-1",
+      "status": "finished",
+      "childStatus": "finished",
+      "stages": [
+        {
+          "suite": "concurrency",
+          "status": "finished",
+          "observations": 60,
+          "ok": 60,
+          "capacityRejected": 0,
+          "reportAgeSeconds": 7477.4544140625,
+          "last": {
+            "case": "concurrency-w16-c2-shared_ordered",
+            "platform": "zama",
+            "round": 10,
+            "status": "ok"
+          }
+        }
+      ]
+    },
+    {
+      "id": "session-2",
+      "status": "finished",
+      "childStatus": "finished",
+      "stages": [
+        {
+          "suite": "concurrency",
+          "status": "finished",
+          "observations": 60,
+          "ok": 60,
+          "capacityRejected": 0,
+          "reportAgeSeconds": 89.85648413085937,
+          "last": {
+            "case": "concurrency-w16-c2-shared_ordered",
+            "platform": "baseline",
+            "round": 10,
+            "status": "ok"
+          }
+        }
+      ]
+    }
+  ],
+  "health": "finished",
+  "monitorStopped": true
+}

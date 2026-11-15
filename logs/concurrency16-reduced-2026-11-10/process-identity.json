@@ -1,0 +1,5 @@
+{
+  "pid": 6800,
+  "creationTimeUtc": "2026-11-10T22:27:39.6012020Z",
+  "command": "\"C:\\Program Files\\nodejs\\node.exe\" --max-old-space-size=8192 scripts/run-reduced-concurrency.cjs logs/concurrency16-reduced-2026-11-10/campaign.json"
+}

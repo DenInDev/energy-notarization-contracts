@@ -58,8 +58,12 @@ Reads remain pinned to the same receipt block hash with `requireCanonical=true`.
 Bounded read retries and polling waits are included in timings and traces;
 transaction mutations are never automatically retransmitted. Polling base is
 10 ms, subject to larger service-provided hints. Stage observation deadlines are
-180 seconds. These measurements include public network and service effects and
-do not isolate backend FHE computation.
+180 seconds. Fresh uniform reruns apply a 1000 ms CoFHE seal-output polling floor,
+respect larger server hints, and cap HTTP-429 read attempts at three with 5/10-second
+backoff inside the original deadline. The policy and its source hash are recorded
+in every report. Completed responses do not incur an artificial delay. The classic
+mixed-width default remains unchanged. These measurements include public network
+and service effects and do not isolate backend FHE computation.
 
 ## Commands
 

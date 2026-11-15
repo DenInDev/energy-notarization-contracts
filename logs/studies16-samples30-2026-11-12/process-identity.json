@@ -1,0 +1,5 @@
+{
+  "pid": 32044,
+  "createdUtc": "2026-11-12T14:15:56.1555720Z",
+  "command": "\"C:\\Program Files\\nodejs\\node.exe\" --max-old-space-size=8192 scripts/run-study-sample-extension.cjs C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-12\\campaign.json"
+}

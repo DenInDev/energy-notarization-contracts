@@ -1,0 +1,2705 @@
+{
+  "seed": "energy-uniform16-128-paired-v1",
+  "schedule": [
+    {
+      "run": 1,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 2,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 2,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 2,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 2,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 2,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 2,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 3,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 3,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 3,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 3,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 3,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 3,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 4,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 4,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 4,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 4,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 4,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 4,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 5,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 5,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 5,
+      "operation": "add",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 5,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 5,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 5,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 6,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 6,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 6,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 6,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 6,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 6,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 7,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 7,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 7,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 7,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 7,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 7,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 8,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 8,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 8,
+      "operation": "add",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 8,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 8,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 8,
+      "operation": "max",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 9,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 9,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 9,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 9,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 9,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 9,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 10,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 10,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 10,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 10,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 10,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 10,
+      "operation": "max",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 11,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 11,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 11,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 11,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 11,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 11,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 12,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 12,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 12,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 12,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 12,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 12,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 13,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 13,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 13,
+      "operation": "add",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 13,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 13,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 13,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 14,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 14,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 14,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 14,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 14,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 14,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 15,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 15,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 15,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 15,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 15,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 15,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 16,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 16,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 16,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 16,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 16,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 16,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 17,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 17,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 17,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 17,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 17,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 17,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 18,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 18,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 18,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 18,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 18,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 18,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 19,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 19,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 19,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 19,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 19,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 19,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 20,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 20,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 20,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 20,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 20,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 20,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 21,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 21,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 21,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 21,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 21,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 21,
+      "operation": "max",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 22,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 22,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 22,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 22,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 22,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 22,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 23,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 23,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 23,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 23,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 23,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 23,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 24,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 24,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 24,
+      "operation": "add",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 24,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 24,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 24,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 25,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 25,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 25,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 25,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 25,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 25,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 26,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 26,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 26,
+      "operation": "add",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 26,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 26,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 26,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 27,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 27,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 27,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 27,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 27,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 27,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 28,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 28,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 28,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 28,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 28,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 28,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 29,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 29,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 29,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 29,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 29,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 29,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 30,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 30,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 30,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 30,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 30,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 30,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 31,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 31,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 31,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 31,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 31,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 31,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 32,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 32,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 32,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 32,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 32,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 32,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 33,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 33,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 33,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 33,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 33,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 33,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 34,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 34,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 34,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 34,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 34,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 34,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 35,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 35,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 35,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 35,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 35,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 35,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 36,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 36,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 36,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 36,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 36,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 36,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 37,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 37,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 37,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 37,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 37,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 37,
+      "operation": "max",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 38,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 38,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 38,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 38,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 38,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 38,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 39,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 39,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 39,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 39,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 39,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 39,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 40,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 40,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 40,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 40,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 40,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 40,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 41,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 41,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 41,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 41,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 41,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 41,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 42,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 42,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 42,
+      "operation": "add",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 42,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 42,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 42,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 43,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 43,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 43,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 43,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 43,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 43,
+      "operation": "max",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 44,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 44,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 44,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 44,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 44,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 44,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 45,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 45,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 45,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 45,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 45,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 45,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 46,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 46,
+      "operation": "notarize",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 46,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 46,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 46,
+      "operation": "mean",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 46,
+      "operation": "max",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 47,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 47,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 47,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 47,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 47,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 47,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 48,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 48,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 48,
+      "operation": "add",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 48,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 48,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 48,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 49,
+      "operation": "set_meter_owner",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 49,
+      "operation": "notarize",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    },
+    {
+      "run": 49,
+      "operation": "add",
+      "order": [
+        "zama",
+        "baseline",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 49,
+      "operation": "mul_scalar",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 49,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 49,
+      "operation": "max",
+      "order": [
+        "fhenix",
+        "baseline",
+        "zama"
+      ]
+    },
+    {
+      "run": 50,
+      "operation": "set_meter_owner",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 50,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 50,
+      "operation": "add",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 50,
+      "operation": "mul_scalar",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 50,
+      "operation": "mean",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 50,
+      "operation": "max",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    }
+  ]
+}

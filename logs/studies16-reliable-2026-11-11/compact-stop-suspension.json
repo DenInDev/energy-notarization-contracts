@@ -1,0 +1,14 @@
+{
+  "status": "suspended_between_measured_windows",
+  "at": "2026-11-11T18:13:39.6147044Z",
+  "pid": 2472,
+  "createdUtc": "2026-11-11T13:34:20.6495040Z",
+  "command": "\"C:\\Program Files\\nodejs\\node.exe\" --max-old-space-size=8192 scripts/run-fresh-study-campaign.cjs logs/studies16-reliable-2026-11-11/campaign.json",
+  "watchStartedAt": "2026-11-11T18:12:16.6097509Z",
+  "previousScope": "0xae479f0ad26848b4cc57f1addc60a3e445d618b90da3e0571a2d4d5818bacece",
+  "nextScope": "0x5308d96e04011e2a46adf87cabfff3778df75fde46ffb2fc668df4960b22c8bb",
+  "nextCase": "concurrency-w16-c2-shared_sum",
+  "nextPlatform": "baseline",
+  "nextRequests": 0,
+  "reason": "User approved 120 concurrency windows and 300 circuit slots; audit all prepared hashes before termination"
+}

@@ -1,7 +1,7 @@
 import type { TimingStage, TimingTrace } from "../lib/lifecycleTiming";
 import type { Platform } from "../lifecycle/types";
 
-export type Width = 16 | 128;
+export type Width = 16;
 export type Suite = "concurrency" | "circuits";
 export type Mode = "independent" | "shared_sum" | "shared_ordered";
 export type Circuit = "sum_linear" | "sum_tree" | "affine_chain";
@@ -104,7 +104,7 @@ export type Trial = {
   rejection?: { source: "estimateGas"; limit: string; broadcast: false };
   requests: RequestResult[];
   inputValues?: string[];
-  resumedPreparation?: { sourceTrialIndex: number; reusedInputTransactions?: string[]; reusedWindowTransactions?: string[]; discardedPreparedHashes?: string[]; durationScope: string };
+  resumedPreparation?: { sourceTrialIndex: number; reusedInputTransactions?: string[]; reusedWindowTransactions?: string[]; discardedPreparedHashes?: string[]; estimateAnchorBlockHash?: string; durationScope: string };
   setup: StudyTransaction[];
   plannedOrder: string[];
   canonicalOrder?: string[];
@@ -140,4 +140,12 @@ export type CanonicalReceiptRecovery = {
   transactionHash: string; observedAt: string; previous: ReceiptAnchor; canonical: ReceiptAnchor;
   sameHashSenderNonceTargetVerified: true; previousBlockNoLongerCanonical: true;
   canonicalReceiptRepeated: true; timingUse: string;
+};
+
+// A setup receipt observed only after an explicit user stop. No latency is recovered.
+export type SettledSetupReceipt = {
+  transactionHash: string; user: string; transactionNonce: number;
+  canonical: ReceiptAnchor; auditFile: string; auditSha256: string;
+  verifiedAt: string; sameHashSenderNonceTargetVerified: true;
+  timingUse: string;
 };

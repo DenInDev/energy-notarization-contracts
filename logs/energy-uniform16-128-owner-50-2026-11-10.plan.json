@@ -1,0 +1,98 @@
+{
+  "clientDate": "2026-11-10",
+  "authorizedScope": "Fresh complete rerun of both uniform energy workloads, all three platforms, fifty measured rounds per width; existing historical reports preserved.",
+  "chainId": 11155111,
+  "output": "logs/energy-uniform16-128-owner-50-2026-11-10",
+  "accountsFile": ".benchmark-accounts/isolated-validation/accounts.secret.json",
+  "platforms": [
+    "baseline",
+    "zama",
+    "fhenix"
+  ],
+  "widths": [
+    16,
+    128
+  ],
+  "operations": [
+    "set_meter_owner",
+    "notarize",
+    "add",
+    "mul_scalar",
+    "mean",
+    "max"
+  ],
+  "separateRead": "view_decrypt",
+  "measuredRoundsPerWidth": 50,
+  "pilotRoundsPerWidth": 1,
+  "warmupRoundsPerStage": 1,
+  "plannedMeasuredPrimaryPerWidth": 900,
+  "plannedMeasuredViewsPerWidth": 150,
+  "totalPlannedTransactionsIncludingTwoPilotsAllDeploymentsAndWarmups": 1920,
+  "totalPlannedReadObservationsIncludingPilotsAndWarmups": 318,
+  "execution": "Three actual persistent Node processes, independent saved signers, preprepared signed transactions, shared fee/barrier.",
+  "deadlinePerStageSeconds": 180,
+  "polling": {
+    "sdkBaseMs": 10,
+    "honorLargerServerHints": true,
+    "cofheReadPolicy": {
+      "minimumPollingMs": 1000,
+      "maxRateLimitAttempts": 3,
+      "rateLimitBackoffMs": 5000
+    }
+  },
+  "mutationPolicy": "Single send only; failed or uncertain acknowledgements are retained and never blindly replayed. Any new segment failure stops the orchestrator.",
+  "noAdditionalFunding": true,
+  "priorReferenceReport": "logs/energy-uniform16-128-owner-50-2026-11-05-attempt2/measured-euint16/report.json",
+  "sourceChanges": [
+    {
+      "file": "tasks/lib/cofheReadPolicy.ts",
+      "priorSha256": null,
+      "currentSha256": "c53dccee16e097a4eb9ff8c35b4d9ef7655966bab966d1e4e4e5bc2ff7c26037"
+    },
+    {
+      "file": "tasks/lifecycle/report.ts",
+      "priorSha256": "9c38ef80adaef225434774d9b35b3b1563fc571dc6ee62854067ce014a9eb67c",
+      "currentSha256": "d80d1da807fdc0f07413260fbc00000f52b6793b41d89942ce49f856831740be"
+    },
+    {
+      "file": "tasks/lifecycle/processCampaign.ts",
+      "priorSha256": "6d611725a5fe6fc4c81443e372947709ab730e1e03c478ae7dc7b5b5a91cbf4d",
+      "currentSha256": "cb91fe321f2e73278906648ed3552a83ccf7844ac08b93c0102c3d91377a4eb4"
+    },
+    {
+      "file": "tasks/lifecycle/processWorker.ts",
+      "priorSha256": "36200b53e6c54b0106ddab133144963730e841a418260e19a00f53fb647bbfd4",
+      "currentSha256": "cf4eb86d6e9bcfedbcabdb5ae2a53dee82db6e671265ce6a1755c1688511e8d3"
+    },
+    {
+      "file": "scripts/run-uniform-energy.cjs",
+      "priorSha256": "64b110968d302349ce4961de67b09ed97c8c39de2a82507b8b2897441e23bbbc",
+      "currentSha256": "64b110968d302349ce4961de67b09ed97c8c39de2a82507b8b2897441e23bbbc"
+    }
+  ],
+  "sdkPollingProvenance": {
+    "requestedIntervalMs": 10,
+    "serverRetryAfter": "respected; can lengthen the effective interval",
+    "patch": "benchmark-decryption-polling-v1",
+    "bundles": {
+      "zama": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+        "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+      },
+      "zamaEsm": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+        "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+      },
+      "fhenix": {
+        "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+        "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+      }
+    }
+  },
+  "validation": {
+    "localTestsPassed": 18,
+    "typecheckPassed": true,
+    "generatedContractsCheckPassed": true
+  },
+  "readOnlyPreflight": "logs/energy-uniform16-128-owner-50-2026-11-10.preflight.json"
+}

@@ -1,0 +1,6 @@
+{
+  "pid": 10620,
+  "creationTimeUtc": "2026-11-10T11:45:53.4356890Z",
+  "commandLine": "\"C:\\Program Files\\nodejs\\node.exe\" scripts/run-uniform-energy.cjs logs/energy-uniform16-128-owner-50-2026-11-10 .benchmark-accounts/isolated-validation/accounts.secret.json 50",
+  "verifiedAtUtc": "2026-11-10T11:46:25.2307963Z"
+}

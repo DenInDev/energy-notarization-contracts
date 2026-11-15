@@ -217,5 +217,12 @@
   },
   "currentStage": "concurrency/euint128",
   "currentReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\concurrency-euint128-continuation1\\report.json",
-  "finishedAt": "2026-11-06T22:18:13.645Z"
+  "finishedAt": "2026-11-06T22:18:13.645Z",
+  "completionAudit": {
+    "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\final-canonical-audit.json",
+    "sha256": "2425e957451e8f9433ffe745ac2cd4913a90f332ab6a5fa24ddfb5b1cf8c2f9a",
+    "all1910ReceiptsFinalized": true,
+    "analysis": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\PILOT-RESULTS.md"
+  },
+  "monitoringStopped": true
 }

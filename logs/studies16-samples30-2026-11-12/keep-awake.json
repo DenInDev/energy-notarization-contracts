@@ -1,0 +1,11 @@
+{
+  "status": "released",
+  "helperPid": 26512,
+  "targetPid": 32044,
+  "targetCreatedUtc": "2026-11-12T14:15:56.1555720Z",
+  "startedAt": "2026-11-12T14:15:57.2028087Z",
+  "scope": "Temporary ES_SYSTEM_REQUIRED lease while verified study process lives; no power-plan or display settings changed",
+  "observedAcSleepTimeoutSeconds": 7200,
+  "observedDcSleepTimeoutSeconds": 600,
+  "finishedAt": "2026-11-12T16:51:13.1009225Z"
+}

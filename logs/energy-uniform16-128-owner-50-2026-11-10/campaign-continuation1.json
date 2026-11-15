@@ -1,0 +1,169 @@
+{
+  "status": "failed",
+  "startedAt": "2026-11-10T12:38:39.149Z",
+  "pid": 7856,
+  "chainId": 11155111,
+  "runs": 50,
+  "widths": [
+    16,
+    128
+  ],
+  "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\isolated-validation\\accounts.secret.json",
+  "operationOrder": [
+    "set_meter_owner",
+    "notarize",
+    "add",
+    "mul_scalar",
+    "mean",
+    "max",
+    "view_decrypt"
+  ],
+  "ownershipScope": "50 measured encrypted-address imports per platform and width, before the energy operations, with receipt-pinned owner getter and equality-validated authorized decryption",
+  "viewDecryptScope": "One persisted getter plus fresh authorized decryption after max per round, separate warmups and samples",
+  "stages": [
+    {
+      "kind": "pilot",
+      "width": 16,
+      "status": "finished",
+      "startedAt": "2026-11-10T11:45:56.940Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\pilot-euint16\\report.json",
+      "completedAt": "2026-11-10T11:50:56.908Z"
+    },
+    {
+      "kind": "pilot",
+      "width": 128,
+      "status": "finished",
+      "startedAt": "2026-11-10T11:50:56.933Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\pilot-euint128\\report.json",
+      "completedAt": "2026-11-10T11:55:43.491Z"
+    },
+    {
+      "kind": "measured",
+      "width": 16,
+      "status": "failed",
+      "startedAt": "2026-11-10T11:55:43.508Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint16\\report.json"
+    },
+    {
+      "kind": "measured",
+      "width": 16,
+      "status": "finished",
+      "startedAt": "2026-11-10T12:38:39.165Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint16-continuation1\\report.json",
+      "continuationFrom": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint16\\report.json",
+      "sourceReportSha256": "135f58c292fc5083eb458cfdbfd43e689fb7edab4a5b497d327fd4938e0436de",
+      "completedAt": "2026-11-10T13:42:21.755Z",
+      "rawSha256": "0603562486a911cc8b5bac0491f80ce2429f2467334a73480936e882acad43ff"
+    },
+    {
+      "kind": "measured",
+      "width": 128,
+      "status": "failed",
+      "startedAt": "2026-11-10T13:42:21.779Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint128\\report.json"
+    }
+  ],
+  "currentStage": "measured-euint128",
+  "decryptionPolling": {
+    "requestedIntervalMs": 10,
+    "serverRetryAfter": "respected; can lengthen the effective interval",
+    "patch": "benchmark-decryption-polling-v1",
+    "bundles": {
+      "zama": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+        "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+      },
+      "zamaEsm": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+        "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+      },
+      "fhenix": {
+        "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+        "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+      }
+    }
+  },
+  "parentManifest": {
+    "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\campaign.json",
+    "sha256": "abdd7de8ac9aebf41cb6c30cb4ebdaeaa404e7f62ad44aaab3637ccf4cbb94b9"
+  },
+  "sourceCheckpoint": {
+    "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint16\\report.json",
+    "sha256": "135f58c292fc5083eb458cfdbfd43e689fb7edab4a5b497d327fd4938e0436de"
+  },
+  "sourceSnapshot": {
+    "hardhat.config.ts": "f2c7451f127f8f87555025976a0d37c84208f9630b842a769d0c773c50496b3d",
+    "package-lock.json": "4571f420b5ef346a377e26b0d86ed6d3c9c4cfa5e268e184f876936f862fa35e",
+    "contracts/EnergyNotarizationPlainTest.sol": "e62095efce878660a6a2ef0cf465071a289af43dd005b6474031d4b2441f28ca",
+    "contracts/EnergyNotarizationFHETest.sol": "4010cc5450e064032023d43c5c5e984d4b3f3a3ca7357fc8112453a013b098e9",
+    "contracts/EnergyLifecycleCoFHE.sol": "95f57f9101f27cbf4f54786f87a5be949081f2b4d6e2b2799c898e2561a2ebb3",
+    "tasks/benchmarkEnergyLifecycle.ts": "539deed825f8749d9304c101ca3e048e703d1ccb3f285c1f0dac7211ee265759",
+    "tasks/lib/lifecycleTiming.ts": "11ca028648485eca0a34ca4166dcf12662838609b73c5ee7ad3fcfa1e82b9164",
+    "tasks/lib/lifecycleSchedule.ts": "903e34402f86d08d516d1233ce0dd775e591a749d8fe9f945e52c26c23385bc2",
+    "tasks/lib/lifecycleResult.ts": "d02bdfc151228a0b67210bc079a10f4af90fed3b85fb0c50e47f41aad3b23cfa",
+    "tasks/lib/lifecycleReadRetry.ts": "2841400f23a743978c6041996fe37ac75e81253b2817cccd09fcae6401fafa79",
+    "tasks/lib/lifecycleConcurrent.ts": "040f0640cac5db6721fbc41049cba42df44488a6252ea3d2fc4b3664f114d7a9",
+    "tasks/lib/lifecycleNonce.ts": "9514a35406d16839c932269580fe863c3db1fa05ad351602a6b547f5747eda08",
+    "tasks/lib/lifecycleReportWrite.ts": "5919e26a4055cbdf324008c325dd7cd5621ba39218dc21d89f919f324449001b",
+    "tasks/lifecycle/types.ts": "ade9d7f94e83abd57d79f55142f5c5475ccb1c259178956a9ede5afe31d90acc",
+    "tasks/lifecycle/operations.ts": "63bf6117719b8cfa376f66c718d20c5323fc5bdb6023d4c8365a89d1b9450967",
+    "tasks/lifecycle/errors.ts": "6871cf491202633327f12a054e1e9cbde2c75aa51df2da01912ef4698c2b7ccd",
+    "tasks/lifecycle/adapters.ts": "530b4b1d1aa315a4dd1312f9da28e9cb0b92d02d4f93d4f8039562577122dea7",
+    "tasks/lifecycle/zama.ts": "ed0bdc76649ee743631d5ce929035ca3a71503d8f4c08a30d9982d5a0668733b",
+    "tasks/lifecycle/cofhe.ts": "a3162d9c5aa1b6201320335aec42f4a3ed04793fef0748973ca7e63d1806a90b",
+    "tasks/lifecycle/report.ts": "dbee0b0745d6cdba037bd44cab66afc0e4fa0725e6deaa5d18ba5a053d388e09",
+    "tasks/lifecycle/measurement.ts": "4273042a053d956180c34f1aab9d217cde1accdcf405b27d96c144ddbf41f03f",
+    "tasks/lifecycle/campaign.ts": "e53b68400f3ed3ccbe7a3782343698b9e25cf32ff5e94328d05ed44ee112fffe",
+    "tasks/lifecycle/processCampaign.ts": "a37bbc0f9939e1ea6a76b1ee5eac3e87590952bc17616a36f164c6dbe5b0bf2e",
+    "tasks/lifecycle/processWorker.ts": "cf4eb86d6e9bcfedbcabdb5ae2a53dee82db6e671265ce6a1755c1688511e8d3",
+    "tasks/lifecycle/processContinuation.ts": "0c23f731da849bd76302cd64e13e5734ceb59b64d905a6fe573ea68dac28e612",
+    "tasks/lifecycle/continuation.ts": "7860927b36fd5f416abc70107f9d38bd96840108f7c6dddec5c98ddce2b91796",
+    "tasks/lifecycle/continuationPlan.ts": "0d0b720fd3bc960b16539e73bde3ba59a91c96e97a745eef6c7b778d83c01258",
+    "tasks/lifecycle/workerClient.ts": "5653bd58755b74dbff2ef936eba8ed667c7612d52f0817ba2cec4d15a5f1a2df",
+    "tasks/lifecycle/broadcast.ts": "b1106a4e490c4d395cba490d12641d40c7e2d5ae2fe3bc0d06c0fbb687a7dfd9",
+    "scripts/energy-platform-worker.cjs": "74aae9010ec6e1abc5fb7296d933078b6426d7b63d313d6f010b91d9a0ac8db2",
+    "scripts/run-energy-campaign.cjs": "cb757141039235aa605a6c86f126f2257c69285ea0503920b1962d94d63ca72f",
+    "scripts/continue-energy-campaign.cjs": "17309fd1a70619a9accb385963dd5cb28c95e2a2a90ee34e38b9ba6206feff3e",
+    "tasks/lib/decryptionPolling.cjs": "b436d09f7c9c148f8c39205be554701e4977e95ddd59e2eb0789ade9717cc5e1",
+    "tasks/lib/cofheReadPolicy.ts": "c53dccee16e097a4eb9ff8c35b4d9ef7655966bab966d1e4e4e5bc2ff7c26037",
+    "scripts/patch-decryption-polling.cjs": "1859e40236c69faa45cc83d6c1857e7e687a0d38133c95eac28d91415800624a",
+    "tasks/experiments/accounts.ts": "2a930be994cd3ba0808f3f79fd88641b472a86c639a33883f2149f3fe3bca75e",
+    "scripts/generate-uniform-lifecycle-contracts.cjs": "ef8d07abc6bd2f9b0a879c47edda9d08f4f434a325cd45cf5eed4a654988f37f",
+    "scripts/run-uniform-energy.cjs": "64b110968d302349ce4961de67b09ed97c8c39de2a82507b8b2897441e23bbbc",
+    "contracts/uniform/EnergyUniformPlain16.sol": "ba04c667eaf82e992df04a8a833cdfd4cb5e8436ed483bb487a41a40db98db70",
+    "contracts/uniform/EnergyUniformZama16.sol": "3886a973c6f9f3886742592e3b6558c8727a2b3aeb21ad721812f96dab143bbf",
+    "contracts/uniform/EnergyUniformCoFHE16.sol": "e6cd16beb7260a534d466773ef4a110ae620b722e8eedad00931af627e886366",
+    "scripts/resume-uniform-energy.cjs": "f05dac69ee17a289d0709b1f30ed933d499ca06fa104e23ad77271fc34dc65bf"
+  },
+  "changedPersistenceOrchestrationFiles": [
+    {
+      "file": "tasks/lib/lifecycleReportWrite.ts",
+      "previousSha256": "024ce556ba300422b0ae8732fa35fff7941b9965095ba4d830b6d11812a328b1",
+      "currentSha256": "5919e26a4055cbdf324008c325dd7cd5621ba39218dc21d89f919f324449001b"
+    },
+    {
+      "file": "tasks/lifecycle/report.ts",
+      "previousSha256": "d80d1da807fdc0f07413260fbc00000f52b6793b41d89942ce49f856831740be",
+      "currentSha256": "dbee0b0745d6cdba037bd44cab66afc0e4fa0725e6deaa5d18ba5a053d388e09"
+    },
+    {
+      "file": "tasks/lifecycle/processCampaign.ts",
+      "previousSha256": "cb91fe321f2e73278906648ed3552a83ccf7844ac08b93c0102c3d91377a4eb4",
+      "currentSha256": "a37bbc0f9939e1ea6a76b1ee5eac3e87590952bc17616a36f164c6dbe5b0bf2e"
+    },
+    {
+      "file": "tasks/lifecycle/processContinuation.ts",
+      "previousSha256": "a4fe647cc5d3623de4a6c8d4b47e1c8aa5681f743c6714bb3617a7d04745c4af",
+      "currentSha256": "0c23f731da849bd76302cd64e13e5734ceb59b64d905a6fe573ea68dac28e612"
+    },
+    {
+      "file": "tasks/lifecycle/continuation.ts",
+      "previousSha256": "c8cc0ea31829b4d194e3063a634759c3c8cbee5b57cfac54fd3954661fc6ea06",
+      "currentSha256": "7860927b36fd5f416abc70107f9d38bd96840108f7c6dddec5c98ddce2b91796"
+    }
+  ],
+  "historicalOrchestrationError": "Report persistence failed; no further comparisons permitted: UNKNOWN: unknown error, open 'C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint16\\stages.jsonl'",
+  "currentReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint128\\report.json",
+  "error": "Isolated campaign stopped after all current workers settled; observations and prepared transaction hashes retained",
+  "abortedAt": "2026-11-10T14:30:40.932Z"
+}

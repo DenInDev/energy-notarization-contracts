@@ -1,0 +1,15 @@
+{
+  "scope": "recorded measured and warmup request/transaction traces; setup and uninstrumented SDK requests excluded",
+  "failedStages": {
+    "preparation.gas.read_attempt": 2
+  },
+  "observedHintsAndHttp": {
+    "encrypt.http_headers:httpStatus=200": 176,
+    "decrypt.http_headers:httpStatus=200": 176,
+    "decrypt.client_poll_floor:httpStatus=200": 176,
+    "transaction.receipt_poll:intervalMs=500": 11888,
+    "preparation.gas.receipt_block_retry:backoffMs=1000": 2,
+    "encrypt.sdk_progress:retryAfterMs=2000": 176,
+    "decrypt.sdk_progress:retryAfterMs=2000": 176
+  }
+}

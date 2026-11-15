@@ -1,0 +1,1389 @@
+{
+  "sourceReports": [
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint16-continuation1\\report.json",
+      "sha256": "0603562486a911cc8b5bac0491f80ce2429f2467334a73480936e882acad43ff"
+    },
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint128-continuation1\\report.json",
+      "sha256": "ac0682bdeae5034a0349003fc028ec3e3c30b143b580327128558746724df25e"
+    }
+  ],
+  "canonicalMetadata": {
+    "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\canonical-audit\\block-metadata.json",
+    "sha256": "7958eb92e0ae3bc1ce540cc5471a3ee7bf05c63c9311660255ef71dfdeca12c4",
+    "observedAt": "2026-11-10T15:37:38.744Z",
+    "allBlocksFinalizedAtAudit": false
+  },
+  "performance": [
+    {
+      "width": 16,
+      "platform": "baseline",
+      "operation": "set_meter_owner",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 22086,
+      "preparationMs": {
+        "n": 50,
+        "mean": 161.5504120000018,
+        "sd": 14.216616454080302,
+        "cvPct": 8.800111542940629
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 7015.083873999986,
+        "sd": 6374.172217067403,
+        "cvPct": 90.86380621466274
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 119.35155400000426,
+        "sd": 27.369465352670172,
+        "cvPct": 22.931804769520802
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 7295.985839999992,
+        "sd": 6369.507251392867,
+        "cvPct": 87.3015297874108
+      }
+    },
+    {
+      "width": 16,
+      "platform": "baseline",
+      "operation": "notarize",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 31602,
+      "preparationMs": {
+        "n": 50,
+        "mean": 178.08262400002744,
+        "sd": 62.41895266572756,
+        "cvPct": 35.05055758034986
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8197.607782000006,
+        "sd": 4499.276406840822,
+        "cvPct": 54.88523635785749
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 122.92445400002238,
+        "sd": 36.70659035860127,
+        "cvPct": 29.8610969291713
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 8498.614860000056,
+        "sd": 4502.167069274881,
+        "cvPct": 52.97530413414747
+      }
+    },
+    {
+      "width": 16,
+      "platform": "baseline",
+      "operation": "add",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 33356,
+      "preparationMs": {
+        "n": 50,
+        "mean": 185.01679599999798,
+        "sd": 58.74997263469757,
+        "cvPct": 31.75385905758427
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8871.12949199998,
+        "sd": 5960.017182954013,
+        "cvPct": 67.18442322737799
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 126.09706599997968,
+        "sd": 48.25925324631749,
+        "cvPct": 38.27151160386656
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 9182.243353999958,
+        "sd": 5953.387751819419,
+        "cvPct": 64.83587422267577
+      }
+    },
+    {
+      "width": 16,
+      "platform": "baseline",
+      "operation": "mul_scalar",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 33634,
+      "preparationMs": {
+        "n": 50,
+        "mean": 178.87142399996867,
+        "sd": 49.30654936269781,
+        "cvPct": 27.565358546430783
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8229.230350000014,
+        "sd": 5571.7402326856645,
+        "cvPct": 67.7066991165906
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 116.46000399998506,
+        "sd": 26.884904336046084,
+        "cvPct": 23.08509652468287
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 8524.561777999968,
+        "sd": 5565.519431760241,
+        "cvPct": 65.28804150523762
+      }
+    },
+    {
+      "width": 16,
+      "platform": "baseline",
+      "operation": "mean",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 35542,
+      "preparationMs": {
+        "n": 50,
+        "mean": 177.33347200000367,
+        "sd": 55.65894123546449,
+        "cvPct": 31.38659645453924
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8560.731584000006,
+        "sd": 5089.01836954759,
+        "cvPct": 59.44606859370474
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 139.46386199998116,
+        "sd": 67.95924186972927,
+        "cvPct": 48.728925827207085
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 8877.52891799999,
+        "sd": 5112.443330181335,
+        "cvPct": 57.58858548819137
+      }
+    },
+    {
+      "width": 16,
+      "platform": "baseline",
+      "operation": "max",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 35706,
+      "preparationMs": {
+        "n": 50,
+        "mean": 182.0413819999656,
+        "sd": 55.95860337979806,
+        "cvPct": 30.739496022837617
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 7159.69876599998,
+        "sd": 3318.3095998517706,
+        "cvPct": 46.34705604668423
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 131.8307180000195,
+        "sd": 57.601082443825085,
+        "cvPct": 43.69321757302162
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 7473.5708659999655,
+        "sd": 3330.3946924716433,
+        "cvPct": 44.56229494822668
+      }
+    },
+    {
+      "width": 16,
+      "platform": "zama",
+      "operation": "set_meter_owner",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 472250.56,
+      "preparationMs": {
+        "n": 50,
+        "mean": 12662.867781999998,
+        "sd": 525.7195454189014,
+        "cvPct": 4.15166259704773
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 7008.945431999982,
+        "sd": 6351.549346140843,
+        "cvPct": 90.6206134398231
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 4251.726464000009,
+        "sd": 710.9362479986432,
+        "cvPct": 16.721119150496733
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 23923.53967799999,
+        "sd": 6513.793946475366,
+        "cvPct": 27.227550914906754
+      }
+    },
+    {
+      "width": 16,
+      "platform": "zama",
+      "operation": "notarize",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 472120.72,
+      "preparationMs": {
+        "n": 50,
+        "mean": 12569.981160000016,
+        "sd": 569.1430011357986,
+        "cvPct": 4.527795180369211
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8205.980122000028,
+        "sd": 4545.661559307121,
+        "cvPct": 55.39449878900286
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 4290.127117999977,
+        "sd": 741.2095667140467,
+        "cvPct": 17.277100335889177
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 25066.088400000022,
+        "sd": 4666.5113995203355,
+        "cvPct": 18.616831334243326
+      }
+    },
+    {
+      "width": 16,
+      "platform": "zama",
+      "operation": "add",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 327900.52,
+      "preparationMs": {
+        "n": 50,
+        "mean": 145.49639599998395,
+        "sd": 34.5547823996369,
+        "cvPct": 23.749579611333267
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8873.475014000009,
+        "sd": 6008.73155135361,
+        "cvPct": 67.715653020642
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 4336.986061999996,
+        "sd": 705.9668818435129,
+        "cvPct": 16.277822242249886
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 13355.957471999987,
+        "sd": 5936.5783427392835,
+        "cvPct": 44.44891618728934
+      }
+    },
+    {
+      "width": 16,
+      "platform": "zama",
+      "operation": "mul_scalar",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 323958.28,
+      "preparationMs": {
+        "n": 50,
+        "mean": 155.51123599998448,
+        "sd": 67.50970023102461,
+        "cvPct": 43.41146142715459
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8188.828105999999,
+        "sd": 5589.928248369718,
+        "cvPct": 68.26285978910641
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 4429.983872000001,
+        "sd": 502.87783227978167,
+        "cvPct": 11.351685396830753
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 12774.323213999984,
+        "sd": 5578.471097288801,
+        "cvPct": 43.669406228700176
+      }
+    },
+    {
+      "width": 16,
+      "platform": "zama",
+      "operation": "mean",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 343705.28,
+      "preparationMs": {
+        "n": 50,
+        "mean": 147.30500199999923,
+        "sd": 26.585747424572858,
+        "cvPct": 18.048095491402933
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8551.18841200003,
+        "sd": 5032.362936116883,
+        "cvPct": 58.849866166612365
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 4401.396385999977,
+        "sd": 607.3573075974153,
+        "cvPct": 13.799195853600143
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 13099.889800000006,
+        "sd": 4916.836957354431,
+        "cvPct": 37.533422283860965
+      }
+    },
+    {
+      "width": 16,
+      "platform": "zama",
+      "operation": "max",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 329940.6,
+      "preparationMs": {
+        "n": 50,
+        "mean": 146.5169539999927,
+        "sd": 28.19838891304912,
+        "cvPct": 19.245819779361867
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 7134.410659999979,
+        "sd": 3286.4051128339756,
+        "cvPct": 46.06414277859898
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 4497.6874060000355,
+        "sd": 689.768382099097,
+        "cvPct": 15.336067623973324
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 11778.615020000007,
+        "sd": 3247.121128931339,
+        "cvPct": 27.567936666728215
+      }
+    },
+    {
+      "width": 16,
+      "platform": "fhenix",
+      "operation": "set_meter_owner",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 306316,
+      "preparationMs": {
+        "n": 50,
+        "mean": 11996.189956,
+        "sd": 535.2268699677373,
+        "cvPct": 4.461640503617058
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 6994.437730000015,
+        "sd": 6332.804770959774,
+        "cvPct": 90.54058403862237
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 287.98763600000063,
+        "sd": 63.19009709292449,
+        "cvPct": 21.941947915057142
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 19278.615322000016,
+        "sd": 6373.51644762539,
+        "cvPct": 33.06003227499528
+      }
+    },
+    {
+      "width": 16,
+      "platform": "fhenix",
+      "operation": "notarize",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 306185.92,
+      "preparationMs": {
+        "n": 50,
+        "mean": 11496.029332000007,
+        "sd": 560.3232896004919,
+        "cvPct": 4.874059324472951
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8240.17998999999,
+        "sd": 4548.603342794475,
+        "cvPct": 55.200291113962436
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 286.23083600002604,
+        "sd": 50.85822418005095,
+        "cvPct": 17.768254773237054
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 20022.440158000023,
+        "sd": 4479.076900422141,
+        "cvPct": 22.370284865766042
+      }
+    },
+    {
+      "width": 16,
+      "platform": "fhenix",
+      "operation": "add",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 317943,
+      "preparationMs": {
+        "n": 50,
+        "mean": 179.87178599998356,
+        "sd": 62.82870567217811,
+        "cvPct": 34.929716921910064
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8880.773389999988,
+        "sd": 6003.350748851327,
+        "cvPct": 67.59941375839267
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 308.56677999998993,
+        "sd": 163.6650995799897,
+        "cvPct": 53.0404146486524
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 9369.211955999961,
+        "sd": 5982.439030883979,
+        "cvPct": 63.85210473387656
+      }
+    },
+    {
+      "width": 16,
+      "platform": "fhenix",
+      "operation": "mul_scalar",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 342266,
+      "preparationMs": {
+        "n": 50,
+        "mean": 173.88690199998092,
+        "sd": 47.404793216072505,
+        "cvPct": 27.261853923924473
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8247.582886000006,
+        "sd": 5617.38722816339,
+        "cvPct": 68.10949711943745
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 504.1481099999792,
+        "sd": 626.9722765131157,
+        "cvPct": 124.36271486034958
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 8925.617897999966,
+        "sd": 5549.242346780109,
+        "cvPct": 62.172080523675255
+      }
+    },
+    {
+      "width": 16,
+      "platform": "fhenix",
+      "operation": "mean",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 373456,
+      "preparationMs": {
+        "n": 50,
+        "mean": 174.79788800003095,
+        "sd": 47.81651534179411,
+        "cvPct": 27.355316410794188
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8565.282469999991,
+        "sd": 5050.631856595238,
+        "cvPct": 58.96631984158303
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 1101.7084000000116,
+        "sd": 1147.0982156941975,
+        "cvPct": 104.11994822715208
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 9841.788758000035,
+        "sd": 5140.916202607334,
+        "cvPct": 52.23558774748613
+      }
+    },
+    {
+      "width": 16,
+      "platform": "fhenix",
+      "operation": "max",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 322134,
+      "preparationMs": {
+        "n": 50,
+        "mean": 165.1959719999715,
+        "sd": 43.466274609912986,
+        "cvPct": 26.31194579606365
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 7169.856034000013,
+        "sd": 3307.2380355995074,
+        "cvPct": 46.126979675970176
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 405.3140460000454,
+        "sd": 423.3556800742639,
+        "cvPct": 104.45127284688685
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 7740.366052000029,
+        "sd": 3302.7702268909343,
+        "cvPct": 42.66943197134111
+      }
+    },
+    {
+      "width": 128,
+      "platform": "baseline",
+      "operation": "set_meter_owner",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 22064,
+      "preparationMs": {
+        "n": 50,
+        "mean": 193.6666280000389,
+        "sd": 71.96435422535164,
+        "cvPct": 37.15888223413338
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 9061.858155999978,
+        "sd": 9564.948190235838,
+        "cvPct": 105.55173150556055
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 142.7083300000179,
+        "sd": 57.57742890216817,
+        "cvPct": 40.34622849427287
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 9398.233114000035,
+        "sd": 9586.799664576676,
+        "cvPct": 102.00640427077451
+      }
+    },
+    {
+      "width": 128,
+      "platform": "baseline",
+      "operation": "notarize",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 31671,
+      "preparationMs": {
+        "n": 50,
+        "mean": 214.42175999998784,
+        "sd": 105.31881258464519,
+        "cvPct": 49.11759542718573
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 10721.81071200001,
+        "sd": 5403.170763630147,
+        "cvPct": 50.3942002779702
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 144.7699159999858,
+        "sd": 75.11680366902759,
+        "cvPct": 51.88702580240148
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 11081.002387999983,
+        "sd": 5421.545996216974,
+        "cvPct": 48.92649425008844
+      }
+    },
+    {
+      "width": 128,
+      "platform": "baseline",
+      "operation": "add",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 33358,
+      "preparationMs": {
+        "n": 50,
+        "mean": 202.6788619999963,
+        "sd": 111.29303537701175,
+        "cvPct": 54.911022431640546
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8952.813796,
+        "sd": 6508.183223692797,
+        "cvPct": 72.69427659269053
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 128.6018820000175,
+        "sd": 46.28479381403012,
+        "cvPct": 35.99075930632478
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 9284.094540000015,
+        "sd": 6491.834134506183,
+        "cvPct": 69.92425708868505
+      }
+    },
+    {
+      "width": 128,
+      "platform": "baseline",
+      "operation": "mul_scalar",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 33736,
+      "preparationMs": {
+        "n": 50,
+        "mean": 211.87949200000207,
+        "sd": 105.88973234183058,
+        "cvPct": 49.97639523405576
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 9210.96661200001,
+        "sd": 5452.498873189556,
+        "cvPct": 59.19572942633472
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 140.32441399996284,
+        "sd": 119.32322827833225,
+        "cvPct": 85.0338332988612
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 9563.170517999975,
+        "sd": 5478.394956107493,
+        "cvPct": 57.286387875192204
+      }
+    },
+    {
+      "width": 128,
+      "platform": "baseline",
+      "operation": "mean",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 35556,
+      "preparationMs": {
+        "n": 50,
+        "mean": 227.99002800001065,
+        "sd": 141.91925914104561,
+        "cvPct": 62.248011628402885
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8972.397042000002,
+        "sd": 6515.85123426573,
+        "cvPct": 72.6210755472019
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 134.01766199997044,
+        "sd": 84.3066231866995,
+        "cvPct": 62.90709890664865
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 9334.404731999983,
+        "sd": 6524.060038579174,
+        "cvPct": 69.89262010692066
+      }
+    },
+    {
+      "width": 128,
+      "platform": "baseline",
+      "operation": "max",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 35732,
+      "preparationMs": {
+        "n": 50,
+        "mean": 289.51282599999183,
+        "sd": 262.32917682609565,
+        "cvPct": 90.61055444434888
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 9340.92315199999,
+        "sd": 4505.153688529021,
+        "cvPct": 48.23028318742158
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 149.99896199999858,
+        "sd": 74.51898417205359,
+        "cvPct": 49.679666564662156
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 9780.434939999981,
+        "sd": 4490.295471891389,
+        "cvPct": 45.91099986286906
+      }
+    },
+    {
+      "width": 128,
+      "platform": "zama",
+      "operation": "set_meter_owner",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 472229.28,
+      "preparationMs": {
+        "n": 50,
+        "mean": 10872.045679999954,
+        "sd": 1695.149122633512,
+        "cvPct": 15.591813836395868
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 9090.360990000014,
+        "sd": 9547.42156765639,
+        "cvPct": 105.02796949603182
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 4495.048095999994,
+        "sd": 774.4997851469068,
+        "cvPct": 17.230066700200837
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 24457.454765999963,
+        "sd": 9265.828469785074,
+        "cvPct": 37.88549772834971
+      }
+    },
+    {
+      "width": 128,
+      "platform": "zama",
+      "operation": "notarize",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 472101.6,
+      "preparationMs": {
+        "n": 50,
+        "mean": 10591.184078,
+        "sd": 1717.0365506640014,
+        "cvPct": 16.211941346866293
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 10690.66183000002,
+        "sd": 5348.5901572431485,
+        "cvPct": 50.03048681452062
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 4304.322133999976,
+        "sd": 866.5751252663963,
+        "cvPct": 20.13267358456497
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 25586.168041999994,
+        "sd": 5010.392925899101,
+        "cvPct": 19.582427965275937
+      }
+    },
+    {
+      "width": 128,
+      "platform": "zama",
+      "operation": "add",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 328024.72,
+      "preparationMs": {
+        "n": 50,
+        "mean": 170.27980399999768,
+        "sd": 80.82905634880363,
+        "cvPct": 47.46837525653056
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8963.142816000018,
+        "sd": 6551.233913749156,
+        "cvPct": 73.09081254462009
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 4973.650189999987,
+        "sd": 1712.813105752087,
+        "cvPct": 34.437747736981315
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 14107.072810000001,
+        "sd": 6540.562073515159,
+        "cvPct": 46.363708202305354
+      }
+    },
+    {
+      "width": 128,
+      "platform": "zama",
+      "operation": "mul_scalar",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 324338.88,
+      "preparationMs": {
+        "n": 50,
+        "mean": 167.92805999997566,
+        "sd": 76.76656375870749,
+        "cvPct": 45.71395855982533
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 9149.787941999986,
+        "sd": 5394.266561042003,
+        "cvPct": 58.95509923547921
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 5262.697284000005,
+        "sd": 2794.9944917385565,
+        "cvPct": 53.10954327994659
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 14580.413285999968,
+        "sd": 5847.7945667138865,
+        "cvPct": 40.10719347941191
+      }
+    },
+    {
+      "width": 128,
+      "platform": "zama",
+      "operation": "mean",
+      "latencyN": 49,
+      "receiptGasN": 50,
+      "meanGas": 344191.12,
+      "preparationMs": {
+        "n": 49,
+        "mean": 182.63898163265253,
+        "sd": 101.41133158100932,
+        "cvPct": 55.52556780292451
+      },
+      "receiptMs": {
+        "n": 49,
+        "mean": 8905.63161020407,
+        "sd": 6510.419376027935,
+        "cvPct": 73.10452150938175
+      },
+      "postReceiptMs": {
+        "n": 49,
+        "mean": 4790.833638775518,
+        "sd": 650.4812082897786,
+        "cvPct": 13.5776204588902
+      },
+      "lifecycleMs": {
+        "n": 49,
+        "mean": 13879.10423061224,
+        "sd": 6537.358089756674,
+        "cvPct": 47.10216150216415
+      }
+    },
+    {
+      "width": 128,
+      "platform": "zama",
+      "operation": "max",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 330054.28,
+      "preparationMs": {
+        "n": 50,
+        "mean": 244.18357799998665,
+        "sd": 88.45026134026288,
+        "cvPct": 36.22285415945036
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 9363.52937599997,
+        "sd": 4503.015766224744,
+        "cvPct": 48.091009120627106
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 4826.149932000015,
+        "sd": 1461.4933395415294,
+        "cvPct": 30.28280016439251
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 14433.862885999972,
+        "sd": 4862.298391396753,
+        "cvPct": 33.68674366522427
+      }
+    },
+    {
+      "width": 128,
+      "platform": "fhenix",
+      "operation": "set_meter_owner",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 306294.48,
+      "preparationMs": {
+        "n": 50,
+        "mean": 10182.555687999966,
+        "sd": 1718.2419267914017,
+        "cvPct": 16.874368080464627
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 9082.531804,
+        "sd": 9552.122886111856,
+        "cvPct": 105.17026631170226
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 370.136234000009,
+        "sd": 349.1175562946226,
+        "cvPct": 94.32136716845024
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 19635.223725999975,
+        "sd": 9438.732259437365,
+        "cvPct": 48.07040852271559
+      }
+    },
+    {
+      "width": 128,
+      "platform": "fhenix",
+      "operation": "notarize",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 306164.16,
+      "preparationMs": {
+        "n": 50,
+        "mean": 9886.217469999961,
+        "sd": 1713.313797388233,
+        "cvPct": 17.330326816978666
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 10682.255119999994,
+        "sd": 5318.972694435656,
+        "cvPct": 49.79260123152403
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 348.51704599998993,
+        "sd": 205.07876051145828,
+        "cvPct": 58.84325110211803
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 20916.989635999947,
+        "sd": 5080.339422714583,
+        "cvPct": 24.28810030087159
+      }
+    },
+    {
+      "width": 128,
+      "platform": "fhenix",
+      "operation": "add",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 318066,
+      "preparationMs": {
+        "n": 50,
+        "mean": 216.3897080000097,
+        "sd": 218.52148538831744,
+        "cvPct": 100.98515655296677
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8994.397382,
+        "sd": 6489.17171372277,
+        "cvPct": 72.14682027179717
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 550.0344780000137,
+        "sd": 631.1072745577254,
+        "cvPct": 114.7395844806859
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 9760.821568000023,
+        "sd": 6618.867984012509,
+        "cvPct": 67.81056223496465
+      }
+    },
+    {
+      "width": 128,
+      "platform": "fhenix",
+      "operation": "mul_scalar",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 342550,
+      "preparationMs": {
+        "n": 50,
+        "mean": 189.70841000000073,
+        "sd": 52.23842225440003,
+        "cvPct": 27.536165768507484
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 9200.526964000004,
+        "sd": 5401.667359882109,
+        "cvPct": 58.71041279502636
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 2697.828942000015,
+        "sd": 545.9624716633057,
+        "cvPct": 20.237104849893136
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 12088.06431600002,
+        "sd": 5437.785353100359,
+        "cvPct": 44.98474868224179
+      }
+    },
+    {
+      "width": 128,
+      "platform": "fhenix",
+      "operation": "mean",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 373742,
+      "preparationMs": {
+        "n": 50,
+        "mean": 191.89429400001566,
+        "sd": 163.38569742517285,
+        "cvPct": 85.14359339166151
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 8979.18359799999,
+        "sd": 6494.297048869317,
+        "cvPct": 72.32614165853393
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 14763.856080000014,
+        "sd": 1170.856388676028,
+        "cvPct": 7.930559484809248
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 23934.93397200002,
+        "sd": 6418.626955578912,
+        "cvPct": 26.816982086049045
+      }
+    },
+    {
+      "width": 128,
+      "platform": "fhenix",
+      "operation": "max",
+      "latencyN": 50,
+      "receiptGasN": 50,
+      "meanGas": 322190,
+      "preparationMs": {
+        "n": 50,
+        "mean": 191.43835199999748,
+        "sd": 92.07849128721547,
+        "cvPct": 48.0982469422933
+      },
+      "receiptMs": {
+        "n": 50,
+        "mean": 9301.79546800003,
+        "sd": 4424.821238762516,
+        "cvPct": 47.56953917106385
+      },
+      "postReceiptMs": {
+        "n": 50,
+        "mean": 709.4548539999694,
+        "sd": 1404.8731393253088,
+        "cvPct": 198.02149938146303
+      },
+      "lifecycleMs": {
+        "n": 50,
+        "mean": 10202.688673999995,
+        "sd": 4560.753868817826,
+        "cvPct": 44.70149011250549
+      }
+    }
+  ],
+  "network": [
+    {
+      "width": 16,
+      "platform": "baseline",
+      "n": 300,
+      "contract": "0x77F22B7DfFDf417d28600c7cAEf618D3867bd015",
+      "startUtc": "2026-11-10 11:58:33",
+      "endUtc": "2026-11-10 13:42:12",
+      "firstBlock": 12104484,
+      "lastBlock": 12104996,
+      "meanGasTargetPct": 83.46774720572961,
+      "intervalDefinition": "client observation including preparation and validation"
+    },
+    {
+      "width": 16,
+      "platform": "zama",
+      "n": 300,
+      "contract": "0xCE94Bd644404b4Ec42486e9E32930a45bdfBCe66",
+      "startUtc": "2026-11-10 11:58:33",
+      "endUtc": "2026-11-10 13:42:18",
+      "firstBlock": 12104484,
+      "lastBlock": 12104996,
+      "meanGasTargetPct": 83.46774720572961,
+      "intervalDefinition": "client observation including preparation and validation"
+    },
+    {
+      "width": 16,
+      "platform": "fhenix",
+      "n": 300,
+      "contract": "0x7A2cb6B637d3012555F4264cd66f76AD4EC2BF2a",
+      "startUtc": "2026-11-10 11:58:33",
+      "endUtc": "2026-11-10 13:42:13",
+      "firstBlock": 12104484,
+      "lastBlock": 12104996,
+      "meanGasTargetPct": 83.46774720572961,
+      "intervalDefinition": "client observation including preparation and validation"
+    },
+    {
+      "width": 128,
+      "platform": "baseline",
+      "n": 300,
+      "contract": "0xB3E379D85A026094f7C2955DbA927548B254c40B",
+      "startUtc": "2026-11-10 13:45:32",
+      "endUtc": "2026-11-10 15:36:13",
+      "firstBlock": 12105014,
+      "lastBlock": 12105561,
+      "meanGasTargetPct": 84.22106258647561,
+      "intervalDefinition": "client observation including preparation and validation"
+    },
+    {
+      "width": 128,
+      "platform": "zama",
+      "n": 300,
+      "contract": "0x7C1A1745DAdb2c78bf65A0AF12874C88fAd89730",
+      "startUtc": "2026-11-10 13:45:32",
+      "endUtc": "2026-11-10 15:36:22",
+      "firstBlock": 12105014,
+      "lastBlock": 12105561,
+      "meanGasTargetPct": 84.22106258647561,
+      "intervalDefinition": "client observation including preparation and validation"
+    },
+    {
+      "width": 128,
+      "platform": "fhenix",
+      "n": 300,
+      "contract": "0x3bdA4949623deb7147795131c162743F55B26486",
+      "startUtc": "2026-11-10 13:45:32",
+      "endUtc": "2026-11-10 15:36:13",
+      "firstBlock": 12105014,
+      "lastBlock": 12105561,
+      "meanGasTargetPct": 84.22106258647561,
+      "intervalDefinition": "client observation including preparation and validation"
+    }
+  ],
+  "views": [
+    {
+      "width": 16,
+      "platform": "baseline",
+      "n": 50,
+      "viewMs": {
+        "n": 50,
+        "mean": 80.23600399997754,
+        "sd": 28.907063545333262,
+        "cvPct": 36.02754636851226
+      },
+      "decryptAndValidationMs": {
+        "n": 50,
+        "mean": 0.007554000046657166,
+        "sd": 0.006172526651482333,
+        "cvPct": 81.71202824143256
+      },
+      "totalMs": {
+        "n": 50,
+        "mean": 80.24355800002421,
+        "sd": 28.905332366375667,
+        "cvPct": 36.02199738746249
+      }
+    },
+    {
+      "width": 16,
+      "platform": "zama",
+      "n": 50,
+      "viewMs": {
+        "n": 50,
+        "mean": 54.093972000010616,
+        "sd": 5.79192521642695,
+        "cvPct": 10.707154609437469
+      },
+      "decryptAndValidationMs": {
+        "n": 50,
+        "mean": 2338.8794979999943,
+        "sd": 26.194113748478546,
+        "cvPct": 1.1199428517320995
+      },
+      "totalMs": {
+        "n": 50,
+        "mean": 2392.973470000005,
+        "sd": 28.326193026198393,
+        "cvPct": 1.1837236551643984
+      }
+    },
+    {
+      "width": 16,
+      "platform": "fhenix",
+      "n": 50,
+      "viewMs": {
+        "n": 50,
+        "mean": 74.18856400003624,
+        "sd": 28.8952526204379,
+        "cvPct": 38.94839185783915
+      },
+      "decryptAndValidationMs": {
+        "n": 50,
+        "mean": 117.24487999996269,
+        "sd": 86.55022982756066,
+        "cvPct": 73.82005067307689
+      },
+      "totalMs": {
+        "n": 50,
+        "mean": 191.43344399999893,
+        "sd": 104.44470048696854,
+        "cvPct": 54.55927569634547
+      }
+    },
+    {
+      "width": 128,
+      "platform": "baseline",
+      "n": 50,
+      "viewMs": {
+        "n": 50,
+        "mean": 96.96533199998113,
+        "sd": 32.97695420163391,
+        "cvPct": 34.00901489373576
+      },
+      "decryptAndValidationMs": {
+        "n": 50,
+        "mean": 0.006889999997220002,
+        "sd": 0.005507332784722032,
+        "cvPct": 79.9322610586959
+      },
+      "totalMs": {
+        "n": 50,
+        "mean": 96.97222199997836,
+        "sd": 32.97571028022287,
+        "cvPct": 34.00531574931863
+      }
+    },
+    {
+      "width": 128,
+      "platform": "zama",
+      "n": 50,
+      "viewMs": {
+        "n": 50,
+        "mean": 62.5639239999748,
+        "sd": 18.560826222923975,
+        "cvPct": 29.666979045194562
+      },
+      "decryptAndValidationMs": {
+        "n": 50,
+        "mean": 2405.3455559999975,
+        "sd": 185.7606955680405,
+        "cvPct": 7.722827811774114
+      },
+      "totalMs": {
+        "n": 50,
+        "mean": 2467.9094799999725,
+        "sd": 190.58097614501563,
+        "cvPct": 7.722364928271913
+      }
+    },
+    {
+      "width": 128,
+      "platform": "fhenix",
+      "n": 50,
+      "viewMs": {
+        "n": 50,
+        "mean": 87.7036039999884,
+        "sd": 33.29761178033489,
+        "cvPct": 37.96607010624021
+      },
+      "decryptAndValidationMs": {
+        "n": 50,
+        "mean": 137.8684499999977,
+        "sd": 53.35301927995636,
+        "cvPct": 38.698497937677
+      },
+      "totalMs": {
+        "n": 50,
+        "mean": 225.57205399998608,
+        "sd": 80.51864347783052,
+        "cvPct": 35.69530979127205
+      }
+    }
+  ],
+  "cvDefinition": "100 * sample standard deviation / arithmetic mean; sample standard deviation uses n-1",
+  "latencyDefinition": "Same successful primary subset for all components and per-observation lifecycle. Zama128 mean n=49; other rows n=50. Gas n=50 throughout.",
+  "lifecycleDefinition": "preparationMs + transactionToValidatedPlaintextMs; intentional barrier wait excluded"
+}

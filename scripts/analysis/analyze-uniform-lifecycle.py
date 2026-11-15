@@ -91,7 +91,11 @@ def analyze(file):
     result = {"reportSha256": hashlib.sha256(raw).hexdigest(), "width": width,
               "complete": report["complete"], "measuredPrimary": len(measured),
               "plannedMeasuredPrimary": 3 * len(operations) * report["runs"],
-              "scope": "completed campaign" if report["complete"] else "partial campaign; scheduled operations remain unattempted",
+              "scope": (("completed segmented campaign" if report.get("continuations") else "completed campaign") if report["complete"]
+                        else "all scheduled operations attempted; retained primary failures (segmented campaign)" if report.get("executionComplete")
+                        else "partial campaign; scheduled operations remain unattempted"),
+              "observationSegments": 1 + len(report.get("continuations", [])),
+              "historicalOrchestrationFailures": report.get("historicalOrchestrationFailures", []),
               "validatedPrimary": sum(row["status"] == "ok" for row in measured),
               "warmupPrimary": sum(row["warmup"] for row in report["samples"]),
               "sameBlockComparisons": sum(triples), "blockEligibleComparisons": len(triples),

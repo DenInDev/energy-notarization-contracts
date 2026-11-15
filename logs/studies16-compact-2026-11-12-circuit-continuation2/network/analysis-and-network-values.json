@@ -1,0 +1,5231 @@
+{
+  "tableRows": [
+    {
+      "suite": "concurrency",
+      "caseId": null,
+      "platform": "baseline",
+      "n": 320,
+      "contract": "0x81E078B3F587c591a55Ab1FC9e8aA15F7Eff1532",
+      "firstBlock": 12112499,
+      "lastBlock": 12115432,
+      "startUtc": "2026-11-11 15:06:12",
+      "endUtc": "2026-11-12 00:58:12",
+      "meanGasTargetPct": 81.52125522889091,
+      "transactionWeightedTargetPct": {
+        "n": 320,
+        "mean": 81.52125522889091,
+        "median": 78.36166057688652,
+        "sd": 18.55850704109551,
+        "cvPct": 22.765237101646623,
+        "p95NearestRank": 118.591201,
+        "min": 54.72257552011924,
+        "max": 156.719825
+      },
+      "uniqueContainingBlocks": 200,
+      "uniqueBlockTargetPct": {
+        "n": 200,
+        "mean": 84.2536396996431,
+        "median": 81.261121,
+        "sd": 19.48405223799219,
+        "cvPct": 23.125472451339956,
+        "p95NearestRank": 123.928297,
+        "min": 54.72257552011924,
+        "max": 156.719825
+      },
+      "gasLimit": {
+        "n": 200,
+        "mean": 199912031.025,
+        "median": 200000000.0,
+        "sd": 158739.08476830705,
+        "cvPct": 0.0794044680324697,
+        "p95NearestRank": 200000000.0,
+        "min": 199024212.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": null,
+      "platform": "zama",
+      "n": 320,
+      "contract": "0xe605Bae4d497BB09876E7b9f37a01e8002f4fca6",
+      "firstBlock": 12112493,
+      "lastBlock": 12115404,
+      "startUtc": "2026-11-11 15:05:00",
+      "endUtc": "2026-11-12 00:52:36",
+      "meanGasTargetPct": 85.89156946564813,
+      "transactionWeightedTargetPct": {
+        "n": 320,
+        "mean": 85.89156946564813,
+        "median": 79.36023963882049,
+        "sd": 24.437030632375635,
+        "cvPct": 28.451023522336605,
+        "p95NearestRank": 147.4858698490057,
+        "min": 55.795557,
+        "max": 173.847127
+      },
+      "uniqueContainingBlocks": 201,
+      "uniqueBlockTargetPct": {
+        "n": 201,
+        "mean": 85.07680723805052,
+        "median": 79.78144496899169,
+        "sd": 22.6012972773728,
+        "cvPct": 26.565756298462023,
+        "p95NearestRank": 135.47394,
+        "min": 55.795557,
+        "max": 173.847127
+      },
+      "gasLimit": {
+        "n": 201,
+        "mean": 199889123.39800996,
+        "median": 200000000.0,
+        "sd": 191036.186117528,
+        "cvPct": 0.095571076039563,
+        "p95NearestRank": 200000000.0,
+        "min": 199024021.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": null,
+      "platform": "fhenix",
+      "n": 320,
+      "contract": "0xCFD347A3d3575e41fEe2dA63b456bABFa632e25E",
+      "firstBlock": 12112485,
+      "lastBlock": 12115420,
+      "startUtc": "2026-11-11 15:03:24",
+      "endUtc": "2026-11-12 00:55:48",
+      "meanGasTargetPct": 85.30833167033902,
+      "transactionWeightedTargetPct": {
+        "n": 320,
+        "mean": 85.30833167033902,
+        "median": 80.00030206257668,
+        "sd": 22.497029632406772,
+        "cvPct": 26.371433120205772,
+        "p95NearestRank": 125.913551,
+        "min": 55.627511,
+        "max": 189.43068948697194
+      },
+      "uniqueContainingBlocks": 202,
+      "uniqueBlockTargetPct": {
+        "n": 202,
+        "mean": 83.31456794201068,
+        "median": 77.34101569274057,
+        "sd": 23.092476381638875,
+        "cvPct": 27.717213150180285,
+        "p95NearestRank": 125.913551,
+        "min": 55.627511,
+        "max": 189.43068948697194
+      },
+      "gasLimit": {
+        "n": 202,
+        "mean": 199914815.81683168,
+        "median": 199999809.0,
+        "sd": 130392.02402594722,
+        "cvPct": 0.06522379219027795,
+        "p95NearestRank": 200000000.0,
+        "min": 199414639.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c1-shared_sum",
+      "platform": "baseline",
+      "n": 80,
+      "contract": "0x81E078B3F587c591a55Ab1FC9e8aA15F7Eff1532",
+      "firstBlock": 12112704,
+      "lastBlock": 12115432,
+      "startUtc": "2026-11-11 15:47:24",
+      "endUtc": "2026-11-12 00:58:12",
+      "meanGasTargetPct": 84.9390272158556,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 84.9390272158556,
+        "median": 81.0709973560362,
+        "sd": 20.717038676064913,
+        "cvPct": 24.39048262633935,
+        "p95NearestRank": 125.47564890342605,
+        "min": 57.25037260112515,
+        "max": 156.719825
+      },
+      "uniqueContainingBlocks": 80,
+      "uniqueBlockTargetPct": {
+        "n": 80,
+        "mean": 84.9390272158556,
+        "median": 81.0709973560362,
+        "sd": 20.717038676064913,
+        "cvPct": 24.39048262633935,
+        "p95NearestRank": 125.47564890342605,
+        "min": 57.25037260112515,
+        "max": 156.719825
+      },
+      "gasLimit": {
+        "n": 80,
+        "mean": 199916952.3625,
+        "median": 200000000.0,
+        "sd": 144983.0070745738,
+        "cvPct": 0.07252161728220173,
+        "p95NearestRank": 200000000.0,
+        "min": 199414069.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c1-shared_sum",
+      "platform": "zama",
+      "n": 80,
+      "contract": "0xe605Bae4d497BB09876E7b9f37a01e8002f4fca6",
+      "firstBlock": 12112677,
+      "lastBlock": 12115404,
+      "startUtc": "2026-11-11 15:42:00",
+      "endUtc": "2026-11-12 00:52:36",
+      "meanGasTargetPct": 86.66985404394079,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 86.66985404394079,
+        "median": 81.16388776342131,
+        "sd": 24.03472022355356,
+        "cvPct": 27.731349600944505,
+        "p95NearestRank": 136.728172,
+        "min": 55.795557,
+        "max": 169.18281
+      },
+      "uniqueContainingBlocks": 80,
+      "uniqueBlockTargetPct": {
+        "n": 80,
+        "mean": 86.66985404394079,
+        "median": 81.16388776342131,
+        "sd": 24.03472022355356,
+        "cvPct": 27.731349600944505,
+        "p95NearestRank": 136.728172,
+        "min": 55.795557,
+        "max": 169.18281
+      },
+      "gasLimit": {
+        "n": 80,
+        "mean": 199836308.2125,
+        "median": 199999809.0,
+        "sd": 247488.5266058541,
+        "cvPct": 0.12384562586228431,
+        "p95NearestRank": 200000000.0,
+        "min": 199024021.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c1-shared_sum",
+      "platform": "fhenix",
+      "n": 80,
+      "contract": "0xCFD347A3d3575e41fEe2dA63b456bABFa632e25E",
+      "firstBlock": 12112695,
+      "lastBlock": 12115420,
+      "startUtc": "2026-11-11 15:45:36",
+      "endUtc": "2026-11-12 00:55:48",
+      "meanGasTargetPct": 84.96554684409091,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 84.96554684409091,
+        "median": 76.03119050000001,
+        "sd": 26.93097434734791,
+        "cvPct": 31.696346751896264,
+        "p95NearestRank": 130.022838,
+        "min": 55.627511,
+        "max": 189.43068948697194
+      },
+      "uniqueContainingBlocks": 80,
+      "uniqueBlockTargetPct": {
+        "n": 80,
+        "mean": 84.96554684409091,
+        "median": 76.03119050000001,
+        "sd": 26.93097434734791,
+        "cvPct": 31.696346751896264,
+        "p95NearestRank": 130.022838,
+        "min": 55.627511,
+        "max": 189.43068948697194
+      },
+      "gasLimit": {
+        "n": 80,
+        "mean": 199929125.8625,
+        "median": 200000000.0,
+        "sd": 125190.93523860889,
+        "cvPct": 0.06261765748163585,
+        "p95NearestRank": 200000000.0,
+        "min": 199414639.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c1-shared_ordered",
+      "platform": "baseline",
+      "n": 80,
+      "contract": "0x81E078B3F587c591a55Ab1FC9e8aA15F7Eff1532",
+      "firstBlock": 12112528,
+      "lastBlock": 12115337,
+      "startUtc": "2026-11-11 15:12:00",
+      "endUtc": "2026-11-12 00:39:12",
+      "meanGasTargetPct": 87.21143147776687,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 87.21143147776687,
+        "median": 84.90952393083884,
+        "sd": 19.04844540248724,
+        "cvPct": 21.841684145894718,
+        "p95NearestRank": 123.928297,
+        "min": 58.149372,
+        "max": 151.83884796625156
+      },
+      "uniqueContainingBlocks": 80,
+      "uniqueBlockTargetPct": {
+        "n": 80,
+        "mean": 87.21143147776687,
+        "median": 84.90952393083884,
+        "sd": 19.04844540248724,
+        "cvPct": 21.841684145894718,
+        "p95NearestRank": 123.928297,
+        "min": 58.149372,
+        "max": 151.83884796625156
+      },
+      "gasLimit": {
+        "n": 80,
+        "mean": 199943731.325,
+        "median": 200000000.0,
+        "sd": 99204.56475164801,
+        "cvPct": 0.04961624157668401,
+        "p95NearestRank": 200000000.0,
+        "min": 199609569.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c1-shared_ordered",
+      "platform": "zama",
+      "n": 80,
+      "contract": "0xe605Bae4d497BB09876E7b9f37a01e8002f4fca6",
+      "firstBlock": 12112544,
+      "lastBlock": 12115354,
+      "startUtc": "2026-11-11 15:15:12",
+      "endUtc": "2026-11-12 00:42:36",
+      "meanGasTargetPct": 82.68032329516429,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 82.68032329516429,
+        "median": 78.74706948327439,
+        "sd": 18.10803235477166,
+        "cvPct": 21.901259735193538,
+        "p95NearestRank": 115.50727921104995,
+        "min": 60.117354,
+        "max": 147.4858698490057
+      },
+      "uniqueContainingBlocks": 80,
+      "uniqueBlockTargetPct": {
+        "n": 80,
+        "mean": 82.68032329516429,
+        "median": 78.74706948327439,
+        "sd": 18.10803235477166,
+        "cvPct": 21.901259735193538,
+        "p95NearestRank": 115.50727921104995,
+        "min": 60.117354,
+        "max": 147.4858698490057
+      },
+      "gasLimit": {
+        "n": 80,
+        "mean": 199958436.8375,
+        "median": 200000000.0,
+        "sd": 86174.50107591062,
+        "cvPct": 0.04309620661114787,
+        "p95NearestRank": 200000000.0,
+        "min": 199609569.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c1-shared_ordered",
+      "platform": "fhenix",
+      "n": 80,
+      "contract": "0xCFD347A3d3575e41fEe2dA63b456bABFa632e25E",
+      "firstBlock": 12112561,
+      "lastBlock": 12115369,
+      "startUtc": "2026-11-11 15:18:36",
+      "endUtc": "2026-11-12 00:45:36",
+      "meanGasTargetPct": 79.120570483032,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 79.120570483032,
+        "median": 73.998009,
+        "sd": 19.218412303805923,
+        "cvPct": 24.290032524383097,
+        "p95NearestRank": 121.530738,
+        "min": 58.601669,
+        "max": 157.07513450797944
+      },
+      "uniqueContainingBlocks": 80,
+      "uniqueBlockTargetPct": {
+        "n": 80,
+        "mean": 79.120570483032,
+        "median": 73.998009,
+        "sd": 19.218412303805923,
+        "cvPct": 24.290032524383097,
+        "p95NearestRank": 121.530738,
+        "min": 58.601669,
+        "max": 157.07513450797944
+      },
+      "gasLimit": {
+        "n": 80,
+        "mean": 199921730.15,
+        "median": 199999809.0,
+        "sd": 114569.34852810515,
+        "cvPct": 0.05730710135518761,
+        "p95NearestRank": 200000000.0,
+        "min": 199609569.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c4-shared_sum",
+      "platform": "baseline",
+      "n": 80,
+      "contract": "0x81E078B3F587c591a55Ab1FC9e8aA15F7Eff1532",
+      "firstBlock": 12112499,
+      "lastBlock": 12115327,
+      "startUtc": "2026-11-11 15:06:12",
+      "endUtc": "2026-11-12 00:37:12",
+      "meanGasTargetPct": 80.12961398253607,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 80.12961398253607,
+        "median": 76.51002407688652,
+        "sd": 19.132787557982518,
+        "cvPct": 23.87729904970269,
+        "p95NearestRank": 114.760886,
+        "min": 54.72257552011924,
+        "max": 134.46477707881672
+      },
+      "uniqueContainingBlocks": 20,
+      "uniqueBlockTargetPct": {
+        "n": 20,
+        "mean": 80.12961398253607,
+        "median": 76.51002407688652,
+        "sd": 19.50675362783374,
+        "cvPct": 24.34400049909782,
+        "p95NearestRank": 114.760886,
+        "min": 54.72257552011924,
+        "max": 134.46477707881672
+      },
+      "gasLimit": {
+        "n": 20,
+        "mean": 199785025.05,
+        "median": 199902153.5,
+        "sd": 289614.89867071755,
+        "cvPct": 0.1449632666904018,
+        "p95NearestRank": 200000000.0,
+        "min": 199024212.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c4-shared_sum",
+      "platform": "zama",
+      "n": 80,
+      "contract": "0xe605Bae4d497BB09876E7b9f37a01e8002f4fca6",
+      "firstBlock": 12112493,
+      "lastBlock": 12115321,
+      "startUtc": "2026-11-11 15:05:00",
+      "endUtc": "2026-11-12 00:36:00",
+      "meanGasTargetPct": 90.64856975616674,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 90.64856975616674,
+        "median": 84.9598723255846,
+        "sd": 24.78850274961168,
+        "cvPct": 27.34571854392148,
+        "p95NearestRank": 127.89929404701,
+        "min": 65.619523,
+        "max": 165.436288
+      },
+      "uniqueContainingBlocks": 20,
+      "uniqueBlockTargetPct": {
+        "n": 20,
+        "mean": 90.64856975616674,
+        "median": 84.9598723255846,
+        "sd": 25.27301442480147,
+        "cvPct": 27.88021310516283,
+        "p95NearestRank": 127.89929404701,
+        "min": 65.619523,
+        "max": 165.436288
+      },
+      "gasLimit": {
+        "n": 20,
+        "mean": 199804393.95,
+        "median": 199804594.0,
+        "sd": 200433.47564255644,
+        "cvPct": 0.10031484877790721,
+        "p95NearestRank": 200000000.0,
+        "min": 199413688.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c4-shared_sum",
+      "platform": "fhenix",
+      "n": 80,
+      "contract": "0xCFD347A3d3575e41fEe2dA63b456bABFa632e25E",
+      "firstBlock": 12112485,
+      "lastBlock": 12115312,
+      "startUtc": "2026-11-11 15:03:24",
+      "endUtc": "2026-11-12 00:34:12",
+      "meanGasTargetPct": 86.15536017799819,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 86.15536017799819,
+        "median": 81.676147,
+        "sd": 16.878531064509303,
+        "cvPct": 19.590807849491917,
+        "p95NearestRank": 115.054334,
+        "min": 63.55410545585362,
+        "max": 123.0066195856781
+      },
+      "uniqueContainingBlocks": 21,
+      "uniqueBlockTargetPct": {
+        "n": 21,
+        "mean": 86.31843097552827,
+        "median": 81.676147,
+        "sd": 17.108419255028764,
+        "cvPct": 19.820123074154452,
+        "p95NearestRank": 115.054334,
+        "min": 63.55410545585362,
+        "max": 123.0066195856781
+      },
+      "gasLimit": {
+        "n": 21,
+        "mean": 199851100.80952382,
+        "median": 199804689.0,
+        "sd": 150061.6778716735,
+        "cvPct": 0.0750867407103731,
+        "p95NearestRank": 200000000.0,
+        "min": 199609187.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c4-shared_ordered",
+      "platform": "baseline",
+      "n": 80,
+      "contract": "0x81E078B3F587c591a55Ab1FC9e8aA15F7Eff1532",
+      "firstBlock": 12112515,
+      "lastBlock": 12115382,
+      "startUtc": "2026-11-11 15:09:24",
+      "endUtc": "2026-11-12 00:48:12",
+      "meanGasTargetPct": 73.80494823940509,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 73.80494823940509,
+        "median": 70.98868257591707,
+        "sd": 11.214996069013702,
+        "cvPct": 15.195452793537656,
+        "p95NearestRank": 86.14694823303171,
+        "min": 61.213728572706316,
+        "max": 108.227255
+      },
+      "uniqueContainingBlocks": 20,
+      "uniqueBlockTargetPct": {
+        "n": 20,
+        "mean": 73.80494823940509,
+        "median": 70.98868257591707,
+        "sd": 11.43420239170013,
+        "cvPct": 15.492460416895613,
+        "p95NearestRank": 86.14694823303171,
+        "min": 61.213728572706316,
+        "max": 108.227255
+      },
+      "gasLimit": {
+        "n": 20,
+        "mean": 199892550.45,
+        "median": 200000000.0,
+        "sd": 173229.9945850739,
+        "cvPct": 0.08666155601851941,
+        "p95NearestRank": 200000000.0,
+        "min": 199414259.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c4-shared_ordered",
+      "platform": "zama",
+      "n": 80,
+      "contract": "0xe605Bae4d497BB09876E7b9f37a01e8002f4fca6",
+      "firstBlock": 12112508,
+      "lastBlock": 12115377,
+      "startUtc": "2026-11-11 15:08:00",
+      "endUtc": "2026-11-12 00:47:12",
+      "meanGasTargetPct": 83.5675307673207,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 83.5675307673207,
+        "median": 73.33870495078291,
+        "sd": 29.18683980621008,
+        "cvPct": 34.92605266449211,
+        "p95NearestRank": 162.965627,
+        "min": 62.117538526746884,
+        "max": 173.847127
+      },
+      "uniqueContainingBlocks": 21,
+      "uniqueBlockTargetPct": {
+        "n": 21,
+        "mean": 82.83107964744829,
+        "median": 73.33870495078291,
+        "sd": 29.239316773819453,
+        "cvPct": 35.2999343945171,
+        "p95NearestRank": 162.965627,
+        "min": 62.117538526746884,
+        "max": 173.847127
+      },
+      "gasLimit": {
+        "n": 21,
+        "mean": 199906967.6190476,
+        "median": 200000000.0,
+        "sd": 132748.29785254356,
+        "cvPct": 0.06640503802024307,
+        "p95NearestRank": 200000000.0,
+        "min": 199609378.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c4-shared_ordered",
+      "platform": "fhenix",
+      "n": 80,
+      "contract": "0xCFD347A3d3575e41fEe2dA63b456bABFa632e25E",
+      "firstBlock": 12112524,
+      "lastBlock": 12115390,
+      "startUtc": "2026-11-11 15:11:12",
+      "endUtc": "2026-11-12 00:49:48",
+      "meanGasTargetPct": 90.99184917623498,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 90.99184917623498,
+        "median": 82.3555035,
+        "sd": 24.327876477170935,
+        "cvPct": 26.73632495373534,
+        "p95NearestRank": 133.532735,
+        "min": 64.710938,
+        "max": 148.54158
+      },
+      "uniqueContainingBlocks": 21,
+      "uniqueBlockTargetPct": {
+        "n": 21,
+        "mean": 89.99839464905864,
+        "median": 80.873997,
+        "sd": 24.600387179415197,
+        "cvPct": 27.334251100080607,
+        "p95NearestRank": 133.532735,
+        "min": 64.710938,
+        "max": 148.54158
+      },
+      "gasLimit": {
+        "n": 21,
+        "mean": 199897676.04761904,
+        "median": 200000000.0,
+        "sd": 170338.8789761387,
+        "cvPct": 0.08521303616134139,
+        "p95NearestRank": 200000000.0,
+        "min": 199414639.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": null,
+      "platform": "baseline",
+      "n": 100,
+      "contract": "0x668123D59797Ca8720870cbb8a115fd26f7330c4",
+      "firstBlock": 12115520,
+      "lastBlock": 12118969,
+      "startUtc": "2026-11-12 01:16:12",
+      "endUtc": "2026-11-12 12:53:00",
+      "meanGasTargetPct": 80.46129278219566,
+      "transactionWeightedTargetPct": {
+        "n": 100,
+        "mean": 80.46129278219566,
+        "median": 75.601024,
+        "sd": 15.034130971158277,
+        "cvPct": 18.684923459849013,
+        "p95NearestRank": 108.46662162167776,
+        "min": 57.102728,
+        "max": 150.391476
+      },
+      "uniqueContainingBlocks": 100,
+      "uniqueBlockTargetPct": {
+        "n": 100,
+        "mean": 80.46129278219566,
+        "median": 75.601024,
+        "sd": 15.034130971158277,
+        "cvPct": 18.684923459849013,
+        "p95NearestRank": 108.46662162167776,
+        "min": 57.102728,
+        "max": 150.391476
+      },
+      "gasLimit": {
+        "n": 100,
+        "mean": 199892477.92,
+        "median": 199999809.0,
+        "sd": 178504.436512429,
+        "cvPct": 0.08930022698696506,
+        "p95NearestRank": 200000000.0,
+        "min": 199025161.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": null,
+      "platform": "zama",
+      "n": 80,
+      "contract": "0x255a1c8DAa52FF3548c9012E3Fa8E145c025F508",
+      "firstBlock": 12115518,
+      "lastBlock": 12118966,
+      "startUtc": "2026-11-12 01:15:48",
+      "endUtc": "2026-11-12 12:52:24",
+      "meanGasTargetPct": 79.90964096742753,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 79.90964096742753,
+        "median": 74.6817387559976,
+        "sd": 14.871426997776174,
+        "cvPct": 18.61030386037901,
+        "p95NearestRank": 106.251,
+        "min": 60.103252,
+        "max": 141.861398
+      },
+      "uniqueContainingBlocks": 80,
+      "uniqueBlockTargetPct": {
+        "n": 80,
+        "mean": 79.90964096742753,
+        "median": 74.6817387559976,
+        "sd": 14.871426997776174,
+        "cvPct": 18.61030386037901,
+        "p95NearestRank": 106.251,
+        "min": 60.103252,
+        "max": 141.861398
+      },
+      "gasLimit": {
+        "n": 80,
+        "mean": 199907098.5625,
+        "median": 199999809.0,
+        "sd": 152101.61496615512,
+        "cvPct": 0.07608615004664343,
+        "p95NearestRank": 200000000.0,
+        "min": 199219140.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": null,
+      "platform": "fhenix",
+      "n": 100,
+      "contract": "0x4f4F6d57131FD8b1A9AE2e74D2Ea6Cc997411621",
+      "firstBlock": 12115515,
+      "lastBlock": 12118971,
+      "startUtc": "2026-11-12 01:15:12",
+      "endUtc": "2026-11-12 12:53:24",
+      "meanGasTargetPct": 80.64975298544019,
+      "transactionWeightedTargetPct": {
+        "n": 100,
+        "mean": 80.64975298544019,
+        "median": 76.44180814727693,
+        "sd": 14.330289501085115,
+        "cvPct": 17.76854729322256,
+        "p95NearestRank": 111.325041,
+        "min": 64.58513888059909,
+        "max": 143.3769183714773
+      },
+      "uniqueContainingBlocks": 100,
+      "uniqueBlockTargetPct": {
+        "n": 100,
+        "mean": 80.64975298544019,
+        "median": 76.44180814727693,
+        "sd": 14.330289501085115,
+        "cvPct": 17.76854729322256,
+        "p95NearestRank": 111.325041,
+        "min": 64.58513888059909,
+        "max": 143.3769183714773
+      },
+      "gasLimit": {
+        "n": 100,
+        "mean": 199890540.08,
+        "median": 199999809.0,
+        "sd": 173996.85774387137,
+        "cvPct": 0.08704606915076346,
+        "p95NearestRank": 200000000.0,
+        "min": 199025351.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_linear-n2",
+      "platform": "baseline",
+      "n": 10,
+      "contract": "0x668123D59797Ca8720870cbb8a115fd26f7330c4",
+      "firstBlock": 12115520,
+      "lastBlock": 12118948,
+      "startUtc": "2026-11-12 01:16:12",
+      "endUtc": "2026-11-12 12:48:48",
+      "meanGasTargetPct": 81.35679623849795,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 81.35679623849795,
+        "median": 80.70231899999999,
+        "sd": 10.28692973210174,
+        "cvPct": 12.64421684200241,
+        "p95NearestRank": 105.04820561343041,
+        "min": 68.479584,
+        "max": 105.04820561343041
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 81.35679623849795,
+        "median": 80.70231899999999,
+        "sd": 10.28692973210174,
+        "cvPct": 12.64421684200241,
+        "p95NearestRank": 105.04820561343041,
+        "min": 68.479584,
+        "max": 105.04820561343041
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199882680.0,
+        "median": 200000000.0,
+        "sd": 209969.12861868262,
+        "cvPct": 0.105046184401111,
+        "p95NearestRank": 200000000.0,
+        "min": 199414639.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_linear-n2",
+      "platform": "zama",
+      "n": 10,
+      "contract": "0x255a1c8DAa52FF3548c9012E3Fa8E145c025F508",
+      "firstBlock": 12115518,
+      "lastBlock": 12118946,
+      "startUtc": "2026-11-12 01:15:48",
+      "endUtc": "2026-11-12 12:48:24",
+      "meanGasTargetPct": 77.20431110475528,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 77.20431110475528,
+        "median": 72.11277559156781,
+        "sd": 12.363805956584352,
+        "cvPct": 16.014398392608445,
+        "p95NearestRank": 103.07780230896184,
+        "min": 65.745786,
+        "max": 103.07780230896184
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 77.20431110475528,
+        "median": 72.11277559156781,
+        "sd": 12.363805956584352,
+        "cvPct": 16.014398392608445,
+        "p95NearestRank": 103.07780230896184,
+        "min": 65.745786,
+        "max": 103.07780230896184
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199882584.5,
+        "median": 199804689.0,
+        "sd": 100768.86633088173,
+        "cvPct": 0.05041403010820171,
+        "p95NearestRank": 200000000.0,
+        "min": 199803736.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_linear-n2",
+      "platform": "fhenix",
+      "n": 10,
+      "contract": "0x4f4F6d57131FD8b1A9AE2e74D2Ea6Cc997411621",
+      "firstBlock": 12115515,
+      "lastBlock": 12118944,
+      "startUtc": "2026-11-12 01:15:12",
+      "endUtc": "2026-11-12 12:48:00",
+      "meanGasTargetPct": 82.09669060863334,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 82.09669060863334,
+        "median": 73.55434916207332,
+        "sd": 19.06021926465012,
+        "cvPct": 23.216793665304866,
+        "p95NearestRank": 123.023375,
+        "min": 68.87337882410768,
+        "max": 123.023375
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 82.09669060863334,
+        "median": 73.55434916207332,
+        "sd": 19.06021926465012,
+        "cvPct": 23.216793665304866,
+        "p95NearestRank": 123.023375,
+        "min": 68.87337882410768,
+        "max": 123.023375
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199824143.7,
+        "median": 199999904.5,
+        "sd": 337066.5158942997,
+        "cvPct": 0.1686815765367895,
+        "p95NearestRank": 200000000.0,
+        "min": 199025351.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_tree-n2",
+      "platform": "baseline",
+      "n": 10,
+      "contract": "0x668123D59797Ca8720870cbb8a115fd26f7330c4",
+      "firstBlock": 12115530,
+      "lastBlock": 12118903,
+      "startUtc": "2026-11-12 01:18:12",
+      "endUtc": "2026-11-12 12:39:24",
+      "meanGasTargetPct": 77.29767040613243,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 77.29767040613243,
+        "median": 73.4381515,
+        "sd": 12.69416020314249,
+        "cvPct": 16.422435678133187,
+        "p95NearestRank": 107.48067372145627,
+        "min": 61.134069,
+        "max": 107.48067372145627
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 77.29767040613243,
+        "median": 73.4381515,
+        "sd": 12.69416020314249,
+        "cvPct": 16.422435678133187,
+        "p95NearestRank": 107.48067372145627,
+        "min": 61.134069,
+        "max": 107.48067372145627
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199921723.2,
+        "median": 200000000.0,
+        "sd": 136798.516480585,
+        "cvPct": 0.06842603909717852,
+        "p95NearestRank": 200000000.0,
+        "min": 199608808.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_tree-n2",
+      "platform": "zama",
+      "n": 10,
+      "contract": "0x255a1c8DAa52FF3548c9012E3Fa8E145c025F508",
+      "firstBlock": 12115535,
+      "lastBlock": 12118907,
+      "startUtc": "2026-11-12 01:19:12",
+      "endUtc": "2026-11-12 12:40:24",
+      "meanGasTargetPct": 77.42995359815201,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 77.42995359815201,
+        "median": 72.26580315089046,
+        "sd": 14.026151472879759,
+        "cvPct": 18.11463241431481,
+        "p95NearestRank": 102.34663538521542,
+        "min": 60.103252,
+        "max": 102.34663538521542
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 77.42995359815201,
+        "median": 72.26580315089046,
+        "sd": 14.026151472879759,
+        "cvPct": 18.11463241431481,
+        "p95NearestRank": 102.34663538521542,
+        "min": 60.103252,
+        "max": 102.34663538521542
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199843579.6,
+        "median": 199901582.0,
+        "sd": 201446.18503830963,
+        "cvPct": 0.10080192991014139,
+        "p95NearestRank": 200000000.0,
+        "min": 199414448.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_tree-n2",
+      "platform": "fhenix",
+      "n": 10,
+      "contract": "0x4f4F6d57131FD8b1A9AE2e74D2Ea6Cc997411621",
+      "firstBlock": 12115533,
+      "lastBlock": 12118905,
+      "startUtc": "2026-11-12 01:18:48",
+      "endUtc": "2026-11-12 12:39:48",
+      "meanGasTargetPct": 76.75607861212463,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 76.75607861212463,
+        "median": 74.70106573855657,
+        "sd": 7.613712075302356,
+        "cvPct": 9.91936041154097,
+        "p95NearestRank": 92.51871887965451,
+        "min": 68.471725,
+        "max": 92.51871887965451
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 76.75607861212463,
+        "median": 74.70106573855657,
+        "sd": 7.613712075302356,
+        "cvPct": 9.91936041154097,
+        "p95NearestRank": 92.51871887965451,
+        "min": 68.471725,
+        "max": 92.51871887965451
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199960918.7,
+        "median": 200000000.0,
+        "sd": 123451.72633962367,
+        "cvPct": 0.06173792716207584,
+        "p95NearestRank": 200000000.0,
+        "min": 199609569.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_linear-n8",
+      "platform": "baseline",
+      "n": 10,
+      "contract": "0x668123D59797Ca8720870cbb8a115fd26f7330c4",
+      "firstBlock": 12115560,
+      "lastBlock": 12118969,
+      "startUtc": "2026-11-12 01:24:12",
+      "endUtc": "2026-11-12 12:53:00",
+      "meanGasTargetPct": 77.73444257206376,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 77.73444257206376,
+        "median": 74.22594672381453,
+        "sd": 10.421665080599245,
+        "cvPct": 13.406753474739123,
+        "p95NearestRank": 99.811254,
+        "min": 65.61211381651417,
+        "max": 99.811254
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 77.73444257206376,
+        "median": 74.22594672381453,
+        "sd": 10.421665080599245,
+        "cvPct": 13.406753474739123,
+        "p95NearestRank": 99.811254,
+        "min": 65.61211381651417,
+        "max": 99.811254
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199902134.5,
+        "median": 199902153.5,
+        "sd": 103038.97501350318,
+        "cvPct": 0.05154470975071213,
+        "p95NearestRank": 200000000.0,
+        "min": 199803735.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_linear-n8",
+      "platform": "zama",
+      "n": 10,
+      "contract": "0x255a1c8DAa52FF3548c9012E3Fa8E145c025F508",
+      "firstBlock": 12115557,
+      "lastBlock": 12118966,
+      "startUtc": "2026-11-12 01:23:36",
+      "endUtc": "2026-11-12 12:52:24",
+      "meanGasTargetPct": 76.2767764202659,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 76.2767764202659,
+        "median": 72.01627672587729,
+        "sd": 10.98730265650042,
+        "cvPct": 14.404518874739985,
+        "p95NearestRank": 97.636898,
+        "min": 65.83528677847995,
+        "max": 97.636898
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 76.2767764202659,
+        "median": 72.01627672587729,
+        "sd": 10.98730265650042,
+        "cvPct": 14.404518874739985,
+        "p95NearestRank": 97.636898,
+        "min": 65.83528677847995,
+        "max": 97.636898
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199882718.0,
+        "median": 199902344.5,
+        "sd": 136683.98974276395,
+        "cvPct": 0.06838209481560278,
+        "p95NearestRank": 200000000.0,
+        "min": 199608996.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_linear-n8",
+      "platform": "fhenix",
+      "n": 10,
+      "contract": "0x4f4F6d57131FD8b1A9AE2e74D2Ea6Cc997411621",
+      "firstBlock": 12115562,
+      "lastBlock": 12118971,
+      "startUtc": "2026-11-12 01:24:36",
+      "endUtc": "2026-11-12 12:53:24",
+      "meanGasTargetPct": 76.30114432547059,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 76.30114432547059,
+        "median": 75.81447648170366,
+        "sd": 7.415218904478282,
+        "cvPct": 9.718358708812914,
+        "p95NearestRank": 90.98055202596744,
+        "min": 67.81273886920641,
+        "max": 90.98055202596744
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 76.30114432547059,
+        "median": 75.81447648170366,
+        "sd": 7.415218904478282,
+        "cvPct": 9.718358708812914,
+        "p95NearestRank": 90.98055202596744,
+        "min": 67.81273886920641,
+        "max": 90.98055202596744
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199824162.9,
+        "median": 199804689.0,
+        "sd": 144150.50917430402,
+        "cvPct": 0.07213867786672161,
+        "p95NearestRank": 200000000.0,
+        "min": 199609187.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_tree-n8",
+      "platform": "baseline",
+      "n": 10,
+      "contract": "0x668123D59797Ca8720870cbb8a115fd26f7330c4",
+      "firstBlock": 12118214,
+      "lastBlock": 12118925,
+      "startUtc": "2026-11-12 10:20:00",
+      "endUtc": "2026-11-12 12:44:12",
+      "meanGasTargetPct": 80.47621370609409,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 80.47621370609409,
+        "median": 76.92350197010231,
+        "sd": 14.643411598601421,
+        "cvPct": 18.195949988502683,
+        "p95NearestRank": 110.25318129545998,
+        "min": 63.913353,
+        "max": 110.25318129545998
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 80.47621370609409,
+        "median": 76.92350197010231,
+        "sd": 14.643411598601421,
+        "cvPct": 18.195949988502683,
+        "p95NearestRank": 110.25318129545998,
+        "min": 63.913353,
+        "max": 110.25318129545998
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199902210.9,
+        "median": 199902058.0,
+        "sd": 102877.61155475525,
+        "cvPct": 0.05146396885336061,
+        "p95NearestRank": 200000000.0,
+        "min": 199804498.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_tree-n8",
+      "platform": "zama",
+      "n": 10,
+      "contract": "0x255a1c8DAa52FF3548c9012E3Fa8E145c025F508",
+      "firstBlock": 12115566,
+      "lastBlock": 12118923,
+      "startUtc": "2026-11-12 01:25:24",
+      "endUtc": "2026-11-12 12:43:48",
+      "meanGasTargetPct": 76.56961690186509,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 76.56961690186509,
+        "median": 72.6581733408793,
+        "sd": 11.800290429298155,
+        "cvPct": 15.411191679882524,
+        "p95NearestRank": 106.251,
+        "min": 65.361770681964,
+        "max": 106.251
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 76.56961690186509,
+        "median": 72.6581733408793,
+        "sd": 11.800290429298155,
+        "cvPct": 15.411191679882524,
+        "p95NearestRank": 106.251,
+        "min": 65.361770681964,
+        "max": 106.251
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199980278.0,
+        "median": 199999809.0,
+        "sd": 61696.17458337447,
+        "cvPct": 0.030851129521569355,
+        "p95NearestRank": 200000000.0,
+        "min": 199804689.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_tree-n8",
+      "platform": "fhenix",
+      "n": 10,
+      "contract": "0x4f4F6d57131FD8b1A9AE2e74D2Ea6Cc997411621",
+      "firstBlock": 12118217,
+      "lastBlock": 12118927,
+      "startUtc": "2026-11-12 10:20:36",
+      "endUtc": "2026-11-12 12:44:36",
+      "meanGasTargetPct": 80.24269677723721,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 80.24269677723721,
+        "median": 73.83335257996069,
+        "sd": 16.64175315274358,
+        "cvPct": 20.739274502379903,
+        "p95NearestRank": 116.54163,
+        "min": 66.73441973137085,
+        "max": 116.54163
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 80.24269677723721,
+        "median": 73.83335257996069,
+        "sd": 16.64175315274358,
+        "cvPct": 20.739274502379903,
+        "p95NearestRank": 116.54163,
+        "min": 66.73441973137085,
+        "max": 116.54163
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199902287.3,
+        "median": 199999904.5,
+        "sd": 138090.79459226172,
+        "cvPct": 0.06907914684589089,
+        "p95NearestRank": 200000000.0,
+        "min": 199609569.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_linear-n32",
+      "platform": "baseline",
+      "n": 10,
+      "contract": "0x668123D59797Ca8720870cbb8a115fd26f7330c4",
+      "firstBlock": 12118244,
+      "lastBlock": 12118921,
+      "startUtc": "2026-11-12 10:26:12",
+      "endUtc": "2026-11-12 12:43:24",
+      "meanGasTargetPct": 77.44952365082489,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 77.44952365082489,
+        "median": 75.525779,
+        "sd": 11.01078979268869,
+        "cvPct": 14.216730166514612,
+        "p95NearestRank": 99.067828,
+        "min": 64.06521923806167,
+        "max": 99.067828
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 77.44952365082489,
+        "median": 75.525779,
+        "sd": 11.01078979268869,
+        "cvPct": 14.216730166514612,
+        "p95NearestRank": 99.067828,
+        "min": 64.06521923806167,
+        "max": 99.067828
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199843922.8,
+        "median": 200000000.0,
+        "sd": 315764.95303514745,
+        "cvPct": 0.15800578201777943,
+        "p95NearestRank": 200000000.0,
+        "min": 199025161.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_linear-n32",
+      "platform": "zama",
+      "n": 10,
+      "contract": "0x255a1c8DAa52FF3548c9012E3Fa8E145c025F508",
+      "firstBlock": 12118239,
+      "lastBlock": 12118916,
+      "startUtc": "2026-11-12 10:25:12",
+      "endUtc": "2026-11-12 12:42:24",
+      "meanGasTargetPct": 80.87149707285191,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 80.87149707285191,
+        "median": 79.3116737436386,
+        "sd": 8.312456539495283,
+        "cvPct": 10.278598567313683,
+        "p95NearestRank": 97.060456,
+        "min": 70.39722045869108,
+        "max": 97.060456
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 80.87149707285191,
+        "median": 79.3116737436386,
+        "sd": 8.312456539495283,
+        "cvPct": 10.278598567313683,
+        "p95NearestRank": 97.060456,
+        "min": 70.39722045869108,
+        "max": 97.060456
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199882737.4,
+        "median": 199999809.0,
+        "sd": 246892.83929186768,
+        "cvPct": 0.12351884034777466,
+        "p95NearestRank": 200000000.0,
+        "min": 199219140.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_linear-n32",
+      "platform": "fhenix",
+      "n": 10,
+      "contract": "0x4f4F6d57131FD8b1A9AE2e74D2Ea6Cc997411621",
+      "firstBlock": 12118242,
+      "lastBlock": 12118919,
+      "startUtc": "2026-11-12 10:25:48",
+      "endUtc": "2026-11-12 12:43:00",
+      "meanGasTargetPct": 77.07465458793791,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 77.07465458793791,
+        "median": 79.64978558642093,
+        "sd": 6.724886094469582,
+        "cvPct": 8.725158913033933,
+        "p95NearestRank": 84.79847292728107,
+        "min": 64.723543,
+        "max": 84.79847292728107
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 77.07465458793791,
+        "median": 79.64978558642093,
+        "sd": 6.724886094469582,
+        "cvPct": 8.725158913033933,
+        "p95NearestRank": 84.79847292728107,
+        "min": 64.723543,
+        "max": 84.79847292728107
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199882699.1,
+        "median": 200000000.0,
+        "sd": 209980.88367566012,
+        "cvPct": 0.10505205534102181,
+        "p95NearestRank": 200000000.0,
+        "min": 199414639.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_tree-n32",
+      "platform": "baseline",
+      "n": 10,
+      "contract": "0x668123D59797Ca8720870cbb8a115fd26f7330c4",
+      "firstBlock": 12118223,
+      "lastBlock": 12118961,
+      "startUtc": "2026-11-12 10:21:48",
+      "endUtc": "2026-11-12 12:51:24",
+      "meanGasTargetPct": 86.52054991435942,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 86.52054991435942,
+        "median": 83.96044080045593,
+        "sd": 13.93064117512441,
+        "cvPct": 16.10096235970919,
+        "p95NearestRank": 108.46662162167776,
+        "min": 70.400507,
+        "max": 108.46662162167776
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 86.52054991435942,
+        "median": 83.96044080045593,
+        "sd": 13.93064117512441,
+        "cvPct": 16.10096235970919,
+        "p95NearestRank": 108.46662162167776,
+        "min": 70.400507,
+        "max": 108.46662162167776
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199921703.8,
+        "median": 199999618.0,
+        "sd": 100874.69351163684,
+        "cvPct": 0.0504570997516863,
+        "p95NearestRank": 200000000.0,
+        "min": 199804117.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_tree-n32",
+      "platform": "zama",
+      "n": 10,
+      "contract": "0x255a1c8DAa52FF3548c9012E3Fa8E145c025F508",
+      "firstBlock": 12118221,
+      "lastBlock": 12118959,
+      "startUtc": "2026-11-12 10:21:24",
+      "endUtc": "2026-11-12 12:51:00",
+      "meanGasTargetPct": 84.99999445977535,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 84.99999445977535,
+        "median": 76.93117469511934,
+        "sd": 20.123541763115327,
+        "cvPct": 23.67475655852944,
+        "p95NearestRank": 118.681826,
+        "min": 64.836194,
+        "max": 118.681826
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 84.99999445977535,
+        "median": 76.93117469511934,
+        "sd": 20.123541763115327,
+        "cvPct": 23.67475655852944,
+        "p95NearestRank": 118.681826,
+        "min": 64.836194,
+        "max": 118.681826
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199921761.0,
+        "median": 199999713.5,
+        "sd": 136489.89374471814,
+        "cvPct": 0.06827165440220294,
+        "p95NearestRank": 200000000.0,
+        "min": 199609378.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-sum_tree-n32",
+      "platform": "fhenix",
+      "n": 10,
+      "contract": "0x4f4F6d57131FD8b1A9AE2e74D2Ea6Cc997411621",
+      "firstBlock": 12118225,
+      "lastBlock": 12118963,
+      "startUtc": "2026-11-12 10:22:12",
+      "endUtc": "2026-11-12 12:51:48",
+      "meanGasTargetPct": 89.5928305455077,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 89.5928305455077,
+        "median": 82.15608950000001,
+        "sd": 22.885973233671663,
+        "cvPct": 25.544424809803264,
+        "p95NearestRank": 143.3769183714773,
+        "min": 70.663728,
+        "max": 143.3769183714773
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 89.5928305455077,
+        "median": 82.15608950000001,
+        "sd": 22.885973233671663,
+        "cvPct": 25.544424809803264,
+        "p95NearestRank": 143.3769183714773,
+        "min": 70.663728,
+        "max": 143.3769183714773
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199941387.6,
+        "median": 200000000.0,
+        "sd": 94374.94436107263,
+        "cvPct": 0.047201305089408424,
+        "p95NearestRank": 200000000.0,
+        "min": 199804498.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-affine_chain-k1",
+      "platform": "baseline",
+      "n": 10,
+      "contract": "0x668123D59797Ca8720870cbb8a115fd26f7330c4",
+      "firstBlock": 12118228,
+      "lastBlock": 12118950,
+      "startUtc": "2026-11-12 10:23:00",
+      "endUtc": "2026-11-12 12:49:12",
+      "meanGasTargetPct": 85.56097127940177,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 85.56097127940177,
+        "median": 80.61900453976929,
+        "sd": 19.39489195675527,
+        "cvPct": 22.667919340724524,
+        "p95NearestRank": 112.31054320815358,
+        "min": 64.33554444044493,
+        "max": 112.31054320815358
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 85.56097127940177,
+        "median": 80.61900453976929,
+        "sd": 19.39489195675527,
+        "cvPct": 22.667919340724524,
+        "p95NearestRank": 112.31054320815358,
+        "min": 64.33554444044493,
+        "max": 112.31054320815358
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199960842.4,
+        "median": 199999904.5,
+        "sd": 82300.26138098091,
+        "cvPct": 0.041158188969992515,
+        "p95NearestRank": 200000000.0,
+        "min": 199804689.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-affine_chain-k1",
+      "platform": "zama",
+      "n": 10,
+      "contract": "0x255a1c8DAa52FF3548c9012E3Fa8E145c025F508",
+      "firstBlock": 12118232,
+      "lastBlock": 12118952,
+      "startUtc": "2026-11-12 10:23:48",
+      "endUtc": "2026-11-12 12:49:36",
+      "meanGasTargetPct": 86.13382908387474,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 86.13382908387474,
+        "median": 79.42706749999999,
+        "sd": 22.892431509184544,
+        "cvPct": 26.57774738760601,
+        "p95NearestRank": 141.861398,
+        "min": 64.77808730648884,
+        "max": 141.861398
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 86.13382908387474,
+        "median": 79.42706749999999,
+        "sd": 22.892431509184544,
+        "cvPct": 26.57774738760601,
+        "p95NearestRank": 141.861398,
+        "min": 64.77808730648884,
+        "max": 141.861398
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199921799.5,
+        "median": 200000000.0,
+        "sd": 136635.26623277023,
+        "cvPct": 0.0683443559304148,
+        "p95NearestRank": 200000000.0,
+        "min": 199609378.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-affine_chain-k1",
+      "platform": "fhenix",
+      "n": 10,
+      "contract": "0x4f4F6d57131FD8b1A9AE2e74D2Ea6Cc997411621",
+      "firstBlock": 12118235,
+      "lastBlock": 12118955,
+      "startUtc": "2026-11-12 10:24:24",
+      "endUtc": "2026-11-12 12:50:12",
+      "meanGasTargetPct": 80.47278293411487,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 80.47278293411487,
+        "median": 74.0400385679442,
+        "sd": 16.14971730829311,
+        "cvPct": 20.068545810718756,
+        "p95NearestRank": 106.837345,
+        "min": 64.58513888059909,
+        "max": 106.837345
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 80.47278293411487,
+        "median": 74.0400385679442,
+        "sd": 16.14971730829311,
+        "cvPct": 20.068545810718756,
+        "p95NearestRank": 106.837345,
+        "min": 64.58513888059909,
+        "max": 106.837345
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199882794.5,
+        "median": 200000000.0,
+        "sd": 188674.88042912455,
+        "cvPct": 0.09439275696594514,
+        "p95NearestRank": 200000000.0,
+        "min": 199609189.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-affine_chain-k8",
+      "platform": "baseline",
+      "n": 10,
+      "contract": "0x668123D59797Ca8720870cbb8a115fd26f7330c4",
+      "firstBlock": 12115546,
+      "lastBlock": 12118936,
+      "startUtc": "2026-11-12 01:21:24",
+      "endUtc": "2026-11-12 12:46:24",
+      "meanGasTargetPct": 86.56789608793696,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 86.56789608793696,
+        "median": 84.1137132650544,
+        "sd": 23.687103223409277,
+        "cvPct": 27.362456862007555,
+        "p95NearestRank": 150.391476,
+        "min": 69.70483656811892,
+        "max": 150.391476
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 86.56789608793696,
+        "median": 84.1137132650544,
+        "sd": 23.687103223409277,
+        "cvPct": 27.362456862007555,
+        "p95NearestRank": 150.391476,
+        "min": 69.70483656811892,
+        "max": 150.391476
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199843618.3,
+        "median": 199999904.5,
+        "sd": 240303.11716295595,
+        "cvPct": 0.12024557962227204,
+        "p95NearestRank": 200000000.0,
+        "min": 199412927.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-affine_chain-k8",
+      "platform": "zama",
+      "n": 10,
+      "contract": "0x255a1c8DAa52FF3548c9012E3Fa8E145c025F508",
+      "firstBlock": 12115541,
+      "lastBlock": 12118934,
+      "startUtc": "2026-11-12 01:20:24",
+      "endUtc": "2026-11-12 12:46:00",
+      "meanGasTargetPct": 79.79114909787998,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 79.79114909787998,
+        "median": 76.17253639792844,
+        "sd": 14.788614966544152,
+        "cvPct": 18.534154644649778,
+        "p95NearestRank": 113.891799,
+        "min": 63.078522239988736,
+        "max": 113.891799
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 79.79114909787998,
+        "median": 76.17253639792844,
+        "sd": 14.788614966544152,
+        "cvPct": 18.534154644649778,
+        "p95NearestRank": 113.891799,
+        "min": 63.078522239988736,
+        "max": 113.891799
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199941330.5,
+        "median": 200000000.0,
+        "sd": 131880.93973332326,
+        "cvPct": 0.06595981901467005,
+        "p95NearestRank": 200000000.0,
+        "min": 199609189.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-affine_chain-k8",
+      "platform": "fhenix",
+      "n": 10,
+      "contract": "0x4f4F6d57131FD8b1A9AE2e74D2Ea6Cc997411621",
+      "firstBlock": 12115538,
+      "lastBlock": 12118931,
+      "startUtc": "2026-11-12 01:19:48",
+      "endUtc": "2026-11-12 12:45:24",
+      "meanGasTargetPct": 83.51089942802918,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 83.51089942802918,
+        "median": 84.30701995803034,
+        "sd": 12.959725947079576,
+        "cvPct": 15.518604201177888,
+        "p95NearestRank": 106.978675,
+        "min": 66.77082381413243,
+        "max": 106.978675
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 83.51089942802918,
+        "median": 84.30701995803034,
+        "sd": 12.959725947079576,
+        "cvPct": 15.518604201177888,
+        "p95NearestRank": 106.978675,
+        "min": 66.77082381413243,
+        "max": 106.978675
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199882642.1,
+        "median": 199902249.0,
+        "sd": 136761.98223795806,
+        "cvPct": 0.06842113992546532,
+        "p95NearestRank": 200000000.0,
+        "min": 199608618.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-affine_chain-k16",
+      "platform": "baseline",
+      "n": 10,
+      "contract": "0x668123D59797Ca8720870cbb8a115fd26f7330c4",
+      "firstBlock": 12115554,
+      "lastBlock": 12118913,
+      "startUtc": "2026-11-12 01:23:00",
+      "endUtc": "2026-11-12 12:41:48",
+      "meanGasTargetPct": 79.9170298988527,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 79.9170298988527,
+        "median": 75.57034372026402,
+        "sd": 17.305668075696154,
+        "cvPct": 21.65454359052024,
+        "p95NearestRank": 122.216587,
+        "min": 66.239568,
+        "max": 122.216587
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 79.9170298988527,
+        "median": 75.57034372026402,
+        "sd": 17.305668075696154,
+        "cvPct": 21.65454359052024,
+        "p95NearestRank": 122.216587,
+        "min": 66.239568,
+        "max": 122.216587
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199921837.4,
+        "median": 200000000.0,
+        "sd": 136599.04445102584,
+        "cvPct": 0.06832622500248482,
+        "p95NearestRank": 200000000.0,
+        "min": 199609187.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-affine_chain-k16",
+      "platform": "zama",
+      "n": 0,
+      "contract": "0x255a1c8DAa52FF3548c9012E3Fa8E145c025F508",
+      "firstBlock": null,
+      "lastBlock": null,
+      "startUtc": null,
+      "endUtc": null,
+      "meanGasTargetPct": null,
+      "transactionWeightedTargetPct": {
+        "n": 0
+      },
+      "uniqueContainingBlocks": 0,
+      "uniqueBlockTargetPct": {
+        "n": 0
+      },
+      "gasLimit": {
+        "n": 0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-affine_chain-k16",
+      "platform": "fhenix",
+      "n": 10,
+      "contract": "0x4f4F6d57131FD8b1A9AE2e74D2Ea6Cc997411621",
+      "firstBlock": 12115548,
+      "lastBlock": 12118910,
+      "startUtc": "2026-11-12 01:21:48",
+      "endUtc": "2026-11-12 12:41:00",
+      "meanGasTargetPct": 78.82980934686061,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 78.82980934686061,
+        "median": 76.80579306611851,
+        "sd": 12.469099495885098,
+        "cvPct": 15.817746610320423,
+        "p95NearestRank": 112.64812609077458,
+        "min": 67.1220322030815,
+        "max": 112.64812609077458
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 78.82980934686061,
+        "median": 76.80579306611851,
+        "sd": 12.469099495885098,
+        "cvPct": 15.817746610320423,
+        "p95NearestRank": 112.64812609077458,
+        "min": 67.1220322030815,
+        "max": 112.64812609077458
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199921703.8,
+        "median": 199999714.0,
+        "sd": 136574.90929547296,
+        "cvPct": 0.06831419835842403,
+        "p95NearestRank": 200000000.0,
+        "min": 199608996.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-affine_chain-k32",
+      "platform": "baseline",
+      "n": 10,
+      "contract": "0x668123D59797Ca8720870cbb8a115fd26f7330c4",
+      "firstBlock": 12115527,
+      "lastBlock": 12118942,
+      "startUtc": "2026-11-12 01:17:36",
+      "endUtc": "2026-11-12 12:47:36",
+      "meanGasTargetPct": 71.7318340677926,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 71.7318340677926,
+        "median": 69.05574397127432,
+        "sd": 10.852159073088847,
+        "cvPct": 15.128790744194056,
+        "p95NearestRank": 97.38789300543782,
+        "min": 57.102728,
+        "max": 97.38789300543782
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 71.7318340677926,
+        "median": 69.05574397127432,
+        "sd": 10.852159073088847,
+        "cvPct": 15.128790744194056,
+        "p95NearestRank": 97.38789300543782,
+        "min": 57.102728,
+        "max": 97.38789300543782
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199824105.9,
+        "median": 199902154.0,
+        "sd": 233681.74439202563,
+        "cvPct": 0.11694372074857141,
+        "p95NearestRank": 200000000.0,
+        "min": 199414258.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-affine_chain-k32",
+      "platform": "zama",
+      "n": 0,
+      "contract": "0x255a1c8DAa52FF3548c9012E3Fa8E145c025F508",
+      "firstBlock": null,
+      "lastBlock": null,
+      "startUtc": null,
+      "endUtc": null,
+      "meanGasTargetPct": null,
+      "transactionWeightedTargetPct": {
+        "n": 0
+      },
+      "uniqueContainingBlocks": 0,
+      "uniqueBlockTargetPct": {
+        "n": 0
+      },
+      "gasLimit": {
+        "n": 0
+      }
+    },
+    {
+      "suite": "circuits",
+      "caseId": "circuits-w16-affine_chain-k32",
+      "platform": "fhenix",
+      "n": 10,
+      "contract": "0x4f4F6d57131FD8b1A9AE2e74D2Ea6Cc997411621",
+      "firstBlock": 12115525,
+      "lastBlock": 12118940,
+      "startUtc": "2026-11-12 01:17:12",
+      "endUtc": "2026-11-12 12:47:12",
+      "meanGasTargetPct": 81.6199426884858,
+      "transactionWeightedTargetPct": {
+        "n": 10,
+        "mean": 81.6199426884858,
+        "median": 77.82114878496037,
+        "sd": 13.971637195154402,
+        "cvPct": 17.11792085970846,
+        "p95NearestRank": 110.79195205866867,
+        "min": 69.09675678332053,
+        "max": 110.79195205866867
+      },
+      "uniqueContainingBlocks": 10,
+      "uniqueBlockTargetPct": {
+        "n": 10,
+        "mean": 81.6199426884858,
+        "median": 77.82114878496037,
+        "sd": 13.971637195154402,
+        "cvPct": 17.11792085970846,
+        "p95NearestRank": 110.79195205866867,
+        "min": 69.09675678332053,
+        "max": 110.79195205866867
+      },
+      "gasLimit": {
+        "n": 10,
+        "mean": 199882661.1,
+        "median": 199902154.0,
+        "sd": 136719.8071340311,
+        "cvPct": 0.06840003349046422,
+        "p95NearestRank": 200000000.0,
+        "min": 199608618.0,
+        "max": 200000000.0
+      }
+    }
+  ],
+  "caseMetrics": [
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c1-shared_sum",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 1,
+        "mode": "shared_sum",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 13407.47805625008,
+        "median": 11867.030999999726,
+        "sd": 6163.8717394120185,
+        "cvPct": 45.97338674396446,
+        "p95NearestRank": 24406.534800000023,
+        "min": 6088.181599999778,
+        "max": 48141.07109999936
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 73.14441249994852,
+        "median": 71.45675000036135,
+        "sd": 8.632152867387047,
+        "cvPct": 11.801520543203656,
+        "p95NearestRank": 85.50729999877512,
+        "min": 61.2265999999363,
+        "max": 104.20790000003763
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 2398.686609999958,
+        "median": 2281.333850000112,
+        "sd": 865.3151275628635,
+        "cvPct": 36.07453862273733,
+        "p95NearestRank": 4629.190799999982,
+        "min": 1665.7770999986678,
+        "max": 4629.190799999982
+      },
+      "broadcastSpreadMs": {
+        "n": 80,
+        "mean": 0.0,
+        "median": 0.0,
+        "sd": 0.0,
+        "cvPct": null,
+        "p95NearestRank": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.075177831506381,
+        "median": 0.07619517378455591,
+        "sd": 0.010363133837916145,
+        "cvPct": 13.78482676377349,
+        "p95NearestRank": 0.08885344041393098,
+        "min": 0.06150295782062031,
+        "max": 0.08885344041393098
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c1-shared_sum",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 1,
+        "mode": "shared_sum",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 9,
+      "separatelyLateValidatedWindows": 1,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 79,
+      "receiptMs": {
+        "n": 80,
+        "mean": 12161.028042500038,
+        "median": 11881.013800000073,
+        "sd": 4645.240947516075,
+        "cvPct": 38.19776528170159,
+        "p95NearestRank": 22778.60319999978,
+        "min": 2592.899299999699,
+        "max": 36632.50509999972
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 79,
+        "mean": 2721.3309253164675,
+        "median": 2489.016999999061,
+        "sd": 1671.8247176203283,
+        "cvPct": 61.434083670875474,
+        "p95NearestRank": 2952.5783000001684,
+        "min": 2408.1378999995068,
+        "max": 17330.216000000015
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 67282.21835000026,
+        "median": 66003.03855000017,
+        "sd": 2849.3587178981775,
+        "cvPct": 4.234935749406911,
+        "p95NearestRank": 74442.80190000124,
+        "min": 65184.762500000186,
+        "max": 74442.80190000124
+      },
+      "broadcastSpreadMs": {
+        "n": 80,
+        "mean": 0.0,
+        "median": 0.0,
+        "sd": 0.0,
+        "cvPct": null,
+        "p95NearestRank": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.08240735062286356,
+        "median": 0.08671899340244738,
+        "sd": 0.00875787616020855,
+        "cvPct": 10.627542438888597,
+        "p95NearestRank": 0.09105778236963992,
+        "min": 0.06437410941588063,
+        "max": 0.09105778236963992
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c1-shared_sum",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 1,
+        "mode": "shared_sum",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 14995.57708624996,
+        "median": 11967.457649999997,
+        "sd": 14677.82314041897,
+        "cvPct": 97.881015555431,
+        "p95NearestRank": 24685.164400000125,
+        "min": 1443.7123999986798,
+        "max": 120296.13530000113
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 195.35497875001528,
+        "median": 173.6823499999009,
+        "sd": 57.75529960516396,
+        "cvPct": 29.5642834263621,
+        "p95NearestRank": 313.20380000025034,
+        "min": 149.33779999997932,
+        "max": 442.9994000000879
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 58161.62414999993,
+        "median": 56944.99925000001,
+        "sd": 2353.120867721163,
+        "cvPct": 4.045830738241456,
+        "p95NearestRank": 62890.51840000041,
+        "min": 56152.23070000019,
+        "max": 62890.51840000041
+      },
+      "broadcastSpreadMs": {
+        "n": 80,
+        "mean": 0.0,
+        "median": 0.0,
+        "sd": 0.0,
+        "cvPct": null,
+        "p95NearestRank": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.07346410113246986,
+        "median": 0.07822485716975298,
+        "sd": 0.01802210326113663,
+        "cvPct": 24.531850227962803,
+        "p95NearestRank": 0.09219115315186978,
+        "min": 0.02881892808868038,
+        "max": 0.09219115315186978
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c1-shared_ordered",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 1,
+        "mode": "shared_ordered",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 1,
+        "dependencyDepth": 2
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 14200.853697499993,
+        "median": 11920.251500000712,
+        "sd": 6032.7124643921525,
+        "cvPct": 42.48133663579809,
+        "p95NearestRank": 24371.207799999975,
+        "min": 5565.48909999989,
+        "max": 36443.59880000027
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 75.15572375004267,
+        "median": 72.11619999993127,
+        "sd": 12.238449585823108,
+        "cvPct": 16.284121787618552,
+        "p95NearestRank": 91.57600000035018,
+        "min": 60.58889999985695,
+        "max": 139.25490000005811
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 3045.4301799999434,
+        "median": 2380.9839999999385,
+        "sd": 1520.525550540784,
+        "cvPct": 49.9281040992643,
+        "p95NearestRank": 5943.557799998671,
+        "min": 2139.0127999999095,
+        "max": 5943.557799998671
+      },
+      "broadcastSpreadMs": {
+        "n": 80,
+        "mean": 0.0,
+        "median": 0.0,
+        "sd": 0.0,
+        "cvPct": null,
+        "p95NearestRank": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.07055276860293021,
+        "median": 0.06811567939565202,
+        "sd": 0.007730487146331985,
+        "cvPct": 10.95702875933762,
+        "p95NearestRank": 0.08541581220825475,
+        "min": 0.05653019747966645,
+        "max": 0.08541581220825475
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c1-shared_ordered",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 1,
+        "mode": "shared_ordered",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 1,
+        "dependencyDepth": 2
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 13184.764530000011,
+        "median": 11874.618050000048,
+        "sd": 5848.247645393446,
+        "cvPct": 44.35610231860122,
+        "p95NearestRank": 24457.819800000172,
+        "min": 2059.486400000751,
+        "max": 35287.34229999967
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 2532.4743775000097,
+        "median": 2472.9762999997474,
+        "sd": 157.54116041560778,
+        "cvPct": 6.220839263579368,
+        "p95NearestRank": 2909.9610000001267,
+        "min": 2409.7406999999657,
+        "max": 3043.033999999985
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 66990.4108300001,
+        "median": 66020.16110000038,
+        "sd": 2082.2594072337156,
+        "cvPct": 3.1082947267151617,
+        "p95NearestRank": 70754.11280000024,
+        "min": 65218.846599999815,
+        "max": 70754.11280000024
+      },
+      "broadcastSpreadMs": {
+        "n": 80,
+        "mean": 0.0,
+        "median": 0.0,
+        "sd": 0.0,
+        "cvPct": null,
+        "p95NearestRank": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.07601190085952136,
+        "median": 0.0742631907711808,
+        "sd": 0.008626755784670604,
+        "cvPct": 11.34921727666544,
+        "p95NearestRank": 0.09079791412539634,
+        "min": 0.06316301745702046,
+        "max": 0.09079791412539634
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c1-shared_ordered",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 1,
+        "mode": "shared_ordered",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 1,
+        "dependencyDepth": 2
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 12394.881234999952,
+        "median": 11859.057200000156,
+        "sd": 4695.512759081323,
+        "cvPct": 37.882676486019115,
+        "p95NearestRank": 23954.60930000001,
+        "min": 2523.5762000000104,
+        "max": 25541.466099999845
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 195.0569525000188,
+        "median": 166.33259999984875,
+        "sd": 75.20204714002861,
+        "cvPct": 38.55389217158069,
+        "p95NearestRank": 312.73190000094473,
+        "min": 151.31530000036582,
+        "max": 680.4294000007212
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 57676.644679999874,
+        "median": 56771.97359999997,
+        "sd": 1656.8516779234085,
+        "cvPct": 2.8726561455090045,
+        "p95NearestRank": 60666.60589999985,
+        "min": 56333.60179999983,
+        "max": 60666.60589999985
+      },
+      "broadcastSpreadMs": {
+        "n": 80,
+        "mean": 0.0,
+        "median": 0.0,
+        "sd": 0.0,
+        "cvPct": null,
+        "p95NearestRank": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.08084116093442589,
+        "median": 0.0832641870694373,
+        "sd": 0.01069521598731171,
+        "cvPct": 13.229913899909365,
+        "p95NearestRank": 0.09253475258880241,
+        "min": 0.06499322521994122,
+        "max": 0.09253475258880241
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c4-shared_sum",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 4,
+        "mode": "shared_sum",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 11213.108762499953,
+        "median": 10836.635099999607,
+        "sd": 2874.629504787488,
+        "cvPct": 25.636329457546363,
+        "p95NearestRank": 14500.082299999893,
+        "min": 8322.454100000206,
+        "max": 22075.085599999875
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 76.14960999999167,
+        "median": 73.68504999973811,
+        "sd": 13.187634720397288,
+        "cvPct": 17.31805943641567,
+        "p95NearestRank": 101.53940000012517,
+        "min": 59.90529999998398,
+        "max": 141.5928999998141
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 3006.2430499998213,
+        "median": 2310.0704499997664,
+        "sd": 2483.635170074598,
+        "cvPct": 82.61591390871558,
+        "p95NearestRank": 10014.8236999996,
+        "min": 1434.5049000000581,
+        "max": 10014.8236999996
+      },
+      "broadcastSpreadMs": {
+        "n": 20,
+        "mean": 1.852159999992,
+        "median": 1.64879999999539,
+        "sd": 0.4321882001266724,
+        "cvPct": 23.334279982751983,
+        "p95NearestRank": 2.431499999947846,
+        "min": 1.4958000001497567,
+        "max": 3.256699999794364
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.35683842767439006,
+        "median": 0.3779093683266945,
+        "sd": 0.04919892235650524,
+        "cvPct": 13.787450717443065,
+        "p95NearestRank": 0.39134405840099074,
+        "min": 0.23230212773359404,
+        "max": 0.39134405840099074
+      },
+      "orderChangedWindows": 10,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c4-shared_sum",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 4,
+        "mode": "shared_sum",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 9329.724102500015,
+        "median": 11297.934349999763,
+        "sd": 3586.052564020886,
+        "cvPct": 38.43685541633497,
+        "p95NearestRank": 13089.105500000063,
+        "min": 1968.7355000004172,
+        "max": 15662.690300000831
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 2575.7864074999657,
+        "median": 2490.0423499997705,
+        "sd": 338.44377894538115,
+        "cvPct": 13.139434929850086,
+        "p95NearestRank": 2797.3923000004143,
+        "min": 2407.528799999971,
+        "max": 4570.393799999729
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 67228.9145699999,
+        "median": 65574.16265000007,
+        "sd": 3230.3352286515887,
+        "cvPct": 4.804979002432217,
+        "p95NearestRank": 75252.91309999954,
+        "min": 65159.77509999997,
+        "max": 75252.91309999954
+      },
+      "broadcastSpreadMs": {
+        "n": 20,
+        "mean": 2.1168749999953436,
+        "median": 2.0411999999778345,
+        "sd": 0.33792835560112183,
+        "cvPct": 15.963547946943734,
+        "p95NearestRank": 2.7260999996215105,
+        "min": 1.670099999755621,
+        "max": 2.8713999995961785
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.42547354536159804,
+        "median": 0.43588028332875306,
+        "sd": 0.05834989156797878,
+        "cvPct": 13.714105660409237,
+        "p95NearestRank": 0.5167458768119642,
+        "min": 0.29403389388238466,
+        "max": 0.5167458768119642
+      },
+      "orderChangedWindows": 10,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c4-shared_sum",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 4,
+        "mode": "shared_sum",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 11793.958741250002,
+        "median": 11727.317899999907,
+        "sd": 6526.510571174075,
+        "cvPct": 55.3377429441673,
+        "p95NearestRank": 24884.23310000077,
+        "min": 2031.623200000031,
+        "max": 25234.393900000025
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 186.15623000002597,
+        "median": 166.8132499998901,
+        "sd": 52.51700651957476,
+        "cvPct": 28.211253805240595,
+        "p95NearestRank": 308.7300000000396,
+        "min": 152.0683000003919,
+        "max": 389.21710000000894
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 57640.54503999998,
+        "median": 56834.76200000013,
+        "sd": 1713.9940197298317,
+        "cvPct": 2.9735909307248845,
+        "p95NearestRank": 60872.80209999997,
+        "min": 56536.699400000274,
+        "max": 60872.80209999997
+      },
+      "broadcastSpreadMs": {
+        "n": 20,
+        "mean": 1.8670099998824299,
+        "median": 1.7199000003747642,
+        "sd": 0.3859590390411078,
+        "cvPct": 20.67257481563637,
+        "p95NearestRank": 2.4778999984264374,
+        "min": 1.490199999883771,
+        "max": 2.7537000002339482
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.37061106141970984,
+        "median": 0.3322760424066096,
+        "sd": 0.13542676165146272,
+        "cvPct": 36.541478587465726,
+        "p95NearestRank": 0.5747755097495478,
+        "min": 0.16424123053093373,
+        "max": 0.5747755097495478
+      },
+      "orderChangedWindows": 10,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c4-shared_ordered",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 4,
+        "mode": "shared_ordered",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 1,
+        "dependencyDepth": 2
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 13460.754901249938,
+        "median": 11063.394799999893,
+        "sd": 5909.503719024161,
+        "cvPct": 43.90172588667681,
+        "p95NearestRank": 23878.134499999695,
+        "min": 8418.93889999995,
+        "max": 24403.893000001088
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 73.67807500007476,
+        "median": 70.96549999946728,
+        "sd": 9.970472660889282,
+        "cvPct": 13.532482574876129,
+        "p95NearestRank": 91.20750000141561,
+        "min": 61.06269999966025,
+        "max": 116.85829999996349
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 2504.0858399999443,
+        "median": 2478.0270000002347,
+        "sd": 498.6682693040495,
+        "cvPct": 19.914184303844014,
+        "p95NearestRank": 3639.3997999988496,
+        "min": 1688.3948999997228,
+        "max": 3639.3997999988496
+      },
+      "broadcastSpreadMs": {
+        "n": 20,
+        "mean": 1.793010000186041,
+        "median": 1.6332000000402331,
+        "sd": 0.3600733125849259,
+        "cvPct": 20.082058245495844,
+        "p95NearestRank": 2.4983000000938773,
+        "min": 1.4554999999236315,
+        "max": 2.7981000002473593
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.3149709487923267,
+        "median": 0.36502307863061756,
+        "sd": 0.08097275124682898,
+        "cvPct": 25.708006264481764,
+        "p95NearestRank": 0.38629375670098903,
+        "min": 0.17292952073860843,
+        "max": 0.38629375670098903
+      },
+      "orderChangedWindows": 10,
+      "finalDiffersFromPlannedOrderWindows": 10
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c4-shared_ordered",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 4,
+        "mode": "shared_ordered",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 1,
+        "dependencyDepth": 2
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 9445.979741249947,
+        "median": 11194.160799999954,
+        "sd": 5106.411247831678,
+        "cvPct": 54.059095908625864,
+        "p95NearestRank": 13932.430999999866,
+        "min": 2074.2944000009447,
+        "max": 24684.944099999964
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 2509.073707499975,
+        "median": 2476.0280000003986,
+        "sd": 108.03644002672632,
+        "cvPct": 4.305829665497278,
+        "p95NearestRank": 2726.564400000032,
+        "min": 2421.970100000035,
+        "max": 3042.8505000000587
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 67263.44318000025,
+        "median": 66163.51205000025,
+        "sd": 2353.6401573838475,
+        "cvPct": 3.4991371926729826,
+        "p95NearestRank": 72016.67920000106,
+        "min": 65102.52369999979,
+        "max": 72016.67920000106
+      },
+      "broadcastSpreadMs": {
+        "n": 20,
+        "mean": 1.972830000030808,
+        "median": 1.9262000001617707,
+        "sd": 0.23683859506183927,
+        "cvPct": 12.005017921368834,
+        "p95NearestRank": 2.3148999996483326,
+        "min": 1.64269999996759,
+        "max": 2.4068999998271465
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.41349109877528256,
+        "median": 0.43534497226566016,
+        "sd": 0.0868559290193121,
+        "cvPct": 21.00551360756502,
+        "p95NearestRank": 0.5279618564453588,
+        "min": 0.2611455202433179,
+        "max": 0.5279618564453588
+      },
+      "orderChangedWindows": 10,
+      "finalDiffersFromPlannedOrderWindows": 10
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c4-shared_ordered",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 4,
+        "mode": "shared_ordered",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 1,
+        "dependencyDepth": 2
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 11240.37856999992,
+        "median": 12221.570799999987,
+        "sd": 6923.071080949288,
+        "cvPct": 61.591084658186354,
+        "p95NearestRank": 14751.202700000256,
+        "min": 1501.9765999999363,
+        "max": 35646.29059999995
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 188.30216875006445,
+        "median": 166.2835000003688,
+        "sd": 51.32960138548258,
+        "cvPct": 27.259166331542854,
+        "p95NearestRank": 312.7680999999866,
+        "min": 151.38870000001043,
+        "max": 354.2532999999821
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 58336.33201000003,
+        "median": 57489.93240000028,
+        "sd": 2387.0647714003007,
+        "cvPct": 4.091900688907059,
+        "p95NearestRank": 63660.73739999905,
+        "min": 56295.27780000004,
+        "max": 63660.73739999905
+      },
+      "broadcastSpreadMs": {
+        "n": 20,
+        "mean": 1.9645800001395402,
+        "median": 1.9355499998200685,
+        "sd": 0.41691833812222934,
+        "cvPct": 21.22175417099922,
+        "p95NearestRank": 2.667900000233203,
+        "min": 1.4472999998833984,
+        "max": 3.0175999999046326
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.3789294152513918,
+        "median": 0.36161771855210456,
+        "sd": 0.12234437097687141,
+        "cvPct": 32.28684975424906,
+        "p95NearestRank": 0.5479816425053802,
+        "min": 0.16049400310947484,
+        "max": 0.5479816425053802
+      },
+      "orderChangedWindows": 10,
+      "finalDiffersFromPlannedOrderWindows": 10
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_linear-n2",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_linear",
+        "size": 2,
+        "inputCount": 2,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 13432.674290000181,
+        "median": 11326.621650000336,
+        "sd": 5080.482180870982,
+        "cvPct": 37.8218221568366,
+        "p95NearestRank": 23175.76379999984,
+        "min": 10439.691000000108,
+        "max": 23175.76379999984
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 13830.730480000144,
+        "median": 11767.086900000228,
+        "sd": 4960.959463204525,
+        "cvPct": 35.869106627291266,
+        "p95NearestRank": 23323.49739999976,
+        "min": 10599.871600000188,
+        "max": 23323.49739999976
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 398.0561899999622,
+        "median": 169.8430499995593,
+        "sd": 490.37063116031936,
+        "cvPct": 123.19130903613531,
+        "p95NearestRank": 1420.3686999999918,
+        "min": 147.73359999991953,
+        "max": 1420.3686999999918
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 10999.967549999757,
+        "median": 9064.372799999779,
+        "sd": 5082.952730405977,
+        "cvPct": 46.20879750146253,
+        "p95NearestRank": 19572.884599999525,
+        "min": 4724.645399999805,
+        "max": 19572.884599999525
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_linear-n2",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_linear",
+        "size": 2,
+        "inputCount": 2,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 9667.832410000125,
+        "median": 7674.477400000207,
+        "sd": 4880.1590731639635,
+        "cvPct": 50.478316816043154,
+        "p95NearestRank": 20001.652800000273,
+        "min": 6087.225100000389,
+        "max": 20001.652800000273
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 14560.264060000121,
+        "median": 12240.884499999695,
+        "sd": 5361.325125144504,
+        "cvPct": 36.82162015092232,
+        "p95NearestRank": 24996.56650000019,
+        "min": 8934.724100000225,
+        "max": 24996.56650000019
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 4892.431649999996,
+        "median": 4850.982550000306,
+        "sd": 1595.0862768913535,
+        "cvPct": 32.60313870488829,
+        "p95NearestRank": 8963.326600000262,
+        "min": 2765.7406999999657,
+        "max": 8963.326600000262
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 24456.830230000058,
+        "median": 21415.733450000174,
+        "sd": 11414.77896549557,
+        "cvPct": 46.67317415277141,
+        "p95NearestRank": 53064.50190000003,
+        "min": 15734.746600000188,
+        "max": 53064.50190000003
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_linear-n2",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_linear",
+        "size": 2,
+        "inputCount": 2,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 15569.038440000033,
+        "median": 10708.144800000358,
+        "sd": 15160.602859899007,
+        "cvPct": 97.37661653495779,
+        "p95NearestRank": 58689.59960000031,
+        "min": 10188.844000000507,
+        "max": 58689.59960000031
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 15966.179169999901,
+        "median": 11097.650349999778,
+        "sd": 15158.731591751935,
+        "cvPct": 94.94276263813235,
+        "p95NearestRank": 59080.53550000023,
+        "min": 10540.445000000298,
+        "max": 59080.53550000023
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 397.1407299998682,
+        "median": 392.77114999992773,
+        "sd": 54.68857213578206,
+        "cvPct": 13.770577531999855,
+        "p95NearestRank": 536.9290000000037,
+        "min": 351.6009999997914,
+        "max": 536.9290000000037
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 15756.470700000064,
+        "median": 13355.750050000031,
+        "sd": 4401.539394196521,
+        "cvPct": 27.93480518576094,
+        "p95NearestRank": 24005.5493999999,
+        "min": 12336.447800000198,
+        "max": 24005.5493999999
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_tree-n2",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_tree",
+        "size": 2,
+        "inputCount": 2,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 14012.142470000126,
+        "median": 11645.625900000101,
+        "sd": 5445.529431130202,
+        "cvPct": 38.86293222317024,
+        "p95NearestRank": 24478.499199999962,
+        "min": 10699.099799999967,
+        "max": 24478.499199999962
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 14175.541279999912,
+        "median": 11828.732249999419,
+        "sd": 5448.766070359013,
+        "cvPct": 38.43779904226025,
+        "p95NearestRank": 24676.537599999923,
+        "min": 10839.114599999972,
+        "max": 24676.537599999923
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 163.39880999978632,
+        "median": 152.65745000028983,
+        "sd": 29.677381354311862,
+        "cvPct": 18.162544362685797,
+        "p95NearestRank": 228.72739999974146,
+        "min": 137.48529999889433,
+        "max": 228.72739999974146
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 9764.734100000094,
+        "median": 8964.2952500002,
+        "sd": 2910.2872878762814,
+        "cvPct": 29.804060797479913,
+        "p95NearestRank": 15602.592900000047,
+        "min": 6057.851200000383,
+        "max": 15602.592900000047
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_tree-n2",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_tree",
+        "size": 2,
+        "inputCount": 2,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 8812.239199999696,
+        "median": 6934.493899999419,
+        "sd": 4912.680509566194,
+        "cvPct": 55.748379022284865,
+        "p95NearestRank": 22151.644700000063,
+        "min": 5950.802499999292,
+        "max": 22151.644700000063
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 13728.400429999874,
+        "median": 11603.823649999918,
+        "sd": 5249.429066050625,
+        "cvPct": 38.23773274109454,
+        "p95NearestRank": 26053.69519999996,
+        "min": 9779.114899999462,
+        "max": 26053.69519999996
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 4916.161230000178,
+        "median": 4820.7389000002295,
+        "sd": 1614.6823952289963,
+        "cvPct": 32.84437429300783,
+        "p95NearestRank": 9296.902299999958,
+        "min": 3828.31240000017,
+        "max": 9296.902299999958
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 24922.380020000062,
+        "median": 23429.64530000044,
+        "sd": 9102.589279445272,
+        "cvPct": 36.523756046334654,
+        "p95NearestRank": 38944.82129999995,
+        "min": 16038.805399999954,
+        "max": 38944.82129999995
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_tree-n2",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_tree",
+        "size": 2,
+        "inputCount": 2,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 12128.027970000112,
+        "median": 10802.064149999933,
+        "sd": 4250.386043177991,
+        "cvPct": 35.045978238933365,
+        "p95NearestRank": 24185.33090000041,
+        "min": 10297.613500000909,
+        "max": 24185.33090000041
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 12541.291120000173,
+        "median": 11314.237850000092,
+        "sd": 4229.063771848393,
+        "cvPct": 33.72111955127261,
+        "p95NearestRank": 24537.841699999757,
+        "min": 10667.32590000052,
+        "max": 24537.841699999757
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 413.26315000005997,
+        "median": 384.9492999999784,
+        "sd": 78.53471767738942,
+        "cvPct": 19.003561696071383,
+        "p95NearestRank": 580.7849000003189,
+        "min": 340.91990000009537,
+        "max": 580.7849000003189
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 17310.528319999983,
+        "median": 13317.549749999947,
+        "sd": 5808.079476310096,
+        "cvPct": 33.55229470148316,
+        "p95NearestRank": 25926.56020000018,
+        "min": 12228.20530000003,
+        "max": 25926.56020000018
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_linear-n8",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_linear",
+        "size": 8,
+        "inputCount": 8,
+        "additions": 7,
+        "multiplications": 0,
+        "dependencyDepth": 7
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 13809.17853000001,
+        "median": 11946.270299999975,
+        "sd": 5084.828752313806,
+        "cvPct": 36.822094386477616,
+        "p95NearestRank": 23447.54450000031,
+        "min": 10154.035600000061,
+        "max": 23447.54450000031
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 13970.944470000022,
+        "median": 12104.100550000265,
+        "sd": 5094.690600205056,
+        "cvPct": 36.46632918157356,
+        "p95NearestRank": 23637.52870000014,
+        "min": 10318.222099999897,
+        "max": 23637.52870000014
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 161.76594000001205,
+        "median": 158.72514999983832,
+        "sd": 20.592272867821315,
+        "cvPct": 12.729671566103335,
+        "p95NearestRank": 201.19340000022203,
+        "min": 136.2412999998778,
+        "max": 201.19340000022203
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 9196.80627000007,
+        "median": 7988.798550000007,
+        "sd": 3729.1339211043073,
+        "cvPct": 40.54814042640782,
+        "p95NearestRank": 18706.14110000059,
+        "min": 6495.312899999786,
+        "max": 18706.14110000059
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_linear-n8",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_linear",
+        "size": 8,
+        "inputCount": 8,
+        "additions": 7,
+        "multiplications": 0,
+        "dependencyDepth": 7
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 9411.959539999929,
+        "median": 7341.044449999696,
+        "sd": 5301.637405943152,
+        "cvPct": 56.32873137003723,
+        "p95NearestRank": 19496.360199999996,
+        "min": 5083.2304,
+        "max": 19496.360199999996
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 18182.19912999973,
+        "median": 13086.386599999969,
+        "sd": 8063.356800085727,
+        "cvPct": 44.3475332243039,
+        "p95NearestRank": 35297.48320000013,
+        "min": 11626.053799999878,
+        "max": 35297.48320000013
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 8770.239589999803,
+        "median": 5774.430649999995,
+        "sd": 7612.4082068405305,
+        "cvPct": 86.79817841602092,
+        "p95NearestRank": 29181.803299999796,
+        "min": 4823.485599998385,
+        "max": 29181.803299999796
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 21495.06800000004,
+        "median": 17206.435349999694,
+        "sd": 8126.710998224428,
+        "cvPct": 37.80732863103486,
+        "p95NearestRank": 40817.20550000016,
+        "min": 16038.266199999489,
+        "max": 40817.20550000016
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_linear-n8",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_linear",
+        "size": 8,
+        "inputCount": 8,
+        "additions": 7,
+        "multiplications": 0,
+        "dependencyDepth": 7
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 11541.75903000019,
+        "median": 10604.448149999604,
+        "sd": 3870.923605545154,
+        "cvPct": 33.53841988455628,
+        "p95NearestRank": 22454.583300000057,
+        "min": 9495.158100000583,
+        "max": 22454.583300000057
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 12024.224660000076,
+        "median": 10979.09909999976,
+        "sd": 3860.7208073848756,
+        "cvPct": 32.107856569147394,
+        "p95NearestRank": 22815.834900000133,
+        "min": 9861.511599999852,
+        "max": 22815.834900000133
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 482.46562999988674,
+        "median": 371.5134000000544,
+        "sd": 346.35909677327743,
+        "cvPct": 71.78938254593571,
+        "p95NearestRank": 1467.5986000000266,
+        "min": 361.251600000076,
+        "max": 1467.5986000000266
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 13171.575309999893,
+        "median": 13206.074100000085,
+        "sd": 1052.8355694204124,
+        "cvPct": 7.993239568095527,
+        "p95NearestRank": 14528.117399999872,
+        "min": 11514.42109999992,
+        "max": 14528.117399999872
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_tree-n8",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_tree",
+        "size": 8,
+        "inputCount": 8,
+        "additions": 7,
+        "multiplications": 0,
+        "dependencyDepth": 3
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 11420.591670000123,
+        "median": 11395.543550000064,
+        "sd": 791.4186047385421,
+        "cvPct": 6.929751343947083,
+        "p95NearestRank": 12719.956199999899,
+        "min": 10164.761500000022,
+        "max": 12719.956199999899
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 11585.423099999989,
+        "median": 11552.384549999893,
+        "sd": 795.4013788933894,
+        "cvPct": 6.865535872344535,
+        "p95NearestRank": 12867.395700000226,
+        "min": 10310.725200000219,
+        "max": 12867.395700000226
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 164.83142999986666,
+        "median": 155.57540000020526,
+        "sd": 24.52420860046203,
+        "cvPct": 14.878356998105197,
+        "p95NearestRank": 211.80319999996573,
+        "min": 142.36929999999847,
+        "max": 211.80319999996573
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 12650.026149999845,
+        "median": 8674.265599999577,
+        "sd": 10011.763915846384,
+        "cvPct": 79.14421517497422,
+        "p95NearestRank": 40025.50780000002,
+        "min": 7229.935399999842,
+        "max": 40025.50780000002
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_tree-n8",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_tree",
+        "size": 8,
+        "inputCount": 8,
+        "additions": 7,
+        "multiplications": 0,
+        "dependencyDepth": 3
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 9,
+      "separatelyLateValidatedWindows": 1,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 9,
+      "receiptMs": {
+        "n": 9,
+        "mean": 6423.876677777644,
+        "median": 6236.536100000143,
+        "sd": 950.0220569942855,
+        "cvPct": 14.788921155362967,
+        "p95NearestRank": 8444.92610000004,
+        "min": 4882.058799998835,
+        "max": 8444.92610000004
+      },
+      "completionMs": {
+        "n": 9,
+        "mean": 11253.525966666664,
+        "median": 11039.318800000008,
+        "sd": 964.4846324801036,
+        "cvPct": 8.57051057008213,
+        "p95NearestRank": 13316.264699999942,
+        "min": 9670.88089999929,
+        "max": 13316.264699999942
+      },
+      "postReceiptMs": {
+        "n": 9,
+        "mean": 4829.649288889021,
+        "median": 4834.337299999781,
+        "sd": 36.32611621482844,
+        "cvPct": 0.7521481176366047,
+        "p95NearestRank": 4871.338599999901,
+        "min": 4770.012299999595,
+        "max": 4871.338599999901
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 25660.911250000052,
+        "median": 26536.349749999936,
+        "sd": 8567.82881308223,
+        "cvPct": 33.38863818829587,
+        "p95NearestRank": 41705.19249999989,
+        "min": 16893.860099999234,
+        "max": 41705.19249999989
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_tree-n8",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_tree",
+        "size": 8,
+        "inputCount": 8,
+        "additions": 7,
+        "multiplications": 0,
+        "dependencyDepth": 3
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 11571.480249999991,
+        "median": 10784.735650000162,
+        "sd": 3693.3429412534183,
+        "cvPct": 31.91763595892082,
+        "p95NearestRank": 21923.56409999996,
+        "min": 9566.6915,
+        "max": 21923.56409999996
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 11946.624079999996,
+        "median": 11170.281100000255,
+        "sd": 3686.192717792065,
+        "cvPct": 30.855517785674447,
+        "p95NearestRank": 22272.288900000043,
+        "min": 9920.075200000007,
+        "max": 22272.288900000043
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 375.1438300000038,
+        "median": 361.41110000014305,
+        "sd": 34.30307128687992,
+        "cvPct": 9.143978534014426,
+        "p95NearestRank": 450.1943999999203,
+        "min": 343.16409999970347,
+        "max": 450.1943999999203
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 19893.96692000005,
+        "median": 20508.058450000128,
+        "sd": 5291.553907434335,
+        "cvPct": 26.59878710321251,
+        "p95NearestRank": 26198.145500000006,
+        "min": 12818.351400000043,
+        "max": 26198.145500000006
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_linear-n32",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_linear",
+        "size": 32,
+        "inputCount": 32,
+        "additions": 31,
+        "multiplications": 0,
+        "dependencyDepth": 31
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 10978.463689999999,
+        "median": 11076.305250000063,
+        "sd": 782.5385233906413,
+        "cvPct": 7.127941991586997,
+        "p95NearestRank": 12043.538900000043,
+        "min": 9518.454900000244,
+        "max": 12043.538900000043
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 11245.892560000008,
+        "median": 11249.691699999908,
+        "sd": 626.4640220525553,
+        "cvPct": 5.570602944232244,
+        "p95NearestRank": 12221.415299999993,
+        "min": 10290.140899999999,
+        "max": 12221.415299999993
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 267.42887000000917,
+        "median": 169.52599999983795,
+        "sd": 337.8058894438406,
+        "cvPct": 126.31616378733868,
+        "p95NearestRank": 1227.8925000000745,
+        "min": 140.1260000001639,
+        "max": 1227.8925000000745
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 11614.306599999982,
+        "median": 10989.870849999832,
+        "sd": 3904.449081791913,
+        "cvPct": 33.617582316898016,
+        "p95NearestRank": 21456.483399999794,
+        "min": 6634.577100000344,
+        "max": 21456.483399999794
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_linear-n32",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_linear",
+        "size": 32,
+        "inputCount": 32,
+        "additions": 31,
+        "multiplications": 0,
+        "dependencyDepth": 31
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 11420.063230000058,
+        "median": 11687.626599999843,
+        "sd": 8941.753147687436,
+        "cvPct": 78.29863081841614,
+        "p95NearestRank": 33686.92690000008,
+        "min": 3241.402299999725,
+        "max": 33686.92690000008
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 20715.909469999977,
+        "median": 20312.699599999934,
+        "sd": 10603.815033484512,
+        "cvPct": 51.186818753193386,
+        "p95NearestRank": 46994.09450000012,
+        "min": 11229.011500000022,
+        "max": 46994.09450000012
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 9295.84623999992,
+        "median": 8582.771100000013,
+        "sd": 2195.1594912488454,
+        "cvPct": 23.61441265888305,
+        "p95NearestRank": 13307.167600000044,
+        "min": 6920.713200000115,
+        "max": 13307.167600000044
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 27745.413289999902,
+        "median": 28276.080499999807,
+        "sd": 6734.3571532243495,
+        "cvPct": 24.271965541964263,
+        "p95NearestRank": 35693.40839999984,
+        "min": 19235.488400000148,
+        "max": 35693.40839999984
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_linear-n32",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_linear",
+        "size": 32,
+        "inputCount": 32,
+        "additions": 31,
+        "multiplications": 0,
+        "dependencyDepth": 31
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 12425.890150000074,
+        "median": 8171.018299999647,
+        "sd": 11217.414975713533,
+        "cvPct": 90.27453840571306,
+        "p95NearestRank": 42060.29619999998,
+        "min": 6238.272400001064,
+        "max": 42060.29619999998
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 14897.892989999988,
+        "median": 10708.925799999386,
+        "sd": 11296.746477974151,
+        "cvPct": 75.82781327236638,
+        "p95NearestRank": 44673.33939999994,
+        "min": 8705.326200000942,
+        "max": 44673.33939999994
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 2472.0028399999137,
+        "median": 2564.687450000085,
+        "sd": 367.3712837912327,
+        "cvPct": 14.861280814355599,
+        "p95NearestRank": 2677.8204999999143,
+        "min": 1434.7559000011533,
+        "max": 2677.8204999999143
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 25323.728710000036,
+        "median": 20974.38814999978,
+        "sd": 9797.152122638769,
+        "cvPct": 38.68763654370532,
+        "p95NearestRank": 50628.81330000004,
+        "min": 18005.433699999994,
+        "max": 50628.81330000004
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_tree-n32",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_tree",
+        "size": 32,
+        "inputCount": 32,
+        "additions": 31,
+        "multiplications": 0,
+        "dependencyDepth": 5
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 12956.099409999853,
+        "median": 11758.796899999725,
+        "sd": 3587.7626751534344,
+        "cvPct": 27.6916883825722,
+        "p95NearestRank": 23080.161799999885,
+        "min": 11359.01519999979,
+        "max": 23080.161799999885
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 13221.688279999935,
+        "median": 11973.544049999677,
+        "sd": 3557.898314745858,
+        "cvPct": 26.909561316218504,
+        "p95NearestRank": 23220.340199999977,
+        "min": 11518.598699999973,
+        "max": 23220.340199999977
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 265.5888700000825,
+        "median": 158.4077999999863,
+        "sd": 349.537749107122,
+        "cvPct": 131.60858326141957,
+        "p95NearestRank": 1260.0151999997906,
+        "min": 140.17840000009164,
+        "max": 1260.0151999997906
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 8998.178530000088,
+        "median": 7800.775449999841,
+        "sd": 4423.399751249411,
+        "cvPct": 49.158835163157924,
+        "p95NearestRank": 20067.83410000056,
+        "min": 4249.551300000021,
+        "max": 20067.83410000056
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_tree-n32",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_tree",
+        "size": 32,
+        "inputCount": 32,
+        "additions": 31,
+        "multiplications": 0,
+        "dependencyDepth": 5
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 8318.190709999704,
+        "median": 7371.022899999865,
+        "sd": 5260.432763105072,
+        "cvPct": 63.240107692905475,
+        "p95NearestRank": 14978.210599999875,
+        "min": 1993.395499999635,
+        "max": 14978.210599999875
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 15118.910319999975,
+        "median": 18302.756000000052,
+        "sd": 6384.543832942022,
+        "cvPct": 42.228862383661735,
+        "p95NearestRank": 21341.031099999993,
+        "min": 6664.914499999955,
+        "max": 21341.031099999993
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 6800.719610000271,
+        "median": 5029.678150000749,
+        "sd": 3409.115747845974,
+        "cvPct": 50.12875024038579,
+        "p95NearestRank": 14600.03910000017,
+        "min": 4646.770800000057,
+        "max": 14600.03910000017
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 32351.879590000055,
+        "median": 33122.88879999984,
+        "sd": 7369.061861334961,
+        "cvPct": 22.777847700733695,
+        "p95NearestRank": 41828.425300000235,
+        "min": 20752.468300000764,
+        "max": 41828.425300000235
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-sum_tree-n32",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_tree",
+        "size": 32,
+        "inputCount": 32,
+        "additions": 31,
+        "multiplications": 0,
+        "dependencyDepth": 5
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 14017.097910000035,
+        "median": 8365.517449999461,
+        "sd": 12292.78085461244,
+        "cvPct": 87.69847320423268,
+        "p95NearestRank": 46087.72060000058,
+        "min": 6186.523699999787,
+        "max": 46087.72060000058
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 14634.296040000065,
+        "median": 8878.319249999942,
+        "sd": 12159.769794397278,
+        "cvPct": 83.09091029155663,
+        "p95NearestRank": 46502.6978000002,
+        "min": 7707.057599999942,
+        "max": 46502.6978000002
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 617.1981300000305,
+        "median": 400.6150000006892,
+        "sd": 463.1339418526646,
+        "cvPct": 75.03813108647003,
+        "p95NearestRank": 1520.533900000155,
+        "min": 372.3107000000018,
+        "max": 1520.533900000155
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 21780.73342000014,
+        "median": 18587.543050000007,
+        "sd": 8242.263279466808,
+        "cvPct": 37.84199145423798,
+        "p95NearestRank": 40644.99430000037,
+        "min": 14981.44840000011,
+        "max": 40644.99430000037
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-affine_chain-k1",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 1,
+        "inputCount": 2,
+        "additions": 1,
+        "multiplications": 1,
+        "dependencyDepth": 2
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 13096.750979999993,
+        "median": 11244.902149999718,
+        "sd": 6356.797393357456,
+        "cvPct": 48.537208984616875,
+        "p95NearestRank": 24621.72279999999,
+        "min": 3711.470999999903,
+        "max": 24621.72279999999
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 13259.731799999878,
+        "median": 11413.815049999714,
+        "sd": 6377.687598577193,
+        "cvPct": 48.098164388040274,
+        "p95NearestRank": 24765.74179999999,
+        "min": 3802.144699999597,
+        "max": 24765.74179999999
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 162.98081999988352,
+        "median": 147.60919999994803,
+        "sd": 44.52504710860616,
+        "cvPct": 27.31919443566303,
+        "p95NearestRank": 238.46460000006482,
+        "min": 90.67369999969378,
+        "max": 238.46460000006482
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 13741.573840000055,
+        "median": 12360.30445000017,
+        "sd": 4241.94466335,
+        "cvPct": 30.869423784648404,
+        "p95NearestRank": 23595.2647,
+        "min": 9667.429600000032,
+        "max": 23595.2647
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-affine_chain-k1",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 1,
+        "inputCount": 2,
+        "additions": 1,
+        "multiplications": 1,
+        "dependencyDepth": 2
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 10860.354280000018,
+        "median": 7481.671900000161,
+        "sd": 6296.453093340971,
+        "cvPct": 57.97649810500436,
+        "p95NearestRank": 20769.957500000484,
+        "min": 3745.2309999996796,
+        "max": 20769.957500000484
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 15592.813920000213,
+        "median": 11912.093450000277,
+        "sd": 6575.556274470328,
+        "cvPct": 42.17042740461459,
+        "p95NearestRank": 25589.49430000037,
+        "min": 8530.49589999998,
+        "max": 25589.49430000037
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 4732.459640000196,
+        "median": 4866.38599999994,
+        "sd": 699.1114090502637,
+        "cvPct": 14.772686134312913,
+        "p95NearestRank": 6160.752800000017,
+        "min": 3864.115300000005,
+        "max": 6160.752800000017
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 22794.875760000097,
+        "median": 19683.766500000376,
+        "sd": 8552.305523761268,
+        "cvPct": 37.51854414038373,
+        "p95NearestRank": 39613.07499999998,
+        "min": 15479.749299999326,
+        "max": 39613.07499999998
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-affine_chain-k1",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 1,
+        "inputCount": 2,
+        "additions": 1,
+        "multiplications": 1,
+        "dependencyDepth": 2
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 14951.700430000074,
+        "median": 11772.839300000138,
+        "sd": 7854.473395998623,
+        "cvPct": 52.5323085007702,
+        "p95NearestRank": 34885.76519999979,
+        "min": 9662.594000000507,
+        "max": 34885.76519999979
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 15650.89721000013,
+        "median": 12658.519700000383,
+        "sd": 7741.289096256667,
+        "cvPct": 49.462270388629065,
+        "p95NearestRank": 35326.10789999971,
+        "min": 10022.202200000174,
+        "max": 35326.10789999971
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 699.1967800000566,
+        "median": 382.13455000007525,
+        "sd": 524.4838298138934,
+        "cvPct": 75.01233484139486,
+        "p95NearestRank": 1502.1194000001997,
+        "min": 338.8876000000164,
+        "max": 1502.1194000001997
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 26044.779509999957,
+        "median": 19975.783199999947,
+        "sd": 19682.97469497677,
+        "cvPct": 75.57358927695833,
+        "p95NearestRank": 80221.07520000031,
+        "min": 12862.598799999803,
+        "max": 80221.07520000031
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-affine_chain-k8",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 8,
+        "inputCount": 2,
+        "additions": 8,
+        "multiplications": 8,
+        "dependencyDepth": 16
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 14842.857039999963,
+        "median": 11864.622900000075,
+        "sd": 5753.894471529781,
+        "cvPct": 38.76541056768,
+        "p95NearestRank": 24290.072799999965,
+        "min": 9473.332799999975,
+        "max": 24290.072799999965
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 15121.062519999989,
+        "median": 12325.222050000215,
+        "sd": 5709.5247941123225,
+        "cvPct": 37.758753966929085,
+        "p95NearestRank": 24474.841999999946,
+        "min": 9632.238199999556,
+        "max": 24474.841999999946
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 278.2054800000275,
+        "median": 167.3843999998644,
+        "sd": 357.74985776200435,
+        "cvPct": 128.59195216498577,
+        "p95NearestRank": 1295.0724999997765,
+        "min": 139.8393999999389,
+        "max": 1295.0724999997765
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 9920.809520000057,
+        "median": 7740.175200000289,
+        "sd": 5370.569067957949,
+        "cvPct": 54.13438346065451,
+        "p95NearestRank": 18190.634800000116,
+        "min": 3726.693100000266,
+        "max": 18190.634800000116
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-affine_chain-k8",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 8,
+        "inputCount": 2,
+        "additions": 8,
+        "multiplications": 8,
+        "dependencyDepth": 16
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 7427.358890000067,
+        "median": 6755.352799999993,
+        "sd": 2171.809568816521,
+        "cvPct": 29.240670889628994,
+        "p95NearestRank": 12605.927299999981,
+        "min": 4221.893399999477,
+        "max": 12605.927299999981
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 20936.662640000064,
+        "median": 15157.901500000153,
+        "sd": 16931.803251828675,
+        "cvPct": 80.87154835976582,
+        "p95NearestRank": 68003.38859999995,
+        "min": 12751.904299999587,
+        "max": 68003.38859999995
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 13509.303749999997,
+        "median": 7570.367749999743,
+        "sd": 15389.897083821836,
+        "cvPct": 113.92072729004883,
+        "p95NearestRank": 55397.461299999966,
+        "min": 5944.767699999735,
+        "max": 55397.461299999966
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 40036.607139999745,
+        "median": 27815.152199999196,
+        "sd": 28467.88600786382,
+        "cvPct": 71.10464158043538,
+        "p95NearestRank": 111957.40950000007,
+        "min": 21591.482399999164,
+        "max": 111957.40950000007
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-affine_chain-k8",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 8,
+        "inputCount": 2,
+        "additions": 8,
+        "multiplications": 8,
+        "dependencyDepth": 16
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 16686.351089999873,
+        "median": 11542.933949999977,
+        "sd": 8600.279936987481,
+        "cvPct": 51.54080655861081,
+        "p95NearestRank": 34902.28819999844,
+        "min": 10027.451899999753,
+        "max": 34902.28819999844
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 18459.878869999993,
+        "median": 13582.129699999932,
+        "sd": 8437.197726160999,
+        "cvPct": 45.70559636700911,
+        "p95NearestRank": 36056.120999999344,
+        "min": 11556.417600000277,
+        "max": 36056.120999999344
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 1773.5277800001204,
+        "median": 1488.734499999904,
+        "sd": 548.2477595897627,
+        "cvPct": 30.9128374402867,
+        "p95NearestRank": 2579.75810000021,
+        "min": 1153.832800000906,
+        "max": 2579.75810000021
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 22610.994150000042,
+        "median": 15754.647549999878,
+        "sd": 14879.189160389307,
+        "cvPct": 65.80510817738316,
+        "p95NearestRank": 50287.67640000023,
+        "min": 11749.36920000054,
+        "max": 50287.67640000023
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-affine_chain-k16",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 16,
+        "inputCount": 2,
+        "additions": 16,
+        "multiplications": 16,
+        "dependencyDepth": 32
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 16008.487039999989,
+        "median": 11354.26689999958,
+        "sd": 8512.56493298371,
+        "cvPct": 53.17532451201408,
+        "p95NearestRank": 34562.92860000022,
+        "min": 10379.43299999996,
+        "max": 34562.92860000022
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 16176.083180000143,
+        "median": 11527.744249999872,
+        "sd": 8512.636576951962,
+        "cvPct": 52.62483187201246,
+        "p95NearestRank": 34733.70589999948,
+        "min": 10540.742000000086,
+        "max": 34733.70589999948
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 167.59614000015426,
+        "median": 165.22505000047386,
+        "sd": 19.920441671586826,
+        "cvPct": 11.885978800924944,
+        "p95NearestRank": 204.69219999946654,
+        "min": 144.07790000084788,
+        "max": 204.69219999946654
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 9732.264590000035,
+        "median": 7665.077900000382,
+        "sd": 3676.18003821672,
+        "cvPct": 37.77312057456821,
+        "p95NearestRank": 16505.702300000004,
+        "min": 6971.444900000468,
+        "max": 16505.702300000004
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-affine_chain-k16",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 16,
+        "inputCount": 2,
+        "additions": 16,
+        "multiplications": 16,
+        "dependencyDepth": 32
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 0,
+      "primarySuccessfulWindows": 0,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 10,
+      "inconsistentWindows": 0,
+      "validatedRequests": 0,
+      "receiptMs": {
+        "n": 0
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 24717.001389999874,
+        "median": 25316.949349999893,
+        "sd": 4512.900645689645,
+        "cvPct": 18.258285357848855,
+        "p95NearestRank": 29644.42680000048,
+        "min": 15742.98909999989,
+        "max": 29644.42680000048
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-affine_chain-k16",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 16,
+        "inputCount": 2,
+        "additions": 16,
+        "multiplications": 16,
+        "dependencyDepth": 32
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 11087.588549999613,
+        "median": 11278.198649998754,
+        "sd": 791.2055807162544,
+        "cvPct": 7.135957265624563,
+        "p95NearestRank": 11944.611099999398,
+        "min": 9161.714099999517,
+        "max": 11944.611099999398
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 14437.909329999797,
+        "median": 14555.249549999833,
+        "sd": 663.2655388595184,
+        "cvPct": 4.5939167763116,
+        "p95NearestRank": 15100.160399999935,
+        "min": 12849.319600000046,
+        "max": 15100.160399999935
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 3350.3207800001837,
+        "median": 3658.177150000236,
+        "sd": 518.381438019373,
+        "cvPct": 15.472591195262938,
+        "p95NearestRank": 3728.7283999999054,
+        "min": 2586.639500000514,
+        "max": 3728.7283999999054
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 14627.824770000041,
+        "median": 13126.240199999884,
+        "sd": 3667.5417754380223,
+        "cvPct": 25.07236607701045,
+        "p95NearestRank": 22446.94809999969,
+        "min": 11720.157300000079,
+        "max": 22446.94809999969
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-affine_chain-k32",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 32,
+        "inputCount": 2,
+        "additions": 32,
+        "multiplications": 32,
+        "dependencyDepth": 64
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 11226.91809000012,
+        "median": 11279.51270000008,
+        "sd": 406.06099785646455,
+        "cvPct": 3.616851878683834,
+        "p95NearestRank": 11807.500400000252,
+        "min": 10610.912299999967,
+        "max": 11807.500400000252
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 11515.891900000022,
+        "median": 11433.455599999987,
+        "sd": 540.3174458244729,
+        "cvPct": 4.691928775612003,
+        "p95NearestRank": 12575.98919999972,
+        "min": 10755.837899999693,
+        "max": 12575.98919999972
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 288.97380999990276,
+        "median": 153.94289999990724,
+        "sd": 337.47830762123954,
+        "cvPct": 116.78508430274464,
+        "p95NearestRank": 1228.3607000000775,
+        "min": 144.6897999998182,
+        "max": 1228.3607000000775
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 7538.091370000201,
+        "median": 6290.060400000308,
+        "sd": 4340.585008193587,
+        "cvPct": 57.58201639035679,
+        "p95NearestRank": 19754.233400000026,
+        "min": 4843.356499999762,
+        "max": 19754.233400000026
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-affine_chain-k32",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 32,
+        "inputCount": 2,
+        "additions": 32,
+        "multiplications": 32,
+        "dependencyDepth": 64
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 0,
+      "primarySuccessfulWindows": 0,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 10,
+      "inconsistentWindows": 0,
+      "validatedRequests": 0,
+      "receiptMs": {
+        "n": 0
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 20092.049070000172,
+        "median": 17256.620000000345,
+        "sd": 5421.005754573825,
+        "cvPct": 26.98085066230519,
+        "p95NearestRank": 30087.047799999826,
+        "min": 15564.990500000305,
+        "max": 30087.047799999826
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "circuits",
+      "case": {
+        "id": "circuits-w16-affine_chain-k32",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 32,
+        "inputCount": 2,
+        "additions": 32,
+        "multiplications": 32,
+        "dependencyDepth": 64
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 10,
+      "receiptMs": {
+        "n": 10,
+        "mean": 14621.33465000001,
+        "median": 11752.125849999953,
+        "sd": 5800.037055209897,
+        "cvPct": 39.66831478828024,
+        "p95NearestRank": 23259.593899999745,
+        "min": 9828.528799999505,
+        "max": 23259.593899999745
+      },
+      "completionMs": {
+        "n": 10,
+        "mean": 20961.583420000003,
+        "median": 17863.57775000017,
+        "sd": 5957.999135866294,
+        "cvPct": 28.423421153297078,
+        "p95NearestRank": 30048.957599999383,
+        "min": 16177.01640000008,
+        "max": 30048.957599999383
+      },
+      "postReceiptMs": {
+        "n": 10,
+        "mean": 6340.248769999994,
+        "median": 6454.444000000134,
+        "sd": 764.5251827656775,
+        "cvPct": 12.058283680967904,
+        "p95NearestRank": 7076.7021000012755,
+        "min": 4794.654299999587,
+        "max": 7076.7021000012755
+      },
+      "deferredAuditMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 23147.778600000056,
+        "median": 19813.335200000554,
+        "sd": 11459.271494350394,
+        "cvPct": 49.504843174672345,
+        "p95NearestRank": 44429.90789999999,
+        "min": 11907.068900000071,
+        "max": 44429.90789999999
+      },
+      "broadcastSpreadMs": {
+        "n": 0
+      },
+      "receiptThroughput": {
+        "n": 0
+      },
+      "orderChangedWindows": 0,
+      "finalDiffersFromPlannedOrderWindows": 0
+    }
+  ],
+  "metadataSha256": "72c903cbe3056ef6c7c783a781f5d40627ac92c04d81df9f5e67335666396dc7",
+  "rawSources": [
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-compact-2026-11-11-continuation2\\concurrency-euint16\\report.json",
+      "sha256": "de8d19f1009aa9e31c700dcdcb93dbf64e9629007ad708ce495131b11332f7d9"
+    },
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-compact-2026-11-12-circuit-continuation2\\circuits-euint16\\report.json",
+      "sha256": "72e4f13b3ca7d88a892a036e02fa4c4e465914e7be1d07f8de5cced7c2519336"
+    }
+  ]
+}

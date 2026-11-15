@@ -1,0 +1,559 @@
+{
+  "schemaVersion": 1,
+  "kind": "full-16bit-concurrency-and-circuits",
+  "chainId": 11155111,
+  "status": "running",
+  "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\studies\\accounts.secret.json",
+  "createdAt": "2026-11-10T15:48:58.360Z",
+  "repetitions": 50,
+  "networkReport": {
+    "style": "paper five-column deployment and measured inclusion intervals",
+    "target": "transaction-weighted mean of 100 * blockGasUsed / (blockGasLimit / 2)",
+    "perCase": true,
+    "canonicalReadOnlyAudit": true
+  },
+  "budget": {
+    "measuredTransactions": 60000,
+    "warmupTransactions": 1488,
+    "setupTransactions": 4305,
+    "totalTransactionsUpperBound": 65793
+  },
+  "stages": [
+    {
+      "suite": "circuits",
+      "width": 16,
+      "status": "running",
+      "args": {
+        "suite": "circuits",
+        "platform": "all",
+        "widths": "16",
+        "users": "1,2,4,8",
+        "modes": "independent,shared_sum,shared_ordered",
+        "sizes": "2,4,8,16,32",
+        "depths": "1,2,4,8,16,32",
+        "repetitions": 50,
+        "requests": 32,
+        "timeout": 180,
+        "seed": "studies16-full-50-2026-11-10-v1",
+        "accountsFile": ".benchmark-accounts/studies/accounts.secret.json",
+        "outputDir": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-full-50-2026-11-10\\circuits-euint16",
+        "live": false
+      },
+      "plan": {
+        "cases": [
+          {
+            "id": "circuits-w16-sum_linear-n2",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_linear",
+            "size": 2,
+            "inputCount": 2,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "circuits-w16-sum_tree-n2",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_tree",
+            "size": 2,
+            "inputCount": 2,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "circuits-w16-sum_linear-n4",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_linear",
+            "size": 4,
+            "inputCount": 4,
+            "additions": 3,
+            "multiplications": 0,
+            "dependencyDepth": 3
+          },
+          {
+            "id": "circuits-w16-sum_tree-n4",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_tree",
+            "size": 4,
+            "inputCount": 4,
+            "additions": 3,
+            "multiplications": 0,
+            "dependencyDepth": 2
+          },
+          {
+            "id": "circuits-w16-sum_linear-n8",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_linear",
+            "size": 8,
+            "inputCount": 8,
+            "additions": 7,
+            "multiplications": 0,
+            "dependencyDepth": 7
+          },
+          {
+            "id": "circuits-w16-sum_tree-n8",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_tree",
+            "size": 8,
+            "inputCount": 8,
+            "additions": 7,
+            "multiplications": 0,
+            "dependencyDepth": 3
+          },
+          {
+            "id": "circuits-w16-sum_linear-n16",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_linear",
+            "size": 16,
+            "inputCount": 16,
+            "additions": 15,
+            "multiplications": 0,
+            "dependencyDepth": 15
+          },
+          {
+            "id": "circuits-w16-sum_tree-n16",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_tree",
+            "size": 16,
+            "inputCount": 16,
+            "additions": 15,
+            "multiplications": 0,
+            "dependencyDepth": 4
+          },
+          {
+            "id": "circuits-w16-sum_linear-n32",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_linear",
+            "size": 32,
+            "inputCount": 32,
+            "additions": 31,
+            "multiplications": 0,
+            "dependencyDepth": 31
+          },
+          {
+            "id": "circuits-w16-sum_tree-n32",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_tree",
+            "size": 32,
+            "inputCount": 32,
+            "additions": 31,
+            "multiplications": 0,
+            "dependencyDepth": 5
+          },
+          {
+            "id": "circuits-w16-affine_chain-k1",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "affine_chain",
+            "size": 1,
+            "inputCount": 2,
+            "additions": 1,
+            "multiplications": 1,
+            "dependencyDepth": 2
+          },
+          {
+            "id": "circuits-w16-affine_chain-k2",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "affine_chain",
+            "size": 2,
+            "inputCount": 2,
+            "additions": 2,
+            "multiplications": 2,
+            "dependencyDepth": 4
+          },
+          {
+            "id": "circuits-w16-affine_chain-k4",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "affine_chain",
+            "size": 4,
+            "inputCount": 2,
+            "additions": 4,
+            "multiplications": 4,
+            "dependencyDepth": 8
+          },
+          {
+            "id": "circuits-w16-affine_chain-k8",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "affine_chain",
+            "size": 8,
+            "inputCount": 2,
+            "additions": 8,
+            "multiplications": 8,
+            "dependencyDepth": 16
+          },
+          {
+            "id": "circuits-w16-affine_chain-k16",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "affine_chain",
+            "size": 16,
+            "inputCount": 2,
+            "additions": 16,
+            "multiplications": 16,
+            "dependencyDepth": 32
+          },
+          {
+            "id": "circuits-w16-affine_chain-k32",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "affine_chain",
+            "size": 32,
+            "inputCount": 2,
+            "additions": 32,
+            "multiplications": 32,
+            "dependencyDepth": 64
+          }
+        ],
+        "platforms": [
+          "baseline",
+          "zama",
+          "fhenix"
+        ],
+        "repetitions": 50,
+        "measuredTransactions": 2400,
+        "warmupTransactions": 48,
+        "setupTransactions": 2454,
+        "deployments": 3,
+        "requiredAccounts": 1,
+        "networkAccess": false,
+        "note": "Plan only; counts are upper budgets. --live enables transactions. Exact HCU estimate rejections send no compute transaction; other failures stop the run. No funding automation."
+      },
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-full-50-2026-11-10\\circuits-euint16\\report.json",
+      "startedAt": "2026-11-10T16:55:51.242Z"
+    },
+    {
+      "suite": "concurrency",
+      "width": 16,
+      "status": "planned",
+      "args": {
+        "suite": "concurrency",
+        "platform": "all",
+        "widths": "16",
+        "users": "1,2,4,8",
+        "modes": "independent,shared_sum,shared_ordered",
+        "sizes": "2,4,8,16,32",
+        "depths": "1,2,4,8,16,32",
+        "repetitions": 50,
+        "requests": 32,
+        "timeout": 180,
+        "seed": "studies16-full-50-2026-11-10-v1",
+        "accountsFile": ".benchmark-accounts/studies/accounts.secret.json",
+        "outputDir": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-full-50-2026-11-10\\concurrency-euint16",
+        "live": false
+      },
+      "plan": {
+        "cases": [
+          {
+            "id": "concurrency-w16-c1-independent",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 1,
+            "mode": "independent",
+            "size": 32,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "concurrency-w16-c1-shared_sum",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 1,
+            "mode": "shared_sum",
+            "size": 32,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "concurrency-w16-c1-shared_ordered",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 1,
+            "mode": "shared_ordered",
+            "size": 32,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 1,
+            "dependencyDepth": 2
+          },
+          {
+            "id": "concurrency-w16-c2-independent",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 2,
+            "mode": "independent",
+            "size": 32,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "concurrency-w16-c2-shared_sum",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 2,
+            "mode": "shared_sum",
+            "size": 32,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "concurrency-w16-c2-shared_ordered",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 2,
+            "mode": "shared_ordered",
+            "size": 32,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 1,
+            "dependencyDepth": 2
+          },
+          {
+            "id": "concurrency-w16-c4-independent",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 4,
+            "mode": "independent",
+            "size": 32,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "concurrency-w16-c4-shared_sum",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 4,
+            "mode": "shared_sum",
+            "size": 32,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "concurrency-w16-c4-shared_ordered",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 4,
+            "mode": "shared_ordered",
+            "size": 32,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 1,
+            "dependencyDepth": 2
+          },
+          {
+            "id": "concurrency-w16-c8-independent",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 8,
+            "mode": "independent",
+            "size": 32,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "concurrency-w16-c8-shared_sum",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 8,
+            "mode": "shared_sum",
+            "size": 32,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "concurrency-w16-c8-shared_ordered",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 8,
+            "mode": "shared_ordered",
+            "size": 32,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 1,
+            "dependencyDepth": 2
+          }
+        ],
+        "platforms": [
+          "baseline",
+          "zama",
+          "fhenix"
+        ],
+        "repetitions": 50,
+        "measuredTransactions": 57600,
+        "warmupTransactions": 1440,
+        "setupTransactions": 1851,
+        "deployments": 3,
+        "requiredAccounts": 9,
+        "networkAccess": false,
+        "note": "Plan only; counts are upper budgets. --live enables transactions. Exact HCU estimate rejections send no compute transaction; other failures stop the run. No funding automation."
+      },
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-full-50-2026-11-10\\concurrency-euint16\\report.json"
+    }
+  ],
+  "funding": {
+    "status": "finished",
+    "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-full-50-2026-11-10\\funding-final-audit.json",
+    "sha256": "a25023b2dceef83b2b111a5069c0f372e9b95909841e1cb1d32f31a05ad5e5e9"
+  },
+  "pid": 8964,
+  "startedAt": "2026-11-10T16:55:48.969Z",
+  "sourceSnapshot": {
+    "files": {
+      "scripts/run-study-campaign.cjs": "8bd2b6bc6f937467e8f86851fa5952c133dfba750edb75ab3321eafdd661edf9",
+      "hardhat.config.ts": "f2c7451f127f8f87555025976a0d37c84208f9630b842a769d0c773c50496b3d",
+      "package-lock.json": "4571f420b5ef346a377e26b0d86ed6d3c9c4cfa5e268e184f876936f862fa35e",
+      "tasks/benchmarkExperiments.ts": "a053f970478e42fb84adc2b719b4af962a98f4a4560f7a6ed8ee1d148bfbb93e",
+      "tasks/experiments/accounts.ts": "2a930be994cd3ba0808f3f79fd88641b472a86c639a33883f2149f3fe3bca75e",
+      "tasks/lifecycle/broadcast.ts": "b1106a4e490c4d395cba490d12641d40c7e2d5ae2fe3bc0d06c0fbb687a7dfd9",
+      "tasks/lifecycle/errors.ts": "6871cf491202633327f12a054e1e9cbde2c75aa51df2da01912ef4698c2b7ccd",
+      "tasks/studies/adapters.ts": "c04e3c7ff6d37e6be8e0f1f3b787fef04bc78d1a02c919165efed83ccac18796",
+      "tasks/studies/canonical.ts": "8d1e7312c4346f92f785ea8e24a37e7d1d31d72cca9c6d6b2291cd29def57198",
+      "tasks/studies/capacity.ts": "ca5dc996204c668b76d6186e07ce3a9f16624aee4518d0eb9d9a636a3e64100a",
+      "tasks/studies/continuation.ts": "329408a55461dc84f71cbf230a918d156388256764b77954327abfa4a3c81002",
+      "tasks/studies/logs.ts": "f3d096b6ad72b51d36cae98fe7c24967a51ff3a30a4ac3c43edbd8b64d34323e",
+      "tasks/studies/oracle.ts": "303b362ad5a67e3bd92d1c827b3c589965d13a027eebec619a9f74afa65657df",
+      "tasks/studies/plan.ts": "ee3c0ac87a2faffd027addee75370ad8ef7498038f7cce0de8e72a54e3eef415",
+      "tasks/studies/preparation.ts": "8fb1fe6fd576ff7e32e76882f56e360fbb62f4a578a79c3e736717d3a2115d17",
+      "tasks/studies/report.ts": "fab8ffb975c56880327a8619c8d22007520db40071ccc60128b9868f106c8f3c",
+      "tasks/studies/runner.ts": "4b6b238d06dd594ce449d1eeb830880ff3668d59ebbc684a1f72e901173fe32d",
+      "tasks/studies/transactions.ts": "d02d5cba30875189ad75717a01fbcf7804a0185d119f793ea7c3535c4a585df0",
+      "tasks/studies/types.ts": "16499dcaab89e18ac8cd62737630cbaa218c49ed6e7af20ce39c6b742dea0af7",
+      "tasks/lib/cofheReadPolicy.ts": "c53dccee16e097a4eb9ff8c35b4d9ef7655966bab966d1e4e4e5bc2ff7c26037",
+      "tasks/lib/decryptionPolling.cjs": "b436d09f7c9c148f8c39205be554701e4977e95ddd59e2eb0789ade9717cc5e1",
+      "tasks/lib/lifecycleConcurrent.ts": "040f0640cac5db6721fbc41049cba42df44488a6252ea3d2fc4b3664f114d7a9",
+      "tasks/lib/lifecycleNonce.ts": "9514a35406d16839c932269580fe863c3db1fa05ad351602a6b547f5747eda08",
+      "tasks/lib/lifecycleReadRetry.ts": "2841400f23a743978c6041996fe37ac75e81253b2817cccd09fcae6401fafa79",
+      "tasks/lib/lifecycleReportWrite.ts": "5919e26a4055cbdf324008c325dd7cd5621ba39218dc21d89f919f324449001b",
+      "tasks/lib/lifecycleResult.ts": "d02bdfc151228a0b67210bc079a10f4af90fed3b85fb0c50e47f41aad3b23cfa",
+      "tasks/lib/lifecycleSchedule.ts": "903e34402f86d08d516d1233ce0dd775e591a749d8fe9f945e52c26c23385bc2",
+      "tasks/lib/lifecycleTiming.ts": "11ca028648485eca0a34ca4166dcf12662838609b73c5ee7ad3fcfa1e82b9164",
+      "contracts/studies/StudyCoFHE.sol": "db1e056e8e4b8318f1dc15184a28b09de58cb2d51cbb6963df48a711d04b8767",
+      "contracts/studies/StudyPlain.sol": "ec205734c911c44ac72e2193b19dbd2563c78b4ee65d8d92096b93da94b32779",
+      "contracts/studies/StudyZama.sol": "f9fe0de9a61331843a2b7bb549b875335a66ffa701459ff037f9f0f944cd24e4",
+      "scripts/analysis/analyze-study-campaign.py": "888f4fcdbf8c3e9252ac43c6028695361d96fd50ffeb670a5c9bb46cfe1e4e6f",
+      "scripts/analysis/collect-operation-block-metadata.cjs": "75af8ca577a0c281d44b4a263e87b3ae196fd5cbcb7463af1fa4d7ea5346e262"
+    },
+    "polling": {
+      "requestedIntervalMs": 10,
+      "serverRetryAfter": "respected; can lengthen the effective interval",
+      "patch": "benchmark-decryption-polling-v1",
+      "bundles": {
+        "zama": {
+          "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+          "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+        },
+        "zamaEsm": {
+          "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+          "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+        },
+        "fhenix": {
+          "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+          "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+        }
+      }
+    }
+  },
+  "launchPreflight": [
+    {
+      "address": "0x8d597B9C2e568d43840215E887A94cdD5e19E0cF",
+      "latest": 614,
+      "pending": 614,
+      "balanceWei": "999988314597122"
+    },
+    {
+      "address": "0x5Df7Adc822605Cb15434966BBA810939F21F55a9",
+      "latest": 1008,
+      "pending": 1008,
+      "balanceWei": "999985822825407"
+    },
+    {
+      "address": "0x073E31aF380A81D2339C8952052A353E218ebD91",
+      "latest": 288,
+      "pending": 288,
+      "balanceWei": "999995960068610"
+    },
+    {
+      "address": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "latest": 0,
+      "pending": 0,
+      "balanceWei": "1000000000000000"
+    },
+    {
+      "address": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+      "latest": 0,
+      "pending": 0,
+      "balanceWei": "1000000000000000"
+    },
+    {
+      "address": "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+      "latest": 0,
+      "pending": 0,
+      "balanceWei": "1000000000000000"
+    },
+    {
+      "address": "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+      "latest": 0,
+      "pending": 0,
+      "balanceWei": "1000000000000000"
+    },
+    {
+      "address": "0x324CAA6F704fa42e92b302b637440238d905AE77",
+      "latest": 0,
+      "pending": 0,
+      "balanceWei": "1000000000000000"
+    },
+    {
+      "address": "0xD607F87A85c34D95D381A3908Fcc84d56e504512",
+      "latest": 0,
+      "pending": 0,
+      "balanceWei": "1000000000000000"
+    }
+  ],
+  "currentStage": "circuits/euint16",
+  "currentReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-full-50-2026-11-10\\circuits-euint16\\report.json"
+}

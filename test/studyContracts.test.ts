@@ -6,7 +6,7 @@ import { capacityRejection } from "../tasks/studies/capacity";
 describe("study contract arithmetic and immutable snapshots", function () {
   this.timeout(180000);
 
-  for (const width of [16,128] as const) for (const platform of ["Plain","Zama"] as const) {
+  for (const width of [16] as const) for (const platform of ["Plain","Zama"] as const) {
     it(`${platform}${width}: validates snapshots/arithmetic and preserves exact HCU boundaries`, async () => {
       const [owner,alice,bob,outsider] = await hre.ethers.getSigners();
       const contract = await (await hre.ethers.getContractFactory(`Study${platform}${width}`)).deploy();
@@ -22,7 +22,7 @@ describe("study contract arithmetic and immutable snapshots", function () {
       };
 
       const plaintext = async (handle: bigint) => platform === "Plain" ? handle :
-        hre.fhevm.userDecryptEuint(width === 16 ? 3 : 6,hre.ethers.toBeHex(handle,32),address,owner);
+        hre.fhevm.userDecryptEuint(3,hre.ethers.toBeHex(handle,32),address,owner);
 
       await (await contract.authorize([alice.address,bob.address])).wait();
       await assert.rejects((contract.connect(alice) as any).authorize([outsider.address]),/Owner only/);
@@ -43,14 +43,9 @@ describe("study contract arithmetic and immutable snapshots", function () {
         const operands = Array.from({length:size},(_,i) => wrap(maximum-BigInt(i)));
         const sum = wrap(operands.reduce((a,b) => a+b,0n));
         const job = id(`sum${kind}/${size}`), request = id(`sum-result${kind}/${size}`);
-        // Two setup chunks also exercise the installed SDK's 2,048-bit boundary.
+        // Multiple setup chunks also verify that operands are appended correctly.
         for (let offset=0; offset<size; offset+=16)
           await (await contract.loadCircuit(job,...await encrypt(operands.slice(offset,offset+16)))).wait();
-        if (platform === "Zama" && width === 128 && kind === 0 && size === 32) {
-          await assert.rejects(contract.executeCircuit.estimateGas(job,request,kind,size),
-            error => capacityRejection(error) === "HCUTransactionDepthLimitExceeded");
-          continue;
-        }
         await (await contract.executeCircuit(job,request,kind,size)).wait();
         assert.equal(await plaintext(await contract.getSnapshot(request)),sum);
         await assert.rejects(contract.executeCircuit(job,request,kind,size),/Bad circuit/);

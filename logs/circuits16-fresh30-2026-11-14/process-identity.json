@@ -1,0 +1,5 @@
+{
+  "pid": 33384,
+  "createdUtc": "2026-11-14T15:29:48.9874390Z",
+  "command": "\"C:\\Program Files\\nodejs\\node.exe\" --max-old-space-size=8192 scripts/run-fresh-circuits30.cjs C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\circuits16-fresh30-2026-11-14\\campaign.json"
+}

@@ -1,0 +1,892 @@
+{
+  "tableRows": [
+    {
+      "suite": "concurrency",
+      "caseId": null,
+      "platform": "baseline",
+      "n": 160,
+      "contract": "0x1d09655a9Be3B91940eF3143A2d461045401c67c",
+      "firstBlock": 12137181,
+      "lastBlock": 12137706,
+      "startUtc": "2026-11-15 02:11:24",
+      "endUtc": "2026-11-15 03:56:48",
+      "meanGasTargetPct": 73.09208679181492,
+      "transactionWeightedTargetPct": {
+        "n": 160,
+        "mean": 73.09208679181492,
+        "median": 71.91459856079754,
+        "sd": 9.205072688131827,
+        "cvPct": 12.59380199986661,
+        "p95NearestRank": 84.051385,
+        "min": 56.669962454999386,
+        "max": 122.65727127538814
+      },
+      "uniqueContainingBlocks": 81,
+      "uniqueBlockTargetPct": {
+        "n": 81,
+        "mean": 73.08993244924376,
+        "median": 71.91459856079754,
+        "sd": 9.196739426560612,
+        "cvPct": 12.582771824214166,
+        "p95NearestRank": 84.051385,
+        "min": 56.669962454999386,
+        "max": 122.65727127538814
+      },
+      "gasLimit": {
+        "n": 81,
+        "mean": 199927516.58024693,
+        "median": 200000000.0,
+        "sd": 125218.9430267905,
+        "cvPct": 0.06263217048291105,
+        "p95NearestRank": 200000000.0,
+        "min": 199414448.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": null,
+      "platform": "zama",
+      "n": 160,
+      "contract": "0x3f09aC035155D844f779fb092Ef1Ee5B901280d9",
+      "firstBlock": 12137166,
+      "lastBlock": 12137689,
+      "startUtc": "2026-11-15 02:08:12",
+      "endUtc": "2026-11-15 03:53:24",
+      "meanGasTargetPct": 77.32724152590566,
+      "transactionWeightedTargetPct": {
+        "n": 160,
+        "mean": 77.32724152590566,
+        "median": 75.07081887806228,
+        "sd": 12.212549733701906,
+        "cvPct": 15.793334267084308,
+        "p95NearestRank": 103.467101,
+        "min": 56.68487698469065,
+        "max": 121.51852457295531
+      },
+      "uniqueContainingBlocks": 80,
+      "uniqueBlockTargetPct": {
+        "n": 80,
+        "mean": 77.32724152590566,
+        "median": 75.07081887806228,
+        "sd": 12.25113608493304,
+        "cvPct": 15.84323434171481,
+        "p95NearestRank": 103.467101,
+        "min": 56.68487698469065,
+        "max": 121.51852457295531
+      },
+      "gasLimit": {
+        "n": 80,
+        "mean": 199831513.425,
+        "median": 199999523.5,
+        "sd": 247795.7182348771,
+        "cvPct": 0.12400232275070008,
+        "p95NearestRank": 200000000.0,
+        "min": 198830612.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": null,
+      "platform": "fhenix",
+      "n": 160,
+      "contract": "0x704Ed08EdeF50a65914b645fA929d91776669F4c",
+      "firstBlock": 12137176,
+      "lastBlock": 12137700,
+      "startUtc": "2026-11-15 02:10:24",
+      "endUtc": "2026-11-15 03:55:36",
+      "meanGasTargetPct": 72.3434187454056,
+      "transactionWeightedTargetPct": {
+        "n": 160,
+        "mean": 72.3434187454056,
+        "median": 71.12936676739363,
+        "sd": 6.38292253643892,
+        "cvPct": 8.823086670678371,
+        "p95NearestRank": 82.641784,
+        "min": 60.644028,
+        "max": 103.0434557995232
+      },
+      "uniqueContainingBlocks": 81,
+      "uniqueBlockTargetPct": {
+        "n": 81,
+        "mean": 72.28518617422571,
+        "median": 71.092724,
+        "sd": 6.387692191552834,
+        "cvPct": 8.836792888873342,
+        "p95NearestRank": 82.641784,
+        "min": 60.644028,
+        "max": 103.0434557995232
+      },
+      "gasLimit": {
+        "n": 81,
+        "mean": 199908191.33333334,
+        "median": 199999809.0,
+        "sd": 138447.33554767314,
+        "cvPct": 0.06925545903060151,
+        "p95NearestRank": 200000000.0,
+        "min": 199414639.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c2-shared_sum",
+      "platform": "baseline",
+      "n": 80,
+      "contract": "0x1d09655a9Be3B91940eF3143A2d461045401c67c",
+      "firstBlock": 12137212,
+      "lastBlock": 12137677,
+      "startUtc": "2026-11-15 02:17:36",
+      "endUtc": "2026-11-15 03:51:00",
+      "meanGasTargetPct": 71.94597794089233,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 71.94597794089233,
+        "median": 70.260191,
+        "sd": 7.034264648629326,
+        "cvPct": 9.777147868374755,
+        "p95NearestRank": 83.137974,
+        "min": 58.012889,
+        "max": 89.467446
+      },
+      "uniqueContainingBlocks": 41,
+      "uniqueBlockTargetPct": {
+        "n": 41,
+        "mean": 71.96967567510355,
+        "median": 70.260191,
+        "sd": 7.045361167736966,
+        "cvPct": 9.789346834828335,
+        "p95NearestRank": 83.137974,
+        "min": 58.012889,
+        "max": 89.467446
+      },
+      "gasLimit": {
+        "n": 41,
+        "mean": 199933061.90243903,
+        "median": 200000000.0,
+        "sd": 112338.8331877728,
+        "cvPct": 0.05618822225740262,
+        "p95NearestRank": 200000000.0,
+        "min": 199609188.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c2-shared_sum",
+      "platform": "zama",
+      "n": 80,
+      "contract": "0x3f09aC035155D844f779fb092Ef1Ee5B901280d9",
+      "firstBlock": 12137205,
+      "lastBlock": 12137669,
+      "startUtc": "2026-11-15 02:16:12",
+      "endUtc": "2026-11-15 03:49:24",
+      "meanGasTargetPct": 76.71985624647054,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 76.71985624647054,
+        "median": 75.06559379849188,
+        "sd": 10.700184076266096,
+        "cvPct": 13.947085669569868,
+        "p95NearestRank": 94.43381181109318,
+        "min": 60.43417501041443,
+        "max": 118.07565176719466
+      },
+      "uniqueContainingBlocks": 40,
+      "uniqueBlockTargetPct": {
+        "n": 40,
+        "mean": 76.71985624647054,
+        "median": 75.06559379849188,
+        "sd": 10.76855655518459,
+        "cvPct": 14.036205334626123,
+        "p95NearestRank": 94.43381181109318,
+        "min": 60.43417501041443,
+        "max": 118.07565176719466
+      },
+      "gasLimit": {
+        "n": 40,
+        "mean": 199794971.275,
+        "median": 199999523.5,
+        "sd": 299392.1662952685,
+        "cvPct": 0.14984970061292577,
+        "p95NearestRank": 200000000.0,
+        "min": 198830612.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c2-shared_sum",
+      "platform": "fhenix",
+      "n": 80,
+      "contract": "0x704Ed08EdeF50a65914b645fA929d91776669F4c",
+      "firstBlock": 12137192,
+      "lastBlock": 12137659,
+      "startUtc": "2026-11-15 02:13:36",
+      "endUtc": "2026-11-15 03:47:24",
+      "meanGasTargetPct": 71.5200335302736,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 71.5200335302736,
+        "median": 70.651239,
+        "sd": 5.632814129727122,
+        "cvPct": 7.875854990116606,
+        "p95NearestRank": 81.477972,
+        "min": 60.644028,
+        "max": 88.78091401703368
+      },
+      "uniqueContainingBlocks": 40,
+      "uniqueBlockTargetPct": {
+        "n": 40,
+        "mean": 71.5200335302736,
+        "median": 70.651239,
+        "sd": 5.668806918504543,
+        "cvPct": 7.926180454187012,
+        "p95NearestRank": 81.477972,
+        "min": 60.644028,
+        "max": 88.78091401703368
+      },
+      "gasLimit": {
+        "n": 40,
+        "mean": 199902148.975,
+        "median": 199999713.5,
+        "sd": 153180.53080639054,
+        "cvPct": 0.07662775592549907,
+        "p95NearestRank": 200000000.0,
+        "min": 199414639.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c2-shared_ordered",
+      "platform": "baseline",
+      "n": 80,
+      "contract": "0x1d09655a9Be3B91940eF3143A2d461045401c67c",
+      "firstBlock": 12137181,
+      "lastBlock": 12137706,
+      "startUtc": "2026-11-15 02:11:24",
+      "endUtc": "2026-11-15 03:56:48",
+      "meanGasTargetPct": 74.2381956427375,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 74.2381956427375,
+        "median": 73.0201595,
+        "sd": 10.881086142440157,
+        "cvPct": 14.656991658046342,
+        "p95NearestRank": 89.06436,
+        "min": 56.669962454999386,
+        "max": 122.65727127538814
+      },
+      "uniqueContainingBlocks": 40,
+      "uniqueBlockTargetPct": {
+        "n": 40,
+        "mean": 74.2381956427375,
+        "median": 73.0201595,
+        "sd": 10.950614556865709,
+        "cvPct": 14.750647509759318,
+        "p95NearestRank": 89.06436,
+        "min": 56.669962454999386,
+        "max": 122.65727127538814
+      },
+      "gasLimit": {
+        "n": 40,
+        "mean": 199921832.625,
+        "median": 200000000.0,
+        "sd": 138400.11572947723,
+        "cvPct": 0.06922711437378573,
+        "p95NearestRank": 200000000.0,
+        "min": 199414448.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c2-shared_ordered",
+      "platform": "zama",
+      "n": 80,
+      "contract": "0x3f09aC035155D844f779fb092Ef1Ee5B901280d9",
+      "firstBlock": 12137166,
+      "lastBlock": 12137689,
+      "startUtc": "2026-11-15 02:08:12",
+      "endUtc": "2026-11-15 03:53:24",
+      "meanGasTargetPct": 77.93462680534078,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 77.93462680534078,
+        "median": 75.10553580036716,
+        "sd": 13.599248437100494,
+        "cvPct": 17.449558680851414,
+        "p95NearestRank": 115.5998160132981,
+        "min": 56.68487698469065,
+        "max": 121.51852457295531
+      },
+      "uniqueContainingBlocks": 40,
+      "uniqueBlockTargetPct": {
+        "n": 40,
+        "mean": 77.93462680534078,
+        "median": 75.10553580036716,
+        "sd": 13.686145477417345,
+        "cvPct": 17.561058592865997,
+        "p95NearestRank": 115.5998160132981,
+        "min": 56.68487698469065,
+        "max": 121.51852457295531
+      },
+      "gasLimit": {
+        "n": 40,
+        "mean": 199868055.575,
+        "median": 199999427.5,
+        "sd": 178899.57945356076,
+        "cvPct": 0.08950884068936626,
+        "p95NearestRank": 200000000.0,
+        "min": 199219710.0,
+        "max": 200000000.0
+      }
+    },
+    {
+      "suite": "concurrency",
+      "caseId": "concurrency-w16-c2-shared_ordered",
+      "platform": "fhenix",
+      "n": 80,
+      "contract": "0x704Ed08EdeF50a65914b645fA929d91776669F4c",
+      "firstBlock": 12137176,
+      "lastBlock": 12137700,
+      "startUtc": "2026-11-15 02:10:24",
+      "endUtc": "2026-11-15 03:55:36",
+      "meanGasTargetPct": 73.16680396053762,
+      "transactionWeightedTargetPct": {
+        "n": 80,
+        "mean": 73.16680396053762,
+        "median": 71.72248572693425,
+        "sd": 6.992669938195308,
+        "cvPct": 9.557161936397812,
+        "p95NearestRank": 82.68676,
+        "min": 62.371978667627765,
+        "max": 103.0434557995232
+      },
+      "uniqueContainingBlocks": 41,
+      "uniqueBlockTargetPct": {
+        "n": 41,
+        "mean": 73.03167655856925,
+        "median": 71.6794434538685,
+        "sd": 7.008323467558775,
+        "cvPct": 9.596279036451131,
+        "p95NearestRank": 82.68676,
+        "min": 62.371978667627765,
+        "max": 103.0434557995232
+      },
+      "gasLimit": {
+        "n": 41,
+        "mean": 199914086.31707317,
+        "median": 199999809.0,
+        "sd": 124038.42791438446,
+        "cvPct": 0.062045866901871874,
+        "p95NearestRank": 200000000.0,
+        "min": 199608426.0,
+        "max": 200000000.0
+      }
+    }
+  ],
+  "caseMetrics": [
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c2-shared_sum",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 2,
+        "mode": "shared_sum",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 12608.859838750004,
+        "median": 11859.670850000344,
+        "sd": 3680.870026935874,
+        "cvPct": 29.19272697142442,
+        "p95NearestRank": 23001.729299999774,
+        "min": 5152.433400001377,
+        "max": 23967.25820000097
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 50.76250874996185,
+        "median": 49.82725000008941,
+        "sd": 6.057604162137323,
+        "cvPct": 11.933224561407979,
+        "p95NearestRank": 61.18420000001788,
+        "min": 40.676500000059605,
+        "max": 72.35400000028312
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 1179.0373400002718,
+        "median": 996.8680000007153,
+        "sd": 440.2856730997601,
+        "cvPct": 37.34280994863646,
+        "p95NearestRank": 2026.605799999088,
+        "min": 890.3782999999821,
+        "max": 2026.605799999088
+      },
+      "broadcastSpreadMs": {
+        "n": 40,
+        "mean": 0.6719699998851866,
+        "median": 0.6480499999597669,
+        "sd": 0.16396672470030205,
+        "cvPct": 24.400899553301123,
+        "p95NearestRank": 1.1212000008672476,
+        "min": 0.48929999954998493,
+        "max": 1.1597000006586313
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.1578970576583169,
+        "median": 0.16875689983425204,
+        "sd": 0.018450963707918593,
+        "cvPct": 11.685438589898084,
+        "p95NearestRank": 0.17544964981916672,
+        "min": 0.13427299409666416,
+        "max": 0.17544964981916672
+      },
+      "orderChangedWindows": 10,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c2-shared_sum",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 2,
+        "mode": "shared_sum",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 12109.541237499938,
+        "median": 12009.924150000326,
+        "sd": 3881.4260648844734,
+        "cvPct": 32.05262683993972,
+        "p95NearestRank": 19665.550300000235,
+        "min": 6855.422800000757,
+        "max": 24637.734300000593
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 2469.6195800001733,
+        "median": 2362.840800001286,
+        "sd": 633.9939168413299,
+        "cvPct": 25.67172377380023,
+        "p95NearestRank": 2655.601700000465,
+        "min": 2328.705700000748,
+        "max": 7998.342700000852
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 64182.83805000018,
+        "median": 64136.64604999963,
+        "sd": 329.6657535770122,
+        "cvPct": 0.513635363584567,
+        "p95NearestRank": 64674.32290000096,
+        "min": 63601.577700000256,
+        "max": 64674.32290000096
+      },
+      "broadcastSpreadMs": {
+        "n": 40,
+        "mean": 0.7167175000533461,
+        "median": 0.734400000423193,
+        "sd": 0.13078209114981112,
+        "cvPct": 18.247369589842144,
+        "p95NearestRank": 0.950899999588728,
+        "min": 0.5514000002294779,
+        "max": 1.0459000002592802
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.16638437153434163,
+        "median": 0.17754153319339513,
+        "sd": 0.01981531509485466,
+        "cvPct": 11.909360784384,
+        "p95NearestRank": 0.18538913984579108,
+        "min": 0.1420572330373078,
+        "max": 0.18538913984579108
+      },
+      "orderChangedWindows": 10,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c2-shared_sum",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 2,
+        "mode": "shared_sum",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 11203.687953749928,
+        "median": 11868.630950000137,
+        "sd": 5399.184237056379,
+        "cvPct": 48.191133663707994,
+        "p95NearestRank": 23950.383999999613,
+        "min": 3479.726900000125,
+        "max": 24660.39130000025
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 137.46987625006585,
+        "median": 126.50510000064969,
+        "sd": 29.6654728923468,
+        "cvPct": 21.579617077986995,
+        "p95NearestRank": 209.11660000123084,
+        "min": 117.27589999884367,
+        "max": 251.58689999952912
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 55444.931650000435,
+        "median": 55433.81915000081,
+        "sd": 264.7649893890447,
+        "cvPct": 0.47752784882194477,
+        "p95NearestRank": 55919.44490000047,
+        "min": 55133.555999999866,
+        "max": 55919.44490000047
+      },
+      "broadcastSpreadMs": {
+        "n": 40,
+        "mean": 0.6497075000777841,
+        "median": 0.6564499996602535,
+        "sd": 0.12132679815822109,
+        "cvPct": 18.674064581938126,
+        "p95NearestRank": 0.852700000628829,
+        "min": 0.4898000005632639,
+        "max": 0.919199999421835
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.1800608084976971,
+        "median": 0.19389697077919824,
+        "sd": 0.022816283923152367,
+        "cvPct": 12.671432564096355,
+        "p95NearestRank": 0.20291801276769553,
+        "min": 0.15071831150938575,
+        "max": 0.20291801276769553
+      },
+      "orderChangedWindows": 10,
+      "finalDiffersFromPlannedOrderWindows": 0
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c2-shared_ordered",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 2,
+        "mode": "shared_ordered",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 1,
+        "dependencyDepth": 2
+      },
+      "platform": "baseline",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 12521.346976249944,
+        "median": 11868.604649999179,
+        "sd": 3246.452078550163,
+        "cvPct": 25.927339005203837,
+        "p95NearestRank": 22912.72790000029,
+        "min": 9038.423000000417,
+        "max": 24288.25470000133
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 49.35837125007529,
+        "median": 47.78379999939352,
+        "sd": 6.4148642834435465,
+        "cvPct": 12.996507220512795,
+        "p95NearestRank": 59.94019999913871,
+        "min": 41.11680000089109,
+        "max": 86.27270000055432
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 1136.0754599997774,
+        "median": 966.5141500001773,
+        "sd": 440.0013626019267,
+        "cvPct": 38.72994163627237,
+        "p95NearestRank": 1990.583599999547,
+        "min": 810.4901999998838,
+        "max": 1990.583599999547
+      },
+      "broadcastSpreadMs": {
+        "n": 40,
+        "mean": 0.6544550000689924,
+        "median": 0.6508499998599291,
+        "sd": 0.11981318369386382,
+        "cvPct": 18.307321921481716,
+        "p95NearestRank": 0.8705000001937151,
+        "min": 0.4798000007867813,
+        "max": 0.9944000001996756
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.16170241940199725,
+        "median": 0.17011893071396758,
+        "sd": 0.02051872358954654,
+        "cvPct": 12.689187747114875,
+        "p95NearestRank": 0.17521040568642507,
+        "min": 0.11250309518867081,
+        "max": 0.17521040568642507
+      },
+      "orderChangedWindows": 10,
+      "finalDiffersFromPlannedOrderWindows": 10
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c2-shared_ordered",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 2,
+        "mode": "shared_ordered",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 1,
+        "dependencyDepth": 2
+      },
+      "platform": "zama",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 12616.76917749996,
+        "median": 11896.125400000252,
+        "sd": 5962.935260347289,
+        "cvPct": 47.261982655442836,
+        "p95NearestRank": 23181.083499999717,
+        "min": 5970.6878999993205,
+        "max": 35156.16339999996
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 2398.705758749973,
+        "median": 2364.7815999994054,
+        "sd": 92.25681856733561,
+        "cvPct": 3.84610818691714,
+        "p95NearestRank": 2647.947799999267,
+        "min": 2333.523400001228,
+        "max": 2691.7284000013024
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 64090.17748999987,
+        "median": 64120.831450000405,
+        "sd": 197.91925107150473,
+        "cvPct": 0.30881370410057996,
+        "p95NearestRank": 64321.41829999909,
+        "min": 63701.061599999666,
+        "max": 64321.41829999909
+      },
+      "broadcastSpreadMs": {
+        "n": 40,
+        "mean": 0.7902549999998882,
+        "median": 0.7732999995350838,
+        "sd": 0.1980579427904429,
+        "cvPct": 25.062535863799773,
+        "p95NearestRank": 1.1390000004321337,
+        "min": 0.5438999999314547,
+        "max": 1.3485000003129244
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.16260373990540336,
+        "median": 0.18117827895108163,
+        "sd": 0.028527524915547563,
+        "cvPct": 17.544199741127596,
+        "p95NearestRank": 0.18651004243390648,
+        "min": 0.11756495405296534,
+        "max": 0.18651004243390648
+      },
+      "orderChangedWindows": 10,
+      "finalDiffersFromPlannedOrderWindows": 10
+    },
+    {
+      "suite": "concurrency",
+      "case": {
+        "id": "concurrency-w16-c2-shared_ordered",
+        "suite": "concurrency",
+        "width": 16,
+        "users": 2,
+        "mode": "shared_ordered",
+        "size": 8,
+        "inputCount": 1,
+        "additions": 1,
+        "multiplications": 1,
+        "dependencyDepth": 2
+      },
+      "platform": "fhenix",
+      "attemptedWindows": 10,
+      "retainedPriorAttempts": 0,
+      "successfulWindows": 10,
+      "primarySuccessfulWindows": 10,
+      "separatelyLateValidatedWindows": 0,
+      "capacityRejectedWindows": 0,
+      "inconsistentWindows": 0,
+      "validatedRequests": 80,
+      "receiptMs": {
+        "n": 80,
+        "mean": 10842.000243750052,
+        "median": 11909.023299999535,
+        "sd": 4506.203127718234,
+        "cvPct": 41.56247026756771,
+        "p95NearestRank": 13916.139599999413,
+        "min": 1886.561400000006,
+        "max": 24154.61640000157
+      },
+      "completionMs": {
+        "n": 0
+      },
+      "postReceiptMs": {
+        "n": 0
+      },
+      "deferredAuditMs": {
+        "n": 80,
+        "mean": 144.1064200000372,
+        "median": 129.57225000020117,
+        "sd": 43.72095277209469,
+        "cvPct": 30.339351135142635,
+        "p95NearestRank": 236.45639999955893,
+        "min": 113.2593000009656,
+        "max": 339.12060000002384
+      },
+      "preparationMs": {
+        "n": 10,
+        "mean": 55560.00453999992,
+        "median": 55533.26574999932,
+        "sd": 253.35500842650748,
+        "cvPct": 0.4560024977033737,
+        "p95NearestRank": 56134.54670000076,
+        "min": 55267.36600000039,
+        "max": 56134.54670000076
+      },
+      "broadcastSpreadMs": {
+        "n": 40,
+        "mean": 0.664412499871105,
+        "median": 0.6851499993354082,
+        "sd": 0.11239338024519273,
+        "cvPct": 16.916204958063986,
+        "p95NearestRank": 0.8944000005722046,
+        "min": 0.5010000001639128,
+        "max": 0.9447000008076429
+      },
+      "receiptThroughput": {
+        "n": 10,
+        "mean": 0.18307793766650138,
+        "median": 0.19364405559749914,
+        "sd": 0.01976440303403063,
+        "cvPct": 10.795622501512925,
+        "p95NearestRank": 0.19874567579406124,
+        "min": 0.15077592286578143,
+        "max": 0.19874567579406124
+      },
+      "orderChangedWindows": 10,
+      "finalDiffersFromPlannedOrderWindows": 10
+    }
+  ],
+  "metadataSha256": "f58884335e46460456041d992e265d00dac27b5c757b3926b516a44a5202715b",
+  "rawSources": [
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\concurrency2-20-2026-11-15\\session-2\\concurrency-euint16\\report.json",
+      "sha256": "7c6dc280053586cc32a472917c7ed693f0d61c1dbac6473fa73dd272a5b2a8e9"
+    }
+  ]
+}

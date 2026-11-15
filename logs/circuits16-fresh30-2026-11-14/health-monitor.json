@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-14T23:29:50.612Z",
+  "intervalMs": 600000,
+  "mutationCalls": 0,
+  "processIdentityVerified": false,
+  "status": "execution_complete_with_capacity_rejections",
+  "sessions": [
+    {
+      "id": "campaign",
+      "status": "execution_complete_with_capacity_rejections",
+      "childStatus": "execution_complete_with_capacity_rejections",
+      "stages": [
+        {
+          "suite": "circuits",
+          "status": "finished",
+          "observations": 900,
+          "ok": 840,
+          "capacityRejected": 60,
+          "reportAgeSeconds": 475.97085888671876,
+          "last": {
+            "case": "circuits-w16-affine_chain-k32",
+            "platform": "zama",
+            "round": 30,
+            "status": "capacity_rejected"
+          }
+        }
+      ]
+    }
+  ],
+  "health": "finished",
+  "monitorStopped": true
+}

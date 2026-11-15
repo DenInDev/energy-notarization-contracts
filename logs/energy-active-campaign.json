@@ -1,30 +1,46 @@
 {
-  "pid": 28952,
-  "startedAt": "2026-11-06T01:25:22.031Z",
-  "status": "fhenix_execution_complete_with_retained_failures",
-  "sourceReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\measured-euint128-fhenix-continuation1\\report.json",
-  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\measured-euint128-fhenix-continuation3\\report.json",
-  "platformOnly": "fhenix",
-  "uniformWidth": 128,
+  "pid": 26420,
+  "status": "execution_complete_with_retained_failures",
+  "startedAt": "2026-11-10T14:35:21.293Z",
+  "manifest": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\campaign-continuation2.json",
+  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint128-continuation1\\report.json",
   "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\isolated-validation\\accounts.secret.json",
-  "command": "node scripts/continue-uniform-fhenix.cjs",
-  "authorization": "Continue the already-authorized unattempted Fhenix schedule with bounded read throttling; no further transaction repetition",
-  "completedAt": "2026-11-06T02:22:16.408Z",
-  "processCreationTimeUtc": "2026-11-06T01:25:17.0018210Z",
-  "authorizedFhenixScopeComplete": true,
-  "globalCampaignComplete": false,
-  "primarySlots": 300,
-  "primaryOk": 298,
-  "historicalPrimaryFailures": 2,
-  "successfulExplicitRetries": 1,
-  "ownerRegistrationsOk": 50,
-  "normalViewDecryptSuccesses": 49,
-  "separateLateRecoveryViews": 1,
-  "baselineZamaNewTransactions": 0,
-  "lastFhenixNonce": 989,
-  "nextFhenixNonce": 990,
-  "analysis": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\measured-euint128-fhenix-continuation3\\fhenix-analysis.md",
-  "audit": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-05-attempt2\\measured-euint128-fhenix-continuation3\\completion-audit.json",
-  "monitoringStopped": true,
-  "monitoringStoppedAt": "2026-11-06T02:27:32.701Z"
+  "currentStage": "measured-euint128-continuation1",
+  "runs": 50,
+  "widths": [
+    16,
+    128
+  ],
+  "command": "node scripts/continue-uniform-matched.cjs",
+  "verifiedAt": "2026-11-10T15:40:38.996Z",
+  "results": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\RERUN-RESULTS.md",
+  "analysisIndex": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\results-index.json",
+  "counts": {
+    "width16": {
+      "successfulPrimary": 900,
+      "plannedPrimary": 900,
+      "measuredViews": 150
+    },
+    "width128": {
+      "successfulPrimary": 899,
+      "plannedPrimary": 900,
+      "retainedPrimaryFailures": 1,
+      "measuredViews": 150
+    }
+  },
+  "gasCostWeiIncludingBothPilotsAndAllDeploymentsWarmups": {
+    "baseline": "3112648026",
+    "zama": "19271176214",
+    "fhenix": "17037941283"
+  },
+  "pendingTransactions": 0,
+  "retainedFailure": {
+    "platform": "zama",
+    "width": 128,
+    "run": 21,
+    "operation": "mean",
+    "reason": "USER_DECRYPT HTTP 500: Transaction simulation failed: Execution reverted; SDK retryCount 5",
+    "receiptStatus": 1,
+    "lateRecoveryExcludedFromTiming": true
+  }
 }

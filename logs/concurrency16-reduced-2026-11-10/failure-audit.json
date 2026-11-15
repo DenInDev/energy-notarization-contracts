@@ -1,0 +1,338 @@
+{
+  "startedAt": "2026-11-10T22:34:54.033Z",
+  "rawSha256": "c231c30255a3360c9ab2468d8558eb429782d3b892fe2f1656a76e274393804a",
+  "mutationCalls": 0,
+  "receipts": [
+    {
+      "hash": "0x73fee4900eae4f296d9923b15b94b0d67f0d22134462b6695d2d5e0fa8e36ec2",
+      "user": "0x0c8c6bae7987981ec27a36e270837df3aa545a9e",
+      "nonce": 0,
+      "blockHash": "0xcf75f55ab5f4eeebbf87ff93527bea030bc61089719276e2c87fa14ef6d3b879",
+      "blockNumber": 12107598,
+      "status": 1,
+      "gasCostWei": "806220045"
+    },
+    {
+      "hash": "0xb842d6897f9c55d2c65328c0401236dbfae3f3eed425e25c3ea9b379e7af1add",
+      "user": "0x0c8c6bae7987981ec27a36e270837df3aa545a9e",
+      "nonce": 1,
+      "blockHash": "0xe9b920c6527bb2ea23ea6cf64b6f0584656bc85742f449019643c76b1ff424b3",
+      "blockNumber": 12107599,
+      "status": 1,
+      "gasCostWei": "30785763"
+    },
+    {
+      "hash": "0xd7173edef0b0dec9134dc419ad9841dd85daf11b2694b89fda34ab6ad86aa027",
+      "user": "0x0c8c6bae7987981ec27a36e270837df3aa545a9e",
+      "nonce": 4,
+      "blockHash": "0xee0b5f39332a3dd51100a4217d23e297048b555d43ecaa1008470b9cd1dcf9ef",
+      "blockNumber": 12107626,
+      "status": 1,
+      "gasCostWei": "832448112"
+    },
+    {
+      "hash": "0xd354283e0cd7c9f48cc72a6afaa45c70ddab8ba05cff828de1a7e72880721cce",
+      "user": "0x0c8c6bae7987981ec27a36e270837df3aa545a9e",
+      "nonce": 5,
+      "blockHash": "0x045b0a5a55241b835099c3083b60fdd8c93365597bf52963463827884ff5c6a5",
+      "blockNumber": 12107627,
+      "status": 1,
+      "gasCostWei": "31245252"
+    },
+    {
+      "hash": "0x8ca8522ebea8a44e26d99571380555c2c33ee56ddd9b807ff2193acd4e341a5c",
+      "user": "0x0c8c6bae7987981ec27a36e270837df3aa545a9e",
+      "nonce": 2,
+      "blockHash": "0xb3a770372071273bfdb0d7f026a25ddbc97786982dd7f172b8de7441da9e8062",
+      "blockNumber": 12107600,
+      "status": 1,
+      "gasCostWei": "49539599"
+    },
+    {
+      "hash": "0xd11fa9d8d8d07336cfbf8d78b75c8f40f1239b61baf426af57a398067e6fc750",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 0,
+      "blockHash": "0x059ecb0abcd61ec5d9aeb063d8a815bbf7188c1b911e4ad5004bc471b91e4de8",
+      "blockNumber": 12107605,
+      "status": 1,
+      "gasCostWei": "61131456"
+    },
+    {
+      "hash": "0x3a336d2f9d6475eb2aacb0b42ec63e2d38c721e822bd7ba610bf1f16dddf9f23",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 1,
+      "blockHash": "0xe97593d3a831751c0b9179de92d06fc9e8fd044a43e2a0eef5d5bf336e0e0049",
+      "blockNumber": 12107606,
+      "status": 1,
+      "gasCostWei": "54473712"
+    },
+    {
+      "hash": "0x356656139d2c5667cb18e10865dd7e52868fc76dbc2e9f8692d9a5aad4f744f6",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 2,
+      "blockHash": "0x24ec65ead8249b5888c4e0dfa964032c062d54884be14f6b1aee49d955064bd3",
+      "blockNumber": 12107607,
+      "status": 1,
+      "gasCostWei": "54474528"
+    },
+    {
+      "hash": "0xe2ae65768f0b8ffc7ca2b0481977065e07b743cb47eab3cd3556d55022c95966",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 3,
+      "blockHash": "0x5ffe729796d959e0600d7c9d45b26c5f151b555ed50e9b407d5b5f1b2bb9e6ce",
+      "blockNumber": 12107608,
+      "status": 1,
+      "gasCostWei": "54474528"
+    },
+    {
+      "hash": "0x5d6c5e49411d4d01172d3829d6367efa0f0df132ed5c7686277c8ae358ae7a95",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 4,
+      "blockHash": "0xcc2df7c353f26202efb1b4a3343a98ac2ebbd53b7fe5bb5ce05d21543ebe6876",
+      "blockNumber": 12107609,
+      "status": 1,
+      "gasCostWei": "54474528"
+    },
+    {
+      "hash": "0xd1c0138134b3f51b51bd1c72c3ed327ac17324e7e1302d985eb5471b748b1512",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 5,
+      "blockHash": "0x1cbebac4d105d828349960c083eebae9985ba23ad4bfcaa9fb51e60ae2b6002e",
+      "blockNumber": 12107610,
+      "status": 1,
+      "gasCostWei": "54473712"
+    },
+    {
+      "hash": "0x59a571e9110d24c5c71873d4aead2e71b978780d007b6aff84aad9182a7b0b1b",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 6,
+      "blockHash": "0x689b472fd925c99a2c16941f1811aac382fd7b73af08a5648d72e786cad8d2d6",
+      "blockNumber": 12107611,
+      "status": 1,
+      "gasCostWei": "54472896"
+    },
+    {
+      "hash": "0xf3a656cd2620a9c20698bc2148112f7db04c6c33d4fcc6e001f37e3296528e86",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 7,
+      "blockHash": "0x7ae087fb1dcbda4a075f4f3d39802b713a3d3cb04acf7ff28980f52bd932f159",
+      "blockNumber": 12107612,
+      "status": 1,
+      "gasCostWei": "54474528"
+    },
+    {
+      "hash": "0x125c86f16c71b8ecccd46bed99d74271dafd7b394f94141985db51bd480cc501",
+      "user": "0x0c8c6bae7987981ec27a36e270837df3aa545a9e",
+      "nonce": 3,
+      "blockHash": "0xd35a0d026be33bda687168f427a08d48c81855d03ffa9581e312018ec7d9d272",
+      "blockNumber": 12107613,
+      "status": 1,
+      "gasCostWei": "35601876"
+    },
+    {
+      "hash": "0xb7867a760a8169c17badbae7e070b45ce6f388cd664e902c2f2bc502dfb6e9a1",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 8,
+      "blockHash": "0x0f565bba36b7cb4f9f75e9ab72455f1ecce88d4fbee1d563b6c1431ed2a9157b",
+      "blockNumber": 12107618,
+      "status": 1,
+      "gasCostWei": "61133088"
+    },
+    {
+      "hash": "0x9ed17e6470c60d9a444e058a1a48f1498699c32ecad7454e9e76d1a2a7e89542",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 9,
+      "blockHash": "0x68dcf058bd5592155bffbbebc07cc9a43914b8b5889b912ec268384f674b6e19",
+      "blockNumber": 12107619,
+      "status": 1,
+      "gasCostWei": "54473712"
+    },
+    {
+      "hash": "0x3279d443d41d00bda26450a4c23993ab51cd84ceeca0465d55a4d97c6da5205f",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 10,
+      "blockHash": "0xc776922c171b00ceb632c7129812dc9c554c225b02ad0eff2df2f4248cb3dda1",
+      "blockNumber": 12107620,
+      "status": 1,
+      "gasCostWei": "54474528"
+    },
+    {
+      "hash": "0xbd06b047111c360b1af91c9542f17806b31fc0b66888f02bd186bb413c702319",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 11,
+      "blockHash": "0x728db27ee34c5fae79cfae22ab819762fa8cc9da0b2ac7fd0450b9023ad072f4",
+      "blockNumber": 12107621,
+      "status": 1,
+      "gasCostWei": "54474528"
+    },
+    {
+      "hash": "0x9c212b18faa57139c656eb78934b09cccc10b4d181c74ad126d906f8ed75ce58",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 12,
+      "blockHash": "0xdab3cfba7e3d229682dbffb7cb80556d2f25ac8fccabbe5a3c88909ec020f4b2",
+      "blockNumber": 12107622,
+      "status": 1,
+      "gasCostWei": "54474528"
+    },
+    {
+      "hash": "0xff397944c8562f84f1d8ac7c421c795630b8eb9a1d4abae98b4f547e683a8e10",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 13,
+      "blockHash": "0xc6f7ac3ba8db344e8b4d7291ae277f4f16bb5595fade06628a4988f1a08a50ef",
+      "blockNumber": 12107623,
+      "status": 1,
+      "gasCostWei": "54473712"
+    },
+    {
+      "hash": "0x006671080e59d0a972b8c1e940ac262c1789af5784fbef400d4fd1714b13dc85",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 14,
+      "blockHash": "0xb12dcf183472acab2d5c3b987af6bfb95813baf22ccae11a78c1b5416af3114d",
+      "blockNumber": 12107624,
+      "status": 1,
+      "gasCostWei": "54474528"
+    },
+    {
+      "hash": "0xa3f08dac1d71d7f0867dc038eaa324bec170f5f2017192ca3450de0842cd59e1",
+      "user": "0x42cefa175992200eba172eb78afdbc012856064c",
+      "nonce": 15,
+      "blockHash": "0x8415e9199432bde95cd3ccc7e128996b0173d9abadfa3c85721b5f2a0491ef07",
+      "blockNumber": 12107625,
+      "status": 1,
+      "gasCostWei": "54474528"
+    }
+  ],
+  "accounts": [
+    {
+      "address": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "latest": 6,
+      "pending": 6,
+      "expected": 6
+    },
+    {
+      "address": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+      "latest": 16,
+      "pending": 16,
+      "expected": 16
+    },
+    {
+      "address": "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+      "latest": 0,
+      "pending": 0,
+      "expected": 0
+    },
+    {
+      "address": "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+      "latest": 0,
+      "pending": 0,
+      "expected": 0
+    },
+    {
+      "address": "0x324CAA6F704fa42e92b302b637440238d905AE77",
+      "latest": 0,
+      "pending": 0,
+      "expected": 0
+    }
+  ],
+  "authorizationReads": [
+    {
+      "tag": "latest",
+      "address": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+      "value": true
+    },
+    {
+      "tag": "latest",
+      "address": "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+      "value": true
+    },
+    {
+      "tag": "latest",
+      "address": "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+      "value": true
+    },
+    {
+      "tag": "latest",
+      "address": "0x324CAA6F704fa42e92b302b637440238d905AE77",
+      "value": true
+    },
+    {
+      "tag": "pending",
+      "address": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+      "value": true
+    },
+    {
+      "tag": "pending",
+      "address": "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+      "value": true
+    },
+    {
+      "tag": "pending",
+      "address": "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+      "value": true
+    },
+    {
+      "tag": "pending",
+      "address": "0x324CAA6F704fa42e92b302b637440238d905AE77",
+      "value": true
+    },
+    {
+      "tag": {
+        "blockHash": "0x045b0a5a55241b835099c3083b60fdd8c93365597bf52963463827884ff5c6a5",
+        "requireCanonical": true
+      },
+      "address": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+      "value": true
+    },
+    {
+      "tag": {
+        "blockHash": "0x045b0a5a55241b835099c3083b60fdd8c93365597bf52963463827884ff5c6a5",
+        "requireCanonical": true
+      },
+      "address": "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+      "value": true
+    },
+    {
+      "tag": {
+        "blockHash": "0x045b0a5a55241b835099c3083b60fdd8c93365597bf52963463827884ff5c6a5",
+        "requireCanonical": true
+      },
+      "address": "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+      "value": true
+    },
+    {
+      "tag": {
+        "blockHash": "0x045b0a5a55241b835099c3083b60fdd8c93365597bf52963463827884ff5c6a5",
+        "requireCanonical": true
+      },
+      "address": "0x324CAA6F704fa42e92b302b637440238d905AE77",
+      "value": true
+    }
+  ],
+  "estimates": [
+    {
+      "tag": "latest",
+      "gas": "0x0dc897"
+    },
+    {
+      "tag": "pending",
+      "gas": "0x0dc897"
+    },
+    {
+      "tag": {
+        "blockHash": "0x045b0a5a55241b835099c3083b60fdd8c93365597bf52963463827884ff5c6a5",
+        "requireCanonical": true
+      },
+      "gas": "0x0dc897"
+    }
+  ],
+  "authorizedCalldata": [
+    "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+    "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+    "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+    "0x324CAA6F704fa42e92b302b637440238d905AE77"
+  ],
+  "status": "settled",
+  "confirmedTransactions": 22,
+  "rawUnchanged": true,
+  "finishedAt": "2026-11-10T22:34:59.794Z"
+}

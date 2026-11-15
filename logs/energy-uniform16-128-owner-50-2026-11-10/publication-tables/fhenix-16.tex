@@ -1,0 +1,30 @@
+\begin{table*}[!t]
+\caption{Fhenix CoFHE performance on Sepolia (16-bit arithmetic)}
+\label{tab:fhenix-cofhe-sepolia-benchmark}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|r|}
+\hline
+\textbf{Operation} &
+\textbf{Mean Gas} &
+\multicolumn{3}{c|}{\textbf{Latency Components: Mean ms (CV\%)}} &
+\textbf{Derived total} \\
+\cline{3-5}
+& &
+\textbf{Preparation} &
+\textbf{Tx to receipt} &
+\textbf{Receipt to validation} &
+\textbf{Lifecycle ms (CV\%)} \\
+\hline
+set\_meter\_owner & 306316 & 11996 (4.46\%) & 6994 (90.54\%) & 288 (21.94\%) & 19279 (33.06\%) \\
+notarize & 306186 & 11496 (4.87\%) & 8240 (55.20\%) & 286 (17.77\%) & 20022 (22.37\%) \\
+add & 317943 & 180 (34.93\%) & 8881 (67.60\%) & 309 (53.04\%) & 9369 (63.85\%) \\
+mul\_scalar & 342266 & 174 (27.26\%) & 8248 (68.11\%) & 504 (124.36\%) & 8926 (62.17\%) \\
+mean & 373456 & 175 (27.36\%) & 8565 (58.97\%) & 1102 (104.12\%) & 9842 (52.24\%) \\
+max & 322134 & 165 (26.31\%) & 7170 (46.13\%) & 405 (104.45\%) & 7740 (42.67\%) \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Preparation includes input encryption/proof generation, transaction preparation and signing. Lifecycle is preparation plus transaction-to-validated-plaintext time; intentional barrier waiting is excluded. Means and CVs are calculated per observation.}
+\end{table*}

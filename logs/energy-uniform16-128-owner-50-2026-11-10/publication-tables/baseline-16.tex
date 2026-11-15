@@ -1,0 +1,30 @@
+\begin{table*}[!t]
+\caption{Plaintext baseline performance on Sepolia (16-bit arithmetic)}
+\label{tab:baseline-sepolia-benchmark}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|r|}
+\hline
+\textbf{Operation} &
+\textbf{Mean Gas} &
+\multicolumn{3}{c|}{\textbf{Latency Components: Mean ms (CV\%)}} &
+\textbf{Derived total} \\
+\cline{3-5}
+& &
+\textbf{Preparation} &
+\textbf{Tx to receipt} &
+\textbf{Receipt to validation} &
+\textbf{Lifecycle ms (CV\%)} \\
+\hline
+set\_meter\_owner & 22086 & 162 (8.80\%) & 7015 (90.86\%) & 119 (22.93\%) & 7296 (87.30\%) \\
+notarize & 31602 & 178 (35.05\%) & 8198 (54.89\%) & 123 (29.86\%) & 8499 (52.98\%) \\
+add & 33356 & 185 (31.75\%) & 8871 (67.18\%) & 126 (38.27\%) & 9182 (64.84\%) \\
+mul\_scalar & 33634 & 179 (27.57\%) & 8229 (67.71\%) & 116 (23.09\%) & 8525 (65.29\%) \\
+mean & 35542 & 177 (31.39\%) & 8561 (59.45\%) & 139 (48.73\%) & 8878 (57.59\%) \\
+max & 35706 & 182 (30.74\%) & 7160 (46.35\%) & 132 (43.69\%) & 7474 (44.56\%) \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Preparation includes input encryption/proof generation, transaction preparation and signing. Lifecycle is preparation plus transaction-to-validated-plaintext time; intentional barrier waiting is excluded. Means and CVs are calculated per observation.}
+\end{table*}

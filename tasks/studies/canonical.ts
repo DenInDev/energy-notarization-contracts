@@ -1,18 +1,22 @@
 import { deadline } from "../lib/lifecycleTiming";
-import type { CanonicalReceiptRecovery, ReceiptAnchor, StudyTransaction } from "./types";
+import type { CanonicalReceiptRecovery, SettledSetupReceipt, ReceiptAnchor, StudyTransaction } from "./types";
 
-type Recoveries = { canonicalReceipts?: CanonicalReceiptRecovery[] };
+type Recoveries = { canonicalReceipts?: CanonicalReceiptRecovery[]; settledSetupReceipts?: SettledSetupReceipt[]; lateComputeReceipts?: SettledSetupReceipt[] };
 type Send = (method:string,params:any[])=>Promise<any>;
 
 // A derived read/gas view only. Never change the first-observed raw receipt or
 // attach a new inclusion latency to a transaction which was later reincluded.
 export function effectiveReceipt(tx: StudyTransaction, report: Recoveries): StudyTransaction {
+  const late=[...(report.settledSetupReceipts??[]),...(report.lateComputeReceipts??[])].find(r=>r.transactionHash===tx.transactionHash);
+  if(late)tx={...tx,...late.canonical,status:"confirmed",receiptMs:undefined,receiptOffsetMs:undefined};
   const recovery=report.canonicalReceipts?.filter(r=>r.transactionHash===tx.transactionHash).at(-1);
   return recovery?{...tx,...recovery.canonical,receiptMs:undefined,receiptOffsetMs:undefined}:tx;
 }
 
 export function receiptWasReconciled(tx: StudyTransaction, report: Recoveries) {
-  return !!report.canonicalReceipts?.some(r=>r.transactionHash===tx.transactionHash);
+  return !!report.canonicalReceipts?.some(r=>r.transactionHash===tx.transactionHash) ||
+    !!report.settledSetupReceipts?.some(r=>r.transactionHash===tx.transactionHash) ||
+    !!report.lateComputeReceipts?.some(r=>r.transactionHash===tx.transactionHash);
 }
 
 function anchor(receipt:any): ReceiptAnchor {

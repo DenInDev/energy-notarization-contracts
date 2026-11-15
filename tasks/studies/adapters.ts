@@ -28,7 +28,7 @@ export async function makeStudyAdapter(platform: Platform, width: Width, hre: Ha
         return [Array.from(encrypted.handles), encrypted.inputProof];
       },
       async decrypt(handles) {
-        const type = ({ 8: 2, 16: 3, 32: 4, 64: 5, 128: 6 } as const)[width];
+        const type = 3; // euint16
         const operation=mockDecryptQueue.then(async () => {
           const results: bigint[]=[];
           for (const h of handles) results.push(await hre.fhevm.userDecryptEuint(type,toBeHex(h,32),address,signer));

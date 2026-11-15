@@ -1,0 +1,2 @@
+{"at":"2026-11-12T10:16:18.319Z","status":"running"}
+{"at":"2026-11-12T10:16:50.038Z","status":"failed","error":"Archive requests require a personal token. Get one at: [endpoint]","segment":"failed","executionComplete":false,"primaryOk":16,"capacityRejected":2,"last":{"caseId":"circuits-w16-sum_tree-n8","platform":"zama","round":1,"status":"incomplete","error":"study receipt deadline exceeded (180000 ms)"}}

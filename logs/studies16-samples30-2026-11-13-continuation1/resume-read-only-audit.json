@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-12T23:57:19.376Z",
+  "status": "settled",
+  "mutationCalls": 0,
+  "sourceFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-12\\session-2\\concurrency-euint16\\report.json",
+  "sourceSha256": "051b8f0161a223030c523acbd2271faff96af998c9a3d55380d6b89fc322af21",
+  "previousProcessAbsent": true,
+  "confirmedTransactions": 610,
+  "retainedSuccessfulMeasuredWindows": 49,
+  "unsentPreparedRequests": 7,
+  "accounts": [
+    {
+      "address": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "latest": 979,
+      "pending": 979,
+      "balanceWei": "999912471813941",
+      "lastHash": "0xeaaea5fa0fb74c85ee8991b0d5d810c865ed00ad3c7c766769fb922f5a8dce15"
+    },
+    {
+      "address": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+      "latest": 1566,
+      "pending": 1566,
+      "balanceWei": "999930073149733",
+      "lastHash": "0x878786e5cfd9c9142fc1219ed66ca8df5e87379f8298131b7204141c508250fe"
+    },
+    {
+      "address": "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+      "latest": 420,
+      "pending": 420,
+      "balanceWei": "999980501876280",
+      "lastHash": "0x9ff403c9826c8698a9e63c88814769ce25966af744b66346430856b730c5a472"
+    },
+    {
+      "address": "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+      "latest": 240,
+      "pending": 240,
+      "balanceWei": "999989509760231",
+      "lastHash": "0x32e008ac9a8f93e1481dd5873bf3faa75fcb3b4391f9ace303fc229ae4e1cc4d"
+    },
+    {
+      "address": "0x324CAA6F704fa42e92b302b637440238d905AE77",
+      "latest": 240,
+      "pending": 240,
+      "balanceWei": "999989497518555",
+      "lastHash": "0x7233cf83405203da530af2e4ef19b3da64fb74574bd0f8ac7db260d5889457aa"
+    }
+  ]
+}

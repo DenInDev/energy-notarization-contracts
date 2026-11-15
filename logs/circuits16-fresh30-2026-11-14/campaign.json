@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "kind": "fresh-16bit-circuits-30",
+  "chainId": 11155111,
+  "status": "execution_complete_with_capacity_rejections",
+  "createdAt": "2026-11-14T15:28:57.143Z",
+  "authorization": "User explicitly selected Nuova campagna da zero:30 ripetizioni per configurazione. Circuit studies only; retain all older reports separately.",
+  "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\circuits30-2026-11-14\\accounts.secret.json",
+  "parentAccountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\studies\\accounts.secret.json",
+  "expectedAccounts": [
+    "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E"
+  ],
+  "stages": [
+    {
+      "suite": "circuits",
+      "width": 16,
+      "status": "finished",
+      "args": {
+        "suite": "circuits",
+        "platform": "all",
+        "widths": "16",
+        "users": "1,2,4,8",
+        "modes": "independent,shared_sum,shared_ordered",
+        "sizes": "2,8,32",
+        "depths": "1,8,16,32",
+        "repetitions": 30,
+        "requests": 32,
+        "timeout": 180,
+        "seed": "circuits16-fresh30-2026-11-14-v1",
+        "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\circuits30-2026-11-14\\accounts.secret.json",
+        "outputDir": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\circuits16-fresh30-2026-11-14\\circuits-euint16",
+        "live": false
+      },
+      "plan": {
+        "cases": [
+          {
+            "id": "circuits-w16-sum_linear-n2",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_linear",
+            "size": 2,
+            "inputCount": 2,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "circuits-w16-sum_tree-n2",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_tree",
+            "size": 2,
+            "inputCount": 2,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "circuits-w16-sum_linear-n8",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_linear",
+            "size": 8,
+            "inputCount": 8,
+            "additions": 7,
+            "multiplications": 0,
+            "dependencyDepth": 7
+          },
+          {
+            "id": "circuits-w16-sum_tree-n8",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_tree",
+            "size": 8,
+            "inputCount": 8,
+            "additions": 7,
+            "multiplications": 0,
+            "dependencyDepth": 3
+          },
+          {
+            "id": "circuits-w16-sum_linear-n32",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_linear",
+            "size": 32,
+            "inputCount": 32,
+            "additions": 31,
+            "multiplications": 0,
+            "dependencyDepth": 31
+          },
+          {
+            "id": "circuits-w16-sum_tree-n32",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_tree",
+            "size": 32,
+            "inputCount": 32,
+            "additions": 31,
+            "multiplications": 0,
+            "dependencyDepth": 5
+          },
+          {
+            "id": "circuits-w16-affine_chain-k1",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "affine_chain",
+            "size": 1,
+            "inputCount": 2,
+            "additions": 1,
+            "multiplications": 1,
+            "dependencyDepth": 2
+          },
+          {
+            "id": "circuits-w16-affine_chain-k8",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "affine_chain",
+            "size": 8,
+            "inputCount": 2,
+            "additions": 8,
+            "multiplications": 8,
+            "dependencyDepth": 16
+          },
+          {
+            "id": "circuits-w16-affine_chain-k16",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "affine_chain",
+            "size": 16,
+            "inputCount": 2,
+            "additions": 16,
+            "multiplications": 16,
+            "dependencyDepth": 32
+          },
+          {
+            "id": "circuits-w16-affine_chain-k32",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "affine_chain",
+            "size": 32,
+            "inputCount": 2,
+            "additions": 32,
+            "multiplications": 32,
+            "dependencyDepth": 64
+          }
+        ],
+        "platforms": [
+          "baseline",
+          "zama",
+          "fhenix"
+        ],
+        "repetitions": 30,
+        "measuredTransactions": 900,
+        "warmupTransactions": 30,
+        "setupTransactions": 936,
+        "deployments": 3,
+        "requiredAccounts": 1,
+        "networkAccess": false,
+        "note": "Plan only; counts are upper budgets. --live enables transactions. Exact HCU estimate rejections send no compute transaction; other failures stop the run. No funding automation."
+      },
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\circuits16-fresh30-2026-11-14\\circuits-euint16\\report.json",
+      "startedAt": "2026-11-14T15:29:51.755Z",
+      "finishedAt": "2026-11-14T23:21:55.026Z",
+      "rawSha256": "e7296f01160592e10d10f2d8b5ff63e3de8a148c9b14704e967b877c60e9b4b1",
+      "allValid": false,
+      "counts": {
+        "measuredTrials": 900,
+        "validatedRequests": 840,
+        "capacityRejections": 60
+      }
+    }
+  ],
+  "previousReports": [
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-2\\concurrency-euint16\\report.json",
+      "sha256": "1a83072f07d7ba3ce1f5a827081c48d083acc8a8708c7c608a0810b41f358d50"
+    },
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-2\\circuits-euint16\\report.json",
+      "sha256": "fe48228a6e94d3a08e9f8176623594d71c896489ea791ca043fe7df73ca8b730"
+    }
+  ],
+  "previousCampaign": {
+    "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-2\\campaign.json",
+    "sha256": "955a0acd4abec06e5f3ad7492056cf4db333de131109b520e4a5268e77beca95"
+  },
+  "monitoring": {
+    "intervalMs": 600000,
+    "readOnly": true,
+    "noAutomaticMutationRetry": true
+  },
+  "methodology": {
+    "scope": "New16-bit campaign only; do not pool with earlier campaigns.30 rounds per10 configurations/platform,900 measured planned slots plus30warmups.",
+    "capacity": "Known exact HCU estimate rejection is an outcome without a compute send/gas/latency; its setup cost remains included.",
+    "measurements": "Same existing contract, SDK and transport policy. Receipt-pinned validated plaintext. Preparation/readiness separate. Client/service/network latency, not isolated FHE compute.",
+    "preservation": "Existing confirmed transactions are not replayed. Old raw reports remain byte-for-byte unchanged; fresh contracts and request IDs.",
+    "sleep": "Temporary idle-sleep inhibition while verified process lives; cannot survive manual shutdown, forced sleep or Windows restart."
+  },
+  "pid": 33384,
+  "startedAt": "2026-11-14T15:29:51.054Z",
+  "sourceSnapshot": {
+    "files": {
+      "scripts/run-fresh-circuits30.cjs": "e5b76f51d81596b4d7ab23756e82453a10d84062905976d42bbe6937093e5a45",
+      "scripts/lib/study-campaign.cjs": "672c975b760f88341aa6673be080525a2c4e9751000c60cefdca4fe0c87e2f39",
+      "hardhat.config.ts": "f2c7451f127f8f87555025976a0d37c84208f9630b842a769d0c773c50496b3d",
+      "package-lock.json": "4571f420b5ef346a377e26b0d86ed6d3c9c4cfa5e268e184f876936f862fa35e",
+      "tasks/benchmarkExperiments.ts": "a053f970478e42fb84adc2b719b4af962a98f4a4560f7a6ed8ee1d148bfbb93e",
+      "tasks/experiments/accounts.ts": "2a930be994cd3ba0808f3f79fd88641b472a86c639a33883f2149f3fe3bca75e",
+      "tasks/lifecycle/broadcast.ts": "b1106a4e490c4d395cba490d12641d40c7e2d5ae2fe3bc0d06c0fbb687a7dfd9",
+      "tasks/lifecycle/errors.ts": "6871cf491202633327f12a054e1e9cbde2c75aa51df2da01912ef4698c2b7ccd",
+      "tasks/studies/adapters.ts": "c04e3c7ff6d37e6be8e0f1f3b787fef04bc78d1a02c919165efed83ccac18796",
+      "tasks/studies/canonical.ts": "b33100ccc260702c39ff8539c65d863e3a64b04cad90c6d5a000eb809c4d2a6c",
+      "tasks/studies/capacity.ts": "ca5dc996204c668b76d6186e07ce3a9f16624aee4518d0eb9d9a636a3e64100a",
+      "tasks/studies/checkpoint.ts": "00a45d78301334f53b70be51e7f3357f6006f3fb41352916542972bb6fac1551",
+      "tasks/studies/continuation.ts": "5def0d6b9674af8f4dbcbbef1a2f74a68ddb0d325bebf8ca81b305d253f14ca3",
+      "tasks/studies/history.ts": "f9ea9e408e37b725c4ef238f9ee5f07f06f50362e4c8fe0e48edbe90bdc18992",
+      "tasks/studies/logs.ts": "f3d096b6ad72b51d36cae98fe7c24967a51ff3a30a4ac3c43edbd8b64d34323e",
+      "tasks/studies/oracle.ts": "303b362ad5a67e3bd92d1c827b3c589965d13a027eebec619a9f74afa65657df",
+      "tasks/studies/plan.ts": "ee3c0ac87a2faffd027addee75370ad8ef7498038f7cce0de8e72a54e3eef415",
+      "tasks/studies/preparation.ts": "7adc0ef91d4b27b22f0daf30ad53c36a824185fb9e256795bb3939e241432408",
+      "tasks/studies/report.ts": "b23b75f658f21643e172a78520d0253b630f1c65935a2d2d06d19a6d9fe16ac2",
+      "tasks/studies/rpc.ts": "63c65ba0662f32e66944285b129a2a9027403c9a113ff507d0e2ba9f72eef996",
+      "tasks/studies/runner.ts": "605b5c75ae0b90b429684e03f5e3d27438d9478cd13cdf97844bd0351048522d",
+      "tasks/studies/transactions.ts": "d02d5cba30875189ad75717a01fbcf7804a0185d119f793ea7c3535c4a585df0",
+      "tasks/studies/types.ts": "a18a92d44db7d317a7322c3cac797e41d57dcdd521209555bccec362f0ad911a",
+      "tasks/lib/cofheReadPolicy.ts": "c53dccee16e097a4eb9ff8c35b4d9ef7655966bab966d1e4e4e5bc2ff7c26037",
+      "tasks/lib/decryptionPolling.cjs": "b436d09f7c9c148f8c39205be554701e4977e95ddd59e2eb0789ade9717cc5e1",
+      "tasks/lib/lifecycleConcurrent.ts": "040f0640cac5db6721fbc41049cba42df44488a6252ea3d2fc4b3664f114d7a9",
+      "tasks/lib/lifecycleNonce.ts": "9514a35406d16839c932269580fe863c3db1fa05ad351602a6b547f5747eda08",
+      "tasks/lib/lifecycleReadRetry.ts": "265381784c96971bb6ef5d67427581b975a32b4ec8c9a2833d71ef09ca00bce4",
+      "tasks/lib/lifecycleReportWrite.ts": "5919e26a4055cbdf324008c325dd7cd5621ba39218dc21d89f919f324449001b",
+      "tasks/lib/lifecycleResult.ts": "d02bdfc151228a0b67210bc079a10f4af90fed3b85fb0c50e47f41aad3b23cfa",
+      "tasks/lib/lifecycleSchedule.ts": "903e34402f86d08d516d1233ce0dd775e591a749d8fe9f945e52c26c23385bc2",
+      "tasks/lib/lifecycleTiming.ts": "11ca028648485eca0a34ca4166dcf12662838609b73c5ee7ad3fcfa1e82b9164",
+      "contracts/studies/StudyCoFHE.sol": "db1e056e8e4b8318f1dc15184a28b09de58cb2d51cbb6963df48a711d04b8767",
+      "contracts/studies/StudyPlain.sol": "ec205734c911c44ac72e2193b19dbd2563c78b4ee65d8d92096b93da94b32779",
+      "contracts/studies/StudyZama.sol": "f9fe0de9a61331843a2b7bb549b875335a66ffa701459ff037f9f0f944cd24e4",
+      "scripts/analysis/analyze-study-campaign.py": "70941dc9c4ccb368dfd967178ec0eb872ffba10b28ff4fa7dbb9b415f805831a",
+      "scripts/analysis/collect-operation-block-metadata.cjs": "9807d4c7190a49f0bc6180e749090488a29e1c439f5d99c790f1bebb2ca0b9f8"
+    },
+    "polling": {
+      "requestedIntervalMs": 10,
+      "serverRetryAfter": "respected; can lengthen the effective interval",
+      "patch": "benchmark-decryption-polling-v1",
+      "bundles": {
+        "zama": {
+          "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+          "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+        },
+        "zamaEsm": {
+          "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+          "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+        },
+        "fhenix": {
+          "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+          "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+        }
+      }
+    }
+  },
+  "rpcReadPolicy": {
+    "enabled": true,
+    "maxAttempts": 5,
+    "backoffMs": 5000,
+    "timeoutMs": 180000,
+    "retryAfter": "respected",
+    "journal": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\circuits16-fresh30-2026-11-14\\rpc-read-retries.jsonl",
+    "methods": [
+      "eth_chainId",
+      "net_version",
+      "eth_blockNumber",
+      "eth_getBalance",
+      "eth_getCode",
+      "eth_getTransactionCount",
+      "eth_getBlockByNumber",
+      "eth_getBlockByHash",
+      "eth_getTransactionReceipt",
+      "eth_getTransactionByHash",
+      "eth_getLogs",
+      "eth_call",
+      "eth_estimateGas",
+      "eth_feeHistory",
+      "eth_gasPrice",
+      "eth_maxPriorityFeePerGas"
+    ],
+    "mutationRetry": false
+  },
+  "launchPreflight": [
+    {
+      "address": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "latest": 1539,
+      "pending": 1539,
+      "balanceWei": "999891078044989"
+    }
+  ],
+  "currentStage": "canonical network audit and tables",
+  "currentReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\circuits16-fresh30-2026-11-14\\circuits-euint16\\report.json",
+  "finishedAt": "2026-11-14T23:22:34.497Z",
+  "networkReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\circuits16-fresh30-2026-11-14\\network\\network-report.md"
+}

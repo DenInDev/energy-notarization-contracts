@@ -1,0 +1,70 @@
+{
+  "status": "failed",
+  "startedAt": "2026-11-10T11:45:56.936Z",
+  "pid": 10620,
+  "chainId": 11155111,
+  "runs": 50,
+  "widths": [
+    16,
+    128
+  ],
+  "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\isolated-validation\\accounts.secret.json",
+  "operationOrder": [
+    "set_meter_owner",
+    "notarize",
+    "add",
+    "mul_scalar",
+    "mean",
+    "max",
+    "view_decrypt"
+  ],
+  "ownershipScope": "50 measured encrypted-address imports per platform and width, before the energy operations, with receipt-pinned owner getter and equality-validated authorized decryption",
+  "viewDecryptScope": "One persisted getter plus fresh authorized decryption after max per round, separate warmups and samples",
+  "stages": [
+    {
+      "kind": "pilot",
+      "width": 16,
+      "status": "finished",
+      "startedAt": "2026-11-10T11:45:56.940Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\pilot-euint16\\report.json",
+      "completedAt": "2026-11-10T11:50:56.908Z"
+    },
+    {
+      "kind": "pilot",
+      "width": 128,
+      "status": "finished",
+      "startedAt": "2026-11-10T11:50:56.933Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\pilot-euint128\\report.json",
+      "completedAt": "2026-11-10T11:55:43.491Z"
+    },
+    {
+      "kind": "measured",
+      "width": 16,
+      "status": "failed",
+      "startedAt": "2026-11-10T11:55:43.508Z",
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint16\\report.json"
+    }
+  ],
+  "currentStage": "measured-euint16",
+  "decryptionPolling": {
+    "requestedIntervalMs": 10,
+    "serverRetryAfter": "respected; can lengthen the effective interval",
+    "patch": "benchmark-decryption-polling-v1",
+    "bundles": {
+      "zama": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+        "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+      },
+      "zamaEsm": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+        "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+      },
+      "fhenix": {
+        "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+        "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+      }
+    }
+  },
+  "error": "Report persistence failed; no further comparisons permitted: UNKNOWN: unknown error, open 'C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint16\\stages.jsonl'",
+  "abortedAt": "2026-11-10T12:25:42.944Z"
+}

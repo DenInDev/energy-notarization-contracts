@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "kind": "compact-16bit-selected-studies",
+  "status": "funded_ready",
+  "chainId": 11155111,
+  "createdAt": "2026-11-12T23:57:19.021Z",
+  "authorization": "User selected 30 total: add20 per configuration. Retain original10 and add two fresh10-repetition sessions to both compact16-bit studies.",
+  "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\studies-reduced16\\accounts.secret.json",
+  "parentAccountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\studies\\accounts.secret.json",
+  "expectedAccounts": [
+    "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+    "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+    "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+    "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+    "0x324CAA6F704fa42e92b302b637440238d905AE77"
+  ],
+  "stages": [
+    {
+      "suite": "concurrency",
+      "width": 16,
+      "status": "planned",
+      "args": {
+        "suite": "concurrency",
+        "platform": "all",
+        "widths": "16",
+        "users": "1,4",
+        "modes": "shared_sum,shared_ordered",
+        "sizes": "2,4,8,16,32",
+        "depths": "1,2,4,8,16,32",
+        "repetitions": 10,
+        "requests": 8,
+        "timeout": 180,
+        "seed": "studies16-samples30-2026-11-12-session3-v1",
+        "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\studies-reduced16\\accounts.secret.json",
+        "outputDir": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-3\\concurrency-euint16",
+        "live": false
+      },
+      "plan": {
+        "cases": [
+          {
+            "id": "concurrency-w16-c1-shared_sum",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 1,
+            "mode": "shared_sum",
+            "size": 8,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "concurrency-w16-c1-shared_ordered",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 1,
+            "mode": "shared_ordered",
+            "size": 8,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 1,
+            "dependencyDepth": 2
+          },
+          {
+            "id": "concurrency-w16-c4-shared_sum",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 4,
+            "mode": "shared_sum",
+            "size": 8,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "concurrency-w16-c4-shared_ordered",
+            "suite": "concurrency",
+            "width": 16,
+            "users": 4,
+            "mode": "shared_ordered",
+            "size": 8,
+            "inputCount": 1,
+            "additions": 1,
+            "multiplications": 1,
+            "dependencyDepth": 2
+          }
+        ],
+        "platforms": [
+          "baseline",
+          "zama",
+          "fhenix"
+        ],
+        "repetitions": 10,
+        "measuredTransactions": 960,
+        "warmupTransactions": 144,
+        "setupTransactions": 144,
+        "deployments": 3,
+        "requiredAccounts": 5,
+        "networkAccess": false,
+        "note": "Plan only; counts are upper budgets. --live enables transactions. Exact HCU estimate rejections send no compute transaction; other failures stop the run. No funding automation."
+      },
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-3\\concurrency-euint16\\report.json"
+    },
+    {
+      "suite": "circuits",
+      "width": 16,
+      "status": "planned",
+      "args": {
+        "suite": "circuits",
+        "platform": "all",
+        "widths": "16",
+        "users": "1,2,4,8",
+        "modes": "independent,shared_sum,shared_ordered",
+        "sizes": "2,8,32",
+        "depths": "1,8,16,32",
+        "repetitions": 10,
+        "requests": 32,
+        "timeout": 180,
+        "seed": "studies16-samples30-2026-11-12-session3-v1",
+        "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\studies-reduced16\\accounts.secret.json",
+        "outputDir": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-3\\circuits-euint16",
+        "live": false
+      },
+      "plan": {
+        "cases": [
+          {
+            "id": "circuits-w16-sum_linear-n2",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_linear",
+            "size": 2,
+            "inputCount": 2,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "circuits-w16-sum_tree-n2",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_tree",
+            "size": 2,
+            "inputCount": 2,
+            "additions": 1,
+            "multiplications": 0,
+            "dependencyDepth": 1
+          },
+          {
+            "id": "circuits-w16-sum_linear-n8",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_linear",
+            "size": 8,
+            "inputCount": 8,
+            "additions": 7,
+            "multiplications": 0,
+            "dependencyDepth": 7
+          },
+          {
+            "id": "circuits-w16-sum_tree-n8",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_tree",
+            "size": 8,
+            "inputCount": 8,
+            "additions": 7,
+            "multiplications": 0,
+            "dependencyDepth": 3
+          },
+          {
+            "id": "circuits-w16-sum_linear-n32",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_linear",
+            "size": 32,
+            "inputCount": 32,
+            "additions": 31,
+            "multiplications": 0,
+            "dependencyDepth": 31
+          },
+          {
+            "id": "circuits-w16-sum_tree-n32",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "sum_tree",
+            "size": 32,
+            "inputCount": 32,
+            "additions": 31,
+            "multiplications": 0,
+            "dependencyDepth": 5
+          },
+          {
+            "id": "circuits-w16-affine_chain-k1",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "affine_chain",
+            "size": 1,
+            "inputCount": 2,
+            "additions": 1,
+            "multiplications": 1,
+            "dependencyDepth": 2
+          },
+          {
+            "id": "circuits-w16-affine_chain-k8",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "affine_chain",
+            "size": 8,
+            "inputCount": 2,
+            "additions": 8,
+            "multiplications": 8,
+            "dependencyDepth": 16
+          },
+          {
+            "id": "circuits-w16-affine_chain-k16",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "affine_chain",
+            "size": 16,
+            "inputCount": 2,
+            "additions": 16,
+            "multiplications": 16,
+            "dependencyDepth": 32
+          },
+          {
+            "id": "circuits-w16-affine_chain-k32",
+            "suite": "circuits",
+            "width": 16,
+            "users": 1,
+            "circuit": "affine_chain",
+            "size": 32,
+            "inputCount": 2,
+            "additions": 32,
+            "multiplications": 32,
+            "dependencyDepth": 64
+          }
+        ],
+        "platforms": [
+          "baseline",
+          "zama",
+          "fhenix"
+        ],
+        "repetitions": 10,
+        "measuredTransactions": 300,
+        "warmupTransactions": 30,
+        "setupTransactions": 336,
+        "deployments": 3,
+        "requiredAccounts": 1,
+        "networkAccess": false,
+        "note": "Plan only; counts are upper budgets. --live enables transactions. Exact HCU estimate rejections send no compute transaction; other failures stop the run. No funding automation."
+      },
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-3\\circuits-euint16\\report.json"
+    }
+  ],
+  "previousManifest": {
+    "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-12\\session-3\\campaign.json",
+    "sha256": "cc7e522bd1b64e4e46f08f0b398862927672be9348c7a0181073162c304a52ea"
+  }
+}

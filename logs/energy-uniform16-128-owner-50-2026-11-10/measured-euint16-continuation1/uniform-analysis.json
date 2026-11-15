@@ -1,0 +1,1242 @@
+{
+  "reportSha256": "0603562486a911cc8b5bac0491f80ce2429f2467334a73480936e882acad43ff",
+  "width": 16,
+  "complete": true,
+  "measuredPrimary": 900,
+  "plannedMeasuredPrimary": 900,
+  "scope": "completed segmented campaign",
+  "observationSegments": 2,
+  "historicalOrchestrationFailures": [
+    {
+      "sourceReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint16\\report.json",
+      "error": "Report persistence failed; no further comparisons permitted: UNKNOWN: unknown error, open 'C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint16\\stages.jsonl'",
+      "abortedAt": "2026-11-10T12:25:42.501Z"
+    }
+  ],
+  "validatedPrimary": 900,
+  "warmupPrimary": 18,
+  "sameBlockComparisons": 300,
+  "blockEligibleComparisons": 300,
+  "gasCostWeiIncludingDeploymentAndWarmup": "17429837395",
+  "gasCostWeiByPlatform": {
+    "baseline": "1101287682",
+    "zama": "8701547511",
+    "fhenix": "7627002202"
+  },
+  "operationOrder": [
+    "set_meter_owner",
+    "notarize",
+    "add",
+    "mul_scalar",
+    "mean",
+    "max"
+  ],
+  "smartMeter": {
+    "id": "0x656e657267792d62656e63686d61726b2d736d6172742d6d657465722d303031",
+    "syntheticOwnerAddress": "0x1234567890abcdef1234567890abcdef12345678",
+    "ownerType": "eaddress on FHE platforms; address on baseline",
+    "stateKey": "public smart-meter ID",
+    "authorization": "The deployment operator remains the authorized caller and decryptor; encrypted meter ownership is an association, not private caller authentication."
+  },
+  "polling": {
+    "requestedIntervalMs": 10,
+    "serverRetryAfter": "respected; can lengthen the effective interval",
+    "patch": "benchmark-decryption-polling-v1",
+    "bundles": {
+      "zama": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+        "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+      },
+      "zamaEsm": {
+        "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+        "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+      },
+      "fhenix": {
+        "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+        "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+      }
+    }
+  },
+  "rows": [
+    {
+      "platform": "baseline",
+      "operation": "set_meter_owner",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 161.5504120000018,
+        "medianMs": 160.56045000004815,
+        "sdMs": 14.216616454080302,
+        "cvPct": 8.800111542940629
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 12867.893534000003,
+        "medianMs": 13115.614750000022,
+        "sdMs": 565.1138522122254,
+        "cvPct": 4.391657816557633
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 109.57527599998284,
+        "medianMs": 105.58075000008103,
+        "sdMs": 22.786625372002845,
+        "cvPct": 20.79540769033191
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 7015.083873999986,
+        "medianMs": 4162.035599999945,
+        "sdMs": 6374.172217067403,
+        "cvPct": 90.86380621466274
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 119.35155400000426,
+        "medianMs": 113.93519999983255,
+        "sdMs": 27.369465352670172,
+        "cvPct": 22.931804769520802
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 7134.435427999991,
+        "medianMs": 4285.08369999993,
+        "sdMs": 6372.020371091604,
+        "cvPct": 89.3135894969882
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 7295.985839999992,
+        "medianMs": 4442.222049999851,
+        "sdMs": 6369.507251392867,
+        "cvPct": 87.3015297874108
+      },
+      "meanGas": 22086
+    },
+    {
+      "platform": "baseline",
+      "operation": "notarize",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 178.08262400002744,
+        "medianMs": 203.70624999998836,
+        "sdMs": 62.41895266572756,
+        "cvPct": 35.05055758034986
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 12769.94293800002,
+        "medianMs": 13018.892200000002,
+        "sdMs": 599.2085335556003,
+        "cvPct": 4.692335247423165
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 117.16315999997663,
+        "medianMs": 108.5609500000719,
+        "sdMs": 35.3519409828229,
+        "cvPct": 30.17325666432175
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 8197.607782000006,
+        "medianMs": 6452.649300000085,
+        "sdMs": 4499.276406840822,
+        "cvPct": 54.88523635785749
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 122.92445400002238,
+        "medianMs": 115.81775000016205,
+        "sdMs": 36.70659035860127,
+        "cvPct": 29.8610969291713
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 8320.532236000028,
+        "medianMs": 6570.1798499999495,
+        "sdMs": 4506.929703824185,
+        "cvPct": 54.16636311225716
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 8498.614860000056,
+        "medianMs": 6744.657499999856,
+        "sdMs": 4502.167069274881,
+        "cvPct": 52.97530413414747
+      },
+      "meanGas": 31602
+    },
+    {
+      "platform": "baseline",
+      "operation": "add",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 185.01679599999798,
+        "medianMs": 205.4235000001936,
+        "sdMs": 58.74997263469757,
+        "cvPct": 31.75385905758427
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 454.63979799996656,
+        "medianMs": 431.96074999996927,
+        "sdMs": 118.14882501473811,
+        "cvPct": 25.987347683703394
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 113.21563599999615,
+        "medianMs": 105.60350000009203,
+        "sdMs": 53.77512090079929,
+        "cvPct": 47.49796300292047
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 8871.12949199998,
+        "medianMs": 6451.774049999985,
+        "sdMs": 5960.017182954013,
+        "cvPct": 67.18442322737799
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 126.09706599997968,
+        "medianMs": 113.65139999985695,
+        "sdMs": 48.25925324631749,
+        "cvPct": 38.27151160386656
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 8997.22655799996,
+        "medianMs": 6606.273099999991,
+        "sdMs": 5956.461501294039,
+        "cvPct": 66.20330679566806
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 9182.243353999958,
+        "medianMs": 6763.258199999953,
+        "sdMs": 5953.387751819419,
+        "cvPct": 64.83587422267577
+      },
+      "meanGas": 33356
+    },
+    {
+      "platform": "baseline",
+      "operation": "mul_scalar",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 178.87142399996867,
+        "medianMs": 207.17004999972414,
+        "sdMs": 49.30654936269781,
+        "cvPct": 27.565358546430783
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 465.9823379999836,
+        "medianMs": 457.68619999993825,
+        "sdMs": 137.20821464899632,
+        "cvPct": 29.44493888714751
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 109.32396399999125,
+        "medianMs": 106.90434999996796,
+        "sdMs": 11.982938564824961,
+        "cvPct": 10.960944084341763
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 8229.230350000014,
+        "medianMs": 6739.486649999977,
+        "sdMs": 5571.7402326856645,
+        "cvPct": 67.7066991165906
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 116.46000399998506,
+        "medianMs": 111.3281999998726,
+        "sdMs": 26.884904336046084,
+        "cvPct": 23.08509652468287
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 8345.690353999998,
+        "medianMs": 6846.741849999875,
+        "sdMs": 5570.5145517917645,
+        "cvPct": 66.74719903934462
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 8524.561777999968,
+        "medianMs": 6991.317199999932,
+        "sdMs": 5565.519431760241,
+        "cvPct": 65.28804150523762
+      },
+      "meanGas": 33634
+    },
+    {
+      "platform": "baseline",
+      "operation": "mean",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 177.33347200000367,
+        "medianMs": 201.6450499999919,
+        "sdMs": 55.65894123546449,
+        "cvPct": 31.38659645453924
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 464.17103799999575,
+        "medianMs": 484.34665000007953,
+        "sdMs": 112.7003433371618,
+        "cvPct": 24.279917123386493
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 109.87328800000454,
+        "medianMs": 108.6421500002034,
+        "sdMs": 11.644181333088582,
+        "cvPct": 10.59782732003806
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 8560.731584000006,
+        "medianMs": 6851.440600000002,
+        "sdMs": 5089.01836954759,
+        "cvPct": 59.44606859370474
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 139.46386199998116,
+        "medianMs": 116.14744999993127,
+        "sdMs": 67.95924186972927,
+        "cvPct": 48.728925827207085
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 8700.195445999987,
+        "medianMs": 6960.617050000001,
+        "sdMs": 5102.004257065914,
+        "cvPct": 58.642409687607866
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 8877.52891799999,
+        "medianMs": 7106.191900000034,
+        "sdMs": 5112.443330181335,
+        "cvPct": 57.58858548819137
+      },
+      "meanGas": 35542
+    },
+    {
+      "platform": "baseline",
+      "operation": "max",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 182.0413819999656,
+        "medianMs": 209.63489999982994,
+        "sdMs": 55.95860337979806,
+        "cvPct": 30.739496022837617
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 458.0150219999824,
+        "medianMs": 449.85510000000795,
+        "sdMs": 117.73720416291289,
+        "cvPct": 25.70597000264271
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 112.69009000002275,
+        "medianMs": 109.04045000008773,
+        "sdMs": 22.562811747663787,
+        "cvPct": 20.022001710761995
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 7159.69876599998,
+        "medianMs": 6296.945749999955,
+        "sdMs": 3318.3095998517706,
+        "cvPct": 46.34705604668423
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 131.8307180000195,
+        "medianMs": 111.60899999993853,
+        "sdMs": 57.601082443825085,
+        "cvPct": 43.69321757302162
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 7291.529484,
+        "medianMs": 6412.946499999962,
+        "sdMs": 3329.7947267232103,
+        "cvPct": 45.66661540668345
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 7473.5708659999655,
+        "medianMs": 6558.628599999996,
+        "sdMs": 3330.3946924716433,
+        "cvPct": 44.56229494822668
+      },
+      "meanGas": 35706
+    },
+    {
+      "platform": "baseline",
+      "operation": "view_decrypt",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "viewMs": {
+        "n": 50,
+        "meanMs": 80.23600399997754,
+        "medianMs": 78.18589999980759,
+        "sdMs": 28.907063545333262,
+        "cvPct": 36.02754636851226
+      },
+      "decryptAndValidationMs": {
+        "n": 50,
+        "meanMs": 0.007554000046657166,
+        "medianMs": 0.006400000129360706,
+        "sdMs": 0.006172526651482333,
+        "cvPct": 81.71202824143256
+      },
+      "viewToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 80.24355800002421,
+        "medianMs": 78.1951499999268,
+        "sdMs": 28.905332366375667,
+        "cvPct": 36.02199738746249
+      }
+    },
+    {
+      "platform": "zama",
+      "operation": "set_meter_owner",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 50,
+        "meanMs": 12444.615681999978,
+        "medianMs": 12696.080999999904,
+        "sdMs": 526.3767525417736,
+        "cvPct": 4.2297549879594145
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 12662.867781999998,
+        "medianMs": 12911.83879999991,
+        "sdMs": 525.7195454189014,
+        "cvPct": 4.15166259704773
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 366.9067980000055,
+        "medianMs": 375.9326000000583,
+        "sdMs": 59.133815054835914,
+        "cvPct": 16.116849122766876
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 111.43205200002019,
+        "medianMs": 108.32874999985506,
+        "sdMs": 22.32135562918785,
+        "cvPct": 20.031360123552066
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 7008.945431999982,
+        "medianMs": 4125.008599999943,
+        "sdMs": 6351.549346140843,
+        "cvPct": 90.6206134398231
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 4251.726464000009,
+        "medianMs": 4603.894249999896,
+        "sdMs": 710.9362479986432,
+        "cvPct": 16.721119150496733
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 11260.671895999993,
+        "medianMs": 8505.840849999891,
+        "sdMs": 6461.172164625781,
+        "cvPct": 57.3782117470354
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 23923.53967799999,
+        "medianMs": 20828.086850000313,
+        "sdMs": 6513.793946475366,
+        "cvPct": 27.227550914906754
+      },
+      "meanGas": 472250.56
+    },
+    {
+      "platform": "zama",
+      "operation": "notarize",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 50,
+        "meanMs": 12374.450359999973,
+        "medianMs": 12621.917100000122,
+        "sdMs": 557.9529746613241,
+        "cvPct": 4.508911171237874
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 12569.981160000016,
+        "medianMs": 12807.412099999972,
+        "sdMs": 569.1430011357986,
+        "cvPct": 4.527795180369211
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 378.0525839999976,
+        "medianMs": 374.2125000000233,
+        "sdMs": 65.01145801032331,
+        "cvPct": 17.196406204255364
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 113.68207600000052,
+        "medianMs": 108.63329999998678,
+        "sdMs": 30.55761855241485,
+        "cvPct": 26.879891384473584
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 8205.980122000028,
+        "medianMs": 6375.776400000148,
+        "sdMs": 4545.661559307121,
+        "cvPct": 55.39449878900286
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 4290.127117999977,
+        "medianMs": 4638.208450000049,
+        "sdMs": 741.2095667140467,
+        "cvPct": 17.277100335889177
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 12496.107240000005,
+        "medianMs": 11038.87149999995,
+        "sdMs": 4750.559936784149,
+        "cvPct": 38.016318566614245
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 25066.088400000022,
+        "medianMs": 23543.149849999987,
+        "sdMs": 4666.5113995203355,
+        "cvPct": 18.616831334243326
+      },
+      "meanGas": 472120.72
+    },
+    {
+      "platform": "zama",
+      "operation": "add",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 145.49639599998395,
+        "medianMs": 155.09859999996843,
+        "sdMs": 34.5547823996369,
+        "cvPct": 23.749579611333267
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 494.1712979999973,
+        "medianMs": 500.97299999993993,
+        "sdMs": 119.8496621943517,
+        "cvPct": 24.252655441423947
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 107.56947399998782,
+        "medianMs": 107.21449999988545,
+        "sdMs": 10.411444720336734,
+        "cvPct": 9.678809734012376
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 8873.475014000009,
+        "medianMs": 6390.931300000026,
+        "sdMs": 6008.73155135361,
+        "cvPct": 67.715653020642
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 4336.986061999996,
+        "medianMs": 4655.697349999915,
+        "sdMs": 705.9668818435129,
+        "cvPct": 16.277822242249886
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 13210.461076000003,
+        "medianMs": 11091.740099999966,
+        "sdMs": 5941.605266216856,
+        "cvPct": 44.97651695905768
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 13355.957471999987,
+        "medianMs": 11223.704600000026,
+        "sdMs": 5936.5783427392835,
+        "cvPct": 44.44891618728934
+      },
+      "meanGas": 327900.52
+    },
+    {
+      "platform": "zama",
+      "operation": "mul_scalar",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 155.51123599998448,
+        "medianMs": 159.31855000002543,
+        "sdMs": 67.50970023102461,
+        "cvPct": 43.41146142715459
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 489.6502399999913,
+        "medianMs": 477.8171999999904,
+        "sdMs": 120.72813782090591,
+        "cvPct": 24.655994822122025
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 106.30446199998987,
+        "medianMs": 105.04900000011548,
+        "sdMs": 9.5676268410029,
+        "cvPct": 9.000211901739188
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 8188.828105999999,
+        "medianMs": 6703.054749999923,
+        "sdMs": 5589.928248369718,
+        "cvPct": 68.26285978910641
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 4429.983872000001,
+        "medianMs": 4658.776750000019,
+        "sdMs": 502.87783227978167,
+        "cvPct": 11.351685396830753
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 12618.811978,
+        "medianMs": 10965.192700000014,
+        "sdMs": 5585.978633983977,
+        "cvPct": 44.26707239732816
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 12774.323213999984,
+        "medianMs": 11097.607550000073,
+        "sdMs": 5578.471097288801,
+        "cvPct": 43.669406228700176
+      },
+      "meanGas": 323958.28
+    },
+    {
+      "platform": "zama",
+      "operation": "mean",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 147.30500199999923,
+        "medianMs": 154.34725000004983,
+        "sdMs": 26.585747424572858,
+        "cvPct": 18.048095491402933
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 494.21244199998677,
+        "medianMs": 486.0139999999665,
+        "sdMs": 125.84828949757025,
+        "cvPct": 25.464411415521106
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 108.12822400001635,
+        "medianMs": 107.13540000002831,
+        "sdMs": 11.423108961122852,
+        "cvPct": 10.564410048130565
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 8551.18841200003,
+        "medianMs": 6888.290049999981,
+        "sdMs": 5032.362936116883,
+        "cvPct": 58.849866166612365
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 4401.396385999977,
+        "medianMs": 4647.3893499998085,
+        "sdMs": 607.3573075974153,
+        "cvPct": 13.799195853600143
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 12952.584798000007,
+        "medianMs": 11192.137100000109,
+        "sdMs": 4915.6259878126575,
+        "cvPct": 37.95092689585536
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 13099.889800000006,
+        "medianMs": 11344.81155000013,
+        "sdMs": 4916.836957354431,
+        "cvPct": 37.533422283860965
+      },
+      "meanGas": 343705.28
+    },
+    {
+      "platform": "zama",
+      "operation": "max",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 146.5169539999927,
+        "medianMs": 151.70175000006566,
+        "sdMs": 28.19838891304912,
+        "cvPct": 19.245819779361867
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 493.8586759999895,
+        "medianMs": 482.25935000006575,
+        "sdMs": 126.88962833337435,
+        "cvPct": 25.693510005963134
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 111.97054199999627,
+        "medianMs": 108.41519999997399,
+        "sdMs": 27.479888519289553,
+        "cvPct": 24.5420697519625
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 7134.410659999979,
+        "medianMs": 6332.287299999967,
+        "sdMs": 3286.4051128339756,
+        "cvPct": 46.06414277859898
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 4497.6874060000355,
+        "medianMs": 4656.746799999964,
+        "sdMs": 689.768382099097,
+        "cvPct": 15.336067623973324
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 11632.098066000015,
+        "medianMs": 10625.419250000035,
+        "sdMs": 3245.2803413791435,
+        "cvPct": 27.89935506875514
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 11778.615020000007,
+        "medianMs": 10777.72025000013,
+        "sdMs": 3247.121128931339,
+        "cvPct": 27.567936666728215
+      },
+      "meanGas": 329940.6
+    },
+    {
+      "platform": "zama",
+      "operation": "view_decrypt",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "viewMs": {
+        "n": 50,
+        "meanMs": 54.093972000010616,
+        "medianMs": 52.75634999998147,
+        "sdMs": 5.79192521642695,
+        "cvPct": 10.707154609437469
+      },
+      "decryptAndValidationMs": {
+        "n": 50,
+        "meanMs": 2338.8794979999943,
+        "medianMs": 2334.6689499999993,
+        "sdMs": 26.194113748478546,
+        "cvPct": 1.1199428517320995
+      },
+      "viewToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 2392.973470000005,
+        "medianMs": 2386.3828000000212,
+        "sdMs": 28.326193026198393,
+        "cvPct": 1.1837236551643984
+      }
+    },
+    {
+      "platform": "fhenix",
+      "operation": "set_meter_owner",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 50,
+        "meanMs": 11765.597433999988,
+        "medianMs": 12025.05085,
+        "sdMs": 532.388244361434,
+        "cvPct": 4.524957167265889
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 11996.189956,
+        "medianMs": 12250.800599999959,
+        "sdMs": 535.2268699677373,
+        "cvPct": 4.461640503617058
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 1033.5541260000175,
+        "medianMs": 1040.0277500000084,
+        "sdMs": 88.9226500372165,
+        "cvPct": 8.603579415947781
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 110.455043999977,
+        "medianMs": 107.11599999992177,
+        "sdMs": 22.422569542458128,
+        "cvPct": 20.300177095092913
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 6994.437730000015,
+        "medianMs": 4107.248500000045,
+        "sdMs": 6332.804770959774,
+        "cvPct": 90.54058403862237
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 287.98763600000063,
+        "medianMs": 278.09265000000596,
+        "sdMs": 63.19009709292449,
+        "cvPct": 21.941947915057142
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 7282.425366000016,
+        "medianMs": 4408.968100000042,
+        "sdMs": 6341.780846836937,
+        "cvPct": 87.083362040966
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 19278.615322000016,
+        "medianMs": 16400.21954999992,
+        "sdMs": 6373.51644762539,
+        "cvPct": 33.06003227499528
+      },
+      "meanGas": 306316
+    },
+    {
+      "platform": "fhenix",
+      "operation": "notarize",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 50,
+        "meanMs": 11276.363830000006,
+        "medianMs": 11539.068849999923,
+        "sdMs": 563.9439698691314,
+        "cvPct": 5.0011154160244145
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 11496.029332000007,
+        "medianMs": 11758.135149999987,
+        "sdMs": 560.3232896004919,
+        "cvPct": 4.874059324472951
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 1451.9757200000083,
+        "medianMs": 1447.9830000000075,
+        "sdMs": 113.5771201998985,
+        "cvPct": 7.822246517999479
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 116.50962600000406,
+        "medianMs": 109.13029999984428,
+        "sdMs": 30.87359176455689,
+        "cvPct": 26.49874763528621
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 8240.17998999999,
+        "medianMs": 6404.170749999932,
+        "sdMs": 4548.603342794475,
+        "cvPct": 55.200291113962436
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 286.23083600002604,
+        "medianMs": 266.9758500000753,
+        "sdMs": 50.85822418005095,
+        "cvPct": 17.768254773237054
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 8526.410826000016,
+        "medianMs": 6678.1452000001445,
+        "sdMs": 4557.626110284637,
+        "cvPct": 53.453043763582656
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 20022.440158000023,
+        "medianMs": 18443.044250000035,
+        "sdMs": 4479.076900422141,
+        "cvPct": 22.370284865766042
+      },
+      "meanGas": 306185.92
+    },
+    {
+      "platform": "fhenix",
+      "operation": "add",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 179.87178599998356,
+        "medianMs": 204.33454999991227,
+        "sdMs": 62.82870567217811,
+        "cvPct": 34.929716921910064
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 459.7743539999849,
+        "medianMs": 439.66830000001937,
+        "sdMs": 123.31682415469764,
+        "cvPct": 26.82116196387537
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 108.47036799999972,
+        "medianMs": 107.17745000019204,
+        "sdMs": 7.034574930298791,
+        "cvPct": 6.485250359156898
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 8880.773389999988,
+        "medianMs": 6499.127749999985,
+        "sdMs": 6003.350748851327,
+        "cvPct": 67.59941375839267
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 308.56677999998993,
+        "medianMs": 264.671399999992,
+        "sdMs": 163.6650995799897,
+        "cvPct": 53.0404146486524
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 9189.340169999978,
+        "medianMs": 6887.269549999968,
+        "sdMs": 5991.475193463808,
+        "cvPct": 65.20027643577616
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 9369.211955999961,
+        "medianMs": 7071.181949999882,
+        "sdMs": 5982.439030883979,
+        "cvPct": 63.85210473387656
+      },
+      "meanGas": 317943
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mul_scalar",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 173.88690199998092,
+        "medianMs": 185.55919999998878,
+        "sdMs": 47.404793216072505,
+        "cvPct": 27.261853923924473
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 471.59533799999133,
+        "medianMs": 462.1033499999903,
+        "sdMs": 136.16395150279345,
+        "cvPct": 28.873048677761943
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 112.24949199998285,
+        "medianMs": 108.24829999986105,
+        "sdMs": 23.071801406206497,
+        "cvPct": 20.55403636589288
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 8247.582886000006,
+        "medianMs": 6701.681099999929,
+        "sdMs": 5617.38722816339,
+        "cvPct": 68.10949711943745
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 504.1481099999792,
+        "medianMs": 270.9362999998848,
+        "sdMs": 626.9722765131157,
+        "cvPct": 124.36271486034958
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 8751.730995999986,
+        "medianMs": 7211.108900000021,
+        "sdMs": 5553.390263787139,
+        "cvPct": 63.45476416408752
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 8925.617897999966,
+        "medianMs": 7412.336050000042,
+        "sdMs": 5549.242346780109,
+        "cvPct": 62.172080523675255
+      },
+      "meanGas": 342266
+    },
+    {
+      "platform": "fhenix",
+      "operation": "mean",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 174.79788800003095,
+        "medianMs": 182.74160000006668,
+        "sdMs": 47.81651534179411,
+        "cvPct": 27.355316410794188
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 466.70550000002316,
+        "medianMs": 481.5430000000051,
+        "sdMs": 122.75098103823804,
+        "cvPct": 26.301592982776494
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 109.39558800003375,
+        "medianMs": 107.63165000005392,
+        "sdMs": 11.899767979162286,
+        "cvPct": 10.87774031541255
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 8565.282469999991,
+        "medianMs": 6870.596449999954,
+        "sdMs": 5050.631856595238,
+        "cvPct": 58.96631984158303
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 1101.7084000000116,
+        "medianMs": 1331.197749999992,
+        "sdMs": 1147.0982156941975,
+        "cvPct": 104.11994822715208
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 9666.990870000003,
+        "medianMs": 7707.36050000001,
+        "sdMs": 5129.196054579064,
+        "cvPct": 53.058869337476295
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 9841.788758000035,
+        "medianMs": 7857.263600000035,
+        "sdMs": 5140.916202607334,
+        "cvPct": 52.23558774748613
+      },
+      "meanGas": 373456
+    },
+    {
+      "platform": "fhenix",
+      "operation": "max",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "preparationMs": {
+        "n": 50,
+        "meanMs": 165.1959719999715,
+        "medianMs": 165.84625000000233,
+        "sdMs": 43.466274609912986,
+        "cvPct": 26.31194579606365
+      },
+      "barrierWaitMs": {
+        "n": 50,
+        "meanMs": 474.84899399999983,
+        "medianMs": 462.65279999998165,
+        "sdMs": 123.72108895826545,
+        "cvPct": 26.05482806567039
+      },
+      "broadcastAckMs": {
+        "n": 50,
+        "meanMs": 114.58549000000846,
+        "medianMs": 109.72839999997814,
+        "sdMs": 29.88418448451952,
+        "cvPct": 26.080251945091227
+      },
+      "confirmationMs": {
+        "n": 50,
+        "meanMs": 7169.856034000013,
+        "medianMs": 6337.524449999968,
+        "sdMs": 3307.2380355995074,
+        "cvPct": 46.126979675970176
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 405.3140460000454,
+        "medianMs": 271.4036999999953,
+        "sdMs": 423.3556800742639,
+        "cvPct": 104.45127284688685
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 7575.170080000058,
+        "medianMs": 6645.751750000025,
+        "sdMs": 3303.608576258959,
+        "cvPct": 43.61101521642579
+      },
+      "clientLifecycleMs": {
+        "n": 50,
+        "meanMs": 7740.366052000029,
+        "medianMs": 6841.086800000048,
+        "sdMs": 3302.7702268909343,
+        "cvPct": 42.66943197134111
+      },
+      "meanGas": 322134
+    },
+    {
+      "platform": "fhenix",
+      "operation": "view_decrypt",
+      "attempted": 50,
+      "ok": 50,
+      "failed": 0,
+      "viewMs": {
+        "n": 50,
+        "meanMs": 74.18856400003624,
+        "medianMs": 56.90355000004638,
+        "sdMs": 28.8952526204379,
+        "cvPct": 38.94839185783915
+      },
+      "decryptAndValidationMs": {
+        "n": 50,
+        "meanMs": 117.24487999996269,
+        "medianMs": 85.20810000001802,
+        "sdMs": 86.55022982756066,
+        "cvPct": 73.82005067307689
+      },
+      "viewToValidatedPlaintextMs": {
+        "n": 50,
+        "meanMs": 191.43344399999893,
+        "medianMs": 139.12570000003325,
+        "sdMs": 104.44470048696854,
+        "cvPct": 54.55927569634547
+      }
+    }
+  ]
+}

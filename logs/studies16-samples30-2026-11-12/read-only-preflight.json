@@ -1,0 +1,65 @@
+{
+  "at": "2026-11-12T14:14:55.213Z",
+  "chainId": 11155111,
+  "mutationCalls": 0,
+  "originalReports": [
+    {
+      "suite": "concurrency",
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-compact-2026-11-11-continuation2\\concurrency-euint16\\report.json",
+      "sha256": "de8d19f1009aa9e31c700dcdcb93dbf64e9629007ad708ce495131b11332f7d9"
+    },
+    {
+      "suite": "circuits",
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-compact-2026-11-12-circuit-continuation2\\circuits-euint16\\report.json",
+      "sha256": "72e4f13b3ca7d88a892a036e02fa4c4e465914e7be1d07f8de5cced7c2519336"
+    }
+  ],
+  "accounts": [
+    {
+      "address": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "latest": 905,
+      "pending": 905,
+      "balanceWei": "999915345177346",
+      "lastHash": "0xbabc06baf655923f1e23563b743dc2847f606f24c209c713882ddf0830169e3c",
+      "lastNonce": 904,
+      "canonicalReceiptVerified": true
+    },
+    {
+      "address": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+      "latest": 1210,
+      "pending": 1210,
+      "balanceWei": "999936837068728",
+      "lastHash": "0xd69f9d91e6c22908d34b7354ba48295ad0189096f909b17a2d78359622217c8d",
+      "lastNonce": 1209,
+      "canonicalReceiptVerified": true
+    },
+    {
+      "address": "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+      "latest": 360,
+      "pending": 360,
+      "balanceWei": "999981621388286",
+      "lastHash": "0x21660e89037d762cef18515a8c5e37b48273664e52eca672fdb817ca21cd8961",
+      "lastNonce": 359,
+      "canonicalReceiptVerified": true
+    },
+    {
+      "address": "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+      "latest": 180,
+      "pending": 180,
+      "balanceWei": "999990642002825",
+      "lastHash": "0x562ea9c9a685203d4654fabd1838557f6ced95de03ade777f1cf8f9bfc320337",
+      "lastNonce": 179,
+      "canonicalReceiptVerified": true
+    },
+    {
+      "address": "0x324CAA6F704fa42e92b302b637440238d905AE77",
+      "latest": 180,
+      "pending": 180,
+      "balanceWei": "999990638379065",
+      "lastHash": "0xa94201f4ad69875f95357a6b30abf72ef43eb4005709725818a527811afff9f7",
+      "lastNonce": 179,
+      "canonicalReceiptVerified": true
+    }
+  ],
+  "status": "settled"
+}

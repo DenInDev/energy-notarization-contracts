@@ -1,0 +1,62 @@
+{
+  "at": "2026-11-13T04:48:36.063Z",
+  "intervalMs": 600000,
+  "mutationCalls": 0,
+  "processIdentityVerified": true,
+  "status": "running",
+  "sessions": [
+    {
+      "id": "session-2",
+      "status": "running",
+      "childStatus": "running",
+      "stages": [
+        {
+          "suite": "concurrency",
+          "status": "finished",
+          "observations": 120,
+          "ok": 120,
+          "capacityRejected": 0,
+          "segmentStatus": "finished",
+          "reportAgeSeconds": 8096.288098632813,
+          "last": {
+            "case": "concurrency-w16-c1-shared_ordered",
+            "platform": "fhenix",
+            "round": 10,
+            "status": "ok"
+          }
+        },
+        {
+          "suite": "circuits",
+          "status": "running",
+          "observations": 215,
+          "ok": 199,
+          "capacityRejected": 15,
+          "reportAgeSeconds": 8.350989990234375,
+          "last": {
+            "case": "circuits-w16-sum_tree-n32",
+            "platform": "fhenix",
+            "round": 8,
+            "status": "pending"
+          }
+        }
+      ]
+    },
+    {
+      "id": "session-3",
+      "status": "planned",
+      "childStatus": "funded_ready",
+      "stages": [
+        {
+          "suite": "concurrency",
+          "status": "planned"
+        },
+        {
+          "suite": "circuits",
+          "status": "planned"
+        }
+      ]
+    }
+  ],
+  "health": "running",
+  "monitorStopped": false
+}

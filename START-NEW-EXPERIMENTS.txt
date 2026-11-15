@@ -1,59 +1,45 @@
-NUOVI STUDI: CONCORRENZA E CIRCUITI
+CONCORRENZA E CIRCUITI — COMANDI ESSENZIALI
 Directory: C:\Users\danie\Desktop\Dottorato\energy-notarization-contracts
 
-1. CHECK LOCALI (nessuna transazione Sepolia)
+1. VERIFICHE LOCALI (nessuna transazione Sepolia)
 npm run verify
 npm run study:test
 
-2. PIANI (nessuna lettura account, nessun invio, anche scegliendo --network)
-npm run study:plan
-npm run study:concurrency -- --widths 16 --users 1,2 --requests 8 --repetitions 3
-npm run study:circuits -- --widths 16 --sizes 2,4,8 --depths 1,2,4 --repetitions 3
+2. PIANI DELLE MATRICI DEL PAPER (nessun invio)
+# Concorrenza: 20 finestre per cella, raccolte in due sessioni da 10.
+npx hardhat benchmark:study --suite concurrency --widths 16 --users 1,2,4 --modes shared_sum,shared_ordered --requests 8 --repetitions 10 --seed new-concurrency-session1
+# Circuiti: 30 ripetizioni, matrice completa selezionata.
+npx hardhat benchmark:study --suite circuits --widths 16 --sizes 2,8,32 --depths 1,8,16,32 --repetitions 30 --seed new-circuits-session1
+I default della task sono piu ampi: specificare sempre la matrice.
+La raccolta storica 1/4 writer e quella 2 writer hanno sessioni separate.
 
-3. ACCOUNT DEDICATI (creazione locale, NON finanziamento)
-Non usare la directory radice in quarantena o gli account classici.
-npx hardhat benchmark:accounts --file .benchmark-accounts/studies/accounts.secret.json --count 9
-npx hardhat benchmark:accounts:balances --network sepolia --file .benchmark-accounts/studies/accounts.secret.json
-Indice 0 = operatore; indici 1..8 = writer. Finanziarli prima dei pilot.
+3. ACCOUNT E PILOT
+Usare account salvati dedicati e un output nuovo. Non toccare i lock in quarantena.
+Creare account non li finanzia; nessun trasferimento automatico.
 Configurare SEPOLIA_RPC_URL senza stampare URL con credenziali.
 
-4. PILOT SEPOLIA: QUESTI COMANDI SPENDONO GAS E INVIANO TRANSAZIONI
-Prima rivedere il piano precedente. Directory output sempre nuova.
-npx hardhat benchmark:study --network sepolia --suite concurrency --widths 16 --users 1,2 --requests 8 --repetitions 3 --output-dir logs/study-concurrency-pilot16 --live
-npx hardhat benchmark:study --network sepolia --suite circuits --widths 16 --sizes 2,4,8 --depths 1,2,4 --repetitions 3 --output-dir logs/study-circuits-pilot16 --live
-Ripetere i pilot con --widths 128 e directory nuove. Verificare executionComplete,
-complete, snapshot, controlli, errori, trace e costi, soprattutto il percorso CoFHE.
-I rifiuti HCU esatti durante estimateGas sono capacity_rejected: nessuna compute
-inviata e nessuna misura gas/latenza inventata; executionComplete puo essere true
-con complete false. Per il principale scegliere i livelli eseguibili del pilot.
+# SOLO DOPO REVISIONE: questo pilot invia transazioni e spende gas.
+npx hardhat benchmark:study --network sepolia --suite concurrency --widths 16 --users 1,2,4 --modes shared_sum,shared_ordered --requests 8 --repetitions 3 --accounts-file .benchmark-accounts/<nuovo-studio>/accounts.secret.json --output-dir logs/<nuovo-pilot> --live
+Per i circuiti usare --suite circuits --sizes 2,8,32 --depths 1,8,16,32.
+Non usare gli stessi account in due processi contemporaneamente.
 
-5. PRINCIPALI: PRIMA ANTEPRIMA, POI AGGIUNGERE --live SOLO PER ESEGUIRE
-Esempi a 16 bit; conservare 128 bit e sessioni temporali in report distinti.
-npx hardhat benchmark:study --suite concurrency --widths 16 --users 1,2,4,8 --requests 32 --repetitions 50
-npx hardhat benchmark:study --suite circuits --widths 16 --sizes 2,4,8,16,32 --depths 1,2,4,8,16,32 --repetitions 50
-Per distribuire 50 prove su tre sessioni usare 17+17+16, seed e directory distinti.
-Per l'esecuzione aggiungere --network sepolia --output-dir logs/<nuova-directory> --live.
-Non lanciare insieme comandi che usano gli stessi account.
+4. LAUNCHER UNICO PER MANIFEST REVISIONATI
+node --max-old-space-size=8192 scripts/run-study-campaign.cjs <nuovo-manifest-revisionato.json>
+Il launcher seleziona la politica dal tipo del manifest e mantiene i gate esistenti.
+I vecchi manifest compact ambigui richiedono --policy esplicito; non indovinarlo.
+Non rilanciare manifest completati o falliti: prima riconciliare nonce, receipt e
+ogni broadcast incerto. Nessun reinvio automatico di transazioni.
+I manifest e gli hash devono essere preparati e revisionati per il codice attuale.
 
-6. ROBUSTEZZA: ESTENSIONE SELETTIVA, NON TUTTA LA MATRICE A 300
-Anteprima per altre 250 finestre nelle celle critiche, se 50 sono gia disponibili:
-npx hardhat benchmark:study --suite concurrency --widths 16 --users 8 --modes shared_sum,shared_ordered --requests 32 --repetitions 250 --seed robustness-session2
-Trecento finestre senza errori danno un limite superiore unilaterale 95% di circa
-0,994% per finestra SOLO sotto l'assunzione di finestre indipendenti/rappresentative.
-Le richieste dentro la stessa finestra non sono prove indipendenti.
+5. RISULTATI DA CONSULTARE E RIGENERATORI
+Energia classica/uniforme: README.md e docs/UNIFORM_LIFECYCLE.md.
+Energia del paper: logs/energy-uniform16-128-owner-50-2026-11-10/publication-tables/.
+Concorrenza 1/2/4: logs/concurrency2-20-2026-11-15/analysis/.
+Circuiti: logs/circuits-publication-30runs-2026-11-15/.
+Analisi riutilizzabili: scripts/analysis/; i rigeneratori LaTeX restano nelle
+cartelle di pubblicazione. Leggere gli argomenti del relativo script prima dell'uso.
 
-Budget massimo della matrice predefinita: 120000 tx misurate + 2976 warmup/controlli
-+ 8904 setup incluse deployment = 131880 tx. Valutare il pilot prima di spenderle.
-Un fallimento ferma il run; nessun reinvio automatico. Un broadcast incerto
-conserva il lock: riconciliare receipt e nonce prima di qualunque altro invio.
-
-Report: report.json, summary.json/.md, controls.json, costs.json, transactions.jsonl.
-Disegno completo e limiti: docs/CONCURRENCY_AND_CIRCUITS.md.
-I benchmark classici baseline/Zama/Fhenix rimangono disponibili nel README.
-
-7. ANALISI OFFLINE DEI PILOT COMPLETATI
-Dopo la riverifica canonica registrata in final-canonical-audit.json:
-.venv/Scripts/python.exe scripts/analysis/analyze-study-pilots.py logs/study-pilots-2026-11-06
-Il comando non accede alla rete e non invia transazioni. Verifica SHA/prefissi,
-nonce, costo gas e oracolo modulare; produce PILOT-RESULTS.md, JSON e CSV.
-Mantiene separati segmenti, audit tardivi e limiti di capacita senza invio.
+Conservare fallimenti, audit tardivi e rifiuti di capacita con denominatori distinti.
+Un rifiuto HCU senza invio non ha receipt, gas o latenza compute da ricostruire.
+I JSON grezzi e le provenance sono immutabili; setup e warmup entrano nei costi.
+Disegno e limiti: docs/CONCURRENCY_AND_CIRCUITS.md.

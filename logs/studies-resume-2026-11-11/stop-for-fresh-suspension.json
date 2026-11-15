@@ -1,0 +1,10 @@
+{
+  "status": "suspended_for_fresh_rerun",
+  "at": "2026-11-11T10:39:15.5757736Z",
+  "pid": 33868,
+  "createdUtc": "2026-11-11T10:30:07.1087030Z",
+  "handleCreatedUtc": "2026-11-11T10:30:07.1087038Z",
+  "command": "\"C:\\Program Files\\nodejs\\node.exe\" --max-old-space-size=8192 scripts/resume-study-campaign.cjs logs/studies-resume-2026-11-11/campaign.json",
+  "reason": "User explicitly requested both categories from scratch; reconcile all prepared hashes before termination",
+  "initialExactTickCheck": "Refused suspension due to CIM sub-microsecond truncation; corrected check allows at most 1 microsecond difference"
+}

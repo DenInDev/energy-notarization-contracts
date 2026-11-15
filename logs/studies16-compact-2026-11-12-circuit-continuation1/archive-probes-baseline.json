@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-12T10:17:46.644Z",
+  "mutationCalls": 0,
+  "blockHash": "0xb782359013a0e1f5350e8ab1b38fbe0d6548e7d5be1acd7a5b9449636f5dc2c1",
+  "results": [
+    {
+      "host": "ethereum-sepolia-rpc.publicnode.com",
+      "archiveReadOk": false,
+      "error": "Archive requests require a personal token. Get one at: [endpoint]"
+    },
+    {
+      "host": "sepolia.drpc.org",
+      "archiveReadOk": false,
+      "error": "chain is not available on free plan, please upgrade to paid plan"
+    },
+    {
+      "host": "1rpc.io",
+      "archiveReadOk": false,
+      "error": "chain is not available on free plan, please upgrade to paid plan"
+    },
+    {
+      "host": "rpc.sepolia.org",
+      "archiveReadOk": false,
+      "error": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+    }
+  ]
+}

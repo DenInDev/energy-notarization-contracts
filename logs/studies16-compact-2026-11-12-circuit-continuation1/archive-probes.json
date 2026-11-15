@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-12T10:17:22.283Z",
+  "mutationCalls": 0,
+  "blockHash": "0x325351d3841db6b77fb945fb423ebaacaa2a4abbcc4b2289cd888c0da564f990",
+  "results": [
+    {
+      "host": "ethereum-sepolia-rpc.publicnode.com",
+      "archiveReadOk": true,
+      "value": "0xe391d6ceb1b7a29e38966f552189e6c2a47752dd1fff0000000000aa36a70300"
+    },
+    {
+      "host": "sepolia.drpc.org",
+      "archiveReadOk": false,
+      "error": "chain is not available on free plan, please upgrade to paid plan"
+    },
+    {
+      "host": "1rpc.io",
+      "archiveReadOk": true,
+      "value": "0xe391d6ceb1b7a29e38966f552189e6c2a47752dd1fff0000000000aa36a70300"
+    },
+    {
+      "host": "rpc.sepolia.org",
+      "archiveReadOk": false,
+      "error": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+    }
+  ]
+}

@@ -21,10 +21,12 @@ let abi=new Interface(['function addEnergyEntry(uint16 value)','function addLast
   'function multiplyLastEntryByConstant(uint64 value)','function meanLastEntryAndEncryptedTotal()',
   'function maxLastEntryAndEncryptedTotal()','function getLastEntryValue() view returns(uint256)',
   'function getEncryptedTotalHandle() view returns(uint256)','function getLastResult() view returns(uint256)']);
-adapters.makeAdapter=async()=>({encrypt:async(value,trace)=>{
+adapters.makeAdapter=async(_platform,_hre,_signer,_address,_timeout,_trace,width,readPolicy)=>{
+  if(width && platform==='fhenix' && (!readPolicy || readPolicy.minimumPollingMs!==1000 || readPolicy.maxRateLimitAttempts!==3 || readPolicy.rateLimitBackoffMs!==5000))throw Error('Uniform Fhenix read policy not forwarded to adapter');
+  return {encrypt:async(value,trace)=>{
   await trace.span('encrypt.mock_cpu',()=>{const until=Date.now()+(platform==='baseline'?0:250);while(Date.now()<until){};});
   return [value];
-},decrypt:async value=>BigInt(value)});
+},decrypt:async value=>BigInt(value)};};
 const receipt=(transactionHash)=>({transactionHash,status:'0x1',blockNumber:'0x3e8',blockHash:hash,gasUsed:'0x5208',effectiveGasPrice:'0x14'});
 const contract={getAddress:async()=>address,get interface(){return abi;},get target(){return address;},
   getFunction:name=>({populateTransaction:async(...args)=>{

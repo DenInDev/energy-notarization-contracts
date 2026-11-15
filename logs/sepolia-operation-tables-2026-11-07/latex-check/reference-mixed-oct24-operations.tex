@@ -1,0 +1,174 @@
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals: \texttt{notarize}, mixed16/64 arithmetic}
+\label{tab:sepolia-experiment-deployments-reference-mixed-oct24-notarize}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:18:48 \\ -- 2026-10-24 10:38:48} &
+\texttt{0x8A14...6B12} &
+11982862--11983257 &
+70.6\% \\
+\hline
+Zama fhEVM (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:18:48 \\ -- 2026-10-24 10:38:48} &
+\texttt{0x5CF6...c79b} &
+11982862--11983257 &
+70.6\% \\
+\hline
+Fhenix CoFHE (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:18:48 \\ -- 2026-10-24 10:38:48} &
+\texttt{0xDE38...388b} &
+11982862--11983257 &
+70.6\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals: \texttt{add}, mixed16/64 arithmetic}
+\label{tab:sepolia-experiment-deployments-reference-mixed-oct24-add}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:19:00 \\ -- 2026-10-24 10:39:00} &
+\texttt{0x8A14...6B12} &
+11982863--11983258 &
+72.9\% \\
+\hline
+Zama fhEVM (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:19:00 \\ -- 2026-10-24 10:39:00} &
+\texttt{0x5CF6...c79b} &
+11982863--11983258 &
+71.5\% \\
+\hline
+Fhenix CoFHE (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:19:00 \\ -- 2026-10-24 10:39:00} &
+\texttt{0xDE38...388b} &
+11982863--11983258 &
+72.9\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals: \texttt{mul\_scalar}, mixed16/64 arithmetic}
+\label{tab:sepolia-experiment-deployments-reference-mixed-oct24-mul-scalar}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:19:12 \\ -- 2026-10-24 10:39:12} &
+\texttt{0x8A14...6B12} &
+11982864--11983259 &
+73.7\% \\
+\hline
+Zama fhEVM (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:19:12 \\ -- 2026-10-24 10:39:12} &
+\texttt{0x5CF6...c79b} &
+11982864--11983259 &
+73.7\% \\
+\hline
+Fhenix CoFHE (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:19:12 \\ -- 2026-10-24 10:39:12} &
+\texttt{0xDE38...388b} &
+11982864--11983259 &
+73.7\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals: \texttt{mean}, mixed16/64 arithmetic}
+\label{tab:sepolia-experiment-deployments-reference-mixed-oct24-mean}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:19:24 \\ -- 2026-10-24 10:39:24} &
+\texttt{0x8A14...6B12} &
+11982865--11983260 &
+70.7\% \\
+\hline
+Zama fhEVM (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:19:24 \\ -- 2026-10-24 10:39:24} &
+\texttt{0x5CF6...c79b} &
+11982865--11983260 &
+70.7\% \\
+\hline
+Fhenix CoFHE (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:19:24 \\ -- 2026-10-24 10:39:24} &
+\texttt{0xDE38...388b} &
+11982865--11983260 &
+70.7\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals: \texttt{max}, mixed16/64 arithmetic}
+\label{tab:sepolia-experiment-deployments-reference-mixed-oct24-max}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:19:36 \\ -- 2026-10-24 10:39:36} &
+\texttt{0x8A14...6B12} &
+11982866--11983261 &
+68.9\% \\
+\hline
+Zama fhEVM (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:19:36 \\ -- 2026-10-24 10:39:36} &
+\texttt{0x5CF6...c79b} &
+11982866--11983261 &
+68.9\% \\
+\hline
+Fhenix CoFHE (\(n=50\)) &
+\shortstack[l]{2026-10-24 09:19:36 \\ -- 2026-10-24 10:39:36} &
+\texttt{0xDE38...388b} &
+11982866--11983261 &
+68.9\% \\
+\hline
+\end{tabular}
+\end{table*}

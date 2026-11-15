@@ -1,0 +1,8 @@
+{
+  "status": "stopped_after_settled_compact_audit",
+  "at": "2026-11-11T18:21:37.2842921Z",
+  "pid": 2472,
+  "confirmed": 1141,
+  "unsent": 0,
+  "reason": "User approved reducing both matrices with reuse and supplementary preservation"
+}

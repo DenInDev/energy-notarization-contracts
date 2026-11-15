@@ -1,0 +1,7 @@
+{
+  "comparisons": 42,
+  "matchedPerformanceMeans": true,
+  "ratiosVerifiedFromPairs": true,
+  "pBoundsVerified": true,
+  "allSensitivityConclusionsStable": true
+}

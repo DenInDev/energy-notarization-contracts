@@ -1,0 +1,137 @@
+{
+  "at": "2026-11-14T15:28:57.145Z",
+  "status": "settled",
+  "mutationCalls": 0,
+  "oldProcessAbsent": true,
+  "oldPid": 26712,
+  "sourceReports": [
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-2\\concurrency-euint16\\report.json",
+      "sha256": "1a83072f07d7ba3ce1f5a827081c48d083acc8a8708c7c608a0810b41f358d50"
+    },
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-2\\circuits-euint16\\report.json",
+      "sha256": "fe48228a6e94d3a08e9f8176623594d71c896489ea791ca043fe7df73ca8b730"
+    }
+  ],
+  "receipts": [
+    {
+      "hash": "0xdbb93ecfdb5baebbfa41f6257393159ab682e32fb1fdae0215a3be933162dc64",
+      "user": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "nonce": 1538,
+      "status": 1,
+      "blockHash": "0xf15c26fab6d97dcae64c699ab1be5210a7be38bac2d0206c992198e683621a12",
+      "blockNumber": 12123703,
+      "gasUsed": "2933232",
+      "effectiveGasPriceWei": "17",
+      "gasCostWei": "49864944",
+      "lateObservation": true,
+      "receiptReadAttempts": 2,
+      "receiptReadSource": "configured-provider"
+    },
+    {
+      "hash": "0x1c71c74a60509f7bcea5471c9028333dc1625d0385901127c0894a2b139e5b34",
+      "user": "0x324CAA6F704fa42e92b302b637440238d905AE77",
+      "nonce": 311,
+      "status": 1,
+      "blockHash": "0xeadf398f8ccc824754bd382e6198b519d6f3358f13468a20856594ec7a5c34eb",
+      "blockNumber": 12122978,
+      "gasUsed": "383108",
+      "effectiveGasPriceWei": "31",
+      "gasCostWei": "11876348",
+      "lateObservation": false,
+      "receiptReadAttempts": 1,
+      "receiptReadSource": "configured-provider"
+    },
+    {
+      "hash": "0xd043d13dcdca46fd3a15727d08bc4d989a3c51f4d334e77318b86b04594a5619",
+      "user": "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+      "nonce": 491,
+      "status": 1,
+      "blockHash": "0xeadf398f8ccc824754bd382e6198b519d6f3358f13468a20856594ec7a5c34eb",
+      "blockNumber": 12122978,
+      "gasUsed": "383108",
+      "effectiveGasPriceWei": "31",
+      "gasCostWei": "11876348",
+      "lateObservation": false,
+      "receiptReadAttempts": 2,
+      "receiptReadSource": "configured-provider"
+    },
+    {
+      "hash": "0x5956e788404f73eff892cfa46f45002934bfac53fac083ea779627f57db8c484",
+      "user": "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+      "nonce": 311,
+      "status": 1,
+      "blockHash": "0xeadf398f8ccc824754bd382e6198b519d6f3358f13468a20856594ec7a5c34eb",
+      "blockNumber": 12122978,
+      "gasUsed": "383108",
+      "effectiveGasPriceWei": "31",
+      "gasCostWei": "11876348",
+      "lateObservation": false,
+      "receiptReadAttempts": 2,
+      "receiptReadSource": "configured-provider"
+    },
+    {
+      "hash": "0x53e7cae89b21862566c5e3092f7e6226c129738198c725fa7ab8f37b6e2e315f",
+      "user": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+      "nonce": 1917,
+      "status": 1,
+      "blockHash": "0x60d69314a746892f541d85aaff65fcb0bee5c042dbe67cd141d68f437830397d",
+      "blockNumber": 12123020,
+      "gasUsed": "833501",
+      "effectiveGasPriceWei": "28",
+      "gasCostWei": "23338028",
+      "lateObservation": false,
+      "receiptReadAttempts": 4,
+      "receiptReadSource": "configured-provider"
+    }
+  ],
+  "accounts": [
+    {
+      "address": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "latest": 1539,
+      "pending": 1539,
+      "balanceWei": "999891078044989"
+    },
+    {
+      "address": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+      "latest": 1918,
+      "pending": 1918,
+      "balanceWei": "999924772420334"
+    },
+    {
+      "address": "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+      "latest": 492,
+      "pending": 492,
+      "balanceWei": "999979472126447"
+    },
+    {
+      "address": "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+      "latest": 312,
+      "pending": 312,
+      "balanceWei": "999988463268910"
+    },
+    {
+      "address": "0x324CAA6F704fa42e92b302b637440238d905AE77",
+      "latest": 312,
+      "pending": 312,
+      "balanceWei": "999988448383298"
+    }
+  ],
+  "staleLeases": [
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\studies-reduced16\\campaign.lock",
+      "record": {
+        "pid": 26712,
+        "startedAt": "2026-11-13T02:33:40.360Z"
+      }
+    },
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\studies\\campaign.lock",
+      "record": {
+        "pid": 26712,
+        "startedAt": "2026-11-12T23:58:39.648Z"
+      }
+    }
+  ]
+}

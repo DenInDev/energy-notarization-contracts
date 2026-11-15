@@ -15,11 +15,13 @@ import { makeStudyAdapter } from "./adapters";
 import { expectedCircuit, inputBatchSize, ordered, planSummary, valuesFor } from "./plan";
 import { replay } from "./oracle";
 import { capacityRejection } from "./capacity";
-import { isUnusedSnapshot, latestAttempts, trialKey, validateStudyContinuation, type StudyContinuation } from "./continuation";
+import { isUnusedSnapshot, isUnopenedWindow, latestAttempts, trialKey, validateStudyContinuation, type StudyContinuation } from "./continuation";
 import { readWindowLogs } from "./logs";
 import { effectiveReceipt, verifyCanonicalReceipt } from "./canonical";
 import { estimateCircuitAtReceipt, estimateStudyCallAtBlock } from "./preparation";
 import { saveStudy, type StudyReport } from "./report";
+import { studyRpcReadPolicy } from "./rpc";
+import { allStudyCases, allStudyTrials, allStudyTransactions } from "./history";
 import { executePrepared, prepareCall, prepareRequest, type Fees, type Prepared } from "./transactions";
 import type { ExperimentAdapter, RequestResult, StudyArgs, StudyCase, Trial, Width } from "./types";
 
@@ -56,7 +58,7 @@ export async function runStudy(args: StudyArgs, hre: HardhatRuntimeEnvironment, 
   const {accountsFile:_secret,...config} = args;
   let report: StudyReport = {schemaVersion:1,kind:"concurrency-circuit-studies",complete:false,mock,chainId,
     startedAt:new Date().toISOString(),config,accounts:addresses,cases:plan.cases,platforms:plan.platforms,
-    provenance:provenance(),setups:[],trials:[],methodology:{
+    provenance:{...provenance(),rpcReadPolicy:studyRpcReadPolicy(hre.ethers.provider)},setups:[],trials:[],methodology:{
       execution:"One coordinator; platform windows are sequential and rotated. Encrypt/estimate/sign all window requests before broadcasting. At most C independent writer transactions in a receipt-synchronized wave. Actual broadcast spreads retained.",
       order:"Canonical (blockNumber,transactionIndex), checked against contract sequence; submission and decryption completion order are not state order.",
       snapshots:"Unique request IDs persist each intermediate output; reading shared latest state is never used as a per-request result.",
@@ -85,8 +87,10 @@ export async function runStudy(args: StudyArgs, hre: HardhatRuntimeEnvironment, 
     if(report.error){(report.historicalErrors??=[]).push(report.error);delete report.error;}
     (report.continuations??=[]).push({sourceFile:continuation.sourceFile,sourceSha256:continuation.sourceSha256,
       sourceTrialCount:continuation.report.trials.length,startedAt:new Date().toISOString(),status:"preflight",
-      provenance:{...currentProvenance,processId:process.pid,change:"Initialize the FHEVM provider; pin compute gas to the input-load receipt and concurrent submit gas to the opened-window receipt, passing explicit limits to signing. Recover zero-send preparations and separately audit fully confirmed interrupted windows without replaying sends. Canonical reinclusions require the same hash/sender/nonce/target, an orphaned old block and a repeated stable canonical receipt; supplementary evidence supplies order/gas but no replacement timing. Log-head lag retries preserve the exact confirmed range within the original read deadline. Contracts, timed broadcast transport, SDK bundles and decrypt policy unchanged."}});
+      provenance:{...currentProvenance,processId:process.pid,change:"User-approved case/round selection retains excluded trials separately for complete nonce and gas audits, without repeating mutations or changing timed workload. Recover a user-paused pending input setup through a separately verified canonical receipt, excluding missing setup latency and retaining all original fields. Pin openWindow setup gas to confirmed canonical state, and permit a never-signed unopened window only after canonical absence/authorization checks. Initialize the FHEVM provider; pin compute gas to the input-load receipt and concurrent submit gas to the opened-window receipt, passing explicit limits to signing. Recover zero-send preparations and separately audit fully confirmed interrupted windows without replaying sends. Canonical reinclusions require the same hash/sender/nonce/target, an orphaned old block and a repeated stable canonical receipt; supplementary evidence supplies order/gas but no replacement timing. Log-head lag retries preserve the exact confirmed range within the original read deadline. Contracts, timed broadcast transport, SDK bundles and decrypt policy unchanged."}});
     report.methodology.continuation="Original trials and setup prefixes retained exactly. Continue only never-submitted preparations and unattempted slots. Reuse confirmed circuit loads or a zero-window setup; skip completed controls/warmups and existing deployments. A partial prepared batch is recreated only after exact nonce and unused-request checks. Duration scope and discarded unused hashes are recorded. Fully confirmed interrupted windows receive a separate late read-only audit; original trials and timing gaps remain unchanged.";
+    report.methodology.lateCircuitRecovery="An acknowledged compute whose receipt was missing may be recovered only after same hash/sender/nonce/target/calldata/chain and stable canonical receipt verification. Its snapshot is decrypted and checked separately before any new send. Skip the executed slot; retain its original failure and never reconstruct primary latency.";
+    report.methodology.resumedWindowAnchor="Historical immutable snapshots and settled window states are audited at recent canonical blocks after exact nonce and bytecode checks. A never-submitted window is proven zero and all request IDs unused at a recorded canonical anchor, reused for gas estimation. Timed new receipt reads remain receipt-pinned; original source fields and failed preparation traces are unchanged.";
   }
   fs.mkdirSync(path.dirname(folder),{recursive:true});
   fs.mkdirSync(folder);
@@ -95,7 +99,10 @@ export async function runStudy(args: StudyArgs, hre: HardhatRuntimeEnvironment, 
       JSON.stringify(report.trials.slice(0,continuation.report.trials.length))!==JSON.stringify(continuation.report.trials) ||
       JSON.stringify(report.setups.slice(0,continuation.report.setups.length))!==JSON.stringify(continuation.report.setups) ||
       JSON.stringify((report.recoveredAudits??[]).slice(0,continuation.report.recoveredAudits?.length??0))!==JSON.stringify(continuation.report.recoveredAudits??[]) ||
-      JSON.stringify((report.canonicalReceipts??[]).slice(0,continuation.report.canonicalReceipts?.length??0))!==JSON.stringify(continuation.report.canonicalReceipts??[])))
+      JSON.stringify((report.canonicalReceipts??[]).slice(0,continuation.report.canonicalReceipts?.length??0))!==JSON.stringify(continuation.report.canonicalReceipts??[]) ||
+      JSON.stringify(report.settledSetupReceipts??[])!==JSON.stringify(continuation.report.settledSetupReceipts??[]) ||
+      JSON.stringify(report.lateComputeReceipts??[])!==JSON.stringify(continuation.report.lateComputeReceipts??[]) ||
+      JSON.stringify(report.supplementaryTrials??[])!==JSON.stringify(continuation.report.supplementaryTrials??[])))
       throw new Error("Continuation source bytes or serialized historical prefix changed");
     saveStudy(folder,report);
   };
@@ -116,7 +123,24 @@ export async function runStudy(args: StudyArgs, hre: HardhatRuntimeEnvironment, 
     deadline(() => retryLifecycleRead(trace,"audit.read",budget,() => readLifecycleResult(rpc,ctx.contract.interface,
       String(ctx.contract.target),addresses[0],getter,hash,params),1000,false,false,true),budget,"canonical study read");
   const transact = async (ctx: Context, method: string, params: unknown[], list: Trial["setup"]) => {
-    const p = await prepareCall(ctx.contract,signers[0],method,params,reserve(signers[0]),await quote(),chainId,budget,`${method}/${list.length}`);
+    const fees = await quote(), trace = new TimingTrace();
+    let callParams = params;
+    if (method === "openWindow") {
+      // A receipt can be visible before another RPC backend updates pending.
+      // Anchor setup estimation to the newest confirmed state for this contract.
+      const confirmed = [...report.setups.filter(s => s.platform === ctx.platform && s.width === ctx.width).map(s => s.transaction),
+        ...allStudyTrials(report).filter(t => t.platform === ctx.platform && allStudyCases(report).find(c => c.id === t.caseId)?.width === ctx.width)
+          .flatMap(t => [...t.setup,...t.requests.map(r => r.transaction)])]
+        .map(t => effectiveReceipt(t,report)).filter(t => t.status === "confirmed")
+        .sort((a,b) => a.blockNumber!-b.blockNumber! || a.transactionIndex!-b.transactionIndex!);
+      const anchor = confirmed.at(-1)?.blockHash;
+      if (!anchor) throw new Error("Missing confirmed state for window setup");
+      const gasLimit = await estimateStudyCallAtBlock(ctx.contract,"openWindow",params,addresses[0],fees,anchor,rpc,trace,budget);
+      callParams = [...params,{gasLimit}];
+    }
+    // Reserve only after the read-only setup estimate succeeds.
+    const p = await prepareCall(ctx.contract,signers[0],method,callParams,reserve(signers[0]),fees,chainId,budget,`${method}/${list.length}`);
+    p.record.stages.unshift(...trace.stages);
     list.push(p.record); save(); return executePrepared(p,hre,budget,chainId,save);
   };
   const contexts = new Map<string,Context>();
@@ -242,18 +266,27 @@ export async function runStudy(args: StudyArgs, hre: HardhatRuntimeEnvironment, 
   };
 
   // Submit receipt-synchronized waves, then audit immutable snapshots in chain order.
+  const resumedWindowAnchors=new Map<string,string>();
   const concurrencyTrial = async (c: StudyCase, ctx: Context, run: number, warmup: boolean, direction?: "forward" | "reverse", previous?: Trial) => {
     const t = newTrial(c,ctx.platform,run,warmup,direction), count = args.requests;
     const mode = {independent:0,shared_sum:1,shared_ordered:2}[c.mode!];
     try {
       let opened: {blockHash:string};
-      if(previous){
+      if(previous?.setup.length){
         if(previous.scopeId!==t.scopeId)throw new Error("Resumed window identity differs");
-        opened={blockHash:previous.setup[0].blockHash!};
+        const anchor=resumedWindowAnchors.get(previous.scopeId);
+        if(!anchor)throw new Error("Missing canonically verified zero-window continuation anchor");
+        opened={blockHash:anchor};
         t.resumedPreparation={sourceTrialIndex:continuation!.report.trials.indexOf(previous),reusedWindowTransactions:previous.setup.map(x=>x.transactionHash!),
+          estimateAnchorBlockHash:anchor,
           discardedPreparedHashes:previous.requests.map(r=>r.transaction.preparedTransactionHash).filter(Boolean),
           durationScope:"Fresh preparation of the entire never-submitted batch, reusing its confirmed zero-window setup. Earlier partial preparation is retained separately."};
-      }else opened=await transact(ctx,"openWindow",[t.scopeId,mode,ctx.addresses.slice(0,c.users)],t.setup);
+      }else {
+        if(previous && previous.scopeId!==t.scopeId)throw new Error("Resumed unopened window identity differs");
+        opened=await transact(ctx,"openWindow",[t.scopeId,mode,ctx.addresses.slice(0,c.users)],t.setup);
+        if(previous)t.resumedPreparation={sourceTrialIndex:continuation!.report.trials.indexOf(previous),reusedWindowTransactions:[],
+          discardedPreparedHashes:[],durationScope:"Fresh setup and preparation after a read-only setup estimate failed; no prior window or request transaction existed."};
+      }
       const values = valuesFor(args.seed,`${warmup ? "control" : "concurrency"}/${c.width}/${run}`,count,c.width);
       if (direction) {
         const affine = (xs: bigint[]) => xs.reduce((state,x) => BigInt.asUintN(c.width,3n*state+x),0n);
@@ -352,13 +385,30 @@ export async function runStudy(args: StudyArgs, hre: HardhatRuntimeEnvironment, 
         if(await readSettledNonce(rpc,address)!==expectedNonce(address)) throw new Error("Continuation nonce mismatch; no new sends");
       }
       const blockCache=new Map<number,string>();
+      const historicalCircuitReadAnchors:Record<string,string>={};
+      // Circuit snapshots cannot be overwritten (used[requestId]); executed
+      // circuit operands cannot be appended (circuitExecuted[jobId]). Check
+      // those immutable values at a recent canonical block without an archive
+      // RPC subscription. Original receipt anchors and timing stay untouched.
+      const immutableCircuitRead=async(ctx:Context,getter:"getSnapshot"|"getCircuitInputs",key:string,trace:TimingTrace)=>{
+        const block=await deadline(()=>rpc("eth_getBlockByNumber",["latest",false]),budget,"immutable circuit audit anchor");
+        if(!block?.hash)throw new Error("Missing canonical circuit audit anchor");
+        historicalCircuitReadAnchors[`${ctx.platform}/${getter}/${key}`]=block.hash;
+        return read(ctx,getter,block.hash,[key],trace);
+      };
+      const settledWindowRead=async(ctx:Context,scopeId:string,user:string,trace:TimingTrace)=>{
+        const block=await deadline(()=>rpc("eth_getBlockByNumber",["latest",false]),budget,"settled window audit anchor");
+        if(!block?.hash)throw new Error("Missing canonical settled-window anchor");
+        historicalCircuitReadAnchors[`${ctx.platform}/getWindowState/${scopeId}/${user}`]=block.hash;
+        return read(ctx,"getWindowState",block.hash,[scopeId,user],trace);
+      };
       const targets=new Map<string,string|null>();
       for(const setup of report.setups){
         const deployment=report.setups.find(s=>s.platform===setup.platform&&s.width===setup.width&&s.kind==="deployment");
         targets.set(setup.transaction.transactionHash!,setup.kind==="deployment"?null:deployment!.address!);
       }
-      for(const trial of report.trials){
-        const width=plan.cases.find(c=>c.id===trial.caseId)!.width;
+      for(const trial of allStudyTrials(report)){
+        const width=allStudyCases(report).find(c=>c.id===trial.caseId)!.width;
         const deployment=report.setups.find(s=>s.platform===trial.platform&&s.width===width&&s.kind==="deployment");
         for(const tx of [...trial.setup,...trial.requests.map(r=>r.transaction)])targets.set(tx.transactionHash!,deployment!.address!);
       }
@@ -383,22 +433,37 @@ export async function runStudy(args: StudyArgs, hre: HardhatRuntimeEnvironment, 
           plan.cases.find(c=>c.id===t.caseId)?.width===width).at(-1)!;
         if(last){
           for(const result of last.requests){
-            const trace=new TimingTrace(),handle=await read(ctx,"getSnapshot",effectiveReceipt(result.transaction,report).blockHash!,[result.requestId],trace);
+            const trace=new TimingTrace(),handle=await immutableCircuitRead(ctx,"getSnapshot",result.requestId,trace);
             const [value]=await deadline(()=>ctx.reader.decrypt([handle],trace,budget),budget,"historical snapshot verification");
             validatePlaintext(value,BigInt(result.expected!));
           }
           if(args.suite==="concurrency")for(const [key,expected] of Object.entries(last.expectedFinal!)){
-            const final=last.requests.map(r=>effectiveReceipt(r.transaction,report)).sort((a,b)=>a.blockNumber!-b.blockNumber!||a.transactionIndex!-b.transactionIndex!).at(-1)!;
-            const trace=new TimingTrace(),handle=await read(ctx,"getWindowState",final.blockHash!,[last.scopeId,key==="shared"?addresses[0]:key],trace);
+            const trace=new TimingTrace(),handle=await settledWindowRead(ctx,last.scopeId,key==="shared"?addresses[0]:key,trace);
             const [value]=await deadline(()=>ctx.reader.decrypt([handle],trace,budget),budget,"historical window final state");
             validatePlaintext(value,BigInt(expected));
           }
         }
       }
       const resolvedKeys=new Set(latestAttempts(report).filter(t=>["ok","capacity_rejected"].includes(t.status)).map(trialKey));
-      for(const old of continuation.report.trials.filter(t=>t.status==="incomplete"&&!resolvedKeys.has(trialKey(t)))) {
+      for(const old of continuation.report.trials.filter(t=>(t.status==="incomplete" || (t.status==="pending"&&t.setup.some(tx=>
+        report.settledSetupReceipts?.some(r=>r.transactionHash===tx.transactionHash))))&&!resolvedKeys.has(trialKey(t)))) {
         const c=plan.cases.find(c=>c.id===old.caseId)!,ctx=contexts.get(`${old.platform}/${c.width}`)!;
         if(c.suite==="concurrency"){
+          if(old.setup.length===0){
+            // A setup estimate failed before signing. Prove the window remains
+            // unopened at a canonical block before planning its first send.
+            const block=await deadline(()=>rpc("eth_getBlockByNumber",["latest",false]),budget,"unopened window anchor");
+            if(!block?.hash)throw new Error("Missing canonical window anchor");
+            let unopened=false;
+            try{await read(ctx,"getWindowState",block.hash,[old.scopeId,addresses[0]],new TimingTrace());}
+            catch(error){if(isUnopenedWindow(error))unopened=true;else throw error;}
+            if(!unopened)throw new Error("Unrecorded window exists; replay forbidden");
+            for(const user of ctx.addresses.slice(0,c.users)){
+              const allowed:unknown=await read(ctx,"authorized",block.hash,[user],new TimingTrace());
+              if(allowed!==true)throw new Error("Window writer is not canonically authorized");
+            }
+            continue;
+          }
           const open=await deadline(()=>rpc("eth_getTransactionByHash",[old.setup[0].transactionHash]),budget,"window setup transaction");
           const decoded=ctx.contract.interface.parseTransaction({data:open.input})!;
           const mode={independent:0,shared_sum:1,shared_ordered:2}[c.mode!];
@@ -422,15 +487,13 @@ export async function runStudy(args: StudyArgs, hre: HardhatRuntimeEnvironment, 
               audit.expectedFinal=Object.fromEntries(Object.entries(canonical.state).map(([k,v])=>[k,String(v)]));
               for(const r of old.requests){
                 const started=performance.now(),expected=canonical.snapshots[r.requestId];
-                const handle=await read(ctx,"getSnapshot",effectiveReceipt(r.transaction,report).blockHash!,[r.requestId],trace);
+                const handle=await immutableCircuitRead(ctx,"getSnapshot",r.requestId,trace);
                 const [value]=await deadline(()=>ctx.reader.decrypt([handle],trace,budget),budget,"late warmup snapshot audit");
                 audit.snapshots.push({requestId:r.requestId,expected:String(expected),plaintext:validatePlaintext(value,expected),lateAuditCallMs:performance.now()-started});save();
               }
-              const last=canonical.canonical.at(-1)!;
-              const finalHash=effectiveReceipt(old.requests.find(r=>r.requestId===last.requestId)!.transaction,report).blockHash!;
               audit.finalPlaintexts={};
               for(const [key,expected] of Object.entries(canonical.state)){
-                const handle=await read(ctx,"getWindowState",finalHash,[old.scopeId,key==="shared"?addresses[0]:key],trace);
+                const handle=await settledWindowRead(ctx,old.scopeId,key==="shared"?addresses[0]:key,trace);
                 const [value]=await deadline(()=>ctx.reader.decrypt([handle],trace,budget),budget,"late warmup final audit");
                 audit.finalPlaintexts[key]=validatePlaintext(value,expected);
               }
@@ -438,23 +501,49 @@ export async function runStudy(args: StudyArgs, hre: HardhatRuntimeEnvironment, 
             }catch(error){audit.status="error";audit.error=safeError(error);audit.completedAt=new Date().toISOString();save();throw error;}
             continue;
           }
+          const anchor=await deadline(()=>rpc("eth_getBlockByNumber",["latest",false]),budget,"resumed zero-window anchor");
+          if(!anchor?.hash)throw new Error("Missing canonical resumed-window anchor");
           for(const user of ctx.addresses.slice(0,c.users)){
-            const trace=new TimingTrace(),handle=await read(ctx,"getWindowState",old.setup[0].blockHash!,[old.scopeId,user],trace);
+            const trace=new TimingTrace(),handle=await read(ctx,"getWindowState",anchor.hash,[old.scopeId,user],trace);
             const [value]=await deadline(()=>ctx.reader.decrypt([handle],trace,budget),budget,"zero window verification");validatePlaintext(value,0n);
           }
           for(let ordinal=0;ordinal<args.requests;ordinal++){
             let unused=false;
-            try{await deadline(()=>ctx.contract.getFunction("getSnapshot").staticCall(id(`${old.scopeId}/${ordinal}`)),budget,"unused window request");}
+            try{await read(ctx,"getSnapshot",anchor.hash,[id(`${old.scopeId}/${ordinal}`)],new TimingTrace());}
             catch(error){if(isUnusedSnapshot(error))unused=true;else throw error;}
             if(!unused)throw new Error("A window request already executed; replay forbidden");
           }
+          resumedWindowAnchors.set(old.scopeId,anchor.hash);
           continue;
         }
         const trace=new TimingTrace();
-        const handles=Array.from(await read(ctx,"getCircuitInputs",effectiveReceipt(old.setup.at(-1)!,report).blockHash!,[old.scopeId],trace) as any) as (string|bigint)[];
+        const executed=effectiveReceipt(old.requests[0].transaction,report).status==="confirmed";
+        const handles=Array.from(await (executed?immutableCircuitRead(ctx,"getCircuitInputs",old.scopeId,trace)
+          :read(ctx,"getCircuitInputs",effectiveReceipt(old.setup.at(-1)!,report).blockHash!,[old.scopeId],trace)) as any) as (string|bigint)[];
         const values=await deadline(()=>ctx.reader.decrypt(handles,trace,budget),budget,"saved input verification");
         if(values.length!==old.inputValues!.length) throw new Error("Saved circuit operands are missing");
         values.forEach((v,i)=>validatePlaintext(v,BigInt(old.inputValues![i])));
+        const result=old.requests[0],receipt=effectiveReceipt(result.transaction,report);
+        if(receipt.status==="confirmed"){
+          const audit:NonNullable<StudyReport["recoveredAudits"]>[number]={
+            sourceTrialIndex:continuation.report.trials.indexOf(old),key:trialKey(old),scopeId:old.scopeId,
+            warmup:old.warmup,status:"pending",startedAt:new Date().toISOString(),historicalError:old.error,
+            snapshots:[],stages:trace.stages,
+            timingUse:"Late circuit correctness audit only; original timeout and missing primary timing retained. No compute replay.",
+          };
+          (report.recoveredAudits??=[]).push(audit);save();
+          try{
+            const expected=expectedCircuit(c,old.inputValues!.map(BigInt));
+            if(result.expected!==String(expected))throw new Error("Historical circuit model mismatch");
+            const started=performance.now();
+            const handle=await immutableCircuitRead(ctx,"getSnapshot",result.requestId,trace);
+            const [value]=await deadline(()=>ctx.reader.decrypt([handle],trace,budget),budget,"late circuit correctness audit");
+            audit.snapshots.push({requestId:result.requestId,expected:String(expected),
+              plaintext:validatePlaintext(value,expected),lateAuditCallMs:performance.now()-started});
+            audit.status="ok";audit.completedAt=new Date().toISOString();save();
+          }catch(error){audit.status="error";audit.error=safeError(error);audit.completedAt=new Date().toISOString();save();throw error;}
+          continue;
+        }
         let unused=false;
         try { await deadline(()=>ctx.contract.getFunction("getSnapshot").staticCall(old.requests[0].requestId),budget,"unused request verification"); }
         catch(error) { if(isUnusedSnapshot(error)) unused=true;else throw error; }
@@ -465,6 +554,9 @@ export async function runStudy(args: StudyArgs, hre: HardhatRuntimeEnvironment, 
         if(await readSettledNonce(rpc,address)!==expectedNonce(address)) throw new Error("Continuation nonce changed during preflight");
       }
       segment.preflight={confirmedReceiptsVerified:confirmed.length,canonicalBlocksVerified:blockCache.size,
+        historicalCircuitReadAnchors,
+        historicalCircuitReadScope:"Immutable snapshots, executed operands and settled window states at recent canonical blocks after exact account nonce checks; original receipts verified independently. No replacement timing.",
+        resumedZeroWindowAnchors:Object.fromEntries(resumedWindowAnchors),
         canonicalReceiptRecoveries:report.canonicalReceipts?.length??0,
         exactNonces:true,expectedNextNonces:Object.fromEntries(addresses.map(a=>[a,expectedNonce(a)])),
         bytecodeAndLastPlatformSnapshotsVerified:true,savedInputsAndUnusedRequestsVerified:true};
@@ -497,9 +589,8 @@ export async function runStudy(args: StudyArgs, hre: HardhatRuntimeEnvironment, 
     if(continuation){const segment=report.continuations!.at(-1)!;segment.status="failed";segment.error=safeError(error);segment.finishedAt=new Date().toISOString();}
     report.error = safeError(error); report.finishedAt = new Date().toISOString(); save(); throw error;
   } finally {
-    const transactions = [...report.setups.map(s => s.transaction),
-      ...report.trials.flatMap(t => [...t.setup,...t.requests.map(r => r.transaction)])];
-    const uncertain = transactions.some(t => ["started","uncertain","acknowledged"].includes(t.broadcastState) && t.receiptStatus === undefined);
+    const transactions = allStudyTransactions(report);
+    const uncertain = transactions.some(t => ["started","uncertain","acknowledged"].includes(t.broadcastState) && effectiveReceipt(t,report).receiptStatus === undefined);
     if (!mock && uncertain) {
       // A lost acknowledgement or receipt is not permission to replay a send.
       report.methodology.accountLockRetained = "Unsettled broadcast: reconcile canonical receipts and nonces before any further campaign.";

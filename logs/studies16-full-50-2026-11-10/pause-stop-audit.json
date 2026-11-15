@@ -1,0 +1,9 @@
+{
+  "status": "stopped_after_settled_checkpoint",
+  "at": "2026-11-10T22:20:34.7476495Z",
+  "pid": 8964,
+  "verifiedCanonicalTransactions": 1186,
+  "latestNonce": 1800,
+  "pendingNonce": 1800,
+  "reason": "User requested reduced concurrency first; no transaction replay."
+}

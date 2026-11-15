@@ -1,0 +1,7 @@
+\paragraph{Table scope.}
+For transaction rows, UTC intervals span the timestamps of the first and last canonical containing blocks; they are inclusion intervals, not preparation-to-decryption intervals. Ranges may include interruptions.
+Only measured primary transactions enter the main rows; deployment, warmup, explicit retries and late view recovery are separate. The integer $n$ is the confirmed transaction count, not the number of valid latency observations.
+Mean gas/target is the transaction-weighted mean of $100\,g_b/(G_b/2)$, where $g_b$ and $G_b$ are the containing block's gas used and gas limit. A block is weighted once per included experimental transaction.
+The 128-bit classical baseline and Zama schedules are partial (ten rounds, nine for max); Fhenix completed fifty planned rounds, retaining its failures. Owner registration uses \texttt{eaddress}; the width labels refer to arithmetic.
+For view/decrypt, intervals use recorded client times and block ranges denote the persisted result's reference blocks. No new transaction is submitted, hence gas/target is not applicable.
+The new studies are three-repetition pilots. Platform windows are rotated and executed sequentially; concurrency refers to writers within a platform. Unsent HCU rejections have no containing block. Raw timings and outcomes are unchanged.

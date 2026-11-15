@@ -1,0 +1,221 @@
+{
+  "rows": [
+    {
+      "mode": "shared_sum",
+      "writers": 1,
+      "platform": "baseline",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 0,
+      "finalDiffers": 0,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_sum",
+      "writers": 1,
+      "platform": "zama",
+      "windows": 20,
+      "primaryValid": 19,
+      "late": 1,
+      "reordered": 0,
+      "finalDiffers": 0,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_sum",
+      "writers": 1,
+      "platform": "fhenix",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 0,
+      "finalDiffers": 0,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_sum",
+      "writers": 2,
+      "platform": "baseline",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 20,
+      "finalDiffers": 0,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_sum",
+      "writers": 2,
+      "platform": "zama",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 20,
+      "finalDiffers": 0,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_sum",
+      "writers": 2,
+      "platform": "fhenix",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 20,
+      "finalDiffers": 0,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_sum",
+      "writers": 4,
+      "platform": "baseline",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 20,
+      "finalDiffers": 0,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_sum",
+      "writers": 4,
+      "platform": "zama",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 20,
+      "finalDiffers": 0,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_sum",
+      "writers": 4,
+      "platform": "fhenix",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 20,
+      "finalDiffers": 0,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_ordered",
+      "writers": 1,
+      "platform": "baseline",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 0,
+      "finalDiffers": 0,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_ordered",
+      "writers": 1,
+      "platform": "zama",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 0,
+      "finalDiffers": 0,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_ordered",
+      "writers": 1,
+      "platform": "fhenix",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 0,
+      "finalDiffers": 0,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_ordered",
+      "writers": 2,
+      "platform": "baseline",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 20,
+      "finalDiffers": 20,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_ordered",
+      "writers": 2,
+      "platform": "zama",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 20,
+      "finalDiffers": 20,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_ordered",
+      "writers": 2,
+      "platform": "fhenix",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 20,
+      "finalDiffers": 20,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_ordered",
+      "writers": 4,
+      "platform": "baseline",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 20,
+      "finalDiffers": 20,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_ordered",
+      "writers": 4,
+      "platform": "zama",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 20,
+      "finalDiffers": 20,
+      "inconsistent": 0
+    },
+    {
+      "mode": "shared_ordered",
+      "writers": 4,
+      "platform": "fhenix",
+      "windows": 20,
+      "primaryValid": 20,
+      "late": 0,
+      "reordered": 20,
+      "finalDiffers": 20,
+      "inconsistent": 0
+    }
+  ],
+  "sources": [
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-compact-2026-11-11-continuation2\\concurrency-euint16\\report.json",
+      "sha256": "de8d19f1009aa9e31c700dcdcb93dbf64e9629007ad708ce495131b11332f7d9"
+    },
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-2\\concurrency-euint16\\report.json",
+      "sha256": "1a83072f07d7ba3ce1f5a827081c48d083acc8a8708c7c608a0810b41f358d50"
+    },
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\concurrency2-20-2026-11-15\\session-1\\concurrency-euint16\\report.json",
+      "sha256": "3e5374b2dd1014743857fbbdfefd04d3ca13f24bc110e36c0196aed03ea7c559"
+    },
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\concurrency2-20-2026-11-15\\session-2\\concurrency-euint16\\report.json",
+      "sha256": "7c6dc280053586cc32a472917c7ed693f0d61c1dbac6473fa73dd272a5b2a8e9"
+    }
+  ],
+  "methodology": "20 windows/cell;8 requests/window. C2 collected later in two sessions with matching per-session seeds/inputs. No independent-request, causal or statistical significance claims."
+}

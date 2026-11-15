@@ -1,0 +1,39 @@
+\begin{table*}[!t]
+\caption{Paired latency comparison against the plaintext baseline (16-bit arithmetic)}
+\label{tab:paired-lifecycle-comparison}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Platform} & \textbf{Baseline Mean} & \textbf{FHE Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+\multirow{2}{*}{set\_meter\_owner}
+& Zama & \multirow{2}{*}{7296} & 23924 & 4.198 & [3.714, 4.745] & +319.8\% & $<0.001$ \\
+& Fhenix &  & 19279 & 3.340 & [2.993, 3.724] & +234.0\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{notarize}
+& Zama & \multirow{2}{*}{8499} & 25066 & 3.216 & [3.004, 3.467] & +221.6\% & $<0.001$ \\
+& Fhenix &  & 20022 & 2.554 & [2.407, 2.726] & +155.4\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{add}
+& Zama & \multirow{2}{*}{9182} & 13356 & 1.545 & [1.488, 1.609] & +54.5\% & $<0.001$ \\
+& Fhenix &  & 9369 & 1.023 & [1.018, 1.029] & +2.3\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{mul\_scalar}
+& Zama & \multirow{2}{*}{8525} & 12774 & 1.579 & [1.528, 1.638] & +57.9\% & $<0.001$ \\
+& Fhenix &  & 8926 & 1.056 & [1.035, 1.076] & +5.6\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{mean}
+& Zama & \multirow{2}{*}{8878} & 13100 & 1.562 & [1.507, 1.622] & +56.2\% & $<0.001$ \\
+& Fhenix &  & 9842 & 1.127 & [1.089, 1.162] & +12.7\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{max}
+& Zama & \multirow{2}{*}{7474} & 11779 & 1.632 & [1.577, 1.689] & +63.2\% & $<0.001$ \\
+& Fhenix &  & 7740 & 1.038 & [1.022, 1.053] & +3.8\% & $<0.001$ \\
+\hline
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Full client lifecycle includes preparation and signing, excluding intentional barrier waiting. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests.}
+\end{table*}

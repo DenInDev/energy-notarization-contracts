@@ -1,0 +1,52 @@
+{
+  "at": "2026-11-10T11:45:38.100Z",
+  "chainId": 11155111,
+  "accounts": [
+    {
+      "platform": "baseline",
+      "address": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC",
+      "latest": 748,
+      "pending": 748,
+      "balanceWei": "99990292720583000",
+      "lastCanonicalTransactionHash": "0x90c4e861f01d7e944c62e447fad4ddb64fa884d2876bbd2174b957f7d7739f98",
+      "lastCanonicalBlock": "0xbc3628c1077f447f0d9ee9df9f2b33b05659d6c418622e9d5b2e1116170585f7",
+      "lastNonce": 747,
+      "historicalReceiptCurrentlyAvailable": false,
+      "historicalSuccessStatusSource": "Immutable recorded receipt; canonical block/hash membership and indexed sender/nonce rechecked."
+    },
+    {
+      "platform": "zama",
+      "address": "0x268fcAE6206890E4de082535F12C40Cc5119033d",
+      "latest": 748,
+      "pending": 748,
+      "balanceWei": "99900387034198169",
+      "lastCanonicalTransactionHash": "0xb1e198f9d7940bcffabd4a6ba6e3fe676f553cb64e49356a8d73a93e5e922246",
+      "lastCanonicalBlock": "0xbc3628c1077f447f0d9ee9df9f2b33b05659d6c418622e9d5b2e1116170585f7",
+      "lastNonce": 747,
+      "historicalReceiptCurrentlyAvailable": false,
+      "historicalSuccessStatusSource": "Immutable recorded receipt; canonical block/hash membership and indexed sender/nonce rechecked."
+    },
+    {
+      "platform": "fhenix",
+      "address": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+      "latest": 994,
+      "pending": 994,
+      "balanceWei": "96898554250800905",
+      "lastCanonicalTransactionHash": "0xd64df96a391b347cd87b8a928e3f00a0f7e7adb261498916367960b27e54ffa0",
+      "lastCanonicalBlock": "0x0301b1660858bc512eb2feab4147072a9c0189e25f708b75a898fa8ab668cd13",
+      "lastNonce": 993,
+      "historicalReceiptCurrentlyAvailable": false,
+      "historicalSuccessStatusSource": "Immutable recorded receipt; canonical block/hash membership and indexed sender/nonce rechecked."
+    }
+  ],
+  "fees": {
+    "maxFeePerGasWei": "88",
+    "maxPriorityFeePerGasWei": "50"
+  },
+  "currentReceiptRpcVerified": true,
+  "currentReceiptCheckBlock": 12104417,
+  "isolatedAccountLockAbsent": true,
+  "quarantinedRootLockSha256": "51a1eadf512ae81fe34476266449a235e420586fc010381a36d3329c8f8372cb",
+  "historicalSourceSha256": "75d9ae589d8d0d8edef3511ae55d2e1ab301131470d0cb1ba59c124ea04dfe9b",
+  "noFundingOrNewTransactions": true
+}

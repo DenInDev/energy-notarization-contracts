@@ -3,10 +3,12 @@ import fs from "node:fs";
 let sequence = 0;
 const pause = new Int32Array(new SharedArrayBuffer(4));
 
-export function writeLifecycleJson(file: string, value: unknown,
+// Publish derived text journals through the same atomic replacement as JSON.
+// A file viewer holding the old destination never sees a truncated new file.
+export function writeLifecycleText(file: string, value: string,
   rename = fs.renameSync, sleep = (ms: number) => { Atomics.wait(pause, 0, 0, ms); }) {
   const temporary = `${file}.${process.pid}.${++sequence}.tmp`;
-  fs.writeFileSync(temporary, JSON.stringify(value, null, 2));
+  fs.writeFileSync(temporary, value);
   for (let attempt = 0; ; attempt++) {
     try { rename(temporary, file); return; }
     catch (error) {
@@ -15,4 +17,9 @@ export function writeLifecycleJson(file: string, value: unknown,
       sleep(Math.min(10 * 2 ** attempt, 400));
     }
   }
+}
+
+export function writeLifecycleJson(file: string, value: unknown,
+  rename = fs.renameSync, sleep = (ms: number) => { Atomics.wait(pause, 0, 0, ms); }) {
+  writeLifecycleText(file, JSON.stringify(value, null, 2), rename, sleep);
 }

@@ -1,0 +1,35 @@
+\begin{table*}[!t]
+\caption{Concurrency correctness and ordering on Sepolia (16-bit arithmetic)}
+\label{tab:concurrency-correctness}
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|r|l|r|r|r|r|r|}\hline
+\textbf{Mode} & \textbf{Writers} & \textbf{Platform} & \shortstack{\textbf{Primary valid}\\\textbf{windows}} & \shortstack{\textbf{Late}\\\textbf{validated}} & \shortstack{\textbf{Reordered}\\\textbf{windows}} & \shortstack{\textbf{Final differs}\\\textbf{from planned}} & \textbf{Inconsistent} \\
+\hline
+\texttt{shared\_sum} & 1 & Plaintext baseline & 20/20 & 0 & 0/20 & 0/20 & 0 \\
+ &  & Zama fhEVM & 19/20 & 1 & 0/20 & 0/20 & 0 \\
+ &  & Fhenix CoFHE & 20/20 & 0 & 0/20 & 0/20 & 0 \\
+\hline
+\texttt{shared\_sum} & 2 & Plaintext baseline & 20/20 & 0 & 20/20 & 0/20 & 0 \\
+ &  & Zama fhEVM & 20/20 & 0 & 20/20 & 0/20 & 0 \\
+ &  & Fhenix CoFHE & 20/20 & 0 & 20/20 & 0/20 & 0 \\
+\hline
+\texttt{shared\_sum} & 4 & Plaintext baseline & 20/20 & 0 & 20/20 & 0/20 & 0 \\
+ &  & Zama fhEVM & 20/20 & 0 & 20/20 & 0/20 & 0 \\
+ &  & Fhenix CoFHE & 20/20 & 0 & 20/20 & 0/20 & 0 \\
+\hline
+\texttt{shared\_ordered} & 1 & Plaintext baseline & 20/20 & 0 & 0/20 & 0/20 & 0 \\
+ &  & Zama fhEVM & 20/20 & 0 & 0/20 & 0/20 & 0 \\
+ &  & Fhenix CoFHE & 20/20 & 0 & 0/20 & 0/20 & 0 \\
+\hline
+\texttt{shared\_ordered} & 2 & Plaintext baseline & 20/20 & 0 & 20/20 & 20/20 & 0 \\
+ &  & Zama fhEVM & 20/20 & 0 & 20/20 & 20/20 & 0 \\
+ &  & Fhenix CoFHE & 20/20 & 0 & 20/20 & 20/20 & 0 \\
+\hline
+\texttt{shared\_ordered} & 4 & Plaintext baseline & 20/20 & 0 & 20/20 & 20/20 & 0 \\
+ &  & Zama fhEVM & 20/20 & 0 & 20/20 & 20/20 & 0 \\
+ &  & Fhenix CoFHE & 20/20 & 0 & 20/20 & 20/20 & 0 \\
+\hline
+\end{tabular}\par\smallskip
+\begin{minipage}{\textwidth}\scriptsize Twenty windows per configuration and platform, with eight transactions per window. Historical primary failures and late audits remain distinct. A final-state difference from planned submission order is legitimate when it matches canonical replay. Two-writer sessions were collected separately; samples are descriptive, not a causal comparison.\end{minipage}
+\end{table*}

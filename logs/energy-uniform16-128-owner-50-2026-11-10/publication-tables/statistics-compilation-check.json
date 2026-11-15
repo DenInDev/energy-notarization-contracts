@@ -1,0 +1,8 @@
+{
+  "compiler": "Codex desktop built-in LaTeX compiler",
+  "target": "statistics-main.tex",
+  "status": "success",
+  "tableCount": 8,
+  "jointHolmTests": 42,
+  "rawReportsUnchanged": true
+}

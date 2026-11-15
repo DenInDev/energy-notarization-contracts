@@ -15,6 +15,40 @@ import { effectiveReceipt, verifyCanonicalReceipt } from "../tasks/studies/canon
 import type { StudyReport } from "../tasks/studies/report";
 
 describe("focused study planning and canonical oracle", () => {
+  it("audits an already-confirmed circuit after a missing receipt without replay or reconstructed timing", async () => {
+    const parent=fs.mkdtempSync(path.join(os.tmpdir(),"late-circuit-"));
+    const original=path.join(parent,"source"),continued=path.join(parent,"continued");
+    try{
+      const raw=await runStudy({...defaults,suite:"circuits",platform:"baseline",widths:"16",sizes:"2",depths:"1",
+        repetitions:1,live:true,outputDir:original},hre) as StudyReport;
+      const trial=raw.trials.at(-1)!,result=trial.requests[0],tx=result.transaction;
+      raw.executionComplete=false;raw.complete=false;trial.status="incomplete";trial.error="simulated observer deadline";
+      result.status="error";delete result.plaintext;delete result.transactionToValidatedMs;delete result.postReceiptMs;
+      tx.status="error";tx.broadcastState="acknowledged";
+      for(const key of ["blockHash","blockNumber","transactionIndex","receiptStatus","gasUsed","effectiveGasPriceWei",
+        "gasCostWei","receiptMs","receiptOffsetMs","receiptObservedMonotonicMs"])delete (tx as any)[key];
+      const file=path.join(original,"report.json");fs.writeFileSync(file,JSON.stringify(raw));
+      const bytes=fs.readFileSync(file),before=await hre.ethers.provider.getTransactionCount(raw.accounts[0]);
+      const report=await continueStudy(file,continued,hre) as StudyReport;
+      assert(report.executionComplete);assert(!report.complete);
+      assert.equal(await hre.ethers.provider.getTransactionCount(raw.accounts[0]),before);
+      assert.equal(report.trials.length,raw.trials.length);
+      assert.equal(report.lateComputeReceipts?.length,1);
+      assert.equal(report.recoveredAudits?.at(-1)?.status,"ok");
+      assert.equal(effectiveReceipt(report.trials.at(-1)!.requests[0].transaction,report).receiptMs,undefined);
+      assert.equal(report.trials.at(-1)!.requests[0].transactionToValidatedMs,undefined);
+      assert.equal(JSON.stringify(report.trials),JSON.stringify(raw.trials));assert.deepEqual(fs.readFileSync(file),bytes);
+      assert(latestAttempts(report).every(t=>t.status==="ok"));
+    }finally{
+      for(const folder of [original,continued]){
+        for(const name of ["report.json","summary.json","summary.md","controls.json","costs.json","transactions.jsonl"]){
+          const f=path.join(folder,name);if(fs.existsSync(f))fs.unlinkSync(f);
+        }
+        if(fs.existsSync(folder))fs.rmdirSync(folder);
+      }
+      fs.rmdirSync(parent);
+    }
+  });
   it("reconciles only stable same-transaction reinclusions without replacing latency", async () => {
     const tx:any={transactionHash:"tx",user:"alice",transactionNonce:7,blockHash:"old",blockNumber:10,transactionIndex:2,
       receiptStatus:1,gasUsed:20,effectiveGasPriceWei:"3",gasCostWei:"60",receiptMs:123};
@@ -60,13 +94,13 @@ describe("focused study planning and canonical oracle", () => {
   });
   it("contains only the two studies, equal-work reduction pairs and explicit transaction budgets", () => {
     const plan = planSummary(defaults);
-    assert.equal(plan.cases.filter(c => c.suite === "concurrency").length,24);
-    assert.equal(plan.cases.filter(c => c.suite === "circuits").length,32);
-    assert.equal(plan.measuredTransactions,120000);
-    assert.equal(plan.warmupTransactions,2976);
-    assert.equal(plan.setupTransactions,8904);
+    assert.equal(plan.cases.filter(c => c.suite === "concurrency").length,12);
+    assert.equal(plan.cases.filter(c => c.suite === "circuits").length,16);
+    assert.equal(plan.measuredTransactions,60000);
+    assert.equal(plan.warmupTransactions,1488);
+    assert.equal(plan.setupTransactions,4299);
     assert.equal(plan.requiredAccounts,9);
-    for (const width of [16,128]) for (const n of [2,4,8,16,32]) {
+    for (const width of [16]) for (const n of [2,4,8,16,32]) {
       const pair = plan.cases.filter(c => c.width === width && c.inputCount === n && c.circuit?.startsWith("sum_"));
       assert.deepEqual(pair.map(c => c.additions),[n-1,n-1]);
       assert.deepEqual(pair.map(c => c.dependencyDepth),[n-1,Math.log2(n)]);
@@ -74,6 +108,7 @@ describe("focused study planning and canonical oracle", () => {
     assert.throws(() => buildPlan({...defaults,suite:"state"}),/Only concurrency/);
     assert.throws(() => buildPlan({...defaults,requests:10}),/divisible/);
     assert.throws(() => buildPlan({...defaults,widths:"64"}),/Widths/);
+    assert.throws(() => buildPlan({...defaults,widths:"128"}),/Widths/);
     assert.equal(capacityRejection({info:{error:{data:hre.ethers.id("HCUTransactionLimitExceeded()").slice(0,10)}}}),"HCUTransactionLimitExceeded");
     assert.equal(capacityRejection(new Error("Timeout, out of gas or arbitrary revert")),undefined);
   });
@@ -119,11 +154,11 @@ describe("focused study planning and canonical oracle", () => {
   });
 
   it("uses full-width modular arithmetic and labels robustness at the window level", () => {
-    const c=buildPlan({...defaults,suite:"circuits",widths:"128",sizes:"2",depths:"2"});
-    const values=[(1n<<128n)-1n,3n];
+    const c=buildPlan({...defaults,suite:"circuits",widths:"16",sizes:"2",depths:"2"});
+    const values=[(1n<<16n)-1n,3n];
     assert.equal(expectedCircuit(c[0],values),2n);
     assert.equal(expectedCircuit(c[1],values),2n);
-    assert.equal(expectedCircuit(c[2],values),(1n<<128n)-13n);
+    assert.equal(expectedCircuit(c[2],values),(1n<<16n)-13n);
     assert(Math.abs(zeroFailureUpper95(50)-0.0581550791)<1e-9);
     assert(zeroFailureUpper95(300)<0.01);
   });
@@ -131,6 +166,149 @@ describe("focused study planning and canonical oracle", () => {
 
 describe("local study integration (not public-network performance)", function () {
   this.timeout(180000);
+  it("continues a lossless selected scope while keeping excluded transactions in nonce and gas history", async () => {
+    const parent=fs.mkdtempSync(path.join(os.tmpdir(),"selected-study-")),original=path.join(parent,"source"),continued=path.join(parent,"continued");
+    const send=hre.ethers.provider.send.bind(hre.ethers.provider),selector=hre.ethers.id("openWindow(bytes32,uint8,address[])").slice(0,10);
+    const base={...defaults,suite:"concurrency",platform:"baseline",users:"1,2,4",requests:4,repetitions:2,live:true,outputDir:original};
+    const ids=buildPlan(base).map(c=>c.id),selected=(id:string)=>/-c(?:1|4)-shared_(?:sum|ordered)$/.test(id);
+    let seed="";for(let n=0;!seed;n++){const candidate="compact-scope-"+n,order=ordered(ids,candidate+"/case-order/1");if(order.slice(0,order.indexOf("concurrency-w16-c2-independent")).some(selected))seed=candidate;}
+    let injected=false;
+    (hre.ethers.provider as any).send=async(method:string,params:any[])=>{
+      const file=path.join(original,"report.json");
+      if(!injected&&method==="eth_estimateGas"&&params[0]?.data?.startsWith(selector)&&fs.existsSync(file)){
+        const r=JSON.parse(fs.readFileSync(file,"utf8")),last=r.trials.at(-1);
+        if(last?.repetition===1&&last.caseId==="concurrency-w16-c2-independent"){
+          injected=true;throw Error("Stop excluded setup fixture");
+        }
+      }
+      return send(method,params);
+    };
+    try{
+      await assert.rejects(runStudy({...base,seed},hre),/Stop excluded/);
+      (hre.ethers.provider as any).send=send;
+      const sourceFile=path.join(original,"report.json"),bytes=fs.readFileSync(sourceFile),source=JSON.parse(bytes.toString()) as StudyReport;
+      const {deriveSelectedStudyScope,allStudyTransactions}=await import("../tasks/studies/history");
+      const args={...base,seed,users:"1,4",modes:"shared_sum,shared_ordered",outputDir:continued};
+      const projection=deriveSelectedStudyScope(sourceFile,args),checkpoint=path.join(parent,"selected-checkpoint.json");
+      assert(projection.trials.some(t=>!t.warmup&&t.status==="ok"));assert.equal(projection.cases.length,4);
+      assert.equal(projection.trials.length+projection.supplementaryTrials!.length,source.trials.length);
+      assert(projection.supplementaryTrials!.some(t=>t.status==="incomplete"));
+      assert.throws(()=>deriveSelectedStudyScope(sourceFile,{...args,seed:"different"}),/retain/);
+      assert.throws(()=>deriveSelectedStudyScope(sourceFile,{...args,repetitions:3}),/retain/);
+      assert.throws(()=>deriveSelectedStudyScope(sourceFile,{...args,requests:8}),/differs/);
+      fs.writeFileSync(checkpoint,JSON.stringify(projection));const checkpointBytes=fs.readFileSync(checkpoint);
+      const report=await continueStudy(checkpoint,continued,hre) as StudyReport;
+      assert(report.executionComplete&&report.complete);assert.equal(latestAttempts(report).filter(t=>!t.warmup).length,8);
+      assert.equal(report.setups.length,2);assert.deepEqual(report.supplementaryTrials,projection.supplementaryTrials);
+      assert.deepEqual(fs.readFileSync(sourceFile),bytes);assert.deepEqual(fs.readFileSync(checkpoint),checkpointBytes);
+      const txs=allStudyTransactions(report).filter(t=>t.status==="confirmed");
+      assert.equal(txs.length,new Set(txs.map(t=>t.transactionHash)).size);
+      for(const user of report.accounts){const ns=txs.filter(t=>t.user===user).map(t=>t.transactionNonce).sort((a,b)=>a-b);assert(ns.every((n,i)=>n===report.initialNonces![user]+i));}
+      const costs=JSON.parse(fs.readFileSync(path.join(continued,"costs.json"),"utf8"));
+      assert.equal(costs.confirmedReceipts,txs.length);assert(BigInt(costs.supplementaryGasCostWei)>0n);assert.equal(costs.unresolvedBroadcasts,0);
+    }finally{
+      (hre.ethers.provider as any).send=send;
+      for(const folder of [original,continued]){
+        for(const name of ["report.json","summary.json","summary.md","controls.json","costs.json","transactions.jsonl"]){const f=path.join(folder,name);if(fs.existsSync(f))fs.unlinkSync(f);}
+        if(fs.existsSync(folder))fs.rmdirSync(folder);
+      }
+      const checkpoint=path.join(parent,"selected-checkpoint.json");if(fs.existsSync(checkpoint))fs.unlinkSync(checkpoint);fs.rmdirSync(parent);
+    }
+  });
+  it("settles only a paused setup receipt separately and never reconstructs its latency", async () => {
+    const parent=fs.mkdtempSync(path.join(os.tmpdir(),"paused-setup-")),original=path.join(parent,"source"),continued=path.join(parent,"continued");
+    const send=hre.ethers.provider.send.bind(hre.ethers.provider),selector=hre.ethers.id("executeCircuit(bytes32,bytes32,uint8,uint32)").slice(0,10);
+    let injected=false;
+    (hre.ethers.provider as any).send=async(method:string,params:any[])=>{
+      const file=path.join(original,"report.json");
+      if(!injected&&method==="eth_estimateGas"&&params[0]?.data?.startsWith(selector)&&fs.existsSync(file)){
+        const r=JSON.parse(fs.readFileSync(file,"utf8"));
+        if(r.trials.at(-1)?.repetition===1){injected=true;throw Error("Paused fixture before compute");}
+      }
+      return send(method,params);
+    };
+    try{
+      await assert.rejects(runStudy({...defaults,suite:"circuits",platform:"baseline",sizes:"2",depths:"1",repetitions:1,
+        live:true,outputDir:original},hre),/Paused fixture/);
+      (hre.ethers.provider as any).send=send;
+      const file=path.join(original,"report.json"),source=JSON.parse(fs.readFileSync(file,"utf8")) as StudyReport;
+      const trial=source.trials.at(-1)!,tx=trial.setup.at(-1)!;
+      const receipt=await send("eth_getTransactionReceipt",[tx.transactionHash]);
+      // Synthetic fixture emulates the exact pre-receipt suspended state only.
+      trial.status="pending";tx.status="pending";
+      for(const key of ["blockHash","blockNumber","transactionIndex","receiptStatus","gasUsed","effectiveGasPriceWei","gasCostWei","receiptMs","receiptOffsetMs"])
+        delete (tx as any)[key];
+      fs.writeFileSync(file,JSON.stringify(source));const bytes=fs.readFileSync(file);
+      const auditFile=path.join(parent,"audit.json"),audit={status:"settled",mutationCalls:0,safeToTerminateVerifiedProcess:true,
+        report:{file,sha256:require("crypto").createHash("sha256").update(bytes).digest("hex")},
+        receipts:[{transactionHash:tx.transactionHash,nonce:tx.transactionNonce,status:1,lateObservation:true,blockHash:receipt.blockHash}]};
+      fs.writeFileSync(auditFile,JSON.stringify(audit));
+      assert.throws(()=>validateStudyContinuation(source),/Unsettled/);
+      const {recoverPausedSetup}=await import("../tasks/studies/checkpoint");
+      const recovered=await recoverPausedSetup(file,source,auditFile,hre);
+      assert.equal(recovered.settledSetupReceipts!.length,1);
+      assert.equal(effectiveReceipt(tx,recovered).receiptMs,undefined);
+      assert.equal(effectiveReceipt(tx,recovered).status,"confirmed");
+      assert.equal(tx.status,"pending");
+      const bad=structuredClone(source);bad.trials.at(-1)!.requests[0].transaction.preparedTransactionHash="0xbad";
+      await assert.rejects(recoverPausedSetup(file,bad,auditFile,hre),/compute attempt/);
+      const report=await continueStudy(file,continued,hre,defaults.accountsFile,auditFile) as StudyReport;
+      assert(report.executionComplete&&!report.complete);assert(latestAttempts(report).every(t=>t.status==="ok"));
+      assert.deepEqual(fs.readFileSync(file),bytes);assert.equal(JSON.stringify(report.trials.slice(0,source.trials.length)),JSON.stringify(source.trials));
+      assert.equal(report.trials.at(-1)!.status,"ok");
+      assert.equal(report.settledSetupReceipts!.length,1);
+      const costs=JSON.parse(fs.readFileSync(path.join(continued,"costs.json"),"utf8"));assert.equal(costs.unresolvedBroadcasts,0);
+      const reused=report.trials.find(t=>t.resumedPreparation)!;assert.equal(reused.setup.length,0);
+    }finally{
+      (hre.ethers.provider as any).send=send;
+      for(const folder of [original,continued]){
+        for(const name of ["report.json","summary.json","summary.md","controls.json","costs.json","transactions.jsonl"]){const f=path.join(folder,name);if(fs.existsSync(f))fs.unlinkSync(f);}
+        if(fs.existsSync(folder))fs.rmdirSync(folder);
+      }
+      const audit=path.join(parent,"audit.json");if(fs.existsSync(audit))fs.unlinkSync(audit);fs.rmdirSync(parent);
+    }
+  });
+  it("resumes a failed window setup estimate only after proving no window was opened", async () => {
+    const parent=fs.mkdtempSync(path.join(os.tmpdir(),"unopened-window-"));
+    const original=path.join(parent,"source"),continued=path.join(parent,"continued");
+    const send=hre.ethers.provider.send.bind(hre.ethers.provider);
+    const selector=hre.ethers.id("openWindow(bytes32,uint8,address[])").slice(0,10);
+    let injected=false,estimates=0;
+    (hre.ethers.provider as any).send=async(method:string,params:any[])=>{
+      if(method==="eth_estimateGas"&&params[0]?.data?.startsWith(selector)){
+        estimates++;
+        assert(params[1]?.blockHash&&params[1].requireCanonical===true);
+        if(!injected){injected=true;throw new Error("execution reverted: Writer not authorized");}
+      }
+      return send(method,params);
+    };
+    try{
+      await assert.rejects(runStudy({...defaults,suite:"concurrency",platform:"baseline",users:"1",modes:"independent",
+        requests:2,repetitions:1,live:true,outputDir:original},hre),/Writer not authorized/);
+      const file=path.join(original,"report.json"),bytes=fs.readFileSync(file),source=JSON.parse(bytes.toString()) as StudyReport;
+      assert.equal(source.trials.length,1);assert.equal(source.trials[0].setup.length,0);
+      assert.equal(source.trials[0].requests.length,0);assert.equal(validateStudyContinuation(source).length,2);
+      const unsafe=structuredClone(source);unsafe.trials[0].setup.push({...source.setups[0].transaction,status:"pending",broadcastState:"uncertain"});
+      assert.throws(()=>validateStudyContinuation(unsafe),/Unsettled/);
+      const report=await continueStudy(file,continued,hre) as StudyReport;
+      assert(report.executionComplete&&!report.complete);assert(latestAttempts(report).every(t=>t.status==="ok"));
+      assert.equal(report.setups.length,2);assert.equal(report.trials.length,4);assert.equal(estimates,4);
+      assert.deepEqual(fs.readFileSync(file),bytes);assert.deepEqual(report.trials[0],source.trials[0]);
+      const resumed=report.trials.find(t=>t.resumedPreparation)!;
+      assert.equal(resumed.setup.length,1);assert.deepEqual(resumed.resumedPreparation!.reusedWindowTransactions,[]);
+      const txs=[...report.setups.map(s=>s.transaction),...report.trials.flatMap(t=>[...t.setup,...t.requests.map(r=>r.transaction)])];
+      assert.equal(txs.length,new Set(txs.map(t=>t.transactionHash)).size);
+    }finally{
+      (hre.ethers.provider as any).send=send;
+      for(const folder of [original,continued]){
+        for(const name of ["report.json","summary.json","summary.md","controls.json","costs.json","transactions.jsonl"]){
+          const file=path.join(folder,name);if(fs.existsSync(file))fs.unlinkSync(file);
+        }
+        if(fs.existsSync(folder))fs.rmdirSync(folder);
+      }
+      fs.rmdirSync(parent);
+    }
+  });
   it("resumes a circuit load reinclusion while retaining known unsent warmup HCU limits", async () => {
     const parent=fs.mkdtempSync(path.join(os.tmpdir(),"circuit-reinclude-")),original=path.join(parent,"source"),continued=path.join(parent,"continued");
     const send=hre.ethers.provider.send.bind(hre.ethers.provider),selector=hre.ethers.id("executeCircuit(bytes32,bytes32,uint8,uint32)").slice(0,10);
@@ -146,7 +324,7 @@ describe("local study integration (not public-network performance)", function ()
       return send(method,params);
     };
     try{
-      await assert.rejects(runStudy({...defaults,suite:"circuits",platform:"zama",widths:"128",sizes:"2,32",depths:"1",
+      await assert.rejects(runStudy({...defaults,suite:"circuits",platform:"zama",widths:"16",sizes:"2",depths:"1,32",
         repetitions:1,live:true,outputDir:original},hre),/header for hash/);
       (hre.ethers.provider as any).send=send;
       const file=path.join(original,"report.json"),source=JSON.parse(fs.readFileSync(file,"utf8")) as StudyReport;
@@ -296,13 +474,13 @@ describe("local study integration (not public-network performance)", function ()
   it("records rejected circuits without fake gas/latency, and continues with contiguous nonces", async () => {
     const parent=fs.mkdtempSync(path.join(os.tmpdir(),"study-capacity-")),output=path.join(parent,"run");
     try {
-      const report=await runStudy({...defaults,suite:"circuits",platform:"zama",widths:"128",sizes:"2,32",
+      const report=await runStudy({...defaults,suite:"circuits",platform:"zama",widths:"16",sizes:"2,32",
         depths:"2,32",repetitions:1,live:true,outputDir:output},hre) as StudyReport;
       assert(report.executionComplete);
       assert.equal(report.complete,false);
       assert(report.trials.some(t=>t.status==="ok"));
       const rejected=report.trials.filter(t=>t.status==="capacity_rejected");
-      assert(rejected.length>=4); // Warmup and measured depth/linear boundaries.
+      assert(rejected.length>=2); // Warmup and measured affine depth boundary.
       for(const t of rejected) {
         const r=t.requests[0];
         assert.equal(t.rejection?.broadcast,false);

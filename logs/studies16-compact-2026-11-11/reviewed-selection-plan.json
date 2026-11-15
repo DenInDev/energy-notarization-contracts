@@ -1,0 +1,47 @@
+{
+  "at": "2026-11-11T18:17:18.029Z",
+  "authorization": "User chose Riduci entrambe le categorie: 120 concurrency windows and 300 circuit trials; reuse compatible data and retain all others as supplementary.",
+  "originalReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-reliable-2026-11-11\\concurrency-euint16\\report.json",
+  "originalSha256": "cc19679ca18feb24276d4a46624734567bcedc423187cb0db190e5653cb8507c",
+  "concurrency": {
+    "writers": [
+      1,
+      4
+    ],
+    "modes": [
+      "shared_sum",
+      "shared_ordered"
+    ],
+    "repetitions": 10,
+    "requests": 8,
+    "plannedMeasuredWindows": 120,
+    "plannedWarmupWindows": 18,
+    "selectedCaseIds": [
+      "concurrency-w16-c1-shared_sum",
+      "concurrency-w16-c1-shared_ordered",
+      "concurrency-w16-c4-shared_sum",
+      "concurrency-w16-c4-shared_ordered"
+    ],
+    "reusedMeasuredValid": 42,
+    "reusedWarmupValid": 18,
+    "remainingMeasuredWindows": 78,
+    "supplementaryTrials": 67
+  },
+  "circuits": {
+    "sizes": [
+      2,
+      8,
+      32
+    ],
+    "affineLengths": [
+      1,
+      8,
+      16,
+      32
+    ],
+    "repetitions": 10,
+    "platforms": 3,
+    "cases": 10,
+    "plannedMeasuredTrials": 300
+  }
+}

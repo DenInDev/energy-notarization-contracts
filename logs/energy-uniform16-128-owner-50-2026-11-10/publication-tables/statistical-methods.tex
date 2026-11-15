@@ -1,0 +1,6 @@
+\paragraph{Paired statistical analysis.}
+Each comparison uses round-matched successful observations. Full client lifecycle is preparation plus transaction-to-validated-plaintext time, excluding intentional barrier waiting. Already-ready view/decrypt retrieval is analyzed separately.
+For each pair we analyze $d_i=\log(L_{A,i}/L_{B,i})$ and test $H_0:\mathbb{E}[d_i]=0$ with a two-sided, segment-stratified circular moving-block bootstrap (199{,}999 replicates; primary block length three rounds).
+Blocks are resampled within each original/continuation segment while preserving pairing and observed segment sample counts. Sensitivity uses block lengths one, two and five.
+Pointwise 95\% basic bootstrap intervals on the mean log ratio are exponentiated. P-values are Holm-adjusted jointly over 42 comparisons across both arithmetic widths: 36 lifecycle comparisons and six already-ready retrieval comparisons, at family-wise $\alpha=0.05$.
+Comparisons involving Zama's 128-bit \texttt{mean} use 49 successful pairs; all other comparisons use 50. These conditional, exploratory public-network comparisons do not identify isolated FHE computation or causal platform effects.

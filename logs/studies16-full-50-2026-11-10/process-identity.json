@@ -1,0 +1,5 @@
+{
+  "pid": 8964,
+  "creationTimeUtc": "2026-11-10T16:55:46.6714920Z",
+  "command": "\"C:\\Program Files\\nodejs\\node.exe\" --max-old-space-size=8192 scripts/run-study-campaign.cjs logs/studies16-full-50-2026-11-10/campaign.json"
+}

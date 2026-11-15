@@ -1,0 +1,3215 @@
+[
+  {
+    "caseId": "concurrency-w16-c1-independent",
+    "platform": "baseline",
+    "id": "concurrency-w16-c1-independent",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 1,
+    "mode": "independent",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 0,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 3012.6476000004136,
+      "stddev": 1566.2233151782673,
+      "min": 1641.0520000010729,
+      "max": 4719.278199999593,
+      "median": 2677.612600000575
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 100327.92146666658,
+      "stddev": 5265.4801135441885,
+      "min": 94265.27229999937,
+      "max": 103757.35989999957,
+      "median": 102961.13220000081
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 101499.40700000028,
+      "stddev": 5269.710037980325,
+      "min": 95429.75060000084,
+      "max": 104907.4606999997,
+      "median": 104161.00970000029
+    },
+    "broadcastSpreadMs": {
+      "n": 24,
+      "mean": 0,
+      "stddev": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 171.17625833314378,
+      "stddev": 40.75230518084256,
+      "min": 132.12429999932647,
+      "max": 324.9180999994278,
+      "median": 163.20214999979362
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 12502.046924999993,
+      "stddev": 3593.4190129244002,
+      "min": 7891.39110000059,
+      "max": 23595.332100000232,
+      "median": 12048.012700000312
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 77.27524583313304,
+      "stddev": 7.585862624924279,
+      "min": 68.98259999975562,
+      "max": 103.99030000064522,
+      "median": 74.8832999994047
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 407653.5,
+      "stddev": 66161.20481856023,
+      "min": 383166,
+      "max": 579018,
+      "median": 383178
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.07988969072387091,
+      "stddev": 0.004320674311157138,
+      "min": 0.07710296414355887,
+      "max": 0.08486688474775725,
+      "median": 0.07769922328029662
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c1-independent",
+    "platform": "zama",
+    "id": "concurrency-w16-c1-independent",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 1,
+    "mode": "independent",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 0,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 68389.13873333391,
+      "stddev": 1686.4403827291278,
+      "min": 66443.74380000122,
+      "max": 69437.06969999988,
+      "median": 69286.60270000063
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 95654.91840000016,
+      "stddev": 7695.965590609068,
+      "min": 86891.05269999988,
+      "max": 101311.16669999994,
+      "median": 98762.53580000065
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 121022.29229999986,
+      "stddev": 7888.110133228928,
+      "min": 111914.42599999998,
+      "max": 125662.01630000025,
+      "median": 125490.43459999934
+    },
+    "broadcastSpreadMs": {
+      "n": 24,
+      "mean": 0,
+      "stddev": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 169.34537083325753,
+      "stddev": 68.2115722485343,
+      "min": 77.48430000059307,
+      "max": 439.10270000062883,
+      "median": 158.37109999964014
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 11916.474091666672,
+      "stddev": 4876.372612449158,
+      "min": 1459.2459000013769,
+      "max": 24292.585300000384,
+      "median": 12017.632500000298
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 2660.4587999999444,
+      "stddev": 257.63630777471144,
+      "min": 2463.530600000173,
+      "max": 3537.927299999632,
+      "median": 2533.5453999997117
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 989678.8333333334,
+      "stddev": 33080.44353793743,
+      "min": 977416,
+      "max": 1075372,
+      "median": 977440
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.08401211191333574,
+      "stddev": 0.007051738942523595,
+      "min": 0.07896464191049539,
+      "max": 0.09206931843282881,
+      "median": 0.08100237539668304
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c1-independent",
+    "platform": "fhenix",
+    "id": "concurrency-w16-c1-independent",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 1,
+    "mode": "independent",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 0,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 60066.29006666597,
+      "stddev": 2641.7984462299933,
+      "min": 57031.786699999124,
+      "max": 61853.61770000029,
+      "median": 61313.46579999849
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 111183.93019999967,
+      "stddev": 16626.005220510135,
+      "min": 98551.95089999959,
+      "max": 130019.85889999941,
+      "median": 104979.98080000002
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 113520.25923333348,
+      "stddev": 16562.08019840427,
+      "min": 100951.42600000091,
+      "max": 132287.4969999995,
+      "median": 107321.85470000003
+    },
+    "broadcastSpreadMs": {
+      "n": 24,
+      "mean": 0,
+      "stddev": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 166.81756250009252,
+      "stddev": 29.092715801182656,
+      "min": 72.2007999997586,
+      "max": 226.28600000031292,
+      "median": 168.90705000050366
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 13854.214537500171,
+      "stddev": 6601.694539746827,
+      "min": 2010.887900000438,
+      "max": 35837.32159999944,
+      "median": 11947.72955000028
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 206.1558166666267,
+      "stddev": 50.00028430903942,
+      "min": 173.43830000050366,
+      "max": 359.41209999937564,
+      "median": 187.46545000048354
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 813329.5,
+      "stddev": 33081.47210461916,
+      "min": 801072,
+      "max": 899016,
+      "median": 801096
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.07296984273378578,
+      "stddev": 0.010214937524512066,
+      "min": 0.061529062311573055,
+      "max": 0.08117546052556159,
+      "median": 0.07620500536422273
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c1-shared_sum",
+    "platform": "baseline",
+    "id": "concurrency-w16-c1-shared_sum",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 1,
+    "mode": "shared_sum",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 4,
+    "successfulWindows": 4,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 32,
+    "validatedRequests": 32,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 32,
+    "orderChangedWindows": 0,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 4,
+      "mean": 2413.461299999617,
+      "stddev": 1477.1719118725389,
+      "min": 1665.7770999986678,
+      "max": 4629.190799999982,
+      "median": 1679.438649999909
+    },
+    "receiptWindowMs": {
+      "n": 4,
+      "mean": 104403.92497500055,
+      "stddev": 18178.85478165909,
+      "min": 90035.9059000006,
+      "max": 130075.0449000001,
+      "median": 98752.37455000076
+    },
+    "fullWindowMs": {
+      "n": 4,
+      "mean": 106009.89795000013,
+      "stddev": 18080.81365681745,
+      "min": 92278.99530000053,
+      "max": 131666.027999999,
+      "median": 100047.28425000049
+    },
+    "broadcastSpreadMs": {
+      "n": 32,
+      "mean": 0,
+      "stddev": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0
+    },
+    "broadcastAckMs": {
+      "n": 32,
+      "mean": 159.72045937523944,
+      "stddev": 18.620687295960728,
+      "min": 134.0129000004381,
+      "max": 215.1072999984026,
+      "median": 155.82170000020415
+    },
+    "receiptMs": {
+      "n": 32,
+      "mean": 12997.19854687518,
+      "stddev": 5491.072032572511,
+      "min": 6088.181599999778,
+      "max": 36028.75609999895,
+      "median": 11877.583349999972
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 32,
+      "mean": 77.6450062498916,
+      "stddev": 8.748915981208473,
+      "min": 65.2843999993056,
+      "max": 103.83599999919534,
+      "median": 74.83854999952018
+    },
+    "measuredGas": {
+      "n": 32,
+      "mean": 407397.25,
+      "stddev": 65803.48180561524,
+      "min": 382906,
+      "max": 578758,
+      "median": 382918
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 4,
+      "mean": 0.0782238041852518,
+      "stddev": 0.012290591553736548,
+      "min": 0.06150295782062031,
+      "max": 0.08885344041393098,
+      "median": 0.08126940925322795
+    },
+    "conditionalZeroBadWindowUpper95": 0.5271291954984121,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c1-shared_sum",
+    "platform": "zama",
+    "id": "concurrency-w16-c1-shared_sum",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 1,
+    "mode": "shared_sum",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 4,
+    "successfulWindows": 4,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 32,
+    "validatedRequests": 32,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 32,
+    "orderChangedWindows": 0,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 4,
+      "mean": 69733.52190000052,
+      "stddev": 3281.824836025098,
+      "min": 67475.89220000058,
+      "max": 74442.80190000124,
+      "median": 68507.69675000012
+    },
+    "receiptWindowMs": {
+      "n": 4,
+      "mean": 104205.57847500034,
+      "stddev": 16791.72230040948,
+      "min": 87856.30169999972,
+      "max": 124273.56389999948,
+      "median": 102346.22415000107
+    },
+    "fullWindowMs": {
+      "n": 4,
+      "mean": 131945.29682500008,
+      "stddev": 13624.459803267235,
+      "min": 116800.31149999984,
+      "max": 148925.9966000002,
+      "median": 131027.43960000016
+    },
+    "broadcastSpreadMs": {
+      "n": 32,
+      "mean": 0,
+      "stddev": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0
+    },
+    "broadcastAckMs": {
+      "n": 32,
+      "mean": 168.86103437497513,
+      "stddev": 42.87574516463228,
+      "min": 78.09310000017285,
+      "max": 301.861099999398,
+      "median": 153.814100000076
+    },
+    "receiptMs": {
+      "n": 32,
+      "mean": 12978.064865625143,
+      "stddev": 5890.899739615985,
+      "min": 2592.899299999699,
+      "max": 36632.50509999972,
+      "median": 11981.402250000276
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 32,
+      "mean": 3039.056174999947,
+      "stddev": 2612.1400332000976,
+      "min": 2457.343100000173,
+      "max": 17330.216000000015,
+      "median": 2521.1098499996588
+    },
+    "measuredGas": {
+      "n": 32,
+      "mean": 989416.375,
+      "stddev": 32898.19164532084,
+      "min": 977140,
+      "max": 1075108,
+      "median": 977180
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 4,
+      "mean": 0.07825874755696025,
+      "stddev": 0.012346990137175638,
+      "min": 0.06437410941588063,
+      "max": 0.09105778236963992,
+      "median": 0.07880154922116021
+    },
+    "conditionalZeroBadWindowUpper95": 0.5271291954984121,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c1-shared_sum",
+    "platform": "fhenix",
+    "id": "concurrency-w16-c1-shared_sum",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 1,
+    "mode": "shared_sum",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 4,
+    "successfulWindows": 4,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 32,
+    "validatedRequests": 32,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 32,
+    "orderChangedWindows": 0,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 4,
+      "mean": 60337.50342499977,
+      "stddev": 2436.5125735131414,
+      "min": 57602.22889999859,
+      "max": 62890.51840000041,
+      "median": 60428.63320000004
+    },
+    "receiptWindowMs": {
+      "n": 4,
+      "mean": 142924.06317499978,
+      "stddev": 89926.54134141671,
+      "min": 93339.2050999999,
+      "max": 277595.33509999886,
+      "median": 100380.85625000019
+    },
+    "fullWindowMs": {
+      "n": 4,
+      "mean": 145906.71825000015,
+      "stddev": 89543.23052458071,
+      "min": 95674.3247000007,
+      "max": 279965.90359999985,
+      "median": 103993.32235000003
+    },
+    "broadcastSpreadMs": {
+      "n": 32,
+      "mean": 0,
+      "stddev": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0
+    },
+    "broadcastAckMs": {
+      "n": 32,
+      "mean": 173.05657187479665,
+      "stddev": 41.29465191149633,
+      "min": 77.41960000060499,
+      "max": 315.9192000012845,
+      "median": 168.02939999988303
+    },
+    "receiptMs": {
+      "n": 32,
+      "mean": 17814.53344374994,
+      "stddev": 22073.815086772058,
+      "min": 1443.7123999986798,
+      "max": 120296.13530000113,
+      "median": 12005.90595000051
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 32,
+      "mean": 204.0504656249832,
+      "stddev": 55.062071549687026,
+      "min": 164.60529999993742,
+      "max": 354.1502000000328,
+      "median": 186.2719999998808
+    },
+    "measuredGas": {
+      "n": 32,
+      "mean": 813068.5,
+      "stddev": 32903.90199039543,
+      "min": 800812,
+      "max": 898756,
+      "median": 800836
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 4,
+      "mean": 0.06857034272675663,
+      "stddev": 0.026822750509110413,
+      "min": 0.02881892808868038,
+      "max": 0.08570889361473691,
+      "median": 0.07987677460180463
+    },
+    "conditionalZeroBadWindowUpper95": 0.5271291954984121,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c1-shared_ordered",
+    "platform": "baseline",
+    "id": "concurrency-w16-c1-shared_ordered",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 1,
+    "mode": "shared_ordered",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 1,
+    "dependencyDepth": 2,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 0,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 4773.352533333314,
+      "stddev": 1984.0239975313827,
+      "min": 2482.5782000003383,
+      "max": 5943.557799998671,
+      "median": 5893.921600000933
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 111412.01939999995,
+      "stddev": 7684.35570027543,
+      "min": 103129.12719999999,
+      "max": 118309.29480000027,
+      "median": 112797.6361999996
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 113026.5911666664,
+      "stddev": 7036.341643694507,
+      "min": 105554.6930999998,
+      "max": 119526.2620000001,
+      "median": 113998.81839999929
+    },
+    "broadcastSpreadMs": {
+      "n": 24,
+      "mean": 0,
+      "stddev": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 158.49686666655666,
+      "stddev": 21.752106540411006,
+      "min": 132.87000000011176,
+      "max": 216.34759999997914,
+      "median": 155.05800000019372
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 13884.138029166535,
+      "stddev": 5207.508487848934,
+      "min": 5565.48909999989,
+      "max": 24530.56490000058,
+      "median": 12298.303999999538
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 80.05713333344708,
+      "stddev": 7.239629999407267,
+      "min": 67.69199999980628,
+      "max": 92.00730000063777,
+      "median": 80.83015000028536
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 395343.5,
+      "stddev": 33080.69952075694,
+      "min": 383084,
+      "max": 481028,
+      "median": 383108
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.07203849841753412,
+      "stddev": 0.005069459799331083,
+      "min": 0.06761937017310311,
+      "max": 0.07757265301475373,
+      "median": 0.07092347206474552
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c1-shared_ordered",
+    "platform": "zama",
+    "id": "concurrency-w16-c1-shared_ordered",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 1,
+    "mode": "shared_ordered",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 1,
+    "dependencyDepth": 2,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 0,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 68255.61446666687,
+      "stddev": 1697.6116935267594,
+      "min": 66555.28800000064,
+      "max": 69950.4983000001,
+      "median": 68261.05709999986
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 107540.1602333337,
+      "stddev": 6488.236480040702,
+      "min": 100626.33070000075,
+      "max": 113496.36160000041,
+      "median": 108497.78839999996
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 131561.07256666664,
+      "stddev": 6629.961425892433,
+      "min": 124222.25610000081,
+      "max": 137117.99719999917,
+      "median": 133342.96439999994
+    },
+    "broadcastSpreadMs": {
+      "n": 24,
+      "mean": 0,
+      "stddev": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 158.47530833340716,
+      "stddev": 29.068531955749144,
+      "min": 83.92769999988377,
+      "max": 226.30620000045747,
+      "median": 157.76905000023544
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 13399.946583333347,
+      "stddev": 6537.593902308922,
+      "min": 2059.486400000751,
+      "max": 35019.65940000117,
+      "median": 11913.404699998908
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 2575.360712499901,
+      "stddev": 177.42755196895564,
+      "min": 2443.757600000128,
+      "max": 3043.033999999985,
+      "median": 2504.048099999316
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 1009301.5,
+      "stddev": 33081.47324015559,
+      "min": 997044,
+      "max": 1095000,
+      "median": 997064
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.07457437237581237,
+      "stddev": 0.004565950813668575,
+      "min": 0.07048684105129914,
+      "max": 0.07950205422724353,
+      "median": 0.07373422184889442
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c1-shared_ordered",
+    "platform": "fhenix",
+    "id": "concurrency-w16-c1-shared_ordered",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 1,
+    "mode": "shared_ordered",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 1,
+    "dependencyDepth": 2,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 0,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 58804.74409999978,
+      "stddev": 1641.4021392500797,
+      "min": 57566.72369999997,
+      "max": 60666.60589999985,
+      "median": 58180.90269999951
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 108824.15816666621,
+      "stddev": 10284.351778221764,
+      "min": 97975.17679999955,
+      "max": 118431.06369999982,
+      "median": 110066.23399999924
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 112136.61889999981,
+      "stddev": 10771.85272703971,
+      "min": 100583.91090000048,
+      "max": 121904.71619999968,
+      "median": 113921.22959999926
+    },
+    "broadcastSpreadMs": {
+      "n": 24,
+      "mean": 0,
+      "stddev": 0,
+      "min": 0,
+      "max": 0,
+      "median": 0
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 162.73403333317643,
+      "stddev": 19.237724891137322,
+      "min": 136.7905000001192,
+      "max": 202.7794999992475,
+      "median": 159.7373999999836
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 13560.646695833226,
+      "stddev": 4293.718979908408,
+      "min": 10386.373700000346,
+      "max": 25541.466099999845,
+      "median": 12165.276200000197
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 224.45195416683177,
+      "stddev": 110.70780680820799,
+      "min": 158.4375,
+      "max": 680.4294000007212,
+      "median": 188.65565000008792
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 845735,
+      "stddev": 33081.27887754512,
+      "min": 833477,
+      "max": 931421,
+      "median": 833501
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.07396222957403369,
+      "stddev": 0.007138169147596104,
+      "min": 0.06754984503276071,
+      "max": 0.0816533356845143,
+      "median": 0.07268350800482604
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c2-independent",
+    "platform": "baseline",
+    "id": "concurrency-w16-c2-independent",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 2,
+    "mode": "independent",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 3,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 2669.962633333169,
+      "stddev": 1125.1141879023048,
+      "min": 1514.8009999999776,
+      "max": 3762.405700000003,
+      "median": 2732.681199999526
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 48960.31349999985,
+      "stddev": 7742.436218833856,
+      "min": 44233.987600000575,
+      "max": 57895.51580000017,
+      "median": 44751.43709999882
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 50160.47366666701,
+      "stddev": 7738.687099400215,
+      "min": 45463.158400001004,
+      "max": 59092.34480000008,
+      "median": 45925.91779999994
+    },
+    "broadcastSpreadMs": {
+      "n": 12,
+      "mean": 0.710383333498612,
+      "stddev": 0.16203530371460914,
+      "min": 0.5297000017017126,
+      "max": 1.0997999999672174,
+      "median": 0.7099000001326203
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 156.72202499994697,
+      "stddev": 16.485503749224296,
+      "min": 134.84899999946356,
+      "max": 204.50730000063777,
+      "median": 157.34609999973327
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 12131.894991666506,
+      "stddev": 3922.155373435398,
+      "min": 7758.296900000423,
+      "max": 23802.928700000048,
+      "median": 11976.953649999574
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 79.29088333346105,
+      "stddev": 8.082691963830019,
+      "min": 69.2675000000745,
+      "max": 102.25680000055581,
+      "median": 77.47140000015497
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 419891.5,
+      "stddev": 69615.82533541087,
+      "min": 383154,
+      "max": 579018,
+      "median": 383178
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.16593385780268913,
+      "stddev": 0.024058313523809046,
+      "min": 0.13817995900815477,
+      "max": 0.18085640553916274,
+      "median": 0.1787652088607499
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c2-independent",
+    "platform": "zama",
+    "id": "concurrency-w16-c2-independent",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 2,
+    "mode": "independent",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 3,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 67740.07269999974,
+      "stddev": 2112.691216951621,
+      "min": 66338.90029999986,
+      "max": 70170.11000000034,
+      "median": 66711.20779999904
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 59797.692399999745,
+      "stddev": 17388.913983368777,
+      "min": 40361.98900000006,
+      "max": 73881.8245000001,
+      "median": 65149.26369999908
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 86049.29256666638,
+      "stddev": 17475.70555969055,
+      "min": 66357.12529999949,
+      "max": 99711.68280000053,
+      "median": 92079.06959999911
+    },
+    "broadcastSpreadMs": {
+      "n": 12,
+      "mean": 0.9125583335602035,
+      "stddev": 0.23942488061963602,
+      "min": 0.5995000004768372,
+      "max": 1.331199999898672,
+      "median": 0.8917500004172325
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 185.134408333494,
+      "stddev": 36.7602575581421,
+      "min": 136.8982000015676,
+      "max": 261.1532000005245,
+      "median": 178.25484999921173
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 14827.763458333482,
+      "stddev": 9025.768082871735,
+      "min": 4636.61930000037,
+      "max": 36324.49689999968,
+      "median": 11740.58525000047
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 2556.8694374997867,
+      "stddev": 116.89243796536329,
+      "min": 2452.206900000572,
+      "max": 2880.076499999501,
+      "median": 2518.723500000313
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 989679.3333333334,
+      "stddev": 33083.33960676025,
+      "min": 977400,
+      "max": 1075372,
+      "median": 977440
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.14309408599226237,
+      "stddev": 0.04827711139113837,
+      "min": 0.1082810292536832,
+      "max": 0.1982062876039134,
+      "median": 0.12279494111919047
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c2-independent",
+    "platform": "fhenix",
+    "id": "concurrency-w16-c2-independent",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 2,
+    "mode": "independent",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 3,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 60554.74449999972,
+      "stddev": 2078.7737401266577,
+      "min": 58860.936200000346,
+      "max": 62874.59140000027,
+      "median": 59928.705899998546
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 51202.660266666055,
+      "stddev": 7911.959798138598,
+      "min": 44843.490899999626,
+      "max": 60062.899099998176,
+      "median": 48701.590800000355
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 53944.23646666575,
+      "stddev": 8533.949516235392,
+      "min": 47116.61679999996,
+      "max": 63511.58199999854,
+      "median": 51204.51059999876
+    },
+    "broadcastSpreadMs": {
+      "n": 12,
+      "mean": 1.4203499999518197,
+      "stddev": 2.268144010520642,
+      "min": 0.6332999989390373,
+      "max": 8.61710000038147,
+      "median": 0.7643999997526407
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 169.12591666662289,
+      "stddev": 38.27130608878978,
+      "min": 137.87999999895692,
+      "max": 322.7305999994278,
+      "median": 163.09954999946058
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 12723.636737499968,
+      "stddev": 3658.066462064464,
+      "min": 8475.063900000416,
+      "max": 23903.423200000077,
+      "median": 11911.273749999236
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 196.88260000020577,
+      "stddev": 51.04125976511871,
+      "min": 165.59679999947548,
+      "max": 350.94830000028014,
+      "median": 175.7990500004962
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 813324,
+      "stddev": 33080.50745628334,
+      "min": 801060,
+      "max": 899004,
+      "median": 801084
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.15861920955738837,
+      "stddev": 0.02312519358670197,
+      "min": 0.13319370393162128,
+      "max": 0.17839824330001186,
+      "median": 0.16426568144053197
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c2-shared_sum",
+    "platform": "baseline",
+    "id": "concurrency-w16-c2-shared_sum",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 2,
+    "mode": "shared_sum",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 4,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 1,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 3,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 4547.874033334044,
+      "stddev": 2741.5168053999455,
+      "min": 1581.944400000386,
+      "max": 6989.150100000203,
+      "median": 5072.527600001544
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 55105.99209999976,
+      "stddev": 13943.119936102861,
+      "min": 42280.454500000924,
+      "max": 69947.27099999972,
+      "median": 53090.25079999864
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 58733.58266666625,
+      "stddev": 10905.18574022594,
+      "min": 50684.86070000008,
+      "max": 71144.63740000036,
+      "median": 54371.24989999831
+    },
+    "broadcastSpreadMs": {
+      "n": 12,
+      "mean": 0.764208333256344,
+      "stddev": 0.1883082407674469,
+      "min": 0.5566999986767769,
+      "max": 1.183699999935925,
+      "median": 0.7211499996483326
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 159.04350416672727,
+      "stddev": 17.309544415229194,
+      "min": 136.46069999970496,
+      "max": 215.00300000049174,
+      "median": 157.190700000152
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 13690.51666249983,
+      "stddev": 6602.547061844472,
+      "min": 5537.120600000024,
+      "max": 24609.319199999794,
+      "median": 11352.566399999894
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 83.67634583326678,
+      "stddev": 26.68143383756429,
+      "min": 65.55379999987781,
+      "max": 169.23169999942183,
+      "median": 75.44204999972135
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 407392.5,
+      "stddev": 66161.59102037847,
+      "min": 382894,
+      "max": 578758,
+      "median": 382918
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.1514237973415734,
+      "stddev": 0.037425871512863175,
+      "min": 0.11437186734561856,
+      "max": 0.1892127247591396,
+      "median": 0.15068679991996203
+    },
+    "conditionalZeroBadWindowUpper95": null,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c2-shared_sum",
+    "platform": "zama",
+    "id": "concurrency-w16-c2-shared_sum",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 2,
+    "mode": "shared_sum",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 3,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 68528.22893333372,
+      "stddev": 1497.641693788035,
+      "min": 66801.24880000018,
+      "max": 69469.72770000063,
+      "median": 69313.71030000038
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 43147.8465999995,
+      "stddev": 6093.935535593745,
+      "min": 38557.691699999385,
+      "max": 50061.78849999979,
+      "median": 40824.05959999934
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 67560.24000000022,
+      "stddev": 6317.879009051814,
+      "min": 63768.914499999955,
+      "max": 74853.58590000123,
+      "median": 64058.21959999949
+    },
+    "broadcastSpreadMs": {
+      "n": 12,
+      "mean": 0.8152749999426305,
+      "stddev": 0.1704665744289312,
+      "min": 0.5810000002384186,
+      "max": 1.146200000308454,
+      "median": 0.8292999994009733
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 147.18398333340883,
+      "stddev": 37.61540061888671,
+      "min": 70.2522999998182,
+      "max": 197.20549999922514,
+      "median": 154.11345000006258
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 10701.951391666546,
+      "stddev": 5604.889082501162,
+      "min": 2000.2649999987334,
+      "max": 23651.04659999907,
+      "median": 11486.071299999952
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 2598.2878041665535,
+      "stddev": 293.2658737372236,
+      "min": 2448.8882999997586,
+      "max": 3843.077599999495,
+      "median": 2503.2367500001565
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 989421.5,
+      "stddev": 33081.474375691985,
+      "min": 977140,
+      "max": 1075112,
+      "median": 977188
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.18774889790062818,
+      "stddev": 0.024878073366154347,
+      "min": 0.15980252083882368,
+      "max": 0.20748130002813753,
+      "median": 0.1959628728349233
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c2-shared_sum",
+    "platform": "fhenix",
+    "id": "concurrency-w16-c2-shared_sum",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 2,
+    "mode": "shared_sum",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 3,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 59711.605466666944,
+      "stddev": 1596.7022312998665,
+      "min": 57915.77630000003,
+      "max": 60971.0532000009,
+      "median": 60247.9868999999
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 55160.435800000094,
+      "stddev": 13174.449940171413,
+      "min": 46408.724599999376,
+      "max": 70312.27370000072,
+      "median": 48760.30910000019
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 57965.434966666624,
+      "stddev": 13453.268491207737,
+      "min": 49569.47589999996,
+      "max": 73482.48410000093,
+      "median": 50844.34489999898
+    },
+    "broadcastSpreadMs": {
+      "n": 12,
+      "mean": 0.7877916670404375,
+      "stddev": 0.10279313265872797,
+      "min": 0.6291000004857779,
+      "max": 0.962500000372529,
+      "median": 0.773700000718236
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 166.47565833335588,
+      "stddev": 28.570550854636217,
+      "min": 136.1694000000134,
+      "max": 240.51910000108182,
+      "median": 162.44084999989718
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 13711.421370833335,
+      "stddev": 4515.691953599934,
+      "min": 9605.861800000072,
+      "max": 24341.95610000007,
+      "median": 11974.664499999955
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 191.02871249984796,
+      "stddev": 50.280676827942116,
+      "min": 156.19460000097752,
+      "max": 335.28639999963343,
+      "median": 171.86204999964684
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 813073,
+      "stddev": 33081.66443948908,
+      "min": 800824,
+      "max": 898756,
+      "median": 800836
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.15007579768498455,
+      "stddev": 0.03170833276057803,
+      "min": 0.11377814397146879,
+      "max": 0.17238138020281013,
+      "median": 0.1640678688806747
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c2-shared_ordered",
+    "platform": "baseline",
+    "id": "concurrency-w16-c2-shared_ordered",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 2,
+    "mode": "shared_ordered",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 1,
+    "dependencyDepth": 2,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 3,
+    "finalDiffersFromPlannedOrderWindows": 3,
+    "preparationMs": {
+      "n": 3,
+      "mean": 7601.83680000063,
+      "stddev": 5817.412988174274,
+      "min": 3772.1387000000104,
+      "max": 14296.053300000727,
+      "median": 4737.318400001153
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 51660.87146666646,
+      "stddev": 13157.358496043022,
+      "min": 43270.50310000032,
+      "max": 66824.98319999874,
+      "median": 44887.12810000032
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 52785.72593333324,
+      "stddev": 13208.886430165896,
+      "min": 44430.41740000062,
+      "max": 68014.00439999998,
+      "median": 45912.75599999912
+    },
+    "broadcastSpreadMs": {
+      "n": 12,
+      "mean": 0.7668416666953514,
+      "stddev": 0.1916867351115295,
+      "min": 0.5527999997138977,
+      "max": 1.1622999999672174,
+      "median": 0.7023000000044703
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 164.12390416651033,
+      "stddev": 19.12210202442226,
+      "min": 137.80709999985993,
+      "max": 217.64209999982268,
+      "median": 162.89564999984577
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 12768.855941666794,
+      "stddev": 5241.24691120723,
+      "min": 7224.901800000109,
+      "max": 24398.645300000906,
+      "median": 11465.081399999559
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 78.4289375001099,
+      "stddev": 11.569846372310957,
+      "min": 65.30389999970794,
+      "max": 119.10089999996126,
+      "median": 76.34370000008494
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 395342,
+      "stddev": 33081.278688287945,
+      "min": 383084,
+      "max": 481028,
+      "median": 383108
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.16094132350062526,
+      "stddev": 0.03585732928320722,
+      "min": 0.11971570536811076,
+      "max": 0.18488345239507836,
+      "median": 0.1782248127386867
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c2-shared_ordered",
+    "platform": "zama",
+    "id": "concurrency-w16-c2-shared_ordered",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 2,
+    "mode": "shared_ordered",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 1,
+    "dependencyDepth": 2,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 3,
+    "finalDiffersFromPlannedOrderWindows": 3,
+    "preparationMs": {
+      "n": 3,
+      "mean": 68278.93773333356,
+      "stddev": 1624.262162099966,
+      "min": 66565.03940000013,
+      "max": 69795.53979999945,
+      "median": 68476.2340000011
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 47013.20133333374,
+      "stddev": 7877.919528986719,
+      "min": 38348.7070000004,
+      "max": 53744.72330000065,
+      "median": 48946.17370000016
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 71346.09386666678,
+      "stddev": 8495.801780960148,
+      "min": 61553.71360000037,
+      "max": 76752.78810000047,
+      "median": 75731.7798999995
+    },
+    "broadcastSpreadMs": {
+      "n": 12,
+      "mean": 0.9144250003155321,
+      "stddev": 0.17524274144224672,
+      "min": 0.6443000007420778,
+      "max": 1.1566000003367662,
+      "median": 0.9798500007018447
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 156.0634124998857,
+      "stddev": 31.971205890353524,
+      "min": 68.83469999954104,
+      "max": 206.8762000016868,
+      "median": 156.71284999884665
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 11648.75655000005,
+      "stddev": 3138.427728339934,
+      "min": 3265.0684000011533,
+      "max": 17897.85610000044,
+      "median": 11574.181199999526
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 2543.438329166694,
+      "stddev": 94.91283989425371,
+      "min": 2454.767899999395,
+      "max": 2854.776800000109,
+      "median": 2527.9493999998085
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 1009298.3333333334,
+      "stddev": 33076.52479336057,
+      "min": 996980,
+      "max": 1095000,
+      "median": 997072
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.17363621992136724,
+      "stddev": 0.031156337561921574,
+      "min": 0.14885182225879845,
+      "max": 0.2086119878826662,
+      "median": 0.16344484962263708
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c2-shared_ordered",
+    "platform": "fhenix",
+    "id": "concurrency-w16-c2-shared_ordered",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 2,
+    "mode": "shared_ordered",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 1,
+    "dependencyDepth": 2,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 3,
+    "finalDiffersFromPlannedOrderWindows": 3,
+    "preparationMs": {
+      "n": 3,
+      "mean": 60083.726099999934,
+      "stddev": 1353.002970208451,
+      "min": 58570.95449999906,
+      "max": 61178.13349999953,
+      "median": 60502.090300001204
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 51368.23653333293,
+      "stddev": 8180.836340856672,
+      "min": 46303.57620000001,
+      "max": 60806.216199999675,
+      "median": 46994.917199999094
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 55112.43916666694,
+      "stddev": 8035.812936977629,
+      "min": 49296.80990000069,
+      "max": 64281.89350000024,
+      "median": 51758.61409999989
+    },
+    "broadcastSpreadMs": {
+      "n": 12,
+      "mean": 1.5798083337334294,
+      "stddev": 2.5577879335446343,
+      "min": 0.5914000011980534,
+      "max": 9.679800000041723,
+      "median": 0.8225500006228685
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 168.43457500004055,
+      "stddev": 26.045870863188924,
+      "min": 134.27960000000894,
+      "max": 210.1356000006199,
+      "median": 166.51564999995753
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 12751.354425000065,
+      "stddev": 3372.7589377612258,
+      "min": 10324.724299999885,
+      "max": 23683.949900001287,
+      "median": 11977.298150000162
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 213.7041166665731,
+      "stddev": 54.44997798381324,
+      "min": 161.57230000011623,
+      "max": 350.5838999999687,
+      "median": 191.07584999967366
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 845730.5,
+      "stddev": 33079.928180617055,
+      "min": 833465,
+      "max": 931409,
+      "median": 833495
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.15818983460848143,
+      "stddev": 0.023092348420345174,
+      "min": 0.13156549609478976,
+      "max": 0.17277283217705328,
+      "median": 0.17023117555360123
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c4-independent",
+    "platform": "baseline",
+    "id": "concurrency-w16-c4-independent",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 4,
+    "mode": "independent",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 4,
+    "successfulWindows": 4,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 32,
+    "validatedRequests": 32,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 32,
+    "orderChangedWindows": 4,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 4,
+      "mean": 4293.747024999931,
+      "stddev": 1340.9967210568402,
+      "min": 2766.00549999997,
+      "max": 5821.533099999651,
+      "median": 4293.724750000052
+    },
+    "receiptWindowMs": {
+      "n": 4,
+      "mean": 19474.430749999825,
+      "stddev": 1550.6487290329333,
+      "min": 17413.745100000873,
+      "max": 21123.205899998546,
+      "median": 19680.38599999994
+    },
+    "fullWindowMs": {
+      "n": 4,
+      "mean": 21362.307524999604,
+      "stddev": 2164.231909932458,
+      "min": 19009.57870000042,
+      "max": 24220.653999999166,
+      "median": 21109.498699999414
+    },
+    "broadcastSpreadMs": {
+      "n": 8,
+      "mean": 2.021162499906495,
+      "stddev": 0.3374182858357758,
+      "min": 1.536599999293685,
+      "max": 2.4841999989002943,
+      "median": 1.9731999998912215
+    },
+    "broadcastAckMs": {
+      "n": 32,
+      "mean": 160.17441875010263,
+      "stddev": 14.300389048170093,
+      "min": 138.64690000005066,
+      "max": 184.42140000127256,
+      "median": 159.84174999967217
+    },
+    "receiptMs": {
+      "n": 32,
+      "mean": 9471.654356249841,
+      "stddev": 2759.934258235943,
+      "min": 4998.548399999738,
+      "max": 13141.525100000203,
+      "median": 10494.600299999118
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 32,
+      "mean": 84.64590937504545,
+      "stddev": 12.636339246701352,
+      "min": 70.71710000000894,
+      "max": 132.35050000064075,
+      "median": 80.40744999982417
+    },
+    "measuredGas": {
+      "n": 32,
+      "mean": 444377.25,
+      "stddev": 69240.03293592329,
+      "min": 383166,
+      "max": 579018,
+      "median": 432132
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 4,
+      "mean": 0.4128254357776126,
+      "stddev": 0.03405979804045663,
+      "min": 0.37873038959491234,
+      "max": 0.4594072070114084,
+      "median": 0.40658207325206486
+    },
+    "conditionalZeroBadWindowUpper95": 0.5271291954984121,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c4-independent",
+    "platform": "zama",
+    "id": "concurrency-w16-c4-independent",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 4,
+    "mode": "independent",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 4,
+    "successfulWindows": 4,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 32,
+    "validatedRequests": 32,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 32,
+    "orderChangedWindows": 4,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 4,
+      "mean": 67823.5459749992,
+      "stddev": 1619.1154322231118,
+      "min": 65993.42149999924,
+      "max": 69199.99259999953,
+      "median": 68050.38489999902
+    },
+    "receiptWindowMs": {
+      "n": 4,
+      "mean": 25399.661574999336,
+      "stddev": 12725.252185601312,
+      "min": 15557.700899999589,
+      "max": 42872.097299998626,
+      "median": 21584.424049999565
+    },
+    "fullWindowMs": {
+      "n": 4,
+      "mean": 56779.8935999996,
+      "stddev": 12277.88588308086,
+      "min": 47477.987700000405,
+      "max": 73811.51530000009,
+      "median": 52915.03569999896
+    },
+    "broadcastSpreadMs": {
+      "n": 8,
+      "mean": 2.3596875004004687,
+      "stddev": 0.43818674588456197,
+      "min": 1.8802000004798174,
+      "max": 3.2462000008672476,
+      "median": 2.3242499995976686
+    },
+    "broadcastAckMs": {
+      "n": 32,
+      "mean": 157.3680156248156,
+      "stddev": 52.40092156552394,
+      "min": 70.18250000104308,
+      "max": 237.19519999995828,
+      "median": 171.46854999940842
+    },
+    "receiptMs": {
+      "n": 32,
+      "mean": 12107.625546874944,
+      "stddev": 7890.276709550913,
+      "min": 2049.8448000010103,
+      "max": 29624.124199999496,
+      "median": 12220.999599999748
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 32,
+      "mean": 2545.33876875008,
+      "stddev": 110.20734605926428,
+      "min": 2454.8256999999285,
+      "max": 2910.940599998459,
+      "median": 2512.877299999818
+    },
+    "measuredGas": {
+      "n": 32,
+      "mean": 989674.5,
+      "stddev": 32901.59993364378,
+      "min": 977412,
+      "max": 1075372,
+      "median": 977438
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 4,
+      "mean": 0.3720432895931911,
+      "stddev": 0.1567150627213151,
+      "min": 0.18660155448005702,
+      "max": 0.514214796352089,
+      "median": 0.39367840377030916
+    },
+    "conditionalZeroBadWindowUpper95": 0.5271291954984121,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c4-independent",
+    "platform": "fhenix",
+    "id": "concurrency-w16-c4-independent",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 4,
+    "mode": "independent",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 4,
+    "successfulWindows": 4,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 32,
+    "validatedRequests": 32,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 32,
+    "orderChangedWindows": 4,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 4,
+      "mean": 59836.24222499924,
+      "stddev": 2153.422479416651,
+      "min": 57637.971799999475,
+      "max": 62444.81030000001,
+      "median": 59631.09339999873
+    },
+    "receiptWindowMs": {
+      "n": 4,
+      "mean": 32922.60782499984,
+      "stddev": 12320.714581803737,
+      "min": 21651.428500000387,
+      "max": 49368.83229999989,
+      "median": 30335.085249999538
+    },
+    "fullWindowMs": {
+      "n": 4,
+      "mean": 36422.36302499985,
+      "stddev": 13659.886203826494,
+      "min": 24380.724700000137,
+      "max": 55127.28229999915,
+      "median": 33090.722550000064
+    },
+    "broadcastSpreadMs": {
+      "n": 8,
+      "mean": 2.274337499635294,
+      "stddev": 0.4126873529128533,
+      "min": 1.947300000116229,
+      "max": 3.2105999998748302,
+      "median": 2.1397999990731478
+    },
+    "broadcastAckMs": {
+      "n": 32,
+      "mean": 174.74727187503595,
+      "stddev": 17.969330087815724,
+      "min": 140.5447000004351,
+      "max": 216.21779999881983,
+      "median": 173.1332499999553
+    },
+    "receiptMs": {
+      "n": 32,
+      "mean": 15911.7726593751,
+      "stddev": 6544.617021207291,
+      "min": 2048.001199999824,
+      "max": 24842.73159999959,
+      "median": 13348.249250000343
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 32,
+      "mean": 202.50497187516885,
+      "stddev": 56.97741719732159,
+      "min": 158.35370000079274,
+      "max": 365.07599999941885,
+      "median": 185.98469999991357
+    },
+    "measuredGas": {
+      "n": 32,
+      "mean": 813327.75,
+      "stddev": 32900.73456479697,
+      "min": 801060,
+      "max": 899016,
+      "median": 801096
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 4,
+      "mean": 0.26801120281983737,
+      "stddev": 0.09141142978986738,
+      "min": 0.16204555844842247,
+      "max": 0.36949063199224275,
+      "median": 0.2702543104193421
+    },
+    "conditionalZeroBadWindowUpper95": 0.5271291954984121,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c4-shared_sum",
+    "platform": "baseline",
+    "id": "concurrency-w16-c4-shared_sum",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 4,
+    "mode": "shared_sum",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 3,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 4696.970333333127,
+      "stddev": 4644.774735633131,
+      "min": 1434.5049000000581,
+      "max": 10014.8236999996,
+      "median": 2641.582399999723
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 26924.545366665658,
+      "stddev": 6950.924873724255,
+      "min": 20722.998699998483,
+      "max": 34437.91099999938,
+      "median": 25612.726399999112
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 28756.787933332846,
+      "stddev": 6959.446154137701,
+      "min": 22965.38040000014,
+      "max": 36477.28079999983,
+      "median": 26827.702599998564
+    },
+    "broadcastSpreadMs": {
+      "n": 6,
+      "mean": 2.284016666468233,
+      "stddev": 0.4910310801130901,
+      "min": 1.920699999667704,
+      "max": 3.256699999794364,
+      "median": 2.0899000000208616
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 163.1518916665033,
+      "stddev": 17.785311368848497,
+      "min": 135.98199999984354,
+      "max": 192.8542999997735,
+      "median": 161.45630000066012
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 13269.123070833311,
+      "stddev": 4338.692436934555,
+      "min": 8426.094699999318,
+      "max": 22075.085599999875,
+      "median": 12037.494900000747
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 78.09423749994797,
+      "stddev": 10.925434424337597,
+      "min": 66.49990000016987,
+      "max": 104.55900000035763,
+      "median": 74.43489999976009
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 407397.5,
+      "stddev": 66161.20459775568,
+      "min": 382906,
+      "max": 578758,
+      "median": 382918
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.3102304564023329,
+      "stddev": 0.07689299757668927,
+      "min": 0.23230212773359404,
+      "max": 0.3860445158451216,
+      "median": 0.31234472562828286
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c4-shared_sum",
+    "platform": "zama",
+    "id": "concurrency-w16-c4-shared_sum",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 4,
+    "mode": "shared_sum",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 3,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 68218.11453333311,
+      "stddev": 1777.6696539581,
+      "min": 66405.91409999877,
+      "max": 69959.11390000023,
+      "median": 68289.31560000032
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 20079.81676666625,
+      "stddev": 6259.02846505254,
+      "min": 15481.497500000522,
+      "max": 27207.74769999832,
+      "median": 17550.205099999905
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 46617.0526666663,
+      "stddev": 6511.017408726741,
+      "min": 41251.59030000027,
+      "max": 53860.727599998936,
+      "median": 44738.84009999968
+    },
+    "broadcastSpreadMs": {
+      "n": 6,
+      "mean": 2.452599999960512,
+      "stddev": 0.28940301292774745,
+      "min": 2.105299999937415,
+      "max": 2.8713999995961785,
+      "median": 2.374750000424683
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 156.800699999944,
+      "stddev": 38.66660096988812,
+      "min": 69.80420000012964,
+      "max": 189.43730000033975,
+      "median": 169.78145000059158
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 9835.755845833299,
+      "stddev": 4767.507727098692,
+      "min": 1968.7355000004172,
+      "max": 15662.690300000831,
+      "median": 11649.57359999977
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 2667.1547958332812,
+      "stddev": 424.6464188428965,
+      "min": 2465.7864999994636,
+      "max": 4570.393799999729,
+      "median": 2534.1970999995247
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 989412.1666666666,
+      "stddev": 33081.47403222727,
+      "min": 977128,
+      "max": 1075108,
+      "median": 977176
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.422204966455859,
+      "stddev": 0.11510168414572068,
+      "min": 0.29403389388238466,
+      "max": 0.5167458768119642,
+      "median": 0.4558351286732281
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c4-shared_sum",
+    "platform": "fhenix",
+    "id": "concurrency-w16-c4-shared_sum",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 4,
+    "mode": "shared_sum",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 0,
+    "dependencyDepth": 1,
+    "plannedWindows": 20,
+    "attemptedWindows": 3,
+    "successfulWindows": 3,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 24,
+    "validatedRequests": 24,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 24,
+    "orderChangedWindows": 3,
+    "finalDiffersFromPlannedOrderWindows": 0,
+    "preparationMs": {
+      "n": 3,
+      "mean": 59808.77876666654,
+      "stddev": 1743.1856481364018,
+      "min": 57797.04179999977,
+      "max": 60872.80209999997,
+      "median": 60756.49239999987
+    },
+    "receiptWindowMs": {
+      "n": 3,
+      "mean": 31345.578300000478,
+      "stddev": 15043.91216784364,
+      "min": 22208.84029999934,
+      "max": 48708.84110000171,
+      "median": 23119.053500000387
+    },
+    "fullWindowMs": {
+      "n": 3,
+      "mean": 33806.54646666659,
+      "stddev": 14924.933540376622,
+      "min": 24107.764499999583,
+      "max": 50993.03040000051,
+      "median": 26318.844499999657
+    },
+    "broadcastSpreadMs": {
+      "n": 6,
+      "mean": 2.084066666352252,
+      "stddev": 0.2877127705642185,
+      "min": 1.7589000007137656,
+      "max": 2.4778999984264374,
+      "median": 2.1069000004790723
+    },
+    "broadcastAckMs": {
+      "n": 24,
+      "mean": 175.64223750005476,
+      "stddev": 17.518338680222456,
+      "min": 147.92439999990165,
+      "max": 219.83289999887347,
+      "median": 174.31695000035688
+    },
+    "receiptMs": {
+      "n": 24,
+      "mean": 14573.900533333304,
+      "stddev": 6606.855175735966,
+      "min": 2044.2188999988139,
+      "max": 24884.23310000077,
+      "median": 11895.615699999966
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 24,
+      "mean": 192.57588750003683,
+      "stddev": 51.40602826987452,
+      "min": 157.7658999999985,
+      "max": 351.0888000000268,
+      "median": 175.1070499997586
+    },
+    "measuredGas": {
+      "n": 24,
+      "mean": 813071,
+      "stddev": 33079.34819293701,
+      "min": 800812,
+      "max": 898756,
+      "median": 800836
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 3,
+      "mean": 0.29016435857352574,
+      "stddev": 0.1092829256770068,
+      "min": 0.16424123053093373,
+      "max": 0.36021691776496034,
+      "median": 0.3460349274246831
+    },
+    "conditionalZeroBadWindowUpper95": 0.6315968501359613,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c4-shared_ordered",
+    "platform": "baseline",
+    "id": "concurrency-w16-c4-shared_ordered",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 4,
+    "mode": "shared_ordered",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 1,
+    "dependencyDepth": 2,
+    "plannedWindows": 20,
+    "attemptedWindows": 4,
+    "successfulWindows": 4,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 32,
+    "validatedRequests": 32,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 32,
+    "orderChangedWindows": 4,
+    "finalDiffersFromPlannedOrderWindows": 4,
+    "preparationMs": {
+      "n": 4,
+      "mean": 2664.169424999738,
+      "stddev": 796.6912789622049,
+      "min": 1688.3948999997228,
+      "max": 3639.3997999988496,
+      "median": 2664.44150000019
+    },
+    "receiptWindowMs": {
+      "n": 4,
+      "mean": 30072.420200000284,
+      "stddev": 6274.1505968413385,
+      "min": 20769.405400000513,
+      "max": 34515.066800000146,
+      "median": 32502.60430000024
+    },
+    "fullWindowMs": {
+      "n": 4,
+      "mean": 32012.780275000492,
+      "stddev": 6883.171584016469,
+      "min": 21911.289000000805,
+      "max": 36868.77680000104,
+      "median": 34635.52765000006
+    },
+    "broadcastSpreadMs": {
+      "n": 8,
+      "mean": 2.0068375003756955,
+      "stddev": 0.35922065996948277,
+      "min": 1.5905000008642673,
+      "max": 2.7981000002473593,
+      "median": 1.9394000004976988
+    },
+    "broadcastAckMs": {
+      "n": 32,
+      "mean": 168.21541249996517,
+      "stddev": 24.84935420973276,
+      "min": 138.80859999917448,
+      "max": 241.44800000078976,
+      "median": 162.41715000011027
+    },
+    "receiptMs": {
+      "n": 32,
+      "mean": 14902.532790624886,
+      "stddev": 7030.475083406126,
+      "min": 8446.701500000432,
+      "max": 24403.893000001088,
+      "median": 10353.85155000072
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 32,
+      "mean": 78.71745000014198,
+      "stddev": 7.407214942684558,
+      "min": 68.13190000038594,
+      "max": 94.99409999884665,
+      "median": 78.694450000301
+    },
+    "measuredGas": {
+      "n": 32,
+      "mean": 395341.25,
+      "stddev": 32901.30968566841,
+      "min": 383084,
+      "max": 481028,
+      "median": 383108
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 4,
+      "mean": 0.2773082632344632,
+      "stddev": 0.07223331457842383,
+      "min": 0.23178283404046507,
+      "max": 0.3851819465183054,
+      "median": 0.24613413618954122
+    },
+    "conditionalZeroBadWindowUpper95": 0.5271291954984121,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c4-shared_ordered",
+    "platform": "zama",
+    "id": "concurrency-w16-c4-shared_ordered",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 4,
+    "mode": "shared_ordered",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 1,
+    "dependencyDepth": 2,
+    "plannedWindows": 20,
+    "attemptedWindows": 4,
+    "successfulWindows": 4,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 32,
+    "validatedRequests": 32,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 32,
+    "orderChangedWindows": 4,
+    "finalDiffersFromPlannedOrderWindows": 4,
+    "preparationMs": {
+      "n": 4,
+      "mean": 69673.28015000047,
+      "stddev": 1840.926535320355,
+      "min": 67514.95309999958,
+      "max": 72016.67920000106,
+      "median": 69580.74415000062
+    },
+    "receiptWindowMs": {
+      "n": 4,
+      "mean": 20377.026574999793,
+      "stddev": 5634.461495707931,
+      "min": 15152.609799999744,
+      "max": 26015.875500000082,
+      "median": 20169.810499999672
+    },
+    "fullWindowMs": {
+      "n": 4,
+      "mean": 43733.52879999997,
+      "stddev": 5970.310526695573,
+      "min": 38161.82880000025,
+      "max": 50094.254100000486,
+      "median": 43339.016149999574
+    },
+    "broadcastSpreadMs": {
+      "n": 8,
+      "mean": 2.202525000087917,
+      "stddev": 0.136489567636474,
+      "min": 1.9588000010699034,
+      "max": 2.4068999998271465,
+      "median": 2.206199999898672
+    },
+    "broadcastAckMs": {
+      "n": 32,
+      "mean": 151.46238437501597,
+      "stddev": 49.539817079078205,
+      "min": 71.4281999990344,
+      "max": 256.9517999999225,
+      "median": 164.90420000022277
+    },
+    "receiptMs": {
+      "n": 32,
+      "mean": 8923.847090624942,
+      "stddev": 4513.688332411905,
+      "min": 2074.2944000009447,
+      "max": 13932.430999999866,
+      "median": 11851.072800000198
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 32,
+      "mean": 2524.1029999999737,
+      "stddev": 80.70727014606983,
+      "min": 2459.355000000447,
+      "max": 2747.6640999997035,
+      "median": 2495.4690500004217
+    },
+    "measuredGas": {
+      "n": 32,
+      "mean": 1009302.375,
+      "stddev": 32901.64966326941,
+      "min": 997016,
+      "max": 1095000,
+      "median": 997064
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 4,
+      "mean": 0.4163807923839998,
+      "stddev": 0.11485897641524813,
+      "min": 0.3075045465988633,
+      "max": 0.5279618564453588,
+      "median": 0.41502838324588853
+    },
+    "conditionalZeroBadWindowUpper95": 0.5271291954984121,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  },
+  {
+    "caseId": "concurrency-w16-c4-shared_ordered",
+    "platform": "fhenix",
+    "id": "concurrency-w16-c4-shared_ordered",
+    "suite": "concurrency",
+    "width": 16,
+    "users": 4,
+    "mode": "shared_ordered",
+    "size": 8,
+    "inputCount": 1,
+    "additions": 1,
+    "multiplications": 1,
+    "dependencyDepth": 2,
+    "plannedWindows": 20,
+    "attemptedWindows": 4,
+    "successfulWindows": 4,
+    "inconsistentWindows": 0,
+    "incompleteWindows": 0,
+    "capacityRejectedWindows": 0,
+    "plannedRequests": 160,
+    "attemptedRequests": 32,
+    "validatedRequests": 32,
+    "failedRequests": 0,
+    "separatelyLateValidatedRequests": 0,
+    "reconciledReceipts": 0,
+    "broadcastRequests": 32,
+    "orderChangedWindows": 4,
+    "finalDiffersFromPlannedOrderWindows": 4,
+    "preparationMs": {
+      "n": 4,
+      "mean": 60467.14410000015,
+      "stddev": 2514.418817667845,
+      "min": 57836.48970000073,
+      "max": 63660.73739999905,
+      "median": 60185.67465000041
+    },
+    "receiptWindowMs": {
+      "n": 4,
+      "mean": 22557.051500000525,
+      "stddev": 2627.381194168874,
+      "min": 20263.691899999976,
+      "max": 25393.167200000957,
+      "median": 22285.673450000584
+    },
+    "fullWindowMs": {
+      "n": 4,
+      "mean": 24839.222799999872,
+      "stddev": 2816.9516899559803,
+      "min": 22263.746199999936,
+      "max": 27709.791000001132,
+      "median": 24691.67699999921
+    },
+    "broadcastSpreadMs": {
+      "n": 8,
+      "mean": 2.28110000025481,
+      "stddev": 0.3336048303246337,
+      "min": 1.9629999995231628,
+      "max": 3.0175999999046326,
+      "median": 2.2135000000707805
+    },
+    "broadcastAckMs": {
+      "n": 32,
+      "mean": 175.1999812501308,
+      "stddev": 28.812098993842795,
+      "min": 133.9840000011027,
+      "max": 235.27350000012666,
+      "median": 173.0325499996543
+    },
+    "receiptMs": {
+      "n": 32,
+      "mean": 11155.770834374765,
+      "stddev": 2160.109843652211,
+      "min": 7410.098199999891,
+      "max": 14022.803899999708,
+      "median": 11669.80209999904
+    },
+    "validatedMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "postReceiptMs": {
+      "n": 0,
+      "mean": null,
+      "stddev": null,
+      "min": null,
+      "max": null,
+      "median": null
+    },
+    "deferredAuditCallMs": {
+      "n": 32,
+      "mean": 199.45983437506948,
+      "stddev": 53.6680572485398,
+      "min": 161.69049999956042,
+      "max": 354.2532999999821,
+      "median": 182.04875000054017
+    },
+    "measuredGas": {
+      "n": 32,
+      "mean": 845735,
+      "stddev": 32902.174015826706,
+      "min": 833477,
+      "max": 931421,
+      "median": 833501
+    },
+    "receiptTransactionsPerSecond": {
+      "n": 4,
+      "mean": 0.3582689018228406,
+      "stddev": 0.04137687825283986,
+      "min": 0.3150453796090351,
+      "max": 0.39479479057811817,
+      "median": 0.36161771855210456
+    },
+    "conditionalZeroBadWindowUpper95": 0.5271291954984121,
+    "intervalAssumption": "Illustrative only if these windows are independent and representative; temporal clustering can invalidate this binomial bound."
+  }
+]

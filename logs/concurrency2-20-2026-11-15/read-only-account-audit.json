@@ -1,0 +1,54 @@
+{
+  "at": "2026-11-14T23:47:17.791Z",
+  "status": "settled",
+  "mutationCalls": 0,
+  "sourceReports": [
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-compact-2026-11-11-continuation2\\concurrency-euint16\\report.json",
+      "sha256": "de8d19f1009aa9e31c700dcdcb93dbf64e9629007ad708ce495131b11332f7d9"
+    },
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-2\\concurrency-euint16\\report.json",
+      "sha256": "1a83072f07d7ba3ce1f5a827081c48d083acc8a8708c7c608a0810b41f358d50"
+    },
+    {
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\circuits16-fresh30-2026-11-14\\circuits-euint16\\report.json",
+      "sha256": "e7296f01160592e10d10f2d8b5ff63e3de8a148c9b14704e967b877c60e9b4b1"
+    }
+  ],
+  "accounts": [
+    {
+      "address": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "latest": 3343,
+      "pending": 3343,
+      "balanceWei": "999550963107282",
+      "lastHash": "0xfc14cad6b284c7527cc2310866373892af19ba14c60751ffe1f3f859ce2683f9",
+      "lastNonce": 3342,
+      "canonicalBlockHash": "0x787008716be74e3cecbaa83bf585fa664bf632ec5ceeda9f86065f9208b4c5ae",
+      "receiptSource": "configured-provider",
+      "receiptReadAttempts": 1
+    },
+    {
+      "address": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+      "latest": 1918,
+      "pending": 1918,
+      "balanceWei": "999924772420334",
+      "lastHash": "0x53e7cae89b21862566c5e3092f7e6226c129738198c725fa7ab8f37b6e2e315f",
+      "lastNonce": 1917,
+      "canonicalBlockHash": "0x60d69314a746892f541d85aaff65fcb0bee5c042dbe67cd141d68f437830397d",
+      "receiptSource": "configured-provider",
+      "receiptReadAttempts": 2
+    },
+    {
+      "address": "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+      "latest": 492,
+      "pending": 492,
+      "balanceWei": "999979472126447",
+      "lastHash": "0xd043d13dcdca46fd3a15727d08bc4d989a3c51f4d334e77318b86b04594a5619",
+      "lastNonce": 491,
+      "canonicalBlockHash": "0xeadf398f8ccc824754bd382e6198b519d6f3358f13468a20856594ec7a5c34eb",
+      "receiptSource": "configured-provider",
+      "receiptReadAttempts": 3
+    }
+  ]
+}

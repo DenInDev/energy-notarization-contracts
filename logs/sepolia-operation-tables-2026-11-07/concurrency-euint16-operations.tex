@@ -1,0 +1,209 @@
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals: \texttt{independent}, \(C=1\), 16-bit arithmetic}
+\label{tab:sepolia-experiment-deployments-concurrency-euint16-concurrency-w16-c1-independent}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=24\)) &
+\shortstack[l]{2026-11-06 14:44:24 \\ -- 2026-11-06 16:56:48} &
+\texttt{0x6D38...cDdE} &
+12077230--12077880 &
+66.9\% \\
+\hline
+Zama fhEVM (\(n=24\)) &
+\shortstack[l]{2026-11-06 14:50:48 \\ -- 2026-11-06 16:54:36} &
+\texttt{0x4d48...71eD} &
+12077260--12077869 &
+71.2\% \\
+\hline
+Fhenix CoFHE (\(n=24\)) &
+\shortstack[l]{2026-11-06 14:47:12 \\ -- 2026-11-06 16:59:48} &
+\texttt{0x267C...f28f} &
+12077244--12077894 &
+67.3\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals: \texttt{shared\_sum}, \(C=1\), 16-bit arithmetic}
+\label{tab:sepolia-experiment-deployments-concurrency-euint16-concurrency-w16-c1-shared-sum}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=24\)) &
+\shortstack[l]{2026-11-06 14:42:24 \\ -- 2026-11-06 16:20:12} &
+\texttt{0x6D38...cDdE} &
+12077220--12077699 &
+69.2\% \\
+\hline
+Zama fhEVM (\(n=24\)) &
+\shortstack[l]{2026-11-06 14:40:00 \\ -- 2026-11-06 16:26:00} &
+\texttt{0x4d48...71eD} &
+12077209--12077728 &
+90.8\% \\
+\hline
+Fhenix CoFHE (\(n=24\)) &
+\shortstack[l]{2026-11-06 14:37:12 \\ -- 2026-11-06 16:23:00} &
+\texttt{0x267C...f28f} &
+12077195--12077713 &
+70.2\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals: \texttt{shared\_ordered}, \(C=1\), 16-bit arithmetic}
+\label{tab:sepolia-experiment-deployments-concurrency-euint16-concurrency-w16-c1-shared-ordered}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=24\)) &
+\shortstack[l]{2026-11-06 15:11:36 \\ -- 2026-11-06 16:37:48} &
+\texttt{0x6D38...cDdE} &
+12077362--12077787 &
+67.3\% \\
+\hline
+Zama fhEVM (\(n=24\)) &
+\shortstack[l]{2026-11-06 15:17:48 \\ -- 2026-11-06 16:35:00} &
+\texttt{0x4d48...71eD} &
+12077393--12077773 &
+66.3\% \\
+\hline
+Fhenix CoFHE (\(n=24\)) &
+\shortstack[l]{2026-11-06 15:14:48 \\ -- 2026-11-06 16:40:24} &
+\texttt{0x267C...f28f} &
+12077378--12077799 &
+80.7\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals: \texttt{independent}, \(C=2\), 16-bit arithmetic}
+\label{tab:sepolia-experiment-deployments-concurrency-euint16-concurrency-w16-c2-independent}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=24\)) &
+\shortstack[l]{2026-11-06 15:08:00 \\ -- 2026-11-06 16:45:48} &
+\texttt{0x6D38...cDdE} &
+12077344--12077826 &
+67.0\% \\
+\hline
+Zama fhEVM (\(n=24\)) &
+\shortstack[l]{2026-11-06 15:10:12 \\ -- 2026-11-06 16:42:24} &
+\texttt{0x4d48...71eD} &
+12077355--12077809 &
+102.5\% \\
+\hline
+Fhenix CoFHE (\(n=24\)) &
+\shortstack[l]{2026-11-06 15:05:48 \\ -- 2026-11-06 16:44:48} &
+\texttt{0x267C...f28f} &
+12077334--12077821 &
+69.1\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals: \texttt{shared\_sum}, \(C=2\), 16-bit arithmetic}
+\label{tab:sepolia-experiment-deployments-concurrency-euint16-concurrency-w16-c2-shared-sum}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=24\)) &
+\shortstack[l]{2026-11-06 15:24:24 \\ -- 2026-11-06 16:27:48} &
+\texttt{0x6D38...cDdE} &
+12077426--12077737 &
+63.7\% \\
+\hline
+Zama fhEVM (\(n=24\)) &
+\shortstack[l]{2026-11-06 15:21:00 \\ -- 2026-11-06 16:29:48} &
+\texttt{0x4d48...71eD} &
+12077409--12077747 &
+63.9\% \\
+\hline
+Fhenix CoFHE (\(n=24\)) &
+\shortstack[l]{2026-11-06 15:23:12 \\ -- 2026-11-06 16:32:12} &
+\texttt{0x267C...f28f} &
+12077420--12077759 &
+84.3\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals: \texttt{shared\_ordered}, \(C=2\), 16-bit arithmetic}
+\label{tab:sepolia-experiment-deployments-concurrency-euint16-concurrency-w16-c2-shared-ordered}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=24\)) &
+\shortstack[l]{2026-11-06 15:25:36 \\ -- 2026-11-06 16:49:24} &
+\texttt{0x6D38...cDdE} &
+12077432--12077843 &
+80.9\% \\
+\hline
+Zama fhEVM (\(n=24\)) &
+\shortstack[l]{2026-11-06 15:29:48 \\ -- 2026-11-06 16:47:48} &
+\texttt{0x4d48...71eD} &
+12077453--12077836 &
+66.0\% \\
+\hline
+Fhenix CoFHE (\(n=24\)) &
+\shortstack[l]{2026-11-06 15:27:36 \\ -- 2026-11-06 16:51:36} &
+\texttt{0x267C...f28f} &
+12077442--12077854 &
+67.8\% \\
+\hline
+\end{tabular}
+\end{table*}

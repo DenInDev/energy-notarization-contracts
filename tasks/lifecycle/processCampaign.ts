@@ -52,6 +52,8 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
   const selected: Platform[] = args.platform === "all" ? ["baseline", "zama", "fhenix"] :
     args.platform === "both" ? ["zama", "fhenix"] : [args.platform as Platform];
   if (continuation && args.width !== undefined &&
+      !(continuation.segment.uniformContinuationMode === "matched_all_platforms_unattempted_only" &&
+        continuation.segment.uniformWidth === args.width && selected.length === 3) &&
       (continuation.segment.platformOnly !== "fhenix" || continuation.segment.uniformWidth !== args.width ||
        selected.length !== 1 || selected[0] !== "fhenix")) {
     throw new Error("Uniform-width continuation requires the explicit validated Fhenix-only plan");
@@ -84,6 +86,11 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
     fullLifecycle: "preparationMs + transactionToValidatedPlaintextMs excludes intentional barrier waiting; worker wall time also includes the barrier and must be labeled separately",
     processIsolation: "Separate Node processes isolate SDK main-thread proof generation; OS scheduling and shared CPU/RPC/network contention remain possible",
   });
+  if (args.width !== undefined) {
+    Object.assign(report.methodology, {
+      cofheReadPolicy: "Off-chain seal-output reads only: 1000 ms client polling floor; larger server hints respected; at most three HTTP429 read attempts with 5/10-second backoff within the original deadline. All waits are timed; no mutation retries.",
+    });
+  }
 
   const runtime: any = report;
 
@@ -166,7 +173,7 @@ export async function runProcessLifecycleCampaign(args: BenchmarkArgs, hre: Hard
       const initialized = await worker.request("initialize", { platform: p, ownerAddress: owners.get(p)!.address,
         accountsFile: path.resolve(args.accountsFile), timeoutMs, setupTimeoutMs,
         width: args.width,
-        readPolicy: continuation?.segment.readPolicy,
+        readPolicy: p === "fhenix" ? (continuation?.segment.readPolicy ?? report.cofheReadPolicy) : undefined,
         resume: continuation?.resume[p] }, commandBudget);
 
       if (continuation) {

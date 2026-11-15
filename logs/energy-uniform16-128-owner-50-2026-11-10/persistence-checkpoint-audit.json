@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-10T12:34:26.368Z",
+  "checks": [
+    {
+      "platform": "baseline",
+      "latest": 870,
+      "pending": 870,
+      "lastTransactionHash": "0x3f3e20d926e3fc630bcdc9fac304c7cdc5f4d2f3a3f905106abed2b0e0b6b93a",
+      "lastNonce": 869,
+      "canonicalBlock": "0x40150e8de8b2e2b426babd7ca88be738dd0e974858ff0c9e11f333cf679f561d"
+    },
+    {
+      "platform": "zama",
+      "latest": 870,
+      "pending": 870,
+      "lastTransactionHash": "0x65a74316db906d1f3a8650bc90f9415125543ffecdbcc0a2c9e07525f010f64b",
+      "lastNonce": 869,
+      "canonicalBlock": "0x40150e8de8b2e2b426babd7ca88be738dd0e974858ff0c9e11f333cf679f561d"
+    },
+    {
+      "platform": "fhenix",
+      "latest": 1116,
+      "pending": 1116,
+      "lastTransactionHash": "0x2b13b0095305b2ee768e85cfba43fb233b42bff893363586e36770f002e190f0",
+      "lastNonce": 1115,
+      "canonicalBlock": "0x40150e8de8b2e2b426babd7ca88be738dd0e974858ff0c9e11f333cf679f561d"
+    }
+  ],
+  "originalSampleCount": 285,
+  "originalPrimaryOk": 267,
+  "allRecordedPrimaryValid": true,
+  "noNewTransactions": true
+}

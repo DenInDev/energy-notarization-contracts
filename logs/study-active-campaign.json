@@ -1,9 +1,9 @@
 {
-  "pid": 41852,
-  "status": "execution_complete_with_retained_failures",
-  "startedAt": "2026-11-06T21:13:10.975Z",
-  "manifest": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\campaign-continuation8.json",
-  "currentStage": "concurrency/euint128",
-  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\study-pilots-2026-11-06\\concurrency-euint128-continuation1\\report.json",
-  "finishedAt": "2026-11-06T22:18:13.645Z"
+  "pid": 30544,
+  "status": "finished",
+  "manifest": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\concurrency2-20-2026-11-15\\campaign.json",
+  "startedAt": "2026-11-14T23:48:20.260Z",
+  "currentSession": "session-2",
+  "childManifest": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\concurrency2-20-2026-11-15\\session-2\\campaign.json",
+  "finishedAt": "2026-11-15T03:56:59.267Z"
 }

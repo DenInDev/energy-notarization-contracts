@@ -1,0 +1,73 @@
+\begin{table*}[!t]
+\caption{Paired already-ready view/decrypt latency comparison against the plaintext baseline (16-bit arithmetic)}
+\label{tab:paired-lifecycle-comparison-view-16}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Platform} & \textbf{Baseline Mean} & \textbf{FHE Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+\multirow{2}{*}{view\_decrypt}
+& Zama & \multirow{2}{*}{80} & 2393 & 31.913 & [29.075, 34.910] & +3091.3\% & $<0.001$ \\
+& Fhenix &  & 191 & 2.331 & [2.164, 2.504] & +133.1\% & $<0.001$ \\
+\hline
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Already-ready retrieval of the persisted result after primary validation; no new transaction or FHE operation. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Paired already-ready view/decrypt latency comparison: Zama fhEVM and Fhenix CoFHE (16-bit arithmetic)}
+\label{tab:zama-fhenix-lifecycle-comparison-view-16}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Fhenix Mean} & \textbf{Zama Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+view\_decrypt & 191 & 2393 & 13.690 & [12.261, 15.354] & +1269.0\% & $<0.001$ \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Already-ready retrieval of the persisted result after primary validation; no new transaction or FHE operation. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests. Direct ratios are Zama/Fhenix.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Paired already-ready view/decrypt latency comparison against the plaintext baseline (128-bit arithmetic)}
+\label{tab:paired-lifecycle-comparison-view-128}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Platform} & \textbf{Baseline Mean} & \textbf{FHE Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+\multirow{2}{*}{view\_decrypt}
+& Zama & \multirow{2}{*}{97} & 2468 & 27.106 & [23.962, 30.551] & +2610.6\% & $<0.001$ \\
+& Fhenix &  & 226 & 2.336 & [2.116, 2.582] & +133.6\% & $<0.001$ \\
+\hline
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Already-ready retrieval of the persisted result after primary validation; no new transaction or FHE operation. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Paired already-ready view/decrypt latency comparison: Zama fhEVM and Fhenix CoFHE (128-bit arithmetic)}
+\label{tab:zama-fhenix-lifecycle-comparison-view-128}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Fhenix Mean} & \textbf{Zama Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+view\_decrypt & 226 & 2468 & 11.604 & [10.592, 12.705] & +1060.4\% & $<0.001$ \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Already-ready retrieval of the persisted result after primary validation; no new transaction or FHE operation. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests. Direct ratios are Zama/Fhenix.}
+\end{table*}

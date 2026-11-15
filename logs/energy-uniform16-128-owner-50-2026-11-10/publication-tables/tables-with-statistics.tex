@@ -1,0 +1,506 @@
+% Add \usepackage{multirow} to the paper preamble.
+% Completed energy workloads, 10 November 2026. These are segmented observations.
+% Primary arithmetic uses 16 or 128 bits; set_meter_owner uses a 160-bit eaddress at both widths.
+% Warmups/deployments excluded from performance means and main network rows.
+\begin{table*}[!t]
+\caption{Plaintext baseline performance on Sepolia (16-bit arithmetic)}
+\label{tab:baseline-sepolia-benchmark}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|r|}
+\hline
+\textbf{Operation} &
+\textbf{Mean Gas} &
+\multicolumn{3}{c|}{\textbf{Latency Components: Mean ms (CV\%)}} &
+\textbf{Derived total} \\
+\cline{3-5}
+& &
+\textbf{Preparation} &
+\textbf{Tx to receipt} &
+\textbf{Receipt to validation} &
+\textbf{Lifecycle ms (CV\%)} \\
+\hline
+set\_meter\_owner & 22086 & 162 (8.80\%) & 7015 (90.86\%) & 119 (22.93\%) & 7296 (87.30\%) \\
+notarize & 31602 & 178 (35.05\%) & 8198 (54.89\%) & 123 (29.86\%) & 8499 (52.98\%) \\
+add & 33356 & 185 (31.75\%) & 8871 (67.18\%) & 126 (38.27\%) & 9182 (64.84\%) \\
+mul\_scalar & 33634 & 179 (27.57\%) & 8229 (67.71\%) & 116 (23.09\%) & 8525 (65.29\%) \\
+mean & 35542 & 177 (31.39\%) & 8561 (59.45\%) & 139 (48.73\%) & 8878 (57.59\%) \\
+max & 35706 & 182 (30.74\%) & 7160 (46.35\%) & 132 (43.69\%) & 7474 (44.56\%) \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Preparation includes input encryption/proof generation, transaction preparation and signing. Lifecycle is preparation plus transaction-to-validated-plaintext time; intentional barrier waiting is excluded. Means and CVs are calculated per observation.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Zama fhEVM performance on Sepolia (16-bit arithmetic)}
+\label{tab:zama-fhevm-sepolia-benchmark}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|r|}
+\hline
+\textbf{Operation} &
+\textbf{Mean Gas} &
+\multicolumn{3}{c|}{\textbf{Latency Components: Mean ms (CV\%)}} &
+\textbf{Derived total} \\
+\cline{3-5}
+& &
+\textbf{Preparation} &
+\textbf{Tx to receipt} &
+\textbf{Receipt to validation} &
+\textbf{Lifecycle ms (CV\%)} \\
+\hline
+set\_meter\_owner & 472251 & 12663 (4.15\%) & 7009 (90.62\%) & 4252 (16.72\%) & 23924 (27.23\%) \\
+notarize & 472121 & 12570 (4.53\%) & 8206 (55.39\%) & 4290 (17.28\%) & 25066 (18.62\%) \\
+add & 327901 & 145 (23.75\%) & 8873 (67.72\%) & 4337 (16.28\%) & 13356 (44.45\%) \\
+mul\_scalar & 323958 & 156 (43.41\%) & 8189 (68.26\%) & 4430 (11.35\%) & 12774 (43.67\%) \\
+mean & 343705 & 147 (18.05\%) & 8551 (58.85\%) & 4401 (13.80\%) & 13100 (37.53\%) \\
+max & 329941 & 147 (19.25\%) & 7134 (46.06\%) & 4498 (15.34\%) & 11779 (27.57\%) \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Preparation includes input encryption/proof generation, transaction preparation and signing. Lifecycle is preparation plus transaction-to-validated-plaintext time; intentional barrier waiting is excluded. Means and CVs are calculated per observation.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Fhenix CoFHE performance on Sepolia (16-bit arithmetic)}
+\label{tab:fhenix-cofhe-sepolia-benchmark}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|r|}
+\hline
+\textbf{Operation} &
+\textbf{Mean Gas} &
+\multicolumn{3}{c|}{\textbf{Latency Components: Mean ms (CV\%)}} &
+\textbf{Derived total} \\
+\cline{3-5}
+& &
+\textbf{Preparation} &
+\textbf{Tx to receipt} &
+\textbf{Receipt to validation} &
+\textbf{Lifecycle ms (CV\%)} \\
+\hline
+set\_meter\_owner & 306316 & 11996 (4.46\%) & 6994 (90.54\%) & 288 (21.94\%) & 19279 (33.06\%) \\
+notarize & 306186 & 11496 (4.87\%) & 8240 (55.20\%) & 286 (17.77\%) & 20022 (22.37\%) \\
+add & 317943 & 180 (34.93\%) & 8881 (67.60\%) & 309 (53.04\%) & 9369 (63.85\%) \\
+mul\_scalar & 342266 & 174 (27.26\%) & 8248 (68.11\%) & 504 (124.36\%) & 8926 (62.17\%) \\
+mean & 373456 & 175 (27.36\%) & 8565 (58.97\%) & 1102 (104.12\%) & 9842 (52.24\%) \\
+max & 322134 & 165 (26.31\%) & 7170 (46.13\%) & 405 (104.45\%) & 7740 (42.67\%) \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Preparation includes input encryption/proof generation, transaction preparation and signing. Lifecycle is preparation plus transaction-to-validated-plaintext time; intentional barrier waiting is excluded. Means and CVs are calculated per observation.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Plaintext baseline performance on Sepolia (128-bit arithmetic)}
+\label{tab:baseline-sepolia-benchmark-128}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|r|}
+\hline
+\textbf{Operation} &
+\textbf{Mean Gas} &
+\multicolumn{3}{c|}{\textbf{Latency Components: Mean ms (CV\%)}} &
+\textbf{Derived total} \\
+\cline{3-5}
+& &
+\textbf{Preparation} &
+\textbf{Tx to receipt} &
+\textbf{Receipt to validation} &
+\textbf{Lifecycle ms (CV\%)} \\
+\hline
+set\_meter\_owner & 22064 & 194 (37.16\%) & 9062 (105.55\%) & 143 (40.35\%) & 9398 (102.01\%) \\
+notarize & 31671 & 214 (49.12\%) & 10722 (50.39\%) & 145 (51.89\%) & 11081 (48.93\%) \\
+add & 33358 & 203 (54.91\%) & 8953 (72.69\%) & 129 (35.99\%) & 9284 (69.92\%) \\
+mul\_scalar & 33736 & 212 (49.98\%) & 9211 (59.20\%) & 140 (85.03\%) & 9563 (57.29\%) \\
+mean & 35556 & 228 (62.25\%) & 8972 (72.62\%) & 134 (62.91\%) & 9334 (69.89\%) \\
+max & 35732 & 290 (90.61\%) & 9341 (48.23\%) & 150 (49.68\%) & 9780 (45.91\%) \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Preparation includes input encryption/proof generation, transaction preparation and signing. Lifecycle is preparation plus transaction-to-validated-plaintext time; intentional barrier waiting is excluded. Means and CVs are calculated per observation.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Zama fhEVM performance on Sepolia (128-bit arithmetic)}
+\label{tab:zama-fhevm-sepolia-benchmark-128}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|r|}
+\hline
+\textbf{Operation} &
+\textbf{Mean Gas} &
+\multicolumn{3}{c|}{\textbf{Latency Components: Mean ms (CV\%)}} &
+\textbf{Derived total} \\
+\cline{3-5}
+& &
+\textbf{Preparation} &
+\textbf{Tx to receipt} &
+\textbf{Receipt to validation} &
+\textbf{Lifecycle ms (CV\%)} \\
+\hline
+set\_meter\_owner & 472229 & 10872 (15.59\%) & 9090 (105.03\%) & 4495 (17.23\%) & 24457 (37.89\%) \\
+notarize & 472102 & 10591 (16.21\%) & 10691 (50.03\%) & 4304 (20.13\%) & 25586 (19.58\%) \\
+add & 328025 & 170 (47.47\%) & 8963 (73.09\%) & 4974 (34.44\%) & 14107 (46.36\%) \\
+mul\_scalar & 324339 & 168 (45.71\%) & 9150 (58.96\%) & 5263 (53.11\%) & 14580 (40.11\%) \\
+mean\(^{\dagger}\) & 344191 & 183 (55.53\%) & 8906 (73.10\%) & 4791 (13.58\%) & 13879 (47.10\%) \\
+max & 330054 & 244 (36.22\%) & 9364 (48.09\%) & 4826 (30.28\%) & 14434 (33.69\%) \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Preparation includes input encryption/proof generation, transaction preparation and signing. Lifecycle is preparation plus transaction-to-validated-plaintext time; intentional barrier waiting is excluded. Means and CVs are calculated per observation.}
+\parbox{\textwidth}{\scriptsize \(^{\dagger}\)For \texttt{mean}, all latency columns use the same 49 successful observations; mean gas uses all 50 confirmed transactions. The historical failed decryption is retained. Late recovery is excluded from timing statistics.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Fhenix CoFHE performance on Sepolia (128-bit arithmetic)}
+\label{tab:fhenix-cofhe-sepolia-benchmark-128}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|r|}
+\hline
+\textbf{Operation} &
+\textbf{Mean Gas} &
+\multicolumn{3}{c|}{\textbf{Latency Components: Mean ms (CV\%)}} &
+\textbf{Derived total} \\
+\cline{3-5}
+& &
+\textbf{Preparation} &
+\textbf{Tx to receipt} &
+\textbf{Receipt to validation} &
+\textbf{Lifecycle ms (CV\%)} \\
+\hline
+set\_meter\_owner & 306294 & 10183 (16.87\%) & 9083 (105.17\%) & 370 (94.32\%) & 19635 (48.07\%) \\
+notarize & 306164 & 9886 (17.33\%) & 10682 (49.79\%) & 349 (58.84\%) & 20917 (24.29\%) \\
+add & 318066 & 216 (100.99\%) & 8994 (72.15\%) & 550 (114.74\%) & 9761 (67.81\%) \\
+mul\_scalar & 342550 & 190 (27.54\%) & 9201 (58.71\%) & 2698 (20.24\%) & 12088 (44.98\%) \\
+mean & 373742 & 192 (85.14\%) & 8979 (72.33\%) & 14764 (7.93\%) & 23935 (26.82\%) \\
+max & 322190 & 191 (48.10\%) & 9302 (47.57\%) & 709 (198.02\%) & 10203 (44.70\%) \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Preparation includes input encryption/proof generation, transaction preparation and signing. Lifecycle is preparation plus transaction-to-validated-plaintext time; intentional barrier waiting is excluded. Means and CVs are calculated per observation.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals (interleaved runs, 16-bit arithmetic)}
+\label{tab:sepolia-experiment-deployments}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline &
+\shortstack[l]{2026-11-10 11:58:33 \\ -- 2026-11-10 13:42:12} &
+\texttt{0x77F2...d015} &
+12104484--12104996 &
+83.5\% \\
+\hline
+Zama fhEVM &
+\shortstack[l]{2026-11-10 11:58:33 \\ -- 2026-11-10 13:42:18} &
+\texttt{0xCE94...Ce66} &
+12104484--12104996 &
+83.5\% \\
+\hline
+Fhenix CoFHE &
+\shortstack[l]{2026-11-10 11:58:33 \\ -- 2026-11-10 13:42:13} &
+\texttt{0x7A2c...BF2a} &
+12104484--12104996 &
+83.5\% \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Intervals span recorded client preparation starts through completion and include the interruption between segments. Block ranges and utilization use all 300 confirmed measured primary transactions per platform, including owner registration. Mean gas/target is the transaction-weighted mean of $100g_b/(G_b/2)$ for containing blocks; it is not operation gas.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals (interleaved runs, 128-bit arithmetic)}
+\label{tab:sepolia-experiment-deployments-128}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline &
+\shortstack[l]{2026-11-10 13:45:32 \\ -- 2026-11-10 15:36:13} &
+\texttt{0xB3E3...c40B} &
+12105014--12105561 &
+84.2\% \\
+\hline
+Zama fhEVM &
+\shortstack[l]{2026-11-10 13:45:32 \\ -- 2026-11-10 15:36:22} &
+\texttt{0x7C1A...9730} &
+12105014--12105561 &
+84.2\% \\
+\hline
+Fhenix CoFHE &
+\shortstack[l]{2026-11-10 13:45:32 \\ -- 2026-11-10 15:36:13} &
+\texttt{0x3bdA...6486} &
+12105014--12105561 &
+84.2\% \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Intervals span recorded client preparation starts through completion and include the interruption between segments. Block ranges and utilization use all 300 confirmed measured primary transactions per platform, including owner registration. Mean gas/target is the transaction-weighted mean of $100g_b/(G_b/2)$ for containing blocks; it is not operation gas.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Already-ready view and decryption performance on Sepolia (16-bit arithmetic)}
+\label{tab:ready-view-decrypt-sepolia-16}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|}
+\hline
+\textbf{Platform} & \textbf{Samples} & \multicolumn{3}{c|}{\textbf{Latency: Mean ms (CV\%)}} \\
+\cline{3-5}
+& & \textbf{View read} & \textbf{Decrypt and validation} & \textbf{Total retrieval} \\
+\hline
+Plaintext baseline & 50 & 80.2 (36.03\%) & 0.008 (81.71\%) & 80.2 (36.02\%) \\
+Zama fhEVM & 50 & 54.1 (10.71\%) & 2338.9 (1.12\%) & 2393.0 (1.18\%) \\
+Fhenix CoFHE & 50 & 74.2 (38.95\%) & 117.2 (73.82\%) & 191.4 (54.56\%) \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Each read retrieves the persisted \texttt{max} result after primary validation. This is already-ready retrieval, without a new transaction or fresh homomorphic computation. The baseline reads and validates plaintext without FHE decryption.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Already-ready view and decryption performance on Sepolia (128-bit arithmetic)}
+\label{tab:ready-view-decrypt-sepolia-128}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|}
+\hline
+\textbf{Platform} & \textbf{Samples} & \multicolumn{3}{c|}{\textbf{Latency: Mean ms (CV\%)}} \\
+\cline{3-5}
+& & \textbf{View read} & \textbf{Decrypt and validation} & \textbf{Total retrieval} \\
+\hline
+Plaintext baseline & 50 & 97.0 (34.01\%) & 0.007 (79.93\%) & 97.0 (34.01\%) \\
+Zama fhEVM & 50 & 62.6 (29.67\%) & 2405.3 (7.72\%) & 2467.9 (7.72\%) \\
+Fhenix CoFHE & 50 & 87.7 (37.97\%) & 137.9 (38.70\%) & 225.6 (35.70\%) \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Each read retrieves the persisted \texttt{max} result after primary validation. This is already-ready retrieval, without a new transaction or fresh homomorphic computation. The baseline reads and validates plaintext without FHE decryption.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Paired latency comparison against the plaintext baseline (16-bit arithmetic)}
+\label{tab:paired-lifecycle-comparison}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Platform} & \textbf{Baseline Mean} & \textbf{FHE Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+\multirow{2}{*}{set\_meter\_owner}
+& Zama & \multirow{2}{*}{7296} & 23924 & 4.198 & [3.714, 4.745] & +319.8\% & $<0.001$ \\
+& Fhenix &  & 19279 & 3.340 & [2.993, 3.724] & +234.0\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{notarize}
+& Zama & \multirow{2}{*}{8499} & 25066 & 3.216 & [3.004, 3.467] & +221.6\% & $<0.001$ \\
+& Fhenix &  & 20022 & 2.554 & [2.407, 2.726] & +155.4\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{add}
+& Zama & \multirow{2}{*}{9182} & 13356 & 1.545 & [1.488, 1.609] & +54.5\% & $<0.001$ \\
+& Fhenix &  & 9369 & 1.023 & [1.018, 1.029] & +2.3\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{mul\_scalar}
+& Zama & \multirow{2}{*}{8525} & 12774 & 1.579 & [1.528, 1.638] & +57.9\% & $<0.001$ \\
+& Fhenix &  & 8926 & 1.056 & [1.035, 1.076] & +5.6\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{mean}
+& Zama & \multirow{2}{*}{8878} & 13100 & 1.562 & [1.507, 1.622] & +56.2\% & $<0.001$ \\
+& Fhenix &  & 9842 & 1.127 & [1.089, 1.162] & +12.7\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{max}
+& Zama & \multirow{2}{*}{7474} & 11779 & 1.632 & [1.577, 1.689] & +63.2\% & $<0.001$ \\
+& Fhenix &  & 7740 & 1.038 & [1.022, 1.053] & +3.8\% & $<0.001$ \\
+\hline
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Full client lifecycle includes preparation and signing, excluding intentional barrier waiting. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Paired latency comparison: Zama fhEVM and Fhenix CoFHE (16-bit arithmetic)}
+\label{tab:zama-fhenix-lifecycle-comparison}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Fhenix Mean} & \textbf{Zama Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+set\_meter\_owner & 19279 & 23924 & 1.257 & [1.237, 1.277] & +25.7\% & $<0.001$ \\
+notarize & 20022 & 25066 & 1.259 & [1.245, 1.274] & +25.9\% & $<0.001$ \\
+add & 9369 & 13356 & 1.509 & [1.454, 1.571] & +50.9\% & $<0.001$ \\
+mul\_scalar & 8926 & 12774 & 1.496 & [1.454, 1.544] & +49.6\% & $<0.001$ \\
+mean & 9842 & 13100 & 1.386 & [1.329, 1.450] & +38.6\% & $<0.001$ \\
+max & 7740 & 11779 & 1.572 & [1.516, 1.629] & +57.2\% & $<0.001$ \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Full client lifecycle includes preparation and signing, excluding intentional barrier waiting. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests. Direct ratios are Zama/Fhenix.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Paired latency comparison against the plaintext baseline (128-bit arithmetic)}
+\label{tab:paired-lifecycle-comparison-128}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Platform} & \textbf{Baseline Mean} & \textbf{FHE Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+\multirow{2}{*}{set\_meter\_owner}
+& Zama & \multirow{2}{*}{9398} & 24457 & 3.360 & [2.957, 3.806] & +236.0\% & $<0.001$ \\
+& Fhenix &  & 19635 & 2.635 & [2.349, 2.950] & +163.5\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{notarize}
+& Zama & \multirow{2}{*}{11081} & 25586 & 2.517 & [2.332, 2.722] & +151.7\% & $<0.001$ \\
+& Fhenix &  & 20917 & 2.041 & [1.901, 2.192] & +104.1\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{add}
+& Zama & \multirow{2}{*}{9284} & 14107 & 1.626 & [1.543, 1.709] & +62.6\% & $<0.001$ \\
+& Fhenix &  & 9761 & 1.059 & [1.038, 1.079] & +5.9\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{mul\_scalar}
+& Zama & \multirow{2}{*}{9563} & 14580 & 1.628 & [1.505, 1.734] & +62.8\% & $<0.001$ \\
+& Fhenix &  & 12088 & 1.328 & [1.286, 1.370] & +32.8\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{mean}
+& Zama\(^{\dagger}\) & 9305 & 13879 & 1.642 & [1.550, 1.740] & +64.2\% & $<0.001$ \\
+& Fhenix & 9334 & 23935 & 2.964 & [2.695, 3.273] & +196.4\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{max}
+& Zama & \multirow{2}{*}{9780} & 14434 & 1.525 & [1.474, 1.578] & +52.5\% & $<0.001$ \\
+& Fhenix &  & 10203 & 1.043 & [1.007, 1.073] & +4.3\% & 0.0214 \\
+\hline
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Full client lifecycle includes preparation and signing, excluding intentional barrier waiting. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests.}
+\parbox{\textwidth}{\scriptsize \(^{\dagger}\)Comparisons involving Zama \texttt{mean} use 49 successful pairs; all others use 50. The historical failed decryption remains excluded from both sides of its pair. Baseline means differ for the two \texttt{mean} rows because their matched round sets differ.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Paired latency comparison: Zama fhEVM and Fhenix CoFHE (128-bit arithmetic)}
+\label{tab:zama-fhenix-lifecycle-comparison-128}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Fhenix Mean} & \textbf{Zama Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+set\_meter\_owner & 19635 & 24457 & 1.275 & [1.251, 1.301] & +27.5\% & $<0.001$ \\
+notarize & 20917 & 25586 & 1.233 & [1.215, 1.251] & +23.3\% & $<0.001$ \\
+add & 9761 & 14107 & 1.535 & [1.451, 1.616] & +53.5\% & $<0.001$ \\
+mul\_scalar & 12088 & 14580 & 1.226 & [1.152, 1.279] & +22.6\% & $<0.001$ \\
+mean\(^{\dagger}\) & 23902 & 13879 & 0.551 & [0.526, 0.577] & -44.9\% & $<0.001$ \\
+max & 10203 & 14434 & 1.462 & [1.399, 1.531] & +46.2\% & $<0.001$ \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Full client lifecycle includes preparation and signing, excluding intentional barrier waiting. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests. Direct ratios are Zama/Fhenix.}
+\parbox{\textwidth}{\scriptsize \(^{\dagger}\)The \texttt{mean} comparison uses 49 successful pairs, excluding the historical failed Zama observation from both sides; other comparisons use 50.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Paired already-ready view/decrypt latency comparison against the plaintext baseline (16-bit arithmetic)}
+\label{tab:paired-lifecycle-comparison-view-16}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Platform} & \textbf{Baseline Mean} & \textbf{FHE Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+\multirow{2}{*}{view\_decrypt}
+& Zama & \multirow{2}{*}{80} & 2393 & 31.913 & [29.075, 34.910] & +3091.3\% & $<0.001$ \\
+& Fhenix &  & 191 & 2.331 & [2.164, 2.504] & +133.1\% & $<0.001$ \\
+\hline
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Already-ready retrieval of the persisted result after primary validation; no new transaction or FHE operation. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Paired already-ready view/decrypt latency comparison: Zama fhEVM and Fhenix CoFHE (16-bit arithmetic)}
+\label{tab:zama-fhenix-lifecycle-comparison-view-16}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Fhenix Mean} & \textbf{Zama Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+view\_decrypt & 191 & 2393 & 13.690 & [12.261, 15.354] & +1269.0\% & $<0.001$ \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Already-ready retrieval of the persisted result after primary validation; no new transaction or FHE operation. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests. Direct ratios are Zama/Fhenix.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Paired already-ready view/decrypt latency comparison against the plaintext baseline (128-bit arithmetic)}
+\label{tab:paired-lifecycle-comparison-view-128}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Platform} & \textbf{Baseline Mean} & \textbf{FHE Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+\multirow{2}{*}{view\_decrypt}
+& Zama & \multirow{2}{*}{97} & 2468 & 27.106 & [23.962, 30.551] & +2610.6\% & $<0.001$ \\
+& Fhenix &  & 226 & 2.336 & [2.116, 2.582] & +133.6\% & $<0.001$ \\
+\hline
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Already-ready retrieval of the persisted result after primary validation; no new transaction or FHE operation. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Paired already-ready view/decrypt latency comparison: Zama fhEVM and Fhenix CoFHE (128-bit arithmetic)}
+\label{tab:zama-fhenix-lifecycle-comparison-view-128}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Fhenix Mean} & \textbf{Zama Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+view\_decrypt & 226 & 2468 & 11.604 & [10.592, 12.705] & +1060.4\% & $<0.001$ \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Already-ready retrieval of the persisted result after primary validation; no new transaction or FHE operation. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests. Direct ratios are Zama/Fhenix.}
+\end{table*}

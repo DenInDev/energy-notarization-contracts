@@ -1,0 +1,7 @@
+{
+  "pid": 5220,
+  "createdUtc": "2026-11-14T23:48:19.7047050Z",
+  "command": "\"C:\\Program Files\\nodejs\\node.exe\" scripts/watch-study-health.cjs C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\concurrency2-20-2026-11-15",
+  "intervalMs": 600000,
+  "readOnly": true
+}

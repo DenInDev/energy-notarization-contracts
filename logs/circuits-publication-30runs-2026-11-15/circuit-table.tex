@@ -1,0 +1,24 @@
+\begin{table*}[!t]
+\caption{Circuit growth on Sepolia with 16-bit arithmetic}
+\label{tab:circuit-growth}
+\centering\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|r|rrr|rrr|}\hline
+\textbf{Circuit} & \textbf{Size} & \textbf{Depth} & \multicolumn{3}{c|}{\textbf{Mean gas}} & \multicolumn{3}{c|}{\textbf{Mean post-receipt delay (ms)}} \\
+\cline{4-9}
+ & & & \textbf{Baseline} & \textbf{Zama} & \textbf{Fhenix} & \textbf{Baseline} & \textbf{Zama} & \textbf{Fhenix} \\
+\hline
+Linear sum & 2 & 1 & 465285 & 761408 & 751596 & 151 & 4644 & 834 \\
+Tree sum & 2 & 1 & 465614 & 762176 & 752360 & 167 & 4456 & 455 \\
+Linear sum & 8 & 7 & 467763 & 881930 & 942604 & 264 & 5383 & 806 \\
+Tree sum & 8 & 3 & 469109 & 885733 & 946408 & 189 & 4965 & 616 \\
+Linear sum & 32 & 31 & 479626 & 1364027 & 1706693 & 228 & 8343 & 2460 \\
+Tree sum & 32 & 5 & 484472 & 1378477 & 1721142 & 415 & 5253 & 718 \\
+Affine chain & 1 & 2 & 465353 & 777265 & 780228 & 154 & 4548 & 453 \\
+Affine chain & 8 & 16 & 466587 & 999712 & 1174328 & 149 & 7476 & 1684 \\
+Affine chain & 16 & 32 & 467993 & HCU & 1624755 & 123 & -- & 3498 \\
+Affine chain & 32 & 64 & 470811 & HCU & 2525682 & 229 & -- & 6367 \\
+\hline\end{tabular}
+\par\smallskip
+\begin{minipage}{\textwidth}\scriptsize Each numeric result summarizes 30 successful measured observations. Size denotes input count $N$ for reductions and iteration count $k$ for affine chains; depth is the theoretical arithmetic dependency depth. HCU denotes 30/30 rejections during gas estimation with \texttt{HCUTransactionDepthLimitExceeded}; no compute transaction was sent and no compute gas or latency exists. Gas covers the compute transaction only, including contract bookkeeping, while input loading and readiness are separate setup/preparation work. Post-receipt delay includes RPC retrieval, service waiting, decryption and plaintext validation; it is not isolated FHE compute time.\end{minipage}
+\end{table*}

@@ -53,6 +53,7 @@ describe("isolated campaign integration with actual worker processes", () => {
           assert.equal(report.samples.length, comparisonCount * 3); assert.equal(report.barriers.length, comparisonCount);
           if (width) {
             assert.equal(report.schemaVersion, 14);
+            assert.deepEqual(report.cofheReadPolicy, {minimumPollingMs:1000,maxRateLimitAttempts:3,rateLimitBackoffMs:5000});
             const ownerSamples = report.samples.filter((sample: any) => sample.operation === "set_meter_owner");
             assert.equal(ownerSamples.length, 6);
             assert(ownerSamples.every((sample: any) => sample.status === "ok" &&

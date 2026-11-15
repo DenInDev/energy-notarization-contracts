@@ -1,0 +1,10 @@
+{
+  "status": "compiled_successfully",
+  "compiler": "Codex desktop built-in LaTeX compiler",
+  "mainFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\sepolia-operation-tables-2026-11-07\\latex-check\\main.tex",
+  "tableCount": 78,
+  "uniqueLabels": true,
+  "sourceReportsUnchanged": 7,
+  "canonicalBlocksQueried": 1661,
+  "allContainingBlocksFinalized": true
+}

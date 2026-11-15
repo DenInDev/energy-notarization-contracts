@@ -1,0 +1,15 @@
+{
+  "events": [
+    {
+      "kind": "User-requested paired inference on already completed energy reports",
+      "processId": 9856,
+      "startedAt": "2026-11-10T17:50:24.5564895Z",
+      "outputCompletedAt": "2026-11-10T17:50:39.461495+00:00",
+      "priority": "BelowNormal",
+      "numpyThreads": 1,
+      "newNetworkRequests": 0,
+      "timedStudySourceEdits": 0,
+      "note": "Analysis ran on the same machine during circuit round 2; retained as machine-workload context, not a modification of any primary observation."
+    }
+  ]
+}

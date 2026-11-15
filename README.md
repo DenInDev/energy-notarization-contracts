@@ -45,7 +45,7 @@ Late recovery does not reconstruct the original failed latency. Analyze an eligi
 1. **Concurrency and ordering:** independent writers, shared sum and an order-sensitive shared update. Replay canonical chain order and validate immutable per-request snapshots plus final state.
 2. **Circuit growth:** linear versus balanced sums with equal addition counts, and increasingly long multiply/add chains executed within one transaction.
 
-Both support separate 16-bit and 128-bit contracts for all three platforms. Commands default to **planning only**, including when a network is selected; `--live` explicitly enables execution.
+Both use 16-bit arithmetic for all three platforms. The historical 128-bit study results are retained, while those runnable study variants have been removed. Commands default to **planning only**, including when a network is selected; `--live` explicitly enables execution.
 
 ```powershell
 npm run study:plan
@@ -54,9 +54,19 @@ npm run study:circuits -- --widths 16 --sizes 2,4,8 --depths 1,2,4 --repetitions
 npm run study:test
 ```
 
-The complete default plan budgets up to 120,000 measured transactions, 2,976 warmup/control transactions and 8,904 setup transactions including deployments. An exact known Zama HCU rejection during gas estimation is recorded without sending the compute transaction; it has no receipt latency or gas measurement. Start with a pilot and review its actual cost and feasible circuit levels before selecting a main matrix. New studies use a separate nine-account file, with an operator and up to eight writers. Nothing is funded automatically.
+The paper uses 20 windows per concurrency configuration (1, 2 and 4 writers; eight requests; shared sum and order-sensitive update) and 30 repetitions per circuit configuration (sum sizes 2/8/32; chain depths 1/8/16/32). These are selected matrices, not the larger task defaults. An exact known Zama HCU rejection during gas estimation is recorded without sending the compute transaction; it has no receipt latency or gas measurement. Studies use separate saved accounts. Nothing is funded automatically.
 
-See [design, robustness and interpretation](docs/CONCURRENCY_AND_CIRCUITS.md) and [starting commands](START-NEW-EXPERIMENTS.txt). Retired expanded/Octra code is listed in [cleanup record](docs/EXPERIMENTS_CLEANUP.md), with a verified recovery archive. Classic code and historical data remain available.
+Use `scripts/run-study-campaign.cjs <new-reviewed-manifest.json>` as the single study launcher. It selects the existing guarded policy from the manifest kind; ambiguous compact histories require `--policy`. It validates the reviewed matrix, account identity, source hashes and existing outputs before execution. It does not automatically resume failed campaigns. See [design, robustness and interpretation](docs/CONCURRENCY_AND_CIRCUITS.md) and [starting commands](START-NEW-EXPERIMENTS.txt).
+
+## Paper results and repository maintenance
+
+- Energy 16/128-bit results and publication scripts: `logs/energy-uniform16-128-owner-50-2026-11-10/`.
+- Concurrency 1/2/4-writer tables: `logs/concurrency2-20-2026-11-15/analysis/`.
+- Circuit section and tables: `logs/circuits-publication-30runs-2026-11-15/`.
+
+Raw reports, transaction journals, JSON audits and publication regeneration scripts are retained. Keep new operational code under `scripts/`, update the main guides instead of adding temporary Markdown notes, and follow [maintenance conventions](AGENTS.md). Removed one-off helpers and secondary Markdown are backed up outside the repository under `C:/Users/danie/.codex/backups/energy-notarization-contracts/`.
+
+Earlier retired expanded/Octra source is preserved in `archive/retired-experiments-2026-11-06.zip` (SHA256 `6b31c28253d33441277538120b59905a3c64b764e7fc3ab7137cd6e09756cec9`). Third-party source snapshots used for code references remain available.
 
 ## Repository layout
 

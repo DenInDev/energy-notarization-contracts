@@ -1,0 +1,29 @@
+{
+  "scope": "recorded measured and warmup request/transaction traces; setup and uninstrumented SDK requests excluded",
+  "failedStages": {
+    "preparation.gas.read_attempt": 22,
+    "decrypt.read_attempt": 39,
+    "audit.read.read_attempt": 37,
+    "decrypt.http_headers": 4
+  },
+  "observedHintsAndHttp": {
+    "encrypt.http_headers:httpStatus=200": 110,
+    "decrypt.http_headers:httpStatus=200": 1122,
+    "decrypt.client_poll_floor:httpStatus=200": 1122,
+    "transaction.receipt_poll:intervalMs=500": 6225,
+    "encrypt.sdk_progress:retryAfterMs=2000": 110,
+    "decrypt.sdk_progress:retryAfterMs=2000": 532,
+    "decrypt.http_headers:httpStatus=204": 118,
+    "decrypt.client_poll_floor:httpStatus=204": 118,
+    "decrypt.sdk_poll:intervalMs=1000": 122,
+    "decrypt.acl_check_retry:backoffMs=1000": 39,
+    "audit.read.receipt_block_retry:backoffMs=1000": 35,
+    "decrypt.sdk_progress:retryAfterMs=1000": 40,
+    "decrypt.sdk_progress:retryAfterMs=5000": 13,
+    "decrypt.http_headers:httpStatus=404": 4,
+    "decrypt.client_poll_floor:httpStatus=404": 4,
+    "decrypt.sdk_progress:retryAfterMs=4000": 1,
+    "audit.read.receipt_block_retry:backoffMs=2000": 1,
+    "audit.read.receipt_block_retry:backoffMs=4000": 1
+  }
+}

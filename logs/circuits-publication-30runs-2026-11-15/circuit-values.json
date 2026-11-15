@@ -1,0 +1,1197 @@
+{
+  "rawReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\circuits16-fresh30-2026-11-14\\circuits-euint16\\report.json",
+  "rawSha256": "e7296f01160592e10d10f2d8b5ff63e3de8a148c9b14704e967b877c60e9b4b1",
+  "rows": [
+    {
+      "case": {
+        "id": "circuits-w16-sum_linear-n2",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_linear",
+        "size": 2,
+        "inputCount": 2,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "values": [
+        {
+          "platform": "baseline",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 465284.6,
+            "cvPct": 0.0010492625859677787
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 11893.382436666863,
+            "cvPct": 46.71040805110414
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 13615.121749999693,
+            "cvPct": 41.14736810398195
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 150.53567999998728,
+            "cvPct": 128.4763908648007
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 13765.65742999968,
+            "cvPct": 40.57686919817994
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 25659.039866666542,
+            "cvPct": 31.493439419976088
+          }
+        },
+        {
+          "platform": "zama",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 761408.4666666667,
+            "cvPct": 0.0005931280135709826
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 19596.9000899997,
+            "cvPct": 32.91915137396863
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 6874.534453333402,
+            "cvPct": 20.423737763727207
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 4643.95337000015,
+            "cvPct": 36.873803507895985
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 11518.487823333553,
+            "cvPct": 17.393861018145675
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 31115.387913333252,
+            "cvPct": 18.925661346443917
+          }
+        },
+        {
+          "platform": "fhenix",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 751595.6,
+            "cvPct": 0.0006495590482527884
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 21010.56763999994,
+            "cvPct": 36.2560039202586
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 10833.701486666796,
+            "cvPct": 16.58555833665326
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 834.4627233333109,
+            "cvPct": 133.66619279076616
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 11668.164210000106,
+            "cvPct": 19.278932602010475
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 32678.731850000044,
+            "cvPct": 21.851867386141965
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "circuits-w16-sum_tree-n2",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_tree",
+        "size": 2,
+        "inputCount": 2,
+        "additions": 1,
+        "multiplications": 0,
+        "dependencyDepth": 1
+      },
+      "values": [
+        {
+          "platform": "baseline",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 465613.6,
+            "cvPct": 0.001247989830481332
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 11051.187959999746,
+            "cvPct": 34.69364835123086
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 13996.958013333364,
+            "cvPct": 50.51904020920001
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 166.81493333355368,
+            "cvPct": 119.32764197982178
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 14163.772946666919,
+            "cvPct": 49.82542132957518
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 25214.960906666664,
+            "cvPct": 31.525200908705138
+          }
+        },
+        {
+          "platform": "zama",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 762176.3333333334,
+            "cvPct": 0.0006798628863563289
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 22031.8212833336,
+            "cvPct": 60.97528841127839
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 7998.576780000344,
+            "cvPct": 59.65768690533728
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 4455.630689999965,
+            "cvPct": 20.648836668160715
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 12454.20747000031,
+            "cvPct": 37.86043729576731
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 34486.028753333914,
+            "cvPct": 39.29928187753047
+          }
+        },
+        {
+          "platform": "fhenix",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 752360.4,
+            "cvPct": 0.0011648089027655704
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 21584.91406666642,
+            "cvPct": 32.933061094093205
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 13244.276066666585,
+            "cvPct": 34.39001307691827
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 454.6620466667926,
+            "cvPct": 91.63608952903722
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 13698.938113333377,
+            "cvPct": 34.14093641181093
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 35283.8521799998,
+            "cvPct": 24.737606650931777
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "circuits-w16-sum_linear-n8",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_linear",
+        "size": 8,
+        "inputCount": 8,
+        "additions": 7,
+        "multiplications": 0,
+        "dependencyDepth": 7
+      },
+      "values": [
+        {
+          "platform": "baseline",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 467763,
+            "cvPct": 0.0009724130086119296
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 10419.400373333343,
+            "cvPct": 53.24742455030833
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 12047.98000000016,
+            "cvPct": 27.470950598853577
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 264.25938333318726,
+            "cvPct": 139.44047157237958
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 12312.239383333346,
+            "cvPct": 26.759996849153918
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 22731.63975666669,
+            "cvPct": 27.71175645337381
+          }
+        },
+        {
+          "platform": "zama",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 881929.8666666667,
+            "cvPct": 0.0007095028518538836
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 19948.444796666365,
+            "cvPct": 21.957715903663527
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 8643.103116666734,
+            "cvPct": 69.80773226664589
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 5383.477596666656,
+            "cvPct": 29.579345435700326
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 14026.580713333391,
+            "cvPct": 43.67997376214168
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 33975.02550999975,
+            "cvPct": 20.095885444455106
+          }
+        },
+        {
+          "platform": "fhenix",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 942604.4,
+            "cvPct": 0.0006810701252257139
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 15870.347823333437,
+            "cvPct": 34.31110674930158
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 12151.891606666364,
+            "cvPct": 35.57231500631056
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 806.0620499999651,
+            "cvPct": 67.80869179538989
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 12957.95365666633,
+            "cvPct": 33.41533063733618
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 28828.30147999977,
+            "cvPct": 27.751666418638138
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "circuits-w16-sum_tree-n8",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_tree",
+        "size": 8,
+        "inputCount": 8,
+        "additions": 7,
+        "multiplications": 0,
+        "dependencyDepth": 3
+      },
+      "values": [
+        {
+          "platform": "baseline",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 469108.8,
+            "cvPct": 0.0007805317059821465
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 9893.632153333157,
+            "cvPct": 62.06613268486252
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 13415.794503333676,
+            "cvPct": 35.05702968570592
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 189.34048333315488,
+            "cvPct": 146.51362073110633
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 13605.13498666683,
+            "cvPct": 35.017752319361605
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 23498.76713999999,
+            "cvPct": 36.88590389907701
+          }
+        },
+        {
+          "platform": "zama",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 885732.9333333333,
+            "cvPct": 0.0005771578554884432
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 19301.983306666814,
+            "cvPct": 23.111132345122044
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 8007.252720000152,
+            "cvPct": 59.14786151586085
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 4964.554509999766,
+            "cvPct": 26.681400665427326
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 12971.807229999918,
+            "cvPct": 36.43480000004297
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 32273.790536666733,
+            "cvPct": 19.4554498721203
+          }
+        },
+        {
+          "platform": "fhenix",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 946407.6,
+            "cvPct": 0.0005158514392815352
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 14249.643480000164,
+            "cvPct": 20.496116976346627
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 12243.775983333464,
+            "cvPct": 44.69352509192894
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 616.0968299999134,
+            "cvPct": 92.70016256888375
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 12859.872813333377,
+            "cvPct": 43.805665369853955
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 27109.51629333354,
+            "cvPct": 25.870128434021066
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "circuits-w16-sum_linear-n32",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_linear",
+        "size": 32,
+        "inputCount": 32,
+        "additions": 31,
+        "multiplications": 0,
+        "dependencyDepth": 31
+      },
+      "values": [
+        {
+          "platform": "baseline",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 479626.2,
+            "cvPct": 0.001260999335717017
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 10732.59769999974,
+            "cvPct": 30.804587667582734
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 12818.735800000226,
+            "cvPct": 30.34269258039047
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 228.4459066667827,
+            "cvPct": 145.67923287204587
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 13047.181706667008,
+            "cvPct": 29.669439071110027
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 23779.77940666675,
+            "cvPct": 22.070149604288833
+          }
+        },
+        {
+          "platform": "zama",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 1364027.0666666667,
+            "cvPct": 0.00042133791613957494
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 25345.268273333273,
+            "cvPct": 26.540938562234757
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 9091.375260000164,
+            "cvPct": 64.36591195963534
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 8343.24014333287,
+            "cvPct": 14.12791219328136
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 17434.615403333035,
+            "cvPct": 33.04287066436328
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 42779.88367666631,
+            "cvPct": 23.704314765562785
+          }
+        },
+        {
+          "platform": "fhenix",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 1706693.2,
+            "cvPct": 0.0003543743653472558
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 21355.677803333467,
+            "cvPct": 22.952066439609176
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 11299.612153333495,
+            "cvPct": 53.692065302638845
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 2460.498273332999,
+            "cvPct": 19.733201799228798
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 13760.110426666495,
+            "cvPct": 44.49997507856505
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 35115.78822999996,
+            "cvPct": 22.36453115502069
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "circuits-w16-sum_tree-n32",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "sum_tree",
+        "size": 32,
+        "inputCount": 32,
+        "additions": 31,
+        "multiplications": 0,
+        "dependencyDepth": 5
+      },
+      "values": [
+        {
+          "platform": "baseline",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 484472,
+            "cvPct": 0.0009388753656503205
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 11183.706896666694,
+            "cvPct": 54.052097056202
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 12230.547900000245,
+            "cvPct": 25.385665737727788
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 414.6028899997628,
+            "cvPct": 119.61052400956484
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 12645.150790000009,
+            "cvPct": 25.21247777340898
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 23828.857686666703,
+            "cvPct": 32.58847672220269
+          }
+        },
+        {
+          "platform": "zama",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 1378476.5333333334,
+            "cvPct": 0.0004292738760552861
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 27283.28374333305,
+            "cvPct": 28.037642404822204
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 9186.836353333527,
+            "cvPct": 67.79155151681545
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 5253.08190999995,
+            "cvPct": 26.676745206162078
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 14439.918263333477,
+            "cvPct": 45.1018856531109
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 41723.20200666653,
+            "cvPct": 27.42154989744948
+          }
+        },
+        {
+          "platform": "fhenix",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 1721142.4,
+            "cvPct": 0.00032496434905053697
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 21341.58424333313,
+            "cvPct": 25.715737582935944
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 11252.844233333397,
+            "cvPct": 66.99566874301314
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 718.1445433330334,
+            "cvPct": 74.0874648619496
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 11970.98877666643,
+            "cvPct": 64.001166796043
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 33312.57301999956,
+            "cvPct": 23.368630397415796
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "circuits-w16-affine_chain-k1",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 1,
+        "inputCount": 2,
+        "additions": 1,
+        "multiplications": 1,
+        "dependencyDepth": 2
+      },
+      "values": [
+        {
+          "platform": "baseline",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 465352.6,
+            "cvPct": 0.0014338892704608133
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 12132.822853333588,
+            "cvPct": 29.8008240567391
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 13694.856670000241,
+            "cvPct": 41.22897018548111
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 153.94993333339227,
+            "cvPct": 127.02419561827973
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 13848.806603333633,
+            "cvPct": 40.69333382023652
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 25981.629456667222,
+            "cvPct": 25.413271163471897
+          }
+        },
+        {
+          "platform": "zama",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 777265.1333333333,
+            "cvPct": 0.000668716557343103
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 19300.512809999986,
+            "cvPct": 25.46712943264089
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 8533.992663333309,
+            "cvPct": 43.452033699592654
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 4548.323276666443,
+            "cvPct": 15.758316041633636
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 13082.315939999751,
+            "cvPct": 28.14453521536174
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 32382.82874999974,
+            "cvPct": 20.600510993274046
+          }
+        },
+        {
+          "platform": "fhenix",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 780228,
+            "cvPct": 0.0005829819311116008
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 19896.49393666665,
+            "cvPct": 25.469583733215845
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 13853.343783332873,
+            "cvPct": 43.77471041854412
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 453.2173000002901,
+            "cvPct": 88.57136555508598
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 14306.561083333163,
+            "cvPct": 42.8278163058888
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 34203.05501999982,
+            "cvPct": 21.71004032166885
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "circuits-w16-affine_chain-k8",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 8,
+        "inputCount": 2,
+        "additions": 8,
+        "multiplications": 8,
+        "dependencyDepth": 16
+      },
+      "values": [
+        {
+          "platform": "baseline",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 466587,
+            "cvPct": 0.0009748639077971355
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 11320.25947333333,
+            "cvPct": 30.746334780609946
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 13405.558423333267,
+            "cvPct": 35.961355836928085
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 148.5320800004527,
+            "cvPct": 132.65339003046455
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 13554.090503333719,
+            "cvPct": 35.50897549064451
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 24874.349976667047,
+            "cvPct": 22.61010312614947
+          }
+        },
+        {
+          "platform": "zama",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 999712.2666666667,
+            "cvPct": 0.0005553443415277275
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 19411.038473333083,
+            "cvPct": 29.40461629736067
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 7575.505303333443,
+            "cvPct": 30.191064538637068
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 7476.372003333116,
+            "cvPct": 20.554578130693784
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 15051.877306666558,
+            "cvPct": 17.478298144703533
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 34462.91577999965,
+            "cvPct": 17.068484659024328
+          }
+        },
+        {
+          "platform": "fhenix",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 1174328,
+            "cvPct": 0.0004899448550851729
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 18314.520270000026,
+            "cvPct": 27.701181510746608
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 12623.312246666475,
+            "cvPct": 31.166442921277916
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 1683.9382566665997,
+            "cvPct": 30.348972783893934
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 14307.250503333076,
+            "cvPct": 27.646727360156486
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 32621.7707733331,
+            "cvPct": 18.17494027149876
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "circuits-w16-affine_chain-k16",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 16,
+        "inputCount": 2,
+        "additions": 16,
+        "multiplications": 16,
+        "dependencyDepth": 32
+      },
+      "values": [
+        {
+          "platform": "baseline",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 467993.4,
+            "cvPct": 0.0011951235202019492
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 9372.624906666499,
+            "cvPct": 38.76001516817926
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 12115.660686666968,
+            "cvPct": 26.93537572865361
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 122.92739333280673,
+            "cvPct": 21.612551639847418
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 12238.588079999776,
+            "cvPct": 26.6789356574828
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 21611.212986666276,
+            "cvPct": 25.972315428388466
+          }
+        },
+        {
+          "platform": "zama",
+          "valid": 0,
+          "rejected": 30,
+          "gas": {
+            "n": 0
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 27101.864596666666,
+            "cvPct": 27.04311460183369
+          },
+          "receiptMs": {
+            "n": 0
+          },
+          "postReceiptMs": {
+            "n": 0
+          },
+          "completionMs": {
+            "n": 0
+          },
+          "clientWorkMs": {
+            "n": 0
+          }
+        },
+        {
+          "platform": "fhenix",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 1624755.2,
+            "cvPct": 0.00031772151311317026
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 14689.676660000183,
+            "cvPct": 40.94027380226168
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 12592.782973333184,
+            "cvPct": 40.54425473247721
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 3498.4432966668237,
+            "cvPct": 15.044262526260276
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 16091.226270000008,
+            "cvPct": 32.377089502895814
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 30780.902930000193,
+            "cvPct": 24.83588932337648
+          }
+        }
+      ]
+    },
+    {
+      "case": {
+        "id": "circuits-w16-affine_chain-k32",
+        "suite": "circuits",
+        "width": 16,
+        "users": 1,
+        "circuit": "affine_chain",
+        "size": 32,
+        "inputCount": 2,
+        "additions": 32,
+        "multiplications": 32,
+        "dependencyDepth": 64
+      },
+      "values": [
+        {
+          "platform": "baseline",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 470810.6,
+            "cvPct": 0.0010369471770749926
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 9801.10478000013,
+            "cvPct": 51.72485984872335
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 13753.43258333342,
+            "cvPct": 44.79313514470121
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 228.6634966665258,
+            "cvPct": 145.02618329832612
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 13982.096079999947,
+            "cvPct": 43.847755192648705
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 23783.200860000077,
+            "cvPct": 28.99454611013959
+          }
+        },
+        {
+          "platform": "zama",
+          "valid": 0,
+          "rejected": 30,
+          "gas": {
+            "n": 0
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 24847.75403000007,
+            "cvPct": 27.78131310055298
+          },
+          "receiptMs": {
+            "n": 0
+          },
+          "postReceiptMs": {
+            "n": 0
+          },
+          "completionMs": {
+            "n": 0
+          },
+          "clientWorkMs": {
+            "n": 0
+          }
+        },
+        {
+          "platform": "fhenix",
+          "valid": 30,
+          "rejected": 0,
+          "gas": {
+            "n": 30,
+            "mean": 2525682.4,
+            "cvPct": 0.0002831536221348041
+          },
+          "preparationMs": {
+            "n": 30,
+            "mean": 18064.84964666671,
+            "cvPct": 54.11715332295826
+          },
+          "receiptMs": {
+            "n": 30,
+            "mean": 13023.343156666635,
+            "cvPct": 41.74044860118356
+          },
+          "postReceiptMs": {
+            "n": 30,
+            "mean": 6367.084463333416,
+            "cvPct": 9.592572092528577
+          },
+          "completionMs": {
+            "n": 30,
+            "mean": 19390.42762000005,
+            "cvPct": 28.874863440008337
+          },
+          "clientWorkMs": {
+            "n": 30,
+            "mean": 37455.27726666676,
+            "cvPct": 27.227590666623197
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "Fresh 30-round16-bit circuit campaign only; older circuit reports excluded."
+}

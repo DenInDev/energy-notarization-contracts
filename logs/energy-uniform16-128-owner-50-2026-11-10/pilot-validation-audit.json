@@ -1,0 +1,73 @@
+{
+  "at": "2026-11-10T11:56:46.252Z",
+  "status": "both_pilots_validated",
+  "localTestsPassed": 18,
+  "typecheckPassed": true,
+  "generatedContractsCheckPassed": true,
+  "audits": [
+    {
+      "width": 16,
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\pilot-euint16\\report.json",
+      "rawSha256": "fc92434fe85c0ff946f6cea94f3bf41c67a066ab96983ce9a25c2a5bb96ee050",
+      "measuredPrimaryOk": 18,
+      "warmupPrimaryOk": 18,
+      "measuredViewsOk": 3,
+      "warmupViewsOk": 3,
+      "sameBlockTriples": 6,
+      "totalTriples": 6,
+      "workers": {
+        "baseline": {
+          "pid": 1084,
+          "owner": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC"
+        },
+        "zama": {
+          "pid": 24668,
+          "owner": "0x268fcAE6206890E4de082535F12C40Cc5119033d"
+        },
+        "fhenix": {
+          "pid": 7972,
+          "owner": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd"
+        }
+      },
+      "cofheReadPolicy": {
+        "minimumPollingMs": 1000,
+        "maxRateLimitAttempts": 3,
+        "rateLimitBackoffMs": 5000
+      },
+      "policySourceHash": "c53dccee16e097a4eb9ff8c35b4d9ef7655966bab966d1e4e4e5bc2ff7c26037",
+      "launcherHashRecorded": true
+    },
+    {
+      "width": 128,
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\pilot-euint128\\report.json",
+      "rawSha256": "ca67630200c2bf1d4ea86e52aae6d970802ee50f9644dc28f6297369545394b7",
+      "measuredPrimaryOk": 18,
+      "warmupPrimaryOk": 18,
+      "measuredViewsOk": 3,
+      "warmupViewsOk": 3,
+      "sameBlockTriples": 6,
+      "totalTriples": 6,
+      "workers": {
+        "baseline": {
+          "pid": 40304,
+          "owner": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC"
+        },
+        "zama": {
+          "pid": 28016,
+          "owner": "0x268fcAE6206890E4de082535F12C40Cc5119033d"
+        },
+        "fhenix": {
+          "pid": 38968,
+          "owner": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd"
+        }
+      },
+      "cofheReadPolicy": {
+        "minimumPollingMs": 1000,
+        "maxRateLimitAttempts": 3,
+        "rateLimitBackoffMs": 5000
+      },
+      "policySourceHash": "c53dccee16e097a4eb9ff8c35b4d9ef7655966bab966d1e4e4e5bc2ff7c26037",
+      "launcherHashRecorded": true
+    }
+  ]
+}

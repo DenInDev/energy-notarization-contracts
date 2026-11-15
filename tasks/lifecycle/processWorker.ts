@@ -182,7 +182,7 @@ export function startLifecycleWorker(hre: HardhatRuntimeEnvironment,
         (method, params) => hre.ethers.provider.send(method, params), entry.address,
         receipt.blockHash, trace, setupTimeoutMs));
 
-      const adapter = await deadline(() => makeAdapter(platform, hre, signer, entry.address, timeoutMs, trace, width),
+      const adapter = await deadline(() => makeAdapter(platform, hre, signer, entry.address, timeoutMs, trace, width, args.readPolicy),
         setupTimeoutMs, "worker SDK initialization");
 
       context = { contract, adapter, last: 0n, total: 0n, width };

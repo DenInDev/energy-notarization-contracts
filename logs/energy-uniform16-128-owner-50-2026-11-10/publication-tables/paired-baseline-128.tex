@@ -1,0 +1,40 @@
+\begin{table*}[!t]
+\caption{Paired latency comparison against the plaintext baseline (128-bit arithmetic)}
+\label{tab:paired-lifecycle-comparison-128}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Platform} & \textbf{Baseline Mean} & \textbf{FHE Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+\multirow{2}{*}{set\_meter\_owner}
+& Zama & \multirow{2}{*}{9398} & 24457 & 3.360 & [2.957, 3.806] & +236.0\% & $<0.001$ \\
+& Fhenix &  & 19635 & 2.635 & [2.349, 2.950] & +163.5\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{notarize}
+& Zama & \multirow{2}{*}{11081} & 25586 & 2.517 & [2.332, 2.722] & +151.7\% & $<0.001$ \\
+& Fhenix &  & 20917 & 2.041 & [1.901, 2.192] & +104.1\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{add}
+& Zama & \multirow{2}{*}{9284} & 14107 & 1.626 & [1.543, 1.709] & +62.6\% & $<0.001$ \\
+& Fhenix &  & 9761 & 1.059 & [1.038, 1.079] & +5.9\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{mul\_scalar}
+& Zama & \multirow{2}{*}{9563} & 14580 & 1.628 & [1.505, 1.734] & +62.8\% & $<0.001$ \\
+& Fhenix &  & 12088 & 1.328 & [1.286, 1.370] & +32.8\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{mean}
+& Zama\(^{\dagger}\) & 9305 & 13879 & 1.642 & [1.550, 1.740] & +64.2\% & $<0.001$ \\
+& Fhenix & 9334 & 23935 & 2.964 & [2.695, 3.273] & +196.4\% & $<0.001$ \\
+\hline
+\multirow{2}{*}{max}
+& Zama & \multirow{2}{*}{9780} & 14434 & 1.525 & [1.474, 1.578] & +52.5\% & $<0.001$ \\
+& Fhenix &  & 10203 & 1.043 & [1.007, 1.073] & +4.3\% & 0.0214 \\
+\hline
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Full client lifecycle includes preparation and signing, excluding intentional barrier waiting. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests.}
+\parbox{\textwidth}{\scriptsize \(^{\dagger}\)Comparisons involving Zama \texttt{mean} use 49 successful pairs; all others use 50. The historical failed decryption remains excluded from both sides of its pair. Baseline means differ for the two \texttt{mean} rows because their matched round sets differ.}
+\end{table*}

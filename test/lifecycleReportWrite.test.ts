@@ -2,9 +2,24 @@ import { strict as assert } from "node:assert";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { writeLifecycleJson } from "../tasks/lib/lifecycleReportWrite";
+import { writeLifecycleJson, writeLifecycleText } from "../tasks/lib/lifecycleReportWrite";
 
 describe("Windows report replacement", () => {
+  it("publishes a multiline stages journal atomically while its old copy remains readable", () => {
+    const folder=fs.mkdtempSync(path.join(os.tmpdir(),"journal-sharing-")),file=path.join(folder,"stages.jsonl");
+    try {
+      fs.writeFileSync(file,'{"old":true}\n');let calls=0;
+      const next='{"stage":"first"}\n{"stage":"second"}\n';
+      writeLifecycleText(file,next,(from,to)=>{
+        if(++calls===1){assert.equal(fs.readFileSync(file,"utf8"),'{"old":true}\n');throw Object.assign(Error("sharing conflict"),{code:"EBUSY"});}
+        fs.renameSync(from,to);
+      },()=>{});
+      assert.equal(calls,2);assert.equal(fs.readFileSync(file,"utf8"),next);
+    }finally{
+      const target=path.resolve(folder);assert(target.startsWith(path.resolve(os.tmpdir())+path.sep)&&path.basename(target).startsWith("journal-sharing-"));
+      fs.rmSync(target,{recursive:true,force:true});
+    }
+  });
   it("retries transient sharing failures while preserving a readable old report", () => {
     const folder = fs.mkdtempSync(path.join(os.tmpdir(), "report-sharing-")), file = path.join(folder, "report.json");
     try {

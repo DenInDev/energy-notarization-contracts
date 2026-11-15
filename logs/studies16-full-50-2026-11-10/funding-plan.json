@@ -1,0 +1,50 @@
+{
+  "status": "awaiting_user_authorization",
+  "chainId": 11155111,
+  "donor": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+  "donorAccountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\isolated-validation\\accounts.secret.json",
+  "donorIndex": 2,
+  "donorBalanceWei": "96898537212859622",
+  "donorLatest": 1634,
+  "donorPending": 1634,
+  "amountPerAccountWei": "1000000000000000",
+  "totalAmountEth": "0.006",
+  "gasLimitPerTransfer": 21000,
+  "feeQuote": {
+    "maxFeePerGasWei": "92",
+    "maxPriorityFeePerGasWei": "50"
+  },
+  "recipients": [
+    {
+      "address": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "valueWei": "1000000000000000",
+      "nonce": 1634
+    },
+    {
+      "address": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+      "valueWei": "1000000000000000",
+      "nonce": 1635
+    },
+    {
+      "address": "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+      "valueWei": "1000000000000000",
+      "nonce": 1636
+    },
+    {
+      "address": "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+      "valueWei": "1000000000000000",
+      "nonce": 1637
+    },
+    {
+      "address": "0x324CAA6F704fa42e92b302b637440238d905AE77",
+      "valueWei": "1000000000000000",
+      "nonce": 1638
+    },
+    {
+      "address": "0xD607F87A85c34D95D381A3908Fcc84d56e504512",
+      "valueWei": "1000000000000000",
+      "nonce": 1639
+    }
+  ],
+  "reason": "Six additional saved writer accounts are unfunded; no new account is generated, no campaign is active, and no transfer has been sent."
+}

@@ -1,0 +1,30 @@
+\begin{table*}[!t]
+\caption{Zama fhEVM performance on Sepolia (16-bit arithmetic)}
+\label{tab:zama-fhevm-sepolia-benchmark}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|r|rrr|r|}
+\hline
+\textbf{Operation} &
+\textbf{Mean Gas} &
+\multicolumn{3}{c|}{\textbf{Latency Components: Mean ms (CV\%)}} &
+\textbf{Derived total} \\
+\cline{3-5}
+& &
+\textbf{Preparation} &
+\textbf{Tx to receipt} &
+\textbf{Receipt to validation} &
+\textbf{Lifecycle ms (CV\%)} \\
+\hline
+set\_meter\_owner & 472251 & 12663 (4.15\%) & 7009 (90.62\%) & 4252 (16.72\%) & 23924 (27.23\%) \\
+notarize & 472121 & 12570 (4.53\%) & 8206 (55.39\%) & 4290 (17.28\%) & 25066 (18.62\%) \\
+add & 327901 & 145 (23.75\%) & 8873 (67.72\%) & 4337 (16.28\%) & 13356 (44.45\%) \\
+mul\_scalar & 323958 & 156 (43.41\%) & 8189 (68.26\%) & 4430 (11.35\%) & 12774 (43.67\%) \\
+mean & 343705 & 147 (18.05\%) & 8551 (58.85\%) & 4401 (13.80\%) & 13100 (37.53\%) \\
+max & 329941 & 147 (19.25\%) & 7134 (46.06\%) & 4498 (15.34\%) & 11779 (27.57\%) \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Preparation includes input encryption/proof generation, transaction preparation and signing. Lifecycle is preparation plus transaction-to-validated-plaintext time; intentional barrier waiting is excluded. Means and CVs are calculated per observation.}
+\end{table*}

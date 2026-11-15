@@ -1,0 +1,18 @@
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals (concurrency, 16-bit arithmetic)}
+\label{tab:sepolia-concurrency-deployments}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} & \textbf{Observed interval (UTC)} & \textbf{Contract} & \textbf{Containing block range} & \textbf{Mean gas/target} \\
+\hline
+Plaintext baseline & \shortstack[l]{2026-11-15 00:01:12 \\ -- 2026-11-15 01:48:48} & \texttt{0x54FF...f415} & 12136537--12137070 & 74.7\% \\
+\hline
+Zama fhEVM & \shortstack[l]{2026-11-15 00:03:24 \\ -- 2026-11-15 01:53:12} & \texttt{0x503e...3715} & 12136548--12137092 & 73.1\% \\
+\hline
+Fhenix CoFHE & \shortstack[l]{2026-11-15 00:05:36 \\ -- 2026-11-15 01:51:12} & \texttt{0xB378...cC4B} & 12136559--12137082 & 72.4\% \\
+\hline
+\end{tabular}
+\end{table*}

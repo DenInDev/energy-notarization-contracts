@@ -1,0 +1,40 @@
+{
+  "status": "failed",
+  "startedAt": "2026-11-10T16:51:17.354Z",
+  "chainId": 11155111,
+  "donor": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+  "authorization": "User explicitly approved 0.001 Sepolia ETH to each of six additional study writers, 0.006 total plus gas.",
+  "originalFundingReport": {
+    "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-full-50-2026-11-10\\funding-report.json",
+    "sha256": "7ec1895bc4a5e39a57f6707d8109ec58fa40d013abbb1a011533b8d44797eba1"
+  },
+  "failedReceipt": {
+    "type": "0x2",
+    "status": "0x0",
+    "cumulativeGasUsed": "0x4797fc2",
+    "logs": [],
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "transactionHash": "0x2a8dd8d5357dc6a12f4aaf943517c6129a32dcc32f76794ee629e6d7b7b53cbd",
+    "transactionIndex": "0x69",
+    "blockHash": "0x3ec40e59b264c7300eac47e5006c6978735b70ac2d9ec4b68b1d48e75ad63226",
+    "blockNumber": "0xb8b8c2",
+    "gasUsed": "0x5208",
+    "effectiveGasPrice": "0x42",
+    "from": "0xcfa73dc59b0c10f30e2883f4a64b72df944296bd",
+    "to": "0x0c8c6bae7987981ec27a36e270837df3aa545a9e",
+    "contractAddress": null
+  },
+  "correction": "First transfer reverted at 21000 gas, moved no funds, and is retained separately. Six approved transfers use new nonces and live estimated gas limits with a 20% margin.",
+  "planSha256": "5efa5eaa81df4a95d5a481dfb807ec48d3e3751a15ba65a72d4fe1b6bd6da16e",
+  "transfers": [
+    {
+      "to": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "valueWei": "1000000000000000",
+      "nonce": 1635,
+      "gasLimit": "298643",
+      "transactionHash": "0x0900007bd645d453c9fce1535b370a19c8726e542b2e3438f2ebd0fea1bbf65c",
+      "broadcastState": "acknowledged"
+    }
+  ],
+  "error": "Funding receipt is not canonical or identity changed"
+}

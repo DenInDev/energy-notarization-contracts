@@ -17,7 +17,8 @@ import { safeError } from "./errors";
 import { contracts, type Platform, type PlatformContext } from "./types";
 
 export type ContinuationArgs = { report: string; outputDir: string; accountsFile: string;
-  platformOnly?: "fhenix"; repeatFailedMean?: boolean; resumeMissing?: boolean };
+  platformOnly?: "fhenix"; repeatFailedMean?: boolean; resumeMissing?: boolean; resumeUniformAll?: boolean;
+  retainConfirmedDecryptFailure?: boolean };
 type Args = ContinuationArgs;
 
 // Resumes a saved lifecycle campaign using its recorded execution mode.

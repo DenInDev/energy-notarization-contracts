@@ -1,0 +1,37 @@
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals: concurrency-w16-c2-shared\_sum}
+\label{tab:sepolia-concurrency-w16-c2-shared-sum}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} & \textbf{Observed interval (UTC)} & \textbf{Contract} & \textbf{Containing block range} & \textbf{Mean gas/target} \\
+\hline
+Plaintext baseline & \shortstack[l]{2026-11-15 02:17:36 \\ -- 2026-11-15 03:51:00} & \texttt{0x1d09...c67c} & 12137212--12137677 & 71.9\% \\
+\hline
+Zama fhEVM & \shortstack[l]{2026-11-15 02:16:12 \\ -- 2026-11-15 03:49:24} & \texttt{0x3f09...80d9} & 12137205--12137669 & 76.7\% \\
+\hline
+Fhenix CoFHE & \shortstack[l]{2026-11-15 02:13:36 \\ -- 2026-11-15 03:47:24} & \texttt{0x704E...9F4c} & 12137192--12137659 & 71.5\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals: concurrency-w16-c2-shared\_ordered}
+\label{tab:sepolia-concurrency-w16-c2-shared-ordered}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} & \textbf{Observed interval (UTC)} & \textbf{Contract} & \textbf{Containing block range} & \textbf{Mean gas/target} \\
+\hline
+Plaintext baseline & \shortstack[l]{2026-11-15 02:11:24 \\ -- 2026-11-15 03:56:48} & \texttt{0x1d09...c67c} & 12137181--12137706 & 74.2\% \\
+\hline
+Zama fhEVM & \shortstack[l]{2026-11-15 02:08:12 \\ -- 2026-11-15 03:53:24} & \texttt{0x3f09...80d9} & 12137166--12137689 & 77.9\% \\
+\hline
+Fhenix CoFHE & \shortstack[l]{2026-11-15 02:10:24 \\ -- 2026-11-15 03:55:36} & \texttt{0x704E...9F4c} & 12137176--12137700 & 73.2\% \\
+\hline
+\end{tabular}
+\end{table*}

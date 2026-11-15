@@ -1,0 +1,5401 @@
+{
+  "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint16-continuation1\\report.json",
+  "sha256": "0603562486a911cc8b5bac0491f80ce2429f2467334a73480936e882acad43ff",
+  "width": 16,
+  "scope": {
+    "primaryMeasured": 900,
+    "primaryWarmup": 18,
+    "viewMeasured": 150,
+    "viewWarmup": 3,
+    "deployments": 3
+  },
+  "segmentCount": 2,
+  "prefixChecks": [
+    {
+      "source": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint16\\report.json",
+      "sha256": "135f58c292fc5083eb458cfdbfd43e689fb7edab4a5b497d327fd4938e0436de",
+      "samples": 285,
+      "allPrefixesUnchanged": true
+    }
+  ],
+  "sourceAndSdkHashesUnchanged": true,
+  "workerIdsBySegment": {
+    "original": {
+      "baseline": [
+        3648
+      ],
+      "zama": [
+        14920
+      ],
+      "fhenix": [
+        31796
+      ]
+    },
+    "continuation": {
+      "baseline": [
+        9360
+      ],
+      "zama": [
+        45456
+      ],
+      "fhenix": [
+        43900
+      ]
+    }
+  },
+  "transactionNonces": {
+    "baseline": {
+      "primaryFirst": 775,
+      "primaryLast": 1080,
+      "primaryCountIncludingWarmup": 306
+    },
+    "zama": {
+      "primaryFirst": 775,
+      "primaryLast": 1080,
+      "primaryCountIncludingWarmup": 306
+    },
+    "fhenix": {
+      "primaryFirst": 1021,
+      "primaryLast": 1326,
+      "primaryCountIncludingWarmup": 306
+    }
+  },
+  "gasIncludingDeploymentsAndWarmups": {
+    "baseline": {
+      "transactions": 307,
+      "gasUsed": 16007636,
+      "costWei": "1101287682"
+    },
+    "zama": {
+      "transactions": 307,
+      "gasUsed": 125816056,
+      "costWei": "8701547511"
+    },
+    "fhenix": {
+      "transactions": 307,
+      "gasUsed": 110283131,
+      "costWei": "7627002202"
+    }
+  },
+  "broadcastStartSpreadMs": {
+    "n": 300,
+    "meanMs": 0.8966666666666666,
+    "medianMs": 0,
+    "sdMs": 2.6487812977733114,
+    "cvPct": 295.40311871077824,
+    "minMs": 0,
+    "maxMs": 16,
+    "p95NearestRankMs": 1
+  },
+  "broadcastSpreads": [
+    {
+      "run": 1,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 1,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 1,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 1,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 1,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 1,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 2,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 2,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 2,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 2,
+      "operation": "mul_scalar",
+      "spreadMs": 16
+    },
+    {
+      "run": 2,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 2,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 3,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 3,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 3,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 3,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 3,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 3,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 4,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 4,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 4,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 4,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 4,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 4,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 5,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 5,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 5,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 5,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 5,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 5,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 6,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 6,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 6,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 6,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 6,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 6,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 7,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 7,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 7,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 7,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 7,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 7,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 8,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 8,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 8,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 8,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 8,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 8,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 9,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 9,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 9,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 9,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 9,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 9,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 10,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 10,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 10,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 10,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 10,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 10,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 11,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 11,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 11,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 11,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 11,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 11,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 12,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 12,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 12,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 12,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 12,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 12,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 13,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 13,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 13,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 13,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 13,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 13,
+      "operation": "max",
+      "spreadMs": 16
+    },
+    {
+      "run": 14,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 14,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 14,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 14,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 14,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 14,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 15,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 15,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 15,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 15,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 15,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 15,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 16,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 16,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 16,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 16,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 16,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 16,
+      "operation": "max",
+      "spreadMs": 16
+    },
+    {
+      "run": 17,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 17,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 17,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 17,
+      "operation": "mul_scalar",
+      "spreadMs": 16
+    },
+    {
+      "run": 17,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 17,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 18,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 18,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 18,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 18,
+      "operation": "mul_scalar",
+      "spreadMs": 15
+    },
+    {
+      "run": 18,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 18,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 19,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 19,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 19,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 19,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 19,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 19,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 20,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 20,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 20,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 20,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 20,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 20,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 21,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 21,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 21,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 21,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 21,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 21,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 22,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 22,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 22,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 22,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 22,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 22,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 23,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 23,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 23,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 23,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 23,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 23,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 24,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 24,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 24,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 24,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 24,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 24,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 25,
+      "operation": "set_meter_owner",
+      "spreadMs": 16
+    },
+    {
+      "run": 25,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 25,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 25,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 25,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 25,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 26,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 26,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 26,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 26,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 26,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 26,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 27,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 27,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 27,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 27,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 27,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 27,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 28,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 28,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 28,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 28,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 28,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 28,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 29,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 29,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 29,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 29,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 29,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 29,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 30,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 30,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 30,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 30,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 30,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 30,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 31,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 31,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 31,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 31,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 31,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 31,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 32,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 32,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 32,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 32,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 32,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 32,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 33,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 33,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 33,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 33,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 33,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 33,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 34,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 34,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 34,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 34,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 34,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 34,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 35,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 35,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 35,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 35,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 35,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 35,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 36,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 36,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 36,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 36,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 36,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 36,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 37,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 37,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 37,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 37,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 37,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 37,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 38,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 38,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 38,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 38,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 38,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 38,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 39,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 39,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 39,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 39,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 39,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 39,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 40,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 40,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 40,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 40,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 40,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 40,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 41,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 41,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 41,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 41,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 41,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 41,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 42,
+      "operation": "set_meter_owner",
+      "spreadMs": 16
+    },
+    {
+      "run": 42,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 42,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 42,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 42,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 42,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 43,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 43,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 43,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 43,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 43,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 43,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 44,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 44,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 44,
+      "operation": "add",
+      "spreadMs": 1
+    },
+    {
+      "run": 44,
+      "operation": "mul_scalar",
+      "spreadMs": 1
+    },
+    {
+      "run": 44,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 44,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 45,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 45,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 45,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 45,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 45,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 45,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 46,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 46,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 46,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 46,
+      "operation": "mul_scalar",
+      "spreadMs": 15
+    },
+    {
+      "run": 46,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 46,
+      "operation": "max",
+      "spreadMs": 1
+    },
+    {
+      "run": 47,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 47,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 47,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 47,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 47,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 47,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 48,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 48,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 48,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 48,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 48,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 48,
+      "operation": "max",
+      "spreadMs": 0
+    },
+    {
+      "run": 49,
+      "operation": "set_meter_owner",
+      "spreadMs": 0
+    },
+    {
+      "run": 49,
+      "operation": "notarize",
+      "spreadMs": 0
+    },
+    {
+      "run": 49,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 49,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 49,
+      "operation": "mean",
+      "spreadMs": 0
+    },
+    {
+      "run": 49,
+      "operation": "max",
+      "spreadMs": 15
+    },
+    {
+      "run": 50,
+      "operation": "set_meter_owner",
+      "spreadMs": 1
+    },
+    {
+      "run": 50,
+      "operation": "notarize",
+      "spreadMs": 1
+    },
+    {
+      "run": 50,
+      "operation": "add",
+      "spreadMs": 0
+    },
+    {
+      "run": 50,
+      "operation": "mul_scalar",
+      "spreadMs": 0
+    },
+    {
+      "run": 50,
+      "operation": "mean",
+      "spreadMs": 1
+    },
+    {
+      "run": 50,
+      "operation": "max",
+      "spreadMs": 0
+    }
+  ],
+  "segmentMetrics": [
+    {
+      "segment": "original",
+      "platform": "baseline",
+      "operation": "set_meter_owner",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 157.49527333333,
+        "medianMs": 159.43020000000251,
+        "sdMs": 8.385561998246846,
+        "cvPct": 5.32432613421945,
+        "minMs": 137.78260000003502,
+        "maxMs": 167.55530000000726,
+        "p95NearestRankMs": 167.55530000000726
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 158.09281999999075,
+        "medianMs": 160.13589999999385,
+        "sdMs": 8.349460737871663,
+        "cvPct": 5.281366185935674,
+        "minMs": 138.35270000004675,
+        "maxMs": 168.06020000000717,
+        "p95NearestRankMs": 168.06020000000717
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 12179.544860000042,
+        "medianMs": 12023.132900000084,
+        "sdMs": 612.3876793131823,
+        "cvPct": 5.028001344486859,
+        "minMs": 11178.715899999952,
+        "maxMs": 13175.132600000128,
+        "p95NearestRankMs": 13175.132600000128
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 106.04008000000418,
+        "medianMs": 104.5179000000062,
+        "sdMs": 8.819125121765346,
+        "cvPct": 8.316784674026083,
+        "minMs": 93.95759999996517,
+        "maxMs": 121.5985000000801,
+        "p95NearestRankMs": 121.5985000000801
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 7107.848866666662,
+        "medianMs": 5230.682599999942,
+        "sdMs": 5030.215858707575,
+        "cvPct": 70.76987641503658,
+        "minMs": 2462.918000000005,
+        "maxMs": 17324.004399999976,
+        "p95NearestRankMs": 17324.004399999976
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 117.8389466666791,
+        "medianMs": 110.64070000010543,
+        "sdMs": 23.661902574466964,
+        "cvPct": 20.07986598980501,
+        "minMs": 92.16009999997914,
+        "maxMs": 186.621799999848,
+        "p95NearestRankMs": 186.621799999848
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 7225.68781333334,
+        "medianMs": 5341.323300000047,
+        "sdMs": 5036.250514054029,
+        "cvPct": 69.69925416319246,
+        "minMs": 2596.7243000000017,
+        "maxMs": 17510.626199999824,
+        "p95NearestRankMs": 17510.626199999824
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 7383.780633333331,
+        "medianMs": 5500.221099999966,
+        "sdMs": 5033.8145833612925,
+        "cvPct": 68.17394548040397,
+        "minMs": 2764.784500000009,
+        "maxMs": 17669.781399999745,
+        "p95NearestRankMs": 17669.781399999745
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 19563.266666666666,
+        "medianMs": 17591,
+        "sdMs": 5225.6037855744025,
+        "cvPct": 26.71130478673161,
+        "minMs": 14422,
+        "maxMs": 30209,
+        "p95NearestRankMs": 30209
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "baseline",
+      "operation": "notarize",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 161.92023333333006,
+        "medianMs": 202.69669999997132,
+        "sdMs": 54.00996688623238,
+        "cvPct": 33.35590974294553,
+        "minMs": 97.64770000003045,
+        "maxMs": 220.10080000001471,
+        "p95NearestRankMs": 220.10080000001471
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 161.96485333334033,
+        "medianMs": 202.73610000003828,
+        "sdMs": 54.0061774715866,
+        "cvPct": 33.34438080861675,
+        "minMs": 97.69209999998566,
+        "maxMs": 220.1352000000188,
+        "p95NearestRankMs": 220.1352000000188
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 12032.818293333321,
+        "medianMs": 12026.531100000022,
+        "sdMs": 626.137438850179,
+        "cvPct": 5.203580936621348,
+        "minMs": 10961.467200000014,
+        "maxMs": 13012.738099999959,
+        "p95NearestRankMs": 13012.738099999959
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 124.08515333331113,
+        "medianMs": 111.43510000000242,
+        "sdMs": 33.75899635509285,
+        "cvPct": 27.206313928960686,
+        "minMs": 98.71340000000782,
+        "maxMs": 220.47249999991618,
+        "p95NearestRankMs": 220.47249999991618
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 8935.455893333337,
+        "medianMs": 7656.255399999907,
+        "sdMs": 4355.026572124168,
+        "cvPct": 48.73871712996103,
+        "minMs": 5805.436400000006,
+        "maxMs": 19935.599600000074,
+        "p95NearestRankMs": 19935.599600000074
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 113.57073333333052,
+        "medianMs": 109.48710000002757,
+        "sdMs": 8.44088334710404,
+        "cvPct": 7.432269828116735,
+        "minMs": 103.90769999998156,
+        "maxMs": 127.60400000002119,
+        "p95NearestRankMs": 127.60400000002119
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 9049.026626666668,
+        "medianMs": 7765.469299999997,
+        "sdMs": 4354.9139722633045,
+        "cvPct": 48.1257725491686,
+        "minMs": 5914.9235000000335,
+        "maxMs": 20052.006700000027,
+        "p95NearestRankMs": 20052.006700000027
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 9210.991480000008,
+        "medianMs": 7899.455500000011,
+        "sdMs": 4343.780399951135,
+        "cvPct": 47.158662662785694,
+        "minMs": 6123.023999999976,
+        "maxMs": 20155.657000000123,
+        "p95NearestRankMs": 20155.657000000123
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 21243.8,
+        "medianMs": 19685,
+        "sdMs": 4149.578019854205,
+        "cvPct": 19.533125052270332,
+        "minMs": 18341,
+        "maxMs": 31511,
+        "p95NearestRankMs": 31511
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "baseline",
+      "operation": "add",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 175.16394666667912,
+        "medianMs": 201.39079999993555,
+        "sdMs": 53.43903364832374,
+        "cvPct": 30.50800959058847,
+        "minMs": 95.79429999995045,
+        "maxMs": 226.32400000002235,
+        "p95NearestRankMs": 226.32400000002235
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 175.18292666662407,
+        "medianMs": 201.40589999989606,
+        "sdMs": 53.43893992411861,
+        "cvPct": 30.504650733352438,
+        "minMs": 95.81259999994654,
+        "maxMs": 226.33869999996386,
+        "p95NearestRankMs": 226.33869999996386
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 322.60713999997046,
+        "medianMs": 317.596000000136,
+        "sdMs": 32.26410335185803,
+        "cvPct": 10.001050612785875,
+        "minMs": 274.9328000000096,
+        "maxMs": 390.00379999983124,
+        "p95NearestRankMs": 390.00379999983124
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 106.40060666666055,
+        "medianMs": 108.06019999994896,
+        "sdMs": 8.752224315040277,
+        "cvPct": 8.225727831101445,
+        "minMs": 88.88109999988228,
+        "maxMs": 119.42390000005253,
+        "p95NearestRankMs": 119.42390000005253
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 10729.519679999994,
+        "medianMs": 7064.794300000067,
+        "sdMs": 7265.156875514529,
+        "cvPct": 67.7118556300046,
+        "minMs": 5807.257100000046,
+        "maxMs": 29531.837099999888,
+        "p95NearestRankMs": 29531.837099999888
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 126.14727999997946,
+        "medianMs": 113.84920000005513,
+        "sdMs": 47.05716152556796,
+        "cvPct": 37.303350120252794,
+        "minMs": 100.83230000000913,
+        "maxMs": 292.77350000001024,
+        "p95NearestRankMs": 292.77350000001024
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 10855.666959999973,
+        "medianMs": 7171.651700000046,
+        "sdMs": 7255.226909815405,
+        "cvPct": 66.83354359109246,
+        "minMs": 5927.555999999982,
+        "maxMs": 29645.686299999943,
+        "p95NearestRankMs": 29645.686299999943
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 11030.849886666598,
+        "medianMs": 7397.99040000001,
+        "sdMs": 7247.288354724886,
+        "cvPct": 65.70018112099373,
+        "minMs": 6151.751699999906,
+        "maxMs": 29854.928199999966,
+        "p95NearestRankMs": 29854.928199999966
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 11353.466666666667,
+        "medianMs": 7685,
+        "sdMs": 7251.718346774947,
+        "cvPct": 63.8722828866509,
+        "minMs": 6457,
+        "maxMs": 30186,
+        "p95NearestRankMs": 30186
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "baseline",
+      "operation": "mul_scalar",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 185.10699333331237,
+        "medianMs": 207.42249999986961,
+        "sdMs": 43.64371309752481,
+        "cvPct": 23.577560367445376,
+        "minMs": 105.688700000057,
+        "maxMs": 231.79469999996945,
+        "p95NearestRankMs": 231.79469999996945
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 185.12605333331547,
+        "medianMs": 207.4360999998171,
+        "sdMs": 43.64398017364421,
+        "cvPct": 23.575277162671515,
+        "minMs": 105.70369999995455,
+        "maxMs": 231.81339999998454,
+        "p95NearestRankMs": 231.81339999998454
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 317.7058133333184,
+        "medianMs": 318.15520000015385,
+        "sdMs": 30.241532140176727,
+        "cvPct": 9.518721682454414,
+        "minMs": 275.11739999998827,
+        "maxMs": 372.75,
+        "p95NearestRankMs": 372.75
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 106.48355333329528,
+        "medianMs": 105.10019999998622,
+        "sdMs": 7.736867782060005,
+        "cvPct": 7.265786630770559,
+        "minMs": 93.23789999983273,
+        "maxMs": 117.27559999999357,
+        "p95NearestRankMs": 117.27559999999357
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 8906.798079999984,
+        "medianMs": 6931.904799999902,
+        "sdMs": 6968.653101452908,
+        "cvPct": 78.23971127290808,
+        "minMs": 5019.106199999922,
+        "maxMs": 31627.013499999885,
+        "p95NearestRankMs": 31627.013499999885
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 111.64398666667209,
+        "medianMs": 109.16200000001118,
+        "sdMs": 14.682686535230276,
+        "cvPct": 13.151345606340072,
+        "minMs": 95.49690000002738,
+        "maxMs": 157.285000000149,
+        "p95NearestRankMs": 157.285000000149
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 9018.442066666657,
+        "medianMs": 7049.400299999863,
+        "sdMs": 6968.770696645795,
+        "cvPct": 77.27244512002007,
+        "minMs": 5133.180999999982,
+        "maxMs": 31742.660299999872,
+        "p95NearestRankMs": 31742.660299999872
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 9203.568119999973,
+        "medianMs": 7257.975999999791,
+        "sdMs": 6950.756632497377,
+        "cvPct": 75.52241198055475,
+        "minMs": 5346.819999999949,
+        "maxMs": 31854.07399999979,
+        "p95NearestRankMs": 31854.07399999979
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 9521.4,
+        "medianMs": 7608,
+        "sdMs": 6957.37969764069,
+        "cvPct": 73.07097378159399,
+        "minMs": 5651,
+        "maxMs": 32192,
+        "p95NearestRankMs": 32192
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "baseline",
+      "operation": "mean",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 184.28764666667752,
+        "medianMs": 201.15609999990556,
+        "sdMs": 55.15814899518554,
+        "cvPct": 29.930464680006747,
+        "minMs": 95.57709999999497,
+        "maxMs": 271.71240000007674,
+        "p95NearestRankMs": 271.71240000007674
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 184.30750666666427,
+        "medianMs": 201.1716000000015,
+        "sdMs": 55.15650383034325,
+        "cvPct": 29.926346912227757,
+        "minMs": 95.6197000000102,
+        "maxMs": 271.73120000003837,
+        "p95NearestRankMs": 271.73120000003837
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 328.2519599999844,
+        "medianMs": 324.96890000009444,
+        "sdMs": 34.14235813988872,
+        "cvPct": 10.401265582661058,
+        "minMs": 273.25110000005225,
+        "maxMs": 404.3274000000674,
+        "p95NearestRankMs": 404.3274000000674
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 113.09194666665668,
+        "medianMs": 110.26989999995567,
+        "sdMs": 17.4236459298468,
+        "cvPct": 15.406619519251654,
+        "minMs": 92.95109999994747,
+        "maxMs": 154.86309999995865,
+        "p95NearestRankMs": 154.86309999995865
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 8053.885900000021,
+        "medianMs": 6851.930099999998,
+        "sdMs": 4150.979111976809,
+        "cvPct": 51.54007846047084,
+        "minMs": 4636.752599999949,
+        "maxMs": 18106.440100000007,
+        "p95NearestRankMs": 18106.440100000007
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 138.2065799999827,
+        "medianMs": 111.5058999999892,
+        "sdMs": 65.23434845722466,
+        "cvPct": 47.20060973741831,
+        "minMs": 100.48270000005141,
+        "maxMs": 298.11659999995027,
+        "p95NearestRankMs": 298.11659999995027
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 8192.092480000003,
+        "medianMs": 6952.412800000049,
+        "sdMs": 4174.339023197631,
+        "cvPct": 50.95571166205425,
+        "minMs": 4746.556999999972,
+        "maxMs": 18402.93200000003,
+        "p95NearestRankMs": 18402.93200000003
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 8376.399986666667,
+        "medianMs": 7143.726400000043,
+        "sdMs": 4164.778901497905,
+        "cvPct": 49.72039191212562,
+        "minMs": 4967.782399999967,
+        "maxMs": 18626.84079999989,
+        "p95NearestRankMs": 18626.84079999989
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 8704.733333333334,
+        "medianMs": 7450,
+        "sdMs": 4181.554247383325,
+        "cvPct": 48.03770646678808,
+        "minMs": 5241,
+        "maxMs": 18958,
+        "p95NearestRankMs": 18958
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "baseline",
+      "operation": "max",
+      "n": 14,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 14,
+        "meanMs": 164.58005714283667,
+        "medianMs": 191.41789999988396,
+        "sdMs": 60.83343305235694,
+        "cvPct": 36.96282168595948,
+        "minMs": 90.24750000005588,
+        "maxMs": 236.6378000000259,
+        "p95NearestRankMs": 236.6378000000259
+      },
+      "preparationMs": {
+        "n": 14,
+        "meanMs": 164.59752142859466,
+        "medianMs": 191.43390000006184,
+        "sdMs": 60.83452797985681,
+        "cvPct": 36.95956503588537,
+        "minMs": 90.26520000002347,
+        "maxMs": 236.65529999998398,
+        "p95NearestRankMs": 236.65529999998398
+      },
+      "barrierWaitMs": {
+        "n": 14,
+        "meanMs": 326.28339999999196,
+        "medianMs": 321.95725000003586,
+        "sdMs": 33.845460292887964,
+        "cvPct": 10.373025502642426,
+        "minMs": 274.0591999999597,
+        "maxMs": 377.2046000000555,
+        "p95NearestRankMs": 377.2046000000555
+      },
+      "broadcastAckMs": {
+        "n": 14,
+        "meanMs": 112.32529285713515,
+        "medianMs": 107.64124999998603,
+        "sdMs": 21.383579299330552,
+        "cvPct": 19.037189893222006,
+        "minMs": 90.63179999985732,
+        "maxMs": 179.48910000000615,
+        "p95NearestRankMs": 179.48910000000615
+      },
+      "confirmationMs": {
+        "n": 14,
+        "meanMs": 8021.862871428554,
+        "medianMs": 6632.326449999993,
+        "sdMs": 3774.2735734904827,
+        "cvPct": 47.049839095770416,
+        "minMs": 5791.556199999992,
+        "maxMs": 18205.985999999975,
+        "p95NearestRankMs": 18205.985999999975
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 14,
+        "meanMs": 148.8349642856982,
+        "medianMs": 111.60899999993853,
+        "sdMs": 72.68579215330624,
+        "cvPct": 48.83650323843343,
+        "minMs": 105.03579999995418,
+        "maxMs": 301.27720000001136,
+        "p95NearestRankMs": 301.27720000001136
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 14,
+        "meanMs": 8170.6978357142525,
+        "medianMs": 6836.592249999987,
+        "sdMs": 3792.053617544248,
+        "cvPct": 46.410400846903435,
+        "minMs": 5899.674899999984,
+        "maxMs": 18335.810300000012,
+        "p95NearestRankMs": 18335.810300000012
+      },
+      "clientLifecycleMs": {
+        "n": 14,
+        "meanMs": 8335.295357142848,
+        "medianMs": 7010.647149999975,
+        "sdMs": 3807.1896970187236,
+        "cvPct": 45.675522388732034,
+        "minMs": 5996.940500000026,
+        "maxMs": 18556.913100000005,
+        "p95NearestRankMs": 18556.913100000005
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 14,
+        "meanMs": 8661.5,
+        "medianMs": 7310,
+        "sdMs": 3800.4719089567325,
+        "cvPct": 43.87775684300332,
+        "minMs": 6323,
+        "maxMs": 18831,
+        "p95NearestRankMs": 18831
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "zama",
+      "operation": "set_meter_owner",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 15,
+        "meanMs": 11822.905120000021,
+        "medianMs": 11647.203800000018,
+        "sdMs": 606.1864149921222,
+        "cvPct": 5.12722049986409,
+        "minMs": 10833.02780000004,
+        "maxMs": 12807.556100000162,
+        "p95NearestRankMs": 12807.556100000162
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 220.82830666665103,
+        "medianMs": 223.8582999999635,
+        "sdMs": 9.533655819053047,
+        "cvPct": 4.31722543317079,
+        "minMs": 202.50370000000112,
+        "maxMs": 233.93539999995846,
+        "p95NearestRankMs": 233.93539999995846
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 12044.109193333334,
+        "medianMs": 11877.053400000033,
+        "sdMs": 608.3329579052303,
+        "cvPct": 5.050875478959916,
+        "minMs": 11035.957900000038,
+        "maxMs": 13031.769300000044,
+        "p95NearestRankMs": 13031.769300000044
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 293.55148666664417,
+        "medianMs": 297.2400000001071,
+        "sdMs": 16.579399592195333,
+        "cvPct": 5.647867697915231,
+        "minMs": 265.14989999998943,
+        "maxMs": 324.2952000000514,
+        "p95NearestRankMs": 324.2952000000514
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 108.33502666665979,
+        "medianMs": 106.11259999999311,
+        "sdMs": 9.122607420692779,
+        "cvPct": 8.420736765739193,
+        "minMs": 92.7261999999173,
+        "maxMs": 124.38780000002589,
+        "p95NearestRankMs": 124.38780000002589
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 7036.235646666647,
+        "medianMs": 5186.623099999968,
+        "sdMs": 4979.923668313652,
+        "cvPct": 70.7753963679833,
+        "minMs": 2420.7606000000087,
+        "maxMs": 17075.900900000008,
+        "p95NearestRankMs": 17075.900900000008
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 4178.384580000021,
+        "medianMs": 4608.728300000017,
+        "sdMs": 785.4871218418335,
+        "cvPct": 18.798823009293933,
+        "minMs": 2526.8993000000482,
+        "maxMs": 4833.90550000011,
+        "p95NearestRankMs": 4833.90550000011
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 11214.620226666668,
+        "medianMs": 8980.618800000055,
+        "sdMs": 4958.044172740401,
+        "cvPct": 44.210540103274504,
+        "minMs": 6985.227099999989,
+        "maxMs": 20969.539899999974,
+        "p95NearestRankMs": 20969.539899999974
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 23258.72942,
+        "medianMs": 21390.88819999993,
+        "sdMs": 5188.594643248619,
+        "cvPct": 22.308160302114295,
+        "minMs": 18545.525800000003,
+        "maxMs": 33513.62780000013,
+        "p95NearestRankMs": 33513.62780000013
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 23552.333333333332,
+        "medianMs": 21688,
+        "sdMs": 5195.2885065862,
+        "cvPct": 22.058487509742278,
+        "minMs": 18810,
+        "maxMs": 33817,
+        "p95NearestRankMs": 33817
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "zama",
+      "operation": "notarize",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 15,
+        "meanMs": 11719.25951333331,
+        "medianMs": 11661.253999999957,
+        "sdMs": 648.4957952187635,
+        "cvPct": 5.53359019382541,
+        "minMs": 10627.451700000005,
+        "maxMs": 12750.721900000004,
+        "p95NearestRankMs": 12750.721900000004
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 178.55325333332488,
+        "medianMs": 174.04889999999432,
+        "sdMs": 24.199402439272607,
+        "cvPct": 13.553044812965092,
+        "minMs": 150.93949999986216,
+        "maxMs": 229.86960000003455,
+        "p95NearestRankMs": 229.86960000003455
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 11897.831480000003,
+        "medianMs": 11819.287299999967,
+        "sdMs": 650.8603880365641,
+        "cvPct": 5.4704118908613415,
+        "minMs": 10797.597500000003,
+        "maxMs": 12926.902100000065,
+        "p95NearestRankMs": 12926.902100000065
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 296.9602266666596,
+        "medianMs": 297.2874999999767,
+        "sdMs": 15.953825779793725,
+        "cvPct": 5.372377964171624,
+        "minMs": 275.45799999998417,
+        "maxMs": 319.9605000000447,
+        "p95NearestRankMs": 319.9605000000447
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 110.97955333331872,
+        "medianMs": 108.03070000000298,
+        "sdMs": 11.388068489172365,
+        "cvPct": 10.261411356530838,
+        "minMs": 94.9759999999078,
+        "maxMs": 132.86139999999432,
+        "p95NearestRankMs": 132.86139999999432
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 8988.068386666691,
+        "medianMs": 7933.34580000001,
+        "sdMs": 4334.977323441459,
+        "cvPct": 48.23035536614476,
+        "minMs": 5733.613099999959,
+        "maxMs": 19946.012899999972,
+        "p95NearestRankMs": 19946.012899999972
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 4268.185299999981,
+        "medianMs": 4610.430300000007,
+        "sdMs": 772.2298436476016,
+        "cvPct": 18.092697232418775,
+        "minMs": 2628.3893999999855,
+        "maxMs": 5061.966899999883,
+        "p95NearestRankMs": 5061.966899999883
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 13256.253686666672,
+        "medianMs": 11997.633900000015,
+        "sdMs": 4534.106057175443,
+        "cvPct": 34.20352510103146,
+        "minMs": 9379.11139999982,
+        "maxMs": 24534.447399999946,
+        "p95NearestRankMs": 24534.447399999946
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 25154.085166666675,
+        "medianMs": 23561.152500000084,
+        "sdMs": 4326.0651844257245,
+        "cvPct": 17.198260862050656,
+        "minMs": 21450.571099999826,
+        "maxMs": 35693.83529999992,
+        "p95NearestRankMs": 35693.83529999992
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 25451.133333333335,
+        "medianMs": 23877,
+        "sdMs": 4321.753378741858,
+        "cvPct": 16.980593053126086,
+        "minMs": 21770,
+        "maxMs": 35993,
+        "p95NearestRankMs": 35993
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "zama",
+      "operation": "add",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 144.64779333332552,
+        "medianMs": 152.95279999997,
+        "sdMs": 38.898155033638965,
+        "cvPct": 26.89163390415662,
+        "minMs": 97.2778999999864,
+        "maxMs": 238.9724999999744,
+        "p95NearestRankMs": 238.9724999999744
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 144.6679733333236,
+        "medianMs": 152.98279999999795,
+        "sdMs": 38.896644149006754,
+        "cvPct": 26.886838360130046,
+        "minMs": 97.3131000000285,
+        "maxMs": 238.99060000001919,
+        "p95NearestRankMs": 238.99060000001919
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 353.14130000000006,
+        "medianMs": 359.19409999996424,
+        "sdMs": 38.04807461983333,
+        "cvPct": 10.774178670077196,
+        "minMs": 296.34289999998873,
+        "maxMs": 432.2222999999067,
+        "p95NearestRankMs": 432.2222999999067
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 106.58989999999564,
+        "medianMs": 107.4417999999132,
+        "sdMs": 5.3568635193919905,
+        "cvPct": 5.025676465961793,
+        "minMs": 97.50840000016615,
+        "maxMs": 115.23749999998836,
+        "p95NearestRankMs": 115.23749999998836
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 10730.557446666679,
+        "medianMs": 7131.546900000074,
+        "sdMs": 7295.772793422986,
+        "cvPct": 67.99062238550647,
+        "minMs": 5756.099300000002,
+        "maxMs": 29731.39910000004,
+        "p95NearestRankMs": 29731.39910000004
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 4614.24713999998,
+        "medianMs": 4748.7349000000395,
+        "sdMs": 595.0474205807714,
+        "cvPct": 12.895872339009001,
+        "minMs": 3265.960699999938,
+        "maxMs": 5934.058799999999,
+        "p95NearestRankMs": 5934.058799999999
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 15344.80458666666,
+        "medianMs": 12336.485800000024,
+        "sdMs": 7202.187667754876,
+        "cvPct": 46.93567537518835,
+        "minMs": 10231.002300000051,
+        "maxMs": 34383.20359999989,
+        "p95NearestRankMs": 34383.20359999989
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 15489.472559999984,
+        "medianMs": 12575.476400000043,
+        "sdMs": 7194.966542662412,
+        "cvPct": 46.45068781259018,
+        "minMs": 10394.700399999972,
+        "maxMs": 34531.79489999986,
+        "p95NearestRankMs": 34531.79489999986
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 15842.6,
+        "medianMs": 12872,
+        "sdMs": 7198.785867868871,
+        "cvPct": 45.43942198798727,
+        "minMs": 10728,
+        "maxMs": 34924,
+        "p95NearestRankMs": 34924
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "zama",
+      "operation": "mul_scalar",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 150.69573999997036,
+        "medianMs": 163.16319999995176,
+        "sdMs": 27.459210058419558,
+        "cvPct": 18.22162329102665,
+        "minMs": 98.5386999999173,
+        "maxMs": 177.92859999998473,
+        "p95NearestRankMs": 177.92859999998473
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 150.71366000002212,
+        "medianMs": 163.1819999999716,
+        "sdMs": 27.458597013707312,
+        "cvPct": 18.219049961166945,
+        "minMs": 98.55590000003576,
+        "maxMs": 177.9433999999892,
+        "p95NearestRankMs": 177.9433999999892
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 352.14194666667805,
+        "medianMs": 355.66579999995884,
+        "sdMs": 30.777756278415506,
+        "cvPct": 8.740156226701492,
+        "minMs": 275.4296000000322,
+        "maxMs": 393.8885999999475,
+        "p95NearestRankMs": 393.8885999999475
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 105.14464000000346,
+        "medianMs": 103.24230000004172,
+        "sdMs": 7.208235924632681,
+        "cvPct": 6.855542921286756,
+        "minMs": 93.03710000001593,
+        "maxMs": 116.65109999990091,
+        "p95NearestRankMs": 116.65109999990091
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 8894.862846666669,
+        "medianMs": 6889.461399999971,
+        "sdMs": 6954.749136180714,
+        "cvPct": 78.1883796981422,
+        "minMs": 5285.389000000083,
+        "maxMs": 31641.457200000063,
+        "p95NearestRankMs": 31641.457200000063
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 4640.646633333315,
+        "medianMs": 4676.229300000006,
+        "sdMs": 289.7534910434702,
+        "cvPct": 6.2438171646640575,
+        "minMs": 3648.7643999999855,
+        "maxMs": 4894.6305999998,
+        "p95NearestRankMs": 4894.6305999998
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 13535.509479999984,
+        "medianMs": 11605.019700000004,
+        "sdMs": 6960.349803273877,
+        "cvPct": 51.42288743219059,
+        "minMs": 9406.012499999953,
+        "maxMs": 36260.46490000002,
+        "p95NearestRankMs": 36260.46490000002
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 13686.223140000007,
+        "medianMs": 11782.963099999994,
+        "sdMs": 6947.298492389461,
+        "cvPct": 50.761254009405675,
+        "minMs": 9563.541199999978,
+        "maxMs": 36361.143800000194,
+        "p95NearestRankMs": 36361.143800000194
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 14038.533333333333,
+        "medianMs": 12099,
+        "sdMs": 6948.933832576319,
+        "cvPct": 49.4990015522252,
+        "minMs": 9919,
+        "maxMs": 36710,
+        "p95NearestRankMs": 36710
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "zama",
+      "operation": "mean",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 158.67394000000593,
+        "medianMs": 162.35620000003837,
+        "sdMs": 24.302764195122606,
+        "cvPct": 15.316166092000802,
+        "minMs": 109.30879999999888,
+        "maxMs": 210.2957999999635,
+        "p95NearestRankMs": 210.2957999999635
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 158.6933800000193,
+        "medianMs": 162.37550000008196,
+        "sdMs": 24.303597627454486,
+        "cvPct": 15.314815039828083,
+        "minMs": 109.32310000015423,
+        "maxMs": 210.31150000006892,
+        "p95NearestRankMs": 210.31150000006892
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 353.88796666665587,
+        "medianMs": 344.89119999995455,
+        "sdMs": 41.85895187316536,
+        "cvPct": 11.828306078741107,
+        "minMs": 274.01619999998366,
+        "maxMs": 430.56409999984317,
+        "p95NearestRankMs": 430.56409999984317
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 111.26093333337728,
+        "medianMs": 107.06780000007711,
+        "sdMs": 17.312558762655545,
+        "cvPct": 15.560321349076741,
+        "minMs": 93.15359999996144,
+        "maxMs": 168.50430000014603,
+        "p95NearestRankMs": 168.50430000014603
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 8027.568060000008,
+        "medianMs": 6549.179000000004,
+        "sdMs": 4070.5091926811233,
+        "cvPct": 50.706629483015796,
+        "minMs": 4723.198299999989,
+        "maxMs": 18021.723400000017,
+        "p95NearestRankMs": 18021.723400000017
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 4302.052406666692,
+        "medianMs": 4651.180899999978,
+        "sdMs": 652.9120956033196,
+        "cvPct": 15.176758297772752,
+        "minMs": 2727.4864000000525,
+        "maxMs": 4999.808799999999,
+        "p95NearestRankMs": 4999.808799999999
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 12329.6204666667,
+        "medianMs": 11064.44809999998,
+        "sdMs": 4016.7301988987247,
+        "cvPct": 32.57789004745126,
+        "minMs": 9417.60400000005,
+        "maxMs": 22606.991000000155,
+        "p95NearestRankMs": 22606.991000000155
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 12488.313846666719,
+        "medianMs": 11236.724099999992,
+        "sdMs": 4016.648124260962,
+        "cvPct": 32.163254171683505,
+        "minMs": 9567.426299999934,
+        "maxMs": 22763.53960000025,
+        "p95NearestRankMs": 22763.53960000025
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 12842.466666666667,
+        "medianMs": 11530,
+        "sdMs": 4022.1048126334954,
+        "cvPct": 31.318787247259056,
+        "minMs": 9947,
+        "maxMs": 23162,
+        "p95NearestRankMs": 23162
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "zama",
+      "operation": "max",
+      "n": 14,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 14,
+        "meanMs": 148.9783642857718,
+        "medianMs": 157.204400000046,
+        "sdMs": 37.03463052764183,
+        "cvPct": 24.85906641893425,
+        "minMs": 99.88280000002123,
+        "maxMs": 233.18350000004284,
+        "p95NearestRankMs": 233.18350000004284
+      },
+      "preparationMs": {
+        "n": 14,
+        "meanMs": 148.99542857141725,
+        "medianMs": 157.22325000002456,
+        "sdMs": 37.0339414445747,
+        "cvPct": 24.855756850837476,
+        "minMs": 99.89910000003874,
+        "maxMs": 233.1991000000853,
+        "p95NearestRankMs": 233.1991000000853
+      },
+      "barrierWaitMs": {
+        "n": 14,
+        "meanMs": 341.9000142857154,
+        "medianMs": 346.7888499999681,
+        "sdMs": 26.07162507585099,
+        "cvPct": 7.625511549134869,
+        "minMs": 296.94980000006035,
+        "maxMs": 383.24259999999776,
+        "p95NearestRankMs": 383.24259999999776
+      },
+      "broadcastAckMs": {
+        "n": 14,
+        "meanMs": 101.71979285714873,
+        "medianMs": 101.57185000006575,
+        "sdMs": 7.371285676862521,
+        "cvPct": 7.246658167318984,
+        "minMs": 92.8017000000109,
+        "maxMs": 115.2249999998603,
+        "p95NearestRankMs": 115.2249999998603
+      },
+      "confirmationMs": {
+        "n": 14,
+        "meanMs": 8035.797621428569,
+        "medianMs": 6703.329349999985,
+        "sdMs": 3727.980347389986,
+        "cvPct": 46.392163205414846,
+        "minMs": 5754.747600000119,
+        "maxMs": 18140.463500000013,
+        "p95NearestRankMs": 18140.463500000013
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 14,
+        "meanMs": 4353.611250000006,
+        "medianMs": 4637.258700000006,
+        "sdMs": 727.5944441196788,
+        "cvPct": 16.712434857836186,
+        "minMs": 2675.11950000003,
+        "maxMs": 5741.632700000075,
+        "p95NearestRankMs": 5741.632700000075
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 14,
+        "meanMs": 12389.408871428575,
+        "medianMs": 11039.523749999993,
+        "sdMs": 3659.727373627245,
+        "cvPct": 29.53916051690734,
+        "minMs": 9592.655200000037,
+        "maxMs": 22155.02000000002,
+        "p95NearestRankMs": 22155.02000000002
+      },
+      "clientLifecycleMs": {
+        "n": 14,
+        "meanMs": 12538.404299999993,
+        "medianMs": 11197.938050000055,
+        "sdMs": 3678.1450410352886,
+        "cvPct": 29.335033015607024,
+        "minMs": 9699.632199999993,
+        "maxMs": 22322.56970000005,
+        "p95NearestRankMs": 22322.56970000005
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 14,
+        "meanMs": 12880.357142857143,
+        "medianMs": 11530,
+        "sdMs": 3668.5663434758158,
+        "cvPct": 28.481868187251585,
+        "minMs": 10016,
+        "maxMs": 22650,
+        "p95NearestRankMs": 22650
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "fhenix",
+      "operation": "set_meter_owner",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 15,
+        "meanMs": 11118.846053333318,
+        "medianMs": 11042.036599999992,
+        "sdMs": 588.0008238128715,
+        "cvPct": 5.288325973688563,
+        "minMs": 10114.128099999856,
+        "maxMs": 12065.310099999886,
+        "p95NearestRankMs": 12065.310099999886
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 230.71505333335566,
+        "medianMs": 223.32600000000093,
+        "sdMs": 28.26118793270133,
+        "cvPct": 12.249390546644259,
+        "minMs": 207.2957999999635,
+        "maxMs": 306.3943999999901,
+        "p95NearestRankMs": 306.3943999999901
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 11349.979786666683,
+        "medianMs": 11252.987500000047,
+        "sdMs": 593.0008255174563,
+        "cvPct": 5.224686181503867,
+        "minMs": 10321.789900000207,
+        "maxMs": 12293.678000000073,
+        "p95NearestRankMs": 12293.678000000073
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 987.6406000000289,
+        "medianMs": 996.7595999999903,
+        "sdMs": 61.78545021891106,
+        "cvPct": 6.255863744251629,
+        "minMs": 870.7541999999958,
+        "maxMs": 1099.19150000019,
+        "p95NearestRankMs": 1099.19150000019
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 107.35193999999902,
+        "medianMs": 105.80810000002384,
+        "sdMs": 6.857226110639334,
+        "cvPct": 6.387612660413399,
+        "minMs": 98.99910000001546,
+        "maxMs": 120.66149999992922,
+        "p95NearestRankMs": 120.66149999992922
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 7102.790640000025,
+        "medianMs": 5200.22080000001,
+        "sdMs": 4927.524909451259,
+        "cvPct": 69.37449179061319,
+        "minMs": 2410.4370000000054,
+        "maxMs": 17092.128800000064,
+        "p95NearestRankMs": 17092.128800000064
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 317.12851333331395,
+        "medianMs": 289.9307999999728,
+        "sdMs": 84.78385977664004,
+        "cvPct": 26.734858649411013,
+        "minMs": 247.79869999998482,
+        "maxMs": 560.716999999946,
+        "p95NearestRankMs": 560.716999999946
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 7419.919153333339,
+        "medianMs": 5477.256999999983,
+        "sdMs": 4908.50463136725,
+        "cvPct": 66.15307431162702,
+        "minMs": 2658.23569999999,
+        "maxMs": 17360.199100000085,
+        "p95NearestRankMs": 17360.199100000085
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 18769.89894000002,
+        "medianMs": 16863.834900000016,
+        "sdMs": 5075.533348354773,
+        "cvPct": 27.040813403307368,
+        "minMs": 13511.53059999997,
+        "maxMs": 28959.58510000026,
+        "p95NearestRankMs": 28959.58510000026
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 19757.666666666668,
+        "medianMs": 17820,
+        "sdMs": 5101.764564017695,
+        "cvPct": 25.821695699649222,
+        "minMs": 14483,
+        "maxMs": 30059,
+        "p95NearestRankMs": 30059
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "fhenix",
+      "operation": "notarize",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 15,
+        "meanMs": 10600.237186666685,
+        "medianMs": 10393.371000000043,
+        "sdMs": 631.9844451806694,
+        "cvPct": 5.961984001410832,
+        "minMs": 9552.10089999999,
+        "maxMs": 11602.908599999966,
+        "p95NearestRankMs": 11602.908599999966
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 224.01502666663146,
+        "medianMs": 220.33769999991637,
+        "sdMs": 20.95063248727428,
+        "cvPct": 9.352333546111627,
+        "minMs": 201.4255000000121,
+        "maxMs": 287.9570999999996,
+        "p95NearestRankMs": 287.9570999999996
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 10824.278066666671,
+        "medianMs": 10602.854100000113,
+        "sdMs": 626.6345165642292,
+        "cvPct": 5.789157602057067,
+        "minMs": 9776.708099999989,
+        "maxMs": 11811.721999999834,
+        "p95NearestRankMs": 11811.721999999834
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 1370.485586666663,
+        "medianMs": 1386.3686999999918,
+        "sdMs": 76.16376241152385,
+        "cvPct": 5.5574289253761275,
+        "minMs": 1229.2206000000006,
+        "maxMs": 1529.4950000001118,
+        "p95NearestRankMs": 1529.4950000001118
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 114.52452000000048,
+        "medianMs": 110.53879999998026,
+        "sdMs": 14.246840642263576,
+        "cvPct": 12.439991577579645,
+        "minMs": 99.55590000003576,
+        "maxMs": 155.23930000001565,
+        "p95NearestRankMs": 155.23930000001565
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 9000.883600000008,
+        "medianMs": 7903.462999999989,
+        "sdMs": 4347.968623013782,
+        "cvPct": 48.306019900243776,
+        "minMs": 5822.401899999939,
+        "maxMs": 19881.142200000002,
+        "p95NearestRankMs": 19881.142200000002
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 280.93188000002215,
+        "medianMs": 264.39260000002105,
+        "sdMs": 45.52607551933455,
+        "cvPct": 16.205378869543377,
+        "minMs": 248.9100000000326,
+        "maxMs": 434.68680000002496,
+        "p95NearestRankMs": 434.68680000002496
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 9281.81548000003,
+        "medianMs": 8165.968800000002,
+        "sdMs": 4377.959059035698,
+        "cvPct": 47.16705550190149,
+        "minMs": 6103.246199999936,
+        "maxMs": 20315.829000000027,
+        "p95NearestRankMs": 20315.829000000027
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 20106.093546666703,
+        "medianMs": 18795.983400000026,
+        "sdMs": 4196.76858637878,
+        "cvPct": 20.873117777145442,
+        "minMs": 17104.09260000009,
+        "maxMs": 30545.079400000046,
+        "p95NearestRankMs": 30545.079400000046
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 21476.6,
+        "medianMs": 20183,
+        "sdMs": 4176.023429737229,
+        "cvPct": 19.444527670754354,
+        "minMs": 18506,
+        "maxMs": 31775,
+        "p95NearestRankMs": 31775
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "fhenix",
+      "operation": "add",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 174.64200666664402,
+        "medianMs": 201.40639999997802,
+        "sdMs": 56.21312554970629,
+        "cvPct": 32.18763149979471,
+        "minMs": 91.46400000003632,
+        "maxMs": 258.6682000000146,
+        "p95NearestRankMs": 258.6682000000146
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 174.67242666662398,
+        "medianMs": 201.44030000001658,
+        "sdMs": 56.21071356820319,
+        "cvPct": 32.18064501702134,
+        "minMs": 91.49259999999776,
+        "maxMs": 258.6962999999523,
+        "p95NearestRankMs": 258.6962999999523
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 323.1129199999695,
+        "medianMs": 317.3136999999406,
+        "sdMs": 34.74937509543287,
+        "cvPct": 10.754560695200968,
+        "minMs": 267.77899999998044,
+        "maxMs": 387.0852999999188,
+        "p95NearestRankMs": 387.0852999999188
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 105.33350666665937,
+        "medianMs": 106.17379999998957,
+        "sdMs": 6.468730001146264,
+        "cvPct": 6.141189262422776,
+        "minMs": 96.49300000001676,
+        "maxMs": 118.11809999984689,
+        "p95NearestRankMs": 118.11809999984689
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 10734.968839999989,
+        "medianMs": 6916.266100000008,
+        "sdMs": 7263.384813016551,
+        "cvPct": 67.66097714184477,
+        "minMs": 5773.616299999994,
+        "maxMs": 29554.93160000001,
+        "p95NearestRankMs": 29554.93160000001
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 280.36536000000194,
+        "medianMs": 264.1809999999823,
+        "sdMs": 47.144723532594526,
+        "cvPct": 16.815459489215854,
+        "minMs": 251.03850000002421,
+        "maxMs": 437.7719999999972,
+        "p95NearestRankMs": 437.7719999999972
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 11015.33419999999,
+        "medianMs": 7184.327399999951,
+        "sdMs": 7255.303519521559,
+        "cvPct": 65.86548703644021,
+        "minMs": 6024.654800000018,
+        "maxMs": 29819.005600000033,
+        "p95NearestRankMs": 29819.005600000033
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 11190.006626666614,
+        "medianMs": 7404.901100000017,
+        "sdMs": 7251.599465137738,
+        "cvPct": 64.80424638763519,
+        "minMs": 6226.095100000035,
+        "maxMs": 30051.267699999968,
+        "p95NearestRankMs": 30051.267699999968
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 11513.066666666668,
+        "medianMs": 7723,
+        "sdMs": 7251.54542609137,
+        "cvPct": 62.98535078483031,
+        "minMs": 6547,
+        "maxMs": 30359,
+        "p95NearestRankMs": 30359
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "fhenix",
+      "operation": "mul_scalar",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 183.2863733333419,
+        "medianMs": 192.18739999993704,
+        "sdMs": 39.94235683878458,
+        "cvPct": 21.792322098130906,
+        "minMs": 109.7839999999851,
+        "maxMs": 233.91779999993742,
+        "p95NearestRankMs": 233.91779999993742
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 183.30619333334033,
+        "medianMs": 192.20570000004955,
+        "sdMs": 39.94244726347342,
+        "cvPct": 21.790015131042793,
+        "minMs": 109.80180000001565,
+        "maxMs": 233.93440000002738,
+        "p95NearestRankMs": 233.93440000002738
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 320.5792000000132,
+        "medianMs": 314.842799999984,
+        "sdMs": 31.22600371709154,
+        "cvPct": 9.740495864076726,
+        "minMs": 272.82949999999255,
+        "maxMs": 371.5283000000054,
+        "p95NearestRankMs": 371.5283000000054
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 104.8251133333135,
+        "medianMs": 105.31159999989904,
+        "sdMs": 7.080336964246231,
+        "cvPct": 6.754428150945863,
+        "minMs": 89.80239999998594,
+        "maxMs": 115.66240000003017,
+        "p95NearestRankMs": 115.66240000003017
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 8887.666453333366,
+        "medianMs": 6931.090700000059,
+        "sdMs": 7032.670948110264,
+        "cvPct": 79.12843022447838,
+        "minMs": 5192.520400000038,
+        "maxMs": 31872.96980000008,
+        "p95NearestRankMs": 31872.96980000008
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 724.6422599999757,
+        "medianMs": 270.4875999998767,
+        "sdMs": 1006.7217422662109,
+        "cvPct": 138.9267225825671,
+        "minMs": 237.4568999998737,
+        "maxMs": 3569.625399999961,
+        "p95NearestRankMs": 3569.625399999961
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 9612.308713333341,
+        "medianMs": 7291.240299999947,
+        "sdMs": 6904.244262191465,
+        "cvPct": 71.82711737726973,
+        "minMs": 5462.684200000018,
+        "maxMs": 32170.010800000047,
+        "p95NearestRankMs": 32170.010800000047
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 9795.614906666682,
+        "medianMs": 7483.445999999996,
+        "sdMs": 6889.778694322011,
+        "cvPct": 70.33533637212481,
+        "minMs": 5674.074100000085,
+        "maxMs": 32281.849200000055,
+        "p95NearestRankMs": 32281.849200000055
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 10116.333333333334,
+        "medianMs": 7850,
+        "sdMs": 6891.797968461876,
+        "cvPct": 68.12545357469975,
+        "minMs": 5982,
+        "maxMs": 32620,
+        "p95NearestRankMs": 32620
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "fhenix",
+      "operation": "mean",
+      "n": 15,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 15,
+        "meanMs": 186.74964666668092,
+        "medianMs": 179.9878000000026,
+        "sdMs": 38.7154959986871,
+        "cvPct": 20.73122851353408,
+        "minMs": 104.9152999999933,
+        "maxMs": 263.30750000011176,
+        "p95NearestRankMs": 263.30750000011176
+      },
+      "preparationMs": {
+        "n": 15,
+        "meanMs": 186.76963333334618,
+        "medianMs": 180.0065000000177,
+        "sdMs": 38.71444398025302,
+        "cvPct": 20.728446744420996,
+        "minMs": 104.9301999999443,
+        "maxMs": 263.32500000018626,
+        "p95NearestRankMs": 263.32500000018626
+      },
+      "barrierWaitMs": {
+        "n": 15,
+        "meanMs": 325.7921866666875,
+        "medianMs": 324.0834999999497,
+        "sdMs": 33.730148892163406,
+        "cvPct": 10.353271279237939,
+        "minMs": 279.9528000000864,
+        "maxMs": 384.59610000019893,
+        "p95NearestRankMs": 384.59610000019893
+      },
+      "broadcastAckMs": {
+        "n": 15,
+        "meanMs": 111.13738000000012,
+        "medianMs": 107.58340000000317,
+        "sdMs": 16.134703942826558,
+        "cvPct": 14.517801249972367,
+        "minMs": 96.71389999985695,
+        "maxMs": 163.55050000012852,
+        "p95NearestRankMs": 163.55050000012852
+      },
+      "confirmationMs": {
+        "n": 15,
+        "meanMs": 8050.387259999979,
+        "medianMs": 6409.8118999999715,
+        "sdMs": 4153.868896962796,
+        "cvPct": 51.598373628585,
+        "minMs": 4665.838000000047,
+        "maxMs": 18135.36499999999,
+        "p95NearestRankMs": 18135.36499999999
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 1374.0765400000091,
+        "medianMs": 1320.5777000000235,
+        "sdMs": 1924.6451840933664,
+        "cvPct": 140.06826607296225,
+        "minMs": 248.25070000000414,
+        "maxMs": 7875.14189999993,
+        "p95NearestRankMs": 7875.14189999993
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 15,
+        "meanMs": 9424.463799999989,
+        "medianMs": 7715.830300000031,
+        "sdMs": 4275.527120478095,
+        "cvPct": 45.36626391920674,
+        "minMs": 6116.000100000005,
+        "maxMs": 19646.248499999987,
+        "p95NearestRankMs": 19646.248499999987
+      },
+      "clientLifecycleMs": {
+        "n": 15,
+        "meanMs": 9611.233433333335,
+        "medianMs": 7899.245399999898,
+        "sdMs": 4277.658500788049,
+        "cvPct": 44.50686304166152,
+        "minMs": 6320.208899999969,
+        "maxMs": 19860.09859999991,
+        "p95NearestRankMs": 19860.09859999991
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 15,
+        "meanMs": 9937.2,
+        "medianMs": 8201,
+        "sdMs": 4288.047311172901,
+        "cvPct": 43.15146430758061,
+        "minMs": 6611,
+        "maxMs": 20201,
+        "p95NearestRankMs": 20201
+      }
+    },
+    {
+      "segment": "original",
+      "platform": "fhenix",
+      "operation": "max",
+      "n": 14,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 14,
+        "meanMs": 161.76455714285007,
+        "medianMs": 162.5638499999768,
+        "sdMs": 51.25107287751822,
+        "cvPct": 31.68251054664572,
+        "minMs": 99.04550000000745,
+        "maxMs": 233.3192000000272,
+        "p95NearestRankMs": 233.3192000000272
+      },
+      "preparationMs": {
+        "n": 14,
+        "meanMs": 161.78239285713894,
+        "medianMs": 162.5784500000882,
+        "sdMs": 51.24888502587665,
+        "cvPct": 31.677665363209023,
+        "minMs": 99.06039999995846,
+        "maxMs": 233.33360000001267,
+        "p95NearestRankMs": 233.33360000001267
+      },
+      "barrierWaitMs": {
+        "n": 14,
+        "meanMs": 330.157500000024,
+        "medianMs": 329.1533499999787,
+        "sdMs": 32.24721510691779,
+        "cvPct": 9.767221737175575,
+        "minMs": 284.1247999999905,
+        "maxMs": 379.2087000000756,
+        "p95NearestRankMs": 379.2087000000756
+      },
+      "broadcastAckMs": {
+        "n": 14,
+        "meanMs": 107.94863571430324,
+        "medianMs": 106.26509999998962,
+        "sdMs": 7.062818849191832,
+        "cvPct": 6.542758787507312,
+        "minMs": 98.83840000000782,
+        "maxMs": 121.46180000016466,
+        "p95NearestRankMs": 121.46180000016466
+      },
+      "confirmationMs": {
+        "n": 14,
+        "meanMs": 8041.3447000000115,
+        "medianMs": 6710.167350000062,
+        "sdMs": 3795.398925632332,
+        "cvPct": 47.19856028099787,
+        "minMs": 5763.156000000075,
+        "maxMs": 18255.807700000005,
+        "p95NearestRankMs": 18255.807700000005
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 14,
+        "meanMs": 435.9925857142953,
+        "medianMs": 274.7615499999956,
+        "sdMs": 391.1780928140931,
+        "cvPct": 89.72127179025723,
+        "minMs": 254.30430000007618,
+        "maxMs": 1355.4516000000294,
+        "p95NearestRankMs": 1355.4516000000294
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 14,
+        "meanMs": 8477.337285714308,
+        "medianMs": 7399.398649999988,
+        "sdMs": 3746.584051114281,
+        "cvPct": 44.195292989319704,
+        "minMs": 6023.069900000002,
+        "maxMs": 18531.852300000028,
+        "p95NearestRankMs": 18531.852300000028
+      },
+      "clientLifecycleMs": {
+        "n": 14,
+        "meanMs": 8639.119678571446,
+        "medianMs": 7499.313699999999,
+        "sdMs": 3746.219259512195,
+        "cvPct": 43.36343746694878,
+        "minMs": 6130.884300000034,
+        "maxMs": 18698.9289,
+        "p95NearestRankMs": 18698.9289
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 14,
+        "meanMs": 8969.42857142857,
+        "medianMs": 7839,
+        "sdMs": 3755.091532517206,
+        "cvPct": 41.865448870162844,
+        "minMs": 6446,
+        "maxMs": 19027,
+        "p95NearestRankMs": 19027
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "baseline",
+      "operation": "set_meter_owner",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 162.36898857139167,
+        "medianMs": 160.09659999981523,
+        "sdMs": 16.02719919039249,
+        "cvPct": 9.870849927321883,
+        "minMs": 140.13510000001406,
+        "maxMs": 237.26459999999497,
+        "p95NearestRankMs": 181.8926000003703
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 163.0322371428637,
+        "medianMs": 160.85560000000987,
+        "sdMs": 15.969944863587223,
+        "cvPct": 9.795574877374039,
+        "minMs": 141.28229999996256,
+        "maxMs": 237.8477000000421,
+        "p95NearestRankMs": 182.4588999999687
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 13162.900108571415,
+        "medianMs": 13158.047599999933,
+        "sdMs": 84.83531345834652,
+        "cvPct": 0.6445032079450597,
+        "minMs": 13035.688599999994,
+        "maxMs": 13484.521399999969,
+        "p95NearestRankMs": 13266.296700000064
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 111.0903599999737,
+        "medianMs": 105.71510000000126,
+        "sdMs": 26.61578534317187,
+        "cvPct": 23.958681332185954,
+        "minMs": 93.4039000000339,
+        "maxMs": 255.75249999994412,
+        "p95NearestRankMs": 125.97049999982119
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 6975.327448571411,
+        "medianMs": 3615.028200000059,
+        "sdMs": 6937.634150839669,
+        "cvPct": 99.45961966646509,
+        "minMs": 1950.9272000000346,
+        "maxMs": 27283.1642,
+        "p95NearestRankMs": 26678.944099999964
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 119.99981428571503,
+        "medianMs": 114.16310000000522,
+        "sdMs": 29.113301497842887,
+        "cvPct": 24.26112212851031,
+        "minMs": 89.01209999993443,
+        "maxMs": 269.18229999998584,
+        "p95NearestRankMs": 157.44549999991432
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 7095.327262857126,
+        "medianMs": 3748.277900000103,
+        "sdMs": 6932.993648953521,
+        "cvPct": 97.71210533510703,
+        "minMs": 2053.001699999906,
+        "maxMs": 27397.028399999952,
+        "p95NearestRankMs": 26795.96010000026
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 7258.35949999999,
+        "medianMs": 3900.1152000001166,
+        "sdMs": 6930.421617722216,
+        "cvPct": 95.48192835753349,
+        "minMs": 2219.809499999974,
+        "maxMs": 27551.23549999995,
+        "p95NearestRankMs": 26950.87229999993
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 20421.314285714285,
+        "medianMs": 17054,
+        "sdMs": 6918.063035490874,
+        "cvPct": 33.876678742123865,
+        "minMs": 15378,
+        "maxMs": 40611,
+        "p95NearestRankMs": 40176
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "baseline",
+      "operation": "notarize",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 184.94333999997843,
+        "medianMs": 205.32700000004843,
+        "sdMs": 65.19488582273807,
+        "cvPct": 35.25127524070111,
+        "minMs": 97.5663999998942,
+        "maxMs": 426.32949999999255,
+        "p95NearestRankMs": 237.88330000033602
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 184.99024000003618,
+        "medianMs": 205.3670999999158,
+        "sdMs": 65.1942905168966,
+        "cvPct": 35.242016290634496,
+        "minMs": 97.62309999996796,
+        "maxMs": 426.374199999962,
+        "p95NearestRankMs": 237.91890000039712
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 13085.853500000034,
+        "medianMs": 13073.349799999967,
+        "sdMs": 116.51131439035035,
+        "cvPct": 0.8903608342424898,
+        "minMs": 12906.438399999868,
+        "maxMs": 13495.295899999794,
+        "p95NearestRankMs": 13242.093500000425
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 114.19659142854756,
+        "medianMs": 108.33310000039637,
+        "sdMs": 36.07839533939647,
+        "cvPct": 31.593233114992408,
+        "minMs": 91.44249999988824,
+        "maxMs": 313.8234999999404,
+        "p95NearestRankMs": 141.37710000015795
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 7881.38716285715,
+        "medianMs": 6389.3329000000085,
+        "sdMs": 4584.94079610215,
+        "cvPct": 58.17428710658624,
+        "minMs": 3029.555999999866,
+        "maxMs": 18776.78989999974,
+        "p95NearestRankMs": 18295.507999999914
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 126.9331914286046,
+        "medianMs": 115.96879999991506,
+        "sdMs": 43.09667836995317,
+        "cvPct": 33.95225305919572,
+        "minMs": 99.19800000009127,
+        "maxMs": 305.70120000001043,
+        "p95NearestRankMs": 286.47370000043884
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 8008.320354285755,
+        "medianMs": 6512.895199999679,
+        "sdMs": 4596.745211360427,
+        "cvPct": 57.39961699834373,
+        "minMs": 3128.753999999957,
+        "maxMs": 19063.26360000018,
+        "p95NearestRankMs": 18414.181700000074
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 8193.310594285791,
+        "medianMs": 6681.896499999799,
+        "sdMs": 4595.948766984724,
+        "cvPct": 56.09391605622821,
+        "minMs": 3346.125799999805,
+        "maxMs": 19175.991800000425,
+        "p95NearestRankMs": 18635.432100000093
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 21279.17142857143,
+        "medianMs": 19724,
+        "sdMs": 4602.642677506774,
+        "cvPct": 21.62980214223393,
+        "minMs": 16364,
+        "maxMs": 32379,
+        "p95NearestRankMs": 31585
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "baseline",
+      "operation": "add",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 189.2119371428491,
+        "medianMs": 205.98860000027344,
+        "sdMs": 61.13435648767781,
+        "cvPct": 32.30998921676029,
+        "minMs": 100.00930000003427,
+        "maxMs": 384.23320000001695,
+        "p95NearestRankMs": 244.75439999997616
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 189.23131142858682,
+        "medianMs": 206.00470000039786,
+        "sdMs": 61.13487284393672,
+        "cvPct": 32.3069540566008,
+        "minMs": 100.03159999998752,
+        "maxMs": 384.24769999994896,
+        "p95NearestRankMs": 244.77419999986887
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 511.2252228571077,
+        "medianMs": 511.61309999995865,
+        "sdMs": 93.28455553668856,
+        "cvPct": 18.24725216321388,
+        "minMs": 360.622000000003,
+        "maxMs": 654.3437999999151,
+        "p95NearestRankMs": 641.6245999997482
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 116.13636285713999,
+        "medianMs": 105.48360000003595,
+        "sdMs": 64.08375856003005,
+        "cvPct": 55.1797533377723,
+        "minMs": 95.03810000000522,
+        "maxMs": 482.63550000009127,
+        "p95NearestRankMs": 121.75139999995008
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 8074.676554285688,
+        "medianMs": 6405.771100000013,
+        "sdMs": 5223.271901223977,
+        "cvPct": 64.68707280233646,
+        "minMs": 4296.021399999969,
+        "maxMs": 31179.943199999863,
+        "p95NearestRankMs": 18803.157499999972
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 126.07554571426549,
+        "medianMs": 113.45359999965876,
+        "sdMs": 49.443222436842596,
+        "cvPct": 39.21713934032814,
+        "minMs": 68.3890999997966,
+        "maxMs": 319.19390000007115,
+        "p95NearestRankMs": 268.9698999999091
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 8200.752099999954,
+        "medianMs": 6524.74860000005,
+        "sdMs": 5223.0985462973995,
+        "cvPct": 63.69048207538707,
+        "minMs": 4364.410499999765,
+        "maxMs": 31286.37369999988,
+        "p95NearestRankMs": 18926.351599999936
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 8389.98341142854,
+        "medianMs": 6716.322400000063,
+        "sdMs": 5224.785321315481,
+        "cvPct": 62.27408404882496,
+        "minMs": 4585.949599999934,
+        "maxMs": 31519.07079999987,
+        "p95NearestRankMs": 19127.779399999883
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 8901.228571428572,
+        "medianMs": 7195,
+        "sdMs": 5205.37777962094,
+        "cvPct": 58.47931819579733,
+        "minMs": 5077,
+        "maxMs": 31886,
+        "p95NearestRankMs": 19612
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "baseline",
+      "operation": "mul_scalar",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 176.17120571427554,
+        "medianMs": 206.88490000041202,
+        "sdMs": 51.91023345484729,
+        "cvPct": 29.465787694635097,
+        "minMs": 98.69079999998212,
+        "maxMs": 230.46140000014566,
+        "p95NearestRankMs": 230.33190000010654
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 176.1908685713915,
+        "medianMs": 206.9039999996312,
+        "sdMs": 51.910613951100174,
+        "cvPct": 29.462715276907954,
+        "minMs": 98.70829999999842,
+        "maxMs": 230.47910000011325,
+        "p95NearestRankMs": 230.35160000016913
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 529.5294199999829,
+        "medianMs": 509.43730000033975,
+        "sdMs": 113.57141920927704,
+        "cvPct": 21.447612714187006,
+        "minMs": 342.37950000001,
+        "maxMs": 936.372599999886,
+        "p95NearestRankMs": 682.6639999998733
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 110.54128285714667,
+        "medianMs": 108.32400000002235,
+        "sdMs": 13.311911980229986,
+        "cvPct": 12.042480090839067,
+        "minMs": 94.32920000003651,
+        "maxMs": 146.9667999999947,
+        "p95NearestRankMs": 140.34759999997914
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 7938.844180000026,
+        "medianMs": 6547.068500000052,
+        "sdMs": 4945.177663574989,
+        "cvPct": 62.29090219497132,
+        "minMs": 5193.608000000007,
+        "maxMs": 30089.969599999953,
+        "p95NearestRankMs": 20428.026599999983
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 118.52401142854775,
+        "medianMs": 111.72639999981038,
+        "sdMs": 30.631564470364474,
+        "cvPct": 25.84418473621332,
+        "minMs": 91.73789999994915,
+        "maxMs": 283.17379999998957,
+        "p95NearestRankMs": 140.94840000011027
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 8057.368191428574,
+        "medianMs": 6644.083399999887,
+        "sdMs": 4943.533549487757,
+        "cvPct": 61.35419695412065,
+        "minMs": 5312.7350999997,
+        "maxMs": 30195.380699999863,
+        "p95NearestRankMs": 20555.53490000032
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 8233.559059999965,
+        "medianMs": 6753.522099999944,
+        "sdMs": 4945.328863946471,
+        "cvPct": 60.06307634291132,
+        "minMs": 5525.16319999937,
+        "maxMs": 30405.665599999717,
+        "p95NearestRankMs": 20776.577600000426
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 8763.142857142857,
+        "medianMs": 7320,
+        "sdMs": 4926.340248470205,
+        "cvPct": 56.216591795656214,
+        "minMs": 6156,
+        "maxMs": 30861,
+        "p95NearestRankMs": 21316
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "baseline",
+      "operation": "mean",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 174.32118571426253,
+        "medianMs": 202.10149999998976,
+        "sdMs": 56.40952332305504,
+        "cvPct": 32.35953397857123,
+        "minMs": 94.71339999994962,
+        "maxMs": 243.0441999998875,
+        "p95NearestRankMs": 235.5529999998398
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 174.34460000000627,
+        "medianMs": 202.1184999999823,
+        "sdMs": 56.403062489619295,
+        "cvPct": 32.351482345663285,
+        "minMs": 94.7396000000299,
+        "maxMs": 243.05990000022575,
+        "p95NearestRankMs": 235.57409999985248
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 522.422071428572,
+        "medianMs": 509.28549999999814,
+        "sdMs": 78.62342405574127,
+        "cvPct": 15.049789883636459,
+        "minMs": 386.133600000001,
+        "maxMs": 681.5066999997944,
+        "p95NearestRankMs": 650.8224999997765
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 108.49386285715362,
+        "medianMs": 107.54099999996834,
+        "sdMs": 7.991903858393735,
+        "cvPct": 7.366226667508488,
+        "minMs": 92.38060000003316,
+        "maxMs": 126.5464000001084,
+        "p95NearestRankMs": 126.25979999965057
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 8777.951162857142,
+        "medianMs": 6850.951100000006,
+        "sdMs": 5483.326769773494,
+        "cvPct": 62.467045760923575,
+        "minMs": 3513.6706000003032,
+        "maxMs": 29420.328799999785,
+        "p95NearestRankMs": 18699.21940000006
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 140.00269714283766,
+        "medianMs": 117.5327000003308,
+        "sdMs": 70.01960077945093,
+        "cvPct": 50.01303704028892,
+        "minMs": 63.756699999794364,
+        "maxMs": 354.991199999582,
+        "p95NearestRankMs": 303.8123999997042
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 8917.95385999998,
+        "medianMs": 6969.383100000006,
+        "sdMs": 5493.333531459924,
+        "cvPct": 61.598586600670494,
+        "minMs": 3577.4273000000976,
+        "maxMs": 29554.156399999745,
+        "p95NearestRankMs": 18817.819699999993
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 9092.298459999985,
+        "medianMs": 7068.6574000000255,
+        "sdMs": 5510.684903736413,
+        "cvPct": 60.608271142656946,
+        "minMs": 3774.8729000003077,
+        "maxMs": 29777.640799999703,
+        "p95NearestRankMs": 19042.036500000046
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 9614.685714285713,
+        "medianMs": 7496,
+        "sdMs": 5509.833000412715,
+        "cvPct": 57.3064285629855,
+        "minMs": 4456,
+        "maxMs": 30286,
+        "p95NearestRankMs": 19443
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "baseline",
+      "operation": "max",
+      "n": 36,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 36,
+        "meanMs": 188.80461666665218,
+        "medianMs": 213.4581500000204,
+        "sdMs": 53.297864816637045,
+        "cvPct": 28.2291110024805,
+        "minMs": 92.40009999996983,
+        "maxMs": 287.2007999997586,
+        "p95NearestRankMs": 235.673000000068
+      },
+      "preparationMs": {
+        "n": 36,
+        "meanMs": 188.82510555549874,
+        "medianMs": 213.4753999999375,
+        "sdMs": 53.29413411754801,
+        "cvPct": 28.22407219673658,
+        "minMs": 92.41710000002058,
+        "maxMs": 287.21699999971315,
+        "p95NearestRankMs": 235.68929999996908
+      },
+      "barrierWaitMs": {
+        "n": 36,
+        "meanMs": 509.24398611108984,
+        "medianMs": 500.8066000000108,
+        "sdMs": 96.64736916120985,
+        "cvPct": 18.978598038883185,
+        "minMs": 347.3536999999924,
+        "maxMs": 680.2212000000291,
+        "p95NearestRankMs": 652.5631999997422
+      },
+      "broadcastAckMs": {
+        "n": 36,
+        "meanMs": 112.83195555559016,
+        "medianMs": 109.44975000014529,
+        "sdMs": 23.298073856092618,
+        "cvPct": 20.64847120779902,
+        "minMs": 90.85710000013933,
+        "maxMs": 216.00029999995604,
+        "p95NearestRankMs": 174.98950000002515
+      },
+      "confirmationMs": {
+        "n": 36,
+        "meanMs": 6824.412724999979,
+        "medianMs": 5904.248200000031,
+        "sdMs": 3116.3501492462424,
+        "cvPct": 45.66473738949093,
+        "minMs": 2990.636999999999,
+        "maxMs": 18680.873399999924,
+        "p95NearestRankMs": 18665.124300000258
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 36,
+        "meanMs": 125.21795555558886,
+        "medianMs": 111.98709999991115,
+        "sdMs": 50.22013859633543,
+        "cvPct": 40.10617995918394,
+        "minMs": 57.56540000000314,
+        "maxMs": 309.14680000022054,
+        "p95NearestRankMs": 305.62309999996796
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 36,
+        "meanMs": 6949.630680555568,
+        "medianMs": 6011.387250000145,
+        "sdMs": 3122.8378326287493,
+        "cvPct": 44.93530629427783,
+        "minMs": 3048.202400000002,
+        "maxMs": 18884.313200000208,
+        "p95NearestRankMs": 18782.191700000083
+      },
+      "clientLifecycleMs": {
+        "n": 36,
+        "meanMs": 7138.455786111067,
+        "medianMs": 6238.148949999828,
+        "sdMs": 3119.5927111991086,
+        "cvPct": 43.7012262129401,
+        "minMs": 3162.8938000000016,
+        "maxMs": 19082.426899999846,
+        "p95NearestRankMs": 18992.191099999938
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 36,
+        "meanMs": 7647.75,
+        "medianMs": 6796,
+        "sdMs": 3128.2841702760957,
+        "cvPct": 40.904634307817275,
+        "minMs": 3613,
+        "maxMs": 19699,
+        "p95NearestRankMs": 19424
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "zama",
+      "operation": "set_meter_owner",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 35,
+        "meanMs": 12711.063065714245,
+        "medianMs": 12710.94020000007,
+        "sdMs": 66.29403874584398,
+        "cvPct": 0.5215459824494142,
+        "minMs": 12591.469500000123,
+        "maxMs": 12957.023899999913,
+        "p95NearestRankMs": 12806.92780000018
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 216.60729428567888,
+        "medianMs": 216.03370000002906,
+        "sdMs": 12.864409769688315,
+        "cvPct": 5.939047349311196,
+        "minMs": 186.14199999999255,
+        "maxMs": 241.70269999979064,
+        "p95NearestRankMs": 238.124599999981
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 12928.05003428571,
+        "medianMs": 12931.141000000294,
+        "sdMs": 68.06470660927586,
+        "cvPct": 0.5264885766126022,
+        "minMs": 12816.22409999976,
+        "maxMs": 13173.433699999936,
+        "p95NearestRankMs": 13042.77509999997
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 398.3447885714461,
+        "medianMs": 396.4464999999618,
+        "sdMs": 39.17838010086409,
+        "cvPct": 9.835293751768804,
+        "minMs": 332.3636000000042,
+        "maxMs": 470.10069999983534,
+        "p95NearestRankMs": 458.05409999983385
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 112.75934857146036,
+        "medianMs": 108.91390000001411,
+        "sdMs": 26.033497571651566,
+        "cvPct": 23.087662266116265,
+        "minMs": 91.37939999997616,
+        "maxMs": 255.7105000000447,
+        "p95NearestRankMs": 127.21210000000428
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 6997.249625714269,
+        "medianMs": 3588.344299999997,
+        "sdMs": 6923.013327858902,
+        "cvPct": 98.93906460643399,
+        "minMs": 1894.094700000016,
+        "maxMs": 27369.10739999998,
+        "p95NearestRankMs": 26626.974299999885
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 4283.158700000005,
+        "medianMs": 4600.303499999922,
+        "sdMs": 686.272151828509,
+        "cvPct": 16.02257118860686,
+        "minMs": 2471.3276000001933,
+        "maxMs": 5873.847600000008,
+        "p95NearestRankMs": 5019.590300000273
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 11280.408325714276,
+        "medianMs": 7787.096300000092,
+        "sdMs": 7073.966913278145,
+        "cvPct": 62.710202583293636,
+        "minMs": 5425.785099999979,
+        "maxMs": 32354.295599999954,
+        "p95NearestRankMs": 30587.70200000005
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 24208.458359999986,
+        "medianMs": 20684.7413,
+        "sdMs": 7055.815338195008,
+        "cvPct": 29.146074620982233,
+        "minMs": 18387.12679999997,
+        "maxMs": 45214.63439999998,
+        "p95NearestRankMs": 43518.84300000034
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 24606.77142857143,
+        "medianMs": 21041,
+        "sdMs": 7058.351674292178,
+        "cvPct": 28.684590722440657,
+        "minMs": 18756,
+        "maxMs": 45584,
+        "p95NearestRankMs": 43967
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "zama",
+      "operation": "notarize",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 35,
+        "meanMs": 12655.246437142829,
+        "medianMs": 12644.343700000005,
+        "sdMs": 70.2638825957253,
+        "cvPct": 0.5552154432133585,
+        "minMs": 12550.300399999833,
+        "maxMs": 12796.048699999694,
+        "p95NearestRankMs": 12791.450300000142
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 202.7754685714288,
+        "medianMs": 208.76029999996535,
+        "sdMs": 36.850001222207865,
+        "cvPct": 18.17281029200396,
+        "minMs": 145.4849000000395,
+        "maxMs": 356.1983999996446,
+        "p95NearestRankMs": 232.32660000002943
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 12858.045308571449,
+        "medianMs": 12846.557100000093,
+        "sdMs": 87.52870810592924,
+        "cvPct": 0.680731059856981,
+        "minMs": 12714.61950000003,
+        "maxMs": 13152.265899999999,
+        "p95NearestRankMs": 13004.57489999989
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 412.806451428571,
+        "medianMs": 411.88020000001416,
+        "sdMs": 42.91612830960444,
+        "cvPct": 10.396186435819384,
+        "minMs": 345.98079999999027,
+        "maxMs": 496.85389999998733,
+        "p95NearestRankMs": 486.5130000002682
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 114.84030000000702,
+        "medianMs": 109.66780000017025,
+        "sdMs": 35.88482177200729,
+        "cvPct": 31.247586232363638,
+        "minMs": 92.92619999998715,
+        "maxMs": 313.54229999985546,
+        "p95NearestRankMs": 128.46340000000782
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 7870.799437142888,
+        "medianMs": 6333.406200000085,
+        "sdMs": 4653.567480474937,
+        "cvPct": 59.12445765692371,
+        "minMs": 2969.383400000166,
+        "maxMs": 18940.62369999988,
+        "p95NearestRankMs": 18790.110700000077
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 4299.530754285689,
+        "medianMs": 4663.040500000003,
+        "sdMs": 738.8609632789886,
+        "cvPct": 17.184688411462258,
+        "minMs": 2551.8364000000292,
+        "maxMs": 5727.303200000199,
+        "p95NearestRankMs": 5243.98900000006
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 12170.330191428577,
+        "medianMs": 10543.015399999975,
+        "sdMs": 4867.7437831761,
+        "cvPct": 39.99680950812983,
+        "minMs": 6601.777100000065,
+        "maxMs": 23713.72250000015,
+        "p95NearestRankMs": 23678.55790000013
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 25028.375500000027,
+        "medianMs": 23482.530899999954,
+        "sdMs": 4865.443613983883,
+        "cvPct": 19.439709996295516,
+        "minMs": 19372.463600000134,
+        "maxMs": 36615.76970000006,
+        "p95NearestRankMs": 36437.81970000011
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 25441.2,
+        "medianMs": 23838,
+        "sdMs": 4872.7593390676075,
+        "cvPct": 19.153024775040514,
+        "minMs": 19837,
+        "maxMs": 37029,
+        "p95NearestRankMs": 36850
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "zama",
+      "operation": "add",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 145.82974285715193,
+        "medianMs": 155.47949999995762,
+        "sdMs": 33.12625062466707,
+        "cvPct": 22.715702555353207,
+        "minMs": 94.75430000002962,
+        "maxMs": 206.20630000019446,
+        "p95NearestRankMs": 198.01050000003306
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 145.85143428569552,
+        "medianMs": 155.49829999997746,
+        "sdMs": 33.127039468711466,
+        "cvPct": 22.71286506776603,
+        "minMs": 94.77590000000782,
+        "maxMs": 206.22120000002906,
+        "p95NearestRankMs": 198.0273000000161
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 554.6127257142819,
+        "medianMs": 550.7816999999341,
+        "sdMs": 87.0029123315648,
+        "cvPct": 15.687146777873581,
+        "minMs": 415.05860000000393,
+        "maxMs": 708.495499999728,
+        "p95NearestRankMs": 703.6973000001162
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 107.9892914285559,
+        "medianMs": 106.5973000000231,
+        "sdMs": 11.991669842096531,
+        "cvPct": 11.104499051213832,
+        "minMs": 89.80840000000899,
+        "maxMs": 156.05660000024363,
+        "p95NearestRankMs": 121.28429999999935
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 8077.582542857149,
+        "medianMs": 6354.496800000314,
+        "sdMs": 5286.052075390919,
+        "cvPct": 65.44101588989979,
+        "minMs": 4242.1985999997705,
+        "maxMs": 31580.131599999964,
+        "p95NearestRankMs": 18309.26379999984
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 4218.159885714288,
+        "medianMs": 4617.376500000013,
+        "sdMs": 723.8914228341232,
+        "cvPct": 17.16130830615829,
+        "minMs": 2574.559200000018,
+        "maxMs": 4862.758900000015,
+        "p95NearestRankMs": 4859.317199999932
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 12295.742428571437,
+        "medianMs": 10774.668599999975,
+        "sdMs": 5162.117932177715,
+        "cvPct": 41.982970627154465,
+        "minMs": 6816.757799999788,
+        "maxMs": 35293.49989999994,
+        "p95NearestRankMs": 22129.684599999804
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 12441.593862857133,
+        "medianMs": 10948.824099999852,
+        "sdMs": 5158.143535890636,
+        "cvPct": 41.45886445698606,
+        "minMs": 6978.296999999788,
+        "maxMs": 35394.619299999904,
+        "p95NearestRankMs": 22297.189399999566
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 12996.2,
+        "medianMs": 11528,
+        "sdMs": 5151.128938512069,
+        "cvPct": 39.635654564503994,
+        "minMs": 7530,
+        "maxMs": 35893,
+        "p95NearestRankMs": 22985
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "zama",
+      "operation": "mul_scalar",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 157.54677999999217,
+        "medianMs": 157.39199999999255,
+        "sdMs": 79.01553203751675,
+        "cvPct": 50.1536953262521,
+        "minMs": 93.82639999990351,
+        "maxMs": 583.8917000000365,
+        "p95NearestRankMs": 181.45440000016242
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 157.56733999996837,
+        "medianMs": 157.41399999987334,
+        "sdMs": 79.01443691228269,
+        "cvPct": 50.146456056374724,
+        "minMs": 93.84499999997206,
+        "maxMs": 583.9078000001609,
+        "p95NearestRankMs": 181.47319999989122
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 548.5823657142685,
+        "medianMs": 529.1325999998953,
+        "sdMs": 93.26500737277425,
+        "cvPct": 17.0010946763374,
+        "minMs": 413.10890000000654,
+        "maxMs": 719.3642000001855,
+        "p95NearestRankMs": 711.663200000301
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 106.80152857141262,
+        "medianMs": 105.28060000017285,
+        "sdMs": 10.472917363909286,
+        "cvPct": 9.805962053161618,
+        "minMs": 93.33379999990575,
+        "maxMs": 140.34429999999702,
+        "p95NearestRankMs": 124.5602000001818
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 7886.241788571426,
+        "medianMs": 6516.648099999875,
+        "sdMs": 4980.185069221021,
+        "cvPct": 63.150296462355485,
+        "minMs": 5194.12919999985,
+        "maxMs": 30128.588199999882,
+        "p95NearestRankMs": 20816.738400000148
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 4339.69983142858,
+        "medianMs": 4636.3841999997385,
+        "sdMs": 549.4662151247786,
+        "cvPct": 12.6613875721423,
+        "minMs": 2758.7639999999665,
+        "maxMs": 5073.6055999998935,
+        "p95NearestRankMs": 4876.235299999826
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 12225.941620000007,
+        "medianMs": 10780.719299999997,
+        "sdMs": 4948.8470805372845,
+        "cvPct": 40.478248910019595,
+        "minMs": 9424.799600000028,
+        "maxMs": 34000.05150000006,
+        "p95NearestRankMs": 25890.34400000004
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 12383.508959999974,
+        "medianMs": 10883.770599999465,
+        "sdMs": 4944.750889231591,
+        "cvPct": 39.930127278170126,
+        "minMs": 9594.435700000031,
+        "maxMs": 34161.159900000086,
+        "p95NearestRankMs": 26042.126500000246
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 12932.114285714286,
+        "medianMs": 11505,
+        "sdMs": 4932.716640670013,
+        "cvPct": 38.14315688594737,
+        "minMs": 10083,
+        "maxMs": 34666,
+        "p95NearestRankMs": 26651
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "zama",
+      "operation": "mean",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 142.4039257142597,
+        "medianMs": 152.4203999999445,
+        "sdMs": 26.338927434863162,
+        "cvPct": 18.495927905606678,
+        "minMs": 98.7738000000827,
+        "maxMs": 181.47710000025108,
+        "p95NearestRankMs": 180.06200000015087
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 142.4242685714192,
+        "medianMs": 152.439500000095,
+        "sdMs": 26.337630467034852,
+        "cvPct": 18.492375443604786,
+        "minMs": 98.79310000012629,
+        "maxMs": 181.496799999848,
+        "p95NearestRankMs": 180.08330000005662
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 554.3515028571286,
+        "medianMs": 548.779399999883,
+        "sdMs": 98.45457186020369,
+        "cvPct": 17.760314773707414,
+        "minMs": 361.78250000000116,
+        "maxMs": 727.2571999998763,
+        "p95NearestRankMs": 716.591599999927
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 106.7856342857188,
+        "medianMs": 107.20299999997951,
+        "sdMs": 7.645530527043121,
+        "cvPct": 7.15969950282499,
+        "minMs": 91.07089999993332,
+        "maxMs": 121.58319999999367,
+        "p95NearestRankMs": 119.05679999990389
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 8775.597134285754,
+        "medianMs": 6891.4525999999605,
+        "sdMs": 5431.572406348358,
+        "cvPct": 61.894049182448406,
+        "minMs": 3548.93740000017,
+        "maxMs": 28985.431299999822,
+        "p95NearestRankMs": 18693.5848999999
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 4443.9723771428135,
+        "medianMs": 4643.597799999639,
+        "sdMs": 591.5000813511463,
+        "cvPct": 13.310165571538555,
+        "minMs": 2584.2506000003777,
+        "maxMs": 5765.618999999948,
+        "p95NearestRankMs": 4996.541600000011
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 13219.569511428568,
+        "medianMs": 11505.104900000151,
+        "sdMs": 5285.417689562057,
+        "cvPct": 39.981768581743246,
+        "minMs": 7326.7368000000715,
+        "maxMs": 32932.161899999715,
+        "p95NearestRankMs": 23332.46609999996
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 13361.993779999986,
+        "medianMs": 11613.497000000207,
+        "sdMs": 5287.904352124146,
+        "cvPct": 39.574216536749134,
+        "minMs": 7478.479499999899,
+        "maxMs": 33091.31369999936,
+        "p95NearestRankMs": 23485.340099999914
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 13916.485714285714,
+        "medianMs": 12193,
+        "sdMs": 5300.672978202743,
+        "cvPct": 38.08916336371785,
+        "minMs": 8206,
+        "maxMs": 33665,
+        "p95NearestRankMs": 23957
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "zama",
+      "operation": "max",
+      "n": 36,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 36,
+        "meanMs": 145.52990000001844,
+        "medianMs": 151.68189999996684,
+        "sdMs": 24.50895041877893,
+        "cvPct": 16.841178629804475,
+        "minMs": 101.28380000009201,
+        "maxMs": 184.57599999988452,
+        "p95NearestRankMs": 178.10420000000158
+      },
+      "preparationMs": {
+        "n": 36,
+        "meanMs": 145.55310277777204,
+        "medianMs": 151.70175000006566,
+        "sdMs": 24.502592891411684,
+        "cvPct": 16.83412611878279,
+        "minMs": 101.29989999998361,
+        "maxMs": 184.59070000005886,
+        "p95NearestRankMs": 178.1201000000001
+      },
+      "barrierWaitMs": {
+        "n": 36,
+        "meanMs": 552.9537111110961,
+        "medianMs": 535.472000000067,
+        "sdMs": 97.26419153671499,
+        "cvPct": 17.589933765210457,
+        "minMs": 419.40220000001136,
+        "maxMs": 719.0583000001498,
+        "p95NearestRankMs": 711.4725999999791
+      },
+      "broadcastAckMs": {
+        "n": 36,
+        "meanMs": 115.95694444443699,
+        "medianMs": 111.15429999982007,
+        "sdMs": 31.283278383044816,
+        "cvPct": 26.978356952165818,
+        "minMs": 90.75769999995828,
+        "maxMs": 285.63060000003316,
+        "p95NearestRankMs": 156.0228000000352
+      },
+      "confirmationMs": {
+        "n": 36,
+        "meanMs": 6783.871286111083,
+        "medianMs": 5880.575499999861,
+        "sdMs": 3083.374781659243,
+        "cvPct": 45.45155194751368,
+        "minMs": 2996.3187,
+        "maxMs": 18708.141900000162,
+        "p95NearestRankMs": 18262.20900000003
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 36,
+        "meanMs": 4553.717022222269,
+        "medianMs": 4658.1442500001285,
+        "sdMs": 676.704118997453,
+        "cvPct": 14.860478059903976,
+        "minMs": 3709.153699999966,
+        "maxMs": 6805.495299999951,
+        "p95NearestRankMs": 5801.972200000193
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 36,
+        "meanMs": 11337.588308333352,
+        "medianMs": 10561.151300000114,
+        "sdMs": 3074.279247856798,
+        "cvPct": 27.115813030511454,
+        "minMs": 6790.045000000002,
+        "maxMs": 23487.84200000018,
+        "p95NearestRankMs": 21985.32709999988
+      },
+      "clientLifecycleMs": {
+        "n": 36,
+        "meanMs": 11483.141411111124,
+        "medianMs": 10716.617900000012,
+        "sdMs": 3068.491203861915,
+        "cvPct": 26.721705272155173,
+        "minMs": 6897.692700000003,
+        "maxMs": 23595.308900000062,
+        "p95NearestRankMs": 22135.380399999907
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 36,
+        "meanMs": 12036.083333333334,
+        "medianMs": 11300,
+        "sdMs": 3084.908235495599,
+        "cvPct": 25.630499142126233,
+        "minMs": 7354,
+        "maxMs": 24302,
+        "p95NearestRankMs": 22627
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "fhenix",
+      "operation": "set_meter_owner",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 35,
+        "meanMs": 12042.776597142845,
+        "medianMs": 12044.452499999665,
+        "sdMs": 49.91021585273128,
+        "cvPct": 0.414441100440014,
+        "minMs": 11938.214200000046,
+        "maxMs": 12208.072400000001,
+        "p95NearestRankMs": 12117.493000000017
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 229.94268285715953,
+        "medianMs": 220.46020000008866,
+        "sdMs": 41.75360989493258,
+        "cvPct": 18.158268563331468,
+        "minMs": 189.63689999980852,
+        "maxMs": 405.6630000001751,
+        "p95NearestRankMs": 340.338399999775
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 12273.137171428563,
+        "medianMs": 12266.899800000247,
+        "sdMs": 69.77216253679134,
+        "cvPct": 0.5684949297170614,
+        "minMs": 12163.73459999985,
+        "maxMs": 12523.528199999826,
+        "p95NearestRankMs": 12435.457900000001
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 1053.231351428584,
+        "medianMs": 1053.0844000000507,
+        "sdMs": 92.16958805308555,
+        "cvPct": 8.751124615505262,
+        "minMs": 848.6212999999989,
+        "maxMs": 1376.5801999997348,
+        "p95NearestRankMs": 1163.93610000005
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 111.78494571425327,
+        "medianMs": 107.54519999958575,
+        "sdMs": 26.44148186752415,
+        "cvPct": 23.65388442833291,
+        "minMs": 90.7577999997884,
+        "maxMs": 255.74539999989793,
+        "p95NearestRankMs": 127.84149999998044
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 6948.00076857144,
+        "medianMs": 3572.065600000089,
+        "sdMs": 6913.196659558099,
+        "cvPct": 99.49907735803983,
+        "minMs": 1896.8892000000924,
+        "maxMs": 27504.67459999991,
+        "p95NearestRankMs": 26208.36689999979
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 275.4986885714378,
+        "medianMs": 258.065700000152,
+        "sdMs": 47.5342742002767,
+        "cvPct": 17.25390216801373,
+        "minMs": 221.95699999993667,
+        "maxMs": 429.0814000000246,
+        "p95NearestRankMs": 389.90629999991506
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 7223.499457142877,
+        "medianMs": 3812.3240000000224,
+        "sdMs": 6930.279015287338,
+        "cvPct": 95.94074252244053,
+        "minMs": 2118.846200000029,
+        "maxMs": 27787.027299999958,
+        "p95NearestRankMs": 26540.709899999667
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 19496.636628571443,
+        "medianMs": 16080.589500000235,
+        "sdMs": 6911.762757625713,
+        "cvPct": 35.45105183679135,
+        "minMs": 14368.10719999997,
+        "maxMs": 40014.21409999998,
+        "p95NearestRankMs": 38802.810299999546
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 20549.885714285716,
+        "medianMs": 17122,
+        "sdMs": 6914.917947586127,
+        "cvPct": 33.64942289084881,
+        "minMs": 15443,
+        "maxMs": 41001,
+        "p95NearestRankMs": 39920
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "fhenix",
+      "operation": "notarize",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 35,
+        "meanMs": 11566.132391428571,
+        "medianMs": 11560.09109999999,
+        "sdMs": 75.91292845415326,
+        "cvPct": 0.6563380556702845,
+        "minMs": 11461.086800000165,
+        "maxMs": 11923.08449999988,
+        "p95NearestRankMs": 11662.1194000002
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 217.76330571425518,
+        "medianMs": 216.48380000004545,
+        "sdMs": 16.50451949246571,
+        "cvPct": 7.579109546638965,
+        "minMs": 185.52350000012666,
+        "maxMs": 276.30200000014156,
+        "p95NearestRankMs": 246.74629999999888
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 11783.92273142858,
+        "medianMs": 11775.473999999987,
+        "sdMs": 79.9113560928906,
+        "cvPct": 0.6781388330030473,
+        "minMs": 11662.249300000025,
+        "maxMs": 12143.881400000304,
+        "p95NearestRankMs": 11928.442300000228
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 1486.9000628571562,
+        "medianMs": 1490.650800000003,
+        "sdMs": 109.62181241542889,
+        "cvPct": 7.372507080589186,
+        "minMs": 1180.3630999997258,
+        "maxMs": 1859.1887000002898,
+        "p95NearestRankMs": 1615.8336999998428
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 117.36038571429131,
+        "medianMs": 109.0932999998331,
+        "sdMs": 35.88367553928979,
+        "cvPct": 30.57562849754688,
+        "minMs": 95.1284999998752,
+        "maxMs": 313.7228999999352,
+        "p95NearestRankMs": 153.4606000003405
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 7914.164157142839,
+        "medianMs": 6343.937200000044,
+        "sdMs": 4654.953462304238,
+        "cvPct": 58.818004907100175,
+        "minMs": 3001.6771000002045,
+        "maxMs": 18783.620799999684,
+        "p95NearestRankMs": 18693.653699999908
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 288.5018171428848,
+        "medianMs": 268.4739999999874,
+        "sdMs": 53.44677621443355,
+        "cvPct": 18.525628969596138,
+        "minMs": 247.47580000013113,
+        "maxMs": 456.26929999999993,
+        "p95NearestRankMs": 436.45209999987856
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 8202.665974285725,
+        "medianMs": 6599.73629999999,
+        "sdMs": 4656.6415460175585,
+        "cvPct": 56.76985458892896,
+        "minMs": 3263.660900000017,
+        "maxMs": 19031.096599999815,
+        "p95NearestRankMs": 18952.02379999985
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 19986.588705714305,
+        "medianMs": 18366.032500000205,
+        "sdMs": 4653.633233970272,
+        "cvPct": 23.283779450766236,
+        "minMs": 15003.200300000142,
+        "maxMs": 30769.225099999923,
+        "p95NearestRankMs": 30672.411699999822
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 21473.428571428572,
+        "medianMs": 19774,
+        "sdMs": 4660.936748095591,
+        "cvPct": 21.705601099477846,
+        "minMs": 16499,
+        "maxMs": 32346,
+        "p95NearestRankMs": 32123
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "fhenix",
+      "operation": "add",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 182.06643999999733,
+        "medianMs": 206.3236999999499,
+        "sdMs": 66.1114984471154,
+        "cvPct": 36.311743365288166,
+        "minMs": 100.70940000005066,
+        "maxMs": 399.10230000002775,
+        "p95NearestRankMs": 246.03539999993518
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 182.10008285713764,
+        "medianMs": 206.36170000000857,
+        "sdMs": 66.11277359105668,
+        "cvPct": 36.30573504072698,
+        "minMs": 100.73959999997169,
+        "maxMs": 399.141900000046,
+        "p95NearestRankMs": 246.0793999999296
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 518.3435399999914,
+        "medianMs": 510.5164999999106,
+        "sdMs": 98.2242635859959,
+        "cvPct": 18.949645554760366,
+        "minMs": 373.01390000001993,
+        "maxMs": 682.835699999705,
+        "p95NearestRankMs": 659.6307000000961
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 109.81473714285987,
+        "medianMs": 108.2980999997817,
+        "sdMs": 6.919918924555895,
+        "cvPct": 6.3014483343466505,
+        "minMs": 96.42750000022352,
+        "maxMs": 122.7206999999471,
+        "p95NearestRankMs": 122.4491999996826
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 8086.118197142845,
+        "medianMs": 6420.845699999947,
+        "sdMs": 5296.2357974091965,
+        "cvPct": 65.49787757592478,
+        "minMs": 4216.132400000002,
+        "maxMs": 31565.841900000116,
+        "p95NearestRankMs": 18792.91060000006
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 320.6531028571277,
+        "medianMs": 266.0642000003718,
+        "sdMs": 192.84004751354414,
+        "cvPct": 60.139772793487424,
+        "minMs": 236.95669999998063,
+        "maxMs": 1360.2611000000034,
+        "p95NearestRankMs": 541.8852999999654
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 8406.771299999973,
+        "medianMs": 6705.245499999997,
+        "sdMs": 5287.584409620156,
+        "cvPct": 62.8967319429776,
+        "minMs": 4453.089099999983,
+        "maxMs": 31830.27950000018,
+        "p95NearestRankMs": 19054.96219999995
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 8588.87138285711,
+        "medianMs": 6887.377099999692,
+        "sdMs": 5276.048922951334,
+        "cvPct": 61.42889662408989,
+        "minMs": 4663.164499999955,
+        "maxMs": 31931.3311000003,
+        "p95NearestRankMs": 19285.30119999987
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 9107.342857142858,
+        "medianMs": 7492,
+        "sdMs": 5269.209299667027,
+        "cvPct": 57.85671388811726,
+        "minMs": 5166,
+        "maxMs": 32429,
+        "p95NearestRankMs": 19741
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "fhenix",
+      "operation": "mul_scalar",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 169.83105999998142,
+        "medianMs": 179.8125,
+        "sdMs": 50.25714355240828,
+        "cvPct": 29.59243353507526,
+        "minMs": 98.22200000000885,
+        "maxMs": 237.78289999999106,
+        "p95NearestRankMs": 235.95709999999963
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 169.8500628571126,
+        "medianMs": 179.8322999998927,
+        "sdMs": 50.25719470527895,
+        "cvPct": 29.58915284450505,
+        "minMs": 98.24020000000019,
+        "maxMs": 237.80370000004768,
+        "p95NearestRankMs": 235.97609999985434
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 536.316539999982,
+        "medianMs": 503.6244000000879,
+        "sdMs": 109.29483570521123,
+        "cvPct": 20.378792663231103,
+        "minMs": 392.0280999999959,
+        "maxMs": 919.4493999998085,
+        "p95NearestRankMs": 709.7183999996632
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 115.43136857141258,
+        "medianMs": 109.67900000000373,
+        "sdMs": 26.678964922827408,
+        "cvPct": 23.112404585519787,
+        "minMs": 95.5844999999972,
+        "maxMs": 249.04490000009537,
+        "p95NearestRankMs": 157.68310000002384
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 7973.261357142852,
+        "medianMs": 6534.526899999939,
+        "sdMs": 4985.269595178103,
+        "cvPct": 62.52484863940959,
+        "minMs": 5193.62639999995,
+        "maxMs": 30238.028800000204,
+        "p95NearestRankMs": 20805.312100000214
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 409.6506171428378,
+        "medianMs": 271.3849999998929,
+        "sdMs": 344.32239480273097,
+        "cvPct": 84.05269768766685,
+        "minMs": 239.70960000000196,
+        "maxMs": 1356.6493000001647,
+        "p95NearestRankMs": 1352.0340999998152
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 8382.911974285691,
+        "medianMs": 7166.827100000344,
+        "sdMs": 4934.681920840283,
+        "cvPct": 58.86596371257695,
+        "minMs": 5471.204499999993,
+        "maxMs": 30500.075900000054,
+        "p95NearestRankMs": 21082.03220000025
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 8552.762037142802,
+        "medianMs": 7328.121000000276,
+        "sdMs": 4935.241098964355,
+        "cvPct": 57.703477280575164,
+        "minMs": 5664.678999999538,
+        "maxMs": 30736.05199999991,
+        "p95NearestRankMs": 21191.40990000032
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 9089.2,
+        "medianMs": 7823,
+        "sdMs": 4919.94802578956,
+        "cvPct": 54.129604649359244,
+        "minMs": 6314,
+        "maxMs": 31167,
+        "p95NearestRankMs": 21842
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "fhenix",
+      "operation": "mean",
+      "n": 35,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 35,
+        "meanMs": 169.64783714282967,
+        "medianMs": 182.81630000006407,
+        "sdMs": 50.87080131397017,
+        "cvPct": 29.986118403113558,
+        "minMs": 99.1196999999811,
+        "maxMs": 239.81099999998696,
+        "p95NearestRankMs": 234.80400000000373
+      },
+      "preparationMs": {
+        "n": 35,
+        "meanMs": 169.6671400000387,
+        "medianMs": 182.83510000025854,
+        "sdMs": 50.86892700943488,
+        "cvPct": 29.981602217980026,
+        "minMs": 99.14429999998538,
+        "maxMs": 239.83169999998063,
+        "p95NearestRankMs": 234.82579999999143
+      },
+      "barrierWaitMs": {
+        "n": 35,
+        "meanMs": 527.0969200000242,
+        "medianMs": 520.3633999999147,
+        "sdMs": 93.44650691727291,
+        "cvPct": 17.728524560012346,
+        "minMs": 366.3959999999497,
+        "maxMs": 721.8844000003301,
+        "p95NearestRankMs": 693.8645000001416
+      },
+      "broadcastAckMs": {
+        "n": 35,
+        "meanMs": 108.64910571433387,
+        "medianMs": 107.67990000010468,
+        "sdMs": 9.745296267720793,
+        "cvPct": 8.969513558025644,
+        "minMs": 94.06939999992028,
+        "maxMs": 132.21720000030473,
+        "p95NearestRankMs": 126.61410000012256
+      },
+      "confirmationMs": {
+        "n": 35,
+        "meanMs": 8785.951845714284,
+        "medianMs": 6886.787800000049,
+        "sdMs": 5430.549126659889,
+        "cvPct": 61.80945698341003,
+        "minMs": 3574.964600000065,
+        "maxMs": 28963.976299999747,
+        "p95NearestRankMs": 18525.449699999997
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 984.9791971428698,
+        "medianMs": 1334.2909999997355,
+        "sdMs": 569.4834741067771,
+        "cvPct": 57.81680219832849,
+        "minMs": 246.9336000001058,
+        "maxMs": 2397.373199999798,
+        "p95NearestRankMs": 1375.0219000000507
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 35,
+        "meanMs": 9770.931042857153,
+        "medianMs": 7683.9170999997295,
+        "sdMs": 5509.194695765792,
+        "cvPct": 56.3835183320957,
+        "minMs": 5706.668700000271,
+        "maxMs": 30335.38419999974,
+        "p95NearestRankMs": 19884.060599999968
+      },
+      "clientLifecycleMs": {
+        "n": 35,
+        "meanMs": 9940.598182857191,
+        "medianMs": 7833.9231000000145,
+        "sdMs": 5524.559677068754,
+        "cvPct": 55.57572668610622,
+        "minMs": 5910.6788000003435,
+        "maxMs": 30566.212099999655,
+        "p95NearestRankMs": 20118.88639999996
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 35,
+        "meanMs": 10467.857142857143,
+        "medianMs": 8299,
+        "sdMs": 5528.520300612608,
+        "cvPct": 52.81425056880007,
+        "minMs": 6568,
+        "maxMs": 31068,
+        "p95NearestRankMs": 20509
+      }
+    },
+    {
+      "segment": "continuation",
+      "platform": "fhenix",
+      "operation": "max",
+      "n": 36,
+      "inputPreparationMs": {
+        "n": 0
+      },
+      "transactionPreparationMs": {
+        "n": 36,
+        "meanMs": 166.50171666670246,
+        "medianMs": 166.71609999996144,
+        "sdMs": 40.786398661803084,
+        "cvPct": 24.496082970392386,
+        "minMs": 103.07049999991432,
+        "maxMs": 239.57930000001215,
+        "p95NearestRankMs": 226.54450000007637
+      },
+      "preparationMs": {
+        "n": 36,
+        "meanMs": 166.52347499996193,
+        "medianMs": 166.7306999998982,
+        "sdMs": 40.780293123717556,
+        "cvPct": 24.48921578397693,
+        "minMs": 103.09159999992698,
+        "maxMs": 239.5971000000136,
+        "p95NearestRankMs": 226.55869999993593
+      },
+      "barrierWaitMs": {
+        "n": 36,
+        "meanMs": 531.1179083333237,
+        "medianMs": 510.2549000000581,
+        "sdMs": 97.01816373349808,
+        "cvPct": 18.26678449573396,
+        "minMs": 354.347299999994,
+        "maxMs": 704.2898999997415,
+        "p95NearestRankMs": 671.8130999999121
+      },
+      "broadcastAckMs": {
+        "n": 36,
+        "meanMs": 117.16648888889384,
+        "medianMs": 110.55500000016764,
+        "sdMs": 34.746095207057074,
+        "cvPct": 29.65531828815487,
+        "minMs": 93.8686999999918,
+        "maxMs": 284.08409999962896,
+        "p95NearestRankMs": 209.1803999999538
+      },
+      "confirmationMs": {
+        "n": 36,
+        "meanMs": 6830.943775000013,
+        "medianMs": 5922.441199999987,
+        "sdMs": 3088.7803838887457,
+        "cvPct": 45.21747631993559,
+        "minMs": 2990.7389000000003,
+        "maxMs": 18768.89839999983,
+        "p95NearestRankMs": 18339.069900000002
+      },
+      "postReceiptToValidatedPlaintextMs": {
+        "n": 36,
+        "meanMs": 393.38350277783707,
+        "medianMs": 268.7352500001434,
+        "sdMs": 439.9580199010389,
+        "cvPct": 111.83946881206779,
+        "minMs": 139.98079999999936,
+        "maxMs": 2505.174899999998,
+        "p95NearestRankMs": 1351.7280000000028
+      },
+      "transactionToValidatedPlaintextMs": {
+        "n": 36,
+        "meanMs": 7224.32727777785,
+        "medianMs": 6426.039550000103,
+        "sdMs": 3100.562674411288,
+        "cvPct": 42.918358418626326,
+        "minMs": 3130.7196999999996,
+        "maxMs": 19061.84800000023,
+        "p95NearestRankMs": 18596.440500000026
+      },
+      "clientLifecycleMs": {
+        "n": 36,
+        "meanMs": 7390.850752777812,
+        "medianMs": 6629.461399999855,
+        "sdMs": 3100.026712557228,
+        "cvPct": 41.94411193315059,
+        "minMs": 3239.3561999999993,
+        "maxMs": 19217.610700000077,
+        "p95NearestRankMs": 18809.173100000015
+      },
+      "workerStartToPlaintextWallMs": {
+        "n": 36,
+        "meanMs": 7922,
+        "medianMs": 7157,
+        "sdMs": 3102.511305378274,
+        "cvPct": 39.163232837393004,
+        "minMs": 3695,
+        "maxMs": 19876,
+        "p95NearestRankMs": 19238
+      }
+    }
+  ],
+  "eventObservationScope": {
+    "primaryMeasured": 900,
+    "primaryWarmup": 18,
+    "viewMeasured": 150,
+    "viewWarmup": 3,
+    "deployments": 3
+  },
+  "recordedEventCounts": {
+    "baseline:setup.bytecode.read_attempt": 1,
+    "zama:setup.bytecode.read_attempt": 4,
+    "zama:setup.bytecode.receipt_block_retry": 3,
+    "zama:setup.bytecode.retry_backoff": 3,
+    "zama:setup.sdk_initialization": 1,
+    "fhenix:setup.bytecode.read_attempt": 2,
+    "fhenix:setup.bytecode.receipt_block_retry": 1,
+    "fhenix:setup.bytecode.retry_backoff": 1,
+    "fhenix:setup.sdk_connection": 1,
+    "fhenix:setup.authenticated_acp": 1,
+    "baseline:transaction.prepare_and_sign": 306,
+    "baseline:barrier.wait": 306,
+    "baseline:transaction.raw_broadcast": 306,
+    "baseline:transaction.invoke_sign_and_submit": 306,
+    "baseline:transaction.receipt.read_attempt": 4541,
+    "baseline:transaction.receipt_poll": 4235,
+    "baseline:transaction.wait_receipt": 306,
+    "baseline:completion.handle.read_attempt": 322,
+    "baseline:completion.read_persisted_handle": 306,
+    "baseline:completion.validate_plaintext": 306,
+    "fhenix:encrypt.sdk_stage.initTfhe": 204,
+    "fhenix:encrypt.sdk_observed.initTfhe": 102,
+    "fhenix:encrypt.sdk_stage.fetchKeys": 204,
+    "fhenix:encrypt.sdk_observed.fetchKeys": 102,
+    "fhenix:encrypt.sdk_stage.pack": 204,
+    "fhenix:encrypt.sdk_observed.pack": 102,
+    "fhenix:encrypt.sdk_stage.prove": 204,
+    "fhenix:encrypt.sdk_observed.prove": 102,
+    "fhenix:encrypt.sdk_stage.verify": 204,
+    "fhenix:encrypt.http_headers": 102,
+    "fhenix:encrypt.sdk_observed.verify": 102,
+    "fhenix:encrypt.sdk_total": 102,
+    "fhenix:transaction.prepare_and_sign": 306,
+    "fhenix:barrier.wait": 306,
+    "fhenix:transaction.raw_broadcast": 306,
+    "fhenix:transaction.invoke_sign_and_submit": 306,
+    "fhenix:transaction.receipt.read_attempt": 4563,
+    "fhenix:transaction.receipt_poll": 4257,
+    "fhenix:transaction.wait_receipt": 306,
+    "fhenix:completion.handle.read_attempt": 324,
+    "fhenix:completion.read_persisted_handle": 306,
+    "fhenix:completion.http_headers": 362,
+    "fhenix:completion.client_poll_floor": 362,
+    "fhenix:completion.read_attempt": 306,
+    "fhenix:completion.sdk_sealoutput_and_unseal": 306,
+    "fhenix:completion.validate_plaintext": 306,
+    "zama:encrypt.local_ciphertext_and_zkproof": 102,
+    "zama:encrypt.sdk_progress": 204,
+    "zama:encrypt.remote_input_approval": 102,
+    "zama:transaction.prepare_and_sign": 306,
+    "zama:barrier.wait": 306,
+    "zama:transaction.raw_broadcast": 306,
+    "zama:transaction.invoke_sign_and_submit": 306,
+    "zama:transaction.receipt.read_attempt": 4552,
+    "zama:transaction.receipt_poll": 4246,
+    "zama:transaction.wait_receipt": 306,
+    "zama:completion.handle.read_attempt": 327,
+    "zama:completion.read_persisted_handle": 306,
+    "zama:completion.local_keypair_and_authorization": 306,
+    "zama:completion.sdk_progress": 808,
+    "zama:completion.read_attempt": 405,
+    "zama:completion.sdk_user_decrypt": 306,
+    "zama:completion.validate_plaintext": 306,
+    "zama:completion.acl_check_retry": 99,
+    "zama:completion.retry_backoff": 99,
+    "fhenix:completion.sdk_poll": 56,
+    "baseline:completion.handle.receipt_block_retry": 16,
+    "baseline:completion.handle.retry_backoff": 16,
+    "zama:completion.handle.receipt_block_retry": 21,
+    "zama:completion.handle.retry_backoff": 21,
+    "fhenix:completion.handle.receipt_block_retry": 18,
+    "fhenix:completion.handle.retry_backoff": 18,
+    "baseline:view_decrypt.handle.read_attempt": 51,
+    "baseline:view_decrypt.validate_plaintext": 51,
+    "fhenix:view_decrypt.handle.read_attempt": 51,
+    "fhenix:already_ready.http_headers": 51,
+    "fhenix:already_ready.client_poll_floor": 51,
+    "fhenix:already_ready.read_attempt": 51,
+    "fhenix:already_ready.sdk_sealoutput_and_unseal": 51,
+    "fhenix:view_decrypt.validate_plaintext": 51,
+    "zama:view_decrypt.handle.read_attempt": 51,
+    "zama:already_ready.local_keypair_and_authorization": 51,
+    "zama:already_ready.sdk_progress": 102,
+    "zama:already_ready.read_attempt": 51,
+    "zama:already_ready.sdk_user_decrypt": 51,
+    "zama:view_decrypt.validate_plaintext": 51
+  },
+  "failedStageCounts": {
+    "zama:setup.bytecode.read_attempt": 3,
+    "fhenix:setup.bytecode.read_attempt": 1,
+    "zama:completion.read_attempt": 99,
+    "baseline:completion.handle.read_attempt": 16,
+    "fhenix:completion.http_headers": 23,
+    "zama:completion.handle.read_attempt": 21,
+    "fhenix:completion.handle.read_attempt": 18
+  },
+  "recordedHintAndHttpHistograms": {
+    "zama:setup.bytecode.receipt_block_retry:backoffMs": {
+      "1000": 1,
+      "2000": 1,
+      "4000": 1
+    },
+    "fhenix:setup.bytecode.receipt_block_retry:backoffMs": {
+      "1000": 1
+    },
+    "baseline:transaction.receipt_poll:intervalMs": {
+      "500": 4235
+    },
+    "fhenix:encrypt.http_headers:httpStatus": {
+      "200": 102
+    },
+    "fhenix:transaction.receipt_poll:intervalMs": {
+      "500": 4257
+    },
+    "fhenix:completion.http_headers:httpStatus": {
+      "200": 306,
+      "204": 33,
+      "404": 23
+    },
+    "fhenix:completion.client_poll_floor:originalServerHintMs": {
+      "10": 362
+    },
+    "fhenix:completion.client_poll_floor:appliedHintMs": {
+      "1000": 362
+    },
+    "fhenix:completion.client_poll_floor:httpStatus": {
+      "200": 306,
+      "204": 33,
+      "404": 23
+    },
+    "zama:encrypt.sdk_progress:retryAfterMs": {
+      "2000": 102
+    },
+    "zama:transaction.receipt_poll:intervalMs": {
+      "500": 4246
+    },
+    "zama:completion.sdk_progress:retryAfterMs": {
+      "2000": 502
+    },
+    "zama:completion.acl_check_retry:backoffMs": {
+      "1000": 99
+    },
+    "fhenix:completion.sdk_poll:intervalMs": {
+      "1000": 56
+    },
+    "baseline:completion.handle.receipt_block_retry:backoffMs": {
+      "100": 16
+    },
+    "zama:completion.handle.receipt_block_retry:backoffMs": {
+      "100": 18,
+      "200": 3
+    },
+    "fhenix:completion.handle.receipt_block_retry:backoffMs": {
+      "100": 18
+    },
+    "fhenix:already_ready.http_headers:httpStatus": {
+      "200": 51
+    },
+    "fhenix:already_ready.client_poll_floor:originalServerHintMs": {
+      "10": 51
+    },
+    "fhenix:already_ready.client_poll_floor:appliedHintMs": {
+      "1000": 51
+    },
+    "fhenix:already_ready.client_poll_floor:httpStatus": {
+      "200": 51
+    },
+    "zama:already_ready.sdk_progress:retryAfterMs": {
+      "2000": 51
+    }
+  },
+  "notes": [
+    "Histograms describe recorded hints/events, not independently measured sleep durations.",
+    "Client lifecycle = preparation + transaction-to-validated plaintext; intentional barrier is separate.",
+    "Worker wall includes barrier waiting; post-receipt time is not isolated FHE computation.",
+    "Views are separate already-ready retrievals after primary max validation.",
+    "The 16-bit restart creates separate observation segments and SDK sessions; no uninterrupted-run claim."
+  ],
+  "verificationScopeNote": "Source and SDK snapshot verified at 16-bit completion before subsequent 128-bit continuation-only routing changes. Later changes are documented in the 128-bit continuation provenance."
+}

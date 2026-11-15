@@ -1,0 +1,5 @@
+{
+  "pid": 26000,
+  "createdUtc": "2026-11-12T10:18:57.0283060Z",
+  "command": "\"C:\\Program Files\\nodejs\\node.exe\" --max-old-space-size=8192 scripts/resume-compact-circuits.cjs C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-compact-2026-11-12-circuit-continuation2\\campaign.json"
+}

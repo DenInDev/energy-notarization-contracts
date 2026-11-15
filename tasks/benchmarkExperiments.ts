@@ -18,7 +18,7 @@ task("benchmark:accounts:balances", "Read saved Sepolia balances without sending
 task("benchmark:study", "Concurrency correctness and growing single-transaction circuits; defaults to plan-only")
   .addOptionalParam("suite", "all, concurrency or circuits", defaults.suite)
   .addOptionalParam("platform", "all or baseline,zama,fhenix subset", defaults.platform)
-  .addOptionalParam("widths", "16,128 or one width", defaults.widths)
+  .addOptionalParam("widths", "16 only for concurrency/circuit studies", defaults.widths)
   .addOptionalParam("users", "Concurrent writers: 1,2,4,8", defaults.users)
   .addOptionalParam("modes", "independent,shared_sum,shared_ordered or subset", defaults.modes)
   .addOptionalParam("sizes", "Reduction input counts", defaults.sizes)

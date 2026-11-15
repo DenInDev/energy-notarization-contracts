@@ -1,0 +1,18 @@
+{
+  "status": "failed",
+  "startedAt": "2026-11-10T16:49:25.943Z",
+  "chainId": 11155111,
+  "donor": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+  "authorization": "User explicitly approved 0.001 Sepolia ETH to each of six additional study writers, 0.006 total plus gas.",
+  "planSha256": "5efa5eaa81df4a95d5a481dfb807ec48d3e3751a15ba65a72d4fe1b6bd6da16e",
+  "transfers": [
+    {
+      "to": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "valueWei": "1000000000000000",
+      "nonce": 1634,
+      "transactionHash": "0x2a8dd8d5357dc6a12f4aaf943517c6129a32dcc32f76794ee629e6d7b7b53cbd",
+      "broadcastState": "acknowledged"
+    }
+  ],
+  "error": "Funding receipt missing or reverted; never replay"
+}

@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "kind": "compact-16bit-sample-extension",
+  "status": "running",
+  "chainId": 11155111,
+  "createdAt": "2026-11-12T23:57:19.021Z",
+  "targetRepetitions": 30,
+  "originalRepetitions": 10,
+  "authorization": "User selected 30 total: add20 per configuration. Retain original10 and add two fresh10-repetition sessions to both compact16-bit studies. User explicitly authorized continuing missing operations and read-only health checks every10minutes.",
+  "accountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\studies-reduced16\\accounts.secret.json",
+  "parentAccountsFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\.benchmark-accounts\\studies\\accounts.secret.json",
+  "originalNetworkRoot": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-compact-2026-11-12-circuit-continuation2",
+  "originalReports": [
+    {
+      "suite": "concurrency",
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-compact-2026-11-11-continuation2\\concurrency-euint16\\report.json",
+      "sha256": "de8d19f1009aa9e31c700dcdcb93dbf64e9629007ad708ce495131b11332f7d9"
+    },
+    {
+      "suite": "circuits",
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-compact-2026-11-12-circuit-continuation2\\circuits-euint16\\report.json",
+      "sha256": "72e4f13b3ca7d88a892a036e02fa4c4e465914e7be1d07f8de5cced7c2519336"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "session-2",
+      "status": "running",
+      "repetitions": 10,
+      "manifest": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-2\\campaign.json",
+      "manifestSha256": "08dd8080d28170256591fc8b1ffe35b3d59977f2be231d63915f370a8aed05e8",
+      "executionPolicy": "compact-continue",
+      "startedAt": "2026-11-12T23:58:36.675Z"
+    },
+    {
+      "id": "session-3",
+      "status": "planned",
+      "repetitions": 10,
+      "manifest": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-3\\campaign.json",
+      "manifestSha256": "3ba28f6916bacd80185036cdf544fb20e6fa46de845118a006fbeb7867620684",
+      "executionPolicy": "compact-fresh"
+    }
+  ],
+  "methodology": {
+    "sessions": "Original10 + two fresh10 sessions; distinct fixed seeds, fresh contracts and warmups. Sequential sessions sample different times but are not assumed independent.",
+    "workload": "Same16-bit cases, writers1/4, requests8, shared_sum/shared_ordered; sums2/8/32 linear/tree; affine1/8/16/32.",
+    "preservation": "Original observations, failures, late correctness and HCU rejection evidence stay immutable. No replay or replacement of confirmed transactions.",
+    "statistics": "Descriptive pooled and per-session summaries with explicit denominators. No p-values or causal network ranking. Requests within a concurrency window are dependent.",
+    "source": "Contracts, timed transport, SDK bundles and polling policy match the completed dataset. No edits while live."
+  },
+  "budget": {
+    "additionalMeasuredWindows": 240,
+    "additionalMeasuredConcurrencyTransactions": 1920,
+    "additionalMeasuredCircuitSlots": 600,
+    "additionalComputeTransactionsUpperBound": 600,
+    "perSessionPlanUpperBound": 1920,
+    "note": "Fresh sessions include new deployment/authorization/warmups. Known HCU rejection sends no compute; actual costs are reported from receipts."
+  },
+  "previousManifest": {
+    "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-12\\campaign.json",
+    "sha256": "36855d9ec31432cfcecfb733f2a930c0bfcd5f10093d87d26baf0d77eaba11b5"
+  },
+  "monitoring": {
+    "intervalMs": 600000,
+    "readOnly": true,
+    "automaticMutationRetries": false
+  },
+  "pid": 26712,
+  "startedAt": "2026-11-12T23:58:36.624Z",
+  "sourceSnapshot": {
+    "files": {
+      "scripts/run-study-sample-extension.cjs": "763c2716911496a0e49b0121227d6e0d9b78fbed88ae33aa064c8c450a6391cd",
+      "scripts/lib/study-campaign.cjs": "725862adff1684524eb79da6a7ca7f48b1c75d4b710bcc40281602831f046673",
+      "hardhat.config.ts": "f2c7451f127f8f87555025976a0d37c84208f9630b842a769d0c773c50496b3d",
+      "package-lock.json": "4571f420b5ef346a377e26b0d86ed6d3c9c4cfa5e268e184f876936f862fa35e",
+      "tasks/benchmarkExperiments.ts": "a053f970478e42fb84adc2b719b4af962a98f4a4560f7a6ed8ee1d148bfbb93e",
+      "tasks/experiments/accounts.ts": "2a930be994cd3ba0808f3f79fd88641b472a86c639a33883f2149f3fe3bca75e",
+      "tasks/lifecycle/broadcast.ts": "b1106a4e490c4d395cba490d12641d40c7e2d5ae2fe3bc0d06c0fbb687a7dfd9",
+      "tasks/lifecycle/errors.ts": "6871cf491202633327f12a054e1e9cbde2c75aa51df2da01912ef4698c2b7ccd",
+      "tasks/studies/adapters.ts": "c04e3c7ff6d37e6be8e0f1f3b787fef04bc78d1a02c919165efed83ccac18796",
+      "tasks/studies/canonical.ts": "b33100ccc260702c39ff8539c65d863e3a64b04cad90c6d5a000eb809c4d2a6c",
+      "tasks/studies/capacity.ts": "ca5dc996204c668b76d6186e07ce3a9f16624aee4518d0eb9d9a636a3e64100a",
+      "tasks/studies/checkpoint.ts": "00a45d78301334f53b70be51e7f3357f6006f3fb41352916542972bb6fac1551",
+      "tasks/studies/continuation.ts": "5def0d6b9674af8f4dbcbbef1a2f74a68ddb0d325bebf8ca81b305d253f14ca3",
+      "tasks/studies/history.ts": "f9ea9e408e37b725c4ef238f9ee5f07f06f50362e4c8fe0e48edbe90bdc18992",
+      "tasks/studies/logs.ts": "f3d096b6ad72b51d36cae98fe7c24967a51ff3a30a4ac3c43edbd8b64d34323e",
+      "tasks/studies/oracle.ts": "303b362ad5a67e3bd92d1c827b3c589965d13a027eebec619a9f74afa65657df",
+      "tasks/studies/plan.ts": "ee3c0ac87a2faffd027addee75370ad8ef7498038f7cce0de8e72a54e3eef415",
+      "tasks/studies/preparation.ts": "7adc0ef91d4b27b22f0daf30ad53c36a824185fb9e256795bb3939e241432408",
+      "tasks/studies/report.ts": "b23b75f658f21643e172a78520d0253b630f1c65935a2d2d06d19a6d9fe16ac2",
+      "tasks/studies/rpc.ts": "63c65ba0662f32e66944285b129a2a9027403c9a113ff507d0e2ba9f72eef996",
+      "tasks/studies/runner.ts": "605b5c75ae0b90b429684e03f5e3d27438d9478cd13cdf97844bd0351048522d",
+      "tasks/studies/transactions.ts": "d02d5cba30875189ad75717a01fbcf7804a0185d119f793ea7c3535c4a585df0",
+      "tasks/studies/types.ts": "a18a92d44db7d317a7322c3cac797e41d57dcdd521209555bccec362f0ad911a",
+      "tasks/lib/cofheReadPolicy.ts": "c53dccee16e097a4eb9ff8c35b4d9ef7655966bab966d1e4e4e5bc2ff7c26037",
+      "tasks/lib/decryptionPolling.cjs": "b436d09f7c9c148f8c39205be554701e4977e95ddd59e2eb0789ade9717cc5e1",
+      "tasks/lib/lifecycleConcurrent.ts": "040f0640cac5db6721fbc41049cba42df44488a6252ea3d2fc4b3664f114d7a9",
+      "tasks/lib/lifecycleNonce.ts": "9514a35406d16839c932269580fe863c3db1fa05ad351602a6b547f5747eda08",
+      "tasks/lib/lifecycleReadRetry.ts": "265381784c96971bb6ef5d67427581b975a32b4ec8c9a2833d71ef09ca00bce4",
+      "tasks/lib/lifecycleReportWrite.ts": "5919e26a4055cbdf324008c325dd7cd5621ba39218dc21d89f919f324449001b",
+      "tasks/lib/lifecycleResult.ts": "d02bdfc151228a0b67210bc079a10f4af90fed3b85fb0c50e47f41aad3b23cfa",
+      "tasks/lib/lifecycleSchedule.ts": "903e34402f86d08d516d1233ce0dd775e591a749d8fe9f945e52c26c23385bc2",
+      "tasks/lib/lifecycleTiming.ts": "11ca028648485eca0a34ca4166dcf12662838609b73c5ee7ad3fcfa1e82b9164",
+      "contracts/studies/StudyCoFHE.sol": "db1e056e8e4b8318f1dc15184a28b09de58cb2d51cbb6963df48a711d04b8767",
+      "contracts/studies/StudyPlain.sol": "ec205734c911c44ac72e2193b19dbd2563c78b4ee65d8d92096b93da94b32779",
+      "contracts/studies/StudyZama.sol": "f9fe0de9a61331843a2b7bb549b875335a66ffa701459ff037f9f0f944cd24e4",
+      "scripts/analysis/analyze-study-campaign.py": "70941dc9c4ccb368dfd967178ec0eb872ffba10b28ff4fa7dbb9b415f805831a",
+      "scripts/analysis/collect-operation-block-metadata.cjs": "9807d4c7190a49f0bc6180e749090488a29e1c439f5d99c790f1bebb2ca0b9f8"
+    },
+    "polling": {
+      "requestedIntervalMs": 10,
+      "serverRetryAfter": "respected; can lengthen the effective interval",
+      "patch": "benchmark-decryption-polling-v1",
+      "bundles": {
+        "zama": {
+          "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.cjs",
+          "sha256": "c9f89d5cc9f782c2fa5f110b01b865a076cc62b6b64da35ca54d20a5f7f3dbdd"
+        },
+        "zamaEsm": {
+          "file": "node_modules/@zama-fhe/relayer-sdk/lib/node.js",
+          "sha256": "8ef6c5a56541136086a60710ec2705b0e9b05c49396d57ec9c64b3cc7903102e"
+        },
+        "fhenix": {
+          "file": "node_modules/@cofhe/sdk-current/dist/node.cjs",
+          "sha256": "acbcb491d90945383059f5671e7bb2b31402f8bb74a4940cd56cca7f686670f5"
+        }
+      }
+    },
+    "extensionFiles": {
+      "scripts\\lib\\study-sample-extension.cjs": "80f88a2b5e1d8ac8f7a61f4cbcaf8bba2f0e1ae95bba102f2fdd321f9a81851e",
+      "scripts\\analysis\\analyze-study-sample-extension.py": "5b4b905b23855b9239ab3347dbb1106b65b4265afd52369a609784c20759e793"
+    }
+  },
+  "currentSession": "session-2",
+  "currentManifest": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-samples30-2026-11-13-continuation1\\session-2\\campaign.json"
+}

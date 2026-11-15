@@ -1,0 +1,27 @@
+{
+  "scopes": [
+    {
+      "scope": "campaign",
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\concurrency2-20-2026-11-15\\session-1\\rpc-read-retries.jsonl",
+      "sha256": null,
+      "readCallsWithRetries": 0,
+      "retryEvents": 0,
+      "methods": {},
+      "observedBackoffMs": {
+        "n": 0
+      }
+    },
+    {
+      "scope": "metadata",
+      "file": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\concurrency2-20-2026-11-15\\session-1\\network\\metadata-rpc-read-retries.jsonl",
+      "sha256": null,
+      "readCallsWithRetries": 0,
+      "retryEvents": 0,
+      "methods": {},
+      "observedBackoffMs": {
+        "n": 0
+      }
+    }
+  ],
+  "interpretation": "Campaign-wide read-only RPC retries across setup/warmup/measured work; metadata audit retries separate. No mutation retries. Waits remain included in calling observation wall times; no pure-compute attribution."
+}

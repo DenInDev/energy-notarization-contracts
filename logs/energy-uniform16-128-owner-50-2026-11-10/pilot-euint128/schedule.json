@@ -1,0 +1,59 @@
+{
+  "seed": "energy-uniform16-128-paired-v1",
+  "schedule": [
+    {
+      "run": 1,
+      "operation": "set_meter_owner",
+      "order": [
+        "zama",
+        "fhenix",
+        "baseline"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "notarize",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "add",
+      "order": [
+        "baseline",
+        "zama",
+        "fhenix"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "mul_scalar",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "mean",
+      "order": [
+        "fhenix",
+        "zama",
+        "baseline"
+      ]
+    },
+    {
+      "run": 1,
+      "operation": "max",
+      "order": [
+        "baseline",
+        "fhenix",
+        "zama"
+      ]
+    }
+  ]
+}

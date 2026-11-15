@@ -1,0 +1,119 @@
+\begin{table*}[!t]
+\caption{Concurrency correctness and ordering on Sepolia (16-bit arithmetic)}
+\label{tab:concurrency-correctness}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|r|l|r|r|r|r|r|}
+\hline
+\textbf{Mode} & \textbf{Writers} & \textbf{Platform} & \shortstack{\textbf{Primary valid}\\\textbf{windows}} & \shortstack{\textbf{Late}\\\textbf{validated}} & \shortstack{\textbf{Reordered}\\\textbf{windows}} & \shortstack{\textbf{Final $\ne$}\\\textbf{planned order}} & \textbf{Inconsistent} \\
+\hline
+\texttt{shared\_sum} & 1 & Plaintext & 20/20 & 0 & 0/20 & 0/20 & 0 \\
+ &  & Zama & 19/20 & 1 & 0/20 & 0/20 & 0 \\
+ &  & Fhenix & 20/20 & 0 & 0/20 & 0/20 & 0 \\
+\hline
+\texttt{shared\_sum} & 4 & Plaintext & 20/20 & 0 & 20/20 & 0/20 & 0 \\
+ &  & Zama & 20/20 & 0 & 20/20 & 0/20 & 0 \\
+ &  & Fhenix & 20/20 & 0 & 20/20 & 0/20 & 0 \\
+\hline
+\texttt{shared\_ordered} & 1 & Plaintext & 20/20 & 0 & 0/20 & 0/20 & 0 \\
+ &  & Zama & 20/20 & 0 & 0/20 & 0/20 & 0 \\
+ &  & Fhenix & 20/20 & 0 & 0/20 & 0/20 & 0 \\
+\hline
+\texttt{shared\_ordered} & 4 & Plaintext & 20/20 & 0 & 20/20 & 20/20 & 0 \\
+ &  & Zama & 20/20 & 0 & 20/20 & 20/20 & 0 \\
+ &  & Fhenix & 20/20 & 0 & 20/20 & 20/20 & 0 \\
+\hline
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\textwidth}\scriptsize Two sessions contribute 10 windows each per configuration (20 total), with eight transactions per window. All 1,920 measured transactions confirmed. One original Zama retrieval failure was validated later; its failed primary outcome and missing successful audit latency remain unchanged. A separate Fhenix preparation failure sent no request transactions and was resumed; it is retained as an extra attempt, not an additional window. Final-state differences from planned submission order are legitimate when they match canonical replay.\end{minipage}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Per-request concurrency measurements on Sepolia}
+\label{tab:concurrency-request-performance}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|r|l|r|r|r|r|}
+\hline
+\textbf{Mode} & \textbf{Writers} & \textbf{Platform} & \textbf{Mean Gas} & \shortstack{\textbf{Tx to receipt}\\\textbf{Mean ms (CV\%)}} & \shortstack{\textbf{Deferred audit}\\\textbf{Mean ms (CV\%)}} & \shortstack{\textbf{$n_{\rm receipt}$ /}\\\textbf{$n_{\rm audit}$}} \\
+\hline
+\texttt{shared\_sum} & 1 & Plaintext & 407396 & 13609 (48.52\%) & 83 (115.44\%) & 160/160 \\
+ &  & Zama & 989417 & 12777 (40.27\%) & 2966 (108.34\%) & 160/159 \\
+ &  & Fhenix & 813067 & 14131 (84.14\%) & 194 (32.22\%) & 160/160 \\
+\hline
+\texttt{shared\_sum} & 4 & Plaintext & 407396 & 11180 (26.16\%) & 75 (16.91\%) & 160/160 \\
+ &  & Zama & 989414 & 10641 (62.75\%) & 2572 (18.51\%) & 160/160 \\
+ &  & Fhenix & 813069 & 10330 (65.63\%) & 202 (54.28\%) & 160/160 \\
+\hline
+\texttt{shared\_ordered} & 1 & Plaintext & 395345 & 14205 (43.72\%) & 74 (13.89\%) & 160/160 \\
+ &  & Zama & 1009305 & 13759 (50.19\%) & 2707 (85.53\%) & 160/160 \\
+ &  & Fhenix & 845733 & 12572 (42.48\%) & 190 (34.15\%) & 160/160 \\
+\hline
+\texttt{shared\_ordered} & 4 & Plaintext & 395345 & 12831 (39.54\%) & 77 (28.81\%) & 160/160 \\
+ &  & Zama & 1009302 & 9789 (43.69\%) & 2798 (69.96\%) & 160/160 \\
+ &  & Fhenix & 845734 & 11447 (60.78\%) & 193 (37.83\%) & 160/160 \\
+\hline
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\textwidth}\scriptsize Gas covers measured submit transactions only; deployment, authorization, window setup and warmups are separate. Audits retrieve and validate per-request snapshots after all window receipts, so they are already-ready retrieval measurements, not receipt-to-immediate-validation latency. Missing successful audit timings and reconciled receipt timings are excluded. The dependent requests within each window are not independent robustness repetitions.\end{minipage}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Window-level concurrency measurements on Sepolia}
+\label{tab:concurrency-window-performance}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|r|l|r|r|r|r|r|}
+\hline
+\textbf{Mode} & \textbf{Writers} & \textbf{Platform} & \shortstack{\textbf{Preparation}\\\textbf{Mean ms (CV\%)}} & \shortstack{\textbf{Last receipt}\\\textbf{Mean ms (CV\%)}} & \shortstack{\textbf{Final audit}\\\textbf{Mean ms (CV\%)}} & \shortstack{\textbf{Throughput}\\\textbf{Mean tx/s (CV\%)}} & \shortstack{\textbf{$n_{\rm prep}$/$n_{\rm receipt}$}\\\textbf{/$n_{\rm final}$}} \\
+\hline
+\texttt{shared\_sum} & 1 & Plaintext & 2071 (35.25\%) & 109637 (14.36\%) & 111870 (14.30\%) & 0.074 (13.72\%) & 20/20/20 \\
+ &  & Zama & 66022 (3.58\%) & 102900 (14.22\%) & 131960 (12.04\%) & 0.079 (12.76\%) & 20/20/19 \\
+ &  & Fhenix & 57194 (3.34\%) & 113731 (36.35\%) & 117060 (35.24\%) & 0.075 (20.07\%) & 20/20/20 \\
+\hline
+\texttt{shared\_sum} & 4 & Plaintext & 2606 (76.36\%) & 22861 (18.58\%) & 25305 (15.97\%) & 0.359 (14.23\%) & 20/20/20 \\
+ &  & Zama & 65848 (4.02\%) & 22146 (41.92\%) & 47107 (19.54\%) & 0.395 (22.22\%) & 20/20/20 \\
+ &  & Fhenix & 56958 (2.45\%) & 21324 (40.38\%) & 25551 (33.19\%) & 0.421 (30.12\%) & 20/20/20 \\
+\hline
+\texttt{shared\_ordered} & 1 & Plaintext & 2741 (70.97\%) & 114358 (11.22\%) & 116778 (11.28\%) & 0.071 (11.38\%) & 20/20/20 \\
+ &  & Zama & 65748 (2.93\%) & 110774 (18.86\%) & 136870 (15.05\%) & 0.074 (15.92\%) & 20/20/20 \\
+ &  & Fhenix & 56969 (2.47\%) & 101530 (14.75\%) & 105451 (13.79\%) & 0.080 (13.61\%) & 19/20/20 \\
+\hline
+\texttt{shared\_ordered} & 4 & Plaintext & 2092 (30.34\%) & 26059 (26.68\%) & 28345 (25.03\%) & 0.324 (20.64\%) & 20/20/20 \\
+ &  & Zama & 65825 (3.34\%) & 20398 (20.83\%) & 47781 (15.51\%) & 0.406 (17.27\%) & 20/20/20 \\
+ &  & Fhenix & 57264 (3.47\%) & 23749 (41.43\%) & 27124 (37.67\%) & 0.385 (33.98\%) & 20/20/20 \\
+\hline
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\textwidth}\scriptsize Preparation measures the eight-request encryption/estimate/sign batch. Last receipt and final audit are elapsed window times from the beginning of submission; both exclude preparation and window setup. Final audit is not an isolated FHE execution time. Throughput is the mean of window throughput values under receipt-synchronized waves, not maximum network capacity. The late-validated Zama window is excluded from successful final-audit timing; the resumed Fhenix preparation is excluded from preparation summaries because its earlier partial work was discarded. Means and CVs pool two temporal sessions descriptively, without causal or inferential claims.\end{minipage}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals (concurrency sessions)}
+\label{tab:sepolia-concurrency-deployments}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} & \textbf{Observed interval (UTC)} & \textbf{Contract} & \textbf{Containing block range} & \textbf{Mean gas/target} \\
+\hline
+S1 Plaintext & \shortstack[l]{2026-11-11 15:06:12 \\ -- 2026-11-12 00:58:12} & \texttt{0x81E0...1532} & 12112499--12115432 & 81.5\% \\
+\hline
+S1 Zama & \shortstack[l]{2026-11-11 15:05:00 \\ -- 2026-11-12 00:52:36} & \texttt{0xe605...fca6} & 12112493--12115404 & 85.9\% \\
+\hline
+S1 Fhenix & \shortstack[l]{2026-11-11 15:03:24 \\ -- 2026-11-12 00:55:48} & \texttt{0xCFD3...e25E} & 12112485--12115420 & 85.3\% \\
+\hline
+S2 Plaintext & \shortstack[l]{2026-11-12 15:08:00 \\ -- 2026-11-13 02:31:00} & \texttt{0x9934...75C7} & 12119634--12123007 & 77.6\% \\
+\hline
+S2 Zama & \shortstack[l]{2026-11-12 15:04:48 \\ -- 2026-11-13 02:28:00} & \texttt{0xe5Ea...1870} & 12119619--12122992 & 79.5\% \\
+\hline
+S2 Fhenix & \shortstack[l]{2026-11-12 15:02:00 \\ -- 2026-11-13 02:33:36} & \texttt{0xce0B...0F1D} & 12119605--12123020 & 78.7\% \\
+\hline
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\textwidth}\scriptsize Each session contributes 320 measured transactions per platform. Intervals are canonical containing-block timestamps, excluding setup, preparation and decryption. Mean gas/target is the transaction-weighted mean of containing-block gasUsed divided by half the gasLimit; it is block utilization, not operation gas. Platform windows are sequential with rotated order; inclusion conditions are not matched across platforms. The sessions and their contracts remain distinct.\end{minipage}
+\end{table*}

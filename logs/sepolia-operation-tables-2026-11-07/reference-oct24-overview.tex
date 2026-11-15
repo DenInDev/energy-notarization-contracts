@@ -1,0 +1,34 @@
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals: classical lifecycle, mixed16/64 arithmetic}
+\label{tab:sepolia-experiment-deployments-reference-mixed-oct24}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=250\)) &
+\shortstack[l]{2026-10-24 09:18:48 \\ -- 2026-10-24 10:39:36} &
+\texttt{0x8A14...6B12} &
+11982862--11983261 &
+71.4\% \\
+\hline
+Zama fhEVM (\(n=250\)) &
+\shortstack[l]{2026-10-24 09:18:48 \\ -- 2026-10-24 10:39:36} &
+\texttt{0x5CF6...c79b} &
+11982862--11983261 &
+71.1\% \\
+\hline
+Fhenix CoFHE (\(n=250\)) &
+\shortstack[l]{2026-10-24 09:18:48 \\ -- 2026-10-24 10:39:36} &
+\texttt{0xDE38...388b} &
+11982862--11983261 &
+71.4\% \\
+\hline
+\end{tabular}
+\end{table*}

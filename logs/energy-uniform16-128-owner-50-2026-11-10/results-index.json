@@ -1,0 +1,25 @@
+{
+  "status": "execution_complete_with_retained_failures",
+  "datasets": [
+    {
+      "width": 16,
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint16-continuation1\\report.json",
+      "sha256": "0603562486a911cc8b5bac0491f80ce2429f2467334a73480936e882acad43ff",
+      "successful": 900,
+      "planned": 900,
+      "sameBlock": 300,
+      "views": 150
+    },
+    {
+      "width": 128,
+      "report": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\measured-euint128-continuation1\\report.json",
+      "sha256": "ac0682bdeae5034a0349003fc028ec3e3c30b143b580327128558746724df25e",
+      "successful": 899,
+      "planned": 900,
+      "sameBlock": 300,
+      "views": 150
+    }
+  ],
+  "csv": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\latency-and-gas.csv",
+  "results": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\energy-uniform16-128-owner-50-2026-11-10\\RERUN-RESULTS.md"
+}

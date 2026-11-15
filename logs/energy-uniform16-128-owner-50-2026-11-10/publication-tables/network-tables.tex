@@ -1,0 +1,73 @@
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals (interleaved runs, 16-bit arithmetic)}
+\label{tab:sepolia-experiment-deployments}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline &
+\shortstack[l]{2026-11-10 11:58:33 \\ -- 2026-11-10 13:42:12} &
+\texttt{0x77F2...d015} &
+12104484--12104996 &
+83.5\% \\
+\hline
+Zama fhEVM &
+\shortstack[l]{2026-11-10 11:58:33 \\ -- 2026-11-10 13:42:18} &
+\texttt{0xCE94...Ce66} &
+12104484--12104996 &
+83.5\% \\
+\hline
+Fhenix CoFHE &
+\shortstack[l]{2026-11-10 11:58:33 \\ -- 2026-11-10 13:42:13} &
+\texttt{0x7A2c...BF2a} &
+12104484--12104996 &
+83.5\% \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Intervals span recorded client preparation starts through completion and include the interruption between segments. Block ranges and utilization use all 300 confirmed measured primary transactions per platform, including owner registration. Mean gas/target is the transaction-weighted mean of $100g_b/(G_b/2)$ for containing blocks; it is not operation gas.}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and measurement intervals (interleaved runs, 128-bit arithmetic)}
+\label{tab:sepolia-experiment-deployments-128}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline &
+\shortstack[l]{2026-11-10 13:45:32 \\ -- 2026-11-10 15:36:13} &
+\texttt{0xB3E3...c40B} &
+12105014--12105561 &
+84.2\% \\
+\hline
+Zama fhEVM &
+\shortstack[l]{2026-11-10 13:45:32 \\ -- 2026-11-10 15:36:22} &
+\texttt{0x7C1A...9730} &
+12105014--12105561 &
+84.2\% \\
+\hline
+Fhenix CoFHE &
+\shortstack[l]{2026-11-10 13:45:32 \\ -- 2026-11-10 15:36:13} &
+\texttt{0x3bdA...6486} &
+12105014--12105561 &
+84.2\% \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Intervals span recorded client preparation starts through completion and include the interruption between segments. Block ranges and utilization use all 300 confirmed measured primary transactions per platform, including owner registration. Mean gas/target is the transaction-weighted mean of $100g_b/(G_b/2)$ for containing blocks; it is not operation gas.}
+\end{table*}

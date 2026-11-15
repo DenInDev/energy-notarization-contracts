@@ -1,0 +1,65 @@
+{
+  "at": "2026-11-12T10:15:25.542Z",
+  "status": "settled",
+  "mutationCalls": 0,
+  "previousPid": 27616,
+  "previousProcessAbsent": true,
+  "sourceReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-compact-2026-11-11-continuation2\\circuits-euint16\\report.json",
+  "sourceSha256": "0935a94ca06be78a99bdb97ac5963a25d8c0905b3e89fd6a17fa1807333c31de",
+  "lateComputeReceipts": [
+    {
+      "transactionHash": "0x8439321b83e722069e5cecde00b66afe04d3c5d9e70aee9a2532068efeaf94ee",
+      "user": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "transactionNonce": 360,
+      "canonical": {
+        "blockHash": "0x91353136615ca288d4f2cbb97e9304141f55d488e433b1325a2450efe3d3038f",
+        "blockNumber": 12115566,
+        "transactionIndex": 4,
+        "receiptStatus": 1,
+        "gasUsed": 885736,
+        "effectiveGasPriceWei": "71",
+        "gasCostWei": "62887256"
+      },
+      "auditFile": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\studies16-compact-2026-11-11-continuation2\\circuits-euint16\\report.json",
+      "auditSha256": "0935a94ca06be78a99bdb97ac5963a25d8c0905b3e89fd6a17fa1807333c31de",
+      "verifiedAt": "2026-11-12T10:15:23.975Z",
+      "sameHashSenderNonceTargetVerified": true,
+      "timingUse": "Receipt first observed after interruption. Canonical identity and gas only; no original receipt or completion latency reconstructed."
+    }
+  ],
+  "accounts": [
+    {
+      "address": "0x0c8C6BAE7987981ec27A36E270837df3Aa545A9E",
+      "latest": 361,
+      "pending": 361,
+      "balanceWei": "999966779239284"
+    },
+    {
+      "address": "0x42ceFA175992200eBA172EB78AFdBC012856064c",
+      "latest": 1210,
+      "pending": 1210,
+      "balanceWei": "999936837068728"
+    },
+    {
+      "address": "0x8f432EeC3dFF7E289CCe5Ff01d3cb421666574D3",
+      "latest": 360,
+      "pending": 360,
+      "balanceWei": "999981621388286"
+    },
+    {
+      "address": "0xcf4947bE5Da6D13101D4aDC0ABc66291d7bB3574",
+      "latest": 180,
+      "pending": 180,
+      "balanceWei": "999990642002825"
+    },
+    {
+      "address": "0x324CAA6F704fa42e92b302b637440238d905AE77",
+      "latest": 180,
+      "pending": 180,
+      "balanceWei": "999990638379065"
+    }
+  ],
+  "plannedMeasuredSlots": 300,
+  "previousMeasuredSlots": 19,
+  "timingUse": "Historical failed observation retained; later recovery is correctness and gas only."
+}

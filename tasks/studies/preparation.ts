@@ -12,7 +12,7 @@ export async function estimateCircuitAtReceipt(contract: Contract, args: unknown
   return estimateStudyCallAtBlock(contract,"executeCircuit",args,caller,fees,blockHash,send,trace,budget);
 }
 
-export async function estimateStudyCallAtBlock(contract: Contract, method: "executeCircuit" | "submit", args: unknown[], caller: string,
+export async function estimateStudyCallAtBlock(contract: Contract, method: "executeCircuit" | "submit" | "openWindow", args: unknown[], caller: string,
   fees: Fees, blockHash: string, send: (method:string,params:any[])=>Promise<any>,
   trace: TimingTrace, budget: number): Promise<bigint> {
   const call=await deadline(()=>contract.getFunction(method).populateTransaction(...args),budget,"populate pinned gas estimate");

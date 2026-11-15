@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-10T22:37:44.706Z",
+  "status": "fix_tested_awaiting_resume_decision",
+  "sourceReport": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\concurrency16-reduced-2026-11-10\\run-20\\report.json",
+  "sourceSha256": "c231c30255a3360c9ab2468d8558eb429782d3b892fe2f1656a76e274393804a",
+  "audit": "C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\concurrency16-reduced-2026-11-10\\failure-audit.json",
+  "checks": {
+    "typecheck": "passed",
+    "localTestsPassed": 21,
+    "rawUnchanged": true,
+    "canonicalConfirmedTransactions": 22,
+    "unsettledBroadcasts": 0,
+    "measuredWindows": 0,
+    "successfulWarmupControls": 2,
+    "validatedWarmupRequests": 16
+  },
+  "sourceFixes": {
+    "tasks/studies/preparation.ts": "7adc0ef91d4b27b22f0daf30ad53c36a824185fb9e256795bb3939e241432408",
+    "tasks/studies/runner.ts": "f7d8bbd8399ec842db8bfd9a49ed16bb8a1192caa2485e1d7e3b30c5a6f141ea",
+    "tasks/studies/continuation.ts": "969b848af33852c99b5476099fdcf7bb59de9d9ac13c76081718db34deb4b183",
+    "test/studies.test.ts": "2c4e1166acc6a3f6a6bc2af8453860ac32b3a5805c8da6b0f1408558763d67d3"
+  },
+  "remaining": {
+    "measuredWindows": 540,
+    "warmupControls": 34,
+    "transactionsUpperBound": 5168
+  },
+  "resumePolicy": "Same authorized matrix; retain all original bytes and setup/trial prefixes; skip completed Fhenix controls and deployed contracts; verify canonical receipts, exact nonces, bytecode, prior plaintexts and unopened window before sending only never-submitted planned operations. No replacement of historical failure or timings."
+}

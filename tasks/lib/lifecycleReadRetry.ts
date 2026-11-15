@@ -23,13 +23,16 @@ export async function retryLifecycleRead<T>(
   retryZamaAclCheck = false,
   retryZamaGatewayReadiness = false,
   retryMissingReceiptBlock = false,
+  retryRpcServiceErrors = false,
 ): Promise<T> {
   const end = performance.now() + timeoutMs;
   for (let attempt = 1; ; attempt++) {
     try {
       return await trace.span(`${phase}.read_attempt`, () => read(Math.max(1, Math.floor(end - performance.now()))));
     } catch (error) {
-      const delay = backoffMs * 2 ** Math.min(attempt - 1, 3);
+      let delay = backoffMs * 2 ** Math.min(attempt - 1, 3);
+      const rpcService = retryRpcServiceErrors && isRpcServiceReadFailure(error);
+      if(rpcService)delay=Math.max(delay,rpcRetryAfterMs(error));
       
       // Zama's SDK checks ACL permissions against latest RPC state, which can
       // lag the mined receipt. Retry only its specific user-decrypt ACL denial.
@@ -45,10 +48,10 @@ export async function retryLifecycleRead<T>(
       // the original deadline, just as for gateway readiness. A backend may
       // temporarily reject requireCanonical while another already sees the block.
       const attemptsExhausted = attempt >= 5 && !readinessFailure && !missingBlock;
-      if (attemptsExhausted || (!isTransportFailure(error) && !aclFailure && !readinessFailure && !serviceUnavailable && !missingBlock) || performance.now() + delay >= end)
+      if (attemptsExhausted || (!isTransportFailure(error) && !aclFailure && !readinessFailure && !serviceUnavailable && !missingBlock && !rpcService) || performance.now() + delay >= end)
         throw error;
 
-      const reason = missingBlock ? "receipt_block_retry" : readinessFailure ? "gateway_readiness_retry" : serviceUnavailable ? "service_unavailable_retry" : aclFailure ? "acl_check_retry" : "transport_retry";
+      const reason = rpcService ? "rpc_service_retry" : missingBlock ? "receipt_block_retry" : readinessFailure ? "gateway_readiness_retry" : serviceUnavailable ? "service_unavailable_retry" : aclFailure ? "acl_check_retry" : "transport_retry";
       trace.event(`${phase}.${reason}`, {
         failedAttempt: attempt,
         backoffMs: delay,
@@ -95,4 +98,35 @@ export function isZamaAclCheckFailure(error: unknown): boolean {
   return /^\s*(?:dapp contract|User address|User) 0x[0-9a-f]{40} is not authorized to user decrypt handle 0x[0-9a-f]{64}!\s*$/i.test(
     error.message,
   );
+}
+
+// Opt-in for explicitly whitelisted read-only RPCs. Contract reverts and
+// malformed requests are not evidence that the HTTP service will recover.
+export function isRpcServiceReadFailure(error: unknown): boolean {
+  const queue:unknown[]=[error],seen=new Set<unknown>();let transient=false;
+  while(queue.length&&seen.size<24){
+    const item=queue.shift();if(!item||seen.has(item))continue;seen.add(item);
+    if(typeof item!=="object")continue;
+    const e=item as Record<string,any>,message=String(e.message??"");
+    if(e.code==="CALL_EXCEPTION"||/execution reverted|invalid (?:argument|params)|insufficient funds/i.test(message))return false;
+    if([429,500,502,503,504].includes(Number(e.status??e.statusCode??e.response?.status)))transient=true;
+    if(/(?:HH110:|Invalid JSON-RPC response received:)[\s\S]*(?:Service Unavailable|Bad Gateway|Gateway (?:Timeout|Time-out)|Too Many Requests)/i.test(message))transient=true;
+    queue.push(e.cause,e.error,e.info,e.response);
+  }
+  return transient;
+}
+
+export function rpcRetryAfterMs(error: unknown): number {
+  const queue:any[]=[error],seen=new Set<any>();let hint=0;
+  while(queue.length&&seen.size<24){
+    const e=queue.shift();if(!e||typeof e!=="object"||seen.has(e))continue;seen.add(e);
+    if(Number.isFinite(e.retryAfterMs)&&e.retryAfterMs>=0)hint=Math.max(hint,e.retryAfterMs);
+    const raw=typeof e.headers?.get==="function"?e.headers.get("retry-after"):e.headers?.["retry-after"]??e.headers?.["Retry-After"];
+    if(raw!==null&&raw!==undefined){
+      const seconds=Number(raw),duration=Number.isFinite(seconds)?seconds*1000:Date.parse(String(raw))-Date.now();
+      if(Number.isFinite(duration)&&duration>=0)hint=Math.max(hint,duration);
+    }
+    queue.push(e.cause,e.error,e.info,e.response);
+  }
+  return hint;
 }

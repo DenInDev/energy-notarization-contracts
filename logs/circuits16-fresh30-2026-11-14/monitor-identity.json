@@ -1,0 +1,7 @@
+{
+  "pid": 35272,
+  "createdUtc": "2026-11-14T15:29:49.0926600Z",
+  "command": "\"C:\\Program Files\\nodejs\\node.exe\" scripts/watch-study-health.cjs C:\\Users\\danie\\Desktop\\Dottorato\\energy-notarization-contracts\\logs\\circuits16-fresh30-2026-11-14",
+  "intervalMs": 600000,
+  "readOnly": true
+}

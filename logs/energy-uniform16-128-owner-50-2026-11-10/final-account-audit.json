@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-10T15:38:23.862Z",
+  "chainId": 11155111,
+  "mutationCalls": 0,
+  "checks": [
+    {
+      "platform": "baseline",
+      "user": "0x61a919aD4F8afc17305FA9358d9E7A4114b270AC",
+      "latest": 1388,
+      "pending": 1388,
+      "balanceWei": "99990289607934974",
+      "lastTransactionHash": "0x85083638478045fda67412594bd4455b57c3f1de48aeb444969a280e13a23651",
+      "canonicalBlockHash": "0x1d23ad8c07e53cafe2752b19f706dfd91235e90b587c4db8b7bc73bdb294c254",
+      "status": 1
+    },
+    {
+      "platform": "zama",
+      "user": "0x268fcAE6206890E4de082535F12C40Cc5119033d",
+      "latest": 1388,
+      "pending": 1388,
+      "balanceWei": "99900367763021955",
+      "lastTransactionHash": "0x6f90d51975adf5fc374a89e928868faf347b8b183222baa0b6c67bab2c74d109",
+      "canonicalBlockHash": "0x1d23ad8c07e53cafe2752b19f706dfd91235e90b587c4db8b7bc73bdb294c254",
+      "status": 1
+    },
+    {
+      "platform": "fhenix",
+      "user": "0xCfa73dC59b0C10F30e2883F4A64B72Df944296bd",
+      "latest": 1634,
+      "pending": 1634,
+      "balanceWei": "96898537212859622",
+      "lastTransactionHash": "0x6c39b2a8c9d001fdfd7f3fe1e8049b66326bec28048be99ea77f0ef5e0fcf165",
+      "canonicalBlockHash": "0x1d23ad8c07e53cafe2752b19f706dfd91235e90b587c4db8b7bc73bdb294c254",
+      "status": 1
+    }
+  ],
+  "quarantinedRootLockUnchanged": true,
+  "isolatedLockAbsent": true,
+  "rawReportHashes": {
+    "measured-euint16-continuation1": "0603562486a911cc8b5bac0491f80ce2429f2467334a73480936e882acad43ff",
+    "measured-euint128-continuation1": "ac0682bdeae5034a0349003fc028ec3e3c30b143b580327128558746724df25e"
+  }
+}

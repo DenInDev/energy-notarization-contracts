@@ -7,26 +7,30 @@ import type { Trial } from "./types";
 import { defaults } from "./plan";
 import { AbiCoder } from "ethers";
 import { capacityRejection } from "./capacity";
+import { effectiveReceipt } from "./canonical";
+import { allStudyTransactions } from "./history";
 
 export const trialKey = (t: Trial) => [t.caseId,t.platform,t.repetition,t.warmup,t.controlDirection ?? "main"].join("/");
 
-export function isUnusedSnapshot(error: unknown): boolean {
+function hasRevertReason(error: unknown, expected: string): boolean {
   const queue:unknown[]=[error],seen=new Set<unknown>();
   while(queue.length&&seen.size<20){
     const current=queue.shift();if(!current||seen.has(current))continue;seen.add(current);
     if(typeof current==="string"&&current.startsWith("0x08c379a0")){
-      try{if(AbiCoder.defaultAbiCoder().decode(["string"],"0x"+current.slice(10))[0]==="Not your request")return true;}catch{}
+      try{if(AbiCoder.defaultAbiCoder().decode(["string"],"0x"+current.slice(10))[0]===expected)return true;}catch{}
     }else if(typeof current==="object"){
       const e=current as Record<string,unknown>;
-      if(e.reason==="Not your request")return true;
+      if(e.reason===expected)return true;
       queue.push(e.data,e.error,e.info,e.cause);
     }
   }
   return false;
 }
 
-// This continuation supports only failed preparations before a compute send.
-// Confirmed/reverted/uncertain compute attempts must never be replayed here.
+export const isUnusedSnapshot = (error: unknown) => hasRevertReason(error,"Not your request");
+export const isUnopenedWindow = (error: unknown) => hasRevertReason(error,"Unknown window");
+
+// Confirmed compute attempts may receive a separate correctness audit, never a replay.
 export function validateCircuitContinuation(source: StudyReport) {
   if(source.config.suite!=="circuits")throw new Error("Circuit continuation requires a circuit study");
   return validateStudyContinuation(source);
@@ -36,7 +40,7 @@ export function validateStudyContinuation(source: StudyReport) {
   if (source.kind !== "concurrency-circuit-studies" || source.executionComplete ||
       !["circuits","concurrency"].includes(source.config.suite) || source.cases.some(c=>c.suite!==source.config.suite))
     throw new Error("Only interrupted single-suite preparations can be continued");
-  const transactions = [...source.setups.map(s=>s.transaction),...source.trials.flatMap(t=>[...t.setup,...t.requests.map(r=>r.transaction)])];
+  const transactions = allStudyTransactions(source).map(t=>effectiveReceipt(t,source));
   if (transactions.some(t=>t.broadcastState!=="prepared" && t.status!=="confirmed"))
     throw new Error("Unsettled or failed broadcast prevents continuation");
   const successful = new Set(latestAttempts(source).filter(t=>["ok","capacity_rejected"].includes(t.status)).map(trialKey));
@@ -55,15 +59,24 @@ export function validateStudyContinuation(source: StudyReport) {
       const confirmedWindow=t.status==="incomplete"&&t.requests.length===source.config.requests&&
         t.requests.every(r=>r.transaction.status==="confirmed"&&r.transaction.receiptStatus===1);
       if(confirmedWindow)continue;
+      // No signed window or request exists: only a setup gas estimate failed.
+      if(t.status==="incomplete" && t.setup.length===0 && t.requests.length===0)continue;
       if(t.status!=="incomplete" || t.setup.length!==1 || t.setup[0].status!=="confirmed" ||
         t.requests.some(r=>r.transaction.broadcastState!=="prepared" || r.transaction.transactionHash || r.transaction.broadcastStartedAt))
         throw new Error("Partially broadcast windows cannot be replayed");
       continue;
     }
-    if (t.warmup || t.status!=="incomplete" || t.requests.length!==1 ||
+    if(t.status==="incomplete" && t.requests.length===1 &&
+        effectiveReceipt(t.requests[0].transaction,source).status==="confirmed" &&
+        effectiveReceipt(t.requests[0].transaction,source).receiptStatus===1 &&
+        t.setup.length>0 && t.setup.every(tx=>effectiveReceipt(tx,source).status==="confirmed") &&
+        t.inputValues?.length===c.inputCount)continue;
+    const pausedSetup=t===source.trials.at(-1)&&t.status==="pending"&&t.setup.some(tx=>
+      source.settledSetupReceipts?.some(r=>r.transactionHash===tx.transactionHash));
+    if (t.warmup || (t.status!=="incomplete"&&!pausedSetup) || t.requests.length!==1 ||
         t.requests[0].transaction.broadcastState!=="prepared" ||
         t.requests[0].transaction.preparedTransactionHash || t.requests[0].transaction.transactionNonce!==-1 ||
-        !t.setup.length || t.setup.some(tx=>tx.status!=="confirmed") || t.inputValues?.length!==c.inputCount)
+        !t.setup.length || t.setup.some(tx=>effectiveReceipt(tx,source).status!=="confirmed") || t.inputValues?.length!==c.inputCount)
       throw new Error("Preparation checkpoint is not safe to resume");
   }
   const measured = source.trials.filter(t=>!t.warmup && t.status==="ok");
@@ -74,8 +87,19 @@ export function validateStudyContinuation(source: StudyReport) {
 export type StudyContinuation = { sourceFile: string; sourceSha256: string; report: StudyReport };
 
 export async function continueStudy(sourceFile: string, outputDir: string, hre: HardhatRuntimeEnvironment,
-  accountsFile = defaults.accountsFile) {
-  const bytes=fs.readFileSync(sourceFile), report=JSON.parse(bytes.toString()) as StudyReport;
+  accountsFile = defaults.accountsFile, checkpointAudit?: string) {
+  const bytes=fs.readFileSync(sourceFile);
+  let report=JSON.parse(bytes.toString()) as StudyReport;
+  if(report.scopeRevision && createHash("sha256").update(fs.readFileSync(report.scopeRevision.originalReport)).digest("hex")!==report.scopeRevision.originalSha256)
+    throw new Error("Original raw scope report changed");
+  if(checkpointAudit){
+    const {recoverPausedSetup}=await import("./checkpoint");
+    report=await recoverPausedSetup(sourceFile,report,checkpointAudit,hre);
+  }
+  if(report.config.suite==="circuits"){
+    const {recoverLateComputeReceipts}=await import("./checkpoint");
+    report=await recoverLateComputeReceipts(sourceFile,report,hre);
+  }
   validateStudyContinuation(report);
   const continuation: StudyContinuation = {sourceFile:path.resolve(sourceFile),
     sourceSha256:createHash("sha256").update(bytes).digest("hex"),report};

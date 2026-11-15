@@ -1,0 +1,22 @@
+\begin{table*}[!t]
+\caption{Paired latency comparison: Zama fhEVM and Fhenix CoFHE (128-bit arithmetic)}
+\label{tab:zama-fhenix-lifecycle-comparison-128}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|r|r|r|c|r|r|}
+\hline
+\textbf{Operation} & \textbf{Fhenix Mean} & \textbf{Zama Mean} & \textbf{Paired Ratio} & \textbf{95\% CI} & \textbf{Overhead} & \textbf{Holm \(p\)} \\
+\hline
+set\_meter\_owner & 19635 & 24457 & 1.275 & [1.251, 1.301] & +27.5\% & $<0.001$ \\
+notarize & 20917 & 25586 & 1.233 & [1.215, 1.251] & +23.3\% & $<0.001$ \\
+add & 9761 & 14107 & 1.535 & [1.451, 1.616] & +53.5\% & $<0.001$ \\
+mul\_scalar & 12088 & 14580 & 1.226 & [1.152, 1.279] & +22.6\% & $<0.001$ \\
+mean\(^{\dagger}\) & 23902 & 13879 & 0.551 & [0.526, 0.577] & -44.9\% & $<0.001$ \\
+max & 10203 & 14434 & 1.462 & [1.399, 1.531] & +46.2\% & $<0.001$ \\
+\hline
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\scriptsize Full client lifecycle includes preparation and signing, excluding intentional barrier waiting. Ratios are geometric means of round-matched ratios; means are arithmetic milliseconds. Pointwise 95\% block-bootstrap CIs; Holm correction jointly covers all 42 reported tests. Direct ratios are Zama/Fhenix.}
+\parbox{\textwidth}{\scriptsize \(^{\dagger}\)The \texttt{mean} comparison uses 49 successful pairs, excluding the historical failed Zama observation from both sides; other comparisons use 50.}
+\end{table*}

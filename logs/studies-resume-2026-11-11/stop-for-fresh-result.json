@@ -1,0 +1,8 @@
+{
+  "status": "stopped_after_settled_audit",
+  "at": "2026-11-11T10:41:05.9944761Z",
+  "pid": 33868,
+  "confirmed": 50,
+  "neverBroadcastPrepared": 1,
+  "reason": "User requested new contracts and complete fresh datasets for both categories"
+}

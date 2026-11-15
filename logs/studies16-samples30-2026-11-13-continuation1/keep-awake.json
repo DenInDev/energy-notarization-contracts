@@ -1,0 +1,10 @@
+{
+  "status": "active",
+  "helperPid": 17496,
+  "targetPid": 26712,
+  "targetCreatedUtc": "2026-11-12T23:58:35.6043950Z",
+  "startedAt": "2026-11-12T23:58:36.5293409Z",
+  "scope": "Temporary ES_SYSTEM_REQUIRED lease while verified study process lives; no power-plan or display settings changed",
+  "observedAcSleepTimeoutSeconds": 7200,
+  "observedDcSleepTimeoutSeconds": 600
+}

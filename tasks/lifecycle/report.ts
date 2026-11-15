@@ -6,7 +6,8 @@ import type { HardhatRuntimeEnvironment } from "hardhat/types";
 import type { HardhatEthersSigner } from "@nomicfoundation/hardhat-ethers/signers";
 import type { ScheduledComparison } from "../lib/lifecycleSchedule";
 import { summarize } from "../lib/lifecycleTiming";
-import { writeLifecycleJson } from "../lib/lifecycleReportWrite";
+import { writeLifecycleJson, writeLifecycleText } from "../lib/lifecycleReportWrite";
+import { uniformCofheReadPolicy } from "../lib/cofheReadPolicy";
 import {
   lifecycleOperations,
   smartMeterId,
@@ -93,7 +94,9 @@ const reproducibilityFiles = [
   "scripts/energy-platform-worker.cjs",
   "scripts/run-energy-campaign.cjs",
   "scripts/continue-energy-campaign.cjs",
+  "scripts/resume-uniform-energy.cjs",
   "tasks/lib/decryptionPolling.cjs",
+  "tasks/lib/cofheReadPolicy.ts",
   "scripts/patch-decryption-polling.cjs",
   "tasks/experiments/accounts.ts",
 ];
@@ -122,6 +125,7 @@ export function createLifecycleReport(
     platformOwners: {} as Partial<Record<Platform,string>>,
     signerMode: "shared_account" as "shared_account" | "independent_platform_accounts",
     decryptionPolling: require("../lib/decryptionPolling.cjs").pollingProvenance(),
+    cofheReadPolicy: args.width === undefined ? undefined : { ...uniformCofheReadPolicy },
     energyRepresentation: {
       unit: "Wh", readingBits: 16, accumulatorBits: 64, resultBits: 64,
       timestampBits: 64, timestampEncrypted: false,
@@ -287,7 +291,7 @@ export function saveLifecycleReport(report: LifecycleReport, output: string) {
     }),
   );
   writeReport();
-  fs.writeFileSync(
+  writeLifecycleText(
     path.join(output, "stages.jsonl"),
     samples
       .flatMap((sample) =>
@@ -369,6 +373,6 @@ export function saveLifecycleReport(report: LifecycleReport, output: string) {
     "Receipt to validated plaintext includes getter RPCs, authorization, SDK retrieval/polling, retries and validation; it is not isolated FHE computation or backend decryption time.",
     "Timeout/failure observations are retained, not silently converted to successful latency samples.",
   );
-  fs.writeFileSync(path.join(output, "summary.md"), lines.join("\n") + "\n");
+  writeLifecycleText(path.join(output, "summary.md"), lines.join("\n") + "\n");
   writeReport();
 }

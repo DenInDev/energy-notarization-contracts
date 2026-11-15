@@ -1,0 +1,244 @@
+\begin{table*}[!t]
+\caption{Sepolia deployments and client-observed measurement intervals: all measured operations, 128-bit arithmetic}
+\label{tab:sepolia-client-intervals-classic-euint128-overall}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=59\)) &
+\shortstack[l]{2026-11-06 00:26:09 \\ -- 2026-11-06 00:45:26} &
+\texttt{0x7e49...E421} &
+12073013--12073104 &
+64.3\% \\
+\hline
+Zama fhEVM (\(n=59\)) &
+\shortstack[l]{2026-11-06 00:26:09 \\ -- 2026-11-06 00:45:28} &
+\texttt{0x1A6f...c8ab} &
+12073013--12073104 &
+64.3\% \\
+\hline
+Fhenix CoFHE (\(n=300\)) &
+\shortstack[l]{2026-11-06 00:26:09 \\ -- 2026-11-06 02:22:15} &
+\texttt{0x3127...310d} &
+12073013--12073582 &
+66.8\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and client-observed measurement intervals: \texttt{set\_meter\_owner}, 128-bit arithmetic}
+\label{tab:sepolia-client-intervals-classic-euint128-set-meter-owner}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=10\)) &
+\shortstack[l]{2026-11-06 00:26:09 \\ -- 2026-11-06 00:44:25} &
+\texttt{0x7e49...E421} &
+12073013--12073099 &
+67.3\% \\
+\hline
+Zama fhEVM (\(n=10\)) &
+\shortstack[l]{2026-11-06 00:26:09 \\ -- 2026-11-06 00:44:28} &
+\texttt{0x1A6f...c8ab} &
+12073013--12073099 &
+67.3\% \\
+\hline
+Fhenix CoFHE (\(n=50\)) &
+\shortstack[l]{2026-11-06 00:26:09 \\ -- 2026-11-06 02:20:50} &
+\texttt{0x3127...310d} &
+12073013--12073575 &
+66.3\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and client-observed measurement intervals: \texttt{notarize}, 128-bit arithmetic}
+\label{tab:sepolia-client-intervals-classic-euint128-notarize}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=10\)) &
+\shortstack[l]{2026-11-06 00:26:29 \\ -- 2026-11-06 00:44:49} &
+\texttt{0x7e49...E421} &
+12073015--12073101 &
+67.6\% \\
+\hline
+Zama fhEVM (\(n=10\)) &
+\shortstack[l]{2026-11-06 00:26:29 \\ -- 2026-11-06 00:44:52} &
+\texttt{0x1A6f...c8ab} &
+12073015--12073101 &
+67.6\% \\
+\hline
+Fhenix CoFHE (\(n=50\)) &
+\shortstack[l]{2026-11-06 00:26:29 \\ -- 2026-11-06 02:21:01} &
+\texttt{0x3127...310d} &
+12073015--12073576 &
+68.1\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and client-observed measurement intervals: \texttt{add}, 128-bit arithmetic}
+\label{tab:sepolia-client-intervals-classic-euint128-add}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=10\)) &
+\shortstack[l]{2026-11-06 00:26:55 \\ -- 2026-11-06 00:45:01} &
+\texttt{0x7e49...E421} &
+12073016--12073102 &
+61.0\% \\
+\hline
+Zama fhEVM (\(n=10\)) &
+\shortstack[l]{2026-11-06 00:26:55 \\ -- 2026-11-06 00:45:06} &
+\texttt{0x1A6f...c8ab} &
+12073016--12073102 &
+61.0\% \\
+\hline
+Fhenix CoFHE (\(n=50\)) &
+\shortstack[l]{2026-11-06 00:26:55 \\ -- 2026-11-06 02:21:16} &
+\texttt{0x3127...310d} &
+12073016--12073577 &
+66.0\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and client-observed measurement intervals: \texttt{mul\_scalar}, 128-bit arithmetic}
+\label{tab:sepolia-client-intervals-classic-euint128-mul-scalar}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=10\)) &
+\shortstack[l]{2026-11-06 00:27:07 \\ -- 2026-11-06 00:45:14} &
+\texttt{0x7e49...E421} &
+12073017--12073103 &
+59.8\% \\
+\hline
+Zama fhEVM (\(n=10\)) &
+\shortstack[l]{2026-11-06 00:27:07 \\ -- 2026-11-06 00:45:18} &
+\texttt{0x1A6f...c8ab} &
+12073017--12073103 &
+59.8\% \\
+\hline
+Fhenix CoFHE (\(n=50\)) &
+\shortstack[l]{2026-11-06 00:27:07 \\ -- 2026-11-06 02:21:28} &
+\texttt{0x3127...310d} &
+12073017--12073578 &
+65.5\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and client-observed measurement intervals: \texttt{mean}, 128-bit arithmetic}
+\label{tab:sepolia-client-intervals-classic-euint128-mean}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=10\)) &
+\shortstack[l]{2026-11-06 00:27:20 \\ -- 2026-11-06 00:45:26} &
+\texttt{0x7e49...E421} &
+12073019--12073104 &
+63.2\% \\
+\hline
+Zama fhEVM (\(n=10\)) &
+\shortstack[l]{2026-11-06 00:27:20 \\ -- 2026-11-06 00:45:28} &
+\texttt{0x1A6f...c8ab} &
+12073019--12073104 &
+63.2\% \\
+\hline
+Fhenix CoFHE (\(n=50\)) &
+\shortstack[l]{2026-11-06 00:27:20 \\ -- 2026-11-06 02:22:03} &
+\texttt{0x3127...310d} &
+12073019--12073580 &
+64.7\% \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Sepolia deployments and client-observed measurement intervals: \texttt{max}, 128-bit arithmetic}
+\label{tab:sepolia-client-intervals-classic-euint128-max}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|r|}
+\hline
+\textbf{Configuration} &
+\textbf{Observed interval (UTC)} &
+\textbf{Contract} &
+\textbf{Containing block range} &
+\textbf{Mean gas/target} \\
+\hline
+Plaintext baseline (\(n=9\)) &
+\shortstack[l]{2026-11-06 00:27:50 \\ -- 2026-11-06 00:44:01} &
+\texttt{0x7e49...E421} &
+12073020--12073097 &
+67.3\% \\
+\hline
+Zama fhEVM (\(n=9\)) &
+\shortstack[l]{2026-11-06 00:27:50 \\ -- 2026-11-06 00:44:05} &
+\texttt{0x1A6f...c8ab} &
+12073020--12073097 &
+67.3\% \\
+\hline
+Fhenix CoFHE (\(n=50\)) &
+\shortstack[l]{2026-11-06 00:27:50 \\ -- 2026-11-06 02:22:15} &
+\texttt{0x3127...310d} &
+12073020--12073582 &
+70.2\% \\
+\hline
+\end{tabular}
+\end{table*}

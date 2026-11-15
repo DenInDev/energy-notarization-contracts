@@ -1,0 +1,8 @@
+{
+  "gasCostWei": "2670743687",
+  "gasCostEth": "0.000000002670743687",
+  "confirmedReceipts": 22,
+  "reconciledCanonicalReceipts": 0,
+  "unresolvedBroadcasts": 0,
+  "includes": "deployment, authorization, window/input setup, warmup, measured receipts, including confirmed failed observations; unresolved broadcasts excluded until recovered"
+}
